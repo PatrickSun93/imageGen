@@ -85,7 +85,7 @@ SDXL 吃标签堆砌，Flux 吃**自然语言长句**：
 | 项 | 数值 |
 |---|---|
 | 首次加载模型 | 40–60 秒 |
-| 出图 1024×1024 / 20 步 | 25–45 秒 |
+| 出图 1024×1024 / 20 步 | 实测：不挂 LoRA 约 80 秒，挂 LoRA 约 100–120 秒（原先估的 25–45 秒太乐观） |
 | schnell 4 步 | 8–15 秒 |
 | 显存占用 | 6.5–7.5 GB |
 
@@ -97,69 +97,58 @@ SDXL 吃标签堆砌，Flux 吃**自然语言长句**：
 
 **SDXL 的 LoRA 在 Flux 上用不了**，架构完全不同，必须用同一批照片重训。
 
-素材直接用现成的：`lora_training/raw/` 里 29 张图 + 标注，触发词 `ohwx boy`。
-标注不用改，Flux 训练一样吃这种写法。
+素材：原图在 `lora_training/raw/`，筛过之后 18 张图 + 标注放在 `lora_training/dataset/`，
+触发词 `ohwx boy`。标注不用改，Flux 训练一样吃这种写法。
 
-### 用 ai-toolkit（比 sd-scripts 更适合 Flux）
+### 实际用的是 kohya sd-scripts（ai-toolkit 试过，放弃了）
 
-```bat
-git clone https://github.com/ostris/ai-toolkit
-cd ai-toolkit
-git submodule update --init --recursive
-python -m venv venv
-venv\Scripts\pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
-venv\Scripts\pip install -r requirements.txt
+ai-toolkit 在 8GB 上只能用 `uint4` 量化，而它的 4-bit 反量化没有融合内核，
+实测约 30 秒 / 步，1000 步要 8 小时以上。它的配置留在 `lora_training/flux_lora_ohwx.yaml`，仅作记录。
+
+改用 sd-scripts 的 8GB 方案（fp8 底模 + 块交换），脚本是 `lora_training/train_flux_sdscripts.sh`，关键参数：
+
+```
+flux_train_network.py
+  --pretrained_model_name_or_path ComfyUI/models/unet/flux1-dev.safetensors   # 23 GB 原版，训练要用它，不能用 GGUF
+  --clip_l / --t5xxl / --ae       复用 ComfyUI/models 里的 clip_l、t5xxl_fp8、ae
+  --network_module networks.lora_flux --network_dim 16 --network_alpha 16
+  --network_train_unet_only
+  --optimizer_type AdamW8bit --learning_rate 1e-4 --lr_scheduler constant
+  --max_train_steps 1000 --save_every_n_steps 250
+  --mixed_precision bf16 --fp8_base      # ← 8GB 必须
+  --blocks_to_swap 28                    # ← 8GB 必须，一部分 DiT 块换到内存里
+  --gradient_checkpointing --sdpa
+  --cache_latents_to_disk --cache_text_encoder_outputs_to_disk
+  --max_data_loader_n_workers 0          # Windows 上多进程会卡死
+  --guidance_scale 1.0 --timestep_sampling flux_shift --model_prediction_type raw
 ```
 
-配置文件的关键项（8GB 显存）：
+分辨率在 `lora_training/dataset_config_flux_win.toml`：512，开 bucket（256–1024）。
+（`lora_training/dataset_config.toml` 是 Mac 上 SDXL 训练用的，别混用。）
 
-```yaml
-model:
-  name_or_path: "black-forest-labs/FLUX.1-dev"
-  is_flux: true
-  quantize: true          # ← 必须开，否则 8GB 装不下
-network:
-  type: "lora"
-  linear: 16              # rank，和我们 SDXL 那版一致
-  linear_alpha: 16
-train:
-  batch_size: 1
-  steps: 2000
-  gradient_accumulation_steps: 1
-  gradient_checkpointing: true    # ← 必须开
-  noise_scheduler: "flowmatch"
-  optimizer: "adamw8bit"          # ← 必须，省显存
-  lr: 1e-4
-  dtype: bf16
-datasets:
-  - folder_path: "D:/imageGen/lora_training/raw"
-    caption_ext: "txt"
-    resolution: [ 512, 768 ]      # 8GB 建议从 512 起
-sample:
-  every_n_steps: 250              # 中途出样图，方便挑存档
-```
-
-**预期**：显存 7–7.5 GB，2000 步约 1.5–2.5 小时。
+**实测**：1000 步约 1h20m。每 250 步存一个档，共 4 个（step 250 / 500 / 750 / 1000），
+已复制到 `ComfyUI/models/loras/`。
 
 ### 训练时的注意
 
-- **一定要开中途采样**（`sample.every_n_steps`）。我们在 SDXL 上吃过亏：
+- **多存几个档**（`--save_every_n_steps`）。我们在 SDXL 上吃过亏：
   1800 步跑满，结果最好的是 800 步那个存档，后面全过拟合成照片风了
-- Flux LoRA 的强度通常比 SDXL 低，出图时从 **0.8** 开始试，别一上来 1.25
-- 训完同样要做**同种子 A/B**，别默认最后一个存档最好
+- 训完在 ComfyUI 里做**同种子 A/B**，别默认最后一个存档最好。
+  这次的对比图在 `storybook/out/ab*`，强度试过 0.5 / 1.0 / 1.3 / 1.6，
+  最终选的是 **1000 步存档 + 强度 1.3**（比 SDXL 时的 1.0 高）
 
-## 六、迁移过来之后的流程
+## 六、出书流程
 
-绘本生产的其余部分不用改，`storybook/` 那套照搬：
-
-1. `story_xxx.json` 写脚本（`scene` 字段改成 Flux 的自然语言长句）
-2. `render.sh` 里换成 Flux 工作流
-3. `build_web.py` 合成网页，完全不用动
+1. `storybook/story_xxx.json` 写脚本（`scene` 用 Flux 的自然语言长句，每页标 `has_boy`）
+2. `venv\python.exe storybook\render_lora.py storybook\story_xxx.json` 出图（工作流 `workflows/flux_dev_lora.json`）
+3. 把 `storybook/out/<slug>_lora/` 里的 `page_01.png` … 打成 zip 交给 Mac，那边合成网页发布（见 `storybook/PIPELINE.md`）。
+   本地想先看效果：`venv\python.exe storybook\build_preview.py storybook\story_xxx.json out.html`
 
 参考现有文件：
-- `storybook/MAKE_A_BOOK.md` — 绘本流程和画风配方
+- `storybook/MAKE_A_BOOK.md` — 绘本流程、story JSON 字段、画风配方
+- `storybook/PIPELINE.md` — Mac 与 N 卡机器的分工和交接格式
 - `lora_training/RETRAIN.md` — 素材筛选标准（这套规则对 Flux 一样适用）
-- `lora_training/TRAIN_ON_NVIDIA_8GB.md` — SDXL 版的 8GB 训练参数
+- `lora_training/TRAIN_ON_NVIDIA_8GB.md` — SDXL 版的 8GB 训练参数（旧方案）
 
 ## 七、先验证再投入
 

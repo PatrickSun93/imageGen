@@ -8,7 +8,9 @@
 
 1. **写脚本**：`story_<主题>.json`，字段见下
 2. **先试 1 页**（换了画风必做）：只留一页跑一次，确认风格对了再跑全本
-3. **跑全本**：`./storybook/render.sh storybook/story_xxx.json`，约 30 分钟
+3. **跑全本**：Mac 上 `./storybook/render.sh storybook/story_xxx.json`，约 30 分钟；
+   N 卡上 `venv\python.exe storybook\render_lora.py storybook\story_xxx.json`，约 15 分钟，
+   后面加页码可以只重跑某几页（如 `... story_xxx.json 5 6 8`）
 4. **合成网页**：压缩成 base64 内嵌，发布成 Artifact 拿链接
 
 ## story JSON 的字段
@@ -24,12 +26,22 @@
 
 `zh` 是念给孩子听的，`scene` 是给模型看的，两者不用对应得很死。
 
+N 卡（Flux）出图还会读这几个字段：
+
+- `has_boy`（每页）：有人物的页拼成 `ohwx boy, {character}, {style}, {scene}` 并挂 LoRA；
+  没人物的页只拼 `{style}, {scene}`，不带触发词、不挂 LoRA，画面更干净
+- `seed_base`：seed = `seed_base + 页码`（不写默认 2000），每本换一段，互不重复
+- `colophon.strength`：LoRA 强度，出图和版权页用同一个值，两边不会对不上
+
 ## 画风配方（已验证）
 
 | 风格 | style 词 | 注意 |
 |---|---|---|
 | **水彩绘本** | `children's picture book illustration, storybook art, soft watercolor painting, gentle rounded lineart, warm pastel colors, flat shading` | 最稳，先验强 |
 | **蜡笔** | `children's book illustration drawn with wax crayons on textured paper, chunky crayon strokes, visible waxy grain, flat bright colors, naive childlike drawing, thick black outlines` | 必须写 **on textured paper**，给蜡笔一个物理载体，否则压不住 LoRA 的照片属性 |
+| **复古水粉**（Flux） | `children's picture book illustration, warm vintage storybook art, soft gouache painting, earthy ochre and deep green palette, gentle textured brushwork, soft natural light` | 恐龙那本，Flux dev 上画风一次就对 |
+
+蜡笔只在 SDXL 上成功过。Flux dev 天生画得太精细，压不出蜡笔颗粒，N 卡上优先选水彩 / 水粉。
 
 ## 三条踩过的坑
 
@@ -45,6 +57,14 @@ watercolor 本身是强先验画种。
 要写成 `a neat row of five small black ants, each clearly drawn`——限定数量、
 强调清晰、给形态描述。
 
+**（Flux）别在提示词里描述五官。** 写 `narrow dark eyes`、`black eyes` 之类会覆盖 LoRA 学到的脸，
+`character` 只写衣着和发型。
+
+**（Flux）写清画面里"有什么"，别只写"没有什么"。** 恐龙那本第 6 页写 `Empty and quiet`，
+远古荒原上冒出一个穿橙色卫衣的人；改成 `Nobody is there, only trees, rocks and falling ash` 才干净。
+第 1 页 `dinosaur skeleton` 画成了有皮有眼睛的活恐龙，要写 `made only of pale bones, empty eye sockets, bare ribs`。
+第 7 页没写羽毛的样子，出来是带刺的小恐龙；写明 `covered in soft orange and cream downy feathers` 才对上文字。
+
 ## 一致性怎么保证
 
 全书固定三件事，翻页时人物才不会忽胖忽瘦：
@@ -54,6 +74,9 @@ watercolor 本身是强先验画种。
 - LoRA 强度锁 **1.0**（画风优先）；想更像可以到 1.25，再高就照片化了
 
 seed 用 `2000 + 页码` 连号，既有变化又可复现。
+
+N 卡 Flux 版：身份词只用 `ohwx boy, {character}`；LoRA 用 `son_ohwx_flux_v1` 的 1000 步存档，
+强度 **1.3**（A/B 试过 0.5 / 1.0 / 1.3 / 1.6 后选定）；seed 用 `seed_base + 页码`。
 
 
 ## 选题：什么题材这台 Mac 画得出来
@@ -75,6 +98,7 @@ SDXL 有个硬限制：**一张图里只能可靠地画好一个主体**。
 任何"很多只小东西"的题材
 
 「蚂蚁要搬家了」踩的就是这个坑：10 页里蚂蚁稳定出现的不到一半。
+（后来换到 N 卡用 Flux 出图，蚂蚁和人同框直接就对，见 `PIPELINE.md`。）
 
 ### 🔶 折中办法
 
@@ -136,3 +160,4 @@ story JSON 里这两个字段是全书统一的关键，别省：
 |---|---|---|
 | 森林里最大的花（大王花 / 寄生） | 水彩 | （私有链接，未公开） |
 | 蚂蚁要搬家了（蚂蚁 / 下雨） | 蜡笔 | （私有链接，未公开） |
+| 恐龙没有走远（恐龙 / 鸟） | 复古水粉（N 卡 / Flux） | 出图完成，待排版 |

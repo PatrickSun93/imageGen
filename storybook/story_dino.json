@@ -2,6 +2,7 @@
   "title": "恐龙没有走远",
   "subtitle": "院子里的麻雀，是它们的孩子",
   "slug": "dino",
+  "seed_base": 3000,
   "workflow": "workflows/flux_dev_lora.json",
   "character": "wearing a green short sleeve t-shirt and dark blue shorts, white socks and grey sneakers, short black hair",
   "style": "children's picture book illustration, warm vintage storybook art, soft gouache painting, earthy ochre and deep green palette, gentle textured brushwork, soft natural light",
@@ -27,7 +28,7 @@
     {
       "n": 1,
       "zh": "博物馆里，站着一只好大好大的恐龙。\n它只剩下骨头了。\n我要仰起头，才能看见它的脑袋。",
-      "scene": "A little boy stands in a dinosaur museum hall, tilting his head all the way back to look up at an enormous mounted dinosaur skeleton that towers over him. Warm light comes through tall windows. The boy is small at the bottom of the frame, the skeleton fills the upper space.",
+      "scene": "A little boy stands in a quiet dinosaur museum hall with a polished stone floor, tilting his head all the way back to look up at an enormous mounted dinosaur fossil skeleton made only of pale bones, with empty eye sockets and bare ribs, standing on a low display platform and towering over him. Warm light comes through tall windows. The boy is small at the bottom of the frame, the skeleton fills the upper space.",
       "has_boy": true
     },
     {
@@ -57,13 +58,13 @@
     {
       "n": 6,
       "zh": "轰——\n天空变黑了，太阳被灰尘挡住了。\n好冷，好黑。",
-      "scene": "A dark ash covered prehistoric landscape under a black sky, bare broken trees, grey dust falling like snow, cold and silent. Faint dim light. Empty and quiet.",
+      "scene": "A still, grey prehistoric landscape under a dim sky thick with dust, bare broken trees and scattered rocks, soft grey ash drifting down like snow and covering the ground. Cold muted colors, faint dim light. Nobody is there, only trees, rocks and falling ash.",
       "has_boy": false
     },
     {
       "n": 7,
       "zh": "大恐龙们，一个一个都不见了。\n可是有一些小小的、有羽毛的恐龙，\n躲在洞里，活了下来。",
-      "scene": "Inside a small burrow under a tree root, two little feathered dinosaurs huddle together in the dark, keeping warm. Outside the burrow opening the world is grey and ashy. Warm soft light inside the hole.",
+      "scene": "Inside a small cozy burrow under a big tree root, two little fluffy feathered dinosaurs covered in soft orange and cream downy feathers, with long tails, huddle close together to keep warm. Through the burrow opening behind them the outside world is grey and covered in ash. Warm soft light inside the hole.",
       "has_boy": false
     },
     {

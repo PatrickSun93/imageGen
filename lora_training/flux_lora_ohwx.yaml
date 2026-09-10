@@ -1,0 +1,69 @@
+---
+job: extension
+config:
+  name: "son_ohwx_flux_v1"
+  process:
+    - type: 'sd_trainer'
+      training_folder: "C:/FlowDev/githubdevitems/comfyUIItems/lora_training/output"
+      device: cuda:0
+      trigger_word: "ohwx boy"
+      network:
+        type: "lora"
+        linear: 16
+        linear_alpha: 16
+      save:
+        dtype: float16
+        save_every: 250
+        # 2000 steps / 250 = 8 checkpoints. Keep ALL of them: MAKE_A_BOOK/FLUX_ON_8GB
+        # record that the best SDXL run was step 800, not the final save. The example's
+        # default of 4 would silently discard the early ones.
+        max_step_saves_to_keep: 10
+        push_to_hub: false
+      datasets:
+        - folder_path: "C:/FlowDev/githubdevitems/comfyUIItems/lora_training/dataset"
+          caption_ext: "txt"
+          num_workers: 0                # Windows: default 2 spawns worker procs that deadlock
+          caption_dropout_rate: 0.05
+          shuffle_tokens: false
+          cache_latents_to_disk: true
+          resolution: [ 512, 768 ]      # 1024 dropped - won't fit in 8GB
+      train:
+        batch_size: 1
+        steps: 1000                     # cut from 2000: measured ~30s/it on this card, not the doc's estimate
+        gradient_accumulation_steps: 1
+        train_unet: true
+        train_text_encoder: false
+        gradient_checkpointing: true    # required at 8GB
+        noise_scheduler: "flowmatch"
+        optimizer: "adamw8bit"          # required at 8GB
+        skip_first_sample: true
+        lr: 1e-4
+        dtype: bf16
+        ema_config:
+          use_ema: true
+          ema_decay: 0.99
+      model:
+        name_or_path: "black-forest-labs/FLUX.1-dev"
+        is_flux: true
+        quantize: true                  # required at 8GB
+        qtype: "uint4"                  # 8-bit is ~12GB - too big for an 8GB card
+        low_vram: true                  # GPU also drives the laptop display
+      sample:
+        sampler: "flowmatch"
+        sample_every: 250
+        sample_start_step: 0
+        width: 768                      # 1024 sampling risks OOM mid-train at 8GB
+        height: 768
+        prompts:
+          - "[trigger], a little boy crouching on a garden path watching a line of five black ants, children's book illustration drawn with wax crayons on textured paper"
+          - "[trigger], a little boy holding a red umbrella in the rain, children's book illustration drawn with wax crayons on textured paper"
+          - "[trigger], a little boy sitting in a green meadow with a butterfly on his hand, soft watercolor children's picture book illustration"
+          - "[trigger], portrait of a little boy smiling, plain background, photo"
+        neg: ""
+        seed: 42
+        walk_seed: true
+        guidance_scale: 4
+        sample_steps: 20
+meta:
+  name: "[name]"
+  version: '1.0'

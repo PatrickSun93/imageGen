@@ -43,3 +43,9 @@ venv/
 __pycache__/
 *.pyc
 .DS_Store
+
+# ── Windows / N 卡机器（布局和 Mac 不同）──────────────
+sd-scripts/
+ai-toolkit/
+storybook/out/
+*.zip

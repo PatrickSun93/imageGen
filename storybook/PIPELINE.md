@@ -32,10 +32,11 @@ latent    EmptySD3LatentImage 1024×1024   ← 不是 EmptyLatentImage
 采样      20 步 / CFG 1.0 / euler / simple
 引导      FluxGuidance 3.5
 负面      留空                            ← Flux dev 不跑负面分支
-seed      2000 + 页码
+seed      seed_base + 页码               ← story JSON 里给，蚂蚁 2000，恐龙 3000
 ```
 
 提示词拼法：`ohwx boy, {character}, {style}, {scene}`
+没有人物的页（`has_boy: false`）：`{style}, {scene}`，不带触发词、不挂 LoRA。
 **别在提示词里描述五官**——写 "black eyes" 之类会覆盖 LoRA 学到的脸。
 
 ## 我这边的命令
@@ -50,6 +51,16 @@ python3 build_web.py story_xxx.json web_xxx > web_xxx/index.html
 # 4. 我用 Artifact 工具发布，拿链接
 ```
 
+## N 卡这边的命令
+
+```bat
+:: 在仓库根目录；ComfyUI 先跑在 127.0.0.1:8188
+venv\python.exe storybook\render_lora.py storybook\story_xxx.json          :: 全本
+venv\python.exe storybook\render_lora.py storybook\story_xxx.json 1 6 7    :: 只重跑这几页
+:: 图在 storybook\out\<slug>_lora\page_01.png …，打成 zip 交回
+venv\python.exe storybook\build_preview.py storybook\story_xxx.json out.html   :: 可选：本地预览
+```
+
 ## 为什么这么分工
 
 同样的素材、同样的 LoRA 思路、同样的脚本，SDXL 和 Flux 的差距是代差级的：
@@ -58,7 +69,7 @@ python3 build_web.py story_xxx.json web_xxx > web_xxx/index.html
 |---|---|---|
 | 人物与小物体同框 | 试了 6 种方案都不稳 | 直接就对 |
 | 画风跨页一致 | 翻两页就变 | 十页一致 |
-| 每页耗时 | 200 秒 | 约 30 秒 |
+| 每页耗时 | 200 秒 | 80–120 秒（8GB 笔记本实测，挂 LoRA 的页慢一些） |
 | 提示词 | 正负上百词还在打架 | 一句自然语言，负面留空 |
 
 这台 Mac 在 SDXL 上做的那些补丁（图层合成、区域提示词、双强度 LoRA、换头术），
@@ -72,3 +83,4 @@ Mac 这边保留的价值：写脚本、排版成书、以及训练 LoRA（慢�
 |---|---|---|---|
 | 森林里最大的花 | 水彩 | Mac / SDXL | （私有链接，未公开） |
 | 蚂蚁要搬家了 | 数字水彩 | N 卡 / Flux | （私有链接，未公开） |
+| 恐龙没有走远 | 复古水粉 | N 卡 / Flux | 出图完成，待排版 |

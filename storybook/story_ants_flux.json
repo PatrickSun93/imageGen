@@ -1,0 +1,81 @@
+{
+  "title": "蚂蚁要搬家了",
+  "subtitle": "下雨之前的小秘密",
+  "slug": "ants_moving",
+  "seed_base": 2000,
+  "workflow": "workflows/flux_dev_lora.json",
+  "style": "children's picture book illustration, storybook art, soft watercolor painting, gentle rounded lineart, warm pastel colors, flat shading",
+  "style_label": "水彩绘本",
+  "neg_extra": "(Flux 是蒸馏模型，负面提示词无效，此字段仅作记录)",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "小路上，\n明明蹲下来看。",
+      "scene": "A little Asian boy about four years old with short black hair, wearing a green t-shirt and dark blue shorts, crouches down on a sunny garden path. In front of him five black ants walk in a neat line across the brown dirt.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "一只，两只，三只……\n每只都扛着东西。",
+      "scene": "Five black ants walking in a row across brown dirt, seen up close at ground level, each ant carrying a pale crumb or a small seed on its back. Blades of green grass at the edge of the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "「你们要去哪儿呀？」\n明明小声地问。",
+      "scene": "A little Asian boy about four years old with short black hair, wearing a green t-shirt and dark blue shorts, leans down with his hands on his knees and brings his face close to the dirt path, talking to a line of small black ants.",
+      "has_boy": true
+    },
+    {
+      "n": 4,
+      "zh": "蚂蚁不回答，\n只是走得更快了。",
+      "scene": "A little Asian boy about four years old with short black hair, wearing a green t-shirt and dark blue shorts, kneels on a dirt garden path and watches a line of five tiny black ants hurrying past his knees. The ants are very small next to the boy's hand.",
+      "has_boy": true
+    },
+    {
+      "n": 5,
+      "zh": "天上的云，\n慢慢变黑了。",
+      "scene": "A wide view of a garden path with green plants on both sides. The sky above is filling with heavy dark grey storm clouds. A little Asian boy in a green t-shirt and dark blue shorts stands small in the middle of the path, looking up at the darkening sky.",
+      "has_boy": true
+    },
+    {
+      "n": 6,
+      "zh": "蚂蚁搬出白白的蛋，\n抱得紧紧的。",
+      "scene": "A close view of several black ants hurrying in a line across brown dirt, each ant carrying a small white oval egg held carefully in its jaws.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "啪嗒。\n第一滴雨掉下来了。",
+      "scene": "One big raindrop splashing down onto the dry brown dirt of a garden path and making a dark wet circle, right beside a line of small black ants. The open hand of a little boy reaches into the picture from above.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "蚂蚁钻进土里的小洞。\n一只，两只，全都不见了。",
+      "scene": "Black ants disappearing one after another into a small round hole in the brown dirt at the base of a green plant. The last ant is halfway inside the hole.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "大雨哗啦啦。\n明明撑着红伞，\n站在小洞旁边。",
+      "scene": "A little Asian boy about four years old with short black hair, wearing a green t-shirt and dark blue shorts, stands in heavy falling rain holding a bright red umbrella over his head. He looks down at a small ant hole in the wet muddy path. Long rain streaks fall all around him.",
+      "has_boy": true
+    },
+    {
+      "n": 10,
+      "zh": "雨停了。\n蚂蚁又出来了，\n天上挂着一道彩虹。",
+      "scene": "The rain has stopped. Black ants come back out of a small hole onto a shiny wet garden path. A little Asian boy in a green t-shirt and dark blue shorts stands smiling, and a bright rainbow arches across the clearing sky behind him.",
+      "has_boy": true
+    }
+  ],
+  "colophon": {
+    "model": "FLUX.1-dev · Q4_K_S (GGUF)",
+    "lora": "son_ohwx_flux_v1 · 1000 步",
+    "strength": 1.3,
+    "lora_note": "18 张照片训练，触发词 ohwx boy",
+    "gpu": "RTX PRO 2000 Blackwell 8GB",
+    "time": "训练 1h20m (kohya sd-scripts, blocks_to_swap 28)\n出图约 103 秒 / 页",
+    "note": "画里的小男孩是用 <strong>18 张他自己的照片</strong>训出来的人物 LoRA 画的。画风是水彩而不是最初计划的蜡笔——FLUX.1-dev 天生画得更精细，蜡笔的颗粒感它压不出来（换成 schnell 才有，但 LoRA 只认 dev）。顺着模型的长处走，比硬顶更好看。"
+  }
+}

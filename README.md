@@ -22,6 +22,19 @@ python workflows/run_workflow.py <api.json>  # 命令行提交单个工作流
 python storybook/build_web.py <slug>             # 生成可翻页网页
 ```
 
+## Windows / N 卡（出图端）
+
+那台 8GB N 卡的 Windows 笔记本布局和 Mac 不同：`ComfyUI/`、`sd-scripts/`、`ai-toolkit/`、`venv/`
+都直接放在仓库根目录（均已 gitignore）。
+
+```bat
+venv\python.exe storybook\render_lora.py storybook\story_xxx.json [页码…]      :: Flux dev + 人物 LoRA 出图
+venv\python.exe storybook\build_preview.py storybook\story_xxx.json out.html   :: 本地预览（正式成书用 Mac 的 build_web.py）
+sh lora_training/train_flux_sdscripts.sh                                       :: 训练 Flux 人物 LoRA
+```
+
+配方和 8GB 的注意事项见 `FLUX_ON_8GB.md`，分工和交接格式见 `storybook/PIPELINE.md`。
+
 ## 关键文档（按需要读）
 
 - `bench/FINDINGS.md` —— 为什么慢、能不能更快。结论：不是配置问题，模型已跑到 M4 硬件峰值的 73–79%，唯一的提速手段是减少计算量（DMD2 / Turbo，CFG=1）。

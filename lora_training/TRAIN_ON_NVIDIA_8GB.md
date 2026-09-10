@@ -3,6 +3,10 @@
 Mac 上这套配置是为 MPS 特调的，直接照搬到 CUDA 会又慢又占显存。
 下面只列**需要改的地方**，其余照原样。
 
+> **这是 SDXL 的旧方案，留作记录。** 现在绘本用的是 Flux，人物 LoRA 实际是用
+> kohya sd-scripts 训的（`lora_training/train_flux_sdscripts.sh`），见 `FLUX_ON_8GB.md` 第五节。
+> 这台机器上也没有 SDXL 底模 `sd_xl_base_1.0.safetensors`。
+
 ## 一、出图（不用改，直接能跑）
 
 SDXL fp16 的 UNet 约 5.1 GB，加 VAE 和激活约 6–7 GB，8 GB 够用，
@@ -13,7 +17,8 @@ ComfyUI 还会自动卸载暂时不用的部分。
 ```bat
 :: 不要 PYTORCH_ENABLE_MPS_FALLBACK（那是 macOS 的）
 :: 不要 --use-pytorch-cross-attention（NVIDIA 上 ComfyUI 自动开 SDPA，加了多余）
-venv\Scripts\python main.py --listen 0.0.0.0 --port 8188
+:: 在 ComfyUI 目录里跑；这台机器的 venv 是 conda 结构，python.exe 在 venv 根目录
+..\venv\python.exe main.py --listen 127.0.0.1 --port 8188
 ```
 
 显存实在紧张就加 `--lowvram`，会慢一些但稳。
@@ -42,7 +47,7 @@ venv\Scripts\pip install bitsandbytes
 ### 改好的完整命令
 
 ```bat
-set ROOT=D:\imageGen
+set ROOT=C:\FlowDev\githubdevitems\comfyUIItems
 venv\Scripts\python sdxl_train_network.py ^
   --pretrained_model_name_or_path="%ROOT%\ComfyUI\models\checkpoints\sd_xl_base_1.0.safetensors" ^
   --dataset_config="%ROOT%\lora_training\dataset_config.toml" ^
@@ -80,7 +85,7 @@ venv\Scripts\python sdxl_train_network.py ^
 装完先跑这句，**必须是 True**：
 
 ```bat
-venv\Scripts\python -c "import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.get_device_name(0))"
+venv\python.exe -c "import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.get_device_name(0))"
 ```
 
 出图慢得跟 Mac 差不多，就是装成 CPU 版 PyTorch 了，回去重装 CUDA 轮子。
