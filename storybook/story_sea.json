@@ -1,0 +1,94 @@
+{
+  "title": "海只来一点点",
+  "subtitle": "浪来了，又回去了",
+  "slug": "sea",
+  "workflow": "workflows/flux_dev_lora.json",
+  "character": "wearing a pale yellow t-shirt and orange shorts, bare feet, short black hair",
+  "style": "children's picture book illustration, gentle watercolor painting, soft sea green and warm sand palette, loose wet washes, lots of white paper showing, calm soft daylight",
+  "neg_extra": "stormy, huge crashing waves, dark water, deep ocean, frightening, dramatic",
+  "keyword": "潮池",
+  "style_label": "清透水彩",
+  "colophon": {
+    "model": "FLUX.1-dev Q4_K_S GGUF",
+    "lora": "son_ohwx_flux_v1 (1000 steps, 18 photos)",
+    "strength": 1.3
+  },
+  "palette": {
+    "ink": "#1f3a42",
+    "soft": "#5b7d84",
+    "ground": "#eaf1f0",
+    "paper": "#fcfdfb",
+    "accent": "#e08a5f",
+    "bark": "#8fa8a4",
+    "line": "#d3e0dd",
+    "ink_d": "#dfeae8",
+    "soft_d": "#93aeb0",
+    "ground_d": "#0e1a1d",
+    "paper_d": "#16262a",
+    "accent_d": "#f0a887",
+    "bark_d": "#7e9895",
+    "line_d": "#26383c"
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我第一次来海边。\n海好大好大，看不到边。\n浪的声音轰隆隆的。\n我抓紧了爸爸的手。",
+      "scene": "A little boy stands high on a wide empty sandy beach, far back from the water, holding a grown-up's hand, looking out at a very large calm sea under a big pale sky. He is small in the frame, sea and sky fill most of the picture, wide open composition.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "爸爸说：\n「我们不下水，\n就坐在这里看。」\n沙子是干的，暖暖的。",
+      "scene": "A little boy and his father sitting together on warm dry sand near the top of a beach, seen from the side, the sea far away in the background, a folded towel beside them, calm and unhurried.",
+      "has_boy": true
+    },
+    {
+      "n": 3,
+      "zh": "浪跑过来了——\n我往后缩了一下。\n可是它没有过来。\n它停住了，然后回去了。",
+      "scene": "A thin sheet of seawater running up wet sand toward a little boy's bare feet and stopping short of them, the boy leaning back slightly, low viewpoint close along the sand, gentle foam edge.",
+      "has_boy": true
+    },
+    {
+      "n": 4,
+      "zh": "又来了一次。\n还是停在那里。\n再来一次。\n每一次，都停在同一个地方。",
+      "scene": "Three thin curved lines of foam left on wet sand at the same distance from the viewer, marking where each wave stopped, a gentle repeating pattern on an empty beach, soft daylight from above.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "我数：一、二、三……\n浪就来了。\n一、二、三……\n浪就回去了。\n原来它是有拍子的。",
+      "scene": "A little boy sitting on the sand counting on his fingers, mouth open counting, a small wave rolling in gently behind him, bright and calm.",
+      "has_boy": true
+    },
+    {
+      "n": 6,
+      "zh": "浪回去以后，\n沙子上留下了东西：\n一个白色的贝壳，\n一根海草，\n还有一个小小的洞。",
+      "scene": "Close up of wet sand after a wave has gone, a single white spiral shell, one strand of dark seaweed, and a small round hole in the sand with tiny bubbles, seen from above.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "岩石中间有小水坑。\n那是浪走的时候，\n忘记带走的一点点海。\n这种小水坑叫「潮池」。",
+      "scene": "A shallow rock pool between grey rocks, clear still water, seaweed around the rim, sunlight on the surface, small movement in the water, quiet and inviting.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "里面住着好多小东西：\n一只小螃蟹，横着走。\n一条小鱼，比我的手指还短。\n还有一颗海星，\n慢慢地、慢慢地爬。",
+      "scene": "Inside a clear rock pool seen from above: a small crab walking sideways, a tiny fish shorter than a finger, and an orange starfish moving slowly across the bottom, pebbles and green seaweed, bright clear water.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "它们一点也不怕。\n它们在等下一次浪来，\n接它们回家。",
+      "scene": "A rock pool with small sea creatures resting quietly among the rocks, and beyond the rocks the sea further out with one gentle wave approaching in the distance, warm afternoon light.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "我站起来，慢慢走过去。\n浪来了，碰到我的脚。\n凉凉的，痒痒的。\n然后它就回去了。\n我说：「明天我还来。」",
+      "scene": "A little boy standing at the very edge of the water, a thin sheet of foam just touching his bare feet, looking down at his own feet and smiling, calm sea behind, gentle low sunlight.",
+      "has_boy": true
+    }
+  ]
+}
