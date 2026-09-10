@@ -1,0 +1,26 @@
+{
+  "title": "森林里最大的花",
+  "subtitle": "一朵不会自己做饭的花",
+  "pages": [
+    {"n": 1, "zh": "今天，我要去森林里找一朵花。\n听说那是世界上最大的花。",
+     "scene": "walking into a misty green rainforest at morning, small backpack on his back, looking ahead with curiosity, tall trees and ferns, sunbeams through leaves"},
+    {"n": 2, "zh": "森林里好安静。\n树很高，叶子很大，比我的脸还大。",
+     "scene": "standing among giant elephant ear leaves taller than himself, looking up in wonder, deep green rainforest, dappled light"},
+    {"n": 3, "zh": "咦？树上爬着一根粗粗的藤。\n它一圈一圈，缠着大树往上爬。",
+     "scene": "touching a thick brown woody vine coiling up a huge tree trunk, looking closely, curious expression, rainforest understory"},
+    {"n": 4, "zh": "藤上鼓起一个圆圆的包，\n像一颗大大的包菜。",
+     "scene": "crouching down next to a large round reddish brown flower bud the size of a cabbage growing directly on the vine on the forest floor, pointing at it, amazed"},
+    {"n": 5, "zh": "我等呀等。\n包菜慢慢裂开了……",
+     "scene": "sitting patiently on a mossy log watching the big bud slowly cracking open, hands on knees, waiting, soft forest light"},
+    {"n": 6, "zh": "哇——好大的一朵花！\n五片厚厚的花瓣，红红的，长满白点点。",
+     "scene": "standing with arms spread wide in front of an enormous red flower with five thick petals covered in white speckles, as wide as he is tall, mouth open in amazement"},
+    {"n": 7, "zh": "可是……好臭呀！\n苍蝇嗡嗡嗡地飞过来了。",
+     "scene": "pinching his nose with one hand, leaning away from the giant red flower, small flies buzzing around it, funny disgusted face"},
+    {"n": 8, "zh": "奇怪，这朵花的叶子呢？\n它的根呢？我怎么找不到？",
+     "scene": "kneeling and searching around the base of the giant flower with a puzzled face, hands on the ground, looking for roots, only the vine is there"},
+    {"n": 9, "zh": "原来它没有叶子，也没有根。\n它住在藤的身体里，喝藤的水，吃藤的饭。\n这叫「寄生」。",
+     "scene": "sitting cross legged next to the giant flower and the thick vine, listening and thinking, gentle cutaway view of the vine behind him, warm afternoon light"},
+    {"n": 10, "zh": "别的花自己晒太阳做饭，\n它却借住在别人家里。\n森林里，每个人都有自己活下去的办法。",
+     "scene": "walking home along a forest path at golden sunset, looking back over his shoulder at the distant giant red flower, warm orange light, peaceful"}
+  ]
+}

@@ -1,0 +1,17 @@
+[general]
+shuffle_caption = false
+caption_extension = ".txt"
+keep_tokens = 2          # 保护开头的 "ohwx boy" 两个 token 不被打乱
+
+[[datasets]]
+resolution = 768         # M4 32GB 上 768 比 1024 稳，速度也快不少
+batch_size = 1
+enable_bucket = true     # 竖图横图混在一起，自动分桶不变形
+bucket_no_upscale = true
+min_bucket_reso = 512
+max_bucket_reso = 1024
+
+  [[datasets.subsets]]
+  image_dir = "/Volumes/externalssd/devitems/learning/imageGen/lora_training/dataset/6_ohwx_boy"
+  class_tokens = "ohwx boy"
+  num_repeats = 6

@@ -1,0 +1,259 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "sd_xl_base_1.0.safetensors"
+    }
+  },
+  "2": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "clip": [
+        "1",
+        1
+      ],
+      "lora_name": "son_ohwx_v2.safetensors",
+      "strength_model": 1.25,
+      "strength_clip": 1.25
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "text": "ohwx boy, solo, 1boy, asian toddler, 3 years old, round chubby face, chubby cheeks, short black hair, black eyes, children's picture book illustration, storybook art, soft watercolor painting, gentle rounded lineart, warm pastel colors, flat shading, full body shot, standing, whole figure visible, crouching in a lush green forest, looking with wide-eyed wonder at a giant red rafflesia flower with white speckles beside him, ferns and tall trees, sunlight through leaves"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "text": "photo, photorealistic, realistic, 3d render, cgi, detailed skin texture, worst quality, low quality, blurry, jpeg artifacts, deformed, bad anatomy, adult, teenager, 2boys, multiple people, text, watermark"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "35",
+        0
+      ],
+      "negative": [
+        "4",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ],
+      "seed": 42,
+      "steps": 25,
+      "cfg": 7.0,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1.0
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    }
+  },
+  "8": {
+    "class_type": "UltralyticsDetectorProvider",
+    "inputs": {
+      "model_name": "bbox/face_yolov8m.pt"
+    }
+  },
+  "9": {
+    "class_type": "FaceDetailer",
+    "inputs": {
+      "image": [
+        "7",
+        0
+      ],
+      "model": [
+        "2",
+        0
+      ],
+      "clip": [
+        "2",
+        1
+      ],
+      "vae": [
+        "1",
+        2
+      ],
+      "bbox_detector": [
+        "8",
+        0
+      ],
+      "positive": [
+        "20",
+        0
+      ],
+      "negative": [
+        "21",
+        0
+      ],
+      "guide_size": 1024,
+      "guide_size_for": true,
+      "max_size": 1024,
+      "seed": 42,
+      "steps": 25,
+      "cfg": 7.0,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 0.55,
+      "feather": 8,
+      "noise_mask": true,
+      "force_inpaint": true,
+      "bbox_threshold": 0.5,
+      "bbox_dilation": 10,
+      "bbox_crop_factor": 3.0,
+      "sam_detection_hint": "center-1",
+      "sam_dilation": 0,
+      "sam_threshold": 0.93,
+      "sam_bbox_expansion": 0,
+      "sam_mask_hint_threshold": 0.7,
+      "sam_mask_hint_use_negative": "False",
+      "drop_size": 10,
+      "wildcard": "",
+      "cycle": 1
+    }
+  },
+  "10": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "9",
+        0
+      ],
+      "filename_prefix": "son_forest_fd"
+    }
+  },
+  "20": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        1
+      ],
+      "text": "ohwx boy, solo, 1boy, asian toddler, 3 years old, face portrait"
+    }
+  },
+  "21": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        1
+      ],
+      "text": "blurry, low quality, deformed face, adult, teenager"
+    }
+  },
+  "30": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "text": "PLACEHOLDER_BOY"
+    }
+  },
+  "31": {
+    "class_type": "ConditioningSetAreaPercentage",
+    "inputs": {
+      "conditioning": [
+        "30",
+        0
+      ],
+      "width": 1.0,
+      "height": 0.62,
+      "x": 0.0,
+      "y": 0.0,
+      "strength": 1.0
+    }
+  },
+  "32": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "text": "PLACEHOLDER_ANTS"
+    }
+  },
+  "33": {
+    "class_type": "ConditioningSetAreaPercentage",
+    "inputs": {
+      "conditioning": [
+        "32",
+        0
+      ],
+      "width": 1.0,
+      "height": 0.45,
+      "x": 0.0,
+      "y": 0.55,
+      "strength": 1.0
+    }
+  },
+  "34": {
+    "class_type": "ConditioningCombine",
+    "inputs": {
+      "conditioning_1": [
+        "3",
+        0
+      ],
+      "conditioning_2": [
+        "31",
+        0
+      ]
+    }
+  },
+  "35": {
+    "class_type": "ConditioningCombine",
+    "inputs": {
+      "conditioning_1": [
+        "34",
+        0
+      ],
+      "conditioning_2": [
+        "33",
+        0
+      ]
+    }
+  }
+}

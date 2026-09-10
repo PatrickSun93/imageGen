@@ -1,0 +1,45 @@
+# ── 外部工具（各自有上游仓库，不纳入本库）──────────────
+ComfyUI/
+lora_training/sd-scripts/
+
+# ── 大文件：模型、权重 ──────────────────────────────
+*.safetensors
+*.ckpt
+*.pt
+*.gguf
+*.onnx
+
+# ── 训练产物与日志 ──────────────────────────────────
+lora_training/output/
+lora_training/output_v1/
+lora_training/logs/
+lora_training/*.log
+
+# ── 训练素材：照片和标注都不入库 ────────────────────
+# 是我儿子的私人照片，标注文字同样具体到衣着/场所，一并排除。
+# 标注格式与写法说明见 lora_training/RETRAIN.md。
+lora_training/raw/
+lora_training/dataset/
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.heic
+storybook/actors/
+
+# ── 生成的图片与网页产物 ────────────────────────────
+storybook/web*/images_b64.json
+storybook/web*/index.html
+storybook/pages/
+
+# ── 跑分中间产物 ────────────────────────────────────
+bench/mem_trace*.csv
+bench/log_*.txt
+bench/results.csv
+
+# ── 运行时 ──────────────────────────────────────────
+logs/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
