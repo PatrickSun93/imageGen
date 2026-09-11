@@ -141,12 +141,11 @@ flux_train_network.py
 
 1. `storybook/story_xxx.json` 写脚本（`scene` 用 Flux 的自然语言长句，每页标 `has_boy`）
 2. `venv\python.exe storybook\render_lora.py storybook\story_xxx.json` 出图（工作流 `workflows/flux_dev_lora.json`）
-3. 把 `storybook/out/<slug>_lora/` 里的 `page_01.png` … 打成 zip 交给 Mac，那边合成网页发布（见 `storybook/PIPELINE.md`）。
-   本地想先看效果：`venv\python.exe storybook\build_preview.py storybook\story_xxx.json out.html`
+3. 审图、压图、合成网页、发布，按 `storybook/HANDBOOK.md` 第四、五章做——整条流程现在都在这台机器上。
+   只想快速看一眼：`venv\python.exe storybook\build_preview.py storybook\story_xxx.json out.html`
 
 参考现有文件：
-- `storybook/MAKE_A_BOOK.md` — 绘本流程、story JSON 字段、画风配方
-- `storybook/PIPELINE.md` — Mac 与 N 卡机器的分工和交接格式
+- `storybook/HANDBOOK.md` — **绘本制作完全手册**（流程、画风配方、审图清单、失败模式）
 - `lora_training/RETRAIN.md` — 素材筛选标准（这套规则对 Flux 一样适用）
 - `lora_training/TRAIN_ON_NVIDIA_8GB.md` — SDXL 版的 8GB 训练参数（旧方案）
 

@@ -1,0 +1,94 @@
+{
+  "title": "晚上，地球转过去了",
+  "subtitle": "太阳没有走，是我们转过去了",
+  "slug": "night",
+  "workflow": "workflows/flux_dev_lora.json",
+  "character": "wearing light blue pajamas with a small star pattern, bare feet, short black hair",
+  "style": "children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light",
+  "neg_extra": "harsh light, daytime, bright saturated colors, scary darkness",
+  "keyword": "转",
+  "style_label": "夜色粉彩",
+  "colophon": {
+    "model": "FLUX.1-dev Q4_K_S GGUF",
+    "lora": "son_ohwx_flux_v1 (1000 steps, 18 photos)",
+    "strength": 1.3
+  },
+  "palette": {
+    "ink": "#1c2444",
+    "soft": "#5a6488",
+    "ground": "#e8eaf4",
+    "paper": "#fbfaff",
+    "accent": "#e6b45c",
+    "bark": "#8e94b0",
+    "line": "#d4d8e8",
+    "ink_d": "#e4e7f5",
+    "soft_d": "#9aa2c0",
+    "ground_d": "#0b0e1c",
+    "paper_d": "#151a30",
+    "accent_d": "#f5cd82",
+    "bark_d": "#8b92ae",
+    "line_d": "#2a3252"
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "天黑了，该睡觉了。\n我趴在窗台上问：\n「太阳去哪里了？」",
+      "scene": "A little boy in pajamas kneeling at a bedroom window at night looking out at a deep blue sky, a small bedside lamp glowing warm behind him, cozy quiet room.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "太阳没有去哪里。\n它一直在那儿，\n一直亮着，\n从来没有关过。",
+      "scene": "The sun shining steadily and calmly in deep space against a dark starry background, warm and quiet, gentle glow, not fiery or frightening.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "是我们——\n慢慢地，\n转过去了。",
+      "scene": "The Earth as a blue and green ball floating in dark space, one half lit by warm sunlight from the side, the other half in soft shadow, calm and gentle.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "我们住的地球，\n是一个很大很大的球。\n它一直在「转」。\n转一圈，就是一天。",
+      "scene": "The Earth turning slowly in dark space with a soft curved arrow drawn around it showing the spin, stars behind, calm night colours, picture book style.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "转到有太阳的那一面——\n就是白天。\n转到背着太阳的那一面——\n就是晚上。",
+      "scene": "One round Earth in space: on the sunlit side a small town in daylight, on the shadowed side a similar town at night with warm lit windows, the line between them soft and gradual.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "现在我们这边是晚上。\n地球的另外一边，\n有小朋友正在吃早饭呢。",
+      "scene": "Two children drawn small on the curve of the round Earth on opposite sides: one asleep in bed on the night side, one eating breakfast at a sunlit table on the day side, stars around the planet.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "你睡觉的时候，\n地球也在转。\n轻轻地，稳稳地，\n一点声音都没有。",
+      "scene": "A little boy asleep in bed seen from above, moonlight falling across the blanket, everything very still and quiet, deep blue and cream tones.",
+      "has_boy": true
+    },
+    {
+      "n": 8,
+      "zh": "转啊转，\n天边慢慢变亮了。\n那不是太阳升起来，\n是我们转回来了。",
+      "scene": "The curved horizon of the Earth seen from a little way above, the dark side slowly coming into light, a thin warm band of dawn along the curve, stars fading softly.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "早上，\n第一缕光照在窗帘上。\n我们又转到太阳这边了。",
+      "scene": "Warm morning light falling across a curtain in a child's bedroom, a little boy in pajamas just waking up, one bare foot out from under the blanket, soft and quiet.",
+      "has_boy": true
+    },
+    {
+      "n": 10,
+      "zh": "所以「晚安」的意思是：\n我们转过去一会儿，\n明天，\n再转回来。",
+      "scene": "A little boy in pajamas lying in bed with his eyes closed and a small smile, the window behind him showing a night sky with a few stars, very peaceful, warm lamp light.",
+      "has_boy": true
+    }
+  ]
+}

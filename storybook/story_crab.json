@@ -1,0 +1,94 @@
+{
+  "title": "寄居蟹换了新房子",
+  "subtitle": "长大了，就要换一个大一点的",
+  "slug": "crab",
+  "workflow": "workflows/flux_dev_lora.json",
+  "character": "wearing a pale yellow t-shirt and orange shorts, bare feet, short black hair",
+  "style": "children's picture book illustration, colored pencil drawing, warm sandy palette with soft coral accents, visible pencil strokes and gentle cross-hatching, soft daylight",
+  "neg_extra": "scary, pincers threatening, dark, realistic photo",
+  "keyword": "寄居蟹",
+  "style_label": "彩铅",
+  "colophon": {
+    "model": "FLUX.1-dev Q4_K_S GGUF",
+    "lora": "son_ohwx_flux_v1 (1000 steps, 18 photos)",
+    "strength": 1.3
+  },
+  "palette": {
+    "ink": "#4a3423",
+    "soft": "#86705a",
+    "ground": "#f3ece0",
+    "paper": "#fdfaf3",
+    "accent": "#c9603f",
+    "bark": "#a8917a",
+    "line": "#e2d6c4",
+    "ink_d": "#f0e4d4",
+    "soft_d": "#b39c85",
+    "ground_d": "#1a140e",
+    "paper_d": "#261e15",
+    "accent_d": "#e08363",
+    "bark_d": "#a08b74",
+    "line_d": "#3b2f22"
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "还是那片海滩。\n今天我敢走近一点了。\n我蹲下来找贝壳。",
+      "scene": "A little boy crouching on wet sand close to the water's edge, looking down at the sand for shells, a small bucket beside him, bright open beach, calm sea behind.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "我捡到一个漂亮的贝壳。\n咦——\n它在动！\n它长出脚来，跑起来了。",
+      "scene": "Close up of a little boy's open palm holding a pretty spiral shell, small crab legs poking out of the shell opening, the boy's surprised face behind slightly out of focus.",
+      "has_boy": true
+    },
+    {
+      "n": 3,
+      "zh": "爸爸说：\n「这不是贝壳。\n这是「寄居蟹」。\n它住在别人的空壳里。」",
+      "scene": "A father crouching beside a little boy on the sand, both looking closely at a hermit crab sitting in a spiral shell on the boy's palm, warm and gentle.",
+      "has_boy": true
+    },
+    {
+      "n": 4,
+      "zh": "寄居蟹自己没有硬壳。\n它前面是硬的，\n后面软软的、卷卷的。\n所以它要找一个空壳，\n钻进去，背着走。",
+      "scene": "A clear friendly picture book diagram of a hermit crab half out of its shell on plain sand, showing hard front claws and a soft curled belly, gentle and cute, not scary, plenty of empty space around it.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "我把它放回沙子上。\n它伸出脚，慢慢走了。\n壳在背上，一晃一晃。",
+      "scene": "A hermit crab walking away across wet sand carrying its spiral shell tilted on its back, small tracks left behind it, low close viewpoint.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "可是它一直在长大。\n壳不会跟着长大。\n有一天，\n壳就太小了。",
+      "scene": "A hermit crab whose body has grown too big for its shell, part of it squeezed out, sitting on the sand with a slightly worried face, gentle and sympathetic, soft light.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "于是它要搬家。\n它在沙滩上找啊找。\n试一个——太小。\n再试一个——太大。",
+      "scene": "A hermit crab beside three empty spiral shells of different sizes on the sand, reaching toward one to compare, busy and small, lots of sand around.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "找到合适的了！\n它飞快地钻出来，\n一下子钻进新壳。\n这一下，\n是它最紧张的时候。",
+      "scene": "A hermit crab in mid movement between an old shell and a new bigger shell on the sand, a quick hurried moment, soft motion lines, warm sand background.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "有时候，\n好几只寄居蟹排成一队。\n大的换了新壳，\n旧壳就留给小的。\n一个传一个，谁都有房子。",
+      "scene": "Several hermit crabs of different sizes lined up in a neat row on the sand from biggest to smallest, each next to a shell, shells being passed along the line, sunny and orderly, charming.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "我把捡到的空壳，\n又放回沙滩上。\n说不定有一只寄居蟹，\n正在到处找房子呢。",
+      "scene": "A little boy crouching on the sand carefully placing an empty spiral shell back down on the beach, sea in the background, warm afternoon light.",
+      "has_boy": true
+    }
+  ]
+}

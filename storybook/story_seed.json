@@ -1,0 +1,94 @@
+{
+  "title": "种子去旅行",
+  "subtitle": "它们不会走路，可是哪儿都去过",
+  "slug": "seed",
+  "workflow": "workflows/flux_dev_lora.json",
+  "character": "wearing a mustard yellow t-shirt and brown corduroy overalls, red sneakers, short black hair",
+  "style": "children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes, soft daylight",
+  "neg_extra": "photorealistic, glossy, harsh outlines",
+  "keyword": "种子",
+  "style_label": "剪纸拼贴",
+  "colophon": {
+    "model": "FLUX.1-dev Q4_K_S GGUF",
+    "lora": "son_ohwx_flux_v1 (1000 steps, 18 photos)",
+    "strength": 1.3
+  },
+  "palette": {
+    "ink": "#33401f",
+    "soft": "#6f7f4e",
+    "ground": "#eef0e2",
+    "paper": "#fcfcf4",
+    "accent": "#d08a2c",
+    "bark": "#97865e",
+    "line": "#dbe0c8",
+    "ink_d": "#e9eedb",
+    "soft_d": "#a8b585",
+    "ground_d": "#131709",
+    "paper_d": "#1e2412",
+    "accent_d": "#e8ab55",
+    "bark_d": "#9c8d67",
+    "line_d": "#333c1e"
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "大树站在那里，\n一辈子都不动。",
+      "scene": "A single very large old tree standing alone in a wide open field, deep roots, completely still, soft daylight, plenty of empty space around it, cut paper collage style.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "可是它的小树，\n长到了很远很远的地方。\n它们是怎么去的呢？",
+      "scene": "The same wide field with several small young trees growing far away from the big old tree, showing the long distance between them, layered paper shapes.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "蒲公英的「种子」\n有一把小伞。\n风一吹——\n呼，飞走了。",
+      "scene": "A dandelion seed head with several seeds lifting off in the wind, each seed carrying a small white parachute, floating across a pale sky, cut paper collage.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "枫树的种子\n有两片翅膀。\n掉下来的时候，\n转啊转，\n像小螺旋桨。",
+      "scene": "Two winged maple seeds spinning down through the air like little propellers, motion shown with soft curved paper lines, warm autumn colours.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "苍耳的种子\n全身都是小钩子。\n它钩住小狗的毛，\n搭了一段顺风车。",
+      "scene": "Close up of a dog's furry leg with several small hooked burr seeds stuck in the hair, the dog walking through tall grass, collage textures.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "还有的种子藏在果子里。\n小鸟把果子吃掉，\n飞到很远的地方，\n种子就跟着搬了家。",
+      "scene": "A small bird holding a red berry in its beak on a branch, and further away in the distance the same bird flying over a wide field, layered paper landscape.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "椰子最厉害。\n它掉进海里，\n漂啊漂，漂过一整片大海，\n在另一个岛上发芽。",
+      "scene": "A coconut floating on the surface of a calm sea, drifting along, a small green island in the distance, flat collage waves.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "有的种子会自己弹。\n果荚晒干了，\n啪的一声裂开，\n把种子弹得远远的。",
+      "scene": "A dry seed pod splitting open with a snap, small seeds flying outward in several directions, short motion lines, warm paper textures.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "种子不会走路。\n可是风会带它，\n水会送它，\n小鸟和小狗\n会捎上它。",
+      "scene": "One small seed at the centre of the picture with the wind, a stream of water, a bird and a dog arranged gently around it in a ring, all helping it travel, symmetrical collage composition.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "我口袋里有一颗种子，\n是刚才在路上捡的。\n我把它种在院子里。\n这一次——\n是我帮它。",
+      "scene": "A little boy crouching in a garden pressing a single seed into the soil with one finger, a small watering can beside him, warm afternoon light, cut paper collage.",
+      "has_boy": true
+    }
+  ]
+}

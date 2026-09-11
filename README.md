@@ -33,13 +33,14 @@ venv\python.exe storybook\build_preview.py storybook\story_xxx.json out.html   :
 sh lora_training/train_flux_sdscripts.sh                                       :: 训练 Flux 人物 LoRA
 ```
 
-配方和 8GB 的注意事项见 `FLUX_ON_8GB.md`，分工和交接格式见 `storybook/PIPELINE.md`。
+配方和 8GB 的注意事项见 `FLUX_ON_8GB.md`，整条出书流程见 `storybook/HANDBOOK.md`。
 
 ## 关键文档（按需要读）
 
 - `bench/FINDINGS.md` —— 为什么慢、能不能更快。结论：不是配置问题，模型已跑到 M4 硬件峰值的 73–79%，唯一的提速手段是减少计算量（DMD2 / Turbo，CFG=1）。
-- `storybook/MAKE_A_BOOK.md` —— 做一本书的完整流程、画风配方、选题标准、以及踩过的死路。
-- `storybook/PIPELINE.md` —— Mac 与 NVIDIA 机器的分工。
+- **`storybook/HANDBOOK.md` —— 绘本制作完全手册。**从故事梗概到发布的整条流程：
+  环境搭建、脚本字段、8 种验证过的画风配方、审图清单、13 种常见失败模式及改法。
+  换机器、接手这个项目，看这一份就够。
 - `lora_training/RETRAIN.md` —— 重新训练角色 LoRA 的流程与素材标准。
 - `FLUX_ON_8GB.md` / `WINDOWS_SETUP_PROMPT.md` / `lora_training/TRAIN_ON_NVIDIA_8GB.md` —— 移植到 Windows/NVIDIA 的说明。
 
