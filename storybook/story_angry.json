@@ -52,61 +52,61 @@
   "pages": [
     {
       "n": 1,
-      "zh": "我用积木搭了一座城堡，\n高高的，\n比我的头还要高！",
+      "zh": "下午，我用积木搭了一座城堡。\n一块，两块，三块……我搭得小心又小心，\n城堡有高高的尖顶，还有一扇小门，\n比我的头还要高！\n我看着它，心里美滋滋的。",
       "scene": "The little boy kneels on a colorful rug next to a tall wooden block castle that is taller than his head, looking proud.",
       "has_boy": true
     },
     {
       "n": 2,
-      "zh": "表弟跑过来，\n一不小心——\n哗啦！\n城堡倒了。",
+      "zh": "这时候，小表弟跑了过来，\n他跑得太快，一不小心——\n哗啦！\n城堡一下子倒了，积木滚得满地都是。\n表弟自己也吓了一跳。",
       "scene": "A younger toddler cousin with curly brown hair in a red t-shirt runs into a tall tower of wooden blocks by accident, and the blocks tumble through the air and scatter across the colorful rug around him, his mouth open in surprise.",
       "has_boy": false
     },
     {
       "n": 3,
-      "zh": "我的脸一下子变得好热，\n拳头攥得紧紧的。\n心里像有一座小火山，\n快要喷发了！",
+      "zh": "我的脸一下子变得好热好热，\n拳头攥得紧紧的，眼睛瞪得圆圆的。\n我的心里，好像有一座小火山，\n咕嘟咕嘟，冒着烟，\n马上就要喷发了！",
       "scene": "The little boy stands beside the fallen blocks with a red angry face and tightly clenched fists, and a small red cartoon volcano puffing smoke is drawn beside him like a picture of his feelings.",
       "has_boy": true
     },
     {
       "n": 4,
-      "zh": "我好想推他，好想大声喊。\n可是，推人会让别人受伤。\n我停住了。",
+      "zh": "我好想推他一下，好想大声喊。\n可是，推人会让别人受伤，\n大喊大叫也不能把城堡变回来。\n我闭上嘴巴，把手放了下来。\n我停住了。",
       "scene": "The little boy stands with his arms stiff at his sides and his fists clenched, stopping himself, lips pressed together, eyes squeezed shut.",
       "has_boy": true
     },
     {
       "n": 5,
-      "zh": "我想起了妈妈教我的魔法——\n「深呼吸」。\n像闻一朵花一样，\n慢慢地吸气……",
+      "zh": "我想起了妈妈教我的小魔法——\n「深呼吸」。\n我拿起花瓶里的一朵小花，放在鼻子前，\n闭上眼睛，像闻花香一样，\n慢慢地、慢慢地吸一口气……",
       "scene": "The little boy sits on the colorful rug next to a small vase of flowers. He holds one small pink flower up close to his nose with one hand, his eyes closed, slowly breathing in its smell, his face calm and softening.",
       "has_boy": true
     },
     {
       "n": 6,
-      "zh": "再像吹蜡烛一样，\n慢慢地吐气……\n呼——",
+      "zh": "再鼓起腮帮子，\n像吹生日蛋糕上的蜡烛一样，\n慢慢地把气吐出来——呼……\n一次，两次，三次，\n我的脸，好像没有那么热了。",
       "scene": "The little boy puffs out his cheeks and blows out gently as if blowing out birthday candles, calm and focused.",
       "has_boy": true
     },
     {
       "n": 7,
-      "zh": "一、二、三、四、五。\n心里的小火山，\n慢慢地变小了。",
+      "zh": "我又掰着手指头数：一、二、三、四、五。\n数着数着，\n心里的小火山慢慢变小了，\n不冒烟了，也不咕嘟咕嘟响了。\n我又可以好好说话了。",
       "scene": "The little boy sits on the rug counting on his fingers with a calm face, and the little cartoon volcano beside him has become tiny and quiet.",
       "has_boy": true
     },
     {
       "n": 8,
-      "zh": "我对表弟说：\n「我很生气，\n因为你把我的城堡弄倒了。」",
+      "zh": "我坐下来，看着表弟，慢慢地说：\n「我很生气，\n因为你把我辛辛苦苦搭的城堡弄倒了。」\n我没有推他，也没有喊，\n只是把心里的话，告诉了他。",
       "scene": "The little boy sits facing his younger curly-haired cousin on the rug and talks to him calmly, the fallen blocks between them.",
       "has_boy": true
     },
     {
       "n": 9,
-      "zh": "表弟小声地说：\n「对不起。」\n他把一块积木递给我。",
+      "zh": "表弟低着头，小声地说：\n「哥哥，对不起。」\n他捡起一块积木，用两只手递给我，\n眼睛亮亮地看着我，\n好像在问：我们还能一起玩吗？",
       "scene": "The younger toddler cousin with curly brown hair holds out a wooden block with both hands, looking sorry and hopeful, on a colorful rug.",
       "has_boy": false
     },
     {
       "n": 10,
-      "zh": "我们一起重新搭城堡。\n这一次，比上次还要高！\n生气的时候，\n我知道该怎么办了。",
+      "zh": "我们一起重新搭城堡，\n你放一块，我放一块，\n这一次，比上次还要高，还要漂亮！\n生气的时候，我知道该怎么办了：\n停一停，深呼吸，数到五，再说出来。",
       "scene": "The little boy and his younger curly-haired cousin build a new tall wooden block castle together on the rug, both happy and proud.",
       "has_boy": true
     }

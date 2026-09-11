@@ -52,61 +52,61 @@
   "pages": [
     {
       "n": 1,
-      "zh": "我家旁边围起了一圈高高的栏杆。\n里面轰隆隆，轰隆隆，好热闹。\n工地很危险，不能进去，\n我就站在栏杆外面看。",
+      "zh": "我家旁边，围起了一圈高高的栏杆。\n栏杆里面，轰隆隆，轰隆隆，好热闹。\n妈妈说，那是工地，很危险，小朋友不能进去。\n我就站在栏杆外面，从缝里往里看，\n好多大机器正在忙着呢！",
       "scene": "The little boy stands outside a tall construction site fence, looking through a gap in the fence at big yellow machines working on the dirt inside, safe on the sidewalk.",
       "has_boy": true
     },
     {
       "n": 2,
-      "zh": "大「挖掘机」伸出长长的手臂，\n大铲斗往下一挖，\n就是一大块土。",
+      "zh": "最显眼的是大「挖掘机」，\n它伸出长长的手臂，手臂的尽头是一只大铲斗，\n铲斗上还有一排尖尖的牙齿。\n它往下一挖，就是一大块土。\n司机叔叔坐在驾驶室里，轻轻一拉，手臂就动了。",
       "scene": "A big simple cartoon excavator with chunky rounded shapes, a grown-up driver with a bushy mustache in a yellow hard hat sitting inside its cab, digs into a pile of brown earth with its long arm, its toothed bucket full of dirt, a construction site with a fence and a crane in the distance.",
       "has_boy": false
     },
     {
       "n": 3,
-      "zh": "自卸车把土装走，\n开到另一边，车斗一抬——\n哗！\n土就倒下来了。",
+      "zh": "挖出来的土，要运到别的地方去。\n大大的自卸车开过来，\n挖掘机把土一斗一斗地倒进车斗里。\n自卸车开到另一边，车斗慢慢抬起来——\n哗！土就全倒下来了。",
       "scene": "A big simple cartoon dump truck with chunky rounded shapes, a grown-up driver with a bushy mustache in a yellow hard hat sitting inside its cab, tips up its raised orange bed, and a pile of brown dirt slides out onto the ground at the construction site.",
       "has_boy": false
     },
     {
       "n": 4,
-      "zh": "推土机往前推呀推，\n把高高低低的土，\n推得平平的。",
+      "zh": "推土机来了，\n它的前面有一块又宽又平的大铲子。\n它往前推呀推，\n把高高低低的土堆，推得平平整整，\n像在给大地铺一张新床单。",
       "scene": "A simple cartoon bulldozer with chunky rounded shapes, a grown-up driver with a bushy mustache in a yellow hard hat sitting inside its cab, pushes a mound of dirt forward with its wide flat blade, leaving flat smooth ground behind it.",
       "has_boy": false
     },
     {
       "n": 5,
-      "zh": "水泥搅拌车的大肚子，\n一直转呀转。\n里面的水泥一停下来，\n就会变硬啦。",
+      "zh": "水泥搅拌车的大肚子，一直在转呀转。\n里面装着灰灰的、湿湿的水泥，\n要是停下来不转，水泥就会慢慢变硬。\n到了地方，水泥顺着长长的滑槽流出来，\n以后会变成结实的房子和路。",
       "scene": "A simple cartoon cement mixer truck with chunky rounded shapes, a grown-up driver with a bushy mustache in a yellow hard hat sitting inside its cab, its big striped drum turning, pours grey wet concrete down a chute at the construction site.",
       "has_boy": false
     },
     {
       "n": 6,
-      "zh": "高高的塔吊站在工地中间，\n它把长长的钢筋，\n一下子吊到了半空中。",
+      "zh": "工地中间，站着高高的塔吊，\n它比楼房还要高，像一个长胳膊的巨人。\n操作员叔叔坐在高高的小房子里，\n塔吊把一捆长长的钢筋吊起来，\n一下子送到了半空中。",
       "scene": "A tall simple cartoon tower crane with chunky shapes stands in the middle of the construction site, a grown-up operator with a bushy mustache in a yellow hard hat in its small cab high up, lifting a bundle of long steel beams into the blue sky on its cable.",
       "has_boy": false
     },
     {
       "n": 7,
-      "zh": "工人叔叔都戴着黄色的安全帽。\n他们看着图纸，\n告诉每一辆车该做什么。",
+      "zh": "工人叔叔都戴着黄色的安全帽，穿着橙色的背心，\n这样大家远远就能看见他们。\n他们围在一起看图纸，\n一边看，一边商量，\n告诉每一辆车该做什么。",
       "scene": "Construction workers in yellow hard hats and orange vests stand together at the site, one of them pointing at a big rolled-out plan, simple cartoon machines behind them.",
       "has_boy": false
     },
     {
       "n": 8,
-      "zh": "压路机慢慢地压过去，\n新铺的路，\n变得又平又光。",
+      "zh": "最后，压路机慢慢地开过来，\n它有一个又大又重的圆滚轮，\n轰隆隆地压过新铺的路面，\n把路压得又平又光，\n走在上面，一点也不颠。",
       "scene": "A simple cartoon road roller with chunky rounded shapes, a grown-up driver with a bushy mustache in a yellow hard hat sitting inside its cab, slowly rolls its big smooth drum over a freshly paved dark path, making it flat and shiny.",
       "has_boy": false
     },
     {
       "n": 9,
-      "zh": "过了好多好多天，\n栏杆拆掉了——\n原来他们造的是一个新的游乐场！",
+      "zh": "过了好多好多天，高高的栏杆终于拆掉了。\n我跑过去一看——\n原来他们造的是一个新的游乐场！\n有滑梯，有秋千，还有一个大大的沙坑。\n我一边跑一边笑，第一个冲了进去。",
       "scene": "The fence is gone and a brand new playground stands where the construction site was, with a slide, swings and a sandbox. The little boy runs toward it happily.",
       "has_boy": true
     },
     {
       "n": 10,
-      "zh": "我在沙坑里，\n开着我的小挖掘机。\n挖一挖，推一推，\n我也在造房子呢！",
+      "zh": "我坐在沙坑里，开着我的小挖掘机，\n挖一挖，推一推，堆起一座小土山，\n我也在造房子呢。\n长大以后，我也想开真的大机器，\n给小朋友们造更多好玩的地方！",
       "scene": "The little boy kneels in a sandbox playing with a toy yellow excavator, digging a small hole and building a little mound of sand, sunny playground around him.",
       "has_boy": true
     }
