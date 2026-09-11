@@ -2,6 +2,7 @@
   "title": "种子去旅行",
   "subtitle": "它们不会走路，可是哪儿都去过",
   "slug": "seed",
+  "seed_base": 8000,
   "workflow": "workflows/flux_dev_lora.json",
   "character": "wearing a mustard yellow t-shirt and brown corduroy overalls, red sneakers, short black hair",
   "style": "children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes, soft daylight",

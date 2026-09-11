@@ -17,7 +17,7 @@
         ↓
 ③ 试 1 页         换了画风必做，确认风格对了再跑全本
         ↓
-④ 跑全本          10 张 1024×1024 PNG，约 5–8 分钟
+④ 跑全本          10 张 1024×1024 PNG，约 16 分钟（8GB 笔记本实测）
         ↓
 ⑤ 审图            ★ 最容易被跳过、但最该做的一步，见第四章
         ↓
@@ -28,8 +28,8 @@
 ⑧ 发布            Artifact 拿链接，或直接本地打开
 ```
 
-一本书的实际耗时：脚本 10 分钟，出图 8 分钟，审图 10 分钟，
-重跑 5 分钟，合成 2 分钟。**约 35 分钟**，瓶颈在审图和重跑，不在出图。
+一本书的实际耗时：脚本 10 分钟，出图约 16 分钟（每页 80–120 秒，挂 LoRA 的页慢一些），
+审图 10 分钟，重跑 5 分钟，合成 2 分钟。**约 45 分钟**，出图占三分之一，其余是审图和重跑。
 
 ---
 
@@ -72,7 +72,8 @@ ComfyUI 加 `--lowvram` → 降到 768×768。
 
 `son_ohwx_flux_v1`，触发词 `ohwx boy`，出图强度 **1.3**。
 
-要重训见 `..\FLUX_ON_8GB.md` 第五章（用 ai-toolkit）和
+要重训见 `..\FLUX_ON_8GB.md` 第五章（用 kohya sd-scripts：`lora_training\train_flux_sdscripts.sh`，
+1000 步约 1h20m；ai-toolkit 在 8GB 上约 30 秒/步，已放弃）和
 `..\lora_training\RETRAIN.md`（素材筛选标准）。
 **SDXL 的 LoRA 在 Flux 上用不了**，架构不同，必须用同一批照片重训。
 
@@ -81,10 +82,11 @@ ComfyUI 加 `--lowvram` → 降到 768×768。
 
 ### 1.4 合成端
 
-只要 Python + Pillow，直接借 ComfyUI 的 venv：
+只要 Python + Pillow，用仓库根目录的 venv（这台机器的 venv 是 conda 结构，
+`python.exe` 在 `venv\` 根目录，不在 `Scripts\` 里）。下面所有命令都在仓库根目录执行：
 
 ```bat
-ComfyUI\venv\Scripts\python -c "import PIL; print(PIL.__version__)"
+venv\python.exe -c "import PIL; print(PIL.__version__)"
 ```
 
 ---
@@ -115,6 +117,7 @@ ComfyUI\venv\Scripts\python -c "import PIL; print(PIL.__version__)"
 | `character` | **全书统一的穿着**。不写的话 LoRA 每页随机抽一件衣服，翻页时绿T黄衫轮着来 |
 | `style` | **全书统一的画风**，见 2.3 的配方表 |
 | `neg_extra` | 这本额外要挡的东西，追加在通用负面词后面 |
+| `seed_base` | 书号 ×1000，每页 seed = `seed_base` + 页码（见 3.2）。不写就按 2000 算，会和蚂蚁那本撞号 |
 | `keyword` | 正文里写成 `「潮池」` 的词会在网页上高亮，一本书用一个 |
 | `palette` | 网页配色，14 个色值（7 个浅色 + 7 个 `_d` 深色） |
 | `zh` | 念给孩子听的，`\n` 换行 |
@@ -219,8 +222,10 @@ CFG 固定 1.0，强度改用 FluxGuidance；步数 20；提示词吃自然语�
 
 ### 3.3 负面提示词
 
-Flux dev 是蒸馏模型，**不跑负面分支，负面词作用有限**，但还是要写——
-实测能减少假签名和角色表的出现频率。
+Flux dev 是蒸馏模型，CFG 固定 1.0。**CFG 为 1 时 ComfyUI 根本不计算负面分支，负面词完全不起作用**
+——2026-09-10 那批五本书写了 `signature`，crab 第 2 页、night 第 2/5 页照样出了签名。
+负面词只作记录；要改画面，写正面描述（「画面里有什么」），见 4.3。
+真要负面词生效，只能换能跑真 CFG 的模型（例如 Qwen-Image 的完整模式，CFG 4）。
 
 通用：
 ```
@@ -239,7 +244,15 @@ signature, blurry, deformed hands, extra fingers, photorealistic face
 
 ### 3.5 输出
 
-`page_01.png` … `page_10.png`，1024×1024，放进 `storybook\<slug>_win\`。
+`page_01.png` … `page_10.png`，1024×1024，由 `render_lora.py` 放进 `storybook\out\<slug>_lora\`：
+
+```bat
+venv\python.exe storybook\render_lora.py storybook\story_sea.json         :: 全本
+venv\python.exe storybook\render_lora.py storybook\story_sea.json 1 4     :: 只重跑这几页
+```
+
+需要 ComfyUI 先跑在 `127.0.0.1:8188`。页里写了 `seed` 就用页里的（重跑 +100 时这样写），
+否则用 `seed_base` + 页码。长时间出图要用独立进程启动，否则内存吃紧时会被系统停掉。
 
 ---
 
@@ -252,7 +265,7 @@ signature, blurry, deformed hands, extra fingers, photorealistic face
 ### 4.1 做一张联系表一次看全
 
 ```bat
-ComfyUI\venv\Scripts\python storybook\contact_sheet.py sea_win
+venv\python.exe storybook\contact_sheet.py storybook\out\sea_lora
 ```
 
 ### 4.2 逐页对着旁白核六件事
@@ -267,6 +280,8 @@ ComfyUI\venv\Scripts\python storybook\contact_sheet.py sea_win
 - [ ] **概念画对了** —— 科普页最容易出错，见下表
 
 ### 4.3 常见失败模式（都真实发生过）
+
+表里「负面加 …」对 Flux（CFG 1.0）是无效的，只作记录（见 3.3）；真正起作用的是正面描述那一半。
 
 | 现象 | 原因 | 怎么改 |
 |---|---|---|
@@ -298,7 +313,7 @@ ComfyUI\venv\Scripts\python storybook\contact_sheet.py sea_win
 图片要内嵌进 HTML（这样是单文件，发给谁都能看）：
 
 ```bat
-ComfyUI\venv\Scripts\python storybook\pack_images.py sea_win web_sea
+venv\python.exe storybook\pack_images.py storybook\out\sea_lora storybook\out\web_sea
 ```
 
 10 张 1024×1024 压成 JPEG q82 约 1.4 MB，base64 后约 1.9 MB。
@@ -307,7 +322,7 @@ ComfyUI\venv\Scripts\python storybook\pack_images.py sea_win web_sea
 ### 5.2 生成 HTML
 
 ```bat
-ComfyUI\venv\Scripts\python storybook\build_web.py story_sea.json web_sea > web_sea\index.html
+venv\python.exe storybook\build_web.py storybook\story_sea.json storybook\out\web_sea > storybook\out\web_sea\index.html
 ```
 
 出来的是自包含单文件：内嵌全部图片、Noto Serif SC 字体、
@@ -360,13 +375,17 @@ lora_training/
 ## 八、命令速查
 
 ```bat
+:: 出图（全本 / 只重跑几页）
+venv\python.exe storybook\render_lora.py storybook\story_sea.json
+venv\python.exe storybook\render_lora.py storybook\story_sea.json 1 4
+
 :: 看一本书的全部页
-ComfyUI\venv\Scripts\python storybook\contact_sheet.py sea_win
+venv\python.exe storybook\contact_sheet.py storybook\out\sea_lora
 
 :: 压图 + 出网页
-ComfyUI\venv\Scripts\python storybook\pack_images.py sea_win web_sea
-ComfyUI\venv\Scripts\python storybook\build_web.py story_sea.json web_sea > web_sea\index.html
+venv\python.exe storybook\pack_images.py storybook\out\sea_lora storybook\out\web_sea
+venv\python.exe storybook\build_web.py storybook\story_sea.json storybook\out\web_sea > storybook\out\web_sea\index.html
 
 :: 只改了文字，重出网页
-ComfyUI\venv\Scripts\python storybook\build_web.py story_sea.json web_sea > web_sea\index.html
+venv\python.exe storybook\build_web.py storybook\story_sea.json storybook\out\web_sea > storybook\out\web_sea\index.html
 ```

@@ -2,6 +2,7 @@
   "title": "晚上，地球转过去了",
   "subtitle": "太阳没有走，是我们转过去了",
   "slug": "night",
+  "seed_base": 6000,
   "workflow": "workflows/flux_dev_lora.json",
   "character": "wearing light blue pajamas with a small star pattern, bare feet, short black hair",
   "style": "children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light",

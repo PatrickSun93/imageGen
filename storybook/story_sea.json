@@ -2,6 +2,7 @@
   "title": "海只来一点点",
   "subtitle": "浪来了，又回去了",
   "slug": "sea",
+  "seed_base": 4000,
   "workflow": "workflows/flux_dev_lora.json",
   "character": "wearing a pale yellow t-shirt and orange shorts, bare feet, short black hair",
   "style": "children's picture book illustration, gentle watercolor painting, soft sea green and warm sand palette, loose wet washes, lots of white paper showing, calm soft daylight",

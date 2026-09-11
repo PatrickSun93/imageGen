@@ -4,8 +4,9 @@
 """
 import json, sys
 
+sys.stdout.reconfigure(encoding="utf-8")   # Windows would write the redirected HTML as cp1252
 story_path, webdir = sys.argv[1], sys.argv[2]
-story = json.load(open(story_path))
+story = json.load(open(story_path, encoding="utf-8"))
 imgs  = json.load(open(f"{webdir}/images_b64.json"))
 PAL   = story.get("palette", {})
 
@@ -54,6 +55,7 @@ h1 {{ margin:0; font-size:clamp(22px,4.5vw,32px); font-weight:700; letter-spacin
 .spread {{ display:grid; grid-template-columns:1fr; background:var(--paper);
   border:1px solid var(--line); border-radius:3px; overflow:hidden; box-shadow:0 12px 34px var(--shadow); }}
 @media (min-width:820px) {{ .spread {{ grid-template-columns:1.05fr .95fr; }} }}
+.spread[hidden] {{ display:none; }}   /* display:grid above would otherwise beat the hidden attribute when opened locally */
 .plate {{ margin:0; background:var(--paper); }}
 .plate img {{ display:block; width:100%; height:auto; }}
 .prose {{ padding:clamp(24px,4vw,52px); display:flex; flex-direction:column;

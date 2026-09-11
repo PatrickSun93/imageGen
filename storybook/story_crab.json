@@ -2,6 +2,7 @@
   "title": "寄居蟹换了新房子",
   "subtitle": "长大了，就要换一个大一点的",
   "slug": "crab",
+  "seed_base": 5000,
   "workflow": "workflows/flux_dev_lora.json",
   "character": "wearing a pale yellow t-shirt and orange shorts, bare feet, short black hair",
   "style": "children's picture book illustration, colored pencil drawing, warm sandy palette with soft coral accents, visible pencil strokes and gentle cross-hatching, soft daylight",

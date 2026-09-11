@@ -2,6 +2,7 @@
   "title": "我住在一颗星星旁边",
   "subtitle": "太阳也是一颗星星",
   "slug": "star",
+  "seed_base": 7000,
   "workflow": "workflows/flux_dev_lora.json",
   "character": "wearing a dark blue long sleeve shirt and grey trousers, short black hair",
   "style": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain",
