@@ -4,7 +4,7 @@
   "slug": "quake",
   "seed_base": 17000,
   "character": "wearing a blue hoodie, grey trousers and white sneakers, short black hair",
-  "style": "children's picture book illustration, soft charcoal drawing with warm watercolor washes, grainy black lines, cream paper, calm reassuring colors",
+  "style": "children's picture book illustration, soft charcoal drawing with warm watercolor washes, grainy black lines, cream paper, calm reassuring colors, packets, labels and signs without any writing on them",
   "style_label": "炭笔淡彩",
   "keyword": "趴下、掩护、抓牢",
   "palette": {
@@ -118,13 +118,13 @@
     {
       "n": 15,
       "zh": "门口还放着一个应急包。\n里面有水、饼干、手电筒、\n急救包、一件小外套，\n还有一条毛巾。\n这些东西平时不动，只在地震后用。",
-      "scene": "Top-down view of an open orange emergency backpack on the floor with its contents laid out neatly beside it: bottles of water, packets of biscuits, a flashlight, a first aid kit, a small jacket and a towel.",
+      "scene": "Top-down view of an open orange emergency backpack on the floor with its contents laid out neatly beside it: bottles of water, plain unlabelled biscuit packets, a flashlight, a first aid kit with a white cross, a small jacket and a rolled towel. No writing or letters anywhere.",
       "has_boy": false
     },
     {
       "n": 16,
       "zh": "包里还有一张小卡片。\n上面写着爸爸妈妈的名字和电话，\n还有我们约好见面的地方——\n院子里那棵大树下。\n走散了，就到树下等。",
-      "scene": "A small handwritten card lying on the floor next to the emergency backpack, and beside it a simple drawing of a big tree in a yard with a circle around it, warm light, no people.",
+      "scene": "A small card with a few simple handwritten wavy lines on it, no readable letters, lying on the floor next to the emergency backpack, and beside it a simple drawing of a big tree in a yard with a circle around it, warm light, no people.",
       "has_boy": false
     },
     {
