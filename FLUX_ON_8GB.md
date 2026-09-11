@@ -157,7 +157,7 @@ sample:
 3. `build_web.py` 合成网页，完全不用动
 
 参考现有文件：
-- `storybook/MAKE_A_BOOK.md` — 绘本流程和画风配方
+- `storybook/HANDBOOK.md` — **绘本制作完全手册**（流程、画风配方、审图清单、失败模式）
 - `lora_training/RETRAIN.md` — 素材筛选标准（这套规则对 Flux 一样适用）
 - `lora_training/TRAIN_ON_NVIDIA_8GB.md` — SDXL 版的 8GB 训练参数
 
