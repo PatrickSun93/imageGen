@@ -344,6 +344,8 @@ venv\python.exe storybook\contact_sheet.py storybook\out\sea_lora
 | 车里的司机、路上的工人都画成小孩 | 卡通画法下人物都偏幼；「一群人」尤其明显 | 车窗写 `dark tinted windows`（看不见车里就不会画错）；人群写 `tall grown-up construction workers, men with bushy mustaches and beards` |
 | 画面里凭空多出一排带脸的小车 | scene 里写了泛泛的 `simple cartoon machines behind them` | 背景里的东西写具体：`a yellow excavator and a dump truck with dark tinted cab windows`，或者干脆写空地、砖堆 |
 | 整页基本对，只多了一个小东西（多一对触角、车头一张小笑脸） | 模型随手加的细节 | 别整页重画：`storybook/fix_edit.py <图> "Remove the ..."` 用 Edit 模型只改那一处，约 3 分钟（毛毛虫 p5 实测） |
+| 两个大人合成了一个人（医生穿着妈妈的开衫） | 同一页两个配角都没写清长相，模型合并了 | 让两人一眼能分开：性别、年纪、发型、衣服都写不同，并写 `two different grown-ups beside him: on one side …, on the other side …`（身体 p6 实测） |
+| 妈妈、爸爸每页换一身衣服 | 只有第一页写了衣着 | 大人出场的**每一页**都写同一句衣着，例如 `his mother, a grown adult woman with short black hair in a blue coat` |
 | 红绿灯红灯、绿灯同时亮 | 模型对红绿灯的先验是三灯都亮 | 按位置写 `its bottom green light glowing and the red and yellow lights above it dark`；还有残留就本地把红灯压暗（红色像素乘 0.4），不必重画 |
 | 「中午影子最短」画成长影子（Qwen） | `the sun high overhead` 不够具体 | 按位置写：`a bright round sun sits at the very top center of the picture, straight above his head`，影子写成 `a tiny dark oval directly beneath his sneakers, about the size of his feet` |
 
