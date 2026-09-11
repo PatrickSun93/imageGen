@@ -7,6 +7,7 @@
 """
 import sys, glob, os
 from PIL import Image, ImageDraw
+sys.stdout.reconfigure(encoding="utf-8")
 
 src = sys.argv[1].rstrip("/\\")
 out = sys.argv[2] if len(sys.argv) > 2 else f"{os.path.basename(src)}_sheet.png"
