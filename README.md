@@ -44,6 +44,28 @@ sh lora_training/train_flux_sdscripts.sh                                       :
 - `lora_training/RETRAIN.md` —— 重新训练角色 LoRA 的流程与素材标准。
 - `FLUX_ON_8GB.md` / `WINDOWS_SETUP_PROMPT.md` / `lora_training/TRAIN_ON_NVIDIA_8GB.md` —— 移植到 Windows/NVIDIA 的说明。
 
+## 模型（不在版本库里，需自行下载）
+
+装在 `ComfyUI/models/` 下，当前这台 Mac 上保留的：
+
+| 模型 | 文件 | 大小 | 来源 |
+|---|---|---|---|
+| Pony Diffusion V6 XL | `checkpoints/ponyDiffusionV6XL_v6.safetensors` | 6 938 041 050 B | Civitai `api/download/models/290640?fileId=228616`（**匿名可下**，307 跳 R2；遇 401 用 `?token=<CIVITAI_API_KEY>`） |
+| Anima Aesthetic | `diffusion_models/anima-aesthetic-v1.0.safetensors` | 3.9 G | HuggingFace |
+| Anima Turbo | `diffusion_models/anima-turbo-v1.0.safetensors` | 3.9 G | HuggingFace |
+| Anima 的 text encoder | `text_encoders/qwen_3_06b_base.safetensors` | 1.1 G | 同上 |
+| Anima 的 VAE | `vae/qwen_image_vae.safetensors` | 242 M | 同上 |
+
+**Anima 不自带 text encoder 和 VAE**，那两个 qwen 文件看着像无关模型，实际是必需件，
+删了四个 anima 工作流全跑不起来。
+
+已删除（SDXL 时代的东西，绘本已转 Flux）：`sd_xl_base_1.0`、`dmd2_sdxl_4step_lora`、
+`ultralytics/bbox`。因此 `workflows/son_*.json` 那 9 个工作流现在缺文件跑不了，
+保留作记录。Pony V7 也没装（单文件 checkpoint 只含 transformer，
+还要单独下 Pile-T5-XL 和 VAE，见 `WINDOWS_SETUP_PROMPT.md`）。
+
+下载用 `aria2c -c -x8 -s8`，断点续传，下完**务必核对字节数**。
+
 ## 不在版本库里的东西
 
 `ComfyUI/`（含 venv 与模型，约 19G）、`lora_training/sd-scripts/`（上游仓库）、
