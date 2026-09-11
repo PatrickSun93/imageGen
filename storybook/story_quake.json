@@ -1,0 +1,143 @@
+{
+  "title": "地震来了怎么办",
+  "subtitle": "趴下、掩护、抓牢",
+  "slug": "quake",
+  "seed_base": 17000,
+  "character": "wearing a blue hoodie, grey trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration, soft charcoal drawing with warm watercolor washes, grainy black lines, cream paper, calm reassuring colors",
+  "style_label": "炭笔淡彩",
+  "keyword": "趴下、掩护、抓牢",
+  "palette": {
+    "ink": "#2b2724",
+    "soft": "#6d6459",
+    "ground": "#f2efe8",
+    "paper": "#fbf9f4",
+    "accent": "#c2643c",
+    "bark": "#8a7f70",
+    "line": "#ded8cc",
+    "ink_d": "#ece7de",
+    "soft_d": "#a89d8e",
+    "ground_d": "#15130f",
+    "paper_d": "#1f1c17",
+    "accent_d": "#e08a5f",
+    "bark_d": "#9c9184",
+    "line_d": "#38332b"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我家在加州。\n这里的天气很好，院子里有一棵大树。\n不过住在这里的人都知道，\n地面偶尔会轻轻摇一下。\n爸爸说，那叫地震。",
+      "scene": "A sunny California street with low houses, palm trees and a big tree in the front yard. The little boy stands in the yard looking up at the sky, calm and curious.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "地震是从哪里来的呢？\n爸爸说，我们脚下的大地，\n不是一整块，\n而是由好多块巨大的石板拼起来的。\n它们会非常非常慢地挤来挤去。",
+      "scene": "A simple clear cross-section drawing of the ground: several huge flat rock plates fitted together under the grass and houses, with small arrows drawn on the plates showing them pressing slowly against each other.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "爸爸拿两块饼干给我看。\n他把两块饼干的边对在一起，\n轻轻往中间一挤——\n饼干先是卡住不动，\n然后咔的一声，错开了。",
+      "scene": "Close view of two grown-up hands on a wooden table pressing two square biscuits together edge to edge, one biscuit suddenly slipping past the other with crumbs jumping up.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "地下的石板也是这样。\n它们卡住、卡住，\n忽然一滑，\n地面就会摇起来。\n这就是地震。",
+      "scene": "A simple drawing of the ground with two rock plates slipping past each other underground, and above them wavy lines spreading out through the soil toward a small house on the grass.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "摇起来的时候，\n站着的东西会倒，\n放着的东西会掉。\n书架上的书哗啦啦地滑下来，\n桌上的杯子跳到地上。",
+      "scene": "Inside a living room during shaking: books sliding off a bookshelf, a cup bouncing off the table, a lamp tilting, motion lines around them, nobody in the room.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "所以，我们要学会一招。\n这一招有三个动作：\n「趴下、掩护、抓牢」。\n只要记住这三个词，\n地震来了就不慌。",
+      "scene": "The little boy stands in the living room holding up three fingers, counting them one by one, a calm and confident face, a sturdy wooden dining table behind him.",
+      "has_boy": true
+    },
+    {
+      "n": 7,
+      "zh": "第一个动作：趴下。\n地一摇，就马上蹲下来，\n手和膝盖着地，趴低一点。\n不要站着，也不要往外跑，\n跑起来反而会摔倒。",
+      "scene": "The little boy drops down onto his hands and knees on the living room floor, staying low, a calm face, the dining table right next to him.",
+      "has_boy": true
+    },
+    {
+      "n": 8,
+      "zh": "第二个动作：掩护。\n钻到结实的桌子下面，\n用两只手护住自己的头和脖子。\n桌子挡在上面，\n掉下来的东西就砸不到我。",
+      "scene": "The little boy crawls under a sturdy wooden dining table and covers his head and the back of his neck with both hands, looking calm and safe under the table top.",
+      "has_boy": true
+    },
+    {
+      "n": 9,
+      "zh": "第三个动作：抓牢。\n一只手护住头，\n另一只手抓住桌子腿。\n桌子要是被摇得移动，\n我就跟着它一起动，不松手。",
+      "scene": "Under the dining table, the little boy holds one hand over his head and grips the wooden table leg tightly with the other hand, looking determined.",
+      "has_boy": true
+    },
+    {
+      "n": 10,
+      "zh": "有些地方不能去。\n摇的时候不要跑到门口，\n也不要上下楼梯，\n更不要跑到外面——\n外面可能有东西掉下来。",
+      "scene": "A simple clear picture of a front door standing open and a staircase beside it in an empty hallway, with a bright warning triangle sign drawn in the middle of the picture, no people.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "也不要躲在这些东西旁边：\n高高的书架，\n大大的电视，\n还有挂在墙上的镜子。\n它们都可能倒下来。",
+      "scene": "A living room corner with a tall bookshelf, a big television on a low cabinet and a mirror hanging on the wall, each drawn with a small wobble line beside it, no people in the room.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "今天，我们全家要做一次演习。\n妈妈是一位短头发、穿红毛衣的大人，\n她站在客厅中间，\n拍拍手，大声说：\n「地震啦！」",
+      "scene": "A grown adult woman with short black hair in a red sweater stands in the middle of a living room, clapping her hands once and calling out, her mouth open, nobody else in the room.",
+      "has_boy": false
+    },
+    {
+      "n": 13,
+      "zh": "我一听就趴下、\n钻到饭桌下面、\n一只手护头，一只手抓住桌腿。\n然后在心里数：\n一、二、三……一直数到十。",
+      "scene": "The little boy is under the sturdy wooden dining table, one hand over his head and the other gripping the table leg, his lips moving as he counts, a calm face.",
+      "has_boy": true
+    },
+    {
+      "n": 14,
+      "zh": "摇完了，也不要马上跑出去。\n先穿上鞋子再走，\n因为地上可能有碎玻璃。\n家里的鞋，\n就放在床边最好找的地方。",
+      "scene": "A pair of small sneakers placed neatly beside a bed on the floor, and a few pieces of broken glass drawn on the floor a little further away, warm quiet light, no people.",
+      "has_boy": false
+    },
+    {
+      "n": 15,
+      "zh": "门口还放着一个应急包。\n里面有水、饼干、手电筒、\n急救包、一件小外套，\n还有一条毛巾。\n这些东西平时不动，只在地震后用。",
+      "scene": "Top-down view of an open orange emergency backpack on the floor with its contents laid out neatly beside it: bottles of water, packets of biscuits, a flashlight, a first aid kit, a small jacket and a towel.",
+      "has_boy": false
+    },
+    {
+      "n": 16,
+      "zh": "包里还有一张小卡片。\n上面写着爸爸妈妈的名字和电话，\n还有我们约好见面的地方——\n院子里那棵大树下。\n走散了，就到树下等。",
+      "scene": "A small handwritten card lying on the floor next to the emergency backpack, and beside it a simple drawing of a big tree in a yard with a circle around it, warm light, no people.",
+      "has_boy": false
+    },
+    {
+      "n": 17,
+      "zh": "有一天晚上，我正在刷牙。\n忽然，杯子里的水晃了一下，\n吊灯也轻轻摇起来——\n真的地震了！\n我一点也没有愣住。",
+      "scene": "Evening in a small bathroom: the little boy stands at the sink holding a toothbrush, looking up at a ceiling lamp that is swinging gently, the water in a cup rippling, his eyes wide but not frightened.",
+      "has_boy": true
+    },
+    {
+      "n": 18,
+      "zh": "我马上趴下，\n钻到旁边的桌子下面，抓牢。\n摇了一会儿就停了。\n爸爸妈妈跑过来抱住我：\n「你做得真好！」",
+      "scene": "The little boy comes out from under a table and his parents kneel down and hug him: the mother is a grown adult woman with short black hair in a red sweater and the father is a tall grown adult man in a grey shirt, all three smiling with relief, warm lamp light.",
+      "has_boy": true
+    }
+  ]
+}

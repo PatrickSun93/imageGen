@@ -1,0 +1,143 @@
+{
+  "title": "牙齿的故事",
+  "subtitle": "乳牙、蛀牙和换牙",
+  "slug": "teeth",
+  "seed_base": 18000,
+  "character": "wearing a mint green t-shirt, orange shorts and white socks, short black hair",
+  "style": "children's picture book illustration made of cut felt fabric pieces with visible stitching and soft fuzzy texture, flat simple rounded shapes, warm pastel colors on a cream felt background",
+  "style_label": "毛毡拼布",
+  "keyword": "乳牙",
+  "palette": {
+    "ink": "#2f2a26",
+    "soft": "#726557",
+    "ground": "#f4f0e9",
+    "paper": "#fcfaf6",
+    "accent": "#d2734f",
+    "bark": "#8d8071",
+    "line": "#e0d9cd",
+    "ink_d": "#ede8e0",
+    "soft_d": "#aa9e8f",
+    "ground_d": "#17140f",
+    "paper_d": "#221e18",
+    "accent_d": "#e8906a",
+    "bark_d": "#9d9285",
+    "line_d": "#39342c"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "早上起床，我对着镜子笑了一下。\n镜子里的我，\n露出一排白白的小牙齿。\n我数了数上面的，\n又数了数下面的。",
+      "scene": "The little boy stands in front of a bathroom mirror smiling widely at his reflection, showing a row of small white teeth, morning light in a cosy bathroom.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "我很小的时候，\n嘴里一颗牙也没有。\n那时候只能喝奶，\n什么都咬不动。\n妈妈说，小婴儿都是这样的。",
+      "scene": "A small baby lying on a soft blanket, laughing with its mouth open and no teeth at all, a milk bottle beside the blanket.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "一岁左右，\n牙齿一颗一颗冒了出来。\n这些小时候长的牙，\n有一个名字，\n叫「乳牙」。",
+      "scene": "A simple clear picture of a row of small white baby teeth in a pink gum, drawn large in the middle of the picture, with a few teeth just poking through.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "乳牙一共有二十颗，\n上面十颗，下面十颗。\n它们排得整整齐齐，\n像两排小房子。",
+      "scene": "A simple chart picture: ten small white teeth in an upper arch and ten in a lower arch, evenly spaced on a plain background.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "前面的牙又扁又薄，\n边儿像小铲子，\n专门用来把食物切断。\n咬苹果的时候，\n就是它们在工作。",
+      "scene": "Close view of two flat front teeth biting into a red apple, leaving a clean bite mark in the apple, simple and clear.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "后面的牙又宽又厚，\n上面有小小的凸起，\n像一块块小石磨，\n把食物磨得碎碎的，\n这样才好吞下去。",
+      "scene": "Close view of a wide back tooth with bumpy ridges on top, grinding a piece of food into small crumbs, simple and clear.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "中午我啃了一个大苹果。\n咔嚓一声，\n前面的牙切下一块，\n后面的牙嚼呀嚼，\n把它磨得碎碎的。",
+      "scene": "The little boy takes a big bite out of a red apple with both hands holding it, his eyes happy, a bite mark left in the apple.",
+      "has_boy": true
+    },
+    {
+      "n": 8,
+      "zh": "吃完东西，\n牙齿上会留下一点点看不见的碎渣，\n特别是甜甜的糖。\n用眼睛看不出来，\n可它们真的在那里。",
+      "scene": "Close view of a single white tooth with a few tiny crumbs and a small sticky sugar smear on its surface, drawn simply on a plain background.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "我们的嘴里，\n还住着好多好多细菌。\n它们非常非常小，\n最喜欢吃的，\n就是留在牙上的糖。",
+      "scene": "A few friendly-looking round cartoon germs with tiny arms sitting on a big white tooth, small and simple, not scary.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "细菌吃了糖，\n会产生一种酸。\n酸天天泡着牙齿，\n就会在牙上，\n慢慢咬出一个小洞。",
+      "scene": "A big white tooth with a small dark hole starting on its surface and a few tiny drops drawn around the hole, simple and clear.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "有了小洞，牙就会疼。\n我去看了牙医。\n牙医是一位戴眼镜、\n穿白大褂的大人，\n他让我张开嘴，用小镜子照了照。",
+      "scene": "At a friendly dentist's office the little boy sits in the chair with his mouth open, and a grown adult male dentist with glasses in a white coat leans over him holding a small round mirror, a parent sitting beside the chair.",
+      "has_boy": true
+    },
+    {
+      "n": 12,
+      "zh": "牙医说：\n「补好了，不疼了。\n以后每天早晚都要刷牙哦。」\n我用力点了点头。",
+      "scene": "The little boy sits up in the dentist's chair smiling and nodding, the grown adult male dentist with glasses in a white coat standing beside him giving a thumbs up.",
+      "has_boy": true
+    },
+    {
+      "n": 13,
+      "zh": "早上一次，晚上一次。\n我挤上一点点牙膏，\n像一粒豌豆那么多，\n然后开始刷。",
+      "scene": "The little boy stands at the bathroom sink squeezing a small pea-sized dot of toothpaste onto his toothbrush, looking focused.",
+      "has_boy": true
+    },
+    {
+      "n": 14,
+      "zh": "刷牙要刷够时间。\n妈妈让我唱两遍生日歌，\n唱完才算刷好。\n沙漏里的沙子漏完，\n差不多也是这么久。",
+      "scene": "A small hourglass standing on the edge of a bathroom sink with sand running through it, a toothbrush lying beside it, simple and clear.",
+      "has_boy": false
+    },
+    {
+      "n": 15,
+      "zh": "上面的牙要往下刷，\n下面的牙要往上刷，\n外面刷完刷里面，\n最后别忘了后面的大牙，\n它们最容易被漏掉。",
+      "scene": "The little boy brushes his back teeth with his mouth open in front of the mirror, holding the toothbrush at an angle, white foam around his lips.",
+      "has_boy": true
+    },
+    {
+      "n": 16,
+      "zh": "牙缝里也会藏东西。\n牙刷进不去的地方，\n要用牙线。\n细细的线滑进牙缝，\n把碎渣带出来。",
+      "scene": "Close view of a thin piece of dental floss slipping between two white teeth and pulling out a tiny crumb, simple and clear.",
+      "has_boy": false
+    },
+    {
+      "n": 17,
+      "zh": "过了一阵子，\n我的一颗下门牙开始松了。\n我用舌头一顶，\n它就晃呀晃。\n妈妈说：别怕，这是要换牙了。",
+      "scene": "The little boy stands in front of the mirror with his mouth open, pointing at one wobbly lower front tooth with his finger, looking surprised and excited.",
+      "has_boy": true
+    },
+    {
+      "n": 18,
+      "zh": "掉了的地方，\n会长出新的牙，\n叫做恒牙。\n恒牙不会再换了，\n要陪我一辈子。\n所以我要好好照顾它们。",
+      "scene": "The little boy smiles widely at the mirror showing a gap where one lower front tooth is missing and a new tooth just starting to come up, holding his toothbrush like a little flag.",
+      "has_boy": true
+    }
+  ]
+}
