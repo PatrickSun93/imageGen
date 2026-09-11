@@ -52,61 +52,61 @@
   "pages": [
     {
       "n": 1,
-      "zh": "昨天下了一场大雨。\n院子里有一个大水坑，\n亮亮的，像一面镜子。\n我穿上雨靴，啪嗒啪嗒踩了好几下。",
+      "zh": "昨天夜里下了一场大雨，哗啦啦，下了好久好久。\n早上起来，院子里多了一个大水坑，\n亮亮的，像一面镜子，连天上的云都照在里面。\n我穿上红雨靴，啪嗒！啪嗒！踩了好几下，\n水花溅到裤腿上，凉凉的。",
       "scene": "The little boy in red rain boots stomps in a big puddle in the backyard after the rain, splashes of water around his boots, the puddle reflecting the sky like a mirror, wet grass and a few clouds.",
       "has_boy": true
     },
     {
       "n": 2,
-      "zh": "今天太阳出来了。\n我跑去找水坑——\n咦？水坑变小了，\n只剩下一圈湿湿的印子。\n水跑到哪里去了？",
+      "zh": "今天太阳出来了，暖暖地照着院子。\n我跑去找我的水坑——\n咦？水坑变小了，只剩下中间一点点，\n旁边留下一圈湿湿的、深颜色的印子。\n我蹲下来看了又看：水跑到哪里去了呢？",
       "scene": "A bright sunny morning in the backyard. The little boy crouches beside a small shrinking puddle with only a damp dark ring left on the ground around it, looking puzzled, the sun shining warmly.",
       "has_boy": true
     },
     {
       "n": 3,
-      "zh": "太阳晒呀晒，\n水变得轻轻的、看不见了，\n慢慢飘到了空中。\n这种看不见的水，\n叫做「水汽」。",
+      "zh": "原来是太阳在帮忙。\n太阳晒呀晒，水坑里的水慢慢变得轻轻的，\n轻得我们看不见，悄悄地飘到了空中。\n这种看不见的水，叫做「水汽」。\n水坑没有被谁喝掉，是变成水汽飞走啦。",
       "scene": "Close view of a small puddle on the ground under warm sunshine, very faint soft wisps of vapor rising from the water surface and drifting up toward the sky, drawn as delicate pale curls.",
       "has_boy": false
     },
     {
       "n": 4,
-      "zh": "不只是水坑。\n晾着的衣服、小河里的水、大海里的水，\n都会悄悄地变成水汽，\n往天上飘。",
+      "zh": "不只是水坑会这样。\n妈妈晾的衣服，晒一晒就干了；\n小河里的水、大海里的水，\n每天也都在悄悄地变成水汽，\n一点一点往天上飘，谁也看不见。",
       "scene": "A wide gentle landscape: a clothesline with laundry drying in the sun, a small river, and the sea far away. From each of them rise very faint, thin, pale white curls of vapor, lighter than the sky and barely visible.",
       "has_boy": false
     },
     {
       "n": 5,
-      "zh": "天上很冷。\n水汽一冷，就挤在一起，\n变成好多好多小水珠。\n小水珠聚在一起——\n就是云！",
+      "zh": "天上高高的地方，比地面冷多了。\n水汽飘到那里，一冷，就挤在一起，\n变成好多好多小小的水珠。\n小水珠又小又轻，一颗一颗浮在天上，\n千千万万颗聚在一起——就是我们看到的云！",
       "scene": "High in the blue sky, soft wisps of vapor gathering together into one fluffy white cloud made of many tiny round droplets softly clustered, cool clear light.",
       "has_boy": false
     },
     {
       "n": 6,
-      "zh": "云越来越大，越来越重，\n从白白的，变成灰灰的。\n风一吹，它们都挤到一起了。",
+      "zh": "小水珠越聚越多，云也越长越大，越来越重，\n从白白的、软软的，变成了灰灰的。\n风呼呼地吹，把云都赶到了一起，\n大树被吹弯了腰，天一下子暗了下来。",
       "scene": "Big heavy grey clouds gathering over village rooftops and trees, the sky darkening, wind bending the treetops.",
       "has_boy": false
     },
     {
       "n": 7,
-      "zh": "小水珠太重了，\n云再也抱不住它们——\n滴答，滴答，\n下雨啦！",
+      "zh": "小水珠挤呀挤，变成了大水滴。\n大水滴太重了，云再也抱不住它们——\n滴答，滴答，哗啦啦……下雨啦！\n雨落在屋顶上，落在大叶子上，\n落在院子里，也落在我的水坑里。",
       "scene": "Rain falling from heavy grey clouds over the rooftops and the garden, long soft lines of rain, the first drops splashing on big green leaves.",
       "has_boy": false
     },
     {
       "n": 8,
-      "zh": "我站在窗户后面看雨。\n原来这些雨，\n就是前几天水坑里的水呀。\n它绕了一大圈，又回来了。",
+      "zh": "我站在窗户后面看雨，\n雨点顺着玻璃往下流，一道一道的。\n我忽然想到：这些雨，\n说不定就是前几天水坑里的水呀！\n它飞到天上，变成云，绕了一大圈，又回来了。",
       "scene": "Inside the house, the little boy stands at a big window watching the rain outside, raindrops running down the glass, his hands on the windowsill, the rainy garden beyond.",
       "has_boy": true
     },
     {
       "n": 9,
-      "zh": "雨落到地上，\n流进小河，流进大海，\n又被太阳晒成水汽，飘上天。\n水就这样转呀转，\n从来没有停过。",
+      "zh": "雨落到地上，流进小河，\n小河弯弯曲曲地流呀流，一直流进大海。\n太阳一晒，海水又变成水汽，飘上天，变成云，\n云再变成雨，落下来……\n水就这样转呀转，一圈又一圈，从来没有停过。",
       "scene": "A wide calm landscape after the rain: a small river winding from green hills down to the sea, gentle sunlight breaking through the clouds, and very faint, thin, pale white curls of vapor, lighter than the sky and barely visible rising from the sea toward a white cloud.",
       "has_boy": false
     },
     {
       "n": 10,
-      "zh": "雨停了。\n院子里又有了一个大水坑。\n我穿上雨靴跳进去——\n啪嗒！\n「欢迎回来呀，小水滴。」",
+      "zh": "雨停了，太阳又出来了。\n院子里又有了一个大水坑，亮晶晶的。\n我穿上雨靴，跳进去——啪嗒！\n水花溅得高高的。\n「欢迎回来呀，小水滴！下次你要飞到哪里去呢？」",
       "scene": "After the rain, the little boy in red rain boots jumps into a big puddle in the backyard with both feet, a big happy splash, the sky clearing with sunlight, wet leaves shining.",
       "has_boy": true
     }

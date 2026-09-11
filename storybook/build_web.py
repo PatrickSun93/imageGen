@@ -30,7 +30,8 @@ for p in story["pages"]:
 </article>''')
 
 facts = "".join(f'<div class="fact"><dt>{k}</dt><dd>{v}</dd></div>' for k,v in story.get("facts",[]))
-facts_block = f'<section class="after"><h2>{story.get("facts_title","知识卡")}</h2><dl class="facts">{facts}</dl></section>' if facts else ""
+# 知识卡默认不显示：孩子只看图、听大人念，要讲的道理写进每页旁白里（2026-09-11 用户反馈）；想要就在 story 里加 "show_facts": true
+facts_block = f'<section class="after"><h2>{story.get("facts_title","知识卡")}</h2><dl class="facts">{facts}</dl></section>' if facts and story.get("show_facts") else ""
 
 print(f'''<title>{story["title"]}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
