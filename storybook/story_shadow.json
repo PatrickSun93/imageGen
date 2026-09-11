@@ -52,61 +52,61 @@
   "pages": [
     {
       "n": 1,
-      "zh": "早上，我去院子里玩。\n一回头——\n地上有一个长长的、黑黑的小人，\n它也在看着我！",
+      "zh": "早上，太阳刚刚爬起来，我跑到院子里玩。\n我一回头——\n咦？地上躺着一个长长的、黑黑的小人，\n它的腿好长好长，头小小的，\n好像也在回头看着我呢！",
       "scene": "Early morning in the backyard with the low sun on the left. The little boy stands on the grass looking back over his shoulder at his very long thin shadow stretching far across the ground to the right.",
       "has_boy": true
     },
     {
       "n": 2,
-      "zh": "我走，它也走。\n我跳，它也跳。\n我举起手，它也举起手。\n这是我的「影子」。",
+      "zh": "我往前走，它也往前走；\n我跳起来，它也跳起来；\n我把两只手举得高高的，它也举起两只手。\n我做什么，它就学什么，一点都不会错。\n原来，这是我的「影子」。",
       "scene": "The little boy jumps in the air with both arms raised on a sunny path, and his dark shadow on the ground copies the jump with its arms raised too.",
       "has_boy": true
     },
     {
       "n": 3,
-      "zh": "影子是怎么来的呢？\n太阳的光照过来，\n被东西挡住了。\n后面照不到光的地方，\n就是影子。",
+      "zh": "影子是从哪里来的呢？\n太阳的光一直往前照，\n碰到了东西，就被挡住了，过不去。\n东西后面照不到光的地方，暗暗的，\n那就是影子。所以，影子总是躲在太阳的另一边。",
       "scene": "A simple clear picture: bright sun rays coming from the left, a wooden toy block standing on the ground, and a dark shadow lying on the ground behind the block on its right side.",
       "has_boy": false
     },
     {
       "n": 4,
-      "zh": "中午，太阳爬到头顶上。\n我低头找影子——\n它变得好小好小，\n缩在我的脚底下。",
+      "zh": "中午，太阳爬到了我的头顶上，\n亮亮的，把地面照得暖暖的。\n我低下头找我的影子——\n它变得好小好小，缩成一小团，\n躲在我的脚底下，好像在跟我捉迷藏。",
       "scene": "Midday: a bright round sun sits at the very top center of the picture, straight above the little boy's head. The little boy stands in the middle of a sunny yard looking down at his feet. His shadow is a tiny dark oval directly beneath his sneakers, about the size of his feet, and the ground all around him is bright and sunlit.",
       "has_boy": true
     },
     {
       "n": 5,
-      "zh": "下午，太阳往另一边走。\n影子又慢慢变长了，\n跑到了我的另一边。",
+      "zh": "下午，太阳慢慢往另一边走，越走越低。\n我的影子又一点一点变长了，\n而且，它跑到了我的另一边！\n早上它在右边，现在它在左边。\n太阳走到哪里，影子就躲到哪里的对面。",
       "scene": "Late afternoon with the sun low on the right side of the picture. The little boy stands on the path and his long shadow stretches to the left across the ground.",
       "has_boy": true
     },
     {
       "n": 6,
-      "zh": "不光是我有影子。\n大树有影子，小猫有影子，\n连滑梯也有影子。\n有光的地方，就有影子。",
+      "zh": "不光是我有影子。\n大树有一个大大的影子，小猫有一个小小的影子，\n连滑梯也有一个斜斜的影子。\n你看，它们的影子都朝着同一个方向，\n因为照着它们的，是同一个太阳。",
       "scene": "A sunny park with a big tree, a small cat and a slide, each casting a long clear shadow on the grass in the same direction, bright sunlight.",
       "has_boy": false
     },
     {
       "n": 7,
-      "zh": "晚上，我打开台灯。\n墙上又出现了一个我。\n我走近灯，影子变大；\n我走远一点，影子变小。",
+      "zh": "晚上，太阳下山了，我打开台灯。\n咦？墙上又出现了一个我，大大的，黑黑的！\n我走近台灯，墙上的影子一下子变得好大；\n我往后退一点，影子又变小了。\n原来，离灯越近，影子就越大。",
       "scene": "Evening in a cozy bedroom with a desk lamp shining on a plain wall. The little boy stands between the lamp and the wall, and his big shadow appears on the wall behind him.",
       "has_boy": true
     },
     {
       "n": 8,
-      "zh": "我把手指弯一弯，\n墙上跳出一只小狗。\n我把两只手交叉起来，\n墙上飞过一只小鸟。",
+      "zh": "我把手指弯一弯，放在灯前面，\n墙上跳出来一只小狗，竖着尖尖的耳朵！\n我再把两只手交叉起来，扇一扇，\n墙上又飞过一只小鸟。\n影子还可以变成我的小玩具呢。",
       "scene": "The little boy holds up his hands in front of the lamp light, and on the wall appears the shadow of a little dog with pointed ears, cozy evening room.",
       "has_boy": true
     },
     {
       "n": 9,
-      "zh": "关上灯，\n墙上黑黑的，\n影子就不见了。\n没有光，也就没有影子。",
+      "zh": "睡觉的时间到了，我关上灯。\n房间里黑黑的，只有窗外一点点月光。\n墙上的小狗不见了，我的影子也不见了。\n没有光，就没有影子。\n影子是不是也去睡觉了呢？",
       "scene": "A dark sleepy bedroom at night in deep blue tones: a plain dark wall with a small light switch beside the door, and pale moonlight from the window making a soft square on the floor, the whole room dim and quiet.",
       "has_boy": false
     },
     {
       "n": 10,
-      "zh": "明天早上，\n太阳又会出来。\n我的影子一定在门口等我，\n我们再一起去玩！",
+      "zh": "明天早上，太阳又会出来。\n我一推开门，暖暖的阳光照进来——\n我的影子一定早就在门口等我了，\n长长的，黑黑的，跟在我身边，\n我们再一起去玩！",
       "scene": "Morning: the little boy opens the front door and steps out into golden sunshine, his long shadow stretching behind him into the doorway, happy face.",
       "has_boy": true
     }

@@ -52,62 +52,62 @@
   "pages": [
     {
       "n": 1,
-      "zh": "妈妈种的菜叶上，\n有好多小洞洞。\n是谁咬的呢？\n我翻开叶子一看——",
+      "zh": "妈妈在院子里种了一片青菜。\n今天我去看，咦？\n菜叶上多了好多小洞洞，一个，两个，三个……\n是谁偷偷咬的呢？\n我轻轻地翻开一片大叶子，往下面一看——",
       "scene": "In a small vegetable garden, the little boy bends over a big green cabbage leaf full of small holes, lifting the edge of the leaf to peek underneath, curious.",
       "has_boy": true
     },
     {
       "n": 2,
-      "zh": "是一只小小的毛毛虫！\n绿绿的，软软的，\n一拱一拱地往前爬。",
+      "zh": "是一只小小的毛毛虫！\n它绿绿的，软软的，身上一节一节的，\n走起路来，身体一拱一拱的，\n像一座会走路的小桥。\n叶子上的小洞洞，原来都是它咬的。",
       "scene": "Close up of a small green caterpillar crawling along a big green leaf, its body arched up in the middle as it moves, little holes nibbled in the leaf.",
       "has_boy": false
     },
     {
       "n": 3,
-      "zh": "它一直吃，一直吃，\n吃完一片叶子，又吃一片。\n身体越来越胖，越来越长。",
+      "zh": "毛毛虫最喜欢的事，就是吃。\n它一直吃，一直吃，吃完一片叶子，又吃一片，\n咔嚓咔嚓，一刻也不停。\n吃呀吃，它的身体越来越胖，越来越长，\n比刚见到它的时候大了好几倍。",
       "scene": "A fat green caterpillar munching on the edge of a leaf, half of the leaf already eaten away, other leaves around it with bites taken out.",
       "has_boy": false
     },
     {
       "n": 4,
-      "zh": "它长得太快了，\n身上的皮都穿不下了。\n于是它脱掉旧皮，\n换上一件新衣服。",
+      "zh": "它长得太快了，身上的皮都穿不下了。\n怎么办呢？\n毛毛虫就把旧皮脱掉，从里面钻出来，\n换上一件新的、更大的衣服。\n旧皮皱巴巴地留在叶子上，像一只脱下来的小袜子。",
       "scene": "A fresh bright green caterpillar crawls forward along a leaf. Behind it on the leaf lies its old skin, a tiny crumpled pale brown wrinkled husk like a scrunched-up sock.",
       "has_boy": false
     },
     {
       "n": 5,
-      "zh": "有一天，毛毛虫不吃东西了。\n它爬到树枝上，\n吐出细细的丝，\n把自己倒挂了起来。",
+      "zh": "有一天，毛毛虫忽然不吃东西了。\n它慢慢爬到一根树枝上，\n吐出细细的丝，把自己的尾巴粘在树枝上，\n然后倒挂下来，弯成一个小钩子，\n一动不动，好像在准备一件大事。",
       "scene": "A green caterpillar hanging upside down from a thin twig by a tiny silk thread, curled into a J shape, soft garden background.",
       "has_boy": false,
       "seed": 11105
     },
     {
       "n": 6,
-      "zh": "它把自己包成一个小硬壳，\n一动也不动。\n这个小房子，叫做「蛹」。",
+      "zh": "过了一天，毛毛虫不见了。\n树枝上挂着一个绿绿的、硬硬的小房子，\n上面还有几个金色的小点点，亮晶晶的。\n这个小房子，叫做「蛹」。\n毛毛虫就藏在里面。",
       "scene": "A single smooth green chrysalis hanging still from a twig, with tiny gold dots on it, green leaves around it.",
       "has_boy": false
     },
     {
       "n": 7,
-      "zh": "我每天都去看它。\n一天，两天，三天……\n它还是一动也不动。\n它在里面做什么呢？",
+      "zh": "我每天都去看它。\n一天，两天，三天……\n它还是挂在那里，一动也不动。\n我托着下巴想：它在里面做什么呢？\n是在睡觉吗？还是在给自己做一件新衣服？",
       "scene": "The little boy crouches in the garden looking up at a green chrysalis hanging from a twig, chin resting in his hands, waiting patiently, morning light.",
       "has_boy": true
     },
     {
       "n": 8,
-      "zh": "咔——\n蛹裂开了一条缝。\n钻出来的不是毛毛虫，\n是一只皱巴巴的蝴蝶！",
+      "zh": "有一天早上，咔——\n蛹裂开了一条缝！\n从里面慢慢钻出来的，不是毛毛虫，\n是一只蝴蝶！它的翅膀湿湿的、皱巴巴的，\n紧紧抓着空空的蛹壳，安安静静地歇着。",
       "scene": "A butterfly slowly coming out of a split open chrysalis on a twig, its wings still crumpled and damp, holding on to the empty chrysalis shell.",
       "has_boy": false
     },
     {
       "n": 9,
-      "zh": "它扇扇翅膀，\n翅膀慢慢张开了，\n又大又漂亮，\n还有好多好看的花纹。",
+      "zh": "过了一会儿，它轻轻地扇扇翅膀，\n翅膀慢慢张开了，越来越大，越来越平，\n上面有红的、黄的、蓝的，好多漂亮的花纹。\n原来，毛毛虫在蛹里面，\n把自己变成了一只蝴蝶。",
       "scene": "A beautiful butterfly resting on a twig with its colorful patterned wings fully open, sunlight, green leaves around.",
       "has_boy": false
     },
     {
       "n": 10,
-      "zh": "蝴蝶飞起来了，\n飞到了花园里。\n我种下几棵花，\n给它留好吃的花蜜。\n「你的新衣服真漂亮！」",
+      "zh": "蝴蝶飞起来了，飞呀飞，飞到了花园里。\n我拿着小铲子，种下一棵小花，\n给它留下甜甜的花蜜。\n蝴蝶在我头上转了一圈，好像在说谢谢。\n「你的新衣服，真漂亮！」",
       "scene": "The little boy plants a small flower in the garden with a little shovel, and a colorful butterfly flutters above the flowers next to him, sunny cheerful day.",
       "has_boy": true
     }
