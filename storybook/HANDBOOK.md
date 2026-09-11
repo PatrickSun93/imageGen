@@ -254,6 +254,33 @@ venv\python.exe storybook\render_lora.py storybook\story_sea.json 1 4     :: 只
 需要 ComfyUI 先跑在 `127.0.0.1:8188`。页里写了 `seed` 就用页里的（重跑 +100 时这样写），
 否则用 `seed_base` + 页码。长时间出图要用独立进程启动，否则内存吃紧时会被系统停掉。
 
+### 3.6 另一个选择：Qwen-Image（《海只来一点点》用的就是它）
+
+2026-09-10 做过同页对比，Qwen-Image-2512 在这几件事上明显强过 Flux：
+画面里只写了什么就只画什么（太阳页不再冒出月亮）、光照跟着 scene 走而不是被 style 压暗
+（白天的天空是真蓝）、排队和数数更准、能画出真正的蜡笔颗粒。
+
+| 页 | 用什么 | 每页耗时 |
+|---|---|---|
+| 没有他 | Qwen-Image-2512 Q4 + Lightning 8 步 LoRA，CFG 1 | 约 80 秒 |
+| 有他 | Qwen-Image-Edit-2511 Q4 + Edit Lightning 8 步，拿**两张他的照片**当参考图，不用 LoRA | 约 3 分钟 |
+
+```bat
+venv\python.exe storybook\bakeoff_qwen.py lightning8 storybook\story_sea.json:4
+:: 两张他的照片先放进 ComfyUI\input\（照片不进仓库），文件名换成你自己的
+venv\python.exe storybook\edit_qwen.py --v2 照片1.png 照片2.png storybook\story_sea.json:1
+```
+
+几条要记住的：
+
+- **Edit 的提示词要直接点名参考图**：`Picture 1 and Picture 2 show the same little boy. Draw exactly this boy…`
+  （`--v2`）。写成 Flux 那种长串关键词，画出来是棕发、年纪大的油画男孩。
+- **两个 Qwen 模型不能同时加载**（合起来约 36 GB）。先出完所有有他的页，`/free` 清内存，再出其余页。
+- **内存要够**：Edit 模型 13 GB + 文本编码器 9.4 GB 已经把 32 GB 用满，再开一个占 6.7 GB 的程序（比如 sonictype），
+  每页会从 3 分钟掉到 20 多分钟。出图前先把大程序关掉。
+- **缺点**：颜色比 Flux 浓，不太「清透」；「一张图里画一个过程」会切成三格连环画；
+  对「浪停在他脚前」这种否定式的动作不太听话（海边第 3 页他坐进了水里）。
+
 ---
 
 ## 四、审图 ★

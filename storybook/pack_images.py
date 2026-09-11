@@ -8,6 +8,8 @@
 import sys, os, io, glob, json, base64
 from PIL import Image
 
+sys.stdout.reconfigure(encoding="utf-8")   # the summary lines are Chinese; Windows consoles default to cp1252
+
 src     = sys.argv[1].rstrip("/\\")
 webdir  = sys.argv[2].rstrip("/\\")
 quality = int(sys.argv[3]) if len(sys.argv) > 3 else 82
