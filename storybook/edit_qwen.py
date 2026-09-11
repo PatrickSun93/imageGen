@@ -19,6 +19,7 @@ LEAD_V2 = ("Picture 1 and Picture 2 show the same little boy. Draw exactly this 
            "the same short black hair and the same round rosy cheeks, as the character in a new "
            "children's picture book illustration: ")
 V2 = False
+UNET = None   # --unet=<file> swaps the workflow's Edit model, e.g. the smaller Q3_K_M when RAM is tight
 
 def page_prompt(story, p):
     if "prompt" in p:
@@ -30,6 +31,8 @@ def page_prompt(story, p):
 def submit(prompt, seed, prefix, refs):
     wf = json.load(open(WF, encoding="utf-8"))
     wf["20"]["inputs"]["image"], wf["21"]["inputs"]["image"] = refs
+    if UNET:
+        wf["1"]["inputs"]["unet_name"] = UNET
     wf["4"]["inputs"]["prompt"] = prompt
     wf["7"]["inputs"]["seed"] = seed
     wf["10"]["inputs"]["filename_prefix"] = prefix
@@ -49,6 +52,8 @@ def compose(slug, n, refs):
              ("Flux dev + LoRA", os.path.join(ROOT, "storybook", "out", slug + "_lora", f"page_{n:02d}.png")),
              ("Qwen Edit (long prompt)", os.path.join(OUT, f"{slug}_p{n:02d}_edit8.png")),
              ("Qwen Edit v2 (Picture 1/2)", os.path.join(OUT, f"{slug}_p{n:02d}_edit8v2.png"))]
+    if UNET:
+        cells.append((f"Qwen Edit v2 {quant_tag().upper()}", os.path.join(OUT, f"{slug}_p{n:02d}_edit8v2_{quant_tag()}.png")))
     cells = [(label, f) for label, f in cells if os.path.exists(f)]
     S, H = 640, 44
     sheet = Image.new("RGB", (S * len(cells), S + H), "white")
@@ -68,15 +73,22 @@ def main(refs, targets):
         story = json.load(open(os.path.join(ROOT, path), encoding="utf-8"))
         p = next(x for x in story["pages"] if x["n"] == n)
         slug = story["slug"]; seed = p.get("seed", story.get("seed_base", 2000) + n)
-        mode = "edit8v2" if V2 else "edit8"
+        mode = ("edit8v2" if V2 else "edit8") + (f"_{quant_tag()}" if UNET else "")
         t0 = time.time()
         f = submit(page_prompt(story, p), seed, f"{mode}_{slug}_p{n:02d}", refs)
         shutil.copy2(os.path.join(ROOT, "ComfyUI", "output", f[0]), os.path.join(OUT, f"{slug}_p{n:02d}_{mode}.png"))
         print(f"{slug} p{n:02d} {mode} {time.time()-t0:.0f}s  sheet: {compose(slug, n, refs)}", flush=True)
 
+def quant_tag():
+    # "qwen-image-edit-2511-Q3_K_M.gguf" -> "q3_k_m"
+    return UNET.rsplit("-", 1)[-1].split(".")[0].lower()
+
 if __name__ == "__main__":
     args = sys.argv[1:]
-    if args and args[0] == "--v2":
-        V2 = True
-        args = args[1:]
+    while args and args[0].startswith("--"):
+        flag = args.pop(0)
+        if flag == "--v2":
+            V2 = True
+        elif flag.startswith("--unet="):
+            UNET = flag.split("=", 1)[1]
     main(args[0:2], args[2:])

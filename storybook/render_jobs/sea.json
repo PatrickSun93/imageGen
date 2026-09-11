@@ -20,13 +20,15 @@
       "n": 2,
       "zh": "爸爸说：\n「我们不下水，\n就坐在这里看。」\n沙子是干的，暖暖的。",
       "has_boy": true,
-      "prompt": "ohwx boy, wearing a pale yellow t-shirt and orange shorts, bare feet, short black hair, children's picture book illustration, gentle watercolor painting, soft sea green and warm sand palette, loose wet washes, lots of white paper showing, calm soft daylight, A little boy and his father sitting together on warm dry sand near the top of a beach, seen from the side, the sea far away in the background, a folded towel beside them, calm and unhurried."
+      "prompt": "ohwx boy, wearing a pale yellow t-shirt and orange shorts, bare feet, short black hair, children's picture book illustration, gentle watercolor painting, soft sea green and warm sand palette, loose wet washes, lots of white paper showing, calm soft daylight, A little boy and his father sitting together on warm dry sand near the top of a beach, seen from the side. The father is a grown adult man with an adult face and adult build, much larger than the child, wearing a light blue shirt and khaki shorts, clearly dressed differently from the boy. The sea far away in the background, a folded towel beside them, calm and unhurried.",
+      "seed": 4102
     },
     {
       "n": 3,
       "zh": "浪跑过来了——\n我往后缩了一下。\n可是它没有过来。\n它停住了，然后回去了。",
       "has_boy": true,
-      "prompt": "ohwx boy, wearing a pale yellow t-shirt and orange shorts, bare feet, short black hair, children's picture book illustration, gentle watercolor painting, soft sea green and warm sand palette, loose wet washes, lots of white paper showing, calm soft daylight, A thin sheet of seawater running up wet sand toward a little boy's bare feet and stopping short of them, the boy leaning back slightly, low viewpoint close along the sand, gentle foam edge."
+      "prompt": "ohwx boy, wearing a pale yellow t-shirt and orange shorts, bare feet, short black hair, children's picture book illustration, gentle watercolor painting, soft sea green and warm sand palette, loose wet washes, lots of white paper showing, calm soft daylight, The little boy is standing on the sand, leaning back a little with his arms slightly raised, watching a thin sheet of seawater that has run up the sand and stopped a hand's width in front of his toes. His feet are still dry, with a strip of dry sand between the foam edge and his feet. Low viewpoint close along the sand, gentle foam edge.",
+      "seed": 4103
     },
     {
       "n": 4,
