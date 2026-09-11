@@ -65,7 +65,7 @@
     {
       "n": 3,
       "zh": "红灯亮了，\n车子都停下来，\n我们也要停下来，\n站在路边等一等。",
-      "scene": "At a crossroads the traffic light glows red, a row of cars has stopped neatly before the white stripes of a zebra crossing, calm street.",
+      "scene": "At a crossroads the traffic light glows red at the top, and a neat row of cars has stopped before the white stripes of an empty zebra crossing, a calm street.",
       "has_boy": false
     },
     {
@@ -83,13 +83,13 @@
     {
       "n": 6,
       "zh": "黄灯一闪一闪，\n是在说：\n「马上要变红灯啦，\n不要抢，慢慢来。」",
-      "scene": "The traffic light glowing yellow above a street corner, the cars slowing down gently, evening light.",
+      "scene": "A traffic light above a street corner with its yellow middle light glowing and the red and green lights dark, cars slowing down gently, evening light, an empty sidewalk.",
       "has_boy": false
     },
     {
       "n": 7,
       "zh": "大卡车好高好高，\n司机叔叔坐在上面，\n看不见车子旁边的小朋友。",
-      "scene": "A big delivery truck with a tall cab parked beside the road, the driver sitting high up in the cab, a wide empty space on the ground next to the big front wheel.",
+      "scene": "A big delivery truck with a tall cab parked beside the road, a grown-up driver with a mustache sitting high up in the cab, plain truck sides, and a wide empty space on the ground next to the big front wheel.",
       "has_boy": false
     },
     {
@@ -101,7 +101,7 @@
     {
       "n": 9,
       "zh": "路口还有交通警察叔叔，\n他戴着白手套，\n手一抬，车子就停；\n手一挥，车子就走。",
-      "scene": "A traffic police officer in a neat uniform and white gloves standing at the center of a crossroads, raising one hand, the cars around him stopped and waiting.",
+      "scene": "A traffic police officer in a neat uniform and white gloves stands at the center of a crossroads raising one hand, the cars around him stopped and waiting; the officer is the only person in the picture.",
       "has_boy": false
     },
     {

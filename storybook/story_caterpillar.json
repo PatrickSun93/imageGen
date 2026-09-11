@@ -4,7 +4,7 @@
   "slug": "caterpillar",
   "seed_base": 11000,
   "character": "wearing an orange t-shirt, green shorts and white sneakers, short black hair",
-  "style": "children's picture book illustration drawn with bright felt-tip markers on white paper, bold black outlines, flat vivid colors, simple cheerful shapes, visible marker strokes",
+  "style": "children's picture book illustration drawn with bright felt-tip markers, bold black outlines, flat vivid colors, simple cheerful shapes, visible marker strokes, the drawing fills the whole picture edge to edge on a plain white background",
   "style_label": "马克笔",
   "keyword": "蛹",
   "palette": {
@@ -71,7 +71,7 @@
     {
       "n": 4,
       "zh": "它长得太快了，\n身上的皮都穿不下了。\n于是它脱掉旧皮，\n换上一件新衣服。",
-      "scene": "A green caterpillar crawling out of its old dry split skin on a leaf, the empty old skin left behind, the caterpillar looking fresh and bright.",
+      "scene": "A fresh bright green caterpillar crawls forward along a leaf. Behind it on the leaf lies its old skin, a tiny crumpled pale brown wrinkled husk like a scrunched-up sock.",
       "has_boy": false
     },
     {
