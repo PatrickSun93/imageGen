@@ -73,9 +73,11 @@ def main(mode, args):
     for story, p in targets(args):
         n, slug = p["n"], story["slug"]
         if mode != "compose":
-            neg = f"{NEG}, {story['negative'].split(NEG + ', ', 1)[-1]}" if story.get("negative") else NEG
+            # the job's negative already starts with NEG; add the page's own extra negatives on top
+            neg = ", ".join(x for x in [story.get("negative") or NEG, p.get("negative_extra", "")] if x)
+            seed = p.get("seed", story.get("seed_base", 2000) + n)   # same seed as the Flux page it is compared with
             t = time.time()
-            f = submit(page_prompt(story, p), neg, story.get("seed_base", 2000) + n, f"bake_{slug}_p{n:02d}_{mode}", mode)
+            f = submit(page_prompt(story, p), neg, seed, f"bake_{slug}_p{n:02d}_{mode}", mode)
             shutil.copy2(os.path.join(ROOT, "ComfyUI", "output", f[0]), os.path.join(OUT, f"{slug}_p{n:02d}_{mode}.png"))
             print(f"{slug} p{n:02d} {mode} {time.time()-t:.0f}s", flush=True)
         print("sheet:", compose(story, p), flush=True)

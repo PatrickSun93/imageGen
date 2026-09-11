@@ -48,10 +48,11 @@ def main(story_path, only):
             prompt = ", ".join(x for x in [story["style"], p["scene"]] if x)
         negative = ", ".join(x for x in [story.get("negative", ""), p.get("negative_extra", "")] if x)
         t=time.time()
-        f=submit(wf_path, prompt, seed_base+n, f"{story['slug']}_p{n:02d}", strength if p["has_boy"] else 0,
+        seed = p.get("seed", seed_base + n)   # a re-run can pin its own seed (e.g. original + 100)
+        f=submit(wf_path, prompt, seed, f"{story['slug']}_p{n:02d}", strength if p["has_boy"] else 0,
                  negative)
         shutil.copy2(os.path.join(ROOT,"ComfyUI","output",f[0]), os.path.join(outdir,f"page_{n:02d}.png"))
-        print(f"page {n:02d} seed {seed_base+n} {'[boy]' if p['has_boy'] else '[no boy]'} {time.time()-t:.0f}s", flush=True)
+        print(f"page {n:02d} seed {seed} {'[boy]' if p['has_boy'] else '[no boy]'} {time.time()-t:.0f}s", flush=True)
     print(f"{len(pages)} pages in {time.time()-t0:.0f}s -> {outdir}")
 
 if __name__ == "__main__":

@@ -18,8 +18,9 @@
       "n": 2,
       "zh": "太阳没有去哪里。\n它一直在那儿，\n一直亮着，\n从来没有关过。",
       "has_boy": false,
-      "prompt": "children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light, An enormous warm golden sun filling most of the frame, radiating soft light rays outward in all directions, smooth even glowing surface with no craters and no dark spots, seen close up in open space, steady and calm",
-      "negative_extra": "moon, crater, craters, crescent, night sky, clouds, trees, horizon, signature, handwriting"
+      "prompt": "children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light, An enormous warm golden sun filling most of the frame, radiating soft light rays outward in all directions, smooth even glowing surface with no craters and no dark spots, seen close up in open space, nothing else in the picture",
+      "negative_extra": "person, child, figure, silhouette, hill, ground, grass, horizon, landscape, moon, crater, signature, handwriting",
+      "seed": 6102
     },
     {
       "n": 3,

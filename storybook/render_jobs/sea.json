@@ -12,7 +12,9 @@
       "n": 1,
       "zh": "我第一次来海边。\n海好大好大，看不到边。\n浪的声音轰隆隆的。\n我抓紧了爸爸的手。",
       "has_boy": true,
-      "prompt": "ohwx boy, wearing a pale yellow t-shirt and orange shorts, bare feet, short black hair, children's picture book illustration, gentle watercolor painting, soft sea green and warm sand palette, loose wet washes, lots of white paper showing, calm soft daylight, A little boy stands high on a wide empty sandy beach, far back from the water, holding a grown-up's hand, looking out at a very large calm sea under a big pale sky. He is small in the frame, sea and sky fill most of the picture, wide open composition."
+      "prompt": "ohwx boy, wearing a pale yellow t-shirt and orange shorts, bare feet, short black hair, children's picture book illustration, gentle watercolor painting, soft sea green and warm sand palette, loose wet washes, lots of white paper showing, calm soft daylight, the little boy standing on dry sand high up the beach beside his grown adult father, seen from behind, the boy holding his father's hand tightly, both facing a very wide calm sea, the two figures small in the lower part of the frame, wide open sky and sea above them",
+      "negative_extra": "child alone, single figure, only one person, empty beach",
+      "seed": 4101
     },
     {
       "n": 2,
@@ -30,7 +32,9 @@
       "n": 4,
       "zh": "又来了一次。\n还是停在那里。\n再来一次。\n每一次，都停在同一个地方。",
       "has_boy": false,
-      "prompt": "children's picture book illustration, gentle watercolor painting, soft sea green and warm sand palette, loose wet washes, lots of white paper showing, calm soft daylight, Three thin curved lines of foam left on wet sand at the same distance from the viewer, marking where each wave stopped, a gentle repeating pattern on an empty beach, soft daylight from above."
+      "prompt": "children's picture book illustration, gentle watercolor painting, soft sea green and warm sand palette, loose wet washes, calm soft daylight, A stretch of wet sandy beach seen at a low angle, three soft curved lines of white foam left behind on the sand at the same distance from the viewer, the calm sea and a low horizon in the upper third of the picture, a few small pebbles, complete and balanced composition",
+      "negative_extra": "empty white space, blank page, unfinished, straight lines, geometric shapes, steps",
+      "seed": 4104
     },
     {
       "n": 5,

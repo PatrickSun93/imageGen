@@ -36,19 +36,25 @@
       "n": 5,
       "zh": "白天的时候，\n星星还在天上吗？\n在的。\n只是太阳太亮了，\n把它们盖住了。",
       "has_boy": false,
-      "prompt": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, A bright daytime sky over a simple field, with faint pale stars drawn very softly behind the daylight to show they are still there, limited flat palette."
+      "prompt": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, A bright blue daytime sky in full midday daylight above a simple green field, the sun high and warm, and a scattering of very faint pale stars still drawn softly across the blue daytime sky to show that they are still there",
+      "negative_extra": "sunset, dusk, twilight, evening, night, dark sky, orange horizon, silhouette, person, figure",
+      "seed": 7105
     },
     {
       "n": 6,
       "zh": "月亮不一样。\n月亮自己不发光。\n是太阳照亮了它，\n像照亮一面镜子。",
       "has_boy": false,
-      "prompt": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, The moon in a dark sky with sunlight coming from one side lighting its face, the lit half bright warm orange and the other half soft shadow, flat graphic shapes."
+      "prompt": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, The moon alone in a dark night sky, sunlight arriving from one side so that half of its surface is bright and the other half falls into soft shadow, a plain round moon with a few simple craters, several small stars around it",
+      "negative_extra": "face, eyes, eyelashes, mouth, nose, smiling moon, man in the moon, cartoon character, anthropomorphic",
+      "seed": 7106
     },
     {
       "n": 7,
       "zh": "那我们呢？\n我们住的地球，\n也在天上飞。\n绕着太阳，\n一圈，又一圈。",
       "has_boy": false,
-      "prompt": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, The Earth as a small blue ball travelling along a wide curved path around a warm glowing sun, dark space and scattered stars, simple poster composition."
+      "prompt": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, A warm orange sun at the centre of the picture and a small blue Earth further out to one side, with a simple thin dotted oval line drawn around the sun to show the path the Earth travels along, dark space and a few small stars",
+      "negative_extra": "rings around planet, ringed planet, saturn, ribbon, road, band, thick solid curve, stick, connecting rod, straight line between objects",
+      "seed": 7107
     },
     {
       "n": 8,

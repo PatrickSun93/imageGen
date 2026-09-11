@@ -24,7 +24,9 @@
       "n": 3,
       "zh": "爸爸说：\n「这不是贝壳。\n这是「寄居蟹」。\n它住在别人的空壳里。」",
       "has_boy": true,
-      "prompt": "ohwx boy, wearing a pale yellow t-shirt and orange shorts, bare feet, short black hair, children's picture book illustration, colored pencil drawing, warm sandy palette with soft coral accents, visible pencil strokes and gentle cross-hatching, soft daylight, A father crouching beside a little boy on the sand, both looking closely at a hermit crab sitting in a spiral shell on the boy's palm, warm and gentle."
+      "prompt": "ohwx boy, wearing a pale yellow t-shirt and orange shorts, bare feet, short black hair, children's picture book illustration, colored pencil drawing, warm sandy palette with soft coral accents, visible pencil strokes and gentle cross-hatching, soft daylight, the little boy crouching on the sand beside a grown adult man who is clearly his father, the man has an adult face and adult build and is much larger than the child, wearing a light blue shirt and khaki shorts, both looking down at a hermit crab in a spiral shell resting on the boy's small palm",
+      "negative_extra": "two children, two boys, teenager, older brother, twins, same clothes on both figures, identical characters",
+      "seed": 5103
     },
     {
       "n": 4,
@@ -42,7 +44,9 @@
       "n": 6,
       "zh": "可是它一直在长大。\n壳不会跟着长大。\n有一天，\n壳就太小了。",
       "has_boy": false,
-      "prompt": "children's picture book illustration, colored pencil drawing, warm sandy palette with soft coral accents, visible pencil strokes and gentle cross-hatching, soft daylight, A hermit crab whose body has grown too big for its shell, part of it squeezed out, sitting on the sand with a slightly worried face, gentle and sympathetic, soft light."
+      "prompt": "children's picture book illustration, colored pencil drawing, warm sandy palette with soft coral accents, visible pencil strokes and gentle cross-hatching, soft daylight, A hermit crab that has grown much too big for its shell, the shell is clearly too small and the crab's body bulges out of the opening and cannot fit back inside, the crab looks uncomfortable and a little worried, sitting on plain sand",
+      "negative_extra": "large shell, big shell, roomy shell, crab hidden inside shell, shell bigger than crab",
+      "seed": 5106
     },
     {
       "n": 7,
