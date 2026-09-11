@@ -343,6 +343,7 @@ venv\python.exe storybook\contact_sheet.py storybook\out\sea_lora
 | 卡通车的车头长出一张笑脸 | 写了 cartoon，模型把车拟人化；只写 grown-up 司机，脸就挪到保险杠上 | 每辆车加一句 `The front of the vehicle is plain painted metal with two small round headlights.`（挖掘机 p4/p5 实测没脸了） |
 | 车里的司机、路上的工人都画成小孩 | 卡通画法下人物都偏幼；「一群人」尤其明显 | 车窗写 `dark tinted windows`（看不见车里就不会画错）；人群写 `tall grown-up construction workers, men with bushy mustaches and beards` |
 | 画面里凭空多出一排带脸的小车 | scene 里写了泛泛的 `simple cartoon machines behind them` | 背景里的东西写具体：`a yellow excavator and a dump truck with dark tinted cab windows`，或者干脆写空地、砖堆 |
+| 整页基本对，只多了一个小东西（多一对触角、车头一张小笑脸） | 模型随手加的细节 | 别整页重画：`storybook/fix_edit.py <图> "Remove the ..."` 用 Edit 模型只改那一处，约 3 分钟（毛毛虫 p5 实测） |
 | 红绿灯红灯、绿灯同时亮 | 模型对红绿灯的先验是三灯都亮 | 按位置写 `its bottom green light glowing and the red and yellow lights above it dark`；还有残留就本地把红灯压暗（红色像素乘 0.4），不必重画 |
 | 「中午影子最短」画成长影子（Qwen） | `the sun high overhead` 不够具体 | 按位置写：`a bright round sun sits at the very top center of the picture, straight above his head`，影子写成 `a tiny dark oval directly beneath his sneakers, about the size of his feet` |
 
