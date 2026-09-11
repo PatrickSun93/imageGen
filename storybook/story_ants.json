@@ -49,12 +49,13 @@
     {
       "n": 5,
       "zh": "两只蚂蚁走到一起，\n碰了碰头上的小触角。\n「你好呀。」\n「那边有好吃的！」\n它们就是这样说话的——\n不用嘴巴，用触角。",
-      "scene": "Extreme close up at ground level: two black ants facing each other in the middle of the picture, touching their antennae together, blades of green grass around them.",
+      "scene": "Simple crayon drawing at ground level on light paper: two cute black ants with round bodies and thick black crayon outlines face each other in the middle of the picture, gently touching their antennae together, a few chunky crayon blades of green grass around them.",
       "pose": "squat",
       "px": 22,
       "py": 62,
       "ph": 38,
-      "has_boy": false
+      "has_boy": false,
+      "seed": 2105
     },
     {
       "n": 6,
@@ -79,12 +80,13 @@
     {
       "n": 8,
       "zh": "妈妈在门口喊：「要下雨啦，快回来！」\n我低头一看，\n蚂蚁们也在急急忙忙地搬家。\n妈妈说，空气变潮的时候，\n蚂蚁就知道要下雨了。\n它们比我先知道呢。",
-      "scene": "A garden path under a dark stormy sky with the first big raindrops falling, a busy line of black ants hurrying along the ground in the foreground carrying white eggs and crumbs toward their nest.",
+      "scene": "A garden path under a dark stormy crayon sky with the first big raindrops falling. In the foreground a busy line of black ants hurries along the ground toward a small hole in the dirt, each ant carrying a tiny white crumb in its jaws. Grass and flowers bend in the wind along the path.",
       "pose": "walk",
       "px": 40,
       "py": 55,
       "ph": 54,
-      "has_boy": false
+      "has_boy": false,
+      "seed": 2108
     },
     {
       "n": 9,
