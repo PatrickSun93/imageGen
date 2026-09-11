@@ -1,0 +1,77 @@
+{
+  "title": "种子去旅行",
+  "subtitle": "它们不会走路，可是哪儿都去过",
+  "slug": "seed",
+  "seed_base": 8000,
+  "workflow": "workflows/flux_dev_lora.json",
+  "style_label": "剪纸拼贴",
+  "negative": "character sheet, model sheet, multiple views, grid, collage, text, watermark, signature, blurry, deformed hands, extra fingers, photorealistic face, photorealistic, glossy, harsh outlines",
+  "source": "storybook/render_jobs/BATCH_PROMPT.md (prompts are pre-built; render verbatim)",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "大树站在那里，\n一辈子都不动。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes, soft daylight, A single very large old tree standing alone in a wide open field, deep roots, completely still, soft daylight, plenty of empty space around it, cut paper collage style."
+    },
+    {
+      "n": 2,
+      "zh": "可是它的小树，\n长到了很远很远的地方。\n它们是怎么去的呢？",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes, soft daylight, The same wide field with several small young trees growing far away from the big old tree, showing the long distance between them, layered paper shapes."
+    },
+    {
+      "n": 3,
+      "zh": "蒲公英的「种子」\n有一把小伞。\n风一吹——\n呼，飞走了。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes, soft daylight, A dandelion seed head with several seeds lifting off in the wind, each seed carrying a small white parachute, floating across a pale sky, cut paper collage."
+    },
+    {
+      "n": 4,
+      "zh": "枫树的种子\n有两片翅膀。\n掉下来的时候，\n转啊转，\n像小螺旋桨。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes, soft daylight, Two winged maple seeds spinning down through the air like little propellers, motion shown with soft curved paper lines, warm autumn colours."
+    },
+    {
+      "n": 5,
+      "zh": "苍耳的种子\n全身都是小钩子。\n它钩住小狗的毛，\n搭了一段顺风车。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes, soft daylight, Close up of a dog's furry leg with several small hooked burr seeds stuck in the hair, the dog walking through tall grass, collage textures."
+    },
+    {
+      "n": 6,
+      "zh": "还有的种子藏在果子里。\n小鸟把果子吃掉，\n飞到很远的地方，\n种子就跟着搬了家。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes, soft daylight, A small bird holding a red berry in its beak on a branch, and further away in the distance the same bird flying over a wide field, layered paper landscape."
+    },
+    {
+      "n": 7,
+      "zh": "椰子最厉害。\n它掉进海里，\n漂啊漂，漂过一整片大海，\n在另一个岛上发芽。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes, soft daylight, A coconut floating on the surface of a calm sea, drifting along, a small green island in the distance, flat collage waves."
+    },
+    {
+      "n": 8,
+      "zh": "有的种子会自己弹。\n果荚晒干了，\n啪的一声裂开，\n把种子弹得远远的。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes, soft daylight, A dry seed pod splitting open with a snap, small seeds flying outward in several directions, short motion lines, warm paper textures."
+    },
+    {
+      "n": 9,
+      "zh": "种子不会走路。\n可是风会带它，\n水会送它，\n小鸟和小狗\n会捎上它。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes, soft daylight, One small seed at the centre of the picture with the wind, a stream of water, a bird and a dog arranged gently around it in a ring, all helping it travel, symmetrical collage composition."
+    },
+    {
+      "n": 10,
+      "zh": "我口袋里有一颗种子，\n是刚才在路上捡的。\n我把它种在院子里。\n这一次——\n是我帮它。",
+      "has_boy": true,
+      "prompt": "ohwx boy, wearing a mustard yellow t-shirt and brown corduroy overalls, red sneakers, short black hair, children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes, soft daylight, A little boy crouching in a garden pressing a single seed into the soil with one finger, a small watering can beside him, warm afternoon light, cut paper collage."
+    }
+  ],
+  "colophon": {
+    "model": "FLUX.1-dev Q4_K_S GGUF",
+    "lora": "son_ohwx_flux_v1 (1000 steps, 18 photos)",
+    "strength": 1.3
+  }
+}

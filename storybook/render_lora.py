@@ -4,9 +4,11 @@ API  = "http://127.0.0.1:8188"
 TRIGGER = "ohwx boy"
 LORA = "son_ohwx_flux_v1-step00001000.safetensors"
 
-def submit(wf_path, prompt_text, seed, prefix, strength):
+def submit(wf_path, prompt_text, seed, prefix, strength, negative=""):
     wf = json.load(open(wf_path, encoding="utf-8"))
     wf["4"]["inputs"]["text"] = prompt_text
+    # recorded for completeness only: at CFG 1.0 Flux dev never runs the negative branch
+    wf["8"]["inputs"]["text"] = negative
     wf["7"]["inputs"]["seed"] = seed
     wf["10"]["inputs"]["filename_prefix"] = prefix
     if strength:
@@ -38,13 +40,16 @@ def main(story_path, only):
     t0=time.time()
     for p in pages:
         n=p["n"]
-        if p["has_boy"]:
-            parts = [TRIGGER, story.get("character"), story["style"], p["scene"]]
+        if "prompt" in p:
+            prompt = p["prompt"]   # already assembled on the Mac side: use it verbatim
+        elif p["has_boy"]:
+            prompt = ", ".join(x for x in [TRIGGER, story.get("character"), story["style"], p["scene"]] if x)
         else:
-            parts = [story["style"], p["scene"]]
-        prompt = ", ".join(x for x in parts if x)
+            prompt = ", ".join(x for x in [story["style"], p["scene"]] if x)
+        negative = ", ".join(x for x in [story.get("negative", ""), p.get("negative_extra", "")] if x)
         t=time.time()
-        f=submit(wf_path, prompt, seed_base+n, f"{story['slug']}_p{n:02d}", strength if p["has_boy"] else 0)
+        f=submit(wf_path, prompt, seed_base+n, f"{story['slug']}_p{n:02d}", strength if p["has_boy"] else 0,
+                 negative)
         shutil.copy2(os.path.join(ROOT,"ComfyUI","output",f[0]), os.path.join(outdir,f"page_{n:02d}.png"))
         print(f"page {n:02d} seed {seed_base+n} {'[boy]' if p['has_boy'] else '[no boy]'} {time.time()-t:.0f}s", flush=True)
     print(f"{len(pages)} pages in {time.time()-t0:.0f}s -> {outdir}")

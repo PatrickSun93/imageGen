@@ -1,0 +1,77 @@
+{
+  "title": "我住在一颗星星旁边",
+  "subtitle": "太阳也是一颗星星",
+  "slug": "star",
+  "seed_base": 7000,
+  "workflow": "workflows/flux_dev_lora.json",
+  "style_label": "复古丝网印",
+  "negative": "character sheet, model sheet, multiple views, grid, collage, text, watermark, signature, blurry, deformed hands, extra fingers, photorealistic face, photorealistic, busy detail, harsh contrast",
+  "source": "storybook/render_jobs/BATCH_PROMPT.md (prompts are pre-built; render verbatim)",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "晚上，我躺在草地上看天。\n星星好多好多，\n小小的，一闪一闪。",
+      "has_boy": true,
+      "prompt": "ohwx boy, wearing a dark blue long sleeve shirt and grey trousers, short black hair, children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, A little boy lying on his back on grass at night looking up, seen from above, the whole sky above him filled with small stars, deep navy tones, flat graphic style."
+    },
+    {
+      "n": 2,
+      "zh": "我说：「星星好小。」\n爸爸说：\n「不是小。\n是远。」",
+      "has_boy": true,
+      "prompt": "ohwx boy, wearing a dark blue long sleeve shirt and grey trousers, short black hair, children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, A little boy and his father lying side by side on grass at night, both pointing up at the stars, drawn small inside a large starry frame."
+    },
+    {
+      "n": 3,
+      "zh": "星星其实很大很大。\n大得像太阳一样。\n因为太远太远了，\n看起来才只有一点点。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, A comparison picture: an enormous glowing star filling the left half of the frame, and the same star shown as a tiny dot far away on the right, dark sky between them, flat screenprint shapes."
+    },
+    {
+      "n": 4,
+      "zh": "那太阳呢？\n太阳也是一颗「星星」。\n只是它离我们最近，\n所以又大又亮。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, The sun drawn as one star among many: a large warm glowing sun on one side and many smaller stars of the same kind scattered across the dark sky, simple flat shapes."
+    },
+    {
+      "n": 5,
+      "zh": "白天的时候，\n星星还在天上吗？\n在的。\n只是太阳太亮了，\n把它们盖住了。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, A bright daytime sky over a simple field, with faint pale stars drawn very softly behind the daylight to show they are still there, limited flat palette."
+    },
+    {
+      "n": 6,
+      "zh": "月亮不一样。\n月亮自己不发光。\n是太阳照亮了它，\n像照亮一面镜子。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, The moon in a dark sky with sunlight coming from one side lighting its face, the lit half bright warm orange and the other half soft shadow, flat graphic shapes."
+    },
+    {
+      "n": 7,
+      "zh": "那我们呢？\n我们住的地球，\n也在天上飞。\n绕着太阳，\n一圈，又一圈。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, The Earth as a small blue ball travelling along a wide curved path around a warm glowing sun, dark space and scattered stars, simple poster composition."
+    },
+    {
+      "n": 8,
+      "zh": "如果从很远的地方看，\n地球也只是一个小亮点。\n小小的，\n蓝蓝的。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, The Earth seen from very far away as one small pale blue dot in dark empty space, tiny and quiet, a great deal of empty space around it."
+    },
+    {
+      "n": 9,
+      "zh": "所以我不用坐火箭去太空。\n我已经在太空里了。\n我一直都在。",
+      "has_boy": true,
+      "prompt": "ohwx boy, wearing a dark blue long sleeve shirt and grey trousers, short black hair, children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, A little boy standing on grass at night with his arms out, the ground beneath him curving away like the surface of a planet, stars all around him, flat graphic style."
+    },
+    {
+      "n": 10,
+      "zh": "我躺在草地上，\n抱着这颗会飞的大球，\n和满天的星星一起，\n转啊，转啊。",
+      "has_boy": true,
+      "prompt": "ohwx boy, wearing a dark blue long sleeve shirt and grey trousers, short black hair, children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain, A little boy lying on grass at night seen from directly above with arms spread, boy and grass small at the centre of a huge sky full of stars, calm and wide."
+    }
+  ],
+  "colophon": {
+    "model": "FLUX.1-dev Q4_K_S GGUF",
+    "lora": "son_ohwx_flux_v1 (1000 steps, 18 photos)",
+    "strength": 1.3
+  }
+}

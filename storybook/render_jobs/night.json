@@ -1,0 +1,79 @@
+{
+  "title": "晚上，地球转过去了",
+  "subtitle": "太阳没有走，是我们转过去了",
+  "slug": "night",
+  "seed_base": 6000,
+  "workflow": "workflows/flux_dev_lora.json",
+  "style_label": "夜色粉彩",
+  "negative": "character sheet, model sheet, multiple views, grid, collage, text, watermark, signature, blurry, deformed hands, extra fingers, photorealistic face, harsh light, daytime, bright saturated colors, scary darkness",
+  "source": "storybook/render_jobs/BATCH_PROMPT.md (prompts are pre-built; render verbatim)",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "天黑了，该睡觉了。\n我趴在窗台上问：\n「太阳去哪里了？」",
+      "has_boy": true,
+      "prompt": "ohwx boy, wearing light blue pajamas with a small star pattern, bare feet, short black hair, children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light, A little boy in pajamas kneeling at a bedroom window at night looking out at a deep blue sky, a small bedside lamp glowing warm behind him, cozy quiet room."
+    },
+    {
+      "n": 2,
+      "zh": "太阳没有去哪里。\n它一直在那儿，\n一直亮着，\n从来没有关过。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light, An enormous warm golden sun filling most of the frame, radiating soft light rays outward in all directions, smooth even glowing surface with no craters and no dark spots, seen close up in open space, steady and calm",
+      "negative_extra": "moon, crater, craters, crescent, night sky, clouds, trees, horizon, signature, handwriting"
+    },
+    {
+      "n": 3,
+      "zh": "是我们——\n慢慢地，\n转过去了。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light, The Earth as a blue and green ball floating in dark space, one half lit by warm sunlight from the side, the other half in soft shadow, calm and gentle."
+    },
+    {
+      "n": 4,
+      "zh": "我们住的地球，\n是一个很大很大的球。\n它一直在「转」。\n转一圈，就是一天。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light, The planet Earth alone in dark space, blue oceans, green continents, white swirling clouds, one side lit by warm sunlight and the other in soft shadow, seen close and large, a few small stars behind",
+      "negative_extra": "rings, ringed planet, saturn, jupiter, gas giant, halo, arrow, circle around planet, signature, handwriting"
+    },
+    {
+      "n": 5,
+      "zh": "转到有太阳的那一面——\n就是白天。\n转到背着太阳的那一面——\n就是晚上。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light, One round Earth in space: on the sunlit side a small town in daylight, on the shadowed side a similar town at night with warm lit windows, the line between them soft and gradual."
+    },
+    {
+      "n": 6,
+      "zh": "现在我们这边是晚上。\n地球的另外一边，\n有小朋友正在吃早饭呢。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light, Two children drawn small on the curve of the round Earth on opposite sides: one asleep in bed on the night side, one eating breakfast at a sunlit table on the day side, stars around the planet."
+    },
+    {
+      "n": 7,
+      "zh": "你睡觉的时候，\n地球也在转。\n轻轻地，稳稳地，\n一点声音都没有。",
+      "has_boy": true,
+      "prompt": "ohwx boy, wearing light blue pajamas with a small star pattern, bare feet, short black hair, children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light, A little boy asleep in bed seen from above, moonlight falling across the blanket, everything very still and quiet, deep blue and cream tones."
+    },
+    {
+      "n": 8,
+      "zh": "转啊转，\n天边慢慢变亮了。\n那不是太阳升起来，\n是我们转回来了。",
+      "has_boy": false,
+      "prompt": "children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light, The curved horizon of the Earth seen from a little way above, the dark side slowly coming into light, a thin warm band of dawn along the curve, stars fading softly."
+    },
+    {
+      "n": 9,
+      "zh": "早上，\n第一缕光照在窗帘上。\n我们又转到太阳这边了。",
+      "has_boy": true,
+      "prompt": "ohwx boy, wearing light blue pajamas with a small star pattern, bare feet, short black hair, children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light, Warm morning light falling across a curtain in a child's bedroom, a little boy in pajamas just waking up, one bare foot out from under the blanket, soft and quiet."
+    },
+    {
+      "n": 10,
+      "zh": "所以「晚安」的意思是：\n我们转过去一会儿，\n明天，\n再转回来。",
+      "has_boy": true,
+      "prompt": "ohwx boy, wearing light blue pajamas with a small star pattern, bare feet, short black hair, children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light, A little boy in pajamas lying in bed with his eyes closed and a small smile, the window behind him showing a night sky with a few stars, very peaceful, warm lamp light."
+    }
+  ],
+  "colophon": {
+    "model": "FLUX.1-dev Q4_K_S GGUF",
+    "lora": "son_ohwx_flux_v1 (1000 steps, 18 photos)",
+    "strength": 1.3
+  }
+}
