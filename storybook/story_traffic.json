@@ -76,7 +76,7 @@
     },
     {
       "n": 5,
-      "zh": "不过，就算是绿灯，过马路前也要看一看。\n我站在路边，先转过头，看看左边，\n再看看右边，\n确定没有车开过来，才跟着爸爸走。\n爸爸摸摸我的头：「看得真仔细！」",
+      "zh": "不过，就算是绿灯，过马路前也要看一看，\n因为有的车会拐弯开过来。\n我站在路边，转过头，先看看左边，\n再看看右边，确定没有车开过来，才跟着爸爸走。\n爸爸摸摸我的头：「看得真仔细！」",
       "scene": "Side view at the edge of the sidewalk: the little boy stands in profile facing left, holding the hand of his father, a tall grown adult man with short black hair and natural skin, in a grey jacket and dark trousers. The little boy's face is turned toward the empty street on the left of the picture, one hand raised to shade his eyes as he looks carefully down the road for cars.",
       "has_boy": true
     },
@@ -100,14 +100,14 @@
     },
     {
       "n": 9,
-      "zh": "大路口还有交通警察叔叔。\n他穿着整整齐齐的制服，戴着白白的手套，\n手往上一抬，车子就停；\n手往旁边一挥，车子就走。\n路口的车太多的时候，大家都听他的指挥。",
-      "scene": "A traffic police officer in a neat uniform and white gloves stands at the center of a crossroads raising one hand, the cars around him stopped and waiting; the officer is the only person in the picture.",
+      "zh": "学校门口，还有一位过马路安全员叔叔。\n他穿着亮黄色的背心，手里举着一个红色的八角形牌子，\n牌子的意思是：停！\n车子都停下来，等小朋友们安全地走过去。\n我们过马路的时候，要听他的指挥。",
+      "scene": "At a school crosswalk, a friendly grown-up crossing guard with a bushy mustache in a bright yellow safety vest stands on the white stripes holding up a red octagonal stop sign, and the cars on both sides have stopped and are waiting; the crossing guard is the only person in the picture.",
       "has_boy": false
     },
     {
       "n": 10,
-      "zh": "放学啦，我们又来到路口。\n我按下灯柱上的圆按钮，等呀等——绿灯亮了！\n左边看看，右边看看，\n我牵着爸爸的手，走过斑马线。\n红灯停，绿灯行，我已经记住啦！",
-      "scene": "Afternoon at a crosswalk: the little boy presses the round button on the traffic light pole with one finger while holding the hand of his father, a tall grown adult man with short black hair and natural skin, in a grey jacket and dark trousers, waiting for the green light, smiling.",
+      "zh": "放学啦，我们又来到路口。\n我按下灯柱上的圆按钮，等呀等——\n对面的小灯里，亮起了一个白色的小人！\n小白人亮了，就可以走；亮的是橙色的小手，就要停。\n左边看看，右边看看，我牵着爸爸的手，走过斑马线。",
+      "scene": "Afternoon at a crosswalk: the little boy presses the round button on the crossing pole with one finger while holding the hand of his father, a tall grown adult man with short black hair and natural skin, in a grey jacket and dark trousers, smiling. On the pedestrian signal box across the street a white walking-person light is glowing.",
       "has_boy": true
     }
   ],
