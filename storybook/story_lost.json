@@ -4,7 +4,7 @@
   "slug": "lost",
   "seed_base": 14000,
   "character": "wearing a green hoodie, beige trousers and white sneakers, short black hair",
-  "style": "children's picture book illustration, pen and ink line drawing with soft watercolor washes, warm friendly colors, clean simple shapes, signs and shelves without any writing",
+  "style": "children's picture book illustration, loose simple pen and ink line drawing with soft flat watercolor washes, few details, warm friendly colors, clean simple shapes, signs and shelves without any writing",
   "style_label": "钢笔淡彩",
   "keyword": "工作人员",
   "palette": {
@@ -77,13 +77,13 @@
     {
       "n": 5,
       "zh": "可以找谁帮忙呢？\n找穿着制服的「工作人员」，\n或者带着小朋友的阿姨。",
-      "scene": "A friendly supermarket staff member in a green uniform apron with a name badge standing at a checkout counter, and nearby a mother holding her small daughter's hand.",
+      "scene": "A friendly woman supermarket cashier with short black hair in a green uniform apron with a name badge stands smiling at a checkout counter, and nearby a mother holds her small daughter's hand, a bright simple supermarket behind them.",
       "has_boy": false
     },
     {
       "n": 6,
       "zh": "我走到收银台，\n对阿姨说：\n「阿姨，我找不到妈妈了。」",
-      "scene": "The little boy stands in front of a checkout counter talking to a kind cashier woman in a green uniform apron, who leans down toward him to listen.",
+      "scene": "At the supermarket checkout the kind cashier woman in a green uniform apron has stepped out from behind the counter and bends down to the little boy's eye level, her hands resting on her knees, listening to him with a gentle face while he talks to her.",
       "has_boy": true
     },
     {

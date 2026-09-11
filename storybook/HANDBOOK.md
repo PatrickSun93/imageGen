@@ -162,6 +162,9 @@ venv\python.exe -c "import PIL; print(PIL.__version__)"
 | 夜色粉彩 | `children's picture book illustration, soft chalk pastel painting, deep indigo night and warm cream palette, gentle grain, quiet glowing light` |
 | 复古丝网印 | `children's picture book illustration, retro screenprint poster style, limited palette of deep navy teal and warm orange, flat simple shapes, subtle paper grain` |
 | 剪纸拼贴 | `children's picture book illustration, cut paper collage, textured handmade paper, warm earth tones with fresh green, layered flat shapes` |
+| 水墨淡彩（Qwen） | `children's picture book illustration, Chinese ink wash painting with soft watercolor tints on textured rice paper, gentle grey, blue and green washes, simple shapes, lots of empty paper` —— 右下角常出假印章，用 `clean_seal.py` 抹掉 |
+| 木刻版画（Qwen） | `children's picture book illustration, linocut print on cream paper, bold carved shapes, limited palette of warm orange, sky blue and black ink, visible ink texture and paper grain` |
+| 马克笔（Qwen） | `children's picture book illustration drawn with bright felt-tip markers on white paper, bold black outlines, flat vivid colors, simple cheerful shapes, visible marker strokes` |
 
 **规律：画风词要指向一个成熟画种，并且给它一个物理载体。**
 `crayon drawing` 太抽象，出来是照片人物配蜡笔背景；
@@ -217,7 +220,8 @@ CFG 固定 1.0，强度改用 FluxGuidance；步数 20；提示词吃自然语�
 会覆盖 LoRA 学到的脸——这是最容易犯的错，早期几本人物不像就是因为这个。
 
 **seed 用「书号 ×1000 + 页码」。** 已用：蚂蚁 2000、恐龙 3000、
-海边 4000、寄居蟹 5000、夜晚 6000、星星 7000、种子 8000。新书往后排。
+海边 4000、寄居蟹 5000、夜晚 6000、星星 7000、种子 8000、雨 9000、影子 10000、
+毛毛虫 11000、交通 12000、挖掘机 13000、走丢 14000、身体 15000、生气 16000。新书往后排。
 重跑某页时用 **原种子 +100**，避免复现同样的构图。
 
 ### 3.3 负面提示词
@@ -325,6 +329,10 @@ venv\python.exe storybook\contact_sheet.py storybook\out\sea_lora
 | 人物每页不一样 | 没写 `character` 字段 | 补上全书统一的穿着 |
 | 人不像他 | 提示词里描述了五官 | 删掉所有五官描述 |
 | 出成了角色设定图 | `white background` + `full body` 触发了角色表模式 | 正面加 `only one child, single character`，负面加 `character sheet, multiple views` |
+| 水墨页右下角盖了红印章（Qwen） | 画风写了 `Chinese ink wash` / `rice paper`，模型模仿国画落款 | `clean_seal.py` 事后抹掉（`render_qwen_books.py` 对水墨书自动做）；印章很淡时 r−g 只有 30 左右 |
+| 爸爸的脸和手被涂成绿色、像少年（Qwen） | 画风写了 `limited palette of bright red, green, yellow and navy`，模型连皮肤也只用这几种颜色 | style 里去掉「只用这几色」的说法，加 `every person has natural skin tones`；爸爸写成 `a tall grown adult man with short black hair and natural skin, in a grey jacket and dark trousers` |
+| 红绿灯红灯、绿灯同时亮 | 模型对红绿灯的先验是三灯都亮 | 按位置写 `its bottom green light glowing and the red and yellow lights above it dark`；还有残留就本地把红灯压暗（红色像素乘 0.4），不必重画 |
+| 「中午影子最短」画成长影子（Qwen） | `the sun high overhead` 不够具体 | 按位置写：`a bright round sun sits at the very top center of the picture, straight above his head`，影子写成 `a tiny dark oval directly beneath his sneakers, about the size of his feet` |
 
 ### 4.4 重跑
 

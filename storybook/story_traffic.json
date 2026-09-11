@@ -4,7 +4,7 @@
   "slug": "traffic",
   "seed_base": 12000,
   "character": "wearing a bright yellow t-shirt, navy shorts, white sneakers and a small blue backpack, short black hair",
-  "style": "children's picture book illustration, risograph print style in red, yellow, blue and green inks, grainy ink texture, simple flat shapes, every person has natural skin tones, signs and cars without any writing",
+  "style": "children's picture book illustration, risograph print on off-white paper, grainy speckled ink texture with slight colour misregistration, flat bold shapes, bright red, yellow, blue and green inks, every person has natural skin tones, signs and cars without any writing",
   "style_label": "孔版印刷",
   "keyword": "红绿灯",
   "palette": {
@@ -59,7 +59,7 @@
     {
       "n": 2,
       "zh": "路口有一个三只眼睛的灯，\n红的、黄的、绿的。\n它叫「红绿灯」，\n是马路上的指挥员。",
-      "scene": "A traffic light on a pole at a street corner with three round lights, red, yellow and green, the red light glowing brightly, a clear sky behind it.",
+      "scene": "Close view of one traffic light on a pole, the traffic light fills most of the picture: three round lamps stacked with red at the top, yellow in the middle and green at the bottom, the red lamp glowing brightly, a clear blue sky behind it and an empty quiet street corner below.",
       "has_boy": false
     },
     {

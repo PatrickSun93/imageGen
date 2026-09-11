@@ -3,9 +3,9 @@
   "subtitle": "心里的小火山要喷发了，怎么办？",
   "slug": "angry",
   "seed_base": 16000,
-  "character": "wearing a navy t-shirt with a yellow star, grey shorts and red sneakers, short black hair",
-  "style": "children's picture book illustration, thick expressive acrylic brush strokes, bold primary colors, textured paper, simple shapes",
-  "style_label": "厚涂丙烯",
+  "character": "wearing a plain orange t-shirt, grey shorts and red sneakers, short black hair",
+  "style": "children's picture book illustration, bright gouache painting on textured paper, flat simple rounded shapes with clean outlines, few details, warm cheerful colors, clean calm background, soft visible brush texture",
+  "style_label": "水粉",
   "keyword": "深呼吸",
   "palette": {
     "ink": "#231f26",
@@ -59,7 +59,7 @@
     {
       "n": 2,
       "zh": "表弟跑过来，\n一不小心——\n哗啦！\n城堡倒了。",
-      "scene": "A younger toddler cousin with curly brown hair in a red t-shirt bumps into a tall tower of wooden blocks by accident, and the blocks tumble down across the rug.",
+      "scene": "A younger toddler cousin with curly brown hair in a red t-shirt runs into a tall tower of wooden blocks by accident, and the blocks tumble through the air and scatter across the colorful rug around him, his mouth open in surprise.",
       "has_boy": false
     },
     {
@@ -77,7 +77,7 @@
     {
       "n": 5,
       "zh": "我想起了妈妈教我的魔法——\n「深呼吸」。\n像闻一朵花一样，\n慢慢地吸气……",
-      "scene": "The little boy holds a small flower up to his nose with his eyes closed, slowly breathing in, his face softening.",
+      "scene": "The little boy sits on the colorful rug next to a small vase of flowers. He holds one small pink flower up close to his nose with one hand, his eyes closed, slowly breathing in its smell, his face calm and softening.",
       "has_boy": true
     },
     {
