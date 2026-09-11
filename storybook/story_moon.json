@@ -64,25 +64,25 @@
     {
       "n": 6,
       "zh": "我们看到的月光，\n其实是太阳的光。\n太阳照在月亮上，\n月亮把光反射回来，\n我们就看见它亮了。",
-      "scene": "A simple clear diagram on black: the sun at the left sending straight bright rays to a round moon on the right, and the lit side of the moon glowing.",
+      "scene": "A simple clear diagram, drawn flat and plain on a solid black background: a round yellow sun at the far left and a round grey moon at the far right, three straight bright rays going from the sun to the moon, the left half of the moon facing the sun glowing pale yellow and its right half dark grey. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 7,
       "zh": "月亮一边自己转，\n一边绕着地球转圈。\n转一圈大约要一个月。\n它离我们很远很远，\n可是一直跟着地球走。",
-      "scene": "A simple clear diagram on black: the earth in the middle and a moon on a circular dotted path around it, an arrow showing the direction of travel.",
+      "scene": "A simple clear diagram, drawn flat and plain on a solid black background: a blue-green earth ball in the middle, a thin white dotted circle drawn around it, one small grey moon sitting on that circle at the right, and one curved white arrow on the circle showing the moon travelling anticlockwise. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 8,
       "zh": "太阳只能照亮月亮的一半。\n被照到的那一半是亮的，\n照不到的那一半是暗的。\n我们看到多少亮的部分，\n月亮就是什么样子。",
-      "scene": "A simple clear diagram on black: a moon ball with its left half brightly lit by rays from the sun and its right half dark, seen from the side.",
+      "scene": "A simple clear diagram, drawn flat and plain on a solid black background: one large moon ball seen from the side in the middle, its left half brightly lit pale yellow and its right half dark grey, with three straight bright rays arriving from a small yellow sun at the left edge. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 9,
       "zh": "月亮转到太阳这一边的时候，\n亮的那一半背着我们，\n我们就几乎看不见它。\n这时候的月亮，\n叫做新月。",
-      "scene": "A night sky that is almost empty: only a very faint dark circle where the moon is, surrounded by stars, one thin outline showing where the moon hides.",
+      "scene": "A simple clear diagram, drawn flat and plain on a solid black background: a small yellow sun at the left, a grey moon ball in the middle with its lit half facing the sun and its dark half facing right, and a blue-green earth ball at the right, all three in one straight horizontal line, so from the earth only the dark side of the moon can be seen. Nothing else in the picture.",
       "has_boy": false
     },
     {
@@ -94,25 +94,25 @@
     {
       "n": 11,
       "zh": "月牙一天比一天胖。\n先是细细的一条，\n然后变成半个圆——\n这是上弦月，\n晚上早早就能看见。",
-      "scene": "A first quarter moon, exactly half lit on the right side and half dark, high in a starry sky.",
+      "scene": "A simple clear diagram, drawn flat and plain on a solid black background: one moon shown large in the middle, exactly half of it lit bright white on the right side and the other half dark grey, the edge between them a straight vertical line. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 12,
       "zh": "再过几天，\n月亮几乎全亮了，\n只剩一点点缺口。\n最后终于变成一个大圆盘：\n满月。",
-      "scene": "Two moons drawn side by side on black: a nearly full moon with a small dark sliver on one side, and next to it a completely round full moon.",
+      "scene": "A simple clear diagram, drawn flat and plain on a solid black background: two moons side by side, the left one almost fully lit with a thin dark sliver on its left edge, the right one a completely round fully lit white circle. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 13,
       "zh": "满月之后，\n月亮又开始一点点变瘦。\n先缺一小块，\n再变成半个圆，\n最后又剩下一条细细的月牙。",
-      "scene": "Three moon shapes in a row on black: a nearly full moon, a half moon, and a thin crescent, showing the shape getting smaller from left to right.",
+      "scene": "A simple clear diagram, drawn flat and plain on a solid black background: three moons in a row from left to right, the first almost fully lit, the second exactly half lit on the left side, the third a thin crescent on the left side, each the same size and evenly spaced. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 14,
       "zh": "从新月到满月，\n再从满月回到新月，\n大约要二十九天半。\n月亮的这些样子，\n有一个名字，叫做「月相」。",
-      "scene": "A circular chart on black: eight moon shapes arranged in a ring, going from a dark new moon through crescent, half, gibbous, full and back again.",
+      "scene": "A simple clear diagram, drawn flat and plain on a solid black background: eight moons arranged evenly around one large circle, starting at the top with a completely dark moon and going clockwise through thin crescent, half lit, almost full, fully lit white, almost full again, half lit and thin crescent, each moon the same size. Nothing else in the picture.",
       "has_boy": false
     },
     {
