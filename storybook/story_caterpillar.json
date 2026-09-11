@@ -1,0 +1,114 @@
+{
+  "title": "毛毛虫的新衣服",
+  "subtitle": "睡一觉，就长出了翅膀",
+  "slug": "caterpillar",
+  "seed_base": 11000,
+  "character": "wearing an orange t-shirt, green shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration drawn with bright felt-tip markers on white paper, bold black outlines, flat vivid colors, simple cheerful shapes, visible marker strokes",
+  "style_label": "马克笔",
+  "keyword": "蛹",
+  "palette": {
+    "ink": "#1f2a1a",
+    "soft": "#5b6b4e",
+    "ground": "#f0f4e6",
+    "paper": "#fdfef8",
+    "accent": "#e0662a",
+    "bark": "#6f8a3a",
+    "line": "#d8e2c4",
+    "ink_d": "#e9f0dc",
+    "soft_d": "#a3b58f",
+    "ground_d": "#121710",
+    "paper_d": "#1b2317",
+    "accent_d": "#f28c55",
+    "bark_d": "#93b25c",
+    "line_d": "#2e3a26"
+  },
+  "facts": [
+    [
+      "毛毛虫",
+      "蝴蝶小时候的样子，最爱吃叶子"
+    ],
+    [
+      "脱皮",
+      "长得太快，旧皮穿不下就换掉"
+    ],
+    [
+      "蛹",
+      "毛毛虫变蝴蝶时住的小房子"
+    ],
+    [
+      "蝴蝶",
+      "从蛹里钻出来，吃花蜜"
+    ]
+  ],
+  "neg_extra": "",
+  "facts_title": "知识卡",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "妈妈种的菜叶上，\n有好多小洞洞。\n是谁咬的呢？\n我翻开叶子一看——",
+      "scene": "In a small vegetable garden, the little boy bends over a big green cabbage leaf full of small holes, lifting the edge of the leaf to peek underneath, curious.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "是一只小小的毛毛虫！\n绿绿的，软软的，\n一拱一拱地往前爬。",
+      "scene": "Close up of a small green caterpillar crawling along a big green leaf, its body arched up in the middle as it moves, little holes nibbled in the leaf.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "它一直吃，一直吃，\n吃完一片叶子，又吃一片。\n身体越来越胖，越来越长。",
+      "scene": "A fat green caterpillar munching on the edge of a leaf, half of the leaf already eaten away, other leaves around it with bites taken out.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "它长得太快了，\n身上的皮都穿不下了。\n于是它脱掉旧皮，\n换上一件新衣服。",
+      "scene": "A green caterpillar crawling out of its old dry split skin on a leaf, the empty old skin left behind, the caterpillar looking fresh and bright.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "有一天，毛毛虫不吃东西了。\n它爬到树枝上，\n吐出细细的丝，\n把自己倒挂了起来。",
+      "scene": "A green caterpillar hanging upside down from a thin twig by a tiny silk thread, curled into a J shape, soft garden background.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "它把自己包成一个小硬壳，\n一动也不动。\n这个小房子，叫做「蛹」。",
+      "scene": "A single smooth green chrysalis hanging still from a twig, with tiny gold dots on it, green leaves around it.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "我每天都去看它。\n一天，两天，三天……\n它还是一动也不动。\n它在里面做什么呢？",
+      "scene": "The little boy crouches in the garden looking up at a green chrysalis hanging from a twig, chin resting in his hands, waiting patiently, morning light.",
+      "has_boy": true
+    },
+    {
+      "n": 8,
+      "zh": "咔——\n蛹裂开了一条缝。\n钻出来的不是毛毛虫，\n是一只皱巴巴的蝴蝶！",
+      "scene": "A butterfly slowly coming out of a split open chrysalis on a twig, its wings still crumpled and damp, holding on to the empty chrysalis shell.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "它扇扇翅膀，\n翅膀慢慢张开了，\n又大又漂亮，\n还有好多好看的花纹。",
+      "scene": "A beautiful butterfly resting on a twig with its colorful patterned wings fully open, sunlight, green leaves around.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "蝴蝶飞起来了，\n飞到了花园里。\n我种下几棵花，\n给它留好吃的花蜜。\n「你的新衣服真漂亮！」",
+      "scene": "The little boy plants a small flower in the garden with a little shovel, and a colorful butterfly flutters above the flowers next to him, sunny cheerful day.",
+      "has_boy": true
+    }
+  ]
+}

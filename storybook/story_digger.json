@@ -1,0 +1,114 @@
+{
+  "title": "挖掘机的一天",
+  "subtitle": "栏杆里面，在造什么呢？",
+  "slug": "digger",
+  "seed_base": 13000,
+  "character": "wearing a red t-shirt, denim overalls and brown boots, short black hair",
+  "style": "children's picture book illustration in vintage mid-century style, flat shapes, limited palette of mustard yellow, orange, teal and black, halftone print texture on off-white paper",
+  "style_label": "复古印刷",
+  "keyword": "挖掘机",
+  "palette": {
+    "ink": "#262219",
+    "soft": "#6b6150",
+    "ground": "#f2ecdd",
+    "paper": "#fdf9ef",
+    "accent": "#d98a1e",
+    "bark": "#2f7d78",
+    "line": "#e2d7c0",
+    "ink_d": "#f1e9d8",
+    "soft_d": "#b3a589",
+    "ground_d": "#161410",
+    "paper_d": "#221e16",
+    "accent_d": "#f0ad45",
+    "bark_d": "#5fb3ad",
+    "line_d": "#3a3326"
+  },
+  "facts": [
+    [
+      "挖掘机",
+      "用长长的手臂和铲斗挖土"
+    ],
+    [
+      "自卸车",
+      "把土运走，车斗一抬就倒下"
+    ],
+    [
+      "推土机",
+      "把高低不平的土推平"
+    ],
+    [
+      "塔吊",
+      "把很重的东西吊到高处"
+    ]
+  ],
+  "neg_extra": "",
+  "facts_title": "知识卡",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我家旁边围起了一圈高高的栏杆。\n里面轰隆隆，轰隆隆，好热闹。\n工地很危险，不能进去，\n我就站在栏杆外面看。",
+      "scene": "The little boy stands outside a tall construction site fence, looking through a gap in the fence at big yellow machines working on the dirt inside, safe on the sidewalk.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "大「挖掘机」伸出长长的手臂，\n大铲斗往下一挖，\n就是一大块土。",
+      "scene": "A big yellow excavator digging into the brown earth with its long arm, its toothed bucket full of dirt, a construction site around it.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "自卸车把土装走，\n开到另一边，车斗一抬——\n哗！\n土就倒下来了。",
+      "scene": "A big orange dump truck tipping its raised bed, a pile of brown dirt sliding out onto the ground, construction site.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "推土机往前推呀推，\n把高高低低的土，\n推得平平的。",
+      "scene": "A yellow bulldozer with a wide flat blade pushing a mound of dirt forward, leaving flat smooth ground behind it.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "水泥搅拌车的大肚子，\n一直转呀转。\n里面的水泥一停下来，\n就会变硬啦。",
+      "scene": "A cement mixer truck with its big striped drum turning, pouring grey wet concrete down a chute at the construction site.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "高高的塔吊站在工地中间，\n它把长长的钢筋，\n一下子吊到了半空中。",
+      "scene": "A tall tower crane standing in the middle of the construction site, lifting a bundle of long steel beams high into the blue sky on its cable.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "工人叔叔都戴着黄色的安全帽。\n他们看着图纸，\n告诉每一辆车该做什么。",
+      "scene": "Construction workers in yellow hard hats and orange vests standing together at the site, one of them pointing at a big rolled-out plan, machines behind them.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "压路机慢慢地压过去，\n新铺的路，\n变得又平又光。",
+      "scene": "A road roller with a big smooth drum slowly rolling over a freshly paved dark path, making it flat and shiny.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "过了好多好多天，\n栏杆拆掉了——\n原来他们造的是一个新的游乐场！",
+      "scene": "The fence is gone and a brand new playground stands where the construction site was, with a slide, swings and a sandbox. The little boy runs toward it happily.",
+      "has_boy": true
+    },
+    {
+      "n": 10,
+      "zh": "我在沙坑里，\n开着我的小挖掘机。\n挖一挖，推一推，\n我也在造房子呢！",
+      "scene": "The little boy kneels in a sandbox playing with a toy yellow excavator, digging a small hole and building a little mound of sand, sunny playground around him.",
+      "has_boy": true
+    }
+  ]
+}

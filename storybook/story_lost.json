@@ -1,0 +1,114 @@
+{
+  "title": "我走丢了",
+  "subtitle": "别怕，我知道该怎么做",
+  "slug": "lost",
+  "seed_base": 14000,
+  "character": "wearing a green hoodie, beige trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration, pen and ink line drawing with soft watercolor washes, warm friendly colors, clean simple shapes, signs and shelves without any writing",
+  "style_label": "钢笔淡彩",
+  "keyword": "工作人员",
+  "palette": {
+    "ink": "#25313a",
+    "soft": "#607079",
+    "ground": "#eef2f0",
+    "paper": "#fbfdfc",
+    "accent": "#2f8f6f",
+    "bark": "#7f8c84",
+    "line": "#d5ded9",
+    "ink_d": "#e4ece8",
+    "soft_d": "#9bb0a6",
+    "ground_d": "#111816",
+    "paper_d": "#1a2320",
+    "accent_d": "#62c29f",
+    "bark_d": "#8fa59b",
+    "line_d": "#2b3834"
+  },
+  "facts": [
+    [
+      "站着不动",
+      "走丢了先停下来，爸爸妈妈会回来找"
+    ],
+    [
+      "找谁帮忙",
+      "穿制服的工作人员、警察，或带小朋友的阿姨"
+    ],
+    [
+      "记住电话",
+      "背熟爸爸妈妈的电话号码"
+    ],
+    [
+      "不跟人走",
+      "不跟不认识的人离开这里"
+    ]
+  ],
+  "neg_extra": "",
+  "facts_title": "知识卡",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "周末，妈妈带我去超市。\n超市好大好大，\n货架比我还要高。\n妈妈说：「牵好我的手哦。」",
+      "scene": "The little boy holds his mother's hand as they walk into a big bright supermarket with tall shelves, the mother is a grown adult woman with short hair in a blue coat pushing a shopping cart.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "我看到了好多好多玩具，\n一下子松开妈妈的手，\n跑了过去。",
+      "scene": "The little boy runs happily down a supermarket aisle toward shelves full of colorful toys, his arms swinging.",
+      "has_boy": true
+    },
+    {
+      "n": 3,
+      "zh": "我回头一看——\n妈妈不见了！\n到处都是不认识的人，\n我的心咚咚咚地跳。",
+      "scene": "The little boy stands alone in a supermarket aisle looking around with a worried face, tall shelves on both sides, blurry shoppers far away in the background.",
+      "has_boy": true
+    },
+    {
+      "n": 4,
+      "zh": "我想起妈妈说过：\n走丢了，先站在原地，\n不要乱跑。\n妈妈一定会回来找我。",
+      "scene": "The little boy stands still at the end of a supermarket shelf, taking a deep breath with his hands at his sides, a calm and brave face.",
+      "has_boy": true
+    },
+    {
+      "n": 5,
+      "zh": "可以找谁帮忙呢？\n找穿着制服的「工作人员」，\n或者带着小朋友的阿姨。",
+      "scene": "A friendly supermarket staff member in a green uniform apron with a name badge standing at a checkout counter, and nearby a mother holding her small daughter's hand.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "我走到收银台，\n对阿姨说：\n「阿姨，我找不到妈妈了。」",
+      "scene": "The little boy stands in front of a checkout counter talking to a kind cashier woman in a green uniform apron, who leans down toward him to listen.",
+      "has_boy": true
+    },
+    {
+      "n": 7,
+      "zh": "阿姨问我叫什么名字。\n我大声说出了自己的名字，\n还背出了妈妈的电话号码。",
+      "scene": "At the checkout counter the kind cashier holds a telephone to her ear while the little boy stands beside her speaking clearly and pointing to himself.",
+      "has_boy": true
+    },
+    {
+      "n": 8,
+      "zh": "超市里的广播响了：\n「请穿绿色卫衣的小朋友的妈妈，\n到收银台来。」",
+      "scene": "A loudspeaker on the ceiling of a big supermarket with soft sound waves drawn coming out of it, shoppers below looking up and listening.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "妈妈跑了过来，\n一把抱住了我。\n「宝贝，你做得真好！」",
+      "scene": "The mother in her blue coat kneels down by the checkout and hugs the little boy tightly, both relieved and happy, the kind cashier smiling behind them.",
+      "has_boy": true
+    },
+    {
+      "n": 10,
+      "zh": "回家的路上，我牵紧妈妈的手。\n我记住了三件事：\n站着不动，\n找工作人员，\n说出电话号码。",
+      "scene": "The little boy and his mother walk home hand in hand along a tree-lined street at sunset, the mother carrying a shopping bag, both smiling.",
+      "has_boy": true
+    }
+  ]
+}

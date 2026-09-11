@@ -1,0 +1,114 @@
+{
+  "title": "红灯停，绿灯行",
+  "subtitle": "过马路，我会看一看",
+  "slug": "traffic",
+  "seed_base": 12000,
+  "character": "wearing a bright yellow t-shirt, navy shorts, white sneakers and a small blue backpack, short black hair",
+  "style": "children's picture book illustration, risograph print style, limited palette of bright red, green, yellow and navy, grainy ink texture, simple flat shapes, signs and cars without any writing",
+  "style_label": "孔版印刷",
+  "keyword": "红绿灯",
+  "palette": {
+    "ink": "#1d2338",
+    "soft": "#5a5f73",
+    "ground": "#f1f0ea",
+    "paper": "#fcfbf7",
+    "accent": "#d8412f",
+    "bark": "#3d8a5a",
+    "line": "#dcdace",
+    "ink_d": "#ecebf3",
+    "soft_d": "#a3a7bb",
+    "ground_d": "#13151f",
+    "paper_d": "#1c1f2c",
+    "accent_d": "#f06a57",
+    "bark_d": "#6cc08b",
+    "line_d": "#30344a"
+  },
+  "facts": [
+    [
+      "红灯",
+      "停下来，等一等"
+    ],
+    [
+      "绿灯",
+      "先看看左右，没有车再走"
+    ],
+    [
+      "黄灯",
+      "马上要变红灯了，不要抢"
+    ],
+    [
+      "大车旁边",
+      "司机看不到小朋友，要离远一点"
+    ]
+  ],
+  "neg_extra": "",
+  "facts_title": "知识卡",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "早上，爸爸送我去幼儿园。\n马路上的车好多好多，\n嘀嘀，嘟嘟，开得好快。\n我紧紧牵着爸爸的手。",
+      "scene": "Morning on a city sidewalk: the little boy holds his father's hand tightly as they walk along, the father is a grown adult man in a grey jacket, cars driving past on the busy street beside them.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "路口有一个三只眼睛的灯，\n红的、黄的、绿的。\n它叫「红绿灯」，\n是马路上的指挥员。",
+      "scene": "A traffic light on a pole at a street corner with three round lights, red, yellow and green, the red light glowing brightly, a clear sky behind it.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "红灯亮了，\n车子都停下来，\n我们也要停下来，\n站在路边等一等。",
+      "scene": "At a crossroads the traffic light glows red, a row of cars has stopped neatly before the white stripes of a zebra crossing, calm street.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "绿灯亮了！\n我和爸爸走上斑马线，\n白白的一道，又一道，\n我们一起走过去。",
+      "scene": "The traffic light glows green. The little boy and his father walk across a zebra crossing holding hands, the white stripes on the road under their feet, cars waiting.",
+      "has_boy": true
+    },
+    {
+      "n": 5,
+      "zh": "过马路前，还要看一看：\n左边看看，右边看看，\n没有车开过来，\n再走。",
+      "scene": "The little boy stands at the edge of the sidewalk holding his father's hand, turning his head to look carefully to the left along the empty street before crossing.",
+      "has_boy": true
+    },
+    {
+      "n": 6,
+      "zh": "黄灯一闪一闪，\n是在说：\n「马上要变红灯啦，\n不要抢，慢慢来。」",
+      "scene": "The traffic light glowing yellow above a street corner, the cars slowing down gently, evening light.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "大卡车好高好高，\n司机叔叔坐在上面，\n看不见车子旁边的小朋友。",
+      "scene": "A big delivery truck with a tall cab parked beside the road, the driver sitting high up in the cab, a wide empty space on the ground next to the big front wheel.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "所以我不在车子旁边玩，\n也不从停着的车后面跑出来。\n我的小皮球，\n等到了公园再玩。",
+      "scene": "The little boy stands on the sidewalk well away from the parked cars, holding a red ball in both hands, his father beside him, a safe quiet street.",
+      "has_boy": true
+    },
+    {
+      "n": 9,
+      "zh": "路口还有交通警察叔叔，\n他戴着白手套，\n手一抬，车子就停；\n手一挥，车子就走。",
+      "scene": "A traffic police officer in a neat uniform and white gloves standing at the center of a crossroads, raising one hand, the cars around him stopped and waiting.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "放学啦。\n我按下路口的按钮，\n等呀等，绿灯亮了——\n左边看看，右边看看，\n牵着爸爸的手，走过斑马线。",
+      "scene": "Afternoon at a crosswalk: the little boy presses the round button on the traffic light pole with one finger while holding his father's hand, waiting for the green light, smiling.",
+      "has_boy": true
+    }
+  ]
+}

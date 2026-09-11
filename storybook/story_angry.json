@@ -1,0 +1,114 @@
+{
+  "title": "生气的时候",
+  "subtitle": "心里的小火山要喷发了，怎么办？",
+  "slug": "angry",
+  "seed_base": 16000,
+  "character": "wearing a navy t-shirt with a yellow star, grey shorts and red sneakers, short black hair",
+  "style": "children's picture book illustration, thick expressive acrylic brush strokes, bold primary colors, textured paper, simple shapes",
+  "style_label": "厚涂丙烯",
+  "keyword": "深呼吸",
+  "palette": {
+    "ink": "#231f26",
+    "soft": "#665d6b",
+    "ground": "#f2eef2",
+    "paper": "#fdfbfd",
+    "accent": "#d94a3a",
+    "bark": "#7c7285",
+    "line": "#ddd6e0",
+    "ink_d": "#ece6ee",
+    "soft_d": "#a79cae",
+    "ground_d": "#141116",
+    "paper_d": "#1e1a21",
+    "accent_d": "#f07868",
+    "bark_d": "#9387a0",
+    "line_d": "#342e3a"
+  },
+  "facts": [
+    [
+      "生气没关系",
+      "每个人都会生气"
+    ],
+    [
+      "深呼吸",
+      "像闻花一样吸气，像吹蜡烛一样吐气"
+    ],
+    [
+      "数到五",
+      "等心里的小火山变小再说话"
+    ],
+    [
+      "说出来",
+      "「我很生气，因为……」，不打人、不推人"
+    ]
+  ],
+  "neg_extra": "",
+  "facts_title": "知识卡",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我用积木搭了一座城堡，\n高高的，\n比我的头还要高！",
+      "scene": "The little boy kneels on a colorful rug next to a tall wooden block castle that is taller than his head, looking proud.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "表弟跑过来，\n一不小心——\n哗啦！\n城堡倒了。",
+      "scene": "A younger toddler cousin with curly brown hair in a red t-shirt bumps into a tall tower of wooden blocks by accident, and the blocks tumble down across the rug.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "我的脸一下子变得好热，\n拳头攥得紧紧的。\n心里像有一座小火山，\n快要喷发了！",
+      "scene": "The little boy stands beside the fallen blocks with a red angry face and tightly clenched fists, and a small red cartoon volcano puffing smoke is drawn beside him like a picture of his feelings.",
+      "has_boy": true
+    },
+    {
+      "n": 4,
+      "zh": "我好想推他，好想大声喊。\n可是，推人会让别人受伤。\n我停住了。",
+      "scene": "The little boy stands with his arms stiff at his sides and his fists clenched, stopping himself, lips pressed together, eyes squeezed shut.",
+      "has_boy": true
+    },
+    {
+      "n": 5,
+      "zh": "我想起了妈妈教我的魔法——\n「深呼吸」。\n像闻一朵花一样，\n慢慢地吸气……",
+      "scene": "The little boy holds a small flower up to his nose with his eyes closed, slowly breathing in, his face softening.",
+      "has_boy": true
+    },
+    {
+      "n": 6,
+      "zh": "再像吹蜡烛一样，\n慢慢地吐气……\n呼——",
+      "scene": "The little boy puffs out his cheeks and blows out gently as if blowing out birthday candles, calm and focused.",
+      "has_boy": true
+    },
+    {
+      "n": 7,
+      "zh": "一、二、三、四、五。\n心里的小火山，\n慢慢地变小了。",
+      "scene": "The little boy sits on the rug counting on his fingers with a calm face, and the little cartoon volcano beside him has become tiny and quiet.",
+      "has_boy": true
+    },
+    {
+      "n": 8,
+      "zh": "我对表弟说：\n「我很生气，\n因为你把我的城堡弄倒了。」",
+      "scene": "The little boy sits facing his younger curly-haired cousin on the rug and talks to him calmly, the fallen blocks between them.",
+      "has_boy": true
+    },
+    {
+      "n": 9,
+      "zh": "表弟小声地说：\n「对不起。」\n他把一块积木递给我。",
+      "scene": "The younger toddler cousin with curly brown hair holds out a wooden block with both hands, looking sorry and hopeful, on a colorful rug.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "我们一起重新搭城堡。\n这一次，比上次还要高！\n生气的时候，\n我知道该怎么办了。",
+      "scene": "The little boy and his younger curly-haired cousin build a new tall wooden block castle together on the rug, both happy and proud.",
+      "has_boy": true
+    }
+  ]
+}
