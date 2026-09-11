@@ -78,7 +78,8 @@
       "n": 5,
       "zh": "有一天，毛毛虫不吃东西了。\n它爬到树枝上，\n吐出细细的丝，\n把自己倒挂了起来。",
       "scene": "A green caterpillar hanging upside down from a thin twig by a tiny silk thread, curled into a J shape, soft garden background.",
-      "has_boy": false
+      "has_boy": false,
+      "seed": 11105
     },
     {
       "n": 6,
