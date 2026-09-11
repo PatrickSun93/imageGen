@@ -70,7 +70,7 @@
     {
       "n": 7,
       "zh": "它的鼻子很灵。\n只要闻到一点点烟，\n就会大声叫起来：\n嘀！嘀！嘀！\n吵得整间屋子都听得见。",
-      "scene": "The white ceiling smoke alarm sounding, with bold sound lines drawn radiating out from it and a thin wisp of smoke drifting up toward it.",
+      "scene": "The white round smoke alarm on the ceiling is sounding, with bold sound lines drawn radiating out from it and one thin wisp of grey smoke drifting up toward it. The ceiling and walls are clean and undamaged.",
       "has_boy": false
     },
     {
@@ -82,7 +82,7 @@
     {
       "n": 9,
       "zh": "烟会往上飘，\n所以下面的空气更干净。\n走的时候要弯下腰，\n低着头快步走，\n不要站得直直的。",
-      "scene": "The little boy walks bent low through a hallway toward a door, keeping his head down, with a layer of grey smoke drawn near the ceiling above him.",
+      "scene": "The little boy walks bent low through a clean undamaged hallway toward a door, keeping his head down, with a thin layer of grey smoke drawn only near the ceiling above him. The walls are smooth and unmarked.",
       "has_boy": true
     },
     {
@@ -106,7 +106,7 @@
     {
       "n": 13,
       "zh": "不一会儿，\n消防车就开到了门口。\n消防员跳下车，\n接上水管，\n水柱一下子喷了出去。",
-      "scene": "A red fire engine parked in front of a house, firefighters in full gear connecting a hose to a hydrant and spraying a strong jet of water toward the roof.",
+      "scene": "A red fire engine parked in front of a house, two firefighters in full gear connecting a hose to a street hydrant and one holding the nozzle, a strong jet of water arcing toward the roof, thin grey smoke drifting from behind the roof. The house itself is undamaged, with no burnt, blackened or broken parts, and no flames are shown.",
       "has_boy": false
     },
     {
