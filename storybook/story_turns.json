@@ -1,0 +1,143 @@
+{
+  "title": "轮到我了",
+  "subtitle": "排队、轮流和等一等",
+  "slug": "turns",
+  "seed_base": 20000,
+  "character": "wearing a yellow t-shirt, blue shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, wax crayon resist: thick white and bright crayon lines showing through a soft watercolor wash painted over them, textured paper, cheerful colors",
+  "style_label": "蜡笔防染",
+  "keyword": "轮流",
+  "palette": {
+    "ink": "#2a2b33",
+    "soft": "#6a6b78",
+    "ground": "#f1f0ea",
+    "paper": "#fbfaf6",
+    "accent": "#3f8fa8",
+    "bark": "#857f74",
+    "line": "#dcdad0",
+    "ink_d": "#eceae2",
+    "soft_d": "#a5a396",
+    "ground_d": "#14151a",
+    "paper_d": "#1e1f26",
+    "accent_d": "#6fc0d6",
+    "bark_d": "#948f84",
+    "line_d": "#33343c"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "下午，妈妈带我去公园。\n公园里有一个高高的滑梯，\n黄黄的，弯弯的。\n我一看见就想冲过去。",
+      "scene": "A sunny park with a tall yellow curly slide. The little boy runs toward it with his arms up, happy and excited.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "可是滑梯前面，\n已经站着三个小朋友。\n他们一个跟着一个，\n排成一条小队伍。",
+      "scene": "Three other children of different ages stand in a neat line at the bottom of the slide ladder, and the little boy stops right behind them, looking at the line.",
+      "has_boy": true
+    },
+    {
+      "n": 3,
+      "zh": "我好想马上就滑。\n脚在原地跳来跳去，\n手也痒痒的。\n妈妈说：\n「大家轮流，一个一个来。」",
+      "scene": "The little boy stands at the end of the line bouncing on his toes, looking up at the slide, his hands fidgeting, other children ahead of him on the ladder.",
+      "has_boy": true
+    },
+    {
+      "n": 4,
+      "zh": "「轮流」是什么意思呢？\n就是每个人都玩一会儿，\n玩完就换下一个。\n这样大家都能玩到，\n谁也不会一直等下去。",
+      "scene": "A simple clear picture: four children's coloured footprints drawn in a row on the ground leading to a slide, with a number 1, 2, 3, 4 marked beside each pair of footprints.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "等待的时候，\n我数了数前面还有几个人。\n三个，两个，一个……\n数着数着，\n好像没有那么难等了。",
+      "scene": "The little boy stands in the line counting on his fingers, looking at the two children still in front of him, a calm patient face.",
+      "has_boy": true
+    },
+    {
+      "n": 6,
+      "zh": "轮到我了！\n我抓住扶手，一级一级爬上去，\n坐好，\n然后——嗖！\n滑下来的风吹到我的脸上。",
+      "scene": "The little boy slides down the yellow slide with both arms up, laughing, his hair blown back by the wind.",
+      "has_boy": true
+    },
+    {
+      "n": 7,
+      "zh": "滑完了，我没有再爬上去，\n而是从旁边跑回队伍后面，\n重新排好。\n后面的小朋友也想滑呢。",
+      "scene": "The little boy walks back around the side of the slide to the end of the line, while another child climbs the ladder behind him.",
+      "has_boy": true
+    },
+    {
+      "n": 8,
+      "zh": "秋千也要轮流。\n公园里只有两个秋千，\n想荡的人却有好几个。\n所以大家说好：\n数到二十就换人。",
+      "scene": "Two empty swings hanging side by side in a park, with a small chalk number 20 drawn on the ground in front of them.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "我坐上秋千，\n荡呀荡，\n心里数：一、二、三……\n数到二十的时候，\n我停下来，跳下秋千。",
+      "scene": "The little boy swings on a park swing with his legs stretched out, his mouth moving as he counts, a happy face.",
+      "has_boy": true
+    },
+    {
+      "n": 10,
+      "zh": "我把秋千让给后面的小妹妹。\n她说了一声「谢谢」。\n她笑起来的时候，\n我心里也变得暖暖的。",
+      "scene": "The little boy holds the swing steady with one hand while a smaller girl with pigtails climbs onto it, both smiling at each other.",
+      "has_boy": true
+    },
+    {
+      "n": 11,
+      "zh": "沙坑里只有一把小铲子。\n两个人都想用，\n怎么办呢？\n我们把沙漏放在旁边，\n沙子漏完就换人。",
+      "scene": "A sandpit with one yellow spade lying in the sand and a small hourglass standing beside it, sunlight on the sand, no people.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "轮到别人的时候，\n我就在旁边堆我的小山。\n手上没有铲子，\n可是用手也能堆。\n等一等，也能玩得很开心。",
+      "scene": "The little boy kneels in the sandpit piling up a small sand hill with his bare hands, another child digging with the spade nearby, both busy and content.",
+      "has_boy": true
+    },
+    {
+      "n": 13,
+      "zh": "有个小哥哥直接插到了队伍前面。\n我有点生气，\n可是我没有推他。\n我说：\n「请排到后面，我们在轮流。」",
+      "scene": "The little boy stands in the line and speaks up calmly to a bigger boy who has stepped in front of him, pointing with his open hand toward the end of the line, other children waiting behind.",
+      "has_boy": true
+    },
+    {
+      "n": 14,
+      "zh": "要是他还是不听，\n我就去找大人帮忙。\n公园里有妈妈，\n幼儿园里有老师，\n大人会帮我们把事情说清楚。",
+      "scene": "A grown adult woman with short black hair in a red sweater sits on a park bench looking toward the playground, ready to help, warm afternoon light.",
+      "has_boy": false
+    },
+    {
+      "n": 15,
+      "zh": "图书角也是一样。\n我想看的那本恐龙书，\n正被别的小朋友捧在手里。\n那我就先看另一本，\n等他看完再换。",
+      "scene": "A cosy reading corner with a low shelf of picture books, one dinosaur book missing from the shelf and a gap where it was, a cushion on the floor, no people.",
+      "has_boy": false
+    },
+    {
+      "n": 16,
+      "zh": "等待的时候，\n心里会痒痒的，有点着急。\n这时候可以深呼吸，\n可以数数，\n也可以先做点别的事。",
+      "scene": "The little boy sits cross-legged on a cushion in the reading corner with his eyes closed, taking a slow deep breath, a picture book open on his lap.",
+      "has_boy": true
+    },
+    {
+      "n": 17,
+      "zh": "轮到我的时候，\n我拿到了那本恐龙书。\n因为等过，\n所以拿到的时候，\n特别开心。",
+      "scene": "The little boy sits on a cushion holding the dinosaur picture book open with both hands, smiling widely at the pages.",
+      "has_boy": true
+    },
+    {
+      "n": 18,
+      "zh": "回家的路上，妈妈说：\n「你今天很会等。」\n我想了想，\n等一等，其实没有那么难。\n而且大家都玩到了。",
+      "scene": "The little boy walks home along a tree-lined path holding the hand of his mother, a grown adult woman with short black hair in a red sweater, in the late afternoon sun, both smiling, the park behind them.",
+      "has_boy": true
+    }
+  ]
+}

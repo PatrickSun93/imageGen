@@ -1,0 +1,143 @@
+{
+  "title": "月亮变胖又变瘦",
+  "subtitle": "月亮每天都在换样子",
+  "slug": "moon",
+  "seed_base": 19000,
+  "character": "wearing a navy blue pajama top, navy trousers and grey slippers, short black hair",
+  "style": "children's picture book illustration, scratchboard art: bright lines and shapes scratched out of a solid black ink surface, glowing white, pale yellow and soft blue lines on a deep black background",
+  "style_label": "刮画",
+  "keyword": "月相",
+  "palette": {
+    "ink": "#e8e4d9",
+    "soft": "#b9b3a1",
+    "ground": "#14161c",
+    "paper": "#1b1e26",
+    "accent": "#f0c060",
+    "bark": "#8f8a78",
+    "line": "#2b2f3a",
+    "ink_d": "#e8e4d9",
+    "soft_d": "#b9b3a1",
+    "ground_d": "#0d0f14",
+    "paper_d": "#15181f",
+    "accent_d": "#f5cd76",
+    "bark_d": "#8f8a78",
+    "line_d": "#2b2f3a"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "晚上，我和爸爸在院子里乘凉。\n天黑下来，星星一颗一颗亮起来。\n爸爸指着天上说：\n「你看，今天的月亮多圆。」",
+      "scene": "Night in a backyard: the little boy in pyjamas stands on the grass with his father, a tall grown adult man with short black hair in a grey shirt, beside him, both looking up at a big round full moon in a starry sky.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "今晚的月亮圆圆的，\n亮亮的，挂在树梢上。\n上面还有一块一块淡淡的影子，\n像被谁轻轻擦过。",
+      "scene": "A big round full moon filling most of the picture, with faint darker patches on its surface, a few thin tree branches crossing in front of it, stars around.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "过了几天，我又去看月亮。\n咦？它少了一小块。\n右边圆圆的，\n左边却像被咬掉了一口。",
+      "scene": "A gibbous moon in the night sky with one side round and the other side flattened and dark, a few stars around it.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "我把每天晚上看到的月亮，\n都画在一个小本子上。\n一页画一个。\n画着画着，我发现——\n它每天都不一样。",
+      "scene": "The little boy sits at a desk by a window at night with a small notebook open, drawing a moon shape with a pencil, several pages of different moon shapes pinned on the wall beside him.",
+      "has_boy": true
+    },
+    {
+      "n": 5,
+      "zh": "爸爸说，月亮自己不会发光。\n它是一个又大又冷的石头球，\n表面坑坑洼洼的，\n没有一点自己的光。",
+      "scene": "A large grey rocky ball with craters floating alone on a black background, no light of its own, a few distant stars.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "我们看到的月光，\n其实是太阳的光。\n太阳照在月亮上，\n月亮把光反射回来，\n我们就看见它亮了。",
+      "scene": "A simple clear diagram on black: the sun at the left sending straight bright rays to a round moon on the right, and the lit side of the moon glowing.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "月亮一边自己转，\n一边绕着地球转圈。\n转一圈大约要一个月。\n它离我们很远很远，\n可是一直跟着地球走。",
+      "scene": "A simple clear diagram on black: the earth in the middle and a moon on a circular dotted path around it, an arrow showing the direction of travel.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "太阳只能照亮月亮的一半。\n被照到的那一半是亮的，\n照不到的那一半是暗的。\n我们看到多少亮的部分，\n月亮就是什么样子。",
+      "scene": "A simple clear diagram on black: a moon ball with its left half brightly lit by rays from the sun and its right half dark, seen from the side.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "月亮转到太阳这一边的时候，\n亮的那一半背着我们，\n我们就几乎看不见它。\n这时候的月亮，\n叫做新月。",
+      "scene": "A night sky that is almost empty: only a very faint dark circle where the moon is, surrounded by stars, one thin outline showing where the moon hides.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "又过两三天，\n天边出现一条细细的月牙，\n弯弯的，像一只小船。\n它出现在太阳落下的方向。",
+      "scene": "A thin crescent moon low in the dark sky just above the horizon line, with the last glow of sunset at the horizon and a few stars above.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "月牙一天比一天胖。\n先是细细的一条，\n然后变成半个圆——\n这是上弦月，\n晚上早早就能看见。",
+      "scene": "A first quarter moon, exactly half lit on the right side and half dark, high in a starry sky.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "再过几天，\n月亮几乎全亮了，\n只剩一点点缺口。\n最后终于变成一个大圆盘：\n满月。",
+      "scene": "Two moons drawn side by side on black: a nearly full moon with a small dark sliver on one side, and next to it a completely round full moon.",
+      "has_boy": false
+    },
+    {
+      "n": 13,
+      "zh": "满月之后，\n月亮又开始一点点变瘦。\n先缺一小块，\n再变成半个圆，\n最后又剩下一条细细的月牙。",
+      "scene": "Three moon shapes in a row on black: a nearly full moon, a half moon, and a thin crescent, showing the shape getting smaller from left to right.",
+      "has_boy": false
+    },
+    {
+      "n": 14,
+      "zh": "从新月到满月，\n再从满月回到新月，\n大约要二十九天半。\n月亮的这些样子，\n有一个名字，叫做「月相」。",
+      "scene": "A circular chart on black: eight moon shapes arranged in a ring, going from a dark new moon through crescent, half, gibbous, full and back again.",
+      "has_boy": false
+    },
+    {
+      "n": 15,
+      "zh": "所以，看看月亮，\n就能猜出今天是这个月的哪几天。\n以前的人出海、种地，\n都靠月亮数日子。",
+      "scene": "An old paper calendar page on a dark table lit by moonlight, with small moon shapes drawn in the corner of some of the day squares.",
+      "has_boy": false
+    },
+    {
+      "n": 16,
+      "zh": "中秋节那天，月亮最圆。\n我们一家坐在院子里吃月饼。\n妈妈说：\n「今天的月亮，和你出生那天一样圆。」",
+      "scene": "Night in the backyard: the little boy sits at a small table with his mother, a grown adult woman with short black hair in a red sweater, and his father, a tall grown adult man with short black hair in a grey shirt,, a plate of round mooncakes on the table, a big full moon above them, warm lantern light.",
+      "has_boy": true
+    },
+    {
+      "n": 17,
+      "zh": "爸爸拿出一个小望远镜。\n我凑上去一看——\n月亮上真的有好多坑！\n有大的，有小的，\n一个挨着一个。",
+      "scene": "The little boy looks through a small telescope on a tripod in the backyard at night, one eye closed, his mouth open in surprise, the moon glowing above.",
+      "has_boy": true
+    },
+    {
+      "n": 18,
+      "zh": "该睡觉了。\n我躺在床上，\n月光从窗户照进来，\n照在我的被子上。\n明天的月亮，又会变一点点。",
+      "scene": "The little boy lies in bed under a blanket at night, moonlight coming through the window and falling across his blanket, a crescent moon visible outside the glass.",
+      "has_boy": true
+    }
+  ]
+}
