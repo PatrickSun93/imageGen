@@ -263,7 +263,7 @@ venv\python.exe storybook\render_lora.py storybook\story_sea.json 1 4     :: 只
 | 页 | 用什么 | 每页耗时 |
 |---|---|---|
 | 没有他 | Qwen-Image-2512 Q4 + Lightning 8 步 LoRA，CFG 1 | 约 80 秒 |
-| 有他 | Qwen-Image-Edit-2511 Q4 + Edit Lightning 8 步，拿**两张他的照片**当参考图，不用 LoRA | 约 3 分钟 |
+| 有他 | Qwen-Image-Edit-2511 **Q3_K_M** + Edit Lightning 8 步，拿**两张他的照片**当参考图，不用 LoRA | 约 3 分钟 |
 
 ```bat
 venv\python.exe storybook\bakeoff_qwen.py lightning8 storybook\story_sea.json:4
@@ -276,8 +276,9 @@ venv\python.exe storybook\edit_qwen.py --v2 照片1.png 照片2.png storybook\st
 - **Edit 的提示词要直接点名参考图**：`Picture 1 and Picture 2 show the same little boy. Draw exactly this boy…`
   （`--v2`）。写成 Flux 那种长串关键词，画出来是棕发、年纪大的油画男孩。
 - **两个 Qwen 模型不能同时加载**（合起来约 36 GB）。先出完所有有他的页，`/free` 清内存，再出其余页。
-- **内存要够**：Edit 模型 13 GB + 文本编码器 9.4 GB 已经把 32 GB 用满，再开一个占 6.7 GB 的程序（比如 sonictype），
-  每页会从 3 分钟掉到 20 多分钟。出图前先把大程序关掉。
+- **Edit 用 Q3_K_M（9.9 GB），别用 Q4_K_M（13 GB）**：Q4 + 文本编码器 9.4 GB 会把 32 GB 内存用满，
+  只要再开一个占 6.7 GB 的程序（比如 sonictype），每页就从 3 分钟掉到 20 多分钟（一直在从硬盘读模型）。
+  2026-09-11 实测 Q3 在同样条件下每页 192 秒，画质看不出差别。工作流默认已经是 Q3。
 - **缺点**：颜色比 Flux 浓，不太「清透」；「一张图里画一个过程」会切成三格连环画；
   对「浪停在他脚前」这种否定式的动作不太听话（海边第 3 页他坐进了水里）。
 

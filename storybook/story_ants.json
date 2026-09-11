@@ -1,99 +1,110 @@
 {
   "title": "蚂蚁要搬家了",
   "subtitle": "它们比我先知道要下雨",
-  "slug": "ants_v3",
+  "slug": "ants",
+  "seed_base": 2000,
   "style": "children's book illustration drawn with wax crayons on textured paper, chunky crayon strokes, visible waxy grain, flat bright colors, naive childlike drawing, thick black outlines, simple shapes, storybook art",
   "neg_extra": "watercolor painting, oil painting, 3d render, smooth airbrush gradient, swarm of insects, scribble, messy tangled black lines, giant insect",
   "pages": [
     {
       "n": 1,
       "zh": "太阳出来了，我跑到院子里玩。\n咦？地上有一条细细的黑线。\n它还在动！\n我蹲下来，慢慢靠近。",
-      "scene": "a sunny backyard garden path with brown soil, green grass and yellow flowers along the edges, a neat line of small black ants walking across the path in the foreground, empty path with no people",
+      "scene": "A sunny backyard garden path with brown soil and yellow flowers along the edges. In the foreground a thin wavy black line of tiny ants crosses the path. The little boy crouches a few steps behind it, leaning forward with curious eyes, slowly getting closer.",
       "pose": "squat",
       "px": 38,
       "py": 60,
-      "ph": 44
+      "ph": 44,
+      "has_boy": true
     },
     {
       "n": 2,
       "zh": "我趴在地上，把脸凑得很近很近。\n原来不是线呀——\n是好多好多蚂蚁，\n一只跟着一只，排着队走。\n它们走得好快，一点也不撞。",
-      "scene": "close view of brown soil ground with a row of black ants walking across it, each ant clearly drawn with round body and six legs, green grass blades behind, no people",
+      "scene": "The little boy lies on his tummy on the grass at the edge of the path, chin resting on his hands, his face very close to the ground, watching a neat row of small black ants walk past right in front of his nose. Each ant is clearly drawn with a round body and six legs.",
       "pose": "kneel",
       "px": 40,
       "py": 58,
-      "ph": 50
+      "ph": 50,
+      "has_boy": true
     },
     {
       "n": 3,
       "zh": "每一只都扛着东西呢。\n一粒米、一点饼干渣、一小片树叶。\n「嘿咻，嘿咻。」\n最小的那只蚂蚁，\n扛的东西比它自己还要大。\n爸爸说，蚂蚁能扛起比自己重几十倍的东西。",
-      "scene": "brown garden soil with several black ants in a line, each carrying a small crumb or green leaf on its back, sunlit ground, small plants at the edges, no people",
+      "scene": "Close view of brown garden soil with a line of black ants, each carrying something on its back: a grain of rice, a biscuit crumb, a small green leaf. The smallest ant carries a crumb bigger than itself. Sunlit ground, small plants at the edges, only the ants and the ground in the picture.",
       "pose": "squat",
       "px": 30,
       "py": 60,
-      "ph": 42
+      "ph": 42,
+      "has_boy": false
     },
     {
       "n": 4,
       "zh": "它们把土一粒一粒搬出来，\n在洞口堆成一座小小的山。\n搬完一趟，又回去搬下一趟。\n一趟，又一趟，\n谁也不偷懒。",
-      "scene": "a small cone shaped mound of loose soil at an ant nest entrance on brown ground, black ants walking in and out carrying grains of dirt, garden plants around, no people",
+      "scene": "A small cone shaped mound of loose soil at an ant nest entrance on brown ground, black ants walking in and out, each carrying one grain of dirt, garden plants around, only the ants, the soil and the plants in the picture.",
       "pose": "kneel",
       "px": 32,
       "py": 58,
-      "ph": 48
+      "ph": 48,
+      "has_boy": false
     },
     {
       "n": 5,
       "zh": "两只蚂蚁走到一起，\n碰了碰头上的小触角。\n「你好呀。」\n「那边有好吃的！」\n它们就是这样说话的——\n不用嘴巴，用触角。",
-      "scene": "extreme close up of brown soil, two large black ants facing each other touching antennae in the center, blades of green grass around them, no people",
+      "scene": "Extreme close up at ground level: two black ants facing each other in the middle of the picture, touching their antennae together, blades of green grass around them.",
       "pose": "squat",
       "px": 22,
       "py": 62,
-      "ph": 38
+      "ph": 38,
+      "has_boy": false
     },
     {
       "n": 6,
       "zh": "我跟着队伍一直走，一直走。\n走到一个小小的洞口。\n蚂蚁一只接一只钻进去，\n就像回家一样。\n它们怎么认得路呢？\n原来前面的蚂蚁会留下气味，\n后面的跟着味道走，就不会迷路啦。",
-      "scene": "a line of black ants walking toward a small round hole in the dirt with a mound of soil around it, brown garden ground, grass at the edges, no people",
+      "scene": "The little boy walks slowly along the garden path, bent over, following a long line of black ants that leads to a small round hole in the dirt with a little mound of soil around it. The ants disappear into the hole one after another.",
       "pose": "kneel",
       "px": 28,
       "py": 60,
-      "ph": 46
+      "ph": 46,
+      "has_boy": true
     },
     {
       "n": 7,
       "zh": "咦，天忽然暗下来了。\n风吹得草哗啦啦地响。\n我抬起头——\n乌云跑得好快好快。",
-      "scene": "a grassy field under dark gathering storm clouds, wind bending the tall grass, big dramatic sky filling the upper two thirds, no people",
+      "scene": "The little boy stands in a grassy yard looking up at the sky, dark storm clouds rushing overhead, wind bending the tall grass and blowing his hair, a big darkening sky filling the upper two thirds of the picture.",
       "pose": "stand",
       "px": 42,
       "py": 52,
-      "ph": 58
+      "ph": 58,
+      "has_boy": true
     },
     {
       "n": 8,
       "zh": "妈妈在门口喊：「要下雨啦，快回来！」\n我低头一看，\n蚂蚁们也在急急忙忙地搬家。\n妈妈说，空气变潮的时候，\n蚂蚁就知道要下雨了。\n它们比我先知道呢。",
-      "scene": "a garden path under a dark stormy sky with first raindrops falling, a busy line of black ants hurrying along the ground in the foreground carrying things, no people",
+      "scene": "A garden path under a dark stormy sky with the first big raindrops falling, a busy line of black ants hurrying along the ground in the foreground carrying white eggs and crumbs toward their nest.",
       "pose": "walk",
       "px": 40,
       "py": 55,
-      "ph": 54
+      "ph": 54,
+      "has_boy": false
     },
     {
       "n": 9,
       "zh": "它们的家有好多个门，\n藏在草丛里，藏在石头下面。\n我数呀数，数了好久。\n妈妈说，一个蚂蚁的家里，\n住着好几千只、好几万只蚂蚁，\n就像一座地下的大城市。",
-      "scene": "brown ground with several small nest holes half hidden under grass and a flat stone, a few black ants at each hole, late afternoon warm light, no people",
+      "scene": "Brown ground with several small ant nest holes, some half hidden under grass and one under a flat stone, a few black ants at each hole, late afternoon warm light.",
       "pose": "squat",
       "px": 32,
       "py": 60,
-      "ph": 42
+      "ph": 42,
+      "has_boy": false
     },
     {
       "n": 10,
       "zh": "滴答，滴答。\n下雨啦。\n我躲在伞下面，\n蚂蚁躲在家里面。\n雨点打在伞上，砰砰响。\n我想，它们现在一定也听得见吧。",
-      "scene": "rain falling on a garden path with puddles, a small ant hole sheltered under a big green leaf near the ground, wet grass, cozy warm mood, no people",
+      "scene": "Rain falling on the garden. The little boy stands under a big yellow umbrella, smiling and listening, raindrops bouncing off the umbrella. Near his feet a small ant hole is sheltered under a big green leaf. Wet grass, small puddles, cozy warm mood.",
       "pose": "stand",
       "px": 38,
       "py": 54,
-      "ph": 56
+      "ph": 56,
+      "has_boy": true
     }
   ],
   "keyword": "搬家",
