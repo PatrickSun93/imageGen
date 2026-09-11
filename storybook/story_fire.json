@@ -1,0 +1,143 @@
+{
+  "title": "消防员来帮忙",
+  "subtitle": "报警器响了，怎么办",
+  "slug": "fire",
+  "seed_base": 22000,
+  "character": "wearing a green t-shirt, khaki shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration printed with hand-carved rubber stamps, chunky stamped shapes with slightly uneven ink edges, warm red, yellow and deep blue inks on cream paper",
+  "style_label": "橡皮章印花",
+  "keyword": "烟雾报警器",
+  "palette": {
+    "ink": "#2a231f",
+    "soft": "#6f6258",
+    "ground": "#f3eee5",
+    "paper": "#fcf8f1",
+    "accent": "#c8402f",
+    "bark": "#8b7d70",
+    "line": "#ded5c7",
+    "ink_d": "#ece5da",
+    "soft_d": "#a99c8c",
+    "ground_d": "#171310",
+    "paper_d": "#221c17",
+    "accent_d": "#e0654f",
+    "bark_d": "#9c8f80",
+    "line_d": "#37302a"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "呜——呜——\n一辆红色的消防车从街上开过去，\n灯一闪一闪的。\n我站在人行道上，\n看着它拐过路口。",
+      "scene": "A big red fire engine driving along a street with its lights flashing, and the little boy standing safely on the pavement watching it turn the corner.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "消防车为什么这么红、这么响？\n因为它要让所有人都看见、听见，\n好赶快让路。\n它去的地方，\n总是有人在等它帮忙。",
+      "scene": "A red fire engine seen from the front with its warning lights on and other cars pulling over to the side of the road to let it pass, dark tinted car windows.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "消防车上装着好多东西：\n一架长长的云梯，\n一卷一卷的水管，\n还有能喷出很远水柱的水枪。",
+      "scene": "A red fire engine seen from the side with its long ladder on top, rolls of hose in open side compartments and a water nozzle, parked at a fire station.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "消防员叔叔的衣服很特别：\n厚厚的外套、结实的靴子、\n黄色的头盔，\n背上还背着一个氧气瓶，\n脸上戴着面罩。",
+      "scene": "A firefighter's gear laid out neatly: a heavy jacket and trousers, boots, a yellow helmet, an air tank and a face mask, on a plain background.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "穿上这身衣服，\n消防员看起来又大又重，\n说话也闷闷的。\n可是别怕，\n面罩后面，是来帮我们的人。",
+      "scene": "A friendly grown-up firefighter with a bushy mustache in full gear kneeling down to the little boy's height at a fire station, holding his helmet under his arm and shaking the boy's hand, both smiling.",
+      "has_boy": true
+    },
+    {
+      "n": 6,
+      "zh": "我家的天花板上，\n装着一个白色的小圆盘。\n它叫「烟雾报警器」。\n平时安安静静的，\n只有一个小灯一闪一闪。",
+      "scene": "A white round smoke alarm fixed to a ceiling, with one tiny green light glowing, seen from below in a quiet hallway.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "它的鼻子很灵。\n只要闻到一点点烟，\n就会大声叫起来：\n嘀！嘀！嘀！\n吵得整间屋子都听得见。",
+      "scene": "The white ceiling smoke alarm sounding, with bold sound lines drawn radiating out from it and a thin wisp of smoke drifting up toward it.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "听见它叫，\n我不躲，也不装作没听见。\n我马上大声告诉大人，\n然后跟着大人，\n往门外走。",
+      "scene": "The little boy looks up at the sounding smoke alarm and calls out to his mother, a grown adult woman with short black hair in a red sweater, who is already reaching for his hand, both heading toward the front door.",
+      "has_boy": true
+    },
+    {
+      "n": 9,
+      "zh": "烟会往上飘，\n所以下面的空气更干净。\n走的时候要弯下腰，\n低着头快步走，\n不要站得直直的。",
+      "scene": "The little boy walks bent low through a hallway toward a door, keeping his head down, with a layer of grey smoke drawn near the ceiling above him.",
+      "has_boy": true
+    },
+    {
+      "n": 10,
+      "zh": "有件事一定要记住：\n不管落下了什么，\n都不能回去拿。\n玩具可以再买，\n人回去了就危险了。",
+      "scene": "A single teddy bear left behind on a bedroom floor with the door open and daylight coming from the hallway, quiet and simple.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "我们家约好了一个集合点：\n院子门口那棵大树下。\n出来以后就到树下等，\n这样大家一眼就能看见彼此，\n知道谁还没出来。",
+      "scene": "A big tree in a front yard with a small painted sign on a stake beside it showing a family meeting point symbol, the house visible in the background.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "到了外面，\n大人会用手机打 911。\n接电话的叔叔阿姨会问：\n你们在哪里？\n所以我也记住了家里的地址。",
+      "scene": "A grown-up hand holding a phone with the number 911 shown large on its screen, standing outside on a lawn, the house in the background.",
+      "has_boy": false
+    },
+    {
+      "n": 13,
+      "zh": "不一会儿，\n消防车就开到了门口。\n消防员跳下车，\n接上水管，\n水柱一下子喷了出去。",
+      "scene": "A red fire engine parked in front of a house, firefighters in full gear connecting a hose to a hydrant and spraying a strong jet of water toward the roof.",
+      "has_boy": false
+    },
+    {
+      "n": 14,
+      "zh": "要是我的衣服着了火，\n还有一招：\n停下来、趴下去、打滚。\n停——不要跑，跑会让火更旺。",
+      "scene": "The little boy stands still on the grass with his arms held stiffly at his sides and his eyes shut, showing the first step, a calm serious face.",
+      "has_boy": true
+    },
+    {
+      "n": 15,
+      "zh": "趴——双手捂住脸，\n躺到地上。\n滚——在地上左右打滚，\n把火压灭。\n这三步，我在草地上练过好几次。",
+      "scene": "The little boy lies on the grass with both hands covering his face, rolling sideways, showing the second and third steps, grass around him.",
+      "has_boy": true
+    },
+    {
+      "n": 16,
+      "zh": "平时也要小心：\n打火机和火柴不是玩具，\n蜡烛旁边不能跑来跑去，\n厨房的炉子开着的时候，\n要离得远一点。",
+      "scene": "A kitchen counter with a lit candle and a box of matches placed on a high shelf out of reach, and a stove with one burner on, no people, warm light.",
+      "has_boy": false
+    },
+    {
+      "n": 17,
+      "zh": "消防员不只是灭火。\n猫爬上树下不来，\n他们会搬梯子来接；\n门打不开、水管爆了，\n他们也会来帮忙。",
+      "scene": "Two firefighters in gear at the bottom of a tall ladder leaning against a tree, one climbing up toward a small cat sitting on a branch.",
+      "has_boy": false
+    },
+    {
+      "n": 18,
+      "zh": "参观结束的时候，\n消防员叔叔把一顶小红帽子戴在我头上。\n我抬起头对他说：\n「谢谢你们。」",
+      "scene": "At the fire station the friendly mustached firefighter places a small red plastic fire helmet on the little boy's head, the boy looking up and smiling, the red fire engine behind them.",
+      "has_boy": true
+    }
+  ]
+}
