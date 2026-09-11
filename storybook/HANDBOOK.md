@@ -336,7 +336,7 @@ venv\python.exe storybook\contact_sheet.py storybook\out\sea_lora
 | 人物每页不一样 | 没写 `character` 字段 | 补上全书统一的穿着 |
 | 人不像他 | 提示词里描述了五官 | 删掉所有五官描述 |
 | 出成了角色设定图 | `white background` + `full body` 触发了角色表模式 | 正面加 `only one child, single character`，负面加 `character sheet, multiple views` |
-| 水墨页右下角盖了红印章（Qwen） | 画风写了 `Chinese ink wash` / `rice paper`，模型模仿国画落款 | `clean_seal.py` 事后抹掉（`render_qwen_books.py` 对水墨书自动做）；印章很淡时 r−g 只有 30 左右 |
+| 水墨页右下角盖了红印章（Qwen） | 画风写了 `Chinese ink wash` / `rice paper`，模型模仿国画落款 | `clean_seal.py` 事后抹掉（`render_qwen_books.py` 对水墨书自动做）；章可能很淡（比纸色 r−g 只高 10–25），有时左右两个下角各一个，工具都能处理 |
 | 爸爸的脸和手被涂成绿色、像少年（Qwen） | 画风写了 `limited palette of bright red, green, yellow and navy`，模型连皮肤也只用这几种颜色 | style 里去掉「只用这几色」的说法，加 `every person has natural skin tones`；爸爸写成 `a tall grown adult man with short black hair and natural skin, in a grey jacket and dark trousers` |
 | 工程车画成写实机械图（Qwen 文生图） | 机器题材的先验是照片；画风词写 `toy-like` 也压不住 | scene 里写 `a big simple cartoon excavator with chunky rounded shapes`——「cartoon」这个词才起作用 |
 | 卡通工程车的玻璃上长笑脸、驾驶座里坐个小孩 | 写了 `cartoon`/`friendly`，模型给车拟人化或补一个主角 | 每辆车写上 `a grown-up driver with a bushy mustache in a yellow hard hat sitting inside its cab`；只写 grown-up 画出来仍像大孩子 |
