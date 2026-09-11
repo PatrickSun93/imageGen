@@ -347,6 +347,9 @@ venv\python.exe storybook\contact_sheet.py storybook\out\sea_lora
 | 两个大人合成了一个人（医生穿着妈妈的开衫） | 同一页两个配角都没写清长相，模型合并了 | 让两人一眼能分开：性别、年纪、发型、衣服都写不同，并写 `two different grown-ups beside him: on one side …, on the other side …`（身体 p6 实测） |
 | 妈妈、爸爸每页换一身衣服 | 只有第一页写了衣着 | 大人出场的**每一页**都写同一句衣着，例如 `his mother, a grown adult woman with short black hair in a blue coat` |
 | 比喻被画成了实物（「像吹生日蜡烛一样吐气」→ 下巴上贴了一个带蜡烛的小蛋糕） | scene 里写了 `as if blowing out birthday candles`，Edit 模型把比喻当成画面内容 | 比喻只写在中文旁白里；scene 只写动作本身：`puffs out his cheeks, lips in a small O, soft curved lines of air flowing out`。已画坏的用 `fix_edit.py` 去掉那个东西 |
+| 示意图页画成了写实场景（地壳示意图→乱石堆、地面裂开的大深沟） | scene 写得像"描述一个场景"，模型就按写实场景画 | 开头写死 `A simple clear side-view diagram, drawn flat and plain:`；物体给形状和排列（`three wide flat stone tiles laid horizontally edge to edge`）；箭头写明数量和方向（`one black horizontal arrow points right … so the two arrows face each other`）；结尾加 `Nothing else in the picture.` |
+| 安全类的书画出了灾难场面（房子悬在崖边、碎石掉落） | scene 里出现 `crack/hole/chasm` 这类词 | 只画"轻微"：`the two tiles have just slipped a little`、`a few short wavy vibration lines`、`one short curved motion line on each side of the house`，并明确 `The ground is not broken open and there is no hole or cliff.` 基调是「我知道该怎么做」，不吓孩子 |
+| 画风词被当成画面内容（写了"包装上不写字"，桌上就多出一堆空包装袋） | 约束性的词写进了全书 style，模型把名词当成要画的物件 | 这类约束只写进真正有该物件的那一两页 scene，别放进 style |
 | 红绿灯红灯、绿灯同时亮 | 模型对红绿灯的先验是三灯都亮 | 按位置写 `its bottom green light glowing and the red and yellow lights above it dark`；还有残留就本地把红灯压暗（红色像素乘 0.4），不必重画 |
 | 「中午影子最短」画成长影子（Qwen） | `the sun high overhead` 不够具体 | 按位置写：`a bright round sun sits at the very top center of the picture, straight above his head`，影子写成 `a tiny dark oval directly beneath his sneakers, about the size of his feet` |
 
