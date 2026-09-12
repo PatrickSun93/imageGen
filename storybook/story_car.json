@@ -1,0 +1,107 @@
+{
+  "title": "汽车为什么会跑",
+  "subtitle": "轮子转起来的秘密",
+  "slug": "car",
+  "seed_base": 41000,
+  "character": "wearing a blue t-shirt, grey shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration in retro garage poster style, flat bold shapes with thick outlines, limited palette of cream, petrol blue, warm red and soft grey, slight printed grain, the illustration covers the entire image area",
+  "style_label": "复古海报",
+  "keyword": "发动机",
+  "palette": {
+    "ink": "#22282f",
+    "soft": "#5f6b77",
+    "ground": "#f3f0e9",
+    "paper": "#fbf9f4",
+    "accent": "#c0483a",
+    "bark": "#8b95a1",
+    "line": "#d9d4ca",
+    "ink_d": "#ebe8e0",
+    "soft_d": "#99a3ae",
+    "ground_d": "#131920",
+    "paper_d": "#1c222a",
+    "accent_d": "#d76a58",
+    "bark_d": "#8b95a1",
+    "line_d": "#38414c"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "爸爸发动汽车的时候，\n车身抖了一下，\n发出低低的声音。\n然后车子就跑起来了。\n是什么在推着它走呢？",
+      "scene": "The little boy sits in the back seat of a car looking forward between the seats, curious, daylight through the windows.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "推着车跑的，\n是藏在车头里的「发动机」。\n它不大，\n可是力气很大，\n能让几吨重的车动起来。",
+      "scene": "A simple clear diagram, drawn flat and plain: one car seen from the side on a cream background with its front section drawn open, showing one block-shaped engine inside. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "发动机里有几个小房间，\n叫做气缸。\n每个气缸里有一个活塞，\n可以上上下下地动，\n像一个能推的柱子。",
+      "scene": "A simple clear diagram, drawn flat and plain: one cylinder shown in cross-section on a cream background with a piston inside it and an arrow showing the piston moving up and down. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "先吸进空气和一点汽油，\n再把它们压得很紧，\n然后火花塞打出一个小火花，\n啪——\n混合气一下子烧起来，把活塞猛地推下去。",
+      "scene": "A simple clear diagram, drawn flat and plain: four small cylinder pictures in a row on a cream background showing the piston going down, up, down with a spark, and up again. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "活塞下面连着一根曲轴。\n活塞一上一下，\n曲轴就被带得转圈。\n直上直下的力，\n就这样变成了转的力。",
+      "scene": "A simple clear diagram, drawn flat and plain: one piston on a cream background connected by a rod to a crankshaft, with a curved arrow showing the shaft turning. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "转的力再通过变速箱，\n传到车轮上。\n上坡的时候用小挡，\n力气大；\n平路上用大挡，跑得快。",
+      "scene": "A simple clear diagram, drawn flat and plain: one gearbox on a cream background with a small gear meshing with a large gear, and an arrow leaving toward a wheel. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "轮胎上有一道道花纹。\n它咬住地面，\n车才不会打滑。\n下雨天，\n花纹还能把水挤出去。",
+      "scene": "A simple clear diagram, drawn flat and plain: one tyre seen from the front on a cream background with grooved tread, and small arrows showing water pushed out of the grooves. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "要停车的时候，\n踩下刹车，\n刹车片紧紧夹住转动的盘子，\n把转的力磨掉，\n车就慢慢停下来。",
+      "scene": "A simple clear diagram, drawn flat and plain: one brake disc on a cream background with two pads pressing on it from both sides, and a short arrow showing the disc slowing. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "汽油烧起来会排出废气。\n所以现在有很多电动车，\n用电池推动马达，\n跑起来很安静，\n屁股后面也不冒烟。",
+      "scene": "A simple clear diagram, drawn flat and plain: two cars side by side on a cream background: the left one with a small exhaust pipe and a faint puff, the right one with a battery symbol and no pipe. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "坐车一定要系安全带。\n车子急停的时候，\n人还会往前冲，\n安全带会把我们拉住。\n小朋友还要坐安全座椅。",
+      "scene": "A simple clear diagram, drawn flat and plain: one child car seat on a cream background with a seat belt drawn across it in a clear diagonal line. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "下车的时候，\n要从靠人行道的那一边下，\n开门前先回头看看，\n有没有自行车\n从后面过来。",
+      "scene": "One parked car by a kerb on a cream background with the pavement-side door opening and a bicycle approaching from behind on the road side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我趴在车窗上看外面。\n车轮转呀转，\n路一直往后跑。\n原来是发动机在前面，\n一直推着我们走。",
+      "scene": "The little boy looks out of the car window with both hands on the glass, watching the road go past, content.",
+      "has_boy": true
+    }
+  ]
+}
