@@ -1,0 +1,107 @@
+{
+  "title": "鸟为什么会飞",
+  "subtitle": "轻、有力，还有一对好翅膀",
+  "slug": "bird",
+  "seed_base": 48000,
+  "character": "wearing a teal t-shirt, brown shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, soft gouache painting on textured paper, flat rounded shapes with fine brown outlines, palette of warm feather brown, sky blue and cream, gentle brush texture",
+  "style_label": "羽毛水粉",
+  "keyword": "羽毛",
+  "palette": {
+    "ink": "#2c2620",
+    "soft": "#6d6354",
+    "ground": "#f3f0e7",
+    "paper": "#fbf9f3",
+    "accent": "#4f8fb5",
+    "bark": "#8a7f6c",
+    "line": "#ddd7c9",
+    "ink_d": "#eae6db",
+    "soft_d": "#a29887",
+    "ground_d": "#161109",
+    "paper_d": "#201a12",
+    "accent_d": "#71aecf",
+    "bark_d": "#8a7f6c",
+    "line_d": "#383126"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "一只小鸟停在栏杆上。\n我刚走近，\n它就拍拍翅膀飞走了。\n我也张开胳膊跑，\n可是一点也飞不起来。",
+      "scene": "The little boy stands with both arms spread wide on a path, watching a small bird fly up from a railing in front of him.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "鸟身上盖着「羽毛」。\n羽毛中间一根硬轴，\n两边是细细的分支，\n分支上还有小钩子，\n互相钩住，就成了一片。",
+      "scene": "A simple clear diagram, drawn flat and plain: one feather on a cream background drawn large, with a central shaft and fine barbs on both sides. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "羽毛很轻，\n可是拼在一起很结实，\n还能挡风、挡雨、保暖。\n鸟每天都要用嘴\n把羽毛梳整齐。",
+      "scene": "A simple clear diagram, drawn flat and plain: one bird seen from the side on a cream background with rows of overlapping feathers drawn on its wing and back. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "鸟的骨头是空心的。\n里面有细细的支架，\n又轻又不容易断。\n所以鸟的身体，\n比看起来轻得多。",
+      "scene": "A simple clear diagram, drawn flat and plain: one bone shown in cross-section on a cream background, hollow inside with a few thin struts across it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "翅膀上面是拱起来的，\n下面是平的。\n空气从上面走的路长，\n跑得快，压得轻；\n下面压得重，就把翅膀往上托。",
+      "scene": "A simple clear diagram, drawn flat and plain: one wing cross-section on a cream background with a curved top and flat bottom, air lines passing over and under it, and one arrow pointing up from below. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "所以鸟往前飞得越快，\n翅膀托得越有力。\n这个往上托的力，\n叫升力。\n飞机的翅膀也是这样。",
+      "scene": "A simple clear diagram, drawn flat and plain: one wing on a cream background with one long arrow pointing forward and one shorter arrow pointing up from the wing. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "往下拍的时候，\n羽毛合得严严的，\n把空气推下去；\n往上抬的时候，\n羽毛张开一点，让空气漏过去。",
+      "scene": "A simple clear diagram, drawn flat and plain: two wings side by side on a cream background: the left one pressing down with feathers closed tight, the right one lifting with small gaps between the feathers. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "拍翅膀要很大的力气。\n所以鸟的胸口\n有两块很厚的肌肉，\n是身上最壮的地方，\n专门用来拍翅膀。",
+      "scene": "A simple clear diagram, drawn flat and plain: one bird seen from the front on a cream background with two thick muscle shapes marked on its chest. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "不同的翅膀会不同的飞法。\n又长又窄的会滑翔，\n又短又圆的能在树林里转弯，\n很尖的能飞得非常快。",
+      "scene": "A simple clear diagram, drawn flat and plain: three bird wing shapes in a row on a cream background: one long and narrow, one short and rounded, one narrow and pointed. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "大鸟还会借风。\n太阳晒热地面，\n热空气往上升，\n它张着翅膀转圈，\n一下一下被托得越来越高。",
+      "scene": "A simple clear diagram, drawn flat and plain: one large bird on a pale background circling upward inside a wide column of rising arrows. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "也有鸟不会飞。\n企鹅的翅膀变成了桨，\n在水里游得很快；\n鸵鸟太重了，\n可是跑得比人快得多。",
+      "scene": "A simple clear diagram, drawn flat and plain: two birds side by side on a cream background: one penguin with short flipper wings and one ostrich with long legs. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我不再张着胳膊跑了。\n我坐在台阶上看那只小鸟。\n它拍了三下，\n就到了屋顶上。\n它的本事，都藏在羽毛和胸口里。",
+      "scene": "The little boy sits on a step with his chin in his hands, watching a small bird perched on a roof above him.",
+      "has_boy": true
+    }
+  ]
+}

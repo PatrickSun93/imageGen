@@ -1,0 +1,107 @@
+{
+  "title": "十个一捆",
+  "subtitle": "数字站的位置不一样，意思就不一样",
+  "slug": "tens",
+  "seed_base": 47000,
+  "character": "wearing a purple t-shirt, grey shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, bold flat graphic art with thick black outlines and flat fills in plum purple, mustard yellow and cream, simple chunky shapes, slight printed grain, the illustration covers the entire image area",
+  "style_label": "平涂线条",
+  "keyword": "一捆",
+  "palette": {
+    "ink": "#262230",
+    "soft": "#645c72",
+    "ground": "#f3f0ea",
+    "paper": "#fbf9f5",
+    "accent": "#d8a13c",
+    "bark": "#918a9c",
+    "line": "#d8d3cc",
+    "ink_d": "#eae7e1",
+    "soft_d": "#9d96a8",
+    "ground_d": "#151220",
+    "paper_d": "#1e1a28",
+    "accent_d": "#e8b459",
+    "bark_d": "#918a9c",
+    "line_d": "#3d3849"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我在院子里捡小棍子，\n捡了好多好多。\n爸爸问我一共几根，\n我数到二十几就乱了，\n只好从头再数。",
+      "scene": "The little boy sits on the ground with a big loose heap of small sticks in front of him, counting with one finger, looking muddled.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "数多了会乱。\n所以有个好办法：\n每数到十根，\n就用绳子扎成「一捆」，\n放到一边去。",
+      "scene": "A simple clear diagram, drawn flat and plain: ten small sticks on a cream background tied together with one band around the middle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "扎好以后就好数了。\n先数捆，\n再数剩下的散棍。\n三捆再加四根，\n就是三十四根。",
+      "scene": "A simple clear diagram, drawn flat and plain: three tied bundles of sticks in a row on a cream background with four loose sticks beside them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "写下来的时候，\n捆数写在前面，\n散的写在后面。\n三捆四根，\n写成 34。",
+      "scene": "A simple clear diagram, drawn flat and plain: the number 34 drawn large on a cream background, with three bundles under the 3 and four loose sticks under the 4. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "所以数字站的位置很重要。\n34 和 43，\n用的是一样的两个数字，\n可是一个是三捆四根，\n一个是四捆三根。",
+      "scene": "A simple clear diagram, drawn flat and plain: two rows on a cream background: the top row shows 34 with three bundles and four sticks, the bottom row shows 43 with four bundles and three sticks. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "散的棍子最多只能有九根。\n凑到十根，\n就要马上扎成一捆，\n搬到前面去。\n这叫进位。",
+      "scene": "A simple clear diagram, drawn flat and plain: on a cream background, ten loose sticks on the right with an arrow showing them tied into one bundle and moved to the left. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "十捆也可以再扎一次，\n扎成一大捆，\n那就是一百。\n一百里面，\n藏着十个十。",
+      "scene": "A simple clear diagram, drawn flat and plain: ten tied bundles on a cream background gathered together and tied once more into one large bundle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "所以数字有三个位置：\n最右边是散的，\n中间是捆，\n再往左是大捆。\n一、十、一百。",
+      "scene": "A simple clear diagram, drawn flat and plain: one number 234 drawn large on a cream background with a small label box under each digit: one large bundle, one bundle and one stick. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "加法也用这个办法。\n先把散的加起来，\n够十就扎一捆；\n再把捆加起来。\n从右边开始算。",
+      "scene": "A simple clear diagram, drawn flat and plain: one simple column sum on a cream background: 27 above 15, a line below, and a small carried mark above the left column. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "手指刚好十根，\n所以我们用十个一捆。\n要是手上只有八根手指，\n也许就会\n八个一捆了。",
+      "scene": "A simple clear diagram, drawn flat and plain: two open hands side by side on a cream background with all ten fingers spread. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "钱也是这样。\n十个一分是一角，\n十个一角是一元。\n所以数钱的时候，\n也是先数大的，再数小的。",
+      "scene": "A simple clear diagram, drawn flat and plain: three coins in a row on a cream background, each one bigger than the last, with a small arrow between them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我把小棍子十根十根扎好，\n一共扎了五捆，\n还剩三根。\n我大声说：五十三根！\n这次一点也没乱。",
+      "scene": "The little boy holds up several neat tied bundles of sticks with a few loose ones on the ground, looking proud.",
+      "has_boy": true
+    }
+  ]
+}
