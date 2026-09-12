@@ -1,0 +1,107 @@
+{
+  "title": "天上掉下来的石头",
+  "subtitle": "流星、陨石和彗星",
+  "slug": "meteor",
+  "seed_base": 44000,
+  "character": "wearing a navy hoodie, dark trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration in two-colour screenprint style on deep midnight blue, flat cream and pale gold shapes with visible ink texture, bold and simple, flat and graphic, not a photograph and not a realistic space rendering",
+  "style_label": "深空版画",
+  "keyword": "流星",
+  "palette": {
+    "ink": "#f1eee4",
+    "soft": "#b6b0a0",
+    "ground": "#141a2b",
+    "paper": "#1c2336",
+    "accent": "#e8c169",
+    "bark": "#8b8676",
+    "line": "#333a4e",
+    "ink_d": "#f1eee4",
+    "soft_d": "#b6b0a0",
+    "ground_d": "#0d1220",
+    "paper_d": "#141a2b",
+    "accent_d": "#f0cf82",
+    "bark_d": "#8b8676",
+    "line_d": "#333a4e"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "夏天的晚上，\n我和爸爸躺在院子里看星星。\n忽然，天上划过一道光，\n一下子就没了。\n那是什么掉下来了吗？",
+      "scene": "The little boy lies on a blanket in a yard at night looking up at the sky, pointing upward with one arm.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "那道光叫「流星」。\n可它不是星星。\n它只是一小块石头，\n大多还没有一颗豆子大。",
+      "scene": "A simple clear diagram, drawn flat and plain: one small rough stone in the middle of a dark background with one bright streak of light drawn behind it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "太空里飘着很多这样的小石头，\n是行星形成的时候\n剩下的碎渣。\n它们一直在绕着太阳跑。",
+      "scene": "A simple clear diagram, drawn flat and plain: one sun at the left of a dark background with several small stones spread along a wide curved path around it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "地球也在跑，\n一秒钟就跑三十公里。\n两边一撞，\n小石头冲进空气的时候，\n快得不可思议。",
+      "scene": "A simple clear diagram, drawn flat and plain: one earth ball on a dark background moving to the right with a bold arrow, and one small stone arriving toward it from the right. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "它冲进空气，\n把前面的空气挤得又热又亮。\n石头被烧得发光，\n我们看到的那道光，\n其实是发亮的空气。",
+      "scene": "A simple clear diagram, drawn flat and plain: one small stone entering a band of air on a dark background, with a glowing bright wedge in front of it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "大多数流星\n在离地面很高的地方\n就烧完了，\n变成一点点灰，\n慢慢飘下来。",
+      "scene": "A simple clear diagram, drawn flat and plain: one dark background with a ground line at the bottom, a high dashed line far above it, and one streak that stops at the dashed line. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "个子大一点的烧不完，\n就会落到地上。\n落到地上的那块石头，\n改名字了，\n叫陨石。",
+      "scene": "One dark rough stone lying on bare ground at night on a dark background, a little pit around it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "有时候一晚上\n能看到很多流星，\n那叫流星雨。\n因为地球正好穿过\n一条布满尘粒的路。",
+      "scene": "A simple clear diagram, drawn flat and plain: one earth ball on a dark background crossing a wide band of small dust specks, several streaks appearing on the side facing the band. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "这条路是彗星留下的。\n彗星是一个脏雪球，\n冰里裹着尘土。\n它绕太阳跑一圈，\n要很多很多年。",
+      "scene": "A simple clear diagram, drawn flat and plain: one round icy ball made of pale cream flecks on a dark background, with small dust specks trailing behind it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "彗星靠近太阳的时候，\n冰被晒化，\n气和尘土一起喷出来，\n在后面拉出长长的尾巴，\n尾巴总是背着太阳。",
+      "scene": "A simple clear diagram, drawn flat and plain: one sun at the left of a dark background and one comet at the right with a long tail pointing away from the sun. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "月亮上没有空气，\n小石头一路都不会被烧掉，\n所以它表面\n全是大大小小的坑。\n地球上也有几个陨石坑。",
+      "scene": "A simple clear diagram, drawn flat and plain: one moon surface across a dark background with many round craters of different sizes on it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "又一道光划过去。\n爸爸说，可以许个愿。\n我知道那只是一块小石头，\n可我还是闭上眼睛，\n许了一个。",
+      "scene": "The little boy lies on the blanket at night with his eyes closed and hands together, a faint streak of light in the sky above.",
+      "has_boy": true
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "title": "形状是怎么拼起来的",
+  "subtitle": "三角形、方块和圆",
+  "slug": "shapes",
+  "seed_base": 43000,
+  "character": "wearing a yellow t-shirt, blue shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration in cut-paper collage style, flat geometric shapes with clean straight edges, bright mustard, teal, coral and cream on plain paper, simple and graphic, the illustration covers the entire image area",
+  "style_label": "几何拼贴",
+  "keyword": "三角形",
+  "palette": {
+    "ink": "#26292f",
+    "soft": "#5f6670",
+    "ground": "#f4f1e8",
+    "paper": "#fcfaf4",
+    "accent": "#e0913a",
+    "bark": "#8a9098",
+    "line": "#dcd7cb",
+    "ink_d": "#ece9e0",
+    "soft_d": "#9aa0a8",
+    "ground_d": "#14171c",
+    "paper_d": "#1d2027",
+    "accent_d": "#efa957",
+    "bark_d": "#8a9098",
+    "line_d": "#3a3f47"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我把积木倒在地板上。\n有方的，有圆的，\n还有尖尖的。\n我想把它们拼成一座房子，\n可是总有地方空着。",
+      "scene": "The little boy sits on the floor among wooden blocks of different shapes, holding one triangular block, thinking.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "先认认它们。\n三条边的是「三角形」，\n四条边一样长的是正方形，\n四条边两长两短的是长方形，\n一条边都没有的是圆。",
+      "scene": "A simple clear diagram, drawn flat and plain: four shapes in a row on a cream background: a triangle, a square, a rectangle and a circle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "三角形最结实。\n三根棍子搭成一个三角，\n捏住怎么推都不变形。\n四根棍子搭成方块，\n一推就歪了。",
+      "scene": "A simple clear diagram, drawn flat and plain: two shapes made of sticks on a cream background: a triangle staying firm, and a square leaning over to one side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "所以桥上、\n房顶里、\n塔的架子上，\n藏着很多三角形。\n它们在替我们扛着重量。",
+      "scene": "A simple clear diagram, drawn flat and plain: one simple bridge on a cream background made of straight beams forming a row of triangles. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "正方形最会铺。\n一块挨一块，\n不留缝，也不重叠，\n能把整块地面铺满。\n瓷砖就是这么铺的。",
+      "scene": "A simple clear diagram, drawn flat and plain: one flat area on a cream background completely filled with equal squares in neat rows, leaving no gaps. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "三角形和六边形\n也能铺满。\n可是圆不行——\n圆挨着圆，\n中间总会留下小空隙。",
+      "scene": "A simple clear diagram, drawn flat and plain: two patches side by side on a cream background: the left one filled with touching hexagons and no gaps, the right one filled with circles that leave small gaps between them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "圆最会滚。\n圆的边上每一点\n到中心的距离都一样，\n所以滚起来不上不下，\n车坐着才稳。",
+      "scene": "A simple clear diagram, drawn flat and plain: two carts side by side on a cream background: the left with round wheels rolling level, the right with square wheels tipped up and down. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "形状还能对折。\n沿着一条线折过去，\n两半刚好盖住，\n那条线就叫对称轴。\n蝴蝶、叶子都是这样。",
+      "scene": "A simple clear diagram, drawn flat and plain: one butterfly shape on a cream background with one straight dashed line down the middle and arrows showing the two halves folding together. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "把大形状切开，\n能得到小形状。\n一个正方形斜着切一刀，\n就变成两个三角形；\n两个三角形也能拼回去。",
+      "scene": "A simple clear diagram, drawn flat and plain: one square on a cream background with a diagonal line across it, and beside it the same two triangles moved apart. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "站起来的形状叫立体。\n球会滚，\n正方体能摞得很高，\n圆柱躺着滚、立着稳，\n圆锥尖尖的，只能立着。",
+      "scene": "A simple clear diagram, drawn flat and plain: four solid shapes in a row on a cream background: a ball, a cube, a cylinder and a cone. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "所以搭积木有诀窍：\n底下用方的，\n中间用长的，\n屋顶用三角的。\n下面稳，上面就不倒。",
+      "scene": "A simple clear diagram, drawn flat and plain: one simple tower on a cream background: a wide square base, two long rectangles above it and a triangle on top. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我把方块放在最下面，\n三角形放在最上面。\n房子搭好了，\n一推也不倒。\n原来每个形状，都有自己的本事。",
+      "scene": "The little boy kneels beside a finished block house with a triangular roof, both hands raised, proud and happy.",
+      "has_boy": true
+    }
+  ]
+}
