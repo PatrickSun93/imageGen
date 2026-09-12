@@ -1,0 +1,107 @@
+{
+  "title": "蚯蚓在土里做什么",
+  "subtitle": "地下的小小农夫",
+  "slug": "worm",
+  "seed_base": 38000,
+  "character": "wearing a green t-shirt, brown shorts and rubber boots, short black hair",
+  "style": "children's picture book illustration, earthy gouache painting on textured paper, flat simple rounded shapes with clean outlines, warm soil brown, moss green and soft cream palette, visible brush texture",
+  "style_label": "泥土水粉",
+  "keyword": "蚯蚓",
+  "palette": {
+    "ink": "#2e281f",
+    "soft": "#6f6552",
+    "ground": "#f2eee3",
+    "paper": "#faf7ef",
+    "accent": "#7a9a4e",
+    "bark": "#8b7f68",
+    "line": "#ddd6c6",
+    "ink_d": "#eae5d8",
+    "soft_d": "#a49a86",
+    "ground_d": "#181309",
+    "paper_d": "#221c12",
+    "accent_d": "#9dbb6a",
+    "bark_d": "#958972",
+    "line_d": "#3a3327"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "下过雨以后，\n我在院子里看见一条「蚯蚓」。\n它粉粉的，软软的，\n一伸一缩地爬。\n它平时住在哪里呢？",
+      "scene": "The little boy crouches on wet ground in rubber boots, looking closely at a worm on the soil, hands on his knees.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "蚯蚓住在土里。\n它没有眼睛，\n也没有脚，\n可是它能感觉到光和震动，\n知道上面有没有危险。",
+      "scene": "A simple clear diagram, drawn flat and plain: one worm on a brown background shown from the side, its body divided into many small segments, with no eyes and no legs. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "它靠身上一圈一圈的肌肉爬。\n先把前面伸长，\n再把后面缩上来。\n身上还有小刚毛，\n像很多只小脚一样抓住土。",
+      "scene": "A simple clear diagram, drawn flat and plain: one worm on a brown background shown in three stages left to right: stretched forward, middle pulled up, then stretched again. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "蚯蚓一边爬，\n一边吃土。\n土里有烂掉的叶子和小虫子，\n那才是它要的食物。\n吃不完的，就从后面排出去。",
+      "scene": "A simple clear diagram, drawn flat and plain: one worm in a soil cross-section on a brown background with soil entering at its mouth end and small round castings leaving at its tail end. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "它排出来的那些小土粒，\n叫蚯蚓粪。\n它比原来的土\n更松、更有营养，\n植物最喜欢。",
+      "scene": "A simple clear diagram, drawn flat and plain: a small pile of rounded worm castings on the soil surface on a brown background, with one young plant growing beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "它钻来钻去，\n在土里留下很多小通道。\n空气顺着通道进去，\n雨水也顺着流下去，\n土就不会板结。",
+      "scene": "A simple clear diagram, drawn flat and plain: one soil cross-section on a brown background with several winding tunnels through it, small arrows showing air and water going down the tunnels. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "所以有蚯蚓的地里，\n庄稼长得更好。\n很久以前的人就说，\n蚯蚓是地下的农夫，\n一直在替我们松土。",
+      "scene": "A soil cross-section on a brown background: healthy green plants with long roots above, several worms and tunnels below. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "蚯蚓没有肺。\n它用皮肤呼吸，\n所以皮肤要一直是湿的。\n太阳一晒，皮肤干了，\n它就没法呼吸了。",
+      "scene": "A simple clear diagram, drawn flat and plain: one worm on a brown background with small arrows pointing into its skin all along its body. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "下大雨的时候，\n土里灌满了水，\n空气被挤走了。\n蚯蚓喘不过气，\n只好爬到地面上来。",
+      "scene": "A simple clear diagram, drawn flat and plain: one soil cross-section on a brown background filled with water in the tunnels, and two worms coming up onto the surface. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "所以雨后的路上，\n常常能看见蚯蚓。\n要是太阳出来了，\n它们就回不去，\n会被晒干。",
+      "scene": "A wet path on a cream background after rain with two worms on it, a puddle nearby and the sun beginning to come out. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "看见它们，\n可以用小树枝\n轻轻把它们送回泥土里。\n别用手捏太紧，\n它们很软，很容易受伤。",
+      "scene": "A simple clear diagram, drawn flat and plain: one small twig gently lifting a worm from a path on a cream background toward a patch of dark soil beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我用小铲子挖了个小坑，\n把那条蚯蚓放回土里。\n它扭了两下，\n钻下去不见了。\n院子里的土，就交给它了。",
+      "scene": "The little boy kneels on the ground using a small trowel to place a worm gently into a hole in the soil, watching it go.",
+      "has_boy": true
+    }
+  ]
+}

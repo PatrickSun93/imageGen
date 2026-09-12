@@ -1,0 +1,107 @@
+{
+  "title": "电是怎么到家里的",
+  "subtitle": "从很远的地方，顺着线跑来",
+  "slug": "power",
+  "seed_base": 37000,
+  "character": "wearing a mustard t-shirt, dark blue trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration, bold flat graphic art with thick black outlines and flat fills in copper orange, deep navy and cream, simple chunky shapes, slight printed grain, the illustration covers the entire image area",
+  "style_label": "平涂线条",
+  "keyword": "电线",
+  "palette": {
+    "ink": "#1e2430",
+    "soft": "#5a6576",
+    "ground": "#f3f0e8",
+    "paper": "#fbf9f3",
+    "accent": "#d2762f",
+    "bark": "#8b94a3",
+    "line": "#d9d4c8",
+    "ink_d": "#ebe7dd",
+    "soft_d": "#99a2b0",
+    "ground_d": "#11161e",
+    "paper_d": "#1a202a",
+    "accent_d": "#e58f4c",
+    "bark_d": "#8b94a3",
+    "line_d": "#373f4c"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "天黑了，我按下开关。\n啪的一声，\n灯就亮了。\n电是从哪里来的呢？\n它怎么知道要到我家来？",
+      "scene": "The little boy reaches up to a light switch on a wall and presses it, a ceiling lamp lighting up above him, evening light in the room.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "电是在发电厂做出来的。\n那里有很大的机器，\n里面有一个大线圈，\n在磁铁中间飞快地转。\n一转，电就出来了。",
+      "scene": "A simple clear diagram, drawn flat and plain: one large coil of wire between two big magnets on a cream background, with a curved arrow showing the coil spinning. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "让线圈转起来，\n需要力气。\n有的地方烧煤烧气，\n有的地方用水冲，\n有的地方靠风吹、靠太阳晒。",
+      "scene": "A simple clear diagram, drawn flat and plain: four small pictures in a row on a cream background: a chimney tower, a dam with falling water, a wind turbine and a solar panel. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "电做好以后，\n要送到很远的地方。\n所以先把它\n升成很高很高的电压，\n这样路上损失得少。",
+      "scene": "A simple clear diagram, drawn flat and plain: one small transformer box on a cream background with a thin wire entering from the left and a thicker high line leaving to the right, going up to a tall pylon. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "高压电顺着大铁塔，\n一座一座传过田野和山。\n那些铁塔很高，\n下面挂着牌子：\n危险，不要靠近。",
+      "scene": "A row of tall steel pylons crossing open countryside on a cream background, with long cables strung between them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "快到城里了，\n电要先进变电站，\n把电压降下来。\n降过几次以后，\n才敢送进居民区。",
+      "scene": "A simple clear diagram, drawn flat and plain: one substation on a cream background with a high line coming in at the left, two transformer boxes in the middle and a lower line leaving at the right. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "再顺着街边的「电线」，\n或者埋在地下的电缆，\n拐进我们这条街，\n最后接到每一栋房子上。",
+      "scene": "A quiet street on a cream background with poles and wires along one side, the wires branching to two small houses. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "进屋以后，\n电先经过电表，\n电表记着我们用了多少。\n再进配电箱，\n从那里分成好几路。",
+      "scene": "A simple clear diagram, drawn flat and plain: one electricity meter and one small distribution box side by side on a cream background, with one wire coming in and three wires leaving. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "电要走成一个圈才行。\n从插座出去，\n穿过台灯，\n再回到插座。\n这一圈，叫做电路。",
+      "scene": "A simple clear diagram, drawn flat and plain: one closed loop of wire on a cream background with a small lamp on the top of the loop and a battery-like source at the bottom, one arrow showing the direction around the loop. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "开关就是把这个圈\n断开或者接上。\n断开，灯就灭；\n接上，灯就亮。\n就这么简单。",
+      "scene": "A simple clear diagram, drawn flat and plain: two loops side by side on a cream background: the left one with a gap and a dark lamp, the right one closed and a bright lamp. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "水和电碰在一起很危险。\n所以插座不能用湿手摸，\n不能把东西塞进插孔，\n也不能在浴室里\n随便拉电线。",
+      "scene": "A simple clear diagram, drawn flat and plain: one wall socket on a cream background with a bright warning triangle beside it and a water drop symbol crossed out by a bold line. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我又按了一下开关，\n灯灭了。\n爸爸说，不用的时候关掉，\n发电厂就少烧一点。\n我记住了。",
+      "scene": "The little boy switches off the light and stands in the doorway, the room behind him dim, a small satisfied smile.",
+      "has_boy": true
+    }
+  ]
+}
