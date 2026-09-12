@@ -1,0 +1,107 @@
+{
+  "title": "水去哪儿了",
+  "subtitle": "它一直在天上和地上来回跑",
+  "slug": "water",
+  "seed_base": 46000,
+  "character": "wearing a light blue t-shirt, grey shorts and sandals, short black hair",
+  "style": "children's picture book illustration in cool watercolour style, soft transparent washes with fine blue-grey ink outlines, palette of water blue, pale teal and warm sand, plenty of clean white paper",
+  "style_label": "清水彩",
+  "keyword": "水蒸气",
+  "palette": {
+    "ink": "#26303a",
+    "soft": "#61717f",
+    "ground": "#eff5f8",
+    "paper": "#f9fcfd",
+    "accent": "#3f8fb0",
+    "bark": "#8895a1",
+    "line": "#d5e0e7",
+    "ink_d": "#e5eef3",
+    "soft_d": "#97a4b0",
+    "ground_d": "#131b23",
+    "paper_d": "#1d262e",
+    "accent_d": "#63aecd",
+    "bark_d": "#8895a1",
+    "line_d": "#37424d"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "早上我在门口洒了一小片水。\n中午回来看，\n地上干干的，\n一点水也没有了。\n水去哪儿了呢？",
+      "scene": "The little boy crouches on a dry doorstep looking at the ground where a puddle used to be, one hand touching the dry stone.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "水没有不见。\n它变成了看不见的「水蒸气」，\n飘到空气里去了。\n这件事叫蒸发，\n天气越热，跑得越快。",
+      "scene": "A simple clear diagram, drawn flat and plain: one shallow puddle on a cream background with several small arrows rising from its surface into the air above. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "水蒸气一直往上飘。\n越高的地方越冷，\n它被冷着了，\n就重新变成很小的水珠，\n小到能飘在空中。",
+      "scene": "A simple clear diagram, drawn flat and plain: one column of small rising arrows on a pale background turning into a cluster of tiny round droplets near the top. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "很多很多小水珠聚在一起，\n就是一朵云。\n云不是棉花，\n它是水做的，\n所以它会变形、会散开。",
+      "scene": "One soft white cloud on a pale blue watercolour sky on clean paper, painted simply. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "小水珠互相碰到，\n会并成大水珠。\n大到空气托不住了，\n就掉下来——\n那就是下雨。",
+      "scene": "A simple clear diagram, drawn flat and plain: one cloud on a pale background with small droplets joining into larger ones inside it and several larger drops falling from its underside. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "要是上面太冷，\n水珠会先结成冰晶，\n一层一层长大，\n变成雪花落下来。\n每一片都有六个角。",
+      "scene": "A simple clear diagram, drawn flat and plain: one six-pointed snowflake drawn large and plain on a pale blue background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "雨落到地上，\n一部分顺着地面流走，\n汇成小溪、汇成河；\n一部分渗进土里，\n藏在地下。",
+      "scene": "A simple clear diagram, drawn flat and plain: one hillside cross-section on a cream background with arrows showing water running down the surface into a stream and other arrows soaking down into the soil. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "河水一直往低处流，\n最后流进大海。\n海很大，\n地球上的水，\n大部分都在海里。",
+      "scene": "A simple clear diagram, drawn flat and plain: one earth ball on a cream background with most of its surface shaded as sea and a small part shaded as land. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "太阳照着海面，\n水又变成水蒸气飘上去。\n上去、下来、\n流走、再上去——\n水就这样一圈一圈地转。",
+      "scene": "A simple clear diagram, drawn flat and plain: one closed loop on a cream background: sea at the bottom left, arrows rising to a cloud at the top, rain falling to hills at the right, and a stream running back to the sea. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "海水是咸的，\n可是蒸发上去的\n只有水，盐留在了海里。\n所以雨水是淡的，\n能喝。",
+      "scene": "A simple clear diagram, drawn flat and plain: one sea surface on a cream background with rising arrows of clear water and small salt specks staying behind in the water. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "地球上的水，\n几千万年都是这些。\n我们喝的水，\n很久以前\n也许在别的地方下过雨。",
+      "scene": "A simple clear diagram, drawn flat and plain: one glass of water on a cream background with a small cloud, a small stream and a small sea drawn in a row beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我又洒了一点水在地上，\n然后坐在旁边等。\n水一点点变少了。\n它不是消失了，\n它是出发了。",
+      "scene": "The little boy sits on the doorstep with his chin on his hands, watching a small patch of water on the ground in the sunshine.",
+      "has_boy": true
+    }
+  ]
+}

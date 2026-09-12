@@ -1,0 +1,107 @@
+{
+  "title": "一半是多少",
+  "subtitle": "分东西的时候怎么才公平",
+  "slug": "half",
+  "seed_base": 45000,
+  "character": "wearing a green t-shirt, navy shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, bold flat graphic art with thick black outlines and flat fills in grass green, warm orange and cream, simple chunky shapes, slight printed grain, the illustration covers the entire image area",
+  "style_label": "平涂线条",
+  "keyword": "一半",
+  "palette": {
+    "ink": "#22282a",
+    "soft": "#5c6a64",
+    "ground": "#f3f1e8",
+    "paper": "#fbfaf4",
+    "accent": "#e08a3c",
+    "bark": "#8b968f",
+    "line": "#d9d6ca",
+    "ink_d": "#ebe9e0",
+    "soft_d": "#99a49d",
+    "ground_d": "#121818",
+    "paper_d": "#1b2120",
+    "accent_d": "#efa45c",
+    "bark_d": "#8b968f",
+    "line_d": "#39423e"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我和妹妹只有一块饼。\n我说我要大的，\n她也说她要大的。\n妈妈说：\n那就一人一半吧。",
+      "scene": "The little boy stands at a table with one round biscuit on a plate in front of him, looking at it and thinking hard.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "「一半」的意思是：\n分成两份，\n而且这两份一样大。\n少一点点都不算，\n多一点点也不算。",
+      "scene": "A simple clear diagram, drawn flat and plain: one round biscuit on a cream background cut straight down the middle into two equal halves. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "所以分饼的时候，\n要从中间切。\n切歪了，\n一份大一份小，\n那就不是一半了。",
+      "scene": "A simple clear diagram, drawn flat and plain: two biscuits side by side on a cream background: the left one cut into two equal halves with a tick beside it, the right one cut off-centre with a cross beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "四颗糖分给两个人，\n一人两颗。\n六颗分给两个人，\n一人三颗。\n一半，就是分两次一样多。",
+      "scene": "A simple clear diagram, drawn flat and plain: six sweets on a cream background arranged in two rows of three, with a straight line between the rows. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "可是五颗糖呢？\n一人两颗，\n还剩一颗。\n这时候要么把它切开，\n要么留着下次。",
+      "scene": "A simple clear diagram, drawn flat and plain: five sweets on a cream background: two on the left, two on the right and one alone in the middle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "分给三个人，\n每人得到三份里的一份，\n叫三分之一。\n人越多，\n每人分到的就越少。",
+      "scene": "A simple clear diagram, drawn flat and plain: one round cake on a cream background cut into three equal wedges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "半个还能再分半。\n把一半再对折，\n就是四分之一。\n四个四分之一合起来，\n刚好还是一整个。",
+      "scene": "A simple clear diagram, drawn flat and plain: one square on a cream background divided into four equal small squares, one of them shaded. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "一半也不一定长得一样。\n一个正方形\n横着切、竖着切、斜着切，\n切出来的形状不同，\n可大小都是一半。",
+      "scene": "A simple clear diagram, drawn flat and plain: three squares in a row on a cream background, each cut in half by a different line: horizontal, vertical and diagonal, with one half of each shaded. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "两个一半合起来，\n就是一个整的。\n所以一半加一半，\n等于一。\n分出去的，能再拼回来。",
+      "scene": "A simple clear diagram, drawn flat and plain: two half circles on a cream background moving toward each other and forming one whole circle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "水也能分一半。\n把一杯水倒进两个一样的杯子，\n倒到两边水面一样高，\n就是一半一半。",
+      "scene": "A simple clear diagram, drawn flat and plain: two identical glasses side by side on a cream background, each filled with water to exactly the same level. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "分东西的时候，\n还有一个好办法：\n一个人切，\n另一个人先挑。\n切的人就会切得很公平。",
+      "scene": "A simple clear diagram, drawn flat and plain: one cake on a cream background with a knife above it, one hand at the left holding the knife and one hand at the right pointing at a piece. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我拿刀从中间切下去，\n让妹妹先挑。\n她挑了左边那块。\n两块一样大，\n谁都没有少吃。",
+      "scene": "The little boy hands one half of the biscuit to a smaller child at the table, keeping the other half, both smiling.",
+      "has_boy": true
+    }
+  ]
+}
