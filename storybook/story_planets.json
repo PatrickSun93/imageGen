@@ -1,0 +1,107 @@
+{
+  "title": "太阳系有八颗行星",
+  "subtitle": "太阳带着大家一起转",
+  "slug": "planets",
+  "seed_base": 25000,
+  "character": "wearing a purple t-shirt, dark blue trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration in stained glass style: flat shapes of glowing coloured glass held together by thick black leading lines, deep blue, amber and ruby glass, simple bold shapes",
+  "style_label": "彩色玻璃",
+  "keyword": "行星",
+  "palette": {
+    "ink": "#f0ecf6",
+    "soft": "#b9b2cc",
+    "ground": "#161326",
+    "paper": "#1d1930",
+    "accent": "#f2b134",
+    "bark": "#8f88a8",
+    "line": "#3a3352",
+    "ink_d": "#f0ecf6",
+    "soft_d": "#b9b2cc",
+    "ground_d": "#0f0c1a",
+    "paper_d": "#171325",
+    "accent_d": "#f6c766",
+    "bark_d": "#8f88a8",
+    "line_d": "#3a3352"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "晚上，我抬头看天空。\n爸爸说，我们住的地球，\n是绕着太阳转的。\n和地球一起转的，\n还有另外七颗行星。",
+      "scene": "The little boy stands outside at night looking up at a deep blue starry sky, one hand shading his eyes, a warm glow behind him.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "太阳是一颗恒星，\n又大又烫，会自己发光。\n它待在中间不走，\n大家都绕着它转。\n它是太阳系的老大。",
+      "scene": "A simple clear diagram, drawn flat and plain: one huge glowing amber sun in the middle of a deep blue background, with straight rays going out all around it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "离太阳最近的是水星。\n它个子最小，\n跑得却最快，\n绕太阳一圈，\n只要八十八天。",
+      "scene": "A simple clear diagram, drawn flat and plain: one small grey planet close to a large amber sun at the left, with a thin white dotted circle showing its short path around the sun. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "第二颗是金星。\n它被厚厚的云包着，\n是太阳系里最热的行星。\n天还没亮的时候，\n它是天上最亮的那颗。",
+      "scene": "A simple clear diagram, drawn flat and plain: one cream-and-yellow planet wrapped in thick swirling cloud bands, shown large in the middle of a deep blue background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "第三颗，就是我们的地球。\n它有海洋、有云、\n有空气，也有你和我。\n到现在为止，\n它是我们知道的唯一有生命的星球。",
+      "scene": "A simple clear diagram, drawn flat and plain: one blue-and-green planet with white cloud swirls shown large in the middle of a deep blue background, a thin bright rim of light along one side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "第四颗是火星。\n它的土是红色的，\n所以看起来红红的。\n上面有太阳系最高的山，\n比珠穆朗玛峰还高三倍。",
+      "scene": "A simple clear diagram, drawn flat and plain: one rust-red planet with a tall pointed mountain drawn on its surface, shown large in the middle of a deep blue background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "第五颗是木星。\n它是最大的行星，\n能装下一千多个地球。\n它身上有一个大红斑，\n那是一场刮了几百年的大风暴。",
+      "scene": "A simple clear diagram, drawn flat and plain: one huge striped orange-and-cream planet with a large red oval spot on it, shown in the middle of a deep blue background, with one tiny blue earth drawn beside it for size. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "第六颗是土星。\n它有一圈漂亮的环，\n远远看像戴了一顶草帽。\n那些环不是石板，\n是无数的冰块和石头。",
+      "scene": "A simple clear diagram, drawn flat and plain: one pale gold planet with wide flat rings around it, tilted slightly, shown large in the middle of a deep blue background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "第七颗是天王星，\n第八颗是海王星。\n它们离太阳很远很远，\n又冷又暗，\n看起来一个青蓝，一个深蓝。",
+      "scene": "A simple clear diagram, drawn flat and plain: two ice-blue planets side by side in the middle of a deep blue background, the left one pale cyan and the right one deeper blue, the same size. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "把它们排成一排看：\n水星、金星、地球、火星，\n个子都比较小；\n木星、土星、天王星、海王星，\n一个比一个大得多。",
+      "scene": "A simple clear diagram, drawn flat and plain: eight planets in a single row from left to right on a deep blue background, the first four small and the last four clearly larger, the amber sun at the far left edge. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "它们都绕着太阳转，\n可是路不一样长。\n地球转一圈是一年，\n海王星转一圈，\n要一百六十多年。",
+      "scene": "A simple clear diagram, drawn flat and plain: an amber sun in the middle of a deep blue background with eight thin white dotted circles around it, each circle larger than the one inside it, one small planet sitting on each circle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "太阳系真大呀。\n我们住在第三颗行星上，\n和另外七个邻居，\n一起绕着同一颗太阳转。\n明天晚上，我还要来看。",
+      "scene": "The little boy sits on the grass at night hugging his knees, looking up at a deep blue sky full of stars, a calm happy face.",
+      "has_boy": true
+    }
+  ]
+}
