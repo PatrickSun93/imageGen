@@ -1,0 +1,107 @@
+{
+  "title": "蜜蜂怎么做蜂蜜",
+  "subtitle": "一只蜜蜂一辈子，只做一小勺",
+  "slug": "bee",
+  "seed_base": 33000,
+  "character": "wearing a yellow t-shirt, brown shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, linocut print on warm cream paper, bold carved shapes with strong black lines, limited palette of honey gold, warm brown and leaf green, visible carving marks",
+  "style_label": "木刻版画",
+  "keyword": "花蜜",
+  "palette": {
+    "ink": "#2c2418",
+    "soft": "#6f6149",
+    "ground": "#f4ecd8",
+    "paper": "#fbf6e8",
+    "accent": "#d99a1f",
+    "bark": "#8f7d5c",
+    "line": "#ddd0b4",
+    "ink_d": "#ece2ca",
+    "soft_d": "#a89a85",
+    "ground_d": "#1a1409",
+    "paper_d": "#241c10",
+    "accent_d": "#eab53f",
+    "bark_d": "#9c8a68",
+    "line_d": "#3d3320"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "早饭的面包上，\n我抹了一层蜂蜜，\n甜甜的，黏黏的。\n这罐蜂蜜，\n是谁做出来的呢？",
+      "scene": "The little boy sits at a breakfast table spreading honey on a slice of bread with a spoon, a honey jar beside him.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "蜜蜂住在蜂巢里。\n一个蜂巢里，\n可能住着几万只蜜蜂。\n它们分工干活：\n有的出门采蜜，有的在家照顾幼虫。",
+      "scene": "A simple clear diagram, drawn flat and plain: one hive shape on a cream background filled with a grid of six-sided cells, with several simple bees on it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "花朵为了让蜜蜂来，\n在花心里备了一点甜水，\n叫做「花蜜」。\n蜜蜂来喝甜水，\n身上顺便沾满了花粉。",
+      "scene": "A simple clear diagram, drawn flat and plain: one flower seen in cross-section on a cream background with a small pool of nectar drawn at its centre. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "蜜蜂把花蜜吸进一个小袋子里，\n那个袋子叫蜜囊，\n不是它的胃。\n装满了，\n它就飞回蜂巢。",
+      "scene": "A simple clear diagram, drawn flat and plain: one bee seen from the side on a cream background with a small rounded sac drawn inside its body, separate from the stomach. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "回到家，\n它把花蜜吐给另一只蜜蜂，\n那只再吐给下一只。\n传来传去的时候，\n花蜜里的水越来越少。",
+      "scene": "A simple clear diagram, drawn flat and plain: three bees in a row on a cream background, each passing a drop to the next, with small arrows between them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "然后它们把蜜吐进蜂房里，\n一起扇翅膀。\n几万只翅膀一起扇，\n把水汽吹走，\n蜜就变得越来越稠。",
+      "scene": "A simple clear diagram, drawn flat and plain: several six-sided cells on a cream background filled with honey, with two bees above them and short curved lines showing moving air. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "水少到一定程度，\n细菌就活不下去了，\n所以蜂蜜放很久也不会坏。\n最后蜜蜂用蜡\n把蜂房封起来。",
+      "scene": "A simple clear diagram, drawn flat and plain: a row of six-sided cells on a cream background, the left ones open and full of honey, the right ones sealed with a flat wax cap. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "蜂房为什么是六边形呢？\n因为六边形一个挨一个，\n中间不留空隙，\n用最少的蜡，\n装最多的蜜。",
+      "scene": "A simple clear diagram, drawn flat and plain: three shapes side by side on a cream background: a circle grid with gaps between circles, a square grid, and a six-sided grid with no gaps at all. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "找到好花的蜜蜂，\n回家会跳一种舞。\n转圈的方向和时间，\n告诉同伴：\n花在哪个方向、有多远。",
+      "scene": "A simple clear diagram, drawn flat and plain: one bee on a cream background walking a figure-of-eight path drawn as a dotted line, with one straight arrow through the middle of the eight. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "蜜蜂采蜜的时候，\n把花粉从这朵花\n带到那朵花上。\n花才能结果。\n我们吃的很多果子，都靠它们。",
+      "scene": "A simple clear diagram, drawn flat and plain: two flowers on a cream background with one bee flying between them, small dots of pollen drawn on the bee and on both flowers. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "一只工蜂一辈子，\n大约只能做出\n一小勺蜂蜜的十二分之一。\n所以一罐蜂蜜，\n是好多好多蜜蜂的一生。",
+      "scene": "A simple clear diagram, drawn flat and plain: one small teaspoon on a cream background with a very small drop of honey in it, and beside it one single bee. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我又舔了一口蜂蜜。\n这一口，\n可能是好几只蜜蜂\n飞了好远好远才带回来的。\n我慢慢地吃，不浪费。",
+      "scene": "The little boy holds his slice of honey bread with both hands and takes a careful small bite, eyes closed, enjoying it.",
+      "has_boy": true
+    }
+  ]
+}

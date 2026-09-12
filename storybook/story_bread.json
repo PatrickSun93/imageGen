@@ -1,0 +1,107 @@
+{
+  "title": "面包是怎么来的",
+  "subtitle": "一粒麦子的旅行",
+  "slug": "bread",
+  "seed_base": 34000,
+  "character": "wearing a cream sweater, brown trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration, warm gouache painting on textured paper, flat simple rounded shapes with clean outlines, wheat gold, crust brown and soft cream palette, visible brush texture",
+  "style_label": "暖色水粉",
+  "keyword": "酵母",
+  "palette": {
+    "ink": "#33291f",
+    "soft": "#786a56",
+    "ground": "#f5efe3",
+    "paper": "#fcf8f0",
+    "accent": "#c98b3f",
+    "bark": "#8f8069",
+    "line": "#e0d6c3",
+    "ink_d": "#ece4d5",
+    "soft_d": "#a89a85",
+    "ground_d": "#1e1811",
+    "paper_d": "#2a2319",
+    "accent_d": "#dda15e",
+    "bark_d": "#9c8d77",
+    "line_d": "#3f352a"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "面包店门口好香。\n刚出炉的面包，\n外面脆脆的，里面软软的。\n它是从哪里来的呢？\n我们从一粒麦子说起。",
+      "scene": "The little boy stands on tiptoe at a bakery counter looking at fresh loaves of bread, a warm glow from the shop.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "农民把麦粒种到地里。\n下过几场雨，\n田里长出一片绿油油的麦苗，\n风一吹，\n像绿色的波浪。",
+      "scene": "A wide field of green wheat seedlings on a cream background, with low hills behind and a few clouds. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "到了夏天，\n麦子变成了金黄色。\n沉甸甸的麦穗低下头，\n收割机开进田里，\n一趟一趟把麦子割下来。",
+      "scene": "A field of golden wheat on a cream background with one simple combine harvester cutting a lane through it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "麦穗里藏着麦粒。\n把麦粒送进磨坊，\n磨成细细的粉，\n就是面粉。\n面包的第一样材料，有了。",
+      "scene": "A simple clear diagram, drawn flat and plain: one wheat ear at the left of a cream background, an arrow to a pile of grains in the middle, and another arrow to a mound of flour at the right. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "光有面粉还不行。\n要加水，加一点盐，\n还要加一样很小的东西——\n「酵母」。\n它是一种小小的活的菌。",
+      "scene": "A simple clear diagram, drawn flat and plain: four small piles on a cream background in a row: flour, a small bowl of water, a pinch of salt and a small spoon of yeast granules. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "酵母最爱吃面粉里的糖。\n它一边吃，\n一边放出很多小气泡。\n气泡撑在面团里，\n面团就慢慢鼓起来了。",
+      "scene": "A simple clear diagram, drawn flat and plain: one ball of dough in cross-section on a cream background with many small round bubbles inside it and a few tiny yeast dots. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "所以揉好的面团，\n要盖上布放一会儿。\n过了一小时再看，\n它变成了原来的两倍大，\n胖乎乎的。",
+      "scene": "A simple clear diagram, drawn flat and plain: two bowls side by side on a cream background: the left one with a small ball of dough, the right one with the same dough risen to twice the size. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "把面团揉一揉，\n把大气泡赶走，\n再整成一个个小圆球，\n排在烤盘上，\n让它们再鼓一次。",
+      "scene": "Several rounded dough balls arranged in rows on a baking tray on a cream background, seen from above. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "烤箱很热很热。\n面团一进去，\n里面的气泡受热变大，\n面包就又长高了一截。\n这一下叫「烤箱里的弹跳」。",
+      "scene": "A simple clear diagram, drawn flat and plain: one loaf inside an oven on a cream background, with an upward arrow beside it showing it rising as it bakes. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "外面那一层，\n在高温下变成金黄色，\n又香又脆，\n那是面粉和糖\n在热里起了变化。",
+      "scene": "A simple clear diagram, drawn flat and plain: one baked loaf on a cream background shown in cross-section: a golden brown crust outside and a soft airy crumb inside. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "切开面包，\n里面全是小小的洞。\n每一个洞，\n都是当初酵母\n吐出来的一个小气泡。",
+      "scene": "A simple clear diagram, drawn flat and plain: one slice of bread shown large on a cream background, its crumb full of small round holes of different sizes. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我掰下一块还热着的面包，\n放进嘴里。\n从一粒麦子，\n到我手里的这一口，\n走了好长好长的路。",
+      "scene": "The little boy holds a piece of fresh bread with both hands, taking a bite, a happy face, steam rising from the bread.",
+      "has_boy": true
+    }
+  ]
+}
