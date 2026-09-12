@@ -1,0 +1,107 @@
+{
+  "title": "磁铁为什么吸铁",
+  "subtitle": "看不见的手",
+  "slug": "magnet",
+  "seed_base": 35000,
+  "character": "wearing a red t-shirt, grey trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration, bold flat graphic art with thick black outlines and flat fills in steel blue, brick red and cream, simple chunky shapes, slight printed grain, the illustration covers the entire image area",
+  "style_label": "平涂线条",
+  "keyword": "磁力",
+  "palette": {
+    "ink": "#20262e",
+    "soft": "#5c6775",
+    "ground": "#f2f0ea",
+    "paper": "#fbf9f4",
+    "accent": "#c0453a",
+    "bark": "#8a93a0",
+    "line": "#d9d5cb",
+    "ink_d": "#ebe8e0",
+    "soft_d": "#98a1ae",
+    "ground_d": "#12171d",
+    "paper_d": "#1b2129",
+    "accent_d": "#d76a5c",
+    "bark_d": "#8a93a0",
+    "line_d": "#39414c"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我把冰箱贴拿在手里，\n慢慢靠近冰箱门。\n还没碰到，\n啪的一下，\n它自己贴上去了。",
+      "scene": "The little boy holds a fridge magnet close to a fridge door, watching it snap onto the metal, surprised and delighted.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "磁铁能隔着一点距离\n把铁拉过去。\n这股看不见的力，\n叫做「磁力」。\n它不用碰到，就能起作用。",
+      "scene": "A simple clear diagram, drawn flat and plain: one bar magnet at the left of a cream background and one small iron nail at the right, with a short gap between them and three curved lines drawn in the gap. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "磁铁有两头，\n一头叫北极，一头叫南极。\n中间的地方力气最小，\n两头的力气最大。",
+      "scene": "A simple clear diagram, drawn flat and plain: one bar magnet lying flat on a cream background, its left half coloured blue and its right half coloured red, with several small iron filings clustered thickly at both ends and almost none in the middle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "两块磁铁靠近的时候，\n不一样的两头会互相吸，\n一样的两头会互相推。\n推的时候，\n手里能感觉到那股劲。",
+      "scene": "A simple clear diagram, drawn flat and plain: two rows on a cream background: in the top row a red end faces a blue end with two arrows pointing toward each other; in the bottom row two red ends face each other with two arrows pointing apart. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "磁铁只吸几样东西：\n铁、钴、镍。\n铝罐、铜线、玻璃、木头，\n它都不吸。\n所以硬币有的吸，有的不吸。",
+      "scene": "A simple clear diagram, drawn flat and plain: two groups of objects on a cream background: on the left a nail, a screw and a paperclip; on the right a glass marble, a wooden block and an aluminium can, with a magnet in the middle facing left. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "为什么铁会被吸呢？\n因为铁里面有很多小小的磁区，\n平时乱七八糟地排着。\n磁铁一靠近，\n它们就转过来，排整齐了。",
+      "scene": "A simple clear diagram, drawn flat and plain: two squares side by side on a cream background: the left square filled with small arrows pointing in random directions, the right square filled with the same arrows all pointing the same way. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "所以铁被磁铁碰过以后，\n自己也会变成一小块磁铁，\n能吸起另一根针。\n放久了，\n它又会慢慢乱回去。",
+      "scene": "A simple clear diagram, drawn flat and plain: one magnet at the top of a cream background with a nail hanging from it and a second nail hanging from the first nail. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "把铁屑撒在纸上，\n纸下面放一块磁铁，\n轻轻一敲，\n铁屑就排成一条条弧线，\n从一头弯到另一头。",
+      "scene": "A simple clear diagram, drawn flat and plain: one sheet of paper seen from above on a cream background with iron filings arranged in curved lines running from one end of a hidden magnet to the other. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "地球本身就是一块大磁铁。\n它的两头，\n刚好在南北两边。\n所以指南针的针，\n总是指着南北。",
+      "scene": "A simple clear diagram, drawn flat and plain: one earth ball on a cream background with a straight axis through it and several large curved lines running from the top of the ball around to the bottom. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "指南针里是一根小磁针，\n放在很滑的轴上。\n不管你怎么转它，\n它都会慢慢转回来，\n指向同一个方向。",
+      "scene": "A simple clear diagram, drawn flat and plain: one round compass seen from above on a cream background with a needle inside, one half of the needle red and the other half white. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "磁铁还很有用。\n废品厂用大磁铁吸起废铁，\n喇叭里、电动机里\n都有磁铁，\n冰箱门上也有一圈。",
+      "scene": "A simple clear diagram, drawn flat and plain: three small pictures in a row on a cream background: a crane with a round magnet lifting scrap iron, a loudspeaker in cross-section, and a fridge door seal strip. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我拿磁铁在家里走了一圈，\n试了门把手、勺子、书、杯子。\n吸住的都是铁做的。\n原来磁铁，\n还能帮我认东西。",
+      "scene": "The little boy walks through a room holding a magnet out in front of him, testing a door handle with it, a spoon and a cup on a table nearby.",
+      "has_boy": true
+    }
+  ]
+}
