@@ -1,0 +1,107 @@
+{
+  "title": "为什么会有四季",
+  "subtitle": "地球是斜着转的",
+  "slug": "seasons",
+  "seed_base": 27000,
+  "character": "wearing a green jacket, brown trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration made of embroidered thread on natural linen: shapes filled with neat coloured stitches, visible stitch texture and linen weave, warm folk colours, flat and simple",
+  "style_label": "刺绣",
+  "keyword": "倾斜",
+  "palette": {
+    "ink": "#3b342c",
+    "soft": "#7e7466",
+    "ground": "#f2ece0",
+    "paper": "#faf6ee",
+    "accent": "#c86f4a",
+    "bark": "#948875",
+    "line": "#ded6c6",
+    "ink_d": "#ece5d7",
+    "soft_d": "#a99d8b",
+    "ground_d": "#1d1913",
+    "paper_d": "#28231b",
+    "accent_d": "#dd8a63",
+    "bark_d": "#9a8e7c",
+    "line_d": "#423b31"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "同一棵树，\n春天开花，夏天绿油油，\n秋天变黄，冬天光秃秃。\n一年换四次样子。\n这是为什么呢？",
+      "scene": "The little boy stands in front of one big tree in a yard, looking up at it, wearing a green jacket, a calm curious face.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "有人以为，\n夏天热是因为离太阳近。\n其实不是。\n地球离太阳的远近，\n一年里几乎没怎么变。",
+      "scene": "A simple clear diagram, drawn flat and plain: one amber sun at the left and one earth at the right on a linen background, joined by a straight line with the same length marked at both ends by two short tick marks. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "真正的原因是：\n地球是斜着转的。\n它像一个转起来的陀螺，\n身子微微歪着，\n一直歪向同一个方向。",
+      "scene": "A simple clear diagram, drawn flat and plain: one earth ball in the middle of a linen background with a straight axis line through it drawn clearly tilted to one side, and a small curved arrow around the ball showing it spinning. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "因为歪着，\n所以有半年，北边朝着太阳；\n另外半年，\n轮到南边朝着太阳。",
+      "scene": "A simple clear diagram, drawn flat and plain: one amber sun on the left and two earths on the right of a linen background, both with the same tilted axis: the upper earth leaning its top half toward the sun, the lower earth leaning its bottom half toward the sun. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "朝着太阳的那半边，\n阳光是直直照下来的，\n又亮又暖，\n白天也长。\n那里就是夏天。",
+      "scene": "A simple clear diagram, drawn flat and plain: one section of ground on a linen background with three straight sun rays coming down onto it from directly above, the rays drawn thick and close together. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "背着太阳的那半边，\n阳光是斜斜擦过去的，\n照到的地方就少，\n也没那么暖，\n白天还很短。那里是冬天。",
+      "scene": "A simple clear diagram, drawn flat and plain: one section of ground on a linen background with three straight sun rays arriving at a low slanted angle from the side, the rays spread far apart where they meet the ground. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "春天，太阳慢慢变高。\n地里的种子发芽了，\n树上冒出小小的绿叶，\n花一朵一朵开出来。\n小鸟也回来了。",
+      "scene": "One tree covered in fresh green leaves and pink blossom on a linen background, with small flowers on the ground below and one bird on a branch, all embroidered. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "夏天，太阳最高最烈。\n树叶长得又大又密，\n知了在上面叫个不停。\n白天很长，\n天黑得很晚。",
+      "scene": "One tree in full dark green leaf on a linen background, with a bright amber sun high above it and one cicada on the trunk, all embroidered. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "秋天，太阳又变低了。\n树叶变黄、变红，\n一片一片往下落。\n果子熟了，\n松鼠忙着收藏过冬的粮食。",
+      "scene": "One tree with golden and red leaves on a linen background, several leaves falling, and one squirrel holding a nut at the foot of the trunk, all embroidered. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "冬天，太阳最低。\n树叶掉光了，\n只剩下光秃秃的枝条。\n天很冷，\n有的地方还会下雪。",
+      "scene": "One bare tree with no leaves on a linen background, thin snow on its branches and on the ground, a pale low sun near the horizon, all embroidered. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "地球绕着太阳走一圈，\n刚好是一年。\n走到不同的位置，\n我们这里就换一个季节：\n春、夏、秋、冬，一年一次。",
+      "scene": "A simple clear diagram, drawn flat and plain: one amber sun in the middle of a linen background with one large circle around it, and four small earths spaced evenly on that circle, each with the same tilted axis. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我在树下捡了一片黄叶子，\n夹进我的本子里。\n等明年春天，\n这棵树又会开花。\n我要在同一个地方再看一次。",
+      "scene": "The little boy crouches under the bare tree holding one yellow leaf up to look at it, a notebook open on the ground beside him.",
+      "has_boy": true
+    }
+  ]
+}
