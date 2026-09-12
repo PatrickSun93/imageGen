@@ -1,0 +1,107 @@
+{
+  "title": "一颗豆子怎么发芽",
+  "subtitle": "它自己带着饭盒",
+  "slug": "sprout",
+  "seed_base": 39000,
+  "character": "wearing a light green t-shirt, beige trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration in botanical watercolour style, soft transparent washes with fine brown ink outlines, fresh leaf green and warm earth palette, plenty of clean white paper",
+  "style_label": "植物水彩",
+  "keyword": "子叶",
+  "palette": {
+    "ink": "#2f352a",
+    "soft": "#6f7a63",
+    "ground": "#f4f6ef",
+    "paper": "#fbfcf8",
+    "accent": "#6f9c4a",
+    "bark": "#8b9478",
+    "line": "#dde2d4",
+    "ink_d": "#eaeee3",
+    "soft_d": "#a3ac95",
+    "ground_d": "#161a12",
+    "paper_d": "#20251a",
+    "accent_d": "#8fbf67",
+    "bark_d": "#96a084",
+    "line_d": "#3b4234"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "妈妈给了我一颗干干的豆子，\n硬硬的，圆圆的。\n她说，把它种到土里，\n过几天就会长出小苗。\n我有点不相信。",
+      "scene": "The little boy holds one dry bean in his open palm, looking at it closely, a small pot of soil on the table beside him.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "先把豆子剖开看看。\n里面有两片厚厚的东西，\n那是「子叶」，\n是豆子给自己\n准备的第一顿饭。",
+      "scene": "A simple clear diagram, drawn flat and plain: one bean split open on a cream background showing two thick halves inside and one tiny curled plant between them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "两片子叶中间，\n藏着一个很小的芽。\n上面一头会长成茎和叶，\n下面一头会长成根。\n它早就准备好了。",
+      "scene": "A simple clear diagram, drawn flat and plain: one bean seen in cross-section on a cream background with the tiny embryo drawn large: a small shoot pointing up and a small root pointing down. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "干豆子在睡觉。\n它要醒过来，\n需要三样东西：\n水、空气，\n还有不冷不热的温度。",
+      "scene": "A simple clear diagram, drawn flat and plain: three small symbols in a row on a cream background: a water drop, a small swirl of air and a thermometer at a middle level. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "先喝水。\n豆子泡在水里，\n慢慢胀大，皮被撑得发皱。\n里面睡着的芽，\n被水叫醒了。",
+      "scene": "A simple clear diagram, drawn flat and plain: two beans side by side on a cream background: the left one small and smooth, the right one swollen with a wrinkled skin. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "最先钻出来的是根。\n它一头扎进土里，\n抓住土，\n再从土里吸水。\n根总是往下长。",
+      "scene": "A simple clear diagram, drawn flat and plain: one bean just under the soil surface on a cream background with one white root coming out of it and growing downward. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "然后芽往上顶。\n它弯着腰，\n像一个小钩子，\n用背先顶开土，\n免得嫩芽被土磨坏。",
+      "scene": "A simple clear diagram, drawn flat and plain: one seedling in soil cross-section on a cream background bent into a hook shape, pushing up through the soil with the bend first. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "钻出地面以后，\n它才慢慢直起腰，\n把两片子叶举起来。\n这时候它吃的，\n还是自己带的那顿饭。",
+      "scene": "One young bean seedling standing on soil on a cream background with two thick seed leaves opened at the top. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "接着长出真正的叶子。\n叶子是绿的，\n里面有叶绿素，\n能用阳光、水和空气\n自己做出糖来。",
+      "scene": "A simple clear diagram, drawn flat and plain: one seedling on a cream background with two thin true leaves above the seed leaves, three straight sun rays arriving at the leaves. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "真叶一开始工作，\n两片子叶就慢慢变黄、变小，\n最后掉下来。\n饭盒空了，\n小苗已经能自己养活自己。",
+      "scene": "A simple clear diagram, drawn flat and plain: one seedling on a cream background with green true leaves at the top and two shrivelled yellow seed leaves below, one of them falling off. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "根越扎越深，\n茎越长越高。\n要是光只从一边来，\n茎就会朝着光弯过去。\n它一直在找太阳。",
+      "scene": "A simple clear diagram, drawn flat and plain: one plant in a pot on a cream background leaning toward a window at the left, with straight light rays coming from that side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "第七天早上，\n花盆里冒出了一个小小的绿芽。\n它弯着腰，\n慢慢地直起身子。\n我每天都去看它一次。",
+      "scene": "The little boy leans over a small pot on a windowsill where one green seedling has come up, his face close to it, delighted.",
+      "has_boy": true
+    }
+  ]
+}

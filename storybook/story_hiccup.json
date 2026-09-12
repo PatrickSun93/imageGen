@@ -1,0 +1,107 @@
+{
+  "title": "为什么会打嗝",
+  "subtitle": "身体里的小意外",
+  "slug": "hiccup",
+  "seed_base": 40000,
+  "character": "wearing an orange hoodie, grey trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration, friendly flat cartoon art with clean rounded outlines and flat warm colours, coral, cream and soft blue, simple shapes, gentle and reassuring",
+  "style_label": "扁平卡通",
+  "keyword": "膈肌",
+  "palette": {
+    "ink": "#2c2a30",
+    "soft": "#6c6875",
+    "ground": "#f6f2ee",
+    "paper": "#fdfaf7",
+    "accent": "#e2705a",
+    "bark": "#918c9b",
+    "line": "#ded8d2",
+    "ink_d": "#ece7e1",
+    "soft_d": "#a49eab",
+    "ground_d": "#161419",
+    "paper_d": "#201d24",
+    "accent_d": "#f08f79",
+    "bark_d": "#918c9b",
+    "line_d": "#3a3741"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我喝汽水喝得太急，\n忽然——\n嗝！\n身体自己抖了一下，\n嘴里发出一个声音。",
+      "scene": "The little boy sits at a table holding a glass, his shoulders jumping with a hiccup, a surprised look on his face.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "打嗝的时候，\n动的不是嘴巴，\n是胸腔下面的一块肌肉。\n它叫「膈肌」，\n是一块平平的、像伞一样的肉。",
+      "scene": "A simple clear diagram, drawn flat and plain: one simple cross-section of a chest on a cream background with a flat dome-shaped muscle drawn across the middle, below the lungs. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "平时呼吸，\n它慢慢往下拉，\n空气就吸进来；\n慢慢往上顶，\n空气就呼出去。一上一下，很有节奏。",
+      "scene": "A simple clear diagram, drawn flat and plain: two chest cross-sections side by side on a cream background: in the left one the dome muscle is pulled down and the lungs are large; in the right one the dome is pushed up and the lungs are small. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "可有时候，\n它会突然抽一下。\n这一下没打招呼，\n一大口空气被猛地吸进来，\n速度很快。",
+      "scene": "A simple clear diagram, drawn flat and plain: one chest cross-section on a cream background with the dome muscle drawn sharply pulled down and one bold arrow showing air rushing in fast. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "就在这时候，\n喉咙上面的声门\n啪地关上了。\n空气撞在关着的门上——\n嗝！声音就是这么来的。",
+      "scene": "A simple clear diagram, drawn flat and plain: one simple throat cross-section on a cream background with a small flap closed across it and one arrow of air hitting the closed flap. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "什么会让膈肌抽一下呢？\n吃太快、喝太急、\n吃得太饱、\n喝汽水、\n或者忽然大笑、忽然受凉。",
+      "scene": "A simple clear diagram, drawn flat and plain: five small symbols in a row on a cream background: a fork with food, a fizzy drink, a full stomach shape, a laughing mouth and a snowflake. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "小婴儿打嗝更多。\n因为他们的膈肌还没长好，\n吃奶的时候\n又容易吸进空气。\n这很正常，不是生病。",
+      "scene": "One baby lying on a soft blanket on a cream background with a small milk bottle beside it, calm and content. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "大多数打嗝，\n过几分钟就自己停了。\n不用紧张，\n也不用怕，\n它只是身体的一个小意外。",
+      "scene": "A simple clear diagram, drawn flat and plain: one simple clock face on a cream background with a short arc marked on it showing only a few minutes. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "想让它快点停，\n可以慢慢喝几口温水，\n或者屏住呼吸数到十，\n让身体里的\n二氧化碳多一点。",
+      "scene": "A simple clear diagram, drawn flat and plain: one glass of warm water on a cream background beside one hand showing ten fingers, drawn simply. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "也可以慢慢深呼吸，\n吸气的时候数到四，\n吐气的时候数到六。\n膈肌慢下来，\n抽动就容易停。",
+      "scene": "A simple clear diagram, drawn flat and plain: one simple wave line on a cream background with a short rising part and a longer falling part, repeated twice. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "要是打嗝很久都不停，\n超过两天，\n那就要告诉大人，\n去看看医生。\n不过这种情况很少见。",
+      "scene": "One friendly grown-up doctor in a white coat on a cream background, drawn plainly, standing beside a chair. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我慢慢喝了几口温水，\n又深深地吸了一口气。\n数到十的时候，\n嗝就没有了。\n下次喝汽水，我不喝那么急了。",
+      "scene": "The little boy sits at the table holding a glass of water with both hands, taking a slow sip, calm and relieved.",
+      "has_boy": true
+    }
+  ]
+}
