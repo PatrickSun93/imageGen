@@ -1,0 +1,107 @@
+{
+  "title": "声音是怎么跑过来的",
+  "subtitle": "空气在轻轻地推",
+  "slug": "sound",
+  "seed_base": 31000,
+  "character": "wearing a striped blue t-shirt, grey shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, bold flat graphic art with thick hand-inked black outlines and slightly grainy flat fills in teal, coral and cream, simple chunky shapes, the illustration covers the entire image area",
+  "style_label": "平涂线条",
+  "keyword": "振动",
+  "palette": {
+    "ink": "#22303a",
+    "soft": "#5f7280",
+    "ground": "#f3efe6",
+    "paper": "#fbf8f1",
+    "accent": "#e2664f",
+    "bark": "#8d9aa6",
+    "line": "#dcd6c9",
+    "ink_d": "#ece7dc",
+    "soft_d": "#9aa6b2",
+    "ground_d": "#141c24",
+    "paper_d": "#1d2731",
+    "accent_d": "#ef8168",
+    "bark_d": "#8d9aa6",
+    "line_d": "#3a4854"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "妈妈在厨房叫我的名字，\n我在客厅也听见了。\n中间隔着一堵墙，\n声音是怎么跑过来的呢？",
+      "scene": "The little boy stands in a living room turning his head toward a doorway, one hand cupped behind his ear, listening.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "先摸摸自己的喉咙，\n再说一声「啊——」。\n是不是麻麻的、抖抖的？\n那是声带在快速地「振动」。\n声音，就是从振动来的。",
+      "scene": "A simple clear diagram, drawn flat and plain: one simple side view of a throat on a cream background with two short vibrating lines drawn inside it and small curved motion marks beside them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "鼓也是一样。\n敲一下鼓面，\n鼓皮上上下下地抖，\n抖得越厉害，\n声音就越大。",
+      "scene": "A simple clear diagram, drawn flat and plain: one round drum seen from the side on a cream background, its skin drawn with a slight curve and three short motion lines above and below it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "鼓面一抖，\n就把旁边的空气推了一下。\n空气一挤一松，\n把这个推的动作\n一层一层传出去。",
+      "scene": "A simple clear diagram, drawn flat and plain: one drum at the left of a cream background with a series of curved arcs spreading to the right, each arc a little further apart than the last. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "所以声音不是飞过来的，\n是空气一个推一个\n传过来的。\n就像排队的人\n一个轻轻推一个。",
+      "scene": "A simple clear diagram, drawn flat and plain: a row of eight round dots across a cream background, the left ones squeezed close together and the right ones spread apart, with one arrow above showing the direction of travel. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "推得快，声音就高；\n推得慢，声音就低。\n小鸟叫是高高的，\n大鼓响是低低的。",
+      "scene": "A simple clear diagram, drawn flat and plain: two wavy lines across a cream background: the upper one with many tight waves, the lower one with few wide waves. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "声音在空气里跑得挺快，\n一秒钟能跑三百多米。\n可是比起光，\n它慢多了。",
+      "scene": "A simple clear diagram, drawn flat and plain: one straight arrow on a cream background labelled only by its length, short, and above it a much longer arrow, both pointing right. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "所以打雷的时候，\n我们先看见闪电，\n过一会儿才听见雷声。\n数一数中间隔了几秒，\n就知道雷有多远。",
+      "scene": "A simple scene on a cream background: one jagged lightning bolt in a dark cloud at the top, and below it a house with curved sound arcs arriving later. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "声音也能在水里跑，\n而且跑得更快。\n鲸鱼就是靠声音说话的，\n它们的歌声\n能传出好几十公里。",
+      "scene": "A simple clear diagram, drawn flat and plain: one whale shape at the left of a teal background with curved sound arcs spreading to the right through the water. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "在没有空气的地方，\n声音就跑不动了。\n太空里静悄悄的，\n就算飞船在旁边，\n也听不见一点声音。",
+      "scene": "A simple clear diagram, drawn flat and plain: one small spaceship on a plain dark background with no arcs or lines around it at all, everything else empty. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "耳朵里有一张小小的膜，\n叫耳膜。\n空气推过来，\n耳膜跟着抖，\n我们就听见了声音。",
+      "scene": "A simple clear diagram, drawn flat and plain: one simple cross-section of an ear on a cream background with a small round membrane inside it and three curved arcs arriving from the left. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我拿两个纸杯和一根线，\n做了一个土电话。\n我在这头说话，\n妹妹在那头真的听见了——\n声音顺着线跑了过去。",
+      "scene": "The little boy holds a paper cup to his mouth with a taut string running from it across the room, laughing, another paper cup at the far end of the string.",
+      "has_boy": true
+    }
+  ]
+}
