@@ -1,0 +1,107 @@
+{
+  "title": "数一数，一到十",
+  "subtitle": "每个数字，都有它的样子",
+  "slug": "count",
+  "seed_base": 23000,
+  "character": "wearing a red sweater, dark blue trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration drawn with coloured chalk on a dark green blackboard, soft chalky lines with visible chalk dust, bright white, yellow and pink chalk, flat and simple",
+  "style_label": "黑板粉笔画",
+  "keyword": "数一数",
+  "palette": {
+    "ink": "#f2efe6",
+    "soft": "#c6c2b4",
+    "ground": "#1f3a30",
+    "paper": "#26453a",
+    "accent": "#f2c14e",
+    "bark": "#9fb3a8",
+    "line": "#3a5c4e",
+    "ink_d": "#f2efe6",
+    "soft_d": "#c6c2b4",
+    "ground_d": "#16291f",
+    "paper_d": "#1d3329",
+    "accent_d": "#f7cf6b",
+    "bark_d": "#9fb3a8",
+    "line_d": "#3a5c4e"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "今天我学会了一件事——\n我会数数了！\n从一数到十，\n一个都不会漏。\n你也跟我一起数，好不好？",
+      "scene": "The little boy stands in front of a big dark green blackboard in a classroom, holding a piece of white chalk, smiling proudly.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "一。\n天上只有一个太阳，\n圆圆的，暖暖的。\n它每天早上升起来，\n照亮一整个世界。",
+      "scene": "One big round sun drawn in yellow chalk in the middle of a dark green blackboard, with a large white chalk number 1 beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "二。\n我有两只眼睛，\n可以看见你；\n还有两只耳朵，\n可以听见你说话。",
+      "scene": "Two simple chalk-drawn eyes side by side on a dark green blackboard, with a large white chalk number 2 beside them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "三。\n小三轮车有三个轮子，\n一个在前面，\n两个在后面，\n骑起来稳稳当当。",
+      "scene": "A simple tricycle drawn in white and pink chalk on a dark green blackboard, its three wheels clearly visible, with a large white chalk number 3 beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "四。\n小狗有四条腿，\n跑起来嗒嗒嗒。\n桌子也有四条腿，\n站着一动不动。",
+      "scene": "A simple dog with four legs drawn in white chalk on a dark green blackboard, with a large white chalk number 4 beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "五。\n张开一只手，\n数一数：\n一、二、三、四、五。\n刚好五个手指头。",
+      "scene": "One open hand with five fingers spread, drawn in white chalk on a dark green blackboard, with a large white chalk number 5 beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "六。\n盒子里有六个鸡蛋，\n两个一排，\n三排刚刚好。\n数一数，一个也不少。",
+      "scene": "Six simple oval eggs drawn in white chalk on a dark green blackboard, arranged in three rows of two, with a large white chalk number 6 beside them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "七。\n雨后的天上挂着彩虹，\n红、橙、黄、绿、\n蓝、靛、紫——\n数一数，一共七种颜色。",
+      "scene": "A rainbow arc drawn in seven coloured chalk stripes on a dark green blackboard, with a large white chalk number 7 beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "八。\n章鱼有八条腕足，\n软软的，弯弯的，\n在水里一摆一摆。\n数一数，真的是八条。",
+      "scene": "A simple octopus with eight arms drawn in pink chalk on a dark green blackboard, with a large white chalk number 8 beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "九。\n晚上的天空，\n我数到了九颗星星。\n有的亮一点，\n有的暗一点，一闪一闪的。",
+      "scene": "Nine simple five-pointed stars drawn in yellow chalk scattered on a dark green blackboard, with a large white chalk number 9 beside them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "十。\n脱下袜子，\n数数我的脚趾头：\n左脚五个，右脚五个，\n合起来正好是十。",
+      "scene": "Two simple bare feet drawn in white chalk on a dark green blackboard, five toes on each foot, with a large white chalk number 10 beside them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "一、二、三、四、五，\n六、七、八、九、十。\n我数到十啦！\n数一数身边的东西，\n到处都藏着数字呢。",
+      "scene": "The little boy stands in front of the dark green blackboard with both arms raised, laughing, chalk numbers and small drawings covering the board behind him.",
+      "has_boy": true
+    }
+  ]
+}
