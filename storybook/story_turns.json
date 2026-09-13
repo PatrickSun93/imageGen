@@ -40,7 +40,7 @@
     {
       "n": 2,
       "zh": "可是滑梯前面，\n已经站着三个小朋友。\n他们一个跟着一个，\n排成一条小队伍。",
-      "scene": "Three other children of different ages stand in a neat line at the bottom of the slide ladder, and the little boy stops right behind them, looking at the line.",
+      "scene": "The little boy stands on the ground at the very end of a queue, both feet flat on the ground, waiting. In front of him three other children stand one behind another in a line, their backs to him, facing a slide ladder further ahead. The boy is the last one in the line and nobody is on the ladder.",
       "has_boy": true
     },
     {
@@ -58,7 +58,7 @@
     {
       "n": 5,
       "zh": "等待的时候，\n我数了数前面还有几个人。\n三个，两个，一个……\n数着数着，\n好像没有那么难等了。",
-      "scene": "The little boy stands in the line counting on his fingers, looking at the two children still in front of him, a calm patient face.",
+      "scene": "The little boy stands in a line of children waiting, looking ahead at the three children in front of him, counting on the fingers of one raised hand.",
       "has_boy": true
     },
     {
@@ -118,7 +118,7 @@
     {
       "n": 15,
       "zh": "图书角也是一样。\n我想看的那本恐龙书，\n正被别的小朋友捧在手里。\n那我就先看另一本，\n等他看完再换。",
-      "scene": "A cosy reading corner with a low shelf of picture books, one dinosaur book missing from the shelf and a gap where it was, a cushion on the floor, no people.",
+      "scene": "A grown adult woman sits on a low chair holding an open picture book with a dinosaur on its cover, reading it. The little boy stands nearby looking at the book in her hands. The shelf behind them has an empty gap where that book used to be.",
       "has_boy": false
     },
     {

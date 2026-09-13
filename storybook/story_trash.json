@@ -34,13 +34,13 @@
     {
       "n": 1,
       "zh": "早上，我喝完了一盒牛奶。\n空盒子要扔到哪里去呢？\n我拿着盒子走到厨房，\n看见墙边站着三个桶。",
-      "scene": "The little boy stands in a kitchen holding an empty milk carton, looking at three bins standing against the wall, morning light.",
+      "scene": "Three tall wheelie bins standing side by side on the ground against a plain wall, all three with the same grey body and the same shape, their lids coloured blue, green and black. The picture contains only the three bins, the ground and the wall.",
       "has_boy": true
     },
     {
       "n": 2,
       "zh": "我家门口有三个大桶：\n一个蓝的，一个绿的，一个黑的。\n它们长得一模一样，\n只有盖子的颜色不同。",
-      "scene": "Three big wheeled bins standing side by side in front of a house: one with a blue lid, one with a green lid and one with a black lid, sunny driveway.",
+      "scene": "Three identical grey wheelie bins standing in a row on the ground, exactly the same shape and the same grey body, differing only in their lid colour: one blue lid, one green lid, one black lid.",
       "has_boy": false
     },
     {
@@ -112,7 +112,7 @@
     {
       "n": 14,
       "zh": "纸和纸箱被压成大方块，\n送到造纸厂。\n在那里它们被泡成纸浆，\n再摊平、烘干，\n变成一张张新的纸。",
-      "scene": "Big square bales of pressed paper stacked in a yard, and beside them a simple drawing of a roll of fresh new paper coming out of a machine.",
+      "scene": "A stack of flat rectangular bales of pressed paper and flattened cardboard, tied with bands, stacked in a yard beside a plain building.",
       "has_boy": false
     },
     {
