@@ -994,6 +994,137 @@ def _(d, pal):
     return "1 个分成 12 格的勺子（盘小柄粗），只有 1 格是满的"
 
 
+# ---------------------------------------------------------------- 数学书剩下的计数与等分页
+
+@page("minus", 8)
+def _(d, pal):
+    """三块饼干拿不走五块：三个圆，五个叉，有两个叉底下没有圆。"""
+    xs, slot = lay(5)
+    for i, cx in enumerate(xs):
+        if i < 3:
+            disc(d, cx, 560, 74, pal["accent"], pal, w=10)
+        cross(d, cx, 560, 74, pal, w=14)
+    return "3 个圆 + 5 个叉，最后 2 个叉下面没有圆"
+
+
+@page("minus", 9)
+def _(d, pal):
+    """十三减五：一捆十根加三根散的，从捆里抽走五根。"""
+    # 上一版三组东西各摆各的：捆没传 slot 退回默认宽度、三散棍甩在最右、
+    # 抽出的五根孤零零在下方。改成「捆 + 紧贴其右的三根散」为一组居左，
+    # 抽出的五根在其正下方，中间一支箭头连起来。
+    bw = bundle_span()
+    left = MARGIN + 40
+    bundle(d, left + bw / 2, 400, pal, h=300)
+    sx = left + bw + 40
+    for i in range(3):
+        stick(d, sx + i * 44, 400, 300, pal, half=STICK_W / 2, w=STICK_EDGE)
+    arrow(d, left + bw / 2, 580, left + bw / 2, 690, pal, w=11, head=28)
+    for i in range(5):                                  # 抽走的五根，正下方，同为强调色
+        stick(d, left + bw / 2 + (i - 2) * 46, 830, 220, pal, pal["accent"],
+              half=STICK_W / 2, w=STICK_EDGE)
+    return "1 捆 ×10 根 + 紧邻 3 根散 → 下方抽出 5 根"
+
+
+@page("tens", 4)
+def _(d, pal):
+    """三捆四根，写成 34：捆在左、散在右，位置对应十位和个位。"""
+    bw = bundle_span()
+    for cx in spread(3, bw, pad=BUNDLE_PAD):
+        bundle(d, cx - 120, 460, pal, h=300)
+    for i, cx in enumerate(spread(4, STICK_W, pad=52)):
+        stick(d, cx + 300, 460, 300, pal, half=STICK_W / 2, w=STICK_EDGE)
+    d.line([S / 2 + 60, 200, S / 2 + 60, 760], fill=pal["soft"], width=6)
+    return "左边 3 捆（十位）+ 右边 4 根散（个位），中间一条分隔线"
+
+
+@page("plus", 2)
+def _(d, pal):
+    """一加一等于二：左边一个，右边一个，合起来两个。"""
+    disc(d, 180, S / 2, 88, pal["accent"], pal, w=10)
+    d.line([320, S / 2, 420, S / 2], fill=pal["ink"], width=16)      # 加号
+    d.line([370, S / 2 - 50, 370, S / 2 + 50], fill=pal["ink"], width=16)
+    disc(d, 560, S / 2, 88, pal["accent"], pal, w=10)
+    d.line([690, S / 2 - 26, 790, S / 2 - 26], fill=pal["ink"], width=14)  # 等号
+    d.line([690, S / 2 + 26, 790, S / 2 + 26], fill=pal["ink"], width=14)
+    for i, cx in enumerate((890, 890)):
+        disc(d, cx, S / 2 - 92 + i * 184, 76, pal["accent"], pal, w=10)
+    return "1 个 + 1 个 = 2 个"
+
+
+@page("plus", 5)
+def _(d, pal):
+    """二加三等于五。"""
+    # 上一版把 2 个、加号、3 个硬塞进一行，圆挤成一条、加号压在圆上、最右一个出画。
+    # 改成：上行用 lay(7) 分槽 —— 槽 0,1 放两个，槽 2 放加号，槽 3,4,5 放三个；
+    # 下行五个统一同色，表示「合起来就是 5 个」，不再按来源分色。
+    xs, _ = lay(7)
+    for cx in xs[:2]:
+        disc(d, cx, 320, 68, pal["accent"], pal, w=9)
+    px = xs[2]
+    d.line([px - 46, 320, px + 46, 320], fill=pal["ink"], width=16)
+    d.line([px, 274, px, 366], fill=pal["ink"], width=16)
+    for cx in xs[3:6]:
+        disc(d, cx, 320, 68, pal["accent"], pal, w=9)
+    d.line([S / 2 - 64, 540, S / 2 + 64, 540], fill=pal["ink"], width=14)
+    d.line([S / 2 - 64, 594, S / 2 + 64, 594], fill=pal["ink"], width=14)
+    xs5, _ = lay(5)
+    for cx in xs5:
+        disc(d, cx, 800, 68, pal["accent"], pal, w=9)
+    return "上行 2 个 + 3 个（中间加号）/ 下行 5 个同色"
+
+
+@page("plus", 9)
+def _(d, pal):
+    """五块饼干吃掉两块：五个圆，前两个划掉。"""
+    xs, _ = lay(5)
+    for i, cx in enumerate(xs):
+        disc(d, cx, S / 2, 82, pal["accent"] if i < 2 else pal["paper"], pal, w=10)
+        if i < 2:
+            cross(d, cx, S / 2, 82, pal, w=16)
+    return "5 个圆，前 2 个划掉，剩 3 个"
+
+
+@page("plus", 10)
+def _(d, pal):
+    """减号就是短短的一横 —— 只有一条。"""
+    d.line([S / 2 - 180, S / 2, S / 2 + 180, S / 2], fill=pal["ink"], width=34)
+    return "1 条横线（减号）"
+
+
+@page("plus", 12)
+def _(d, pal):
+    """加起来一共十块：两排各五个。"""
+    for cy in (380, 660):
+        xs, _ = lay(5)
+        for cx in xs:
+            disc(d, cx, cy, 78, pal["accent"], pal, w=10)
+    return "2 排 ×5 个 = 10 个"
+
+
+@page("half", 5)
+def _(d, pal):
+    """五颗糖分两个人：左二右二，中间剩一颗。"""
+    for cx in (200, 340):
+        disc(d, cx, S / 2, 76, pal["accent"], pal, w=10)
+    for cx in (684, 824):
+        disc(d, cx, S / 2, 76, pal["soft"], pal, w=10)
+    disc(d, S / 2, S / 2, 76, pal["paper"], pal, w=10)
+    return "左 2 颗 + 右 2 颗 + 中间剩 1 颗 = 5 颗"
+
+
+@page("half", 6)
+def _(d, pal):
+    """分给三个人，每人三分之一 —— 三块必须一样大。"""
+    cx, cy, R = S / 2, S / 2, 270
+    for i in range(3):
+        a0, a1 = i * 120 - 90, (i + 1) * 120 - 90
+        d.pieslice([cx - R, cy - R, cx + R, cy + R], a0, a1,
+                   fill=pal["accent"] if i == 0 else pal["paper"],
+                   outline=pal["ink"], width=9)
+    return "1 个圆分成 3 块等大的扇形（每块 120 度）"
+
+
 # ---------------------------------------------------------------- seasons / water / moon / teeth
 
 @page("seasons", 3)
