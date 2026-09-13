@@ -1,0 +1,114 @@
+{
+  "title": "每个人的指纹都不一样",
+  "subtitle": "手指上的小地图",
+  "slug": "print",
+  "seed_base": 55000,
+  "character": "wearing a deep indigo t-shirt, grey trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration in indigo relief print style, bold flat shapes with visible carved texture, deep indigo, warm cream and one soft coral accent, simple and graphic",
+  "style_label": "靛蓝版画",
+  "keyword": "指纹",
+  "diagram_pages": [
+    3,
+    4,
+    5,
+    7,
+    9
+  ],
+  "palette": {
+    "ink": "#1e2740",
+    "soft": "#5a6580",
+    "ground": "#f3f1ea",
+    "paper": "#fbfaf5",
+    "accent": "#d98a76",
+    "bark": "#8189a0",
+    "line": "#d8d5cc",
+    "ink_d": "#ebe9e2",
+    "soft_d": "#9aa1b2",
+    "ground_d": "#111726",
+    "paper_d": "#1a2133",
+    "accent_d": "#e8a08c",
+    "bark_d": "#8189a0",
+    "line_d": "#38405a"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我用手指蘸了点颜料，\n在纸上按了一下。\n纸上留下一个小圆印，\n里面全是细细的线。\n这是什么呢？",
+      "scene": "The little boy presses one fingertip onto a sheet of paper on a table, leaving a small mark, looking at it closely.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "那是「指纹」。\n每根手指的指尖上，\n都有一圈一圈的细线，\n凹的地方是沟，\n凸起来的地方是脊。",
+      "scene": "A simple clear diagram, drawn flat and plain: one fingertip shown very large on a cream background, covered in fine concentric ridge lines. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "指纹的花样大致分三种：\n像圆圈一圈套一圈的，\n像水流拐个弯的，\n还有像帐篷尖顶的。",
+      "scene": "A simple clear diagram, drawn flat and plain: three fingerprint patterns in a row on a cream background: one made of closed concentric circles, one where the lines curve over and come back, one where the lines rise to a peak in the middle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "这些线是在妈妈肚子里\n就长好的。\n那时候皮肤长得快，\n哪里挤一下、哪里拉一下，\n线就那样定下来了。",
+      "scene": "A simple clear diagram, drawn flat and plain: one fingertip on a cream background with a few small arrows pressing in from the sides, and the ridge lines bending where the arrows push. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "长好以后就不再变了。\n人长大，手变大，\n花样还是那个花样，\n只是整个变大了一点。",
+      "scene": "A simple clear diagram, drawn flat and plain: two fingertips side by side on a cream background with exactly the same ridge pattern, the right one drawn larger than the left. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "就算是双胞胎，\n长得一模一样，\n指纹也不一样。\n全世界没有两个人的指纹\n是相同的。",
+      "scene": "Two children who look exactly alike standing side by side on a cream background, each holding up one hand. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "十根手指，\n十个不一样的花样。\n连你自己的左手和右手，\n都对不上。",
+      "scene": "A simple clear diagram, drawn flat and plain: ten fingerprint ovals arranged in two rows of five on a cream background, every one with a different ridge pattern. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "为什么手上要长这些线呢？\n因为有了它们，\n手才抓得稳。\n就像轮胎上的花纹，\n不容易打滑。",
+      "scene": "One hand on a cream background gripping a round cup, with the ridge lines drawn on the fingertips. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "手指一碰东西，\n就会留下一点点油，\n照着那些线印上去。\n所以门把手上、杯子上，\n常常有看不见的指纹。",
+      "scene": "A simple clear diagram, drawn flat and plain: one cup on a cream background with three faint fingerprint marks on its side, drawn in a lighter tone. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "警察查案子的时候，\n就靠这个认人。\n手机和门锁也会认指纹，\n因为它独一无二。",
+      "scene": "One phone lying on a cream background with a small fingerprint symbol glowing on its screen. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "所以洗手很重要。\n手上的线又多又深，\n脏东西最容易藏在里面。\n要用肥皂，\n每个指缝都搓到。",
+      "scene": "Two hands on a cream background rubbing together with soap bubbles around them, under a running tap. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我把十根手指\n都按了一遍。\n十个小圆印，\n没有两个是一样的。\n原来我一直带着十张小地图。",
+      "scene": "The little boy looks at a sheet of paper covered with ten fingerprint marks he has just made, delighted.",
+      "has_boy": true
+    }
+  ]
+}

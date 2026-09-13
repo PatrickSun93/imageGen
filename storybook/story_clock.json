@@ -1,0 +1,119 @@
+{
+  "title": "钟表怎么读",
+  "subtitle": "两根针，走得不一样快",
+  "slug": "clock",
+  "seed_base": 56000,
+  "character": "wearing a bright red t-shirt, navy shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, bold flat graphic art with thick black outlines and flat fills in bright red, mustard and cream, simple chunky shapes, slight printed grain, the illustration covers the entire image area",
+  "style_label": "平涂线条",
+  "keyword": "时针",
+  "diagram_pages": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "palette": {
+    "ink": "#22262c",
+    "soft": "#5d6670",
+    "ground": "#f3f1ea",
+    "paper": "#fbfaf5",
+    "accent": "#c8402f",
+    "bark": "#8a9199",
+    "line": "#d9d6cd",
+    "ink_d": "#ebe9e2",
+    "soft_d": "#99a1a9",
+    "ground_d": "#12161b",
+    "paper_d": "#1b2027",
+    "accent_d": "#dd6a58",
+    "bark_d": "#8a9199",
+    "line_d": "#39414a"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "墙上的钟一直在响，\n嗒、嗒、嗒。\n上面有两根针，\n一根长一根短。\n它们在说什么呢？",
+      "scene": "The little boy stands looking up at a round wall clock, head tilted back, curious.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "钟面上有十二个数字，\n从 1 排到 12，\n围成一个圈。\n针走到哪个数字，\n就告诉我们到了几点。",
+      "scene": "A simple clear diagram, drawn flat and plain: one clock face on a cream background with twelve evenly spaced tick marks around the rim and no hands. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "短的那根叫「时针」。\n它走得很慢，\n慢到你盯着看\n都看不出它在动。",
+      "scene": "A simple clear diagram, drawn flat and plain: one clock face on a cream background with only a short thick hand pointing straight up. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "长的那根叫分针。\n它走得快一些，\n一圈要走六十分钟，\n也就是一个小时。",
+      "scene": "A simple clear diagram, drawn flat and plain: one clock face on a cream background with only a long thin hand pointing straight up, and one curved arrow going all the way around the rim. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "分针走完一整圈，\n时针才挪过一个数字。\n所以一小时，\n等于六十分钟。",
+      "scene": "A simple clear diagram, drawn flat and plain: two clock faces side by side on a cream background: the left with both hands pointing up, the right with the long hand pointing up and the short hand moved one tick clockwise. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "两根针都指着最上面，\n那就是整点。\n短针指 3，\n长针指 12，\n就是三点整。",
+      "scene": "A simple clear diagram, drawn flat and plain: one clock face on a cream background with the short hand pointing at the third tick clockwise from the top and the long hand pointing straight up. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "长针指着最下面，\n就是半点。\n它走了半圈，\n所以过了三十分钟。\n那时短针刚好在两个数字中间。",
+      "scene": "A simple clear diagram, drawn flat and plain: one clock face on a cream background with the long hand pointing straight down and the short hand halfway between the third and fourth ticks. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "钟面上还有很多小格。\n两个数字之间有五个小格，\n所以一整圈\n一共六十个小格。",
+      "scene": "A simple clear diagram, drawn flat and plain: one clock face on a cream background with sixty small tick marks around the rim, every fifth one drawn longer and thicker. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "长针走一个小格，\n就是一分钟。\n走到第一个数字，\n是五分钟；\n走到第二个，是十分钟。",
+      "scene": "A simple clear diagram, drawn flat and plain: one clock face on a cream background with the long hand pointing at the first tick clockwise from the top, and a shaded wedge from the top to that hand. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "还有一根更细的针，\n跑得最快。\n它一秒钟跳一下，\n跑完一整圈，\n才是一分钟。",
+      "scene": "A simple clear diagram, drawn flat and plain: one clock face on a cream background with three hands: one short, one long, and one very thin, all pointing in different directions. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "所以看钟先看短针：\n它在几和几之间，\n就是几点多。\n再看长针：\n它走了多少格，就是多少分。",
+      "scene": "A simple clear diagram, drawn flat and plain: one clock face on a cream background with the short hand between the seventh and eighth ticks and the long hand pointing at the fourth tick clockwise from the top. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我看了看钟：\n短针在 6 和 7 中间，\n长针指着 6。\n六点半了。\n我第一次自己读出了时间。",
+      "scene": "The little boy points up at a wall clock, smiling, having just worked out the time.",
+      "has_boy": true
+    }
+  ]
+}
