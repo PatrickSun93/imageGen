@@ -1,0 +1,114 @@
+{
+  "title": "眼睛怎么看见东西",
+  "subtitle": "光跑进来，脑子把它翻过来",
+  "slug": "eye",
+  "seed_base": 51000,
+  "character": "wearing a mustard yellow t-shirt, dark green shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration in cut-paper collage style, flat shapes with clean edges, warm amber, deep teal and cream on plain paper, simple and graphic, the illustration covers the entire image area",
+  "style_label": "光学拼贴",
+  "keyword": "视网膜",
+  "diagram_pages": [
+    3,
+    4,
+    6,
+    8,
+    9
+  ],
+  "palette": {
+    "ink": "#23282b",
+    "soft": "#5e6b70",
+    "ground": "#f3f1e9",
+    "paper": "#fbf9f4",
+    "accent": "#d8913c",
+    "bark": "#8a9498",
+    "line": "#d9d5cb",
+    "ink_d": "#ebe8e0",
+    "soft_d": "#99a3a8",
+    "ground_d": "#131a1d",
+    "paper_d": "#1c2326",
+    "accent_d": "#e8a957",
+    "bark_d": "#8a9498",
+    "line_d": "#39424a"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我把一只眼睛闭上，\n再把另一只也闭上。\n什么都看不见了。\n睁开眼睛，\n屋子又回来了。",
+      "scene": "The little boy stands in a room with one hand over one eye, the other eye open, looking ahead, curious.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "眼睛自己不会发光。\n是光跑进眼睛里，\n我们才看得见。\n把灯全关掉，\n再大的眼睛也看不见东西。",
+      "scene": "A simple clear diagram, drawn flat and plain: two rooms side by side on a cream background: the left one lit with a lamp and a chair clearly visible, the right one dark with the same chair only faintly outlined. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "光是从瞳孔进去的。\n瞳孔就是眼睛中间\n那个黑黑的小洞。\n光太亮它就缩小，\n光太暗它就张大。",
+      "scene": "A simple clear diagram, drawn flat and plain: two eyes side by side on a cream background: the left one with a small pupil, the right one with a large pupil, everything else identical. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "瞳孔后面有一块\n透明的小镜片，\n叫晶状体。\n它把散开的光\n聚到眼睛的后壁上。",
+      "scene": "A simple clear diagram, drawn flat and plain: one lens shape in the middle of a cream background with three straight rays arriving from the left and bending through it to meet at one point on the right. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "眼睛的后壁上，\n铺着一层薄薄的膜，\n叫「视网膜」。\n它像一块屏幕，\n光落在上面就成了像。",
+      "scene": "A simple clear diagram, drawn flat and plain: one eyeball shown in cross-section on a cream background with the back wall drawn as a thick curved layer in a different colour. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "有意思的是：\n落在视网膜上的像，\n是倒过来的。\n上面的跑到下面，\n下面的跑到上面。",
+      "scene": "A simple clear diagram, drawn flat and plain: one candle on the left of a cream background pointing up, rays crossing through a small lens in the middle, and the same candle on the right pointing down. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "视神经把这些信号\n送进大脑。\n大脑一看，\n就把它重新翻正过来。\n所以我们看到的世界是正的。",
+      "scene": "A simple clear diagram, drawn flat and plain: one eyeball on the left of a cream background with a thick line running from its back to a simple brain shape on the right, and one arrow along that line. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "我们有两只眼睛。\n它们离得有一点距离，\n看到的画面稍稍不同。\n大脑把两张合起来，\n就知道哪个近、哪个远。",
+      "scene": "A simple clear diagram, drawn flat and plain: two eyes side by side at the bottom of a cream background, each with a straight line going up to the same cup, the two lines meeting at a clear angle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "看远处的时候，\n晶状体变薄；\n看近处的时候，\n它变厚。\n它一直在悄悄地调。",
+      "scene": "A simple clear diagram, drawn flat and plain: two lens shapes side by side on a cream background: the left one thin with a distant tree beyond it, the right one thick with a near book beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "一直盯着近处，\n它就一直用力，\n会累。\n所以看一会儿书，\n要抬头看看远处的树。",
+      "scene": "A window on a cream background with a green hill and a tree visible far outside, and an open book lying closed on the sill. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "眼睛还会自己保养。\n眼泪冲掉灰尘，\n眼皮一眨就把它抹匀，\n睫毛挡住掉下来的东西。\n它一直在照顾自己。",
+      "scene": "A simple clear diagram, drawn flat and plain: one eye on a cream background with a row of lashes above it and three small drops at its inner corner. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我抬起头，\n看向很远的山。\n眼睛一下子松开了。\n原来它忙了这么久，\n我一直都不知道。",
+      "scene": "The little boy looks up and out through a window at distant green hills, his face relaxed and calm.",
+      "has_boy": true
+    }
+  ]
+}

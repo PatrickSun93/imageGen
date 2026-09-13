@@ -1,0 +1,115 @@
+{
+  "title": "耳朵里面有什么",
+  "subtitle": "声音要走过三道门",
+  "slug": "ear",
+  "seed_base": 52000,
+  "character": "wearing a slate blue t-shirt, grey trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration, fine ink line drawing with light blue-grey washes, clean thin outlines, restrained palette of slate blue, warm grey and cream, plenty of clean paper",
+  "style_label": "蓝灰线描",
+  "keyword": "耳膜",
+  "diagram_pages": [
+    2,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "palette": {
+    "ink": "#252c33",
+    "soft": "#63707c",
+    "ground": "#f2f4f6",
+    "paper": "#fbfcfd",
+    "accent": "#4a7fa8",
+    "bark": "#8b959e",
+    "line": "#d8dde2",
+    "ink_d": "#eaeef1",
+    "soft_d": "#9aa4ad",
+    "ground_d": "#141a20",
+    "paper_d": "#1d242b",
+    "accent_d": "#6aa0c6",
+    "bark_d": "#8b959e",
+    "line_d": "#3a434c"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我用手捂住耳朵，\n外面的声音一下子变小了。\n松开手，\n声音又全回来了。\n耳朵里面到底有什么呢？",
+      "scene": "The little boy stands with both hands cupped over his ears, eyes wide, listening, in a plain room.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "耳朵分成三段：\n外面能看见的是外耳，\n中间一小格是中耳，\n再往里是内耳。\n声音要走过这三段。",
+      "scene": "A simple clear diagram, drawn flat and plain: one ear shown in cross-section on a cream background, divided into three clearly separated parts by two vertical lines, each part a different shade. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "外面那只耳朵，\n形状弯弯曲曲的。\n它像一个小漏斗，\n把四面八方的声音\n收进耳朵里。",
+      "scene": "One ear seen from the side on a cream background, with several curved lines outside it funnelling inward toward the opening. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "耳道走到尽头，\n有一张薄薄的皮，\n叫「耳膜」。\n它薄得像纸，\n可是整只耳朵就靠它。",
+      "scene": "A simple clear diagram, drawn flat and plain: one straight tube on a cream background with a thin taut membrane stretched across its far end. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "声音一来，\n耳膜就跟着抖。\n声音大，它抖得厉害；\n声音小，它只轻轻动一下。",
+      "scene": "A simple clear diagram, drawn flat and plain: two tubes side by side on a cream background, each with a membrane at the end: the left membrane bulging far out with three wide curves before it, the right one almost flat with one small curve. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "耳膜后面有三块小骨头，\n是身上最小的骨头。\n它们一个推一个，\n把这点儿抖动\n放得更大。",
+      "scene": "A simple clear diagram, drawn flat and plain: three small bone shapes in a row on a cream background, each touching the next, with one arrow passing along the row from left to right and getting thicker. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "再往里，\n有一根卷起来的管子，\n像一只蜗牛，\n叫耳蜗。\n里面装满了水。",
+      "scene": "A simple clear diagram, drawn flat and plain: one spiral shape on a cream background, coiled two and a half turns like a snail shell. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "耳蜗里长着很多小毛。\n水一晃，\n小毛就跟着弯。\n它们一弯，\n就发出信号。",
+      "scene": "A simple clear diagram, drawn flat and plain: one strip along the bottom of a cream background with many short hairs standing up from it, a wave passing over them, and the hairs under the wave bending to one side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "信号顺着神经\n跑到大脑里。\n大脑一听，\n才知道那是妈妈的声音，\n还是外面的车。",
+      "scene": "A simple clear diagram, drawn flat and plain: one spiral on the left of a cream background with a thick line running to a simple brain shape on the right, and one arrow along that line. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "那些小毛很娇气。\n声音太吵，\n会把它们压坏，\n而且坏了就长不回来。\n所以别把音量开太大。",
+      "scene": "A simple clear diagram, drawn flat and plain: two strips side by side on a cream background: the left one with straight upright hairs, the right one with several hairs lying flat and broken. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "也别把东西塞进耳朵。\n耳屎不用挖，\n它会自己慢慢往外走。\n耳朵会照顾自己，\n不用我们帮忙。",
+      "scene": "One ear seen from the side on a cream background with a small cotton bud drawn beside it and a bold diagonal line across the cotton bud. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我又捂住耳朵。\n这一次，\n我听见了自己的心跳。\n咚，咚，咚。\n原来最近的声音，一直在身体里。",
+      "scene": "The little boy sits quietly with both hands over his ears, eyes closed, a small smile, listening inward.",
+      "has_boy": true
+    }
+  ]
+}
