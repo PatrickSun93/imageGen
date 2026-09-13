@@ -74,6 +74,76 @@ def row(n, cx, cy, gap):
     return [(cx - total / 2 + i * gap, cy) for i in range(n)]
 
 
+# ---------------------------------------------------------------- 通用图元
+# 按这次重审里的错法频次挑的：
+#   panel2   「对比两格画成一样」——磁铁同极相斥、电路断/通、四冲程、翅膀上下拍、冰与水
+#   ngon     「六边形一律画成八边形」——蜂房、雪花、形状各中一次
+#   hex_tile 「铺满不留缝」说不清
+#   wave      吸 4 呼 6、声速 vs 光速这类长短关系
+
+def panel2(d, pal, gap=44, top=150):
+    """左右两格等大的对比框，返回两个 (cx, cy, w, h)；内容由调用方画。
+
+    两格永远等大、等高、并排，差别只能来自画进去的内容 —— 这样「两格画成一样」
+    这种错法在构造上就不可能出现（要么内容不同，要么是调用方自己写错）。
+    """
+    w = (S - 2 * MARGIN - gap) / 2
+    h = S - top - MARGIN
+    cy = top + h / 2
+    boxes = []
+    for i in range(2):
+        cx = MARGIN + w / 2 + i * (w + gap)
+        d.rounded_rectangle([cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2],
+                            radius=18, fill=pal["paper"], outline=pal["ink"], width=6)
+        boxes.append((cx, cy, w, h))
+    return boxes
+
+
+def ngon(d, cx, cy, r, n, pal, fill=None, w=6, rot=0.0):
+    """正 n 边形。边数由参数保证，不靠模型数。"""
+    pts = [(cx + r * math.cos(rot + 2 * math.pi * i / n),
+            cy + r * math.sin(rot + 2 * math.pi * i / n)) for i in range(n)]
+    d.polygon(pts, fill=fill or pal["paper"])
+    for a, b in zip(pts, pts[1:] + pts[:1]):      # polygon 的 outline 不支持 width
+        d.line([a, b], fill=pal["ink"], width=w)
+    return pts
+
+
+def hex_tile(d, cx, cy, r, pal, rings=2, fill=None, w=5, box=None):
+    """正六边形蜂窝：一圈一圈铺开，边对边不留缝。返回铺了几格。
+
+    box 给了 (w, h) 就按它反推半径，保证整片落在框内 —— 上一版写死 r=44、rings=2，
+    结果蜂窝铺出了右框还压到左框上。凡是往 panel2 的框里塞东西，尺寸都必须由框反推。
+    """
+    if box:
+        # 横向极值：q+s/2 最大 1.5*rings，再加自身半宽 0.5 → 总宽 r*√3*(3*rings+1)
+        # 纵向极值：s 最大 rings，步距 1.5r，再加自身半高 r → 总高 r*(3*rings+2)
+        bw, bh = box
+        r = min(bw / (math.sqrt(3) * (3 * rings + 1)), bh / (3 * rings + 2)) * 0.94
+    dx, dy = r * math.sqrt(3), r * 1.5
+    cells = {(0, 0)}
+    for ring in range(1, rings + 1):
+        for q in range(-ring, ring + 1):
+            cells |= {(q, -ring), (q, ring)}
+        for s in range(-ring + 1, ring):
+            cells |= {(-ring, s), (ring, s)}
+    for q, s in sorted(cells):
+        ngon(d, cx + dx * (q + s / 2), cy + dy * s, r, 6, pal,
+             fill=fill, w=w, rot=math.pi / 2)
+    return len(cells)
+
+
+def wave(d, x0, x1, cy, pal, rise=1, fall=1, cycles=2, amp=90, w=10):
+    """呼吸波：rise/fall 是上升段与下降段的相对长度（吸 4 呼 6 就传 4 和 6）。"""
+    span = (x1 - x0) / cycles
+    up = span * rise / (rise + fall)
+    for c in range(cycles):
+        x = x0 + c * span
+        d.arc([x, cy - amp, x + 2 * up, cy + amp], 180, 360, fill=pal["accent"], width=w)
+        d.arc([x + up, cy - amp, x + up + 2 * (span - up), cy + amp], 0, 180,
+              fill=pal["soft"], width=w)
+
+
 # ---------------------------------------------------------------- minus (拿走几个还剩几个)
 
 @page("minus", 2)
@@ -345,6 +415,87 @@ def _(d, pal):
         disc(d, cx + r * math.cos(a), cy + r * math.sin(a), 15 + i % 3 * 4,
              pal["bark"] if i % 2 else pal["paper"], pal, w=5)
     return "太阳 + 8 条同心轨道，每条 1 颗"
+
+
+# ---------------------------------------------------------------- magnet（磁铁为什么吸铁）
+
+def bar_magnet(d, cx, cy, w, h, pal, flip=False):
+    """条形磁铁：一半 accent 一半 soft，两极颜色分明。flip 把红端换到左边。"""
+    a, b = (pal["soft"], pal["accent"]) if not flip else (pal["accent"], pal["soft"])
+    d.rectangle([cx - w / 2, cy - h / 2, cx, cy + h / 2], fill=a)
+    d.rectangle([cx, cy - h / 2, cx + w / 2, cy + h / 2], fill=b)
+    d.rectangle([cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2],
+                outline=pal["ink"], width=6)
+
+
+@page("magnet", 4)
+def _(d, pal):
+    """异极相吸 vs 同极相斥 —— 两格的箭头方向必须相反。"""
+    (lx, ly, lw, _), (rx, ry, rw, _) = panel2(d, pal)
+    bw, bh = lw * 0.36, 84
+    off = lw * 0.23                       # 两块磁铁各自的中心偏移
+    ay = ly - bh / 2 - 54                 # 箭头贴在磁铁上方，一眼看出是这两块之间的事
+    # 左：蓝端对红端，两支箭头相向（吸）
+    bar_magnet(d, lx - off, ly, bw, bh, pal, flip=False)
+    bar_magnet(d, lx + off, ly, bw, bh, pal, flip=True)
+    arrow(d, lx - off - 10, ay, lx - 26, ay, pal, w=9, head=22)
+    arrow(d, lx + off + 10, ay, lx + 26, ay, pal, w=9, head=22)
+    # 右：两个红端相对，两支箭头背离（推）
+    bar_magnet(d, rx - off, ry, bw, bh, pal, flip=False)
+    bar_magnet(d, rx + off, ry, bw, bh, pal, flip=False)
+    arrow(d, rx - 26, ay, rx - off - 10, ay, pal, w=9, head=22)
+    arrow(d, rx + 26, ay, rx + off + 10, ay, pal, w=9, head=22)
+    return "左格异极相吸（两箭头相向）/ 右格同极相斥（两箭头背离）"
+
+
+@page("magnet", 6)
+def _(d, pal):
+    """磁区：左格乱七八糟，右格全部转成同一个方向。"""
+    rnd = random.Random(11)
+    (lx, ly, lw, lh), (rx, ry, rw, rh) = panel2(d, pal)
+    for gx, gy, w_, h_, aligned in ((lx, ly, lw, lh, False), (rx, ry, rw, rh, True)):
+        cols, rows = 5, 6
+        for i in range(cols):
+            for j in range(rows):
+                x = gx - w_ / 2 + w_ * (i + 0.5) / cols
+                y = gy - h_ / 2 + h_ * (j + 0.5) / rows
+                a = 0.0 if aligned else rnd.uniform(0, 2 * math.pi)
+                dx, dy = 34 * math.cos(a), 34 * math.sin(a)
+                arrow(d, x - dx / 2, y - dy / 2, x + dx / 2, y + dy / 2, pal, w=6, head=14)
+    return "左 30 个乱向箭头 / 右 30 个全部朝右"
+
+
+# ---------------------------------------------------------------- bee / snow（六边形）
+
+@page("bee", 8)
+def _(d, pal):
+    """圆形之间留缝，六边形一个挨一个不留缝。"""
+    (lx, ly, lw, lh), (rx, ry, rw, rh) = panel2(d, pal)
+    cols = 5
+    r = min(lw / (2 * cols), lh / (2 * cols)) * 0.92     # 半径由框反推，5×5 必然落在框内
+    for j in range(cols):
+        for i in range(cols):
+            disc(d, lx + (i - (cols - 1) / 2) * 2 * r, ly + (j - (cols - 1) / 2) * 2 * r,
+                 r - 3, pal["accent"], pal, w=5)
+    n = hex_tile(d, rx, ry, 0, pal, rings=2, fill=pal["accent"], box=(rw, rh))
+    return f"左 {cols * cols} 个圆（留缝）/ 右 {n} 个正六边形（不留缝）"
+
+
+@page("snow", 6)
+def _(d, pal):
+    """雪花是六个角：板状和枝状各画一个，边数由 ngon 保证。"""
+    ngon(d, S / 2 - 230, S / 2, 170, 6, pal, fill=pal["paper"], w=8, rot=math.pi / 2)
+    cx, cy = S / 2 + 230, S / 2
+    for i in range(6):
+        a = math.pi / 2 + i * math.pi / 3
+        x2, y2 = cx + 170 * math.cos(a), cy + 170 * math.sin(a)
+        d.line([cx, cy, x2, y2], fill=pal["ink"], width=10)
+        for t, ln in ((0.5, 52), (0.75, 36)):
+            bx, by = cx + 170 * t * math.cos(a), cy + 170 * t * math.sin(a)
+            for s in (+1, -1):
+                d.line([bx, by, bx + ln * math.cos(a + s * 1.0),
+                        by + ln * math.sin(a + s * 1.0)], fill=pal["ink"], width=7)
+    return "左 1 个正六边形板 / 右 1 片六个角的枝状雪花"
 
 
 def render(slug):
