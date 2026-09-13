@@ -12,7 +12,7 @@ Pages are written straight into the assembled book AND back into out/bakeoff/ so
 rerun cannot copy an old model render over them.
 """
 import json, math, os, random, sys
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 sys.stdout.reconfigure(encoding="utf-8")
 REPO = r"C:\FlowDev\githubdevitems\comfyUIItems"
@@ -992,6 +992,270 @@ def _(d, pal):
                    outline=pal["ink"], width=5)
     d.ellipse([cx - R, cy - R, cx + R, cy + R], outline=pal["ink"], width=9)
     return "1 个分成 12 格的勺子（盘小柄粗），只有 1 格是满的"
+
+
+# ---------------------------------------------------------------- 第五批新书：more（比多少）
+# 整本讲一一对应，数目全部由构造保证。用的都是今天验证过的图元：lay / disc / row。
+
+def pair_rows(d, pal, top_n, bot_n, cy=None, r=54, link=False, mark_extra=False):
+    """两排圆，从左边同一起点开始一一对应。返回 (上排 x 列表, 下排 x 列表)。
+
+    对齐是这本书的全部要点，所以两排共用同一个步距、同一个左起点 —— 不各自居中。
+    """
+    cy = cy or S / 2
+    n = max(top_n, bot_n)
+    step = min(2 * r + 26, (S - 2 * MARGIN) / n)
+    x0 = MARGIN + step / 2
+    xs = [x0 + i * step for i in range(n)]
+    for i in range(top_n):
+        extra = mark_extra and i >= bot_n
+        disc(d, xs[i], cy - 110, r, pal["accent"] if extra else pal["paper"], pal, w=9)
+    for i in range(bot_n):
+        disc(d, xs[i], cy + 110, r, pal["soft"], pal, w=9)
+    if link:
+        for i in range(min(top_n, bot_n)):
+            d.line([xs[i], cy - 110 + r, xs[i], cy + 110 - r], fill=pal["ink"], width=7)
+    return xs[:top_n], xs[:bot_n]
+
+
+@page("more", 2)
+def _(d, pal):
+    """一个对一个地摆好，就能比出来。"""
+    pair_rows(d, pal, 5, 5, link=True)
+    return "上排 5 个 + 下排 5 个，一一对应"
+
+
+@page("more", 3)
+def _(d, pal):
+    """刚好配完，谁也没剩下 —— 一样多。"""
+    pair_rows(d, pal, 4, 4, r=62, link=True)
+    return "上排 4 个 + 下排 4 个，全部配对，没有剩余"
+
+
+@page("more", 4)
+def _(d, pal):
+    """上面剩下两个，上面就比下面多两个。"""
+    pair_rows(d, pal, 6, 4, link=True, mark_extra=True)
+    return "上排 6 个 + 下排 4 个，多出的 2 个标成强调色"
+
+
+@page("more", 5)
+def _(d, pal):
+    """多和少是比出来的：三个比两个多，比十个少。"""
+    groups = (2, 3, 10)
+    box_w = (S - 2 * MARGIN - 2 * 30) / 3
+    for k, n in enumerate(groups):
+        bx = MARGIN + k * (box_w + 30)
+        d.rounded_rectangle([bx, S / 2 - 210, bx + box_w, S / 2 + 210], radius=18,
+                            fill=pal["paper"], outline=pal["ink"], width=6)
+        cols = 2 if n <= 4 else 3
+        r = min(box_w / (2 * cols) - 10, 46)
+        for i in range(n):
+            cx = bx + box_w / 2 + ((i % cols) - (cols - 1) / 2) * 2 * r
+            cy = S / 2 - 120 + (i // cols) * 2 * r
+            disc(d, cx, cy, r - 4, pal["accent"], pal, w=6)
+    return "三个框：2 个 / 3 个 / 10 个"
+
+
+@page("more", 6)
+def _(d, pal):
+    """一眼就看得出：一堆挤满，一堆稀疏。"""
+    (lx, ly, lw, lh), (rx, ry, rw, rh) = panel2(d, pal)
+    rnd = random.Random(7)
+    for i in range(20):
+        cx = lx + (i % 5 - 2) * lw * 0.17
+        cy = ly + (i // 5 - 1.5) * lh * 0.20
+        disc(d, cx, cy, 34, pal["accent"], pal, w=6)
+    for i, (dx, dy) in enumerate(((-0.22, -0.18), (0.16, 0.02), (-0.06, 0.22))):
+        disc(d, rx + dx * rw, ry + dy * rh, 34, pal["accent"], pal, w=6)
+    return "左格 20 个（挤满）/ 右格 3 个（稀疏）"
+
+
+@page("more", 7)
+def _(d, pal):
+    """摆得开看着像更多，其实一样多 —— 两排都是六个。"""
+    cy = S / 2
+    wide = [MARGIN + 70 + i * ((S - 2 * MARGIN - 140) / 5) for i in range(6)]
+    tight = [S / 2 - 2.5 * 92 + i * 92 for i in range(6)]
+    for x in wide:
+        disc(d, x, cy - 130, 44, pal["accent"], pal, w=8)
+    for x in tight:
+        disc(d, x, cy + 130, 44, pal["accent"], pal, w=8)
+    return "上排 6 个（摆得开）/ 下排 6 个（挤在一起），数目相同"
+
+
+@page("more", 8)
+def _(d, pal):
+    """三个大的不一定比五个小的多 —— 数的是个数。"""
+    for x in [S / 2 - 220, S / 2, S / 2 + 220]:
+        disc(d, x, S / 2 - 140, 92, pal["accent"], pal, w=9)
+    for i in range(5):
+        disc(d, MARGIN + 110 + i * 200, S / 2 + 160, 46, pal["soft"], pal, w=8)
+    return "上排 3 个大的 / 下排 5 个小的"
+
+
+@page("more", 9)
+def _(d, pal):
+    """比长短要从同一头开始。"""
+    x0 = MARGIN + 40
+    for cy, w_ in ((S / 2 - 90, S - 2 * MARGIN - 120), (S / 2 + 90, (S - 2 * MARGIN - 120) * 0.58)):
+        d.rounded_rectangle([x0, cy - 36, x0 + w_, cy + 36], radius=18,
+                            fill=pal["accent"], outline=pal["ink"], width=8)
+    d.line([x0, S / 2 - 190, x0, S / 2 + 190], fill=pal["ink"], width=8)
+    return "两条横条，左端对齐在同一条竖线上，上长下短"
+
+
+@page("more", 10)
+def _(d, pal):
+    """比高矮要站在同一块地上。"""
+    base = S - MARGIN - 80
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    for cx, h in ((S / 2 - 190, 420), (S / 2 + 190, 600)):
+        d.rounded_rectangle([cx - 80, base - h, cx + 80, base], radius=18,
+                            fill=pal["accent"], outline=pal["ink"], width=8)
+    return "两条竖条站在同一条地平线上，右边明显更高"
+
+
+@page("more", 11)
+def _(d, pal):
+    """两队一个对一个，哪队拖出来一截，哪队更长。"""
+    pair_rows(d, pal, 7, 5, r=44, link=True, mark_extra=True)
+    return "上排 7 个 + 下排 5 个，多出的 2 个标成强调色并伸出下排末端"
+
+
+# ---------------------------------------------------------------- 第五批新书：clock（钟面）
+
+def clock_face(d, cx, cy, R, pal, ticks=12, minute_ticks=False,
+               hour=None, minute=None, second=None, wedge_to=None):
+    """一个钟面。刻度数、指针角度全部由参数算出，读者能数得清、对得上。
+
+    hour/minute 用「几点几分」而不是角度：时针角 = (hour%12 + minute/60) * 30 度，
+    分针角 = minute * 6 度 —— 半点时时针自然落在两个数字中间，不用手调。
+    """
+    disc(d, cx, cy, R, pal["paper"], pal, w=10)
+    # 钟面必须写出 1–12：正文通篇说「短针指 3」「短针在 6 和 7 中间」，
+    # 只有刻度线的话孩子对不上。字体用 Arial Black（今天已确认可用）。
+    try:
+        font = ImageFont.truetype("C:/Windows/Fonts/ariblk.ttf", int(R * 0.20))
+    except Exception:
+        font = None
+    if font is not None:
+        for i in range(1, 13):
+            a = math.radians(i * 30 - 90)
+            nx, ny = cx + (R - 74) * math.cos(a), cy + (R - 74) * math.sin(a)
+            d.text((nx, ny), str(i), font=font, fill=pal["ink"], anchor="mm")
+    if minute_ticks:
+        for i in range(60):
+            a = math.radians(i * 6 - 90)
+            long_ = (i % 5 == 0)
+            r0 = R - (34 if long_ else 18)
+            d.line([cx + r0 * math.cos(a), cy + r0 * math.sin(a),
+                    cx + (R - 8) * math.cos(a), cy + (R - 8) * math.sin(a)],
+                   fill=pal["ink"], width=9 if long_ else 5)
+    else:
+        for i in range(ticks):
+            a = math.radians(i * (360 / ticks) - 90)
+            d.line([cx + (R - 36) * math.cos(a), cy + (R - 36) * math.sin(a),
+                    cx + (R - 8) * math.cos(a), cy + (R - 8) * math.sin(a)],
+                   fill=pal["ink"], width=10)
+    if wedge_to is not None:                       # 从十二点起量到某一分钟的扇形
+        d.pieslice([cx - R * 0.62, cy - R * 0.62, cx + R * 0.62, cy + R * 0.62],
+                   -90, wedge_to * 6 - 90, fill=pal["accent"])
+    def hand(angle_deg, length, width):
+        a = math.radians(angle_deg - 90)
+        d.line([cx, cy, cx + length * math.cos(a), cy + length * math.sin(a)],
+               fill=pal["ink"], width=width)
+    # 时针短而粗、分针长而细。上一版两者的长度写反了（hour 画长、minute 画短），
+    # 于是「三点整」看起来成了时针指 12、分针指 3 —— 角度全对，针却认错了。
+    # 构造清单写着「时针指 3」反而掩盖了它：程序画保证得了角度，保证不了参数映射。
+    # 第三版。前两版长度确实是「时针短分针长」，但时针只到半径一半、离圆心太近，
+    # 视觉重心全落在那根几乎顶到边的细长针上，一眼读成「长针指 3」。
+    # 这一版把差别压在「粗」上：时针拉长到 0.62R 但明显更粗，分针细到 12。
+    if minute is not None:
+        hand(minute * 6, R * 0.86, 12)        # 分针：最长、最细
+    if hour is not None:
+        hand((hour % 12 + (minute or 0) / 60) * 30, R * 0.62, 34)   # 时针：稍短、很粗
+    if second is not None:
+        hand(second * 6, R * 0.86, 7)
+    disc(d, cx, cy, 16, pal["ink"], pal, w=3)
+    return R
+
+
+@page("clock", 2)
+def _(d, pal):
+    """十二个数字围成一圈 —— 先只画刻度，不画针。"""
+    clock_face(d, S / 2, S / 2, 380, pal, ticks=12)
+    return "1 个钟面 + 12 个刻度，没有指针"
+
+
+@page("clock", 3)
+def _(d, pal):
+    """短针叫时针，走得很慢。"""
+    clock_face(d, S / 2, S / 2, 380, pal, ticks=12, hour=12)
+    return "1 个钟面 + 只有 1 根短的时针，指向正上"
+
+
+@page("clock", 4)
+def _(d, pal):
+    """长针叫分针，一圈六十分钟。"""
+    clock_face(d, S / 2, S / 2, 360, pal, ticks=12, minute=0)
+    cx, cy, R = S / 2, S / 2, 360
+    for i in range(10):                            # 一圈的走向，用一串小箭头表示
+        a0 = math.radians(i * 36 - 84)
+        a1 = math.radians(i * 36 - 60)
+        arrow(d, cx + (R + 46) * math.cos(a0), cy + (R + 46) * math.sin(a0),
+              cx + (R + 46) * math.cos(a1), cy + (R + 46) * math.sin(a1), pal, w=6, head=16)
+    return "1 个钟面 + 只有 1 根长的分针 + 外圈 10 个同向箭头"
+
+
+@page("clock", 5)
+def _(d, pal):
+    """分针走完一圈，时针才挪一格。"""
+    for (cx, cy, w_, h_), t in zip(panel2(d, pal), ((12, 0), (1, 0))):
+        clock_face(d, cx, cy, min(w_, h_) * 0.40, pal, ticks=12, hour=t[0], minute=t[1])
+    return "左格 12:00 / 右格 1:00，时针挪了 1 格、分针回到原处"
+
+
+@page("clock", 6)
+def _(d, pal):
+    """整点：短针指 3，长针指 12。"""
+    clock_face(d, S / 2, S / 2, 380, pal, ticks=12, hour=3, minute=0)
+    return "1 个钟面，时针指 3、分针指 12（三点整）"
+
+
+@page("clock", 7)
+def _(d, pal):
+    """半点：长针指下面，短针在两个数字中间。"""
+    clock_face(d, S / 2, S / 2, 380, pal, ticks=12, hour=3, minute=30)
+    return "1 个钟面，分针指 6、时针在 3 和 4 中间（三点半）"
+
+
+@page("clock", 8)
+def _(d, pal):
+    """一圈六十个小格，每五个一大格。"""
+    clock_face(d, S / 2, S / 2, 380, pal, minute_ticks=True)
+    return "1 个钟面 + 60 个小刻度，每第 5 个加粗"
+
+
+@page("clock", 9)
+def _(d, pal):
+    """长针走到第一个数字，是五分钟。"""
+    clock_face(d, S / 2, S / 2, 380, pal, minute_ticks=True, minute=5, wedge_to=5)
+    return "1 个钟面，分针指 5 分处 + 从 12 点量过来的扇形"
+
+
+@page("clock", 10)
+def _(d, pal):
+    """还有一根更细的秒针。"""
+    clock_face(d, S / 2, S / 2, 380, pal, minute_ticks=True, hour=10, minute=8, second=40)
+    return "1 个钟面 + 时针、分针、秒针三根，指向各不相同"
+
+
+@page("clock", 11)
+def _(d, pal):
+    """先看短针在几和几之间，再看长针走了几格。"""
+    clock_face(d, S / 2, S / 2, 380, pal, minute_ticks=True, hour=7, minute=20)
+    return "1 个钟面，时针在 7 和 8 之间、分针指 20 分处"
 
 
 # ---------------------------------------------------------------- A 类最后一批（meteor / sky / sundial / crab / power / fish）
