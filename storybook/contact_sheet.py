@@ -12,7 +12,8 @@ sys.stdout.reconfigure(encoding="utf-8")
 src = sys.argv[1].rstrip("/\\")
 out = sys.argv[2] if len(sys.argv) > 2 else f"{os.path.basename(src)}_sheet.png"
 
-files = sorted(glob.glob(os.path.join(src, "page_*.png")))
+# 只收 page_07.png 这样的正式页；备份（page_07_pretext.png 等）不进拼图
+files = sorted(glob.glob(os.path.join(src, "page_[0-9][0-9].png")))
 if not files:
     sys.exit(f"{src} 里没有 page_*.png")
 

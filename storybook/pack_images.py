@@ -15,7 +15,8 @@ webdir  = sys.argv[2].rstrip("/\\")
 quality = int(sys.argv[3]) if len(sys.argv) > 3 else 82
 LIMIT   = 16 * 1024 * 1024        # Artifact 上限
 
-files = sorted(glob.glob(os.path.join(src, "page_*.png")))
+# 只收 page_07.png 这样的正式页；page_07_pretext.png 之类的备份留在原地也不会被打进书里
+files = sorted(glob.glob(os.path.join(src, "page_[0-9][0-9].png")))
 if not files:
     sys.exit(f"{src} 里没有 page_*.png")
 os.makedirs(webdir, exist_ok=True)
