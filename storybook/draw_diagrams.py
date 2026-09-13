@@ -994,6 +994,87 @@ def _(d, pal):
     return "1 个分成 12 格的勺子（盘小柄粗），只有 1 格是满的"
 
 
+# ---------------------------------------------------------------- seasons / water / moon / teeth
+
+@page("seasons", 3)
+def _(d, pal):
+    """地球斜着转：只有一根倾斜的地轴，不是两根交叉的杆。"""
+    cx, cy, R = S / 2, S / 2, 230
+    tilt = 0.41                                        # 约 23.5 度
+    dx, dy = math.sin(tilt), -math.cos(tilt)
+    d.line([cx - dx * (R + 150), cy - dy * (R + 150),
+            cx + dx * (R + 150), cy + dy * (R + 150)], fill=pal["ink"], width=12)
+    disc(d, cx, cy, R, pal["soft"], pal, w=9)
+    for s in (-1, 1):                                  # 两极记号
+        disc(d, cx + s * dx * R, cy + s * dy * R, 18, pal["accent"], pal, w=5)
+    d.line([cx - R, cy, cx + R, cy], fill=pal["paper"], width=6)   # 赤道，帮助看出倾斜
+    return "1 个地球 + 1 根倾斜地轴（约 23 度）+ 两极各 1 个记号"
+
+
+@page("seasons", 4)
+def _(d, pal):
+    """一个太阳、两个地球：半年北边朝太阳，半年南边朝太阳。"""
+    sun_cx = S / 2
+    disc(d, sun_cx, S / 2, 96, pal["accent"], pal, w=9)
+    tilt = 0.41
+    dx, dy = math.sin(tilt), -math.cos(tilt)
+    for side, label_up in ((-1, True), (1, False)):     # 左：北极朝向太阳；右：南极朝向
+        cx = sun_cx + side * 330
+        R = 120
+        d.line([cx - dx * (R + 70), S / 2 - dy * (R + 70),
+                cx + dx * (R + 70), S / 2 + dy * (R + 70)], fill=pal["ink"], width=9)
+        disc(d, cx, S / 2, R, pal["soft"], pal, w=8)
+        lit = -1 if label_up else 1                     # 朝太阳的那一极标红
+        disc(d, cx + lit * dx * R, S / 2 + lit * dy * R, 16, pal["accent"], pal, w=5)
+    return "1 个太阳 + 2 个地球，地轴同向倾斜，朝太阳的那一极各标 1 个记号"
+
+
+@page("water", 7)
+def _(d, pal):
+    """雨落下来：一部分顺坡流走，一部分渗进土里 —— 两种箭头方向必须分开。"""
+    d.polygon([(0, 620), (S, 380), (S, S), (0, S)], fill=pal["bark"])
+    d.line([(0, 620), (S, 380)], fill=pal["ink"], width=9)
+    for i in range(6):                                  # 地表径流：顺坡向下
+        x = 120 + i * 150
+        y = 620 - (x / S) * 240
+        arrow(d, x, y - 30, x + 90, y + 6, pal, w=8, head=22)
+    for i in range(5):                                  # 下渗：垂直向下
+        x = 180 + i * 170
+        y = 620 - (x / S) * 240
+        arrow(d, x, y + 40, x, y + 190, pal, w=8, head=22)
+    return "1 条斜坡 + 6 支顺坡箭头（流走）+ 5 支垂直箭头（渗下去）"
+
+
+@page("moon", 7)
+def _(d, pal):
+    """月亮绕地球转：一条轨道，箭头只指一个方向。"""
+    cx, cy, R = S / 2, S / 2, 300
+    d.ellipse([cx - R, cy - R, cx + R, cy + R], outline=pal["soft"], width=6)
+    disc(d, cx, cy, 110, pal["bark"], pal, w=9)
+    for i in range(4):                                  # 四个箭头，全部逆时针同向
+        a = i * math.pi / 2 + 0.3
+        a2 = a + 0.34
+        arrow(d, cx + R * math.cos(a), cy + R * math.sin(a),
+              cx + R * math.cos(a2), cy + R * math.sin(a2), pal, w=9, head=24)
+    disc(d, cx + R, cy, 46, pal["paper"], pal, w=7)
+    return "1 个地球 + 1 条轨道 + 1 个月亮 + 4 个同向箭头"
+
+
+@page("teeth", 4)
+def _(d, pal):
+    """上面十颗，下面十颗 —— 数目由构造保证。"""
+    cx = S / 2
+    for cy, R in ((S / 2 - 60, 330), (S / 2 + 60, 330)):
+        up = cy < S / 2
+        for i in range(10):
+            a = math.pi * (0.08 + 0.84 * i / 9)
+            ang = -a if up else a
+            x, y = cx + R * math.cos(ang), cy + R * math.sin(ang) * 0.62
+            d.rounded_rectangle([x - 26, y - 30, x + 26, y + 30], radius=10,
+                                fill=pal["paper"], outline=pal["ink"], width=6)
+    return "上排 10 颗 + 下排 10 颗"
+
+
 # ---------------------------------------------------------------- bee / snow（六边形）
 
 @page("bee", 8)
