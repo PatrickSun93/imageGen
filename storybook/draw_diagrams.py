@@ -465,6 +465,149 @@ def _(d, pal):
     return "左 30 个乱向箭头 / 右 30 个全部朝右"
 
 
+@page("magnet", 3)
+def _(d, pal):
+    """一头北极一头南极：两端颜色分明，再各点一簇铁屑表示那里力气最大。"""
+    bar_magnet(d, S / 2, S / 2, 620, 180, pal)
+    rnd = random.Random(3)
+    for side in (-1, +1):                       # 两端各撒一簇铁屑，中间不撒
+        for _ in range(26):
+            x = S / 2 + side * rnd.uniform(250, 360)
+            y = S / 2 + rnd.uniform(-160, 160)
+            a = rnd.uniform(0, math.pi)
+            d.line([x - 14 * math.cos(a), y - 14 * math.sin(a),
+                    x + 14 * math.cos(a), y + 14 * math.sin(a)], fill=pal["ink"], width=5)
+    return "1 条磁铁，左半 soft（北）右半 accent（南），两端各 26 根铁屑、中间没有"
+
+
+@page("magnet", 7)
+def _(d, pal):
+    """磁铁吸起一根钉子，钉子自己又吸起第二根 —— 必须是一条链。"""
+    bar_magnet(d, S / 2, 210, 420, 110, pal)
+    x = S / 2
+    for i, y in enumerate((330, 560)):
+        d.rounded_rectangle([x - 22, y, x + 22, y + 190], radius=10,
+                            fill=pal["soft"], outline=pal["ink"], width=6)
+        d.ellipse([x - 46, y - 26, x + 46, y + 26], fill=pal["bark"], outline=pal["ink"], width=6)
+    return "磁铁 → 钉子1 → 钉子2，挂成一条链"
+
+
+@page("magnet", 9)
+def _(d, pal):
+    """地球的磁力线：从北极出来、鼓到两侧、再回到南极。
+
+    上一版画成三个同心椭圆，闭合成环 —— 看上去还是「给地球套了几个环」，
+    和模型原本画成土星环是同一个概念错误。磁力线必须是开口弧线：两端收拢到
+    两极，中间鼓出去，左右各一族。
+    """
+    cx, cy, R = S / 2, S / 2, 190
+    # 每条弧从北半球某纬度出发，绕出去，回到南半球对应纬度 —— 起点终点不重合，
+    # 再在弧上加箭头指明走向。前三版都画成了闭合环（模型画土星环、我画同心椭圆、
+    # 我画两端收拢到极点的眼睛形），根因都是端点重合 + 没有走向。
+    for lat, bulge in ((0.72, 2.5), (0.45, 3.3), (0.16, 4.0)):
+        ay = -R * lat                                    # 出发纬度（北），对称点即为终点
+        for side in (-1, +1):
+            pts = []
+            for i in range(49):
+                t = i / 48
+                y = ay + (-2 * ay) * t                   # 从 +ay 走到 -ay
+                k = math.sin(math.pi * t)                # 中间鼓出
+                x = side * (R * math.sqrt(max(0.0, 1 - (y / R) ** 2)) + R * bulge * 0.30 * k)
+                pts.append((cx + x, cy + y))
+            d.line(pts, fill=pal["soft"], width=6, joint="curve")
+            m = pts[len(pts) // 2]
+            nxt = pts[len(pts) // 2 + 3]
+            arrow(d, m[0], m[1], nxt[0], nxt[1], pal, w=6, head=20)
+    disc(d, cx, cy, R, pal["bark"], pal, w=8)
+    d.line([cx, cy - R - 70, cx, cy + R + 70], fill=pal["ink"], width=9)
+    for py in (cy - R, cy + R):
+        disc(d, cx, py, 16, pal["accent"], pal, w=5)
+    return "1 个地球 + 6 条开口弧线（3 对不同纬度，各带 1 个走向箭头）+ 1 根地轴"
+
+
+@page("magnet", 10)
+def _(d, pal):
+    """指南针：一根针，一半红一半白。"""
+    cx, cy, R = S / 2, S / 2, 300
+    disc(d, cx, cy, R, pal["paper"], pal, w=10)
+    for i in range(12):
+        a = i * math.pi / 6
+        d.line([cx + (R - 34) * math.cos(a), cy + (R - 34) * math.sin(a),
+                cx + (R - 12) * math.cos(a), cy + (R - 12) * math.sin(a)],
+               fill=pal["ink"], width=6)
+    d.polygon([(cx, cy - 210), (cx - 34, cy), (cx + 34, cy)], fill=pal["accent"])
+    d.polygon([(cx, cy + 210), (cx - 34, cy), (cx + 34, cy)], fill=pal["paper"])
+    for pts in (((cx, cy - 210), (cx - 34, cy), (cx + 34, cy)),
+                ((cx, cy + 210), (cx - 34, cy), (cx + 34, cy))):
+        for a, b in zip(pts, pts[1:] + pts[:1]):
+            d.line([a, b], fill=pal["ink"], width=6)
+    disc(d, cx, cy, 20, pal["ink"], pal, w=4)
+    return "1 个表盘 + 1 根针，上半 accent 下半 paper"
+
+
+# ---------------------------------------------------------------- power / ice / bird（对比两格）
+
+@page("power", 10)
+def _(d, pal):
+    """断开 vs 接通：左格缺一段、灯暗，右格闭合、灯亮。"""
+    for (cx, cy, w_, h_), closed in zip(panel2(d, pal), (False, True)):
+        lw_, lh_ = w_ * 0.62, h_ * 0.42
+        x0, x1 = cx - lw_ / 2, cx + lw_ / 2
+        y0, y1 = cy - lh_ / 2 + 40, cy + lh_ / 2 + 40
+        d.line([x0, y0, x1, y0], fill=pal["ink"], width=9)
+        d.line([x0, y0, x0, y1], fill=pal["ink"], width=9)
+        d.line([x1, y0, x1, y1], fill=pal["ink"], width=9)
+        if closed:
+            d.line([x0, y1, x1, y1], fill=pal["ink"], width=9)
+        else:
+            d.line([x0, y1, cx - 46, y1], fill=pal["ink"], width=9)
+            d.line([cx + 46, y1, x1, y1], fill=pal["ink"], width=9)
+        disc(d, cx, y0 - 4, 52, pal["accent"] if closed else pal["soft"], pal, w=7)
+        if closed:
+            for i in range(8):
+                a = i * math.pi / 4
+                d.line([cx + 66 * math.cos(a), y0 - 4 + 66 * math.sin(a),
+                        cx + 96 * math.cos(a), y0 - 4 + 96 * math.sin(a)],
+                       fill=pal["accent"], width=7)
+    return "左格回路有缺口、灯暗 / 右格回路闭合、灯亮有光线"
+
+
+@page("ice", 4)
+def _(d, pal):
+    """冰里的分子排成整齐格子，而且比水里挨得更紧。"""
+    (lx, ly, lw, lh), (rx, ry, rw, rh) = panel2(d, pal)
+    for cx, cy, w_, h_, n, jitter in ((lx, ly, lw, lh, 7, 0.0), (rx, ry, rw, rh, 6, 0.34)):
+        rnd = random.Random(5)
+        r = min(w_ / (2 * n), h_ / (2 * n)) * 0.9
+        for j in range(n):
+            for i in range(n):
+                jx = rnd.uniform(-jitter, jitter) * 2 * r
+                jy = rnd.uniform(-jitter, jitter) * 2 * r
+                disc(d, cx + (i - (n - 1) / 2) * 2 * r + jx,
+                     cy + (j - (n - 1) / 2) * 2 * r + jy, r - 3, pal["soft"], pal, w=4)
+    return "左 49 个排成整齐格子（冰）/ 右 36 个挤散（水）"
+
+
+@page("bird", 7)
+def _(d, pal):
+    """下拍羽毛合严，上抬羽毛张开 —— 两格的羽毛间距必须不同。"""
+    for (cx, cy, w_, h_), tight in zip(panel2(d, pal), (True, False)):
+        n, span = 9, w_ * 0.72
+        gap = span / n * (0.55 if tight else 1.0)
+        for i in range(n):
+            x = cx - (n - 1) * gap / 2 + i * gap
+            d.line([x, cy - h_ * 0.22, x, cy + h_ * 0.22], fill=pal["ink"], width=14)
+        arrow(d, cx, cy - h_ * 0.34, cx, cy - h_ * 0.34 + (70 if tight else -70), pal, w=10, head=26)
+    return "左 9 根羽毛合严、箭头向下 / 右 9 根张开、箭头向上"
+
+
+@page("hiccup", 10)
+def _(d, pal):
+    """吸气数到四，吐气数到六 —— 上升段必须明显短于下降段。"""
+    wave(d, MARGIN + 30, S - MARGIN - 30, S / 2, pal, rise=4, fall=6, cycles=2, amp=150, w=14)
+    return "2 个周期，上升段:下降段 = 4:6"
+
+
 # ---------------------------------------------------------------- bee / snow（六边形）
 
 @page("bee", 8)
