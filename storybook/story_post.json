@@ -1,0 +1,114 @@
+{
+  "title": "一封信怎么寄到",
+  "subtitle": "写好地址，它自己会走",
+  "slug": "post",
+  "seed_base": 68000,
+  "character": "wearing a postal blue t-shirt, grey shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration in vintage postage stamp style, fine engraved lines with flat colour fills, ink blue, stamp red and aged cream, small decorative borders",
+  "style_label": "邮票风版画",
+  "keyword": "地址",
+  "diagram_pages": [
+    3,
+    4,
+    6,
+    8,
+    10
+  ],
+  "palette": {
+    "ink": "#22283a",
+    "soft": "#5d6780",
+    "ground": "#f4f1e8",
+    "paper": "#fbf9f3",
+    "accent": "#bf4436",
+    "bark": "#868ea3",
+    "line": "#d9d5ca",
+    "ink_d": "#ebe8e0",
+    "soft_d": "#99a1b3",
+    "ground_d": "#121726",
+    "paper_d": "#1b2133",
+    "accent_d": "#d66a5a",
+    "bark_d": "#868ea3",
+    "line_d": "#38405a"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "奶奶住在很远的地方。\n妈妈说，\n写封信寄给她吧。\n我把信放进邮筒，\n它就不见了。它去哪儿了？",
+      "scene": "The little boy drops a letter into a street postbox, standing on tiptoe, watching it disappear.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "信封上要写清楚「地址」。\n收信人的地址写在中间，\n自己的写在左上角，\n右上角贴邮票。",
+      "scene": "A simple clear diagram, drawn flat and plain: one envelope on a cream background with three marked areas: a small square at the top right, a short block at the top left, and a longer block in the middle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "地址要从大写到小。\n先写城市，\n再写街道，\n最后写门牌号。\n这样才找得到。",
+      "scene": "A simple clear diagram, drawn flat and plain: three nested rectangles on a cream background, each inside the previous one, from largest to smallest. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "邮筒里的信\n每天会被收走，\n装进大袋子，\n送到分拣中心。",
+      "scene": "One postbox on a cream background with a mail sack beside it, drawn plainly. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "分拣中心很大。\n机器读信封上的地址，\n按城市分成一堆一堆，\n每堆去一个方向。",
+      "scene": "A simple clear diagram, drawn flat and plain: one box on the left of a cream background with four arrows leaving it toward four separate piles. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "邮票是付钱的凭证。\n贴了邮票，\n就表示这一路的运费\n已经付过了。",
+      "scene": "One postage stamp on a cream background with a small decorative border, drawn simply. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "信可能坐卡车，\n可能坐火车，\n很远的还要坐飞机。\n一站一站地往前走。",
+      "scene": "A simple clear diagram, drawn flat and plain: three vehicles in a row on a cream background connected by two arrows: a truck, a train and a plane. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "到了奶奶那个城市，\n再分到她那条街，\n最后交给\n负责那条街的邮递员。",
+      "scene": "A simple clear diagram, drawn flat and plain: one large area on a cream background divided into smaller and smaller sections, with one final small section marked. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "邮递员骑着车，\n按门牌号一家一家送。\n有的塞进门口的信箱，\n有的要请人签收。",
+      "scene": "One postal bicycle with a full basket on a cream background, beside a row of small letterboxes. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "美国很多人家\n门口有个信箱，\n上面有一面小红旗。\n旗子竖起来，\n意思是有信要寄走。",
+      "scene": "A simple clear diagram, drawn flat and plain: one roadside mailbox on a cream background with a small flag on its side, drawn in the raised position. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "所以地址写错，\n信就找不到人。\n写清楚、写工整，\n它才能\n一路走到奶奶手里。",
+      "scene": "One envelope on a cream background with neat clear blocks of writing in the address area. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "过了一个星期，\n奶奶打电话来了。\n她说信收到了。\n我的那封信，\n真的自己走到了她家。",
+      "scene": "The little boy holds a telephone to his ear, smiling widely, very pleased.",
+      "has_boy": true
+    }
+  ]
+}

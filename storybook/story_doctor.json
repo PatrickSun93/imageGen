@@ -1,0 +1,113 @@
+{
+  "title": "去看医生不可怕",
+  "subtitle": "他们在帮你查清楚",
+  "slug": "doctor",
+  "seed_base": 69000,
+  "character": "wearing a soft yellow t-shirt, blue trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration, bright flat illustration with clean rounded outlines, cheerful sky blue, sunny yellow and cream, calm and friendly",
+  "style_label": "明亮扁平",
+  "keyword": "听诊器",
+  "diagram_pages": [
+    4,
+    6,
+    8,
+    10
+  ],
+  "palette": {
+    "ink": "#242b33",
+    "soft": "#606d7a",
+    "ground": "#f2f5f8",
+    "paper": "#fbfcfd",
+    "accent": "#e8b13c",
+    "bark": "#8b959f",
+    "line": "#d8dee4",
+    "ink_d": "#eaeef2",
+    "soft_d": "#9aa4ae",
+    "ground_d": "#131b23",
+    "paper_d": "#1d252d",
+    "accent_d": "#f2c465",
+    "bark_d": "#8b959f",
+    "line_d": "#3a434d"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "妈妈说今天要去看医生。\n我有点紧张。\n上次打针有一点点疼，\n我一直记着。",
+      "scene": "The little boy sits on a chair in a waiting room holding a grown adult woman's hand, looking a little nervous.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "医生要做的第一件事，\n是问问题。\n哪里不舒服？\n什么时候开始的？\n你回答得越清楚，他越好判断。",
+      "scene": "One grown adult doctor in a white coat on a cream background sitting and listening, leaning slightly forward. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "然后量体温。\n体温计放在腋下或者额头，\n等一小会儿，\n就知道身体\n有没有在打仗。",
+      "scene": "One thermometer on a cream background, drawn plainly. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "接着用「听诊器」。\n那个凉凉的圆片\n贴在胸口，\n医生就能听见\n心跳和呼吸的声音。",
+      "scene": "A simple clear diagram, drawn flat and plain: one stethoscope on a cream background: a round disc, a tube leading up, and two ear pieces. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "圆片为什么凉呢？\n因为它是金属的。\n贴上去一会儿\n就被你捂热了，\n不会一直凉。",
+      "scene": "One round metal disc on a cream background, drawn simply with a small highlight. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "有时候要看喉咙。\n医生用一个小手电筒，\n让你张大嘴说「啊」。\n这样舌头会压下去，\n他才看得见后面。",
+      "scene": "A simple clear diagram, drawn flat and plain: one open mouth seen from the front on a cream background with the tongue pressed low and a small light beam entering. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "打针会疼一下下。\n可是那一下很短，\n比摔一跤轻多了。\n可以深呼吸，\n或者看着别的地方。",
+      "scene": "One small adhesive bandage on a cream background, drawn plainly. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "针里的药\n是帮身体的。\n疫苗更特别：\n它先让身体\n认识病菌长什么样。",
+      "scene": "A simple clear diagram, drawn flat and plain: two rows on a cream background: the top row shows a shield shape alone, the bottom row shows the same shield with several small spiky specks bouncing off it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "所以下次真的遇到，\n身体一眼就认出来，\n马上就能对付，\n你可能\n一点都不会难受。",
+      "scene": "One child running and jumping on a cream background, healthy and cheerful. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "医生也会说实话。\n他会告诉你\n这个会不会疼、\n大概多久。\n你可以先问一句。",
+      "scene": "A simple clear diagram, drawn flat and plain: two speech shapes on a cream background: a small one and a larger one, facing each other. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "看完医生要记得：\n药要按时吃，\n多喝水，\n早点睡。\n身体自己会好起来。",
+      "scene": "Three small symbols in a row on a cream background: a small bottle, a glass of water, and a bed. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "打针的时候我看着窗外。\n真的只疼了一下。\n医生说我很勇敢。\n下次我\n应该不那么怕了。",
+      "scene": "The little boy sits with a small bandage on his upper arm, looking out a window, calm and a bit proud.",
+      "has_boy": true
+    }
+  ]
+}

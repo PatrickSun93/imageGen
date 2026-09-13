@@ -1073,9 +1073,11 @@ def _(d, pal):
     disc(d, spots[0][0], spots[0][1], 62, pal["bark"], pal, w=8)
     rnd = random.Random(2)
     for _ in range(30):
-        d.ellipse([spots[1][0] + rnd.uniform(-60, 60), spots[1][1] + rnd.uniform(-40, 40),
-                   spots[1][0] + rnd.uniform(-60, 60) + 10,
-                   spots[1][1] + rnd.uniform(-40, 40) + 10], fill=pal["bark"])
+        # 先定中心再加半径。上一版对左上角和右下角各自独立取随机数，
+        # 常常算出 x1 < x0，PIL 直接抛 ValueError。
+        gx = spots[1][0] + rnd.uniform(-60, 60)
+        gy = spots[1][1] + rnd.uniform(-40, 40)
+        d.ellipse([gx - 6, gy - 6, gx + 6, gy + 6], fill=pal["bark"])
     layer_stack(d, pal, spots[2][0], spots[2][1], 150, n=4, h=26)
     return "1 个三段循环 + 巨石 / 沙粒 / 新地层 三个符号"
 
