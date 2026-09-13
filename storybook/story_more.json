@@ -1,0 +1,119 @@
+{
+  "title": "比一比谁更多",
+  "subtitle": "一个对一个，就知道了",
+  "slug": "more",
+  "seed_base": 58000,
+  "character": "wearing a bright yellow t-shirt, blue shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, bold flat graphic art with thick black outlines and flat fills in sunny yellow, deep blue and cream, simple chunky shapes, slight printed grain, the illustration covers the entire image area",
+  "style_label": "平涂线条",
+  "keyword": "一样多",
+  "diagram_pages": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "palette": {
+    "ink": "#22262e",
+    "soft": "#5c6673",
+    "ground": "#f3f1e9",
+    "paper": "#fbfaf4",
+    "accent": "#e0a72e",
+    "bark": "#8a919c",
+    "line": "#d9d6cc",
+    "ink_d": "#ebe9e1",
+    "soft_d": "#99a1ab",
+    "ground_d": "#12161d",
+    "paper_d": "#1b2029",
+    "accent_d": "#eebb52",
+    "bark_d": "#8a919c",
+    "line_d": "#39414b"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我和妹妹各拿了一把糖。\n我说我的多，\n她说她的多。\n可是谁也数不清。\n怎么才知道谁更多呢？",
+      "scene": "The little boy stands holding a handful of sweets, a smaller child beside him holding another handful, both looking at each other.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "有个办法不用数：\n把两堆东西\n一个对一个地摆好。\n谁那边剩下了，\n谁就更多。",
+      "scene": "A simple clear diagram, drawn flat and plain: two rows of circles on a cream background lined up one above the other: five on top and five below, each top circle directly above a bottom one. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "要是一个对一个，\n两边刚好配完，\n谁也没剩下，\n那就是「一样多」。",
+      "scene": "A simple clear diagram, drawn flat and plain: two rows of four circles on a cream background, perfectly aligned one above the other, with a short vertical line joining each pair. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "要是上面剩下两个，\n没有下面的可以配，\n那上面就比下面多两个。",
+      "scene": "A simple clear diagram, drawn flat and plain: two rows on a cream background: six circles on top and four below, aligned from the left, with the two extra top circles marked. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "多和少，\n是比出来的。\n三个比两个多，\n可是三个比十个少。\n要说清楚在跟谁比。",
+      "scene": "A simple clear diagram, drawn flat and plain: three groups on a cream background in a row: two circles, three circles, ten circles, each group inside its own light box. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "有时候不用一个一个配，\n看一眼就知道。\n一堆挤得满满的，\n另一堆稀稀拉拉，\n多的那堆很明显。",
+      "scene": "A simple clear diagram, drawn flat and plain: two boxes side by side on a cream background: the left one packed with twenty small circles, the right one holding only three. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "可是眼睛也会骗人。\n摆得开的那堆，\n看起来像更多，\n其实数目一样。\n所以还是要配一配。",
+      "scene": "A simple clear diagram, drawn flat and plain: two rows of six circles on a cream background: the top row spread wide apart, the bottom row packed close together, both rows containing six. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "东西大小不一样的时候，\n更要小心。\n三个大的，\n不一定比五个小的多。\n数的是个数，不是大小。",
+      "scene": "A simple clear diagram, drawn flat and plain: two rows on a cream background: three large circles on top, five small circles below. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "比长短也一样。\n两根绳子要从同一头开始比，\n不能一根靠左、\n一根靠右。",
+      "scene": "A simple clear diagram, drawn flat and plain: two horizontal bars on a cream background, both starting from the same vertical line on the left, the top one clearly longer. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "比高矮也是。\n两个人要站在同一块地上，\n一个站在台阶上，\n那就不算数了。",
+      "scene": "A simple clear diagram, drawn flat and plain: two vertical bars on a cream background, both standing on the same horizontal baseline, the right one clearly taller. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "排队的时候也能比。\n两队人一个对一个站好，\n哪一队后面拖出来一截，\n哪一队就更长。",
+      "scene": "A simple clear diagram, drawn flat and plain: two rows on a cream background: seven circles on top and five below, aligned from the left, the two extra top circles clearly sticking out past the end of the bottom row. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我们把糖一颗对一颗摆好。\n配到最后，\n我这边多出来两颗。\n于是我分给她一颗，\n就一样多了。",
+      "scene": "The little boy and a smaller child sit on the floor with two neat rows of sweets laid out between them, matching them up one by one.",
+      "has_boy": true
+    }
+  ]
+}

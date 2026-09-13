@@ -1,0 +1,115 @@
+{
+  "title": "一年有十二个月",
+  "subtitle": "日历上的十二格",
+  "slug": "year",
+  "seed_base": 57000,
+  "character": "wearing a forest green t-shirt, tan trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration in cut-paper calendar style, flat rectangular shapes with clean edges, four seasonal colour families over cream, simple and graphic, slight paper texture",
+  "style_label": "剪纸日历",
+  "keyword": "月份",
+  "diagram_pages": [
+    2,
+    3,
+    5,
+    7,
+    9,
+    10
+  ],
+  "palette": {
+    "ink": "#262b26",
+    "soft": "#606b60",
+    "ground": "#f4f2ea",
+    "paper": "#fbfaf5",
+    "accent": "#c8703a",
+    "bark": "#8a938a",
+    "line": "#d9d6cd",
+    "ink_d": "#ebe9e2",
+    "soft_d": "#99a299",
+    "ground_d": "#141a14",
+    "paper_d": "#1d241d",
+    "accent_d": "#dd8a55",
+    "bark_d": "#8a938a",
+    "line_d": "#39413a"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "妈妈在墙上挂了一本新日历。\n她说：新的一年开始了。\n我数了数，\n上面有十二张纸。\n为什么是十二张呢？",
+      "scene": "The little boy stands looking up at a wall calendar that a grown adult woman has just hung, curious.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "因为一年有十二个「月份」。\n一月、二月、三月……\n一直数到十二月，\n一年就过完了，\n又从一月重新开始。",
+      "scene": "A simple clear diagram, drawn flat and plain: twelve equal rectangles arranged in three rows of four on a cream background, each one plain. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "每个月有多少天呢？\n大多数是三十天或三十一天，\n只有二月最短，\n只有二十八天，\n有时候二十九天。",
+      "scene": "A simple clear diagram, drawn flat and plain: twelve vertical bars in a row on a cream background, all nearly the same height except the second, which is clearly shorter. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "为什么一年要这么长呢？\n因为地球绕太阳一圈，\n差不多要这么久。\n转完一圈，\n就是一年。",
+      "scene": "A simple clear diagram, drawn flat and plain: one sun in the middle of a cream background with one large circle around it and one small earth on the circle, plus one curved arrow showing the direction. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "十二个月分成四季。\n三个月一季：\n春、夏、秋、冬。\n每一季，\n窗外都长得不一样。",
+      "scene": "A simple clear diagram, drawn flat and plain: twelve equal rectangles in a row on a cream background, coloured in four groups of three, each group a different shade. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "春天暖起来，\n树发芽，花开了。\n三月、四月、五月，\n是春天。",
+      "scene": "One bare-branched tree on a cream background sprouting small green buds, with a few flowers at its foot. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "夏天最热，\n天黑得最晚。\n六月、七月、八月，\n白天长长的，\n可以在外面玩很久。",
+      "scene": "A simple clear diagram, drawn flat and plain: two bars side by side on a cream background: a long light one and a short dark one, showing a long day and a short night. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "秋天凉下来，\n叶子变黄、变红，\n然后掉下来。\n九月、十月、十一月，\n是收东西的时候。",
+      "scene": "One tree on a cream background with orange and red leaves, several of them falling to the ground. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "冬天最冷，\n天黑得最早。\n十二月、一月、二月。\n洛杉矶不怎么下雪，\n可是早上会很凉。",
+      "scene": "A simple clear diagram, drawn flat and plain: two bars side by side on a cream background: a short light one and a long dark one, showing a short day and a long night. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "一个月里，\n七天算一个星期。\n所以日历上\n每一行都是七格，\n一个月有四行多一点。",
+      "scene": "A simple clear diagram, drawn flat and plain: one calendar grid on a cream background, seven columns wide and five rows tall, all cells empty. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "生日在哪个月呢？\n每个人都不一样。\n找到那一页，\n数数还有几天，\n就知道要等多久。",
+      "scene": "One calendar page on a cream background with a small star drawn in one of its squares. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我找到了自己生日那一页，\n在上面画了一颗星。\n还要等好几个月呢。\n可是没关系，\n日历会一页一页翻过去。",
+      "scene": "The little boy reaches up and draws a small star on one square of the wall calendar, pleased with himself.",
+      "has_boy": true
+    }
+  ]
+}
