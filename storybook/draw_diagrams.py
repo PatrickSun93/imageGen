@@ -899,6 +899,101 @@ def _(d, pal):
     return "3 个孩子全在斑马线上 + 2 辆车停在停止线后 + 1 个交警在路边"
 
 
+# ---------------------------------------------------------------- ice / snow / sound / bee（下一批）
+
+@page("ice", 8)
+def _(d, pal):
+    """水珠挂在杯子外面，不是杯里的水漏出来 —— 珠子必须全在杯壁之外。"""
+    cx, cy = S / 2, S / 2 + 30
+    gw, gh = 300, 420
+    d.rounded_rectangle([cx - gw / 2, cy - gh / 2, cx + gw / 2, cy + gh / 2], radius=26,
+                        fill=pal["paper"], outline=pal["ink"], width=10)
+    d.rectangle([cx - gw / 2 + 14, cy - 60, cx + gw / 2 - 14, cy + gh / 2 - 14],
+                fill=pal["soft"])                                  # 杯里的水
+    d.line([cx - gw / 2 + 14, cy - 60, cx + gw / 2 - 14, cy - 60], fill=pal["ink"], width=6)
+    rnd = random.Random(9)
+    for _ in range(18):                                            # 水珠：全部贴在杯壁外侧
+        side = rnd.choice((-1, 1))
+        x = cx + side * (gw / 2 + rnd.uniform(14, 44))
+        y = cy + rnd.uniform(-gh / 2 + 40, gh / 2 - 30)
+        disc(d, x, y, rnd.uniform(11, 19), pal["soft"], pal, w=4)
+    return "1 个杯子 + 18 颗水珠，全在杯壁外侧"
+
+
+@page("ice", 9)
+def _(d, pal):
+    """冰化要吸热：箭头一律从周围指向冰块。"""
+    cx, cy = S / 2, S / 2 + 20
+    gw, gh = 320, 400
+    d.rounded_rectangle([cx - gw / 2, cy - gh / 2, cx + gw / 2, cy + gh / 2], radius=26,
+                        fill=pal["paper"], outline=pal["ink"], width=10)
+    d.rectangle([cx - gw / 2 + 14, cy - 110, cx + gw / 2 - 14, cy + gh / 2 - 14],
+                fill=pal["soft"])
+    # 冰块要泡在水里（水面在 cy-110），上一版画在 cy-190 骑上了杯口。
+    icy = cy + 20
+    d.rounded_rectangle([cx - 74, icy - 70, cx + 74, icy + 70], radius=16,
+                        fill=pal["paper"], outline=pal["ink"], width=8)
+    for a in range(8):                                             # 八支箭头，起点都在杯外
+        ang = a * math.pi / 4
+        r0, r1 = 330, 190
+        arrow(d, cx + r0 * math.cos(ang), icy + r0 * math.sin(ang) * 0.70,
+              cx + r1 * math.cos(ang), icy + r1 * math.sin(ang) * 0.70,
+              pal, w=8, head=22)
+    return "1 块泡在水里的冰 + 8 支箭头，全部由杯外指向冰"
+
+
+@page("snow", 3)
+def _(d, pal):
+    """一粒灰尘上冻出一颗小冰晶 —— 六个角，但很小，还没长成雪花。"""
+    cx, cy = S / 2, S / 2
+    disc(d, cx, cy, 16, pal["accent"], pal, w=5)                   # 中心那粒灰尘
+    for i in range(6):
+        a = math.pi / 2 + i * math.pi / 3
+        d.line([cx, cy, cx + 90 * math.cos(a), cy + 90 * math.sin(a)],
+               fill=pal["ink"], width=9)
+    d.ellipse([cx - 200, cy - 200, cx + 200, cy + 200], outline=pal["soft"], width=5)
+    return "1 粒灰尘 + 6 根短枝（还没长成完整雪花）"
+
+
+@page("sound", 10)
+def _(d, pal):
+    """太空里没有空气，所以没有声音：一个火箭，周围什么波纹都没有。"""
+    # 这本是浅色调色板，上一版直接用它当底，「太空」完全没出来，火箭还像座小房子。
+    SPACE = "#151a2c"
+    d.rectangle([0, 0, S, S], fill=SPACE)
+    rnd = random.Random(4)
+    for _ in range(90):
+        r = rnd.choice((2, 2, 3, 4))
+        x, y = rnd.uniform(20, S - 20), rnd.uniform(20, S - 20)
+        d.ellipse([x - r, y - r, x + r, y + r], fill=pal["paper"])
+    cx, cy = S / 2, S / 2 + 30
+    d.polygon([(cx, cy - 250), (cx - 52, cy - 90), (cx + 52, cy - 90)], fill=pal["accent"])
+    d.rounded_rectangle([cx - 52, cy - 90, cx + 52, cy + 150], radius=16,
+                        fill=pal["paper"], outline=pal["ink"], width=7)
+    for s in (-1, 1):                                              # 两片尾翼，细长火箭
+        d.polygon([(cx + s * 52, cy + 60), (cx + s * 122, cy + 160),
+                   (cx + s * 52, cy + 150)], fill=pal["accent"])
+    disc(d, cx, cy - 10, 30, pal["soft"], pal, w=6)
+    return "深色太空底 + 1 枚带尾翼的火箭 + 90 颗星，周围没有任何波纹"
+
+
+@page("bee", 11)
+def _(d, pal):
+    """一只工蜂一辈子只做一小勺的十二分之一：勺子分十二格，只填一格。"""
+    # 上一版圆盘大、柄细长，读成了棒棒糖。勺子要「盘小柄粗、柄从盘边平滑伸出」。
+    cx, cy = S / 2, S / 2 - 40
+    R = 140
+    d.rounded_rectangle([cx - 44, cy + R - 40, cx + 44, cy + R + 250], radius=44,
+                        fill=pal["paper"], outline=pal["ink"], width=8)   # 粗勺柄，先画在盘下
+    for i in range(12):
+        a0, a1 = i * 30 - 90, (i + 1) * 30 - 90
+        d.pieslice([cx - R, cy - R, cx + R, cy + R], a0, a1,
+                   fill=pal["accent"] if i == 0 else pal["paper"],
+                   outline=pal["ink"], width=5)
+    d.ellipse([cx - R, cy - R, cx + R, cy + R], outline=pal["ink"], width=9)
+    return "1 个分成 12 格的勺子（盘小柄粗），只有 1 格是满的"
+
+
 # ---------------------------------------------------------------- bee / snow（六边形）
 
 @page("bee", 8)
