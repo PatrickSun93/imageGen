@@ -1,0 +1,114 @@
+{
+  "title": "发烧是身体在打仗",
+  "subtitle": "热起来，是为了赢",
+  "slug": "fever",
+  "seed_base": 54000,
+  "character": "wearing light blue pyjamas and thick socks, short black hair",
+  "style": "children's picture book illustration, soft watercolour with gentle washes and fine grey-blue outlines, palette of pale blue, soft rose and cream, calm and reassuring, plenty of clean paper",
+  "style_label": "柔和水彩",
+  "keyword": "白细胞",
+  "diagram_pages": [
+    3,
+    4,
+    5,
+    6,
+    8
+  ],
+  "palette": {
+    "ink": "#28303a",
+    "soft": "#647280",
+    "ground": "#f1f4f7",
+    "paper": "#fbfcfd",
+    "accent": "#d4788a",
+    "bark": "#8b96a1",
+    "line": "#d9dfe5",
+    "ink_d": "#eaeef2",
+    "soft_d": "#9aa5af",
+    "ground_d": "#141b23",
+    "paper_d": "#1e262e",
+    "accent_d": "#e8a0ae",
+    "bark_d": "#8b96a1",
+    "line_d": "#3a434d"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "妈妈的手贴在我额头上，\n说：有点烫。\n我躺在床上，\n身上一会儿冷，\n一会儿又热。",
+      "scene": "The little boy lies in bed in blue pyjamas with a blanket pulled up, a grown adult woman's hand resting on his forehead, warm lamplight.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "有很小很小的病菌\n进到身体里来了。\n它们小得看不见，\n可是会让我们不舒服。",
+      "scene": "A simple clear diagram, drawn flat and plain: several small round specks with short spikes clustered on a pale background, all the same kind. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "身体里有一支队伍，\n叫「白细胞」。\n它们在血里巡逻，\n一发现病菌，\n就围上去。",
+      "scene": "A simple clear diagram, drawn flat and plain: one large round cell on a pale background surrounded by six smaller spiky specks, with arrows pointing from the cell toward them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "打仗需要条件。\n病菌怕热，\n白细胞却在热一点的时候\n跑得更快。\n所以身体决定：把温度调高。",
+      "scene": "A simple clear diagram, drawn flat and plain: two thermometers side by side on a pale background: the left one with the liquid at a lower mark, the right one with the liquid clearly higher. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "大脑里有个小开关，\n把身体的目标温度\n往上调了一格。\n于是我们觉得冷、发抖，\n身体是在给自己加热。",
+      "scene": "A simple clear diagram, drawn flat and plain: one dial on a pale background with a pointer moved from a lower position to a higher one, and one curved arrow showing the turn. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "打赢了以后，\n开关就调回来。\n这时候我们会出汗，\n身体把多出来的热\n放掉。",
+      "scene": "A simple clear diagram, drawn flat and plain: one dial on a pale background with the pointer moved back down, and three small drops beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "所以发烧本身不是病，\n是身体在打仗。\n它说明那支队伍\n正在工作。",
+      "scene": "One child lying in bed under a blanket on a pale background, eyes closed, resting quietly. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "打仗很费力气。\n所以要多喝水、多睡觉，\n把力气省给那支队伍。\n吃得清淡一点也好。",
+      "scene": "A simple clear diagram, drawn flat and plain: three small symbols in a row on a pale background: a glass of water, a bed, and a bowl. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "量体温要量准。\n把体温计放好，\n安安静静等一会儿，\n不要刚跑完、\n刚洗完澡就量。",
+      "scene": "One thermometer lying on a pale background beside a small clock, drawn plainly. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "大部分发烧，\n过两三天就好了。\n温度上上下下是正常的，\n晚上常常比白天高一点。",
+      "scene": "One gentle wavy line across a pale background, rising and falling three times, drawn simply. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "可是有几种情况要去看医生：\n烧得很久不退，\n或者精神很差、\n一直不想喝水。\n那就要告诉大人。",
+      "scene": "One friendly grown-up doctor in a white coat on a pale background, standing beside a chair, drawn plainly. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "第三天早上，\n我醒过来，\n额头凉凉的。\n妈妈笑了。\n身体那支队伍，已经打完仗了。",
+      "scene": "The little boy sits up in bed in the morning light, stretching, looking rested and cheerful.",
+      "has_boy": true
+    }
+  ]
+}
