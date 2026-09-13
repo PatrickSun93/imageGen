@@ -34,7 +34,7 @@
     {
       "n": 1,
       "zh": "晚上，我抬头看天空。\n爸爸说，我们住的地球，\n是绕着太阳转的。\n和地球一起转的，\n还有另外七颗行星。",
-      "scene": "The little boy stands outside at night looking up at a deep blue starry sky, one hand shading his eyes, a warm glow behind him.",
+      "scene": "The little boy stands outdoors on grass at night, his head tilted back, looking straight up at a deep blue sky full of small stars. There is no building, no window and no window frame behind him.",
       "has_boy": true
     },
     {
@@ -52,19 +52,19 @@
     {
       "n": 4,
       "zh": "第二颗是金星。\n它被厚厚的云包着，\n是太阳系里最热的行星。\n天还没亮的时候，\n它是天上最亮的那颗。",
-      "scene": "A simple clear diagram, drawn flat and plain: one cream-and-yellow planet wrapped in thick swirling cloud bands, shown large in the middle of a deep blue background. Nothing else in the picture.",
+      "scene": "A simple clear diagram, drawn flat and plain: one smooth round ball in the middle of a deep blue background, its whole circular face filled edge to edge with thick swirling pale yellow and cream cloud bands, the outline a single clean circle. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 5,
       "zh": "第三颗，就是我们的地球。\n它有海洋、有云、\n有空气，也有你和我。\n到现在为止，\n它是我们知道的唯一有生命的星球。",
-      "scene": "A simple clear diagram, drawn flat and plain: one blue-and-green planet with white cloud swirls shown large in the middle of a deep blue background, a thin bright rim of light along one side. Nothing else in the picture.",
+      "scene": "A simple clear diagram, drawn flat and plain: one smooth round ball in the middle of a deep blue background, its whole circular face filled edge to edge with blue oceans, green land and white cloud swirls, the outline a single clean circle. The picture fills the whole frame. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 6,
       "zh": "第四颗是火星。\n它的土是红色的，\n所以看起来红红的。\n上面有太阳系最高的山，\n比珠穆朗玛峰还高三倍。",
-      "scene": "A simple clear diagram, drawn flat and plain: one rust-red planet with a tall pointed mountain drawn on its surface, shown large in the middle of a deep blue background. Nothing else in the picture.",
+      "scene": "A simple clear diagram, drawn flat and plain: one smooth round ball in the middle of a deep blue background, its whole circular face filled edge to edge with rust-red desert, one small pointed volcano drawn inside the circle near its middle, the outline a single clean circle. Nothing else in the picture.",
       "has_boy": false
     },
     {
@@ -82,19 +82,19 @@
     {
       "n": 9,
       "zh": "第七颗是天王星，\n第八颗是海王星。\n它们离太阳很远很远，\n又冷又暗，\n看起来一个青蓝，一个深蓝。",
-      "scene": "A simple clear diagram, drawn flat and plain: two ice-blue planets side by side in the middle of a deep blue background, the left one pale cyan and the right one deeper blue, the same size. Nothing else in the picture.",
+      "scene": "A simple clear diagram, drawn flat and plain: two smooth round balls side by side in the middle of a deep blue background, each one a single flat even colour with a clean circular outline and a completely smooth face, the left one pale cyan and the right one deep blue, both the same size. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 10,
       "zh": "把它们排成一排看：\n水星、金星、地球、火星，\n个子都比较小；\n木星、土星、天王星、海王星，\n一个比一个大得多。",
-      "scene": "A simple clear diagram, drawn flat and plain: eight planets in a single row from left to right on a deep blue background, the first four small and the last four clearly larger, the amber sun at the far left edge. Nothing else in the picture.",
+      "scene": "A simple clear diagram, drawn flat and plain: eight plain round planets in one straight row from left to right on a deep blue background, none of them with rings, the four on the left clearly small and the four on the right clearly much larger, with an amber sun at the far left edge. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 11,
       "zh": "它们都绕着太阳转，\n可是路不一样长。\n地球转一圈是一年，\n海王星转一圈，\n要一百六十多年。",
-      "scene": "A simple clear diagram, drawn flat and plain: an amber sun in the middle of a deep blue background with eight thin white dotted circles around it, each circle larger than the one inside it, one small planet sitting on each circle. Nothing else in the picture.",
+      "scene": "A simple clear diagram, drawn flat and plain: one amber sun in the middle of a deep blue background, with eight thin white dotted circles drawn around it one inside the other like a target, and one small plain round planet with no rings sitting on each circle. Nothing else in the picture.",
       "has_boy": false
     },
     {
