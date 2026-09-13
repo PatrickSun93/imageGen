@@ -994,6 +994,516 @@ def _(d, pal):
     return "1 个分成 12 格的勺子（盘小柄粗），只有 1 格是满的"
 
 
+# ---------------------------------------------------------------- 第五批新书：hungry / fever / print / year
+
+@page("hungry", 3)
+def _(d, pal):
+    """食物拆成很小的糖，顺着血跑遍全身。"""
+    cy = S / 2
+    d.ellipse([MARGIN, cy - 90, MARGIN + 220, cy + 90], fill=pal["paper"],
+              outline=pal["ink"], width=9)
+    arrow(d, MARGIN + 250, cy, MARGIN + 380, cy, pal, w=11, head=28)
+    rnd = random.Random(3)
+    for _ in range(40):
+        x = rnd.uniform(MARGIN + 420, S - MARGIN)
+        y = cy + rnd.uniform(-170, 170)
+        disc(d, x, y, rnd.uniform(8, 15), pal["accent"], pal, w=3)
+    return "1 个盘子 + 1 支箭头 + 40 粒小糖散开"
+
+
+@page("hungry", 4)
+def _(d, pal):
+    """血糖吃过饭高一点，过几小时降下来。"""
+    x0, x1 = MARGIN + 40, S - MARGIN - 40
+    base = S / 2 + 150
+    d.line([x0, base, x1, base], fill=pal["ink"], width=8)
+    pts = [(x0, base - 40), (x0 + 150, base - 40), (x0 + 300, base - 330),
+           (x0 + 520, base - 240), (x1, base - 70)]
+    d.line(pts, fill=pal["accent"], width=14, joint="curve")
+    d.ellipse([x0 + 110, base - 90, x0 + 190, base - 10], fill=pal["paper"],
+              outline=pal["ink"], width=7)
+    return "1 条曲线：先平、吃饭后升高、然后慢慢降下来"
+
+
+@page("hungry", 5)
+def _(d, pal):
+    """血糖降下来，身体给大脑发信号。"""
+    x0, x1 = MARGIN + 40, S - MARGIN - 40
+    base = S / 2 + 220
+    pts = [(x0, base - 300), (x0 + 300, base - 240), (x1 - 120, base - 70)]
+    d.line(pts, fill=pal["accent"], width=14, joint="curve")
+    low = (x1 - 120, base - 70)
+    disc(d, low[0], low[1], 20, pal["accent"], pal, w=5)
+    brain = (S / 2 + 60, MARGIN + 170)
+    d.ellipse([brain[0] - 150, brain[1] - 110, brain[0] + 150, brain[1] + 110],
+              fill=pal["paper"], outline=pal["ink"], width=9)
+    arrow(d, low[0], low[1] - 40, brain[0] + 40, brain[1] + 120, pal, w=10, head=26)
+    return "1 条下降的曲线 + 1 个低点 + 1 支指向大脑的箭头"
+
+
+@page("hungry", 7)
+def _(d, pal):
+    """吃太快，大脑来不及收到「饱了」。"""
+    for (cx, cy, w_, h_), fast in zip(panel2(d, pal), (True, False)):
+        R = min(w_, h_) * 0.26
+        disc(d, cx, cy - 60, R, pal["paper"], pal, w=9)
+        d.pieslice([cx - R, cy - 60 - R, cx + R, cy - 60 + R], -90,
+                   -90 + (60 if fast else 220), fill=pal["accent"])
+        d.ellipse([cx - 90, cy + 170, cx + 90, cy + 250], fill=pal["paper"],
+                  outline=pal["ink"], width=8)
+    return "左格：短扇形（吃得快）/ 右格：长扇形（吃得慢），各配 1 个碗"
+
+
+@page("hungry", 9)
+def _(d, pal):
+    """米饭面包慢慢放糖，能撑得久。"""
+    x0, x1 = MARGIN + 260, S - MARGIN - 40
+    base = S / 2 + 150
+    d.ellipse([MARGIN, base - 110, MARGIN + 200, base + 40], fill=pal["paper"],
+              outline=pal["ink"], width=9)
+    d.line([x0, base - 60, x1, base - 250], fill=pal["accent"], width=14)
+    for i in range(6):
+        t = i / 5
+        disc(d, x0 + t * (x1 - x0), base - 60 - t * 190, 14, pal["accent"], pal, w=4)
+    return "1 个饭碗 + 1 条缓慢上升的斜线 + 6 粒均匀分布的糖"
+
+
+@page("fever", 3)
+def _(d, pal):
+    """白细胞围上去。"""
+    cx, cy = S / 2, S / 2
+    disc(d, cx, cy, 150, pal["paper"], pal, w=10)
+    for i in range(6):
+        a = i * math.pi / 3
+        gx, gy = cx + 300 * math.cos(a), cy + 300 * math.sin(a)
+        disc(d, gx, gy, 36, pal["accent"], pal, w=6)
+        for k in range(8):                      # 病菌的小刺
+            b = k * math.pi / 4
+            d.line([gx + 36 * math.cos(b), gy + 36 * math.sin(b),
+                    gx + 52 * math.cos(b), gy + 52 * math.sin(b)],
+                   fill=pal["ink"], width=5)
+        arrow(d, cx + 170 * math.cos(a), cy + 170 * math.sin(a),
+              cx + 250 * math.cos(a), cy + 250 * math.sin(a), pal, w=8, head=22)
+    return "1 个白细胞 + 6 个带刺的病菌 + 6 支由内向外的箭头"
+
+
+@page("fever", 4)
+def _(d, pal):
+    """病菌怕热，白细胞在热一点时跑得更快。"""
+    for (cx, cy, w_, h_), high in zip(panel2(d, pal), (False, True)):
+        bw, bh = 62, h_ * 0.62
+        d.rounded_rectangle([cx - bw / 2, cy - bh / 2, cx + bw / 2, cy + bh / 2],
+                            radius=30, fill=pal["paper"], outline=pal["ink"], width=8)
+        fill_h = bh * (0.42 if not high else 0.80)
+        d.rounded_rectangle([cx - bw / 2 + 12, cy + bh / 2 - fill_h,
+                             cx + bw / 2 - 12, cy + bh / 2 - 12],
+                            radius=22, fill=pal["accent"])
+        disc(d, cx, cy + bh / 2, 52, pal["accent"], pal, w=8)
+    return "左格体温计液柱低 / 右格液柱明显更高"
+
+
+@page("fever", 5)
+def _(d, pal):
+    """大脑把目标温度调高一格。"""
+    cx, cy, R = S / 2, S / 2 + 30, 280
+    disc(d, cx, cy, R, pal["paper"], pal, w=10)
+    for i in range(11):
+        a = math.radians(180 + i * 18)
+        d.line([cx + (R - 44) * math.cos(a), cy + (R - 44) * math.sin(a),
+                cx + (R - 12) * math.cos(a), cy + (R - 12) * math.sin(a)],
+               fill=pal["ink"], width=8)
+    a_old = math.radians(180 + 4 * 18)
+    a_new = math.radians(180 + 7 * 18)
+    d.line([cx, cy, cx + (R - 80) * math.cos(a_old), cy + (R - 80) * math.sin(a_old)],
+           fill=pal["soft"], width=14)
+    d.line([cx, cy, cx + (R - 80) * math.cos(a_new), cy + (R - 80) * math.sin(a_new)],
+           fill=pal["accent"], width=20)
+    d.arc([cx - R + 60, cy - R + 60, cx + R - 60, cy + R - 60],
+          180 + 4 * 18, 180 + 7 * 18, fill=pal["accent"], width=10)
+    return "1 个刻度盘 + 旧指针（浅）+ 新指针（深，高 3 格）+ 1 段弧"
+
+
+@page("fever", 6)
+def _(d, pal):
+    """打赢了，开关调回来，出汗降温。"""
+    cx, cy, R = S / 2, S / 2 - 20, 250
+    disc(d, cx, cy, R, pal["paper"], pal, w=10)
+    for i in range(11):
+        a = math.radians(180 + i * 18)
+        d.line([cx + (R - 40) * math.cos(a), cy + (R - 40) * math.sin(a),
+                cx + (R - 12) * math.cos(a), cy + (R - 12) * math.sin(a)],
+               fill=pal["ink"], width=7)
+    a_new = math.radians(180 + 4 * 18)
+    d.line([cx, cy, cx + (R - 70) * math.cos(a_new), cy + (R - 70) * math.sin(a_new)],
+           fill=pal["accent"], width=18)
+    for k, x in enumerate((cx - 140, cx, cx + 140)):
+        y = cy + R + 120 + (k % 2) * 40
+        d.pieslice([x - 26, y - 34, x + 26, y + 26], 0, 180, fill=pal["soft"],
+                   outline=pal["ink"], width=5)
+        d.polygon([(x - 26, y - 4), (x, y - 56), (x + 26, y - 4)], fill=pal["soft"])
+    return "1 个刻度盘（指针回到低位）+ 3 滴汗"
+
+
+@page("fever", 8)
+def _(d, pal):
+    """多喝水、多睡觉、吃清淡。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    d.rounded_rectangle([xs[0] - 60, cy - 130, xs[0] + 60, cy + 130], radius=20,
+                        fill=pal["paper"], outline=pal["ink"], width=8)
+    d.rectangle([xs[0] - 48, cy - 20, xs[0] + 48, cy + 118], fill=pal["soft"])
+    d.rounded_rectangle([xs[1] - 150, cy + 10, xs[1] + 150, cy + 130], radius=24,
+                        fill=pal["paper"], outline=pal["ink"], width=8)
+    d.rounded_rectangle([xs[1] - 150, cy - 60, xs[1] - 40, cy + 20], radius=18,
+                        fill=pal["soft"], outline=pal["ink"], width=6)
+    d.pieslice([xs[2] - 130, cy - 90, xs[2] + 130, cy + 130], 0, 180,
+               fill=pal["paper"], outline=pal["ink"], width=8)
+    return "3 个并排符号：水杯 / 床 / 碗"
+
+
+@page("print", 3)
+def _(d, pal):
+    """三种花样：圈、拐弯、尖顶。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    R = min(slot * 0.40, 200)
+    for k, cx in enumerate(xs):
+        d.ellipse([cx - R * 0.78, cy - R, cx + R * 0.78, cy + R],
+                  fill=pal["paper"], outline=pal["ink"], width=8)
+        for i in range(6):
+            t = (i + 1) / 7
+            rx, ry = R * 0.70 * t, R * 0.88 * t
+            if k == 0:                                   # 同心圈
+                d.ellipse([cx - rx, cy - ry, cx + rx, cy + ry], outline=pal["ink"], width=6)
+            elif k == 1:                                 # 拐个弯
+                d.arc([cx - rx - 30, cy - ry, cx + rx - 30, cy + ry], 250, 110,
+                      fill=pal["ink"], width=6)
+            else:                                        # 帐篷尖顶
+                d.line([cx - rx, cy + ry * 0.6, cx, cy - ry * 0.9], fill=pal["ink"], width=6)
+                d.line([cx, cy - ry * 0.9, cx + rx, cy + ry * 0.6], fill=pal["ink"], width=6)
+    return "3 个指纹：同心圈 / 拐弯 / 尖顶，各 6 条纹"
+
+
+@page("print", 4)
+def _(d, pal):
+    """皮肤被挤一下、拉一下，线就定下来了。"""
+    cx, cy = S / 2, S / 2
+    R = 260
+    d.ellipse([cx - R * 0.78, cy - R, cx + R * 0.78, cy + R],
+              fill=pal["paper"], outline=pal["ink"], width=9)
+    for i in range(7):
+        t = (i + 1) / 8
+        rx, ry = R * 0.70 * t, R * 0.88 * t
+        d.arc([cx - rx, cy - ry, cx + rx, cy + ry], 200, 160, fill=pal["ink"], width=6)
+    for a_deg in (20, 160, 270):
+        a = math.radians(a_deg)
+        arrow(d, cx + (R + 150) * math.cos(a) * 0.78, cy + (R + 150) * math.sin(a),
+              cx + (R + 20) * math.cos(a) * 0.78, cy + (R + 20) * math.sin(a),
+              pal, w=9, head=24)
+    return "1 个指纹 + 3 支由外向内挤压的箭头"
+
+
+@page("print", 5)
+def _(d, pal):
+    """长大只是整个变大，花样不变。"""
+    for cx, R in ((S / 2 - 250, 150), (S / 2 + 250, 240)):
+        d.ellipse([cx - R * 0.78, S / 2 - R, cx + R * 0.78, S / 2 + R],
+                  fill=pal["paper"], outline=pal["ink"], width=8)
+        for i in range(6):
+            t = (i + 1) / 7
+            rx, ry = R * 0.70 * t, R * 0.88 * t
+            d.ellipse([cx - rx, S / 2 - ry, cx + rx, S / 2 + ry],
+                      outline=pal["ink"], width=6)
+    return "2 个同样花样的指纹，右边整体更大"
+
+
+@page("print", 7)
+def _(d, pal):
+    """十根手指，十个不一样的花样。"""
+    rnd = random.Random(11)
+    for row_i in range(2):
+        for col in range(5):
+            cx = MARGIN + 110 + col * ((S - 2 * MARGIN - 220) / 4)
+            cy = S / 2 - 180 + row_i * 360
+            R = 96
+            d.ellipse([cx - R * 0.78, cy - R, cx + R * 0.78, cy + R],
+                      fill=pal["paper"], outline=pal["ink"], width=6)
+            kind = (row_i * 5 + col) % 3
+            for i in range(4):
+                t = (i + 1) / 5
+                rx, ry = R * 0.70 * t, R * 0.88 * t
+                if kind == 0:
+                    d.ellipse([cx - rx, cy - ry, cx + rx, cy + ry], outline=pal["ink"], width=4)
+                elif kind == 1:
+                    d.arc([cx - rx - 14, cy - ry, cx + rx - 14, cy + ry], 250, 110,
+                          fill=pal["ink"], width=4)
+                else:
+                    d.line([cx - rx, cy + ry * 0.6, cx, cy - ry * 0.9], fill=pal["ink"], width=4)
+                    d.line([cx, cy - ry * 0.9, cx + rx, cy + ry * 0.6], fill=pal["ink"], width=4)
+    return "10 个指纹，排成 2 行 5 列，三种花样轮换"
+
+
+@page("print", 9)
+def _(d, pal):
+    """手指碰过的地方留下看不见的指纹。"""
+    cx, cy = S / 2, S / 2 + 40
+    d.rounded_rectangle([cx - 170, cy - 220, cx + 170, cy + 220], radius=40,
+                        fill=pal["paper"], outline=pal["ink"], width=9)
+    for k, (dx, dy) in enumerate(((-70, -110), (20, 10), (-30, 130))):
+        R = 62
+        d.ellipse([cx + dx - R * 0.78, cy + dy - R, cx + dx + R * 0.78, cy + dy + R],
+                  outline=pal["soft"], width=5)
+        for i in range(3):
+            t = (i + 1) / 4
+            d.ellipse([cx + dx - R * 0.70 * t, cy + dy - R * 0.88 * t,
+                       cx + dx + R * 0.70 * t, cy + dy + R * 0.88 * t],
+                      outline=pal["soft"], width=4)
+    return "1 只杯子 + 3 个淡色指纹印"
+
+
+@page("year", 2)
+def _(d, pal):
+    """一年十二个月。"""
+    for r in range(3):
+        for c in range(4):
+            x = MARGIN + 40 + c * ((S - 2 * MARGIN - 80) / 4)
+            y = MARGIN + 120 + r * 250
+            w_ = (S - 2 * MARGIN - 80) / 4 - 24
+            d.rounded_rectangle([x, y, x + w_, y + 190], radius=14,
+                                fill=pal["paper"], outline=pal["ink"], width=7)
+    return "12 个等大格子，排成 3 行 4 列"
+
+
+@page("year", 3)
+def _(d, pal):
+    """每月的天数：二月最短。"""
+    n = 12
+    step = (S - 2 * MARGIN) / n
+    base = S - MARGIN - 120
+    for i in range(n):
+        h = 420 if i != 1 else 300
+        x = MARGIN + step * i + 8
+        d.rounded_rectangle([x, base - h, x + step - 16, base], radius=10,
+                            fill=pal["accent"] if i == 1 else pal["paper"],
+                            outline=pal["ink"], width=6)
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=8)
+    return "12 根柱子，第 2 根明显更矮"
+
+
+@page("year", 5)
+def _(d, pal):
+    """十二个月分成四季，每季三个月。"""
+    n = 12
+    step = (S - 2 * MARGIN) / n
+    cols = [pal["accent"], pal["soft"], pal["bark"], pal["line"]]
+    for i in range(n):
+        x = MARGIN + step * i + 6
+        d.rounded_rectangle([x, S / 2 - 160, x + step - 12, S / 2 + 160], radius=12,
+                            fill=cols[i // 3], outline=pal["ink"], width=6)
+    return "12 个格子，按每 3 个一组分成 4 种颜色"
+
+
+@page("year", 7)
+def _(d, pal):
+    """夏天白天长，夜里短。"""
+    base = S / 2
+    d.rounded_rectangle([MARGIN, base - 120, S - MARGIN - 260, base - 20], radius=24,
+                        fill=pal["accent"], outline=pal["ink"], width=8)
+    d.rounded_rectangle([MARGIN, base + 20, MARGIN + 260, base + 120], radius=24,
+                        fill=pal["ink"], outline=pal["ink"], width=8)
+    return "上条长（白天）/ 下条短（夜里），左端对齐"
+
+
+@page("year", 9)
+def _(d, pal):
+    """冬天白天短，夜里长。"""
+    base = S / 2
+    d.rounded_rectangle([MARGIN, base - 120, MARGIN + 260, base - 20], radius=24,
+                        fill=pal["accent"], outline=pal["ink"], width=8)
+    d.rounded_rectangle([MARGIN, base + 20, S - MARGIN - 260, base + 120], radius=24,
+                        fill=pal["ink"], outline=pal["ink"], width=8)
+    return "上条短（白天）/ 下条长（夜里），左端对齐"
+
+
+@page("year", 10)
+def _(d, pal):
+    """日历每行七格。"""
+    cols, rows = 7, 5
+    w_ = (S - 2 * MARGIN) / cols
+    h_ = 150
+    top = S / 2 - rows * h_ / 2
+    for r in range(rows):
+        for c in range(cols):
+            d.rectangle([MARGIN + c * w_, top + r * h_,
+                         MARGIN + (c + 1) * w_, top + (r + 1) * h_],
+                        fill=pal["paper"], outline=pal["ink"], width=5)
+    return "1 个 7 列 5 行的日历格"
+
+
+# ---------------------------------------------------------------- 第五批新书：eye / ear（感官剖面）
+
+@page("eye", 3)
+def _(d, pal):
+    """瞳孔：亮的地方缩小，暗的地方张大。"""
+    for (cx, cy, w_, h_), small in zip(panel2(d, pal), (True, False)):
+        R = min(w_, h_) * 0.32
+        disc(d, cx, cy, R, pal["paper"], pal, w=9)
+        disc(d, cx, cy, R * 0.52, pal["soft"], pal, w=7)
+        disc(d, cx, cy, R * (0.16 if small else 0.38), pal["ink"], pal, w=4)
+    return "左格瞳孔小（亮处）/ 右格瞳孔大（暗处），虹膜和眼白相同"
+
+
+@page("eye", 4)
+def _(d, pal):
+    """晶状体把散开的光聚到一点。"""
+    cx, cy = S / 2, S / 2
+    d.ellipse([cx - 70, cy - 190, cx + 70, cy + 190], fill=pal["paper"],
+              outline=pal["ink"], width=9)
+    focus = cx + 320
+    for dy in (-150, 0, 150):
+        d.line([MARGIN, cy + dy, cx - 40, cy + dy], fill=pal["ink"], width=8)
+        d.line([cx + 40, cy + dy * 0.72, focus, cy], fill=pal["ink"], width=8)
+    disc(d, focus, cy, 16, pal["accent"], pal, w=4)
+    return "1 片晶状体 + 3 条入射光 + 3 条汇聚到 1 个点的出射光"
+
+
+@page("eye", 6)
+def _(d, pal):
+    """落在视网膜上的像是倒过来的。"""
+    cy = S / 2
+    lx, rx = MARGIN + 150, S - MARGIN - 150
+    d.rounded_rectangle([lx - 26, cy - 150, lx + 26, cy + 60], radius=10,
+                        fill=pal["accent"], outline=pal["ink"], width=7)
+    d.ellipse([lx - 20, cy - 200, lx + 20, cy - 140], fill=pal["accent"])
+    d.ellipse([S / 2 - 46, cy - 150, S / 2 + 46, cy + 150], fill=pal["paper"],
+              outline=pal["ink"], width=8)
+    d.rounded_rectangle([rx - 26, cy - 60, rx + 26, cy + 150], radius=10,
+                        fill=pal["accent"], outline=pal["ink"], width=7)
+    d.ellipse([rx - 20, cy + 140, rx + 20, cy + 200], fill=pal["accent"])
+    for dy, dy2 in ((-170, 170), (60, -60)):
+        d.line([lx, cy + dy, rx, cy + dy2], fill=pal["ink"], width=6)
+    return "左边 1 支正立的蜡烛 → 穿过晶状体 → 右边 1 支倒立的蜡烛，2 条交叉光线"
+
+
+@page("eye", 8)
+def _(d, pal):
+    """两只眼睛看到的稍稍不同，合起来才知道远近。"""
+    cy = S - MARGIN - 160
+    lx, rx = S / 2 - 210, S / 2 + 210
+    for cx in (lx, rx):
+        d.ellipse([cx - 90, cy - 54, cx + 90, cy + 54], fill=pal["paper"],
+                  outline=pal["ink"], width=8)
+        disc(d, cx, cy, 30, pal["ink"], pal, w=4)
+    tx, ty = S / 2, MARGIN + 150
+    d.rounded_rectangle([tx - 70, ty - 60, tx + 70, ty + 90], radius=18,
+                        fill=pal["accent"], outline=pal["ink"], width=8)
+    for cx in (lx, rx):
+        d.line([cx, cy - 60, tx, ty + 90], fill=pal["ink"], width=7)
+    return "2 只眼睛 + 1 个杯子 + 2 条成明显夹角的视线"
+
+
+@page("eye", 9)
+def _(d, pal):
+    """看远处晶状体变薄，看近处变厚。"""
+    for (cx, cy, w_, h_), thin in zip(panel2(d, pal), (True, False)):
+        half = w_ * (0.06 if thin else 0.15)
+        d.ellipse([cx - half, cy - h_ * 0.28, cx + half, cy + h_ * 0.28],
+                  fill=pal["paper"], outline=pal["ink"], width=9)
+        if thin:
+            for k in (-1, 0, 1):
+                d.line([cx - w_ * 0.40, cy + k * 60, cx + w_ * 0.40, cy + k * 60],
+                       fill=pal["ink"], width=6)
+        else:
+            for k in (-1, 0, 1):
+                d.line([cx - w_ * 0.40, cy + k * 110, cx + w_ * 0.40, cy + k * 30],
+                       fill=pal["ink"], width=6)
+    return "左格晶状体薄、光线平行（看远）/ 右格晶状体厚、光线发散（看近）"
+
+
+@page("ear", 2)
+def _(d, pal):
+    """外耳、中耳、内耳，三段。"""
+    w_ = (S - 2 * MARGIN) / 3
+    for k, col in enumerate((pal["paper"], pal["soft"], pal["bark"])):
+        x = MARGIN + k * w_
+        d.rectangle([x, S / 2 - 240, x + w_, S / 2 + 240], fill=col,
+                    outline=pal["ink"], width=8)
+    return "3 段等宽区域，颜色依次不同（外耳 / 中耳 / 内耳）"
+
+
+@page("ear", 4)
+def _(d, pal):
+    """耳道尽头是一张薄薄的耳膜。"""
+    cy = S / 2
+    x0, x1 = MARGIN + 60, S - MARGIN - 240
+    d.rectangle([x0, cy - 110, x1, cy + 110], fill=pal["paper"],
+                outline=pal["ink"], width=8)
+    d.line([x1, cy - 110, x1, cy + 110], fill=pal["accent"], width=24)
+    arrow(d, x0 - 10, cy, x0 + 160, cy, pal, w=10, head=26)
+    return "1 条耳道 + 尽头 1 张绷紧的耳膜 + 1 支入射箭头"
+
+
+@page("ear", 5)
+def _(d, pal):
+    """声音大，耳膜抖得厉害；声音小，只轻轻动一下。"""
+    for (cx, cy, w_, h_), loud in zip(panel2(d, pal), (True, False)):
+        x1 = cx + w_ * 0.22
+        d.rectangle([cx - w_ * 0.36, cy - 80, x1, cy + 80], fill=pal["paper"],
+                    outline=pal["ink"], width=7)
+        bulge = 70 if loud else 16
+        d.arc([x1 - bulge, cy - 80, x1 + bulge, cy + 80], 270, 90,
+              fill=pal["accent"], width=18)
+        for i in range(3 if loud else 1):
+            r = 40 + i * 34
+            d.arc([cx - w_ * 0.36 - r, cy - r, cx - w_ * 0.36 + r, cy + r], 300, 60,
+                  fill=pal["ink"], width=7)
+    return "左格：3 道声波、耳膜鼓得远 / 右格：1 道声波、耳膜几乎不动"
+
+
+@page("ear", 6)
+def _(d, pal):
+    """三块小骨头一个推一个，把抖动放大。"""
+    cy = S / 2
+    xs = [MARGIN + 180 + i * 250 for i in range(3)]
+    for i, x in enumerate(xs):
+        d.rounded_rectangle([x - 70, cy - 40 - i * 12, x + 70, cy + 40 + i * 12],
+                            radius=26, fill=pal["paper"], outline=pal["ink"], width=8)
+    for i in range(2):
+        arrow(d, xs[i] + 74, cy, xs[i + 1] - 74, cy, pal, w=8 + i * 4, head=22 + i * 6)
+    return "3 块小骨依次相接 + 2 支箭头，后一支更粗（放大）"
+
+
+@page("ear", 7)
+def _(d, pal):
+    """内耳是一根卷起来的管子，像蜗牛。"""
+    cx, cy = S / 2, S / 2
+    pts = []
+    for i in range(220):
+        t = i / 220
+        a = t * 2.5 * 2 * math.pi
+        r = 340 * (1 - t * 0.86)
+        pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
+    d.line(pts, fill=pal["accent"], width=26, joint="curve")
+    return "1 条螺旋，卷 2.5 圈（耳蜗）"
+
+
+@page("ear", 8)
+def _(d, pal):
+    """水一晃，小毛就跟着弯。"""
+    base = S / 2 + 160
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    n = 22
+    step = (S - 2 * MARGIN) / n
+    for i in range(n):
+        x = MARGIN + step * (i + 0.5)
+        bend = 44 if 6 <= i <= 14 else 0          # 波下面的那一段弯倒
+        d.line([x, base, x + bend, base - 120], fill=pal["ink"], width=8)
+    pts = [(MARGIN + step * (i + 0.5), base - 210 + 46 * math.sin(i / 2.2))
+           for i in range(n)]
+    d.line(pts, fill=pal["accent"], width=12, joint="curve")
+    return "22 根小毛，其中 9 根在波下方弯倒 + 1 条起伏的波"
+
+
 # ---------------------------------------------------------------- 第五批新书：more（比多少）
 # 整本讲一一对应，数目全部由构造保证。用的都是今天验证过的图元：lay / disc / row。
 
