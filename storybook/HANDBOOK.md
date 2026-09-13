@@ -337,6 +337,7 @@ venv\python.exe storybook\contact_sheet.py storybook\out\sea_lora
 | 人不像他 | 提示词里描述了五官 | 删掉所有五官描述 |
 | 出成了角色设定图 | `white background` + `full body` 触发了角色表模式 | 正面加 `only one child, single character`，负面加 `character sheet, multiple views` |
 | 水墨页右下角盖了红印章（Qwen） | 画风写了 `Chinese ink wash` / `rice paper`，模型模仿国画落款 | `clean_seal.py` 事后抹掉（`render_qwen_books.py` 对水墨书自动做）；章可能很淡（比纸色 r−g 只高 10–25），有时左右两个下角各一个，工具都能处理 |
+| 一整本的主体全画成了同一个东西（八颗行星全是土星） | 模型对某个词有强先验：说 `planet` 就画土星，说 `moon` 就画环形山。画风越装饰（彩色玻璃、版画），先验越压得住描述 | **逐页写死「不是什么」**：`one plain round planet with no rings at all`，月亮类再加 `no craters`。审图时**必须逐页核对画面主体是不是这一页文字说的那个东西**——只看画风统一和有没有缺页会漏掉整本级别的错误（这本 12 页里错了 4 页才被用户发现） |
 | 有他的页画成了「另一个孩子」，画风也跑掉（Qwen Edit） | 场景太满：一整座积木房子、四分之三侧身、一堆道具。画面里要交代的东西太多，模型顾不上两张参考照片，干脆自己编一个扁平矢量的通用小孩 | 把场景削到只剩「他 + 一件道具」，正面近景、背景留白（`stands facing us, close up, holding one large paper triangle, plain background`）。这样能救回肤色、发型、衣着，但**脸未必救得回来**——`shapes` p12 连试三次都不像本人。**三次为止**：再试是烧 GPU，要么接受，要么把这一页改写成没有他的页 |
 | 爸爸的脸和手被涂成绿色、像少年（Qwen） | 画风写了 `limited palette of bright red, green, yellow and navy`，模型连皮肤也只用这几种颜色 | style 里去掉「只用这几色」的说法，加 `every person has natural skin tones`；爸爸写成 `a tall grown adult man with short black hair and natural skin, in a grey jacket and dark trousers` |
 | 工程车画成写实机械图（Qwen 文生图） | 机器题材的先验是照片；画风词写 `toy-like` 也压不住 | scene 里写 `a big simple cartoon excavator with chunky rounded shapes`——「cartoon」这个词才起作用 |
