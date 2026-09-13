@@ -1,0 +1,114 @@
+{
+  "title": "谁在冬天睡大觉",
+  "subtitle": "把身体调慢，等春天",
+  "slug": "sleepwin",
+  "seed_base": 66000,
+  "character": "wearing a thick blue jumper, dark trousers and boots, short black hair",
+  "style": "children's picture book illustration, winter gouache on textured paper, soft rounded shapes with fine outlines, cool blue-grey, warm brown and cream, quiet and cosy",
+  "style_label": "冬日水粉",
+  "keyword": "冬眠",
+  "diagram_pages": [
+    3,
+    4,
+    6,
+    9,
+    10
+  ],
+  "palette": {
+    "ink": "#262c34",
+    "soft": "#64707c",
+    "ground": "#f1f3f6",
+    "paper": "#fbfcfd",
+    "accent": "#b5734a",
+    "bark": "#8b959e",
+    "line": "#d8dde3",
+    "ink_d": "#e9edf1",
+    "soft_d": "#99a4ae",
+    "ground_d": "#131a22",
+    "paper_d": "#1d242c",
+    "accent_d": "#c98a5e",
+    "bark_d": "#8b959e",
+    "line_d": "#39424b"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "冬天来了，\n院子里安安静静的。\n夏天那些虫子和小鸟，\n忽然都不见了。\n它们去哪儿了呢？",
+      "scene": "The little boy stands in a bare winter yard in a thick jumper, looking around at the empty branches.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "有的飞走了，\n有的躲起来睡觉。\n躲起来睡一冬天，\n这件事叫「冬眠」。",
+      "scene": "One tree hollow on a cream background with a small curled-up animal shape inside it, sleeping. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "冬眠可不是普通的睡觉。\n身体会把自己调慢：\n体温降下来，\n心跳慢下来，\n呼吸也变得很轻。",
+      "scene": "A simple clear diagram, drawn flat and plain: two rows on a cream background: the top row a wavy line with many close peaks, the bottom row the same line stretched out with far fewer peaks. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "为什么要这样呢？\n因为冬天找不到吃的。\n身体调慢了，\n用的力气就少，\n靠秋天存的那点脂肪就够撑。",
+      "scene": "A simple clear diagram, drawn flat and plain: two bars side by side on a cream background: a tall one and a much shorter one, each with a small animal symbol above it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "土拨鼠是真正的冬眠。\n它在洞里蜷成一团，\n几个月几乎不动，\n偶尔才醒一小会儿。",
+      "scene": "One burrow cross-section on a cream background with a round curled animal asleep at the bottom. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "熊不太一样。\n它的体温降得不多，\n睡得也浅，\n有时候还会出来走走。\n所以不算真正的冬眠。",
+      "scene": "A simple clear diagram, drawn flat and plain: two thermometers side by side on a cream background: the left one with the liquid very low, the right one only slightly lower than normal. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "青蛙和乌龟\n钻进池塘底的泥里。\n那里的水不会结冰，\n它们把自己埋起来，\n慢慢等。",
+      "scene": "One pond cross-section on a cream background with ice on top and a small frog buried in the mud at the bottom. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "松鼠不冬眠。\n它秋天到处藏坚果，\n冬天再一个一个找出来。\n有些忘了挖，\n后来就长成了树。",
+      "scene": "One squirrel on a cream background burying a nut at the foot of a tree, with a small sprout nearby. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "冬眠的动物最怕被吵醒。\n醒一次要花掉\n好多存下来的力气。\n醒太多次，\n可能就撑不到春天。",
+      "scene": "A simple clear diagram, drawn flat and plain: one bar on a cream background divided into ten equal segments, with three of them crossed out. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "什么时候醒呢？\n天气暖起来，\n土变松，\n身体就知道春天到了。\n它们自己会醒。",
+      "scene": "A simple clear diagram, drawn flat and plain: one thermometer on a cream background with the liquid rising, and one arrow beside it pointing up. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "所以冬天看见树洞、\n看见地上的小洞，\n别去掏、别去敲。\n里面也许\n正有谁在睡觉。",
+      "scene": "One tree hollow and one small burrow opening on a cream background, both quiet and undisturbed. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我蹲下来，\n看见墙根有个小洞。\n我没有去掏它。\n我小声说了句：\n春天见。",
+      "scene": "The little boy crouches beside a small hole at the foot of a wall, not touching it, speaking softly.",
+      "has_boy": true
+    }
+  ]
+}
