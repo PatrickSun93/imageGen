@@ -4,13 +4,13 @@
   "slug": "post",
   "seed_base": 68000,
   "character": "wearing a postal blue t-shirt, grey shorts and white sneakers, short black hair",
-  "style": "children's picture book illustration, fine engraved line drawing with flat colour fills, ink blue, stamp red and aged cream, clean and orderly, the illustration covers the entire image area",
-  "style_label": "邮票风版画",
+  "style": "children's picture book illustration, bold flat graphic art with thick clean outlines and flat fills in ink blue, postal red and warm off-white, simple chunky shapes, the illustration covers the entire image area",
+  "style_label": "平涂线条",
   "keyword": "地址",
   "diagram_pages": [
+    2,
     3,
-    4,
-    6,
+    5,
     8,
     10
   ],

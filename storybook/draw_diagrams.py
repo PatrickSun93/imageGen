@@ -1096,7 +1096,7 @@ def _(d, pal):
     return "左格：1 根完整羽毛（32 条细纹）/ 右格：80 粒磨碎的粉末"
 
 
-@page("post", 3)
+@page("post", 2)
 def _(d, pal):
     """信封上三块地方：邮票、寄信人、收信人。"""
     cx, cy = S / 2, S / 2
@@ -1114,7 +1114,7 @@ def _(d, pal):
     return "1 个信封 + 右上邮票 + 左上 2 行寄信人 + 中间 3 行收信人"
 
 
-@page("post", 4)
+@page("post", 3)
 def _(d, pal):
     """地址从大写到小：城市、街道、门牌。"""
     cx, cy = S / 2, S / 2
@@ -1127,7 +1127,7 @@ def _(d, pal):
     return "3 个逐层缩小的嵌套方框：城市 / 街道 / 门牌"
 
 
-@page("post", 6)
+@page("post", 5)
 def _(d, pal):
     """分拣中心按方向分成几堆。"""
     cx, cy = MARGIN + 220, S / 2
@@ -1546,6 +1546,30 @@ def _(d, pal):
     return "上排 5 棵（第 3 棵只剩树桩）/ 下排 5 棵（第 3 棵是小树苗）"
 
 
+@page("plastic", 12)
+def _(d, pal):
+    """回收桶：桶身要有明确的回收标志，不是普通垃圾桶。"""
+    ground = S - MARGIN - 150
+    d.line([0, ground, S, ground], fill=pal["ink"], width=10)
+    cx = S / 2
+    bw = 360
+    d.rounded_rectangle([cx - bw / 2, ground - 520, cx + bw / 2, ground - 30], radius=30,
+                        fill=pal["accent"], outline=pal["ink"], width=10)
+    d.rounded_rectangle([cx - bw / 2 - 18, ground - 590, cx + bw / 2 + 18, ground - 500],
+                        radius=24, fill=pal["ink"])
+    # 三箭头回收标志
+    R = 110
+    for i in range(3):
+        a0 = i * 120 - 90
+        d.arc([cx - R, ground - 300 - R, cx + R, ground - 300 + R], a0 + 8, a0 + 86,
+              fill=pal["paper"], width=22)
+        a_end, a_pre = math.radians(a0 + 86), math.radians(a0 + 68)
+        arrow(d, cx + R * math.cos(a_pre), ground - 300 + R * math.sin(a_pre),
+              cx + R * math.cos(a_end), ground - 300 + R * math.sin(a_end),
+              pal, w=14, head=34)
+    return "1 个回收桶 + 桶身 1 个三箭头回收标志"
+
+
 @page("plastic", 3)
 def _(d, pal):
     """树叶会被吃掉，最后变回土。"""
@@ -1933,6 +1957,23 @@ def _(d, pal):
     return "3 个符号：房子（好）/ 大树（划掉）/ 空地（划掉）"
 
 
+@page("rainbow", 9)
+def _(d, pal):
+    """双彩虹：外面那条淡一些，颜色还是反的——紫在外，红在里。
+
+    模型画的版本里两条弧颜色顺序一样，正文说的「反过来」没画出来。
+    """
+    bands = ["#c0392b", "#e67e22", "#f1c40f", "#27ae60", "#2980b9", "#4b3fa0", "#7d3c98"]
+    cx, cy = S / 2, S - MARGIN - 40
+    for i, col in enumerate(bands):                       # 内弧：红在最外
+        r = 330 - i * 34
+        d.arc([cx - r, cy - r, cx + r, cy + r], 180, 360, fill=col, width=30)
+    for i, col in enumerate(reversed(bands)):             # 外弧：紫在最外，且更淡
+        r = 500 - i * 26
+        d.arc([cx - r, cy - r, cx + r, cy + r], 180, 360, fill=col, width=16)
+    return "2 条彩虹：内弧红在外紫在内（粗）/ 外弧紫在外红在内（细），顺序相反"
+
+
 @page("rainbow", 2)
 def _(d, pal):
     """白光穿过三棱镜，分成七色。"""
@@ -2008,6 +2049,42 @@ def _(d, pal):
         r = 420 - i * 52
         d.arc([cx - r, cy - r, cx + r, cy + r], 180, 360, fill=col, width=44)
     return "7 条同心弧，最外红、最内紫"
+
+
+@page("glass", 6)
+def _(d, pal):
+    """玻璃为什么透明：里面排得乱，可挨得紧，光直接穿过去。
+
+    模型画的版本里三条光线汇聚到方块内部就停住了，没有穿出去。
+    """
+    cx, cy = S / 2, S / 2
+    w_, h_ = 420, 460
+    d.rounded_rectangle([cx - w_ / 2, cy - h_ / 2, cx + w_ / 2, cy + h_ / 2], radius=18,
+                        fill=pal["paper"], outline=pal["ink"], width=9)
+    rnd = random.Random(29)
+    for _ in range(70):                                   # 排得乱但挨得紧
+        gx = cx + rnd.uniform(-w_ / 2 + 30, w_ / 2 - 30)
+        gy = cy + rnd.uniform(-h_ / 2 + 30, h_ / 2 - 30)
+        disc(d, gx, gy, 12, pal["soft"], pal, w=3)
+    for dy in (-140, 0, 140):                             # 三条光线一直穿到画面右缘
+        d.line([MARGIN, cy + dy, S - MARGIN, cy + dy], fill=pal["accent"], width=12)
+        arrow(d, S - MARGIN - 120, cy + dy, S - MARGIN, cy + dy, pal, w=12, head=30)
+    return "1 块玻璃（70 个乱排的小颗粒）+ 3 条从左穿到右的光线，每条末端 1 个箭头"
+
+
+@page("glass", 10)
+def _(d, pal):
+    """回收玻璃更省火：第二支温度计要明显更低。"""
+    for (cx, cy, w_, h_), hot in zip(panel2(d, pal), (True, False)):
+        bw, bh = 70, h_ * 0.66
+        d.rounded_rectangle([cx - bw / 2, cy - bh / 2, cx + bw / 2, cy + bh / 2],
+                            radius=34, fill=pal["paper"], outline=pal["ink"], width=9)
+        fill_h = bh * (0.84 if hot else 0.34)
+        d.rounded_rectangle([cx - bw / 2 + 14, cy + bh / 2 - fill_h,
+                             cx + bw / 2 - 14, cy + bh / 2 - 14],
+                            radius=26, fill=pal["accent"])
+        disc(d, cx, cy + bh / 2, 56, pal["accent"], pal, w=9)
+    return "左格液柱 84%（烧沙子）/ 右格液柱 34%（烧碎玻璃），差别明显"
 
 
 @page("glass", 3)
@@ -2470,6 +2547,61 @@ def _(d, pal):
 
 
 # ---------------------------------------------------------------- 第五批新书：eye / ear（感官剖面）
+
+@page("eye", 2)
+def _(d, pal):
+    """有光才看得见：亮房间看得清椅子，暗房间几乎看不见。
+
+    这页交给模型画了两次，两次都把并排的两格理解成「一本摊开的书的两页」。
+    它本质就是一个亮/暗对比，交给 panel2 才靠谱。
+    """
+    (lx, ly, lw, lh), (rx, ry, rw, rh) = panel2(d, pal)
+    d.rectangle([rx - rw / 2 + 6, ry - rh / 2 + 6, rx + rw / 2 - 6, ry + rh / 2 - 6],
+                fill=pal["ink"])                                  # 右格：关了灯
+    for (cx, cy, w_, h_), lit in (((lx, ly, lw, lh), True), ((rx, ry, rw, rh), False)):
+        col = pal["ink"] if lit else pal["soft"]
+        seat_y = cy + h_ * 0.16
+        d.rounded_rectangle([cx - 110, seat_y, cx + 110, seat_y + 34], radius=10,
+                            fill=pal["accent"] if lit else None, outline=col, width=8)
+        d.line([cx - 96, seat_y + 34, cx - 96, seat_y + 180], fill=col, width=10)
+        d.line([cx + 96, seat_y + 34, cx + 96, seat_y + 180], fill=col, width=10)
+        d.line([cx - 96, seat_y, cx - 96, seat_y - 190], fill=col, width=10)
+        d.line([cx + 96, seat_y, cx + 96, seat_y - 190], fill=col, width=10)
+        for k in range(3):
+            y = seat_y - 40 - k * 52
+            d.line([cx - 96, y, cx + 96, y], fill=col, width=8)
+        if lit:
+            bulb = (cx + w_ * 0.30, cy - h_ * 0.30)
+            disc(d, bulb[0], bulb[1], 46, pal["accent"], pal, w=8)
+            for i in range(8):
+                a = i * math.pi / 4
+                d.line([bulb[0] + 60 * math.cos(a), bulb[1] + 60 * math.sin(a),
+                        bulb[0] + 100 * math.cos(a), bulb[1] + 100 * math.sin(a)],
+                       fill=pal["accent"], width=7)
+    return "左格：亮着的灯 + 看得清的椅子 / 右格：全黑 + 只剩轮廓的椅子"
+
+
+@page("eye", 5)
+def _(d, pal):
+    """视网膜：眼球剖面，后壁上铺着一层膜。
+
+    模型把这页画成了「脸上一只装饰性的大眼睛」，没有剖面也没有后壁那层膜。
+    """
+    cx, cy, R = S / 2, S / 2, 320
+    disc(d, cx, cy, R, pal["paper"], pal, w=10)
+    # 后壁那层膜：右侧一段加厚的弧
+    d.arc([cx - R, cy - R, cx + R, cy + R], -70, 70, fill=pal["accent"], width=34)
+    # 前面的角膜与晶状体
+    d.arc([cx - R, cy - R, cx + R, cy + R], 130, 230, fill=pal["soft"], width=18)
+    d.ellipse([cx - R * 0.86, cy - 90, cx - R * 0.52, cy + 90],
+              fill=pal["soft"], outline=pal["ink"], width=8)
+    for dy in (-120, 0, 120):
+        d.line([cx - R - 130, cy + dy, cx - R * 0.72, cy + dy * 0.55],
+               fill=pal["ink"], width=8)
+        d.line([cx - R * 0.52, cy + dy * 0.30, cx + R * 0.92, cy - dy * 0.55],
+               fill=pal["ink"], width=8)
+    return "1 个眼球剖面 + 后壁 1 层加厚的膜（视网膜）+ 3 条穿过晶状体的光线"
+
 
 @page("eye", 3)
 def _(d, pal):
