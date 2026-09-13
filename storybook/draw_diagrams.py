@@ -994,6 +994,379 @@ def _(d, pal):
     return "1 个分成 12 格的勺子（盘小柄粗），只有 1 格是满的"
 
 
+# ---------------------------------------------------------------- 第五批新书：camo / post / doctor / share
+
+@page("camo", 3)
+def _(d, pal):
+    """条纹配条纹，斑点配斑点，远看就糊成一片。"""
+    for (cx, cy, w_, h_), stripes in zip(panel2(d, pal), (True, False)):
+        rnd = random.Random(31 if stripes else 32)
+        if stripes:
+            for i in range(14):
+                x = cx - w_ / 2 + w_ * (i + 0.5) / 14
+                d.line([x, cy - h_ / 2 + 10, x, cy + h_ / 2 - 10], fill=pal["soft"], width=22)
+            for i in range(6):
+                x = cx - w_ * 0.22 + w_ * 0.44 * i / 5
+                d.line([x, cy - 150, x, cy + 150], fill=pal["ink"], width=20)
+        else:
+            for _ in range(40):
+                gx = cx + rnd.uniform(-w_ / 2 + 30, w_ / 2 - 30)
+                gy = cy + rnd.uniform(-h_ / 2 + 30, h_ / 2 - 30)
+                disc(d, gx, gy, 26, pal["soft"], pal, w=3)
+            for _ in range(12):
+                gx = cx + rnd.uniform(-w_ * 0.24, w_ * 0.24)
+                gy = cy + rnd.uniform(-150, 150)
+                disc(d, gx, gy, 24, pal["ink"], pal, w=3)
+    return "左格：14 条背景竖纹 + 6 条动物竖纹 / 右格：40 个背景斑点 + 12 个动物斑点"
+
+
+@page("camo", 4)
+def _(d, pal):
+    """色素袋张开或收拢，颜色就变了。"""
+    for (cx, cy, w_, h_), spread in zip(panel2(d, pal), (False, True)):
+        cols, rows = 5, 5
+        for i in range(cols):
+            for j in range(rows):
+                gx = cx - w_ * 0.30 + w_ * 0.60 * i / (cols - 1)
+                gy = cy - h_ * 0.30 + h_ * 0.60 * j / (rows - 1)
+                disc(d, gx, gy, 46 if spread else 16, pal["accent"], pal, w=5)
+    return "左格 25 个收拢的小色素袋 / 右格 25 个张开的大色素袋"
+
+
+@page("camo", 6)
+def _(d, pal):
+    """同一只动物，三种花样等于三句话。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    rnd = random.Random(9)
+    for k, cx in enumerate(xs):
+        body = [(cx - 130, cy + 90), (cx - 90, cy - 70), (cx + 90, cy - 70), (cx + 130, cy + 90)]
+        fill = (pal["ink"], pal["accent"], pal["paper"])[k]
+        d.polygon(body, fill=fill)
+        for a, b in zip(body, body[1:] + body[:1]):
+            d.line([a, b], fill=pal["ink"], width=8)
+        if k == 2:
+            for _ in range(9):
+                gx = cx + rnd.uniform(-90, 90)
+                gy = cy + rnd.uniform(-50, 60)
+                disc(d, gx, gy, 20, pal["accent"], pal, w=4)
+    return "3 个相同轮廓：全深 / 全鲜艳 / 带 9 块斑，三种「说法」"
+
+
+@page("camo", 8)
+def _(d, pal):
+    """没毒的长得像有毒的，鸟就不敢碰。"""
+    for (cx, cy, w_, h_), warn in zip(panel2(d, pal), (True, False)):
+        for s in (-1, 1):
+            wing = [(cx, cy), (cx + s * 190, cy - 150), (cx + s * 210, cy + 40), (cx, cy + 90)]
+            d.polygon(wing, fill=pal["accent"])
+            for a, b in zip(wing, wing[1:] + wing[:1]):
+                d.line([a, b], fill=pal["ink"], width=7)
+            for k in range(3):
+                disc(d, cx + s * (70 + k * 55), cy - 60 + k * 40, 18, pal["paper"], pal, w=4)
+        d.rounded_rectangle([cx - 18, cy - 60, cx + 18, cy + 110], radius=14,
+                            fill=pal["ink"])
+        if warn:
+            tri = [(cx, cy - 260), (cx - 60, cy - 160), (cx + 60, cy - 160)]
+            d.polygon(tri, fill=pal["accent"])
+            for a, b in zip(tri, tri[1:] + tri[:1]):
+                d.line([a, b], fill=pal["ink"], width=7)
+    return "两只花纹完全相同的蝴蝶，左边多 1 个警告三角（有毒）"
+
+
+@page("camo", 10)
+def _(d, pal):
+    """结构色磨碎就没了。"""
+    for (cx, cy, w_, h_), whole in zip(panel2(d, pal), (True, False)):
+        if whole:
+            quill = [(cx, cy - h_ * 0.34), (cx, cy + h_ * 0.34)]
+            d.line(quill, fill=pal["ink"], width=12)
+            for i in range(16):
+                t = i / 15
+                y = cy - h_ * 0.32 + h_ * 0.62 * t
+                span = 150 * math.sin(math.pi * t) + 30
+                for s in (-1, 1):
+                    d.line([cx, y, cx + s * span, y - 26], fill=pal["accent"], width=6)
+        else:
+            rnd = random.Random(17)
+            for _ in range(80):
+                gx = cx + rnd.uniform(-w_ * 0.26, w_ * 0.26)
+                gy = cy + rnd.uniform(-60, 120)
+                disc(d, gx, gy, 7, pal["soft"], pal, w=1)
+    return "左格：1 根完整羽毛（32 条细纹）/ 右格：80 粒磨碎的粉末"
+
+
+@page("post", 3)
+def _(d, pal):
+    """信封上三块地方：邮票、寄信人、收信人。"""
+    cx, cy = S / 2, S / 2
+    w_, h_ = S - 2 * MARGIN - 80, 520
+    d.rounded_rectangle([cx - w_ / 2, cy - h_ / 2, cx + w_ / 2, cy + h_ / 2], radius=16,
+                        fill=pal["paper"], outline=pal["ink"], width=9)
+    d.rounded_rectangle([cx + w_ / 2 - 170, cy - h_ / 2 + 30, cx + w_ / 2 - 40, cy - h_ / 2 + 160],
+                        radius=8, fill=pal["accent"], outline=pal["ink"], width=7)
+    for i in range(2):
+        d.line([cx - w_ / 2 + 50, cy - h_ / 2 + 60 + i * 40,
+                cx - w_ / 2 + 260, cy - h_ / 2 + 60 + i * 40], fill=pal["soft"], width=12)
+    for i in range(3):
+        d.line([cx - 140, cy + 30 + i * 48, cx + 260, cy + 30 + i * 48],
+               fill=pal["ink"], width=14)
+    return "1 个信封 + 右上邮票 + 左上 2 行寄信人 + 中间 3 行收信人"
+
+
+@page("post", 4)
+def _(d, pal):
+    """地址从大写到小：城市、街道、门牌。"""
+    cx, cy = S / 2, S / 2
+    for i, frac in enumerate((1.0, 0.66, 0.34)):
+        w_ = (S - 2 * MARGIN) * frac
+        h_ = 460 * frac
+        d.rounded_rectangle([cx - w_ / 2, cy - h_ / 2, cx + w_ / 2, cy + h_ / 2], radius=18,
+                            fill=pal["paper"] if i else pal["ground"],
+                            outline=pal["ink"], width=9)
+    return "3 个逐层缩小的嵌套方框：城市 / 街道 / 门牌"
+
+
+@page("post", 6)
+def _(d, pal):
+    """分拣中心按方向分成几堆。"""
+    cx, cy = MARGIN + 220, S / 2
+    d.rounded_rectangle([cx - 140, cy - 150, cx + 140, cy + 150], radius=22,
+                        fill=pal["soft"], outline=pal["ink"], width=9)
+    for k, dy in enumerate((-210, -70, 70, 210)):
+        arrow(d, cx + 160, cy, S - MARGIN - 220, cy + dy, pal, w=10, head=26)
+        d.rounded_rectangle([S - MARGIN - 200, cy + dy - 50, S - MARGIN - 40, cy + dy + 50],
+                            radius=14, fill=pal["paper"], outline=pal["ink"], width=7)
+    return "1 个分拣中心 + 4 支箭头 + 4 堆信"
+
+
+@page("post", 8)
+def _(d, pal):
+    """一层层分下去，最后落到一户人家。"""
+    cx, cy = S / 2, S / 2
+    steps = ((S - 2 * MARGIN, 420), (620, 300), (340, 180), (150, 90))
+    for i, (w_, h_) in enumerate(steps):
+        d.rounded_rectangle([cx - w_ / 2, cy - h_ / 2, cx + w_ / 2, cy + h_ / 2], radius=16,
+                            fill=pal["accent"] if i == len(steps) - 1 else pal["paper"],
+                            outline=pal["ink"], width=8)
+    return "4 层逐步缩小的区域，最里一层填成强调色（那一户）"
+
+
+@page("post", 10)
+def _(d, pal):
+    """信箱上的小红旗竖起来，表示有信要寄。"""
+    cx = S / 2
+    base = S - MARGIN - 120
+    d.rounded_rectangle([cx - 30, base - 360, cx + 30, base], radius=12,
+                        fill=pal["soft"], outline=pal["ink"], width=8)
+    d.pieslice([cx - 170, base - 520, cx + 170, base - 280], 180, 360,
+               fill=pal["paper"], outline=pal["ink"], width=9)
+    d.rectangle([cx - 170, base - 400, cx + 170, base - 340], fill=pal["paper"],
+                outline=pal["ink"], width=9)
+    d.line([cx + 180, base - 300, cx + 180, base - 480], fill=pal["ink"], width=10)
+    flag = [(cx + 186, base - 480), (cx + 300, base - 450), (cx + 186, base - 420)]
+    d.polygon(flag, fill=pal["accent"])
+    for a, b in zip(flag, flag[1:] + flag[:1]):
+        d.line([a, b], fill=pal["ink"], width=6)
+    return "1 个路边信箱 + 1 面竖起来的小红旗"
+
+
+@page("doctor", 4)
+def _(d, pal):
+    """听诊器：圆片、管子、两个耳塞。"""
+    cx = S / 2
+    disc(d, cx, S - MARGIN - 200, 110, pal["soft"], pal, w=10)
+    disc(d, cx, S - MARGIN - 200, 66, pal["paper"], pal, w=7)
+    d.line([cx, S - MARGIN - 310, cx, S / 2 - 60], fill=pal["ink"], width=14)
+    for s in (-1, 1):
+        pts = [(cx, S / 2 - 60), (cx + s * 120, S / 2 - 200), (cx + s * 150, MARGIN + 170)]
+        d.line(pts, fill=pal["ink"], width=14, joint="curve")
+        disc(d, cx + s * 150, MARGIN + 150, 34, pal["accent"], pal, w=7)
+    return "1 个听诊器：1 个圆片 + 1 条管子 + 2 个耳塞"
+
+
+@page("doctor", 6)
+def _(d, pal):
+    """张大嘴说「啊」，舌头压下去才看得见后面。"""
+    cx, cy = S / 2, S / 2 + 20
+    d.ellipse([cx - 300, cy - 220, cx + 300, cy + 220], fill=pal["accent"],
+              outline=pal["ink"], width=10)
+    d.pieslice([cx - 230, cy - 40, cx + 230, cy + 260], 180, 360,
+               fill=pal["soft"], outline=pal["ink"], width=8)
+    d.ellipse([cx - 90, cy - 150, cx + 90, cy - 40], fill=pal["paper"],
+              outline=pal["ink"], width=7)
+    arrow(d, cx + 330, cy - 260, cx + 110, cy - 120, pal, w=10, head=26)
+    return "1 张张开的嘴 + 压低的舌头 + 后方 1 个亮区 + 1 支光束箭头"
+
+
+@page("doctor", 8)
+def _(d, pal):
+    """疫苗先让身体认识病菌。"""
+    for (cx, cy, w_, h_), armed in zip(panel2(d, pal), (False, True)):
+        shield = [(cx, cy - 170), (cx + 140, cy - 90), (cx + 110, cy + 140),
+                  (cx, cy + 190), (cx - 110, cy + 140), (cx - 140, cy - 90)]
+        d.polygon(shield, fill=pal["paper"])
+        for a, b in zip(shield, shield[1:] + shield[:1]):
+            d.line([a, b], fill=pal["ink"], width=8)
+        if armed:
+            rnd = random.Random(23)
+            for _ in range(6):
+                a = rnd.uniform(0, 2 * math.pi)
+                gx, gy = cx + 250 * math.cos(a), cy + 250 * math.sin(a)
+                disc(d, gx, gy, 26, pal["accent"], pal, w=5)
+                arrow(d, gx, gy, cx + 330 * math.cos(a), cy + 330 * math.sin(a),
+                      pal, w=7, head=20)
+    return "左格：1 面盾牌 / 右格：同样的盾牌 + 6 个被弹开的病菌"
+
+
+@page("doctor", 10)
+def _(d, pal):
+    """可以先问一句：这个会不会疼？"""
+    cx, cy = S / 2, S / 2
+    small = [(cx - 330, cy - 150), (cx - 60, cy - 150), (cx - 60, cy + 20),
+             (cx - 130, cy + 20), (cx - 170, cy + 90), (cx - 180, cy + 20),
+             (cx - 330, cy + 20)]
+    big = [(cx + 40, cy - 60), (cx + 340, cy - 60), (cx + 340, cy + 190),
+           (cx + 180, cy + 190), (cx + 130, cy + 260), (cx + 120, cy + 190),
+           (cx + 40, cy + 190)]
+    for pts, fill in ((small, pal["paper"]), (big, pal["accent"])):
+        d.polygon(pts, fill=fill)
+        for a, b in zip(pts, pts[1:] + pts[:1]):
+            d.line([a, b], fill=pal["ink"], width=8)
+    return "2 个对话框：左边小的（孩子问）/ 右边大的（医生答）"
+
+
+@page("share", 2)
+def _(d, pal):
+    """六块分给三个人，每人两块。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    for cx in xs:
+        d.rounded_rectangle([cx - slot * 0.36, cy - 150, cx + slot * 0.36, cy + 150],
+                            radius=20, fill=pal["paper"], outline=pal["ink"], width=8)
+        for k in (-1, 1):
+            disc(d, cx + k * 70, cy, 56, pal["accent"], pal, w=8)
+    return "3 个框，每框 2 个圆（共 6 个）"
+
+
+@page("share", 3)
+def _(d, pal):
+    """一个一个发，发两轮。"""
+    xs, slot = lay(3)
+    for row, cy in enumerate((S / 2 - 160, S / 2 + 160)):
+        for cx in xs:
+            disc(d, cx, cy, 58, pal["accent"], pal, w=8)
+            arrow(d, cx, cy - 110 if row == 0 else cy - 110, cx, cy - 64, pal, w=8, head=22)
+    return "2 轮 ×3 个圆，每个圆上方 1 支发放箭头"
+
+
+@page("share", 4)
+def _(d, pal):
+    """六除以三等于二。"""
+    for i, cx in enumerate([MARGIN + 90 + i * 96 for i in range(6)]):
+        disc(d, cx, S / 2 - 180, 42, pal["accent"], pal, w=7)
+    xs, slot = lay(3)
+    for cx in xs:
+        d.rounded_rectangle([cx - slot * 0.32, S / 2 + 60, cx + slot * 0.32, S / 2 + 300],
+                            radius=18, fill=pal["paper"], outline=pal["ink"], width=8)
+        for k in (-1, 1):
+            disc(d, cx + k * 60, S / 2 + 180, 46, pal["accent"], pal, w=7)
+    return "上排 6 个圆 → 下排 3 个框各 2 个圆"
+
+
+@page("share", 5)
+def _(d, pal):
+    """六个人分六块，每人一块。"""
+    xs, slot = lay(6)
+    cy = S / 2
+    for cx in xs:
+        d.rounded_rectangle([cx - slot * 0.38, cy - 120, cx + slot * 0.38, cy + 120],
+                            radius=16, fill=pal["paper"], outline=pal["ink"], width=7)
+        disc(d, cx, cy, 44, pal["accent"], pal, w=7)
+    return "6 个框，每框 1 个圆"
+
+
+@page("share", 6)
+def _(d, pal):
+    """两个人分六块，每人三块。"""
+    xs, slot = lay(2)
+    cy = S / 2
+    for cx in xs:
+        d.rounded_rectangle([cx - slot * 0.34, cy - 190, cx + slot * 0.34, cy + 190],
+                            radius=24, fill=pal["paper"], outline=pal["ink"], width=9)
+        for k in (-1, 0, 1):
+            disc(d, cx, cy + k * 118, 52, pal["accent"], pal, w=8)
+    return "2 个框，每框 3 个圆"
+
+
+@page("share", 7)
+def _(d, pal):
+    """七块分给三个人，还剩一块。"""
+    xs, slot = lay(3)
+    cy = S / 2 - 60
+    for cx in xs:
+        d.rounded_rectangle([cx - slot * 0.34, cy - 140, cx + slot * 0.34, cy + 140],
+                            radius=20, fill=pal["paper"], outline=pal["ink"], width=8)
+        for k in (-1, 1):
+            disc(d, cx + k * 66, cy, 52, pal["accent"], pal, w=8)
+    disc(d, S / 2, S - MARGIN - 160, 62, pal["soft"], pal, w=9)
+    return "3 个框各 2 个圆 + 框外单独 1 个圆（余数）"
+
+
+@page("share", 8)
+def _(d, pal):
+    """剩下那块切成三份。"""
+    cx, cy, R = S / 2, S / 2, 280
+    for i in range(3):
+        a0 = i * 120 - 90
+        d.pieslice([cx - R, cy - R, cx + R, cy + R], a0, a0 + 120,
+                   fill=pal["accent"] if i == 0 else pal["paper"],
+                   outline=pal["ink"], width=9)
+    return "1 个圆分成 3 块等大扇形（各 120 度）"
+
+
+@page("share", 9)
+def _(d, pal):
+    """绳子从正中剪，水倒到一样高。"""
+    x0, x1 = MARGIN + 60, S - MARGIN - 60
+    y = S / 2 - 200
+    d.rounded_rectangle([x0, y - 30, x1, y + 30], radius=16, fill=pal["accent"],
+                        outline=pal["ink"], width=8)
+    d.line([(x0 + x1) / 2, y - 80, (x0 + x1) / 2, y + 80], fill=pal["ink"], width=12)
+    for cx in (S / 2 - 200, S / 2 + 200):
+        d.rounded_rectangle([cx - 90, S / 2 + 40, cx + 90, S / 2 + 320], radius=18,
+                            fill=pal["paper"], outline=pal["ink"], width=8)
+        d.rectangle([cx - 76, S / 2 + 150, cx + 76, S / 2 + 306], fill=pal["soft"])
+    return "1 根绳子 + 正中 1 道剪线 + 2 个水位相同的杯子"
+
+
+@page("share", 10)
+def _(d, pal):
+    """一个玩具轮流玩，时间也能平分。"""
+    cx, cy, R = S / 2, S / 2, 290
+    d.pieslice([cx - R, cy - R, cx + R, cy + R], -90, 90, fill=pal["accent"],
+               outline=pal["ink"], width=9)
+    d.pieslice([cx - R, cy - R, cx + R, cy + R], 90, 270, fill=pal["paper"],
+               outline=pal["ink"], width=9)
+    return "1 个圆分成 2 个等大半圆，一深一浅"
+
+
+@page("share", 11)
+def _(d, pal):
+    """一个人分，另一个人先挑。"""
+    xs, slot = lay(2)
+    cy = S / 2 + 40
+    for cx in xs:
+        d.rounded_rectangle([cx - slot * 0.32, cy - 150, cx + slot * 0.32, cy + 150],
+                            radius=20, fill=pal["paper"], outline=pal["ink"], width=8)
+        for k in (-1, 0, 1):
+            disc(d, cx, cy + k * 96, 42, pal["accent"], pal, w=7)
+    d.rounded_rectangle([xs[0] - 40, MARGIN + 60, xs[0] + 40, MARGIN + 200], radius=18,
+                        fill=pal["soft"], outline=pal["ink"], width=7)
+    arrow(d, xs[1], MARGIN + 90, xs[1], cy - 180, pal, w=11, head=28)
+    return "2 个各 3 个圆的框 + 左边 1 只分的手 + 右边 1 支挑的箭头"
+
+
 # ---------------------------------------------------------------- 第五批新书：rock / paper / plastic / sleepwin
 
 def layer_stack(d, pal, cx, cy, w, n=8, h=52, shades=None):
@@ -1219,10 +1592,17 @@ def _(d, pal):
     rnd = random.Random(15)
     for k, cx in enumerate(xs):
         if k == 0:
-            d.rounded_rectangle([cx - 60, cy - 140, cx + 60, cy + 140], radius=24,
+            # 上一版整瓶画成纯圆角矩形，看不出是瓶子；补上瓶身、瓶颈、瓶盖。
+            d.rounded_rectangle([cx - 60, cy - 90, cx + 60, cy + 140], radius=24,
                                 fill=pal["paper"], outline=pal["ink"], width=8)
+            d.rounded_rectangle([cx - 26, cy - 150, cx + 26, cy - 80], radius=10,
+                                fill=pal["paper"], outline=pal["ink"], width=8)
+            d.rounded_rectangle([cx - 32, cy - 178, cx + 32, cy - 142], radius=8,
+                                fill=pal["accent"], outline=pal["ink"], width=7)
         elif k == 1:
-            d.rounded_rectangle([cx - 60, cy - 140, cx + 60, cy - 10], radius=20,
+            d.rounded_rectangle([cx - 58, cy - 90, cx + 58, cy - 10], radius=18,
+                                fill=pal["paper"], outline=pal["ink"], width=8)
+            d.rounded_rectangle([cx - 26, cy - 150, cx + 26, cy - 96], radius=10,
                                 fill=pal["paper"], outline=pal["ink"], width=8)
             d.rounded_rectangle([cx - 50, cy + 20, cx + 50, cy + 140], radius=20,
                                 fill=pal["paper"], outline=pal["ink"], width=8)
