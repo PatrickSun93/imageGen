@@ -1018,15 +1018,19 @@ def _(d, pal):
     disc(d, sun_cx, S / 2, 96, pal["accent"], pal, w=9)
     tilt = 0.41
     dx, dy = math.sin(tilt), -math.cos(tilt)
-    for side, label_up in ((-1, True), (1, False)):     # 左：北极朝向太阳；右：南极朝向
+    # 两个地球的地轴必须「一直歪向同一个方向」，所以 dx,dy 对两边完全一致，
+    # side 只决定位置。上一版让 side 同时控制了倾斜符号，两根地轴歪成了八字。
+    for side in (-1, 1):
         cx = sun_cx + side * 330
         R = 120
         d.line([cx - dx * (R + 70), S / 2 - dy * (R + 70),
                 cx + dx * (R + 70), S / 2 + dy * (R + 70)], fill=pal["ink"], width=9)
         disc(d, cx, S / 2, R, pal["soft"], pal, w=8)
-        lit = -1 if label_up else 1                     # 朝太阳的那一极标红
-        disc(d, cx + lit * dx * R, S / 2 + lit * dy * R, 16, pal["accent"], pal, w=5)
-    return "1 个太阳 + 2 个地球，地轴同向倾斜，朝太阳的那一极各标 1 个记号"
+        # 朝着太阳的那一极标红：左边地球在太阳左侧，朝阳的是它的右半；
+        # 地轴恒定歪向右上，于是左边亮北极（+），右边亮南极（-）。
+        lit = 1 if side < 0 else -1
+        disc(d, cx + lit * dx * R, S / 2 + lit * dy * R, 18, pal["accent"], pal, w=5)
+    return "1 个太阳 + 2 个地球，两根地轴同向倾斜，朝太阳的那一极各标 1 个记号"
 
 
 @page("water", 7)
@@ -1063,16 +1067,23 @@ def _(d, pal):
 @page("teeth", 4)
 def _(d, pal):
     """上面十颗，下面十颗 —— 数目由构造保证。"""
+    # 牙齿画成上宽下窄的梯形（像真牙），两排各自收成一道颌弧；
+    # 上一版用圆角方块、弧张得太开，两端还叠在一起，读成两串珠子。
     cx = S / 2
-    for cy, R in ((S / 2 - 60, 330), (S / 2 + 60, 330)):
-        up = cy < S / 2
+    for cy, up in ((S / 2 - 40, True), (S / 2 + 40, False)):
+        R = 300
         for i in range(10):
-            a = math.pi * (0.08 + 0.84 * i / 9)
+            a = math.pi * (0.10 + 0.80 * i / 9)
             ang = -a if up else a
-            x, y = cx + R * math.cos(ang), cy + R * math.sin(ang) * 0.62
-            d.rounded_rectangle([x - 26, y - 30, x + 26, y + 30], radius=10,
-                                fill=pal["paper"], outline=pal["ink"], width=6)
-    return "上排 10 颗 + 下排 10 颗"
+            x = cx + R * math.cos(ang)
+            y = cy + R * math.sin(ang) * 0.52
+            w0, w1, h = 30, 21, 34                      # 冠宽、根宽、高
+            top, bot = (y - h, y + h) if up else (y + h, y - h)
+            pts = [(x - w0, top), (x + w0, top), (x + w1, bot), (x - w1, bot)]
+            d.polygon(pts, fill=pal["paper"])
+            for p, q in zip(pts, pts[1:] + pts[:1]):
+                d.line([p, q], fill=pal["ink"], width=6)
+    return "上颌 10 颗 + 下颌 10 颗（梯形牙冠）"
 
 
 # ---------------------------------------------------------------- bee / snow（六边形）
