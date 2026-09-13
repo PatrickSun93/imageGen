@@ -1697,7 +1697,14 @@ def render(slug):
         d = ImageDraw.Draw(img)
         note = fn(d, pal)          # 页面函数返回“这页画了什么”的构造清单
         grain(img)
-        dst = os.path.join(OUT, f"{slug}_qwen", f"page_{n:02d}.png")
+        # 成品目录的后缀不统一：新书是 _qwen，早期 LoRA 书是 _lora / _qwen_lora。
+        # 写死 _qwen 会在一个本不存在的目录里凭空建出单页（crab 就这么中过招，
+        # 连带把它的 index.html 打包成了 0 字节）。这里按实际存在的目录挑。
+        book_dir = next((os.path.join(OUT, f"{slug}{sfx}") for sfx in
+                         ("_qwen", "_qwen_lora", "_lora")
+                         if os.path.isdir(os.path.join(OUT, f"{slug}{sfx}"))),
+                        os.path.join(OUT, f"{slug}_qwen"))
+        dst = os.path.join(book_dir, f"page_{n:02d}.png")
         os.makedirs(os.path.dirname(dst), exist_ok=True)
         # backups go OUTSIDE the book folder: pack_images.py and contact_sheet.py both collect
         # page_*.png, so anything kept beside the real pages gets published as an extra page
