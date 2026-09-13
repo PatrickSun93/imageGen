@@ -1,0 +1,114 @@
+{
+  "title": "风是怎么吹起来的",
+  "subtitle": "空气也会搬家",
+  "slug": "wind",
+  "seed_base": 59000,
+  "character": "wearing a pale blue t-shirt, grey shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration in long-scroll ink wash style, soft grey-blue washes with fine brush lines, wide open composition, plenty of pale empty paper, calm and airy",
+  "style_label": "长卷水墨",
+  "keyword": "气流",
+  "diagram_pages": [
+    3,
+    4,
+    5,
+    7,
+    9
+  ],
+  "palette": {
+    "ink": "#28313a",
+    "soft": "#67757f",
+    "ground": "#f2f5f7",
+    "paper": "#fbfcfd",
+    "accent": "#5a8fa8",
+    "bark": "#8b969e",
+    "line": "#d9dfe3",
+    "ink_d": "#eaeef1",
+    "soft_d": "#9aa5ad",
+    "ground_d": "#141c23",
+    "paper_d": "#1e262d",
+    "accent_d": "#eab455",
+    "bark_d": "#8b969e",
+    "line_d": "#3a434b"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "院子里的树叶\n忽然都朝一个方向倒。\n我的头发也被吹乱了。\n可是我什么都没看见。\n风到底是什么呢？",
+      "scene": "The little boy stands outdoors with his hair blown to one side, holding his arms slightly out, looking up.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "风就是流动的空气，\n也叫「气流」。\n空气看不见，\n可是它有重量，\n会从一个地方搬到另一个地方。",
+      "scene": "A simple clear diagram, drawn flat and plain: one wide arrow made of several parallel curved lines sweeping from left to right across a pale background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "太阳晒到地面，\n地面就变热。\n靠近地面的空气也变热，\n热空气比较轻，\n就往上升。",
+      "scene": "A simple clear diagram, drawn flat and plain: one flat ground line along the bottom of a pale background with three arrows rising straight up from it, and a sun above at one side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "热空气升上去以后，\n下面就空出来了。\n旁边的冷空气赶紧补进来。\n这一进一出，\n就是风。",
+      "scene": "A simple clear diagram, drawn flat and plain: one ground line on a pale background: three arrows rising in the middle, and two arrows coming in horizontally from the left and right to fill the gap. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "所以海边常常有风。\n白天陆地热得快，\n风就从海上吹向陆地；\n晚上反过来，\n从陆地吹向海。",
+      "scene": "A simple clear diagram, drawn flat and plain: two panels side by side on a pale background: in the left one an arrow points from the sea toward the land, in the right one an arrow points from the land toward the sea. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "风有大有小。\n树叶轻轻动，是微风；\n树枝摇起来，风就大了；\n整棵树都弯下腰，\n那是很大的风。",
+      "scene": "Three trees in a row on a pale background: the first with only its leaves stirring, the second with branches bending, the third bent right over. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "风是有方向的。\n我们说「北风」，\n意思是风从北边吹过来，\n不是吹向北边。",
+      "scene": "A simple clear diagram, drawn flat and plain: one compass rose on a pale background with a single bold arrow entering from the north side and pointing toward the centre. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "风能帮我们做事。\n它推着帆船走，\n转动风车发电，\n还把种子带到很远的地方。",
+      "scene": "Three small pictures in a row on a pale background: a sailing boat, a wind turbine, and a dandelion seed drifting. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "风也会变得很凶。\n台风就是又急又转的大风。\n遇到台风要待在屋里，\n关好窗户，\n不要靠近大树和广告牌。",
+      "scene": "A simple clear diagram, drawn flat and plain: one spiral of curved lines on a pale background, wound tightly in the middle and wider at the edge, with one small closed house beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "怎么知道风往哪吹呢？\n抬头看看旗子，\n或者把手打湿举起来，\n哪一面先觉得凉，\n风就从那边来。",
+      "scene": "One flag on a pole on a pale background, stretched straight out to one side by the wind. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "风一直都在。\n就算你站着不动，\n它也在你身边\n悄悄地走来走去。\n只是有时候太轻，感觉不到。",
+      "scene": "One wide open field on a pale background with tall grass all leaning gently in the same direction. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我把手打湿，\n高高举起来。\n左边先凉了。\n原来今天的风，\n是从左边来的。",
+      "scene": "The little boy stands outdoors holding one wet hand up high, eyes closed, feeling which side is cooler.",
+      "has_boy": true
+    }
+  ]
+}

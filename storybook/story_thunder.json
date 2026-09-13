@@ -1,0 +1,114 @@
+{
+  "title": "打雷为什么先看见闪电",
+  "subtitle": "光跑得比声音快",
+  "slug": "thunder",
+  "seed_base": 60000,
+  "character": "wearing navy pyjamas and bare feet, short black hair",
+  "style": "children's picture book illustration, oil pastel on dark blue paper, bold strokes with visible texture, deep night blue, warm white and one bright yellow accent, dramatic but calm",
+  "style_label": "深夜蜡笔",
+  "keyword": "闪电",
+  "diagram_pages": [
+    3,
+    4,
+    5,
+    6,
+    9
+  ],
+  "palette": {
+    "ink": "#eef1f7",
+    "soft": "#b3bccb",
+    "ground": "#161c2e",
+    "paper": "#1f2738",
+    "accent": "#f2c341",
+    "bark": "#8790a3",
+    "line": "#333c52",
+    "ink_d": "#eef1f7",
+    "soft_d": "#b3bccb",
+    "ground_d": "#0e1320",
+    "paper_d": "#161c2e",
+    "accent_d": "#eab455",
+    "bark_d": "#8790a3",
+    "line_d": "#333c52"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我从窗户看出去，\n天忽然亮了一下。\n过了好一会儿，\n才「轰隆」一声。\n为什么不是同时呢？",
+      "scene": "The little boy stands at a dark window in pyjamas looking out at a night sky, one hand on the glass.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "因为光跑得比声音快，\n快得多得多。\n闪电和雷声\n其实是同时发生的，\n只是光先到你眼睛里。",
+      "scene": "A simple clear diagram, drawn flat and plain: two arrows side by side on a dark background starting from the same point: a long bright one and a much shorter one, both pointing right. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "云里有很多小冰粒，\n它们互相摩擦，\n把电蹭到了一起。\n上面攒了一种电，\n下面攒了另一种。",
+      "scene": "A simple clear diagram, drawn flat and plain: one cloud shape on a dark background with many small specks inside it, the specks near the top drawn as small circles and those near the bottom as small squares. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "攒得太多，\n电就忍不住跳过去。\n那道跳过去的电，\n就是「闪电」。\n它一下子把空气烤得滚烫。",
+      "scene": "A simple clear diagram, drawn flat and plain: one jagged bright line on a dark background running from a cloud at the top down to the ground. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "空气被烤热，\n一下子胀开，\n又猛地缩回去。\n这一胀一缩，\n就发出「轰隆」的响声。",
+      "scene": "A simple clear diagram, drawn flat and plain: two circles side by side on a dark background: the left one large with outward arrows, the right one small with inward arrows. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "光一秒钟能跑三十万公里，\n声音一秒钟只跑三百多米。\n所以闪电先到，\n雷声后到。",
+      "scene": "A simple clear diagram, drawn flat and plain: two horizontal bars on a dark background starting from the same left edge: the top one stretching the full width, the bottom one only a tiny fraction of it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "可以数一数。\n看见闪电就开始数，\n听见雷声停下来。\n数到三，\n雷就在大约一公里外。",
+      "scene": "One child's hand on a dark background counting on three raised fingers. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "数得越久，\n说明雷越远。\n要是几乎同时，\n那就很近了，\n赶紧进屋。",
+      "scene": "One house on a dark background with its windows lit and its door closed, a bright sky behind it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "打雷的时候待在屋里最安全。\n别站在大树底下，\n别待在空旷的地方，\n也别玩水。",
+      "scene": "A simple clear diagram, drawn flat and plain: three small symbols in a row on a dark background: a house, a tall lone tree with a bold diagonal line across it, and an open flat field with a bold diagonal line across it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "汽车里也算安全。\n因为电会顺着车壳\n流到地上，\n不会进到车里面。",
+      "scene": "One car on a dark background with several bright lines running down its outside from roof to ground. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "雷雨过去以后，\n空气会特别干净。\n因为雨把灰尘都冲下来了，\n所以那时候的天\n看起来格外清楚。",
+      "scene": "One clear night sky on a dark background with many stars and one thin crescent moon. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "又亮了一下。\n我开始数：一、二、三、四、五……\n轰隆。\n五公里外呢。\n我一点也不怕了。",
+      "scene": "The little boy sits on his bed in pyjamas counting on his fingers, looking calm, a lit window behind him.",
+      "has_boy": true
+    }
+  ]
+}

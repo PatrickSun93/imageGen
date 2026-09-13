@@ -1,0 +1,114 @@
+{
+  "title": "彩虹是怎么来的",
+  "subtitle": "阳光在水滴里拐了个弯",
+  "slug": "rainbow",
+  "seed_base": 61000,
+  "character": "wearing a white t-shirt, green shorts and rubber boots, short black hair",
+  "style": "children's picture book illustration in transparent watercolour, clean wet washes with soft edges, clear rainbow hues over plenty of white paper, light and airy",
+  "style_label": "透明水彩",
+  "keyword": "折射",
+  "diagram_pages": [
+    2,
+    3,
+    4,
+    6,
+    8
+  ],
+  "palette": {
+    "ink": "#2a2f38",
+    "soft": "#68727f",
+    "ground": "#f6f8fa",
+    "paper": "#fdfdfe",
+    "accent": "#d86a4a",
+    "bark": "#8c959f",
+    "line": "#dde2e7",
+    "ink_d": "#edf0f3",
+    "soft_d": "#9ba4ad",
+    "ground_d": "#161b22",
+    "paper_d": "#20262e",
+    "accent_d": "#eab455",
+    "bark_d": "#8c959f",
+    "line_d": "#3c444d"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "雨刚停，\n太阳就出来了。\n我一转身，\n天上挂着一条彩虹。\n它是从哪儿冒出来的呢？",
+      "scene": "The little boy stands on wet ground in rubber boots, turning to look up at the sky, sunlight on his face.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "阳光看起来是白的，\n其实里面藏着好多颜色。\n红、橙、黄、绿、蓝、靛、紫，\n一共七种。",
+      "scene": "A simple clear diagram, drawn flat and plain: one beam of white light entering a triangular glass prism on a white background and leaving as seven coloured stripes. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "光从空气跑进水里的时候，\n会拐一个弯。\n这叫「折射」。\n每种颜色拐的角度\n都不太一样。",
+      "scene": "A simple clear diagram, drawn flat and plain: one straight ray on a white background arriving at a flat water surface and bending as it enters, with the original direction shown as a faint dotted line. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "雨后的空中\n飘着很多小水滴。\n阳光钻进一颗小水滴，\n在里面拐弯、反射，\n再拐弯出来。",
+      "scene": "A simple clear diagram, drawn flat and plain: one large round water drop on a white background with a ray entering at the top left, bending, bouncing off the back wall, and leaving at the bottom left as several coloured rays. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "每颗水滴都在分光。\n千千万万颗一起分，\n我们就看见\n一条弯弯的彩带。",
+      "scene": "Many small round drops spread across a white background, each with a tiny coloured fan under it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "彩虹总是在太阳的对面。\n所以要看见它，\n得背对着太阳。\n太阳在西边，\n彩虹就在东边。",
+      "scene": "A simple clear diagram, drawn flat and plain: one sun on the left of a white background, one small figure in the middle facing right, and one rainbow arc on the right. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "彩虹其实是一个整圆。\n只是地面挡住了下半圈，\n所以我们\n只看得见弯弯的一段。",
+      "scene": "One full circular rainbow ring on a white background with a horizontal ground line cutting across it, the part below the line drawn very faint. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "颜色的顺序不会变。\n从外到里，\n永远是红、橙、黄、绿、蓝、靛、紫。\n红在最外面。",
+      "scene": "A simple clear diagram, drawn flat and plain: seven nested arcs on a white background, the outermost red and the innermost violet. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "有时候能看见两条。\n外面那条淡一些，\n颜色还是反的：\n紫在外，红在里。\n那是光在水滴里多拐了一次。",
+      "scene": "Two rainbow arcs on a white background, one bright and one fainter above it, drawn simply. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "不下雨也能看见彩虹。\n浇花的水雾里，\n喷泉旁边，\n甚至瀑布前面，\n背对着太阳就能找到。",
+      "scene": "One garden hose spraying a fine mist on a white background with a small rainbow in the spray. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "自己也能做一条。\n端一碗水放在窗边，\n让阳光斜着照进去，\n墙上就会出现\n一条小小的彩虹。",
+      "scene": "One bowl of water on a windowsill on a white background with a small band of colours cast on the wall beside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我背对着太阳站好，\n彩虹正好在我前面。\n红色在最外面，\n紫色在最里面。\n和书上说的一模一样。",
+      "scene": "The little boy stands with his back to the sun, looking ahead at a rainbow, arms at his sides, delighted.",
+      "has_boy": true
+    }
+  ]
+}

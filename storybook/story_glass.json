@@ -1,0 +1,114 @@
+{
+  "title": "玻璃是沙子做的",
+  "subtitle": "烧化了，再吹起来",
+  "slug": "glass",
+  "seed_base": 62000,
+  "character": "wearing an amber yellow t-shirt, brown shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration in warm amber glass-painting style, translucent layered washes with fine dark outlines, amber, honey gold and deep brown over cream, glowing",
+  "style_label": "琥珀玻璃画",
+  "keyword": "熔化",
+  "diagram_pages": [
+    3,
+    4,
+    5,
+    7,
+    9
+  ],
+  "palette": {
+    "ink": "#2b2418",
+    "soft": "#6f6350",
+    "ground": "#f6f1e6",
+    "paper": "#fcfaf4",
+    "accent": "#d99a2c",
+    "bark": "#8c7f68",
+    "line": "#ded5c4",
+    "ink_d": "#ece5d7",
+    "soft_d": "#a4977f",
+    "ground_d": "#180f04",
+    "paper_d": "#221a0c",
+    "accent_d": "#eab455",
+    "bark_d": "#8c7f68",
+    "line_d": "#3a3225"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我端着玻璃杯喝水，\n阳光照过来，\n杯子是透明的。\n爸爸说，\n这是沙子做的。我不信。",
+      "scene": "The little boy holds a clear glass of water up toward the light, looking through it, curious.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "真的是沙子。\n不过不是随便什么沙，\n是一种很白很细的沙，\n里面几乎全是\n一种叫二氧化硅的东西。",
+      "scene": "One small heap of fine pale sand on a cream background, drawn simply. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "把沙子烧到很热很热，\n一千七百度那么热，\n它就会「熔化」，\n变成像蜂蜜一样\n黏黏的、会流动的液体。",
+      "scene": "A simple clear diagram, drawn flat and plain: two bowls side by side on a cream background: the left holding loose grains, the right holding a smooth thick flowing liquid. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "熔化以后趁热做形状。\n可以倒进模子里，\n也可以用一根长管子\n蘸一团，\n然后往里吹气。",
+      "scene": "A simple clear diagram, drawn flat and plain: one long tube on a cream background with a round blob at its far end, and one arrow entering the near end of the tube. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "一边吹一边转，\n那团玻璃就慢慢鼓起来，\n变成一个空心的泡。\n杯子、瓶子，\n都是这样鼓出来的。",
+      "scene": "A simple clear diagram, drawn flat and plain: three blobs in a row on a cream background, each one larger and more hollow than the last, the third clearly a cup shape. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "为什么玻璃是透明的呢？\n因为它里面的东西\n排得乱七八糟，\n却又挨得很紧，\n光可以直接穿过去。",
+      "scene": "A simple clear diagram, drawn flat and plain: one square on a cream background filled with small specks arranged with no pattern, and three straight rays passing right through it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "玻璃冷下来就变硬。\n可是它硬得很脆，\n一摔就碎，\n碎片还很锋利。",
+      "scene": "A simple clear diagram, drawn flat and plain: one plain drinking glass on the left of a cream background and several sharp-edged fragments on the right. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "所以玻璃碎了，\n千万不要用手去捡。\n要告诉大人，\n用扫把和簸箕，\n再用湿纸巾把小渣子粘走。",
+      "scene": "One broom and one dustpan on a cream background beside a few scattered fragments, with a hand drawn reaching for the broom handle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "玻璃可以一直回收。\n把旧玻璃打碎，\n重新烧化，\n再做成新的瓶子，\n质量一点也不差。",
+      "scene": "A simple clear diagram, drawn flat and plain: one circular loop of arrows on a cream background with three small symbols spaced around it: a bottle, broken pieces, and a melting pot. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "而且回收玻璃更省事。\n碎玻璃比沙子\n更容易熔化，\n烧的时候能省下\n不少电和气。",
+      "scene": "A simple clear diagram, drawn flat and plain: two thermometers side by side on a cream background: the left one with the liquid high, the right one clearly lower. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "玻璃还有很多用处。\n窗户、眼镜、显微镜，\n还有很细很细的玻璃丝，\n能把光和信号\n送到很远的地方。",
+      "scene": "Three small pictures in a row on a cream background: a window pane, a pair of spectacles, and a thin glowing thread. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我又举起杯子看了看。\n原来手里这只杯子，\n以前是海边的沙。\n烧化，吹起来，\n就变成了它。",
+      "scene": "The little boy holds the glass up to the light again, looking through it with a new understanding, smiling.",
+      "has_boy": true
+    }
+  ]
+}
