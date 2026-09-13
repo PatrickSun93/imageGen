@@ -500,29 +500,25 @@ def _(d, pal):
     和模型原本画成土星环是同一个概念错误。磁力线必须是开口弧线：两端收拢到
     两极，中间鼓出去，左右各一族。
     """
-    cx, cy, R = S / 2, S / 2, 190
-    # 每条弧从北半球某纬度出发，绕出去，回到南半球对应纬度 —— 起点终点不重合，
-    # 再在弧上加箭头指明走向。前三版都画成了闭合环（模型画土星环、我画同心椭圆、
-    # 我画两端收拢到极点的眼睛形），根因都是端点重合 + 没有走向。
-    for lat, bulge in ((0.72, 2.5), (0.45, 3.3), (0.16, 4.0)):
-        ay = -R * lat                                    # 出发纬度（北），对称点即为终点
-        for side in (-1, +1):
-            pts = []
-            for i in range(49):
-                t = i / 48
-                y = ay + (-2 * ay) * t                   # 从 +ay 走到 -ay
-                k = math.sin(math.pi * t)                # 中间鼓出
-                x = side * (R * math.sqrt(max(0.0, 1 - (y / R) ** 2)) + R * bulge * 0.30 * k)
-                pts.append((cx + x, cy + y))
-            d.line(pts, fill=pal["soft"], width=6, joint="curve")
-            m = pts[len(pts) // 2]
-            nxt = pts[len(pts) // 2 + 3]
-            arrow(d, m[0], m[1], nxt[0], nxt[1], pal, w=6, head=20)
-    disc(d, cx, cy, R, pal["bark"], pal, w=8)
-    d.line([cx, cy - R - 70, cx, cy + R + 70], fill=pal["ink"], width=9)
-    for py in (cy - R, cy + R):
-        disc(d, cx, py, 16, pal["accent"], pal, w=5)
-    return "1 个地球 + 6 条开口弧线（3 对不同纬度，各带 1 个走向箭头）+ 1 根地轴"
+    # 磁力线画了四版都被读成「环」（模型画土星环、同心椭圆、眼睛形闭环、尖角橄榄形），
+    # 于是退成最朴素的画法：地球 + 地轴 + 一根指向北极的指南针。五岁孩子本来也看不懂
+    # 磁力线，而「指南针总是指着南北」是他能理解的，磁力线交给旁白讲。
+    cx, cy, R = S / 2, S / 2 + 20, 210
+    d.line([cx, cy - R - 120, cx, cy + R + 120], fill=pal["ink"], width=10)
+    disc(d, cx, cy, R, pal["bark"], pal, w=9)
+    for py, col in ((cy - R, pal["accent"]), (cy + R, pal["paper"])):
+        disc(d, cx, py, 20, col, pal, w=6)
+    # 指南针：表盘压在地球右下方，针笔直指向上（北）
+    nx, ny, nr = cx + R * 0.72, cy + R * 0.72, 104
+    disc(d, nx, ny, nr, pal["paper"], pal, w=8)
+    d.polygon([(nx, ny - nr * 0.72), (nx - 20, ny), (nx + 20, ny)], fill=pal["accent"])
+    d.polygon([(nx, ny + nr * 0.72), (nx - 20, ny), (nx + 20, ny)], fill=pal["paper"])
+    for pts in (((nx, ny - nr * 0.72), (nx - 20, ny), (nx + 20, ny)),
+                ((nx, ny + nr * 0.72), (nx - 20, ny), (nx + 20, ny))):
+        for a, b in zip(pts, pts[1:] + pts[:1]):
+            d.line([a, b], fill=pal["ink"], width=5)
+    disc(d, nx, ny, 12, pal["ink"], pal, w=3)
+    return "1 个地球 + 1 根地轴（两极各 1 个记号）+ 1 个指南针，针指向北"
 
 
 @page("magnet", 10)
@@ -606,6 +602,301 @@ def _(d, pal):
     """吸气数到四，吐气数到六 —— 上升段必须明显短于下降段。"""
     wave(d, MARGIN + 30, S - MARGIN - 30, S / 2, pal, rise=4, fall=6, cycles=2, amp=150, w=14)
     return "2 个周期，上升段:下降段 = 4:6"
+
+
+# ---------------------------------------------------------------- fish / sound / power（流向与长短）
+
+def fish_body(d, cx, cy, L, pal, fill=None):
+    """一条侧看的鱼。返回 (嘴 x, 鳃盖 x, 鳃盖后缘 y 上沿, 身高)。
+
+    鳃盖必须明显靠近头部（头长约占身长两成），否则出水口看起来在肚子中间；
+    再给腹部加一块浅色，让「上背下腹」分得开 —— 上一版通体一色，鳃盖线几乎看不见。
+    """
+    h = L * 0.46
+    d.ellipse([cx - L / 2, cy - h / 2, cx + L / 2, cy + h / 2],
+              fill=fill or pal["soft"], outline=pal["ink"], width=7)
+    d.chord([cx - L / 2, cy - h / 2, cx + L / 2, cy + h / 2], 12, 168,
+            fill=pal["paper"], outline=pal["ink"], width=5)          # 浅色腹部
+    tail = [(cx + L / 2 - 6, cy), (cx + L / 2 + L * 0.26, cy - h * 0.42),
+            (cx + L / 2 + L * 0.26, cy + h * 0.42)]
+    d.polygon(tail, fill=fill or pal["soft"])
+    for a, b in zip(tail, tail[1:] + tail[:1]):
+        d.line([a, b], fill=pal["ink"], width=7)
+    gill = cx - L * 0.30                                             # 头长约两成，鳃盖靠前
+    d.arc([gill - 46, cy - h / 2 + 4, gill + 46, cy + h / 2 - 4], 250, 110,
+          fill=pal["ink"], width=8)
+    disc(d, cx - L / 2 + 30, cy - h * 0.18, 10, pal["ink"], pal, w=2)
+    return cx - L / 2, gill, cy - h * 0.30, h
+
+
+@page("fish", 4)
+def _(d, pal):
+    """水从嘴进、从鳃出。出水箭头从鳃盖处斜向后上方，不从肚子底下穿出。"""
+    cy = S / 2 + 30
+    mouth, gill, gy, h = fish_body(d, S / 2 + 40, cy, 560, pal)
+    arrow(d, mouth - 230, cy, mouth + 6, cy, pal, w=12, head=32)      # 进：一直画到嘴边
+    arrow(d, gill + 10, gy, gill - 60, gy - 200, pal, w=12, head=32)  # 出：从鳃向后上方斜出
+    return "1 条鱼 + 进水箭头（画到嘴边）+ 出水箭头（自鳃盖斜向上）"
+
+
+@page("fish", 7)
+def _(d, pal):
+    """一直喝水、一直从鳃吐出去：一条粗路径贯穿头部，两端各一个箭头。"""
+    cy = S / 2 + 30
+    mouth, gill, gy, h = fish_body(d, S / 2 + 40, cy, 560, pal)
+    pts = [(mouth - 210, cy), (mouth + 20, cy), (gill + 20, cy - h * 0.10), (gill - 10, gy)]
+    d.line(pts, fill=pal["accent"], width=14, joint="curve")
+    arrow(d, mouth - 210, cy, mouth - 120, cy, pal, w=12, head=30)
+    arrow(d, gill - 10, gy, gill - 80, gy - 190, pal, w=12, head=30)
+    return "1 条鱼 + 1 条贯穿头部的粗路径，进口在嘴、出口在鳃，两端各 1 个箭头"
+
+
+@page("sound", 7)
+def _(d, pal):
+    """声音快，光更快得多 —— 两支箭头长短必须差出量级。"""
+    x0 = MARGIN + 40
+    for y, frac, col in ((S / 2 - 120, 0.22, pal["soft"]), (S / 2 + 120, 1.0, pal["accent"])):
+        x1 = x0 + (S - 2 * MARGIN - 80) * frac
+        d.line([x0, y, x1, y], fill=col, width=18)
+        arrow(d, x1 - 40, y, x1, y, pal, w=14, head=38)
+        disc(d, x0, y, 20, col, pal, w=6)
+    return "上：声音，短箭头（22%）/ 下：光，长箭头（100%）"
+
+
+@page("power", 9)
+def _(d, pal):
+    """电要走成一个圈：从插座出去、穿过台灯、再回插座。走向由箭头说清楚。"""
+    cx, cy = S / 2, S / 2 + 30
+    w_, h_ = 520, 340
+    x0, x1, y0, y1 = cx - w_ / 2, cx + w_ / 2, cy - h_ / 2, cy + h_ / 2
+    for seg in (((x0, y0), (x1, y0)), ((x1, y0), (x1, y1)),
+                ((x1, y1), (x0, y1)), ((x0, y1), (x0, y0))):
+        d.line([seg[0], seg[1]], fill=pal["ink"], width=10)
+    # 插座画成方块，台灯画成圆，各占回路一边
+    d.rounded_rectangle([x0 - 58, cy - 62, x0 + 58, cy + 62], radius=14,
+                        fill=pal["bark"], outline=pal["ink"], width=8)
+    for dy in (-24, 24):
+        d.line([x0 - 18, cy + dy, x0 + 18, cy + dy], fill=pal["ink"], width=8)
+    disc(d, cx, y0, 56, pal["accent"], pal, w=8)
+    for i, (ax, ay, bx, by) in enumerate((
+            (cx - 120, y0, cx - 40, y0), (x1, cy - 80, x1, cy + 20),
+            (cx + 120, y1, cx + 40, y1), (x0, cy + 120, x0, cy + 70))):
+        arrow(d, ax, ay, bx, by, pal, w=9, head=24)
+    return "1 个闭合回路 + 插座（方）+ 台灯（圆）+ 4 个同向箭头"
+
+
+# ---------------------------------------------------------------- 只用已验证图元的一批
+# （对比两格、正多边形、等分圆、长短箭头、计数栅格。生物剖面那类留到最后集中处理。）
+
+@page("snow", 7)
+def _(d, pal):
+    """六片雪花，片片不同：枝杈数和长短由参数错开，六个角是共同点。"""
+    rnd = random.Random(21)
+    spots = [(S * 0.25, S * 0.28), (S * 0.5, S * 0.22), (S * 0.75, S * 0.28),
+             (S * 0.25, S * 0.72), (S * 0.5, S * 0.78), (S * 0.75, S * 0.72)]
+    for k, (cx, cy) in enumerate(spots):
+        R = 118
+        branches = 2 + k % 3                       # 每片枝杈数不同
+        for i in range(6):                         # 永远六个角
+            a = math.pi / 2 + i * math.pi / 3
+            d.line([cx, cy, cx + R * math.cos(a), cy + R * math.sin(a)],
+                   fill=pal["ink"], width=8)
+            for j in range(branches):
+                t = 0.35 + j * 0.22
+                bx, by = cx + R * t * math.cos(a), cy + R * t * math.sin(a)
+                ln = 40 - j * 8 + (k % 2) * 10
+                for s in (+1, -1):
+                    d.line([bx, by, bx + ln * math.cos(a + s * 1.0),
+                            by + ln * math.sin(a + s * 1.0)], fill=pal["ink"], width=6)
+    return "6 片雪花，每片 6 个角，枝杈数 2/3/4 各不相同"
+
+
+@page("half", 3)
+def _(d, pal):
+    """从中间切 = 对，切歪了 = 错。两格必须一个打勾一个打叉。"""
+    (lx, ly, lw, lh), (rx, ry, rw, rh) = panel2(d, pal)
+    R = min(lw, lh) * 0.30
+    # 左：正中切开，打勾
+    disc(d, lx, ly - 40, R, pal["accent"], pal, w=9)
+    d.line([lx, ly - 40 - R, lx, ly - 40 + R], fill=pal["ink"], width=10)
+    for a, b in (((lx - 60, ly + 210), (lx - 16, ly + 254)), ((lx - 16, ly + 254), (lx + 66, ly + 168))):
+        d.line([a, b], fill=pal["ink"], width=16)
+    # 右：切偏了，打叉
+    disc(d, rx, ry - 40, R, pal["accent"], pal, w=9)
+    d.line([rx + R * 0.45, ry - 40 - R * 0.9, rx + R * 0.45, ry - 40 + R * 0.9],
+           fill=pal["ink"], width=10)
+    cross(d, rx, ry + 210, 56, pal, w=16)
+    return "左格正中切开 + 勾 / 右格切偏 + 叉"
+
+
+@page("half", 9)
+def _(d, pal):
+    """两个半圆合起来就是一个整圆。"""
+    # 两个半圆要留出「还没合上」的缝，否则贴在一起就读成一个整圆或哑铃。
+    # 上一版三个图元挤在右半张、中间还被短横连住，看着像哑铃。
+    # 两个半圆必须「面对面紧挨着、只差一道缝」，让人一眼看出合起来正好是个圆。
+    # 上一版把两个半圆拉得太开，中间那个又被箭头连到整圆上，读成了「一个半圆变整圆」。
+    R, gap = 128, 26
+    cy = S / 2
+    # 左半圆凸面朝左，它的左边缘是 lx-R = pair_cx - gap/2 - 2R，
+    # 所以这一对的中心至少要放在 MARGIN + 2R + gap/2 才不出界。
+    pair_cx = MARGIN + 2 * R + gap / 2 + 24
+    # pieslice(90,270) 画的是凸面朝左的那半块，它的平边正好落在圆心 x 上；
+    # pieslice(270,90) 的平边也落在自己的圆心 x 上。所以两块「面对面只差一道缝」时，
+    # 两个圆心只相隔 gap，而不是 2R —— 按 2R 摆会在中间空出整整一个半圆的宽度。
+    lx = pair_cx - gap / 2                     # 左半圆（凸面朝左，平边在右）
+    rx = pair_cx + gap / 2                     # 右半圆（平边在左，凸面朝右）
+    d.pieslice([lx - R, cy - R, lx + R, cy + R], 90, 270,
+               fill=pal["accent"], outline=pal["ink"], width=9)
+    d.pieslice([rx - R, cy - R, rx + R, cy + R], 270, 90,
+               fill=pal["soft"], outline=pal["ink"], width=9)
+    wx = S - MARGIN - R - 40                   # 合拢后的整圆
+    mid = (rx + R + wx - R) / 2
+    arrow(d, mid - 56, cy, mid + 56, cy, pal, w=12, head=32)
+    d.pieslice([wx - R, cy - R, wx + R, cy + R], 90, 270,
+               fill=pal["accent"], outline=pal["ink"], width=9)
+    d.pieslice([wx - R, cy - R, wx + R, cy + R], 270, 90,
+               fill=pal["soft"], outline=pal["ink"], width=9)
+    return "左边 2 个半圆面对面（只差一道缝）+ 1 个箭头 → 右边 1 个完整圆"
+
+
+@page("count", 8)
+def _(d, pal):
+    """彩虹七色：七条，一条不多一条不少。"""
+    bands = ["#c0392b", "#e67e22", "#f1c40f", "#27ae60", "#2980b9", "#4b3fa0", "#7d3c98"]
+    cx, cy = S / 2, S * 0.82
+    for i, col in enumerate(bands):
+        R = 380 - i * 46
+        d.arc([cx - R, cy - R, cx + R, cy + R], 180, 360, fill=col, width=40)
+    return f"{len(bands)} 条彩虹色带（红橙黄绿蓝靛紫）"
+
+
+@page("plus", 8)
+def _(d, pal):
+    """三根手指加两根手指：左手竖三根，右手竖两根。"""
+    for cx, up in ((S * 0.28, 3), (S * 0.72, 2)):
+        palm_y = S * 0.70
+        d.rounded_rectangle([cx - 110, palm_y - 60, cx + 110, palm_y + 120], radius=40,
+                            fill=pal["paper"], outline=pal["ink"], width=8)
+        for i in range(5):
+            x = cx - 80 + i * 40
+            h = 200 if i < up else 46
+            d.rounded_rectangle([x - 16, palm_y - 60 - h, x + 16, palm_y - 20], radius=16,
+                                fill=pal["accent"] if i < up else pal["soft"],
+                                outline=pal["ink"], width=6)
+    d.line([S / 2 - 46, S * 0.55, S / 2 + 46, S * 0.55], fill=pal["ink"], width=14)
+    d.line([S / 2, S * 0.55 - 46, S / 2, S * 0.55 + 46], fill=pal["ink"], width=14)
+    return "左手 3 根竖起 + 右手 2 根竖起，中间一个加号"
+
+
+# ---------------------------------------------------------------- car（安全：从哪一侧下车）
+
+@page("car", 11)
+def _(d, pal):
+    """俯视：人行道在上、马路在下，只有靠人行道那一侧的后门开着。
+
+    这页交给模型画了两轮，两轮都把四扇门全开、其中两扇正对着驶来的自行车 ——
+    比原稿更危险。「哪一侧」是纯空间关系，模型讲不清，改由程序保证：
+    车身是一个闭合矩形，只有上边缘开一块门板，自行车固定在下方马路上。
+    """
+    # 人行道（上）与马路（下）
+    d.rectangle([0, 0, S, 250], fill=pal["soft"])
+    d.rectangle([0, 250, S, 262], fill=pal["ink"])
+    d.rectangle([0, 700, S, 712], fill=pal["ink"])
+    d.rectangle([0, 712, S, S], fill=pal["bark"])
+    for x in range(60, S, 150):                       # 马路中线
+        d.rectangle([x, 880, x + 80, 894], fill=pal["paper"])
+
+    # 车身：俯视轮廓。上一版是个圆角矩形加两个白方块，被读成手提箱 ——
+    # 五岁孩子要先认出这是车，所以补上收窄的车头车尾、四个轮子、梯形风挡。
+    cx, cy = S / 2, 470
+    bw, bh = 660, 290
+    for wx_ in (cx - bw * 0.30, cx + bw * 0.30):      # 四个轮子，露在车身外
+        for wy in (cy - bh / 2 - 6, cy + bh / 2 + 6):
+            d.rounded_rectangle([wx_ - 42, wy - 20, wx_ + 42, wy + 20], radius=12,
+                                fill=pal["ink"])
+    d.polygon([(cx - bw / 2, cy - bh / 2 + 54), (cx - bw / 2 + 76, cy - bh / 2),
+               (cx + bw / 2 - 76, cy - bh / 2), (cx + bw / 2, cy - bh / 2 + 54),
+               (cx + bw / 2, cy + bh / 2 - 54), (cx + bw / 2 - 76, cy + bh / 2),
+               (cx - bw / 2 + 76, cy + bh / 2), (cx - bw / 2, cy + bh / 2 - 54)],
+              fill=pal["accent"])
+    pts = [(cx - bw / 2, cy - bh / 2 + 54), (cx - bw / 2 + 76, cy - bh / 2),
+           (cx + bw / 2 - 76, cy - bh / 2), (cx + bw / 2, cy - bh / 2 + 54),
+           (cx + bw / 2, cy + bh / 2 - 54), (cx + bw / 2 - 76, cy + bh / 2),
+           (cx - bw / 2 + 76, cy + bh / 2), (cx - bw / 2, cy + bh / 2 - 54)]
+    for a, b in zip(pts, pts[1:] + pts[:1]):
+        d.line([a, b], fill=pal["ink"], width=9)
+    for sx, sw in ((cx - bw * 0.30, 96), (cx + bw * 0.30, 96)):   # 前后风挡，梯形
+        d.polygon([(sx - sw / 2, cy - bh / 2 + 30), (sx + sw / 2, cy - bh / 2 + 30),
+                   (sx + sw / 2 - 16, cy + bh / 2 - 30), (sx - sw / 2 + 16, cy + bh / 2 - 30)],
+                  fill=pal["paper"], outline=pal["ink"])
+    # 唯一开着的门：靠人行道那一侧（上边缘）。门板用浅色并在车身上留出同宽的缺口，
+    # 才看得出「这扇门开了」——上一版门板和车身同色，读成车顶上多了个盒子。
+    door_x = cx + 30
+    d.rectangle([door_x - 86, cy - bh / 2 - 4, door_x + 86, cy - bh / 2 + 16],
+                fill=pal["ground"])                                   # 车身上的门洞
+    # 门板沿车身上缘的一条边斜着翻出（梯形，靠车一端宽、外端窄），
+    # 上一版是平移到车外的方块，读成车顶行李箱。
+    hinge_x = door_x - 86
+    d.polygon([(hinge_x, cy - bh / 2 + 8), (hinge_x + 172, cy - bh / 2 + 8),
+               (hinge_x + 128, cy - bh / 2 - 104), (hinge_x + 18, cy - bh / 2 - 104)],
+              fill=pal["paper"])
+    pts = [(hinge_x, cy - bh / 2 + 8), (hinge_x + 172, cy - bh / 2 + 8),
+           (hinge_x + 128, cy - bh / 2 - 104), (hinge_x + 18, cy - bh / 2 - 104)]
+    for a, b in zip(pts, pts[1:] + pts[:1]):
+        d.line([a, b], fill=pal["ink"], width=8)
+    disc(d, hinge_x + 8, cy - bh / 2 + 6, 10, pal["ink"], pal, w=2)    # 铰链点
+
+    # 自行车：下方马路上，在车尾后方
+    bx, by = cx - 250, 840
+    for off in (-58, 58):
+        disc(d, bx + off, by, 46, None, pal, w=8)
+    d.line([bx - 58, by, bx - 10, by - 60, bx + 58, by], fill=pal["ink"], width=8)
+    d.line([bx - 10, by - 60, bx + 20, by - 62], fill=pal["ink"], width=8)
+    return "1 辆车（车身闭合）+ 1 扇朝人行道开的门 + 1 辆在马路侧的自行车"
+
+
+# ---------------------------------------------------------------- traffic（安全：走在斑马线上）
+
+@page("traffic", 9)
+def _(d, pal):
+    """俯视：三个孩子都在斑马线上，两辆车停在停止线后，交警站在路边。
+
+    这页交给模型画了两轮，两轮都把孩子塞进车道、斑马线空着，交警还站在线中央挡路。
+    「谁在线上、车停在哪」是纯位置关系，改由程序保证。
+    """
+    # 这本调色板的 bark 是绿色，上一版拿它铺马路，路面成了草地；改用中性灰。
+    ROAD = "#6f7378"
+    d.rectangle([0, 0, S, 190], fill=pal["soft"])          # 上方人行道
+    d.rectangle([0, 190, S, 834], fill=ROAD)               # 马路
+    d.rectangle([0, 834, S, S], fill=pal["soft"])          # 下方人行道
+
+    zx, zw = 250, 300                                      # 斑马线带，往左挪出车位
+    for i in range(7):
+        y = 210 + i * 88
+        d.rectangle([zx, y, zx + zw, y + 54], fill=pal["paper"])
+
+    # 停止线：与斑马线垂直（竖着的一道），画在两辆车的前方
+    stop_x = zx + zw + 70
+    d.rectangle([stop_x, 210, stop_x + 16, 814], fill=pal["paper"])
+    for k, (bx, by) in enumerate(((stop_x + 60, 300), (stop_x + 60, 560))):
+        d.rounded_rectangle([bx, by, bx + 230, by + 130], radius=28,
+                            fill=pal["accent"] if k == 0 else pal["ink"],
+                            outline=pal["ink"], width=7)
+
+    for i, cy_ in enumerate((330, 500, 670)):              # 三个孩子，全在斑马线上
+        cxk = zx + zw / 2 + (i - 1) * 78
+        disc(d, cxk, cy_, 30, pal["accent"], pal, w=7)
+        d.rounded_rectangle([cxk - 26, cy_ + 30, cxk + 26, cy_ + 104], radius=18,
+                            fill=pal["soft"], outline=pal["ink"], width=6)
+
+    gx = zx - 130                                          # 交警站在路边，不挡斑马线
+    disc(d, gx, 520, 32, pal["paper"], pal, w=7)
+    d.rounded_rectangle([gx - 28, 552, gx + 28, 640], radius=18,
+                        fill=pal["paper"], outline=pal["ink"], width=6)
+    d.line([gx, 560, gx, 470], fill=pal["ink"], width=8)
+    ngon(d, gx, 442, 44, 8, pal, fill=pal["accent"], w=6)  # 八角停牌
+    return "3 个孩子全在斑马线上 + 2 辆车停在停止线后 + 1 个交警在路边"
 
 
 # ---------------------------------------------------------------- bee / snow（六边形）
