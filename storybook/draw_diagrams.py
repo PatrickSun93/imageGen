@@ -994,6 +994,740 @@ def _(d, pal):
     return "1 个分成 12 格的勺子（盘小柄粗），只有 1 格是满的"
 
 
+# ---------------------------------------------------------------- 第五批新书：rock / paper / plastic / sleepwin
+
+def layer_stack(d, pal, cx, cy, w, n=8, h=52, shades=None):
+    """一摞水平地层，从上到下颜色略有差别。返回每层的中心 y。"""
+    shades = shades or [pal["paper"], pal["soft"], pal["bark"], pal["line"]]
+    ys = []
+    for i in range(n):
+        y = cy - n * h / 2 + i * h
+        d.rectangle([cx - w / 2, y, cx + w / 2, y + h],
+                    fill=shades[i % len(shades)], outline=pal["ink"], width=5)
+        ys.append(y + h / 2)
+    return ys
+
+
+@page("rock", 3)
+def _(d, pal):
+    """泥沙一层一层铺上去，压成石头。"""
+    layer_stack(d, pal, S / 2, S / 2, S - 2 * MARGIN - 80, n=8, h=64)
+    return "8 层水平地层，颜色依次交替"
+
+
+@page("rock", 4)
+def _(d, pal):
+    """越下面的越老，越上面的越新。"""
+    w = S - 2 * MARGIN - 220
+    ys = layer_stack(d, pal, S / 2 - 60, S / 2, w, n=8, h=60)
+    x = S / 2 - 60 + w / 2 + 70
+    arrow(d, x, ys[0] - 40, x, ys[-1] + 40, pal, w=12, head=30)
+    d.rectangle([S / 2 - 60 - w / 2, ys[-1] - 30, S / 2 - 60 + w / 2, ys[-1] + 30],
+                outline=pal["accent"], width=10)
+    return "8 层地层 + 1 支自上而下的箭头 + 最下一层加粗描边（最老）"
+
+
+@page("rock", 5)
+def _(d, pal):
+    """地壳一挤，平平的层就被折成弯的。"""
+    cx, cy = S / 2, S / 2 + 40
+    w = S - 2 * MARGIN - 200
+    for i in range(6):
+        pts = []
+        for k in range(41):
+            t = k / 40
+            x = cx - w / 2 + t * w
+            y = cy - 150 + i * 56 - 130 * math.sin(math.pi * t)
+            pts.append((x, y))
+        d.line(pts, fill=pal["ink"] if i % 2 else pal["accent"], width=18, joint="curve")
+    arrow(d, MARGIN, cy, MARGIN + 150, cy, pal, w=12, head=30)
+    arrow(d, S - MARGIN, cy, S - MARGIN - 150, cy, pal, w=12, head=30)
+    return "6 条拱起的地层 + 左右各 1 支向内挤压的箭头"
+
+
+@page("rock", 7)
+def _(d, pal):
+    """不同深度的层里，埋着不同的化石。"""
+    w = S - 2 * MARGIN - 120
+    ys = layer_stack(d, pal, S / 2, S / 2, w, n=7, h=68)
+    d.ellipse([S / 2 - 190, ys[1] - 26, S / 2 - 130, ys[1] + 26], fill=pal["accent"],
+              outline=pal["ink"], width=5)
+    d.polygon([(S / 2 + 30, ys[3] - 28), (S / 2 + 90, ys[3]), (S / 2 + 30, ys[3] + 28)],
+              fill=pal["accent"])
+    d.rounded_rectangle([S / 2 - 60, ys[5] - 16, S / 2 + 60, ys[5] + 16], radius=14,
+                        fill=pal["accent"], outline=pal["ink"], width=5)
+    return "7 层地层 + 3 个化石分别埋在第 2、4、6 层"
+
+
+@page("rock", 9)
+def _(d, pal):
+    """碎成沙，被带走，又压成新的石头。"""
+    cx, cy, R = S / 2, S / 2, 270
+    for i in range(3):
+        a0 = i * 120 - 80
+        d.arc([cx - R, cy - R, cx + R, cy + R], a0, a0 + 78, fill=pal["accent"], width=16)
+        a_end, a_pre = math.radians(a0 + 78), math.radians(a0 + 64)
+        arrow(d, cx + R * math.cos(a_pre), cy + R * math.sin(a_pre),
+              cx + R * math.cos(a_end), cy + R * math.sin(a_end), pal, w=10, head=26)
+    spots = [(cx, cy - R), (cx + R * 0.87, cy + R * 0.5), (cx - R * 0.87, cy + R * 0.5)]
+    disc(d, spots[0][0], spots[0][1], 62, pal["bark"], pal, w=8)
+    rnd = random.Random(2)
+    for _ in range(30):
+        d.ellipse([spots[1][0] + rnd.uniform(-60, 60), spots[1][1] + rnd.uniform(-40, 40),
+                   spots[1][0] + rnd.uniform(-60, 60) + 10,
+                   spots[1][1] + rnd.uniform(-40, 40) + 10], fill=pal["bark"])
+    layer_stack(d, pal, spots[2][0], spots[2][1], 150, n=4, h=26)
+    return "1 个三段循环 + 巨石 / 沙粒 / 新地层 三个符号"
+
+
+@page("paper", 3)
+def _(d, pal):
+    """木屑加水，搅成纸浆。"""
+    for (cx, cy, w_, h_), pulp in zip(panel2(d, pal), (False, True)):
+        d.pieslice([cx - w_ * 0.30, cy - 60, cx + w_ * 0.30, cy + 240], 0, 180,
+                   fill=pal["paper"], outline=pal["ink"], width=9)
+        if pulp:
+            d.pieslice([cx - w_ * 0.25, cy + 10, cx + w_ * 0.25, cy + 190], 0, 180,
+                       fill=pal["soft"])
+        else:
+            rnd = random.Random(6)
+            for _ in range(26):
+                x = cx + rnd.uniform(-w_ * 0.22, w_ * 0.22)
+                y = cy + rnd.uniform(20, 170)
+                d.rectangle([x - 14, y - 10, x + 14, y + 10], fill=pal["bark"],
+                            outline=pal["ink"], width=3)
+    return "左格：26 块木屑 / 右格：一碗纸浆"
+
+
+@page("paper", 4)
+def _(d, pal):
+    """纸浆倒在细网上，水从网眼漏下去。"""
+    cy = S / 2 - 40
+    x0, x1 = MARGIN + 60, S - MARGIN - 60
+    d.rectangle([x0, cy, x1, cy + 26], fill=pal["soft"], outline=pal["ink"], width=7)
+    for x in range(int(x0) + 30, int(x1) - 20, 46):     # 网眼
+        d.line([x, cy, x, cy + 26], fill=pal["ink"], width=5)
+    d.rectangle([x0 + 20, cy - 40, x1 - 20, cy], fill=pal["paper"],
+                outline=pal["ink"], width=6)
+    for i, x in enumerate(range(int(x0) + 60, int(x1) - 40, 120)):
+        d.ellipse([x - 14, cy + 80 + (i % 2) * 50, x + 14, cy + 120 + (i % 2) * 50],
+                  fill=pal["soft"], outline=pal["ink"], width=4)
+    return "1 张细网 + 网上 1 层纸浆 + 网下若干滴落的水"
+
+
+@page("paper", 5)
+def _(d, pal):
+    """压干、烘干，就是一张纸。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    d.rounded_rectangle([xs[0] - 130, cy - 50, xs[0] + 130, cy + 50], radius=16,
+                        fill=pal["soft"], outline=pal["ink"], width=8)
+    d.rounded_rectangle([xs[1] - 130, cy - 30, xs[1] + 130, cy + 30], radius=12,
+                        fill=pal["soft"], outline=pal["ink"], width=8)
+    disc(d, xs[1], cy - 110, 76, pal["bark"], pal, w=8)
+    d.rounded_rectangle([xs[2] - 130, cy - 16, xs[2] + 130, cy + 16], radius=8,
+                        fill=pal["paper"], outline=pal["ink"], width=8)
+    return "3 个阶段：湿层 → 滚筒压 → 干燥的薄纸"
+
+
+@page("paper", 7)
+def _(d, pal):
+    """旧纸泡开，重新做成新纸。"""
+    cx, cy, R = S / 2, S / 2, 260
+    for i in range(3):
+        a0 = i * 120 - 80
+        d.arc([cx - R, cy - R, cx + R, cy + R], a0, a0 + 78, fill=pal["accent"], width=16)
+        a_end, a_pre = math.radians(a0 + 78), math.radians(a0 + 64)
+        arrow(d, cx + R * math.cos(a_pre), cy + R * math.sin(a_pre),
+              cx + R * math.cos(a_end), cy + R * math.sin(a_end), pal, w=10, head=26)
+    spots = [(cx, cy - R), (cx + R * 0.87, cy + R * 0.5), (cx - R * 0.87, cy + R * 0.5)]
+    for k, (sx, sy) in enumerate(spots):
+        if k == 1:
+            d.pieslice([sx - 70, sy - 50, sx + 70, sy + 90], 0, 180, fill=pal["soft"],
+                       outline=pal["ink"], width=7)
+        else:
+            d.rounded_rectangle([sx - 60, sy - 76, sx + 60, sy + 76], radius=10,
+                                fill=pal["paper"], outline=pal["ink"], width=7)
+    return "1 个三段循环 + 旧纸 / 纸浆 / 新纸 三个符号"
+
+
+@page("paper", 10)
+def _(d, pal):
+    """砍一棵，补种一棵。"""
+    for row, cy in enumerate((S / 2 - 180, S / 2 + 180)):
+        xs, slot = lay(5)
+        for k, cx in enumerate(xs):
+            if row == 0 and k == 2:
+                d.rounded_rectangle([cx - 18, cy + 40, cx + 18, cy + 110], radius=8,
+                                    fill=pal["bark"], outline=pal["ink"], width=6)
+            elif row == 1 and k == 2:
+                d.line([cx, cy + 110, cx, cy + 40], fill=pal["bark"], width=10)
+                disc(d, cx, cy + 20, 34, pal["accent"], pal, w=6)
+            else:
+                d.rounded_rectangle([cx - 18, cy + 40, cx + 18, cy + 110], radius=8,
+                                    fill=pal["bark"], outline=pal["ink"], width=6)
+                disc(d, cx, cy - 20, 72, pal["accent"], pal, w=7)
+    return "上排 5 棵（第 3 棵只剩树桩）/ 下排 5 棵（第 3 棵是小树苗）"
+
+
+@page("plastic", 3)
+def _(d, pal):
+    """树叶会被吃掉，最后变回土。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    d.ellipse([xs[0] - 110, cy - 80, xs[0] + 110, cy + 80], fill=pal["accent"],
+              outline=pal["ink"], width=8)
+    d.pieslice([xs[1] - 110, cy - 80, xs[1] + 110, cy + 80], 200, 90, fill=pal["accent"],
+               outline=pal["ink"], width=8)
+    rnd = random.Random(8)
+    for _ in range(40):
+        x = xs[2] + rnd.uniform(-110, 110)
+        y = cy + rnd.uniform(20, 80)
+        disc(d, x, y, 9, pal["bark"], pal, w=2)
+    return "3 个阶段：整片叶 → 被啃掉一半 → 一堆土粒"
+
+
+@page("plastic", 4)
+def _(d, pal):
+    """小虫子认识树叶，不认识塑料。"""
+    for (cx, cy, w_, h_), leaf in zip(panel2(d, pal), (True, False)):
+        rnd = random.Random(12 if leaf else 13)
+        if leaf:
+            d.ellipse([cx - 130, cy - 90, cx + 130, cy + 90], fill=pal["accent"],
+                      outline=pal["ink"], width=8)
+            for _ in range(14):
+                a = rnd.uniform(0, 2 * math.pi)
+                disc(d, cx + 150 * math.cos(a), cy + 110 * math.sin(a), 12,
+                     pal["ink"], pal, w=2)
+        else:
+            d.rounded_rectangle([cx - 70, cy - 150, cx + 70, cy + 150], radius=26,
+                                fill=pal["paper"], outline=pal["ink"], width=8)
+            for _ in range(14):
+                a = rnd.uniform(0, 2 * math.pi)
+                disc(d, cx + 250 * math.cos(a), cy + 200 * math.sin(a), 12,
+                     pal["ink"], pal, w=2)
+    return "左格：叶子 + 14 个贴着它的小点 / 右格：瓶子 + 14 个远离它的小点"
+
+
+@page("plastic", 6)
+def _(d, pal):
+    """碎成看不见的小片，可它还是塑料。"""
+    xs, slot = lay(4)
+    cy = S / 2
+    rnd = random.Random(15)
+    for k, cx in enumerate(xs):
+        if k == 0:
+            d.rounded_rectangle([cx - 60, cy - 140, cx + 60, cy + 140], radius=24,
+                                fill=pal["paper"], outline=pal["ink"], width=8)
+        elif k == 1:
+            d.rounded_rectangle([cx - 60, cy - 140, cx + 60, cy - 10], radius=20,
+                                fill=pal["paper"], outline=pal["ink"], width=8)
+            d.rounded_rectangle([cx - 50, cy + 20, cx + 50, cy + 140], radius=20,
+                                fill=pal["paper"], outline=pal["ink"], width=8)
+        elif k == 2:
+            for _ in range(9):
+                x = cx + rnd.uniform(-70, 70)
+                y = cy + rnd.uniform(-120, 120)
+                d.rectangle([x - 16, y - 12, x + 16, y + 12], fill=pal["paper"],
+                            outline=pal["ink"], width=4)
+        else:
+            for _ in range(60):
+                x = cx + rnd.uniform(-80, 80)
+                y = cy + rnd.uniform(-130, 130)
+                disc(d, x, y, 5, pal["paper"], pal, w=1)
+    return "4 个阶段：整瓶 → 裂成两段 → 9 块碎片 → 60 粒微塑料"
+
+
+@page("plastic", 8)
+def _(d, pal):
+    """干净的塑料可以熔化，做成新东西。"""
+    cx, cy, R = S / 2, S / 2, 260
+    for i in range(3):
+        a0 = i * 120 - 80
+        d.arc([cx - R, cy - R, cx + R, cy + R], a0, a0 + 78, fill=pal["accent"], width=16)
+        a_end, a_pre = math.radians(a0 + 78), math.radians(a0 + 64)
+        arrow(d, cx + R * math.cos(a_pre), cy + R * math.sin(a_pre),
+              cx + R * math.cos(a_end), cy + R * math.sin(a_end), pal, w=10, head=26)
+    spots = [(cx, cy - R), (cx + R * 0.87, cy + R * 0.5), (cx - R * 0.87, cy + R * 0.5)]
+    d.rounded_rectangle([spots[0][0] - 42, spots[0][1] - 76, spots[0][0] + 42, spots[0][1] + 76],
+                        radius=18, fill=pal["paper"], outline=pal["ink"], width=7)
+    rnd = random.Random(21)
+    for _ in range(14):
+        x = spots[1][0] + rnd.uniform(-60, 60)
+        y = spots[1][1] + rnd.uniform(-50, 50)
+        d.rectangle([x - 12, y - 9, x + 12, y + 9], fill=pal["paper"],
+                    outline=pal["ink"], width=3)
+    d.polygon([(spots[2][0] - 70, spots[2][1] + 60), (spots[2][0] - 40, spots[2][1] - 50),
+               (spots[2][0] + 40, spots[2][1] - 50), (spots[2][0] + 70, spots[2][1] + 60)],
+              fill=pal["accent"])
+    return "1 个三段循环 + 瓶子 / 碎片 / 新衣服 三个符号"
+
+
+@page("plastic", 10)
+def _(d, pal):
+    """自带杯子、布袋子，不要一次性的。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    d.rounded_rectangle([xs[0] - 70, cy - 90, xs[0] + 70, cy + 110], radius=22,
+                        fill=pal["paper"], outline=pal["ink"], width=8)
+    d.rounded_rectangle([xs[0] - 50, cy - 130, xs[0] + 50, cy - 90], radius=16,
+                        fill=pal["accent"], outline=pal["ink"], width=7)
+    d.rounded_rectangle([xs[1] - 90, cy - 50, xs[1] + 90, cy + 120], radius=14,
+                        fill=pal["accent"], outline=pal["ink"], width=8)
+    d.arc([xs[1] - 60, cy - 140, xs[1] + 60, cy - 20], 180, 360, fill=pal["ink"], width=10)
+    d.rounded_rectangle([xs[2] - 16, cy - 130, xs[2] + 16, cy + 130], radius=12,
+                        fill=pal["paper"], outline=pal["ink"], width=7)
+    d.line([xs[2] - 110, cy - 130, xs[2] + 110, cy + 130], fill=pal["accent"], width=22)
+    return "3 个符号：自带杯 / 布袋 / 一次性吸管（划掉）"
+
+
+@page("sleepwin", 3)
+def _(d, pal):
+    """冬眠时心跳和呼吸都慢下来。"""
+    for cy, freq, col in ((S / 2 - 150, 9, pal["accent"]), (S / 2 + 150, 3, pal["soft"])):
+        pts = []
+        for i in range(241):
+            t = i / 240
+            x = MARGIN + 40 + t * (S - 2 * MARGIN - 80)
+            y = cy - 90 * math.sin(t * freq * 2 * math.pi)
+            pts.append((x, y))
+        d.line(pts, fill=col, width=12, joint="curve")
+    return "上条 9 个波峰（平时）/ 下条 3 个波峰（冬眠）"
+
+
+@page("sleepwin", 4)
+def _(d, pal):
+    """身体调慢了，用的力气就少。"""
+    base = S - MARGIN - 160
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    for cx, h, col in ((S / 2 - 220, 520, pal["accent"]), (S / 2 + 220, 150, pal["soft"])):
+        d.rounded_rectangle([cx - 110, base - h, cx + 110, base], radius=18,
+                            fill=col, outline=pal["ink"], width=8)
+    return "2 根柱子站在同一条线上：左高（平时）/ 右矮（冬眠）"
+
+
+@page("sleepwin", 6)
+def _(d, pal):
+    """土拨鼠体温降得多，熊降得少。"""
+    for (cx, cy, w_, h_), deep in zip(panel2(d, pal), (True, False)):
+        bw, bh = 66, h_ * 0.62
+        d.rounded_rectangle([cx - bw / 2, cy - bh / 2, cx + bw / 2, cy + bh / 2],
+                            radius=32, fill=pal["paper"], outline=pal["ink"], width=8)
+        fill_h = bh * (0.18 if deep else 0.68)
+        d.rounded_rectangle([cx - bw / 2 + 12, cy + bh / 2 - fill_h,
+                             cx + bw / 2 - 12, cy + bh / 2 - 12],
+                            radius=24, fill=pal["accent"])
+        disc(d, cx, cy + bh / 2, 54, pal["accent"], pal, w=8)
+    return "左格液柱很低（真冬眠）/ 右格液柱只略低（熊）"
+
+
+@page("sleepwin", 9)
+def _(d, pal):
+    """醒一次要花掉好多存下来的力气。"""
+    x0, x1 = MARGIN + 60, S - MARGIN - 60
+    cy = S / 2
+    n = 10
+    seg = (x1 - x0) / n
+    for i in range(n):
+        x = x0 + i * seg
+        d.rectangle([x, cy - 90, x + seg - 10, cy + 90],
+                    fill=pal["accent"] if i >= 3 else pal["paper"],
+                    outline=pal["ink"], width=6)
+        if i < 3:
+            cross(d, x + (seg - 10) / 2, cy, 56, pal, w=12)
+    return "10 格存粮，前 3 格被划掉（醒来用掉的）"
+
+
+@page("sleepwin", 10)
+def _(d, pal):
+    """天暖起来，它们自己就醒了。"""
+    cx = S / 2 - 120
+    bw, bh = 70, 480
+    d.rounded_rectangle([cx - bw / 2, S / 2 - bh / 2, cx + bw / 2, S / 2 + bh / 2],
+                        radius=34, fill=pal["paper"], outline=pal["ink"], width=9)
+    d.rounded_rectangle([cx - bw / 2 + 14, S / 2 - bh / 2 + 90,
+                         cx + bw / 2 - 14, S / 2 + bh / 2 - 14],
+                        radius=26, fill=pal["accent"])
+    disc(d, cx, S / 2 + bh / 2, 58, pal["accent"], pal, w=9)
+    arrow(d, cx + 170, S / 2 + 160, cx + 170, S / 2 - 200, pal, w=14, head=36)
+    return "1 支体温计（液柱升高）+ 1 支向上的箭头"
+
+
+# ---------------------------------------------------------------- trash p1（模型四次都塞人进来，改程序画）
+
+@page("trash", 1)
+def _(d, pal):
+    """三个一样的桶站在地上，只有盖子颜色不同 —— 画面里不会有人。
+
+    这页交给模型画了四次：三个孩子 → 擦成一张脸 → 擦成一块肉色斑 → 又是三个孩子。
+    场景里写明「只有三个桶、地面和墙」也没用。桶就是圆角矩形加盖子加轮子，
+    几何极简，改程序画，顺便保证画面里绝不会出现人。
+    """
+    ground = S - MARGIN - 150
+    d.rectangle([0, ground, S, S], fill=pal["ground"])
+    d.line([0, ground, S, ground], fill=pal["ink"], width=10)
+    # 正文写的是蓝、绿、黑三色盖子，而这本调色板里没有绿，accent 又是蓝，
+    # 上一版拿 soft 当第一个盖子画成了灰。这里直接写死三个色值。
+    lids = ["#2f6fb0", "#3f9e4d", "#20242a"]                 # 蓝 / 绿 / 黑，对应正文
+    xs, slot = lay(3)
+    bw = min(slot * 0.66, 240)
+    for cx, lid in zip(xs, lids):
+        top = ground - 520
+        d.rounded_rectangle([cx - bw / 2, top + 60, cx + bw / 2, ground - 40], radius=26,
+                            fill=pal["paper"], outline=pal["ink"], width=9)
+        d.rounded_rectangle([cx - bw / 2 - 14, top, cx + bw / 2 + 14, top + 70], radius=22,
+                            fill=lid, outline=pal["ink"], width=9)
+        for dx in (-bw * 0.30, bw * 0.30):                   # 两个轮子
+            disc(d, cx + dx, ground - 20, 32, pal["ink"], pal, w=4)
+    return "3 个等大的桶站在地上，盖子分别是蓝 / 绿 / 黑，画面里没有人"
+
+
+# ---------------------------------------------------------------- 第五批新书：wind / thunder / rainbow / glass
+
+def flow_arrows(d, pal, pts_from, pts_to, w=10, head=26):
+    """成组的同向箭头，用来画气流、热流这类「一进一出」。"""
+    for (x1, y1), (x2, y2) in zip(pts_from, pts_to):
+        arrow(d, x1, y1, x2, y2, pal, w=w, head=head)
+
+
+@page("wind", 3)
+def _(d, pal):
+    """太阳晒热地面，热空气往上升。"""
+    base = S - MARGIN - 160
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    disc(d, S - MARGIN - 180, MARGIN + 160, 90, pal["accent"], pal, w=8)
+    xs = [S / 2 - 200, S / 2, S / 2 + 200]
+    flow_arrows(d, pal, [(x, base - 40) for x in xs], [(x, base - 460) for x in xs])
+    return "1 条地面 + 1 个太阳 + 3 支向上的箭头"
+
+
+@page("wind", 4)
+def _(d, pal):
+    """热空气升上去，旁边的冷空气补进来 —— 这一进一出就是风。"""
+    base = S - MARGIN - 160
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    xs = [S / 2 - 140, S / 2, S / 2 + 140]
+    flow_arrows(d, pal, [(x, base - 40) for x in xs], [(x, base - 420) for x in xs])
+    arrow(d, MARGIN + 40, base - 120, S / 2 - 230, base - 120, pal, w=11, head=28)
+    arrow(d, S - MARGIN - 40, base - 120, S / 2 + 230, base - 120, pal, w=11, head=28)
+    return "3 支向上的箭头（热空气）+ 左右各 1 支向内的箭头（冷空气补进来）"
+
+
+@page("wind", 5)
+def _(d, pal):
+    """海陆风：白天从海吹向陆，晚上反过来。"""
+    for (cx, cy, w_, h_), day in zip(panel2(d, pal), (True, False)):
+        mid = cx
+        d.rectangle([cx - w_ / 2 + 8, cy + 40, mid, cy + h_ / 2 - 8], fill=pal["soft"])
+        d.polygon([(mid, cy + h_ / 2 - 8), (mid, cy + 40),
+                   (cx + w_ / 2 - 8, cy - 20), (cx + w_ / 2 - 8, cy + h_ / 2 - 8)],
+                  fill=pal["bark"])
+        if day:
+            arrow(d, cx - w_ * 0.32, cy - 60, cx + w_ * 0.28, cy - 60, pal, w=11, head=28)
+        else:
+            arrow(d, cx + w_ * 0.28, cy - 60, cx - w_ * 0.32, cy - 60, pal, w=11, head=28)
+    return "左格箭头由海指向陆（白天）/ 右格箭头由陆指向海（晚上）"
+
+
+@page("wind", 7)
+def _(d, pal):
+    """北风是从北边吹来的。"""
+    cx, cy, R = S / 2, S / 2, 300
+    disc(d, cx, cy, R, pal["paper"], pal, w=10)
+    for i in range(4):
+        a = math.radians(i * 90 - 90)
+        d.line([cx + (R - 60) * math.cos(a), cy + (R - 60) * math.sin(a),
+                cx + (R - 14) * math.cos(a), cy + (R - 14) * math.sin(a)],
+               fill=pal["ink"], width=12)
+    arrow(d, cx, cy - R - 150, cx, cy - 60, pal, w=14, head=36)
+    return "1 个四向罗盘 + 1 支自北向中心的粗箭头"
+
+
+@page("wind", 9)
+def _(d, pal):
+    """台风是又急又转的大风，要待在屋里。"""
+    cx, cy = S / 2 - 120, S / 2
+    pts = []
+    for i in range(260):
+        t = i / 260
+        a = t * 3.2 * 2 * math.pi
+        r = 330 * (1 - t * 0.88)
+        pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
+    d.line(pts, fill=pal["accent"], width=16, joint="curve")
+    hx = S - MARGIN - 170
+    d.polygon([(hx - 120, S / 2 + 60), (hx, S / 2 - 60), (hx + 120, S / 2 + 60)],
+              fill=pal["paper"])
+    d.rectangle([hx - 95, S / 2 + 60, hx + 95, S / 2 + 250], fill=pal["paper"],
+                outline=pal["ink"], width=8)
+    for a, b in (((hx - 120, S / 2 + 60), (hx, S / 2 - 60)), ((hx, S / 2 - 60), (hx + 120, S / 2 + 60))):
+        d.line([a, b], fill=pal["ink"], width=8)
+    return "1 个卷 3.2 圈的螺旋（台风）+ 1 间关着的房子"
+
+
+@page("thunder", 3)
+def _(d, pal):
+    """云里上下攒了两种电。"""
+    cx, cy = S / 2, S / 2
+    d.ellipse([cx - 380, cy - 220, cx + 380, cy + 220], fill=pal["soft"],
+              outline=pal["ink"], width=9)
+    rnd = random.Random(5)
+    for _ in range(18):
+        x = cx + rnd.uniform(-300, 300)
+        y = cy + rnd.uniform(-160, -40)
+        disc(d, x, y, 16, pal["paper"], pal, w=4)
+    for _ in range(18):
+        x = cx + rnd.uniform(-300, 300)
+        y = cy + rnd.uniform(40, 160)
+        d.rectangle([x - 14, y - 14, x + 14, y + 14], fill=pal["accent"],
+                    outline=pal["ink"], width=4)
+    return "1 朵云 + 上方 18 个圆 + 下方 18 个方（两种电）"
+
+
+@page("thunder", 4)
+def _(d, pal):
+    """电跳过去，就是闪电。"""
+    cx = S / 2
+    d.ellipse([cx - 340, MARGIN + 60, cx + 340, MARGIN + 320], fill=pal["soft"],
+              outline=pal["ink"], width=9)
+    base = S - MARGIN - 120
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    pts = [(cx, MARGIN + 320), (cx - 90, MARGIN + 480), (cx + 40, MARGIN + 500),
+           (cx - 60, base)]
+    d.line(pts, fill=pal["accent"], width=20, joint="curve")
+    return "1 朵云 + 1 道折线闪电 + 1 条地面"
+
+
+@page("thunder", 5)
+def _(d, pal):
+    """空气一胀一缩，就响了。"""
+    for (cx, cy, w_, h_), expand in zip(panel2(d, pal), (True, False)):
+        R = min(w_, h_) * (0.34 if expand else 0.20)
+        disc(d, cx, cy, R, pal["accent"] if expand else pal["soft"], pal, w=9)
+        for i in range(8):
+            a = i * math.pi / 4
+            if expand:
+                arrow(d, cx + (R + 20) * math.cos(a), cy + (R + 20) * math.sin(a),
+                      cx + (R + 130) * math.cos(a), cy + (R + 130) * math.sin(a),
+                      pal, w=8, head=22)
+            else:
+                arrow(d, cx + (R + 150) * math.cos(a), cy + (R + 150) * math.sin(a),
+                      cx + (R + 30) * math.cos(a), cy + (R + 30) * math.sin(a),
+                      pal, w=8, head=22)
+    return "左格大圆 + 8 支向外箭头（胀）/ 右格小圆 + 8 支向内箭头（缩）"
+
+
+@page("thunder", 6)
+def _(d, pal):
+    """光一秒三十万公里，声音一秒三百多米。"""
+    x0 = MARGIN + 40
+    full = S - 2 * MARGIN - 80
+    for cy, frac, col in ((S / 2 - 120, 1.0, pal["accent"]), (S / 2 + 120, 0.06, pal["soft"])):
+        d.rounded_rectangle([x0, cy - 40, x0 + full * frac, cy + 40], radius=20,
+                            fill=col, outline=pal["ink"], width=8)
+    d.line([x0, S / 2 - 200, x0, S / 2 + 200], fill=pal["ink"], width=8)
+    return "上条铺满整幅（光）/ 下条只有 6%（声音），左端对齐"
+
+
+@page("thunder", 9)
+def _(d, pal):
+    """待在屋里最安全，别在大树下、别在空地上。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    hx = xs[0]
+    d.polygon([(hx - 110, cy + 40), (hx, cy - 80), (hx + 110, cy + 40)], fill=pal["paper"])
+    d.rectangle([hx - 88, cy + 40, hx + 88, cy + 220], fill=pal["paper"],
+                outline=pal["ink"], width=8)
+    for a, b in (((hx - 110, cy + 40), (hx, cy - 80)), ((hx, cy - 80), (hx + 110, cy + 40))):
+        d.line([a, b], fill=pal["ink"], width=8)
+    tx = xs[1]
+    d.rectangle([tx - 22, cy - 20, tx + 22, cy + 220], fill=pal["bark"],
+                outline=pal["ink"], width=7)
+    disc(d, tx, cy - 90, 110, pal["soft"], pal, w=8)
+    fx = xs[2]
+    d.line([fx - 140, cy + 200, fx + 140, cy + 200], fill=pal["ink"], width=10)
+    for x, y in ((tx, cy + 60), (fx, cy + 60)):
+        d.line([x - 150, y - 180, x + 150, y + 180], fill=pal["accent"], width=22)
+    return "3 个符号：房子（好）/ 大树（划掉）/ 空地（划掉）"
+
+
+@page("rainbow", 2)
+def _(d, pal):
+    """白光穿过三棱镜，分成七色。"""
+    cy = S / 2
+    d.line([MARGIN, cy - 60, S / 2 - 60, cy - 20], fill=pal["ink"], width=12)
+    d.polygon([(S / 2 - 40, cy - 180), (S / 2 - 150, cy + 150), (S / 2 + 70, cy + 150)],
+              fill=pal["paper"])
+    pts = [(S / 2 - 40, cy - 180), (S / 2 - 150, cy + 150), (S / 2 + 70, cy + 150)]
+    for a, b in zip(pts, pts[1:] + pts[:1]):
+        d.line([a, b], fill=pal["ink"], width=9)
+    bands = ["#c0392b", "#e67e22", "#f1c40f", "#27ae60", "#2980b9", "#4b3fa0", "#7d3c98"]
+    for i, col in enumerate(bands):
+        d.line([S / 2 + 60, cy + 20, S - MARGIN, cy - 60 + i * 46], fill=col, width=12)
+    return "1 束白光 + 1 个三棱镜 + 7 条分开的彩色光"
+
+
+@page("rainbow", 3)
+def _(d, pal):
+    """光进水里会拐个弯，这叫折射。"""
+    cy = S / 2
+    d.rectangle([MARGIN, cy, S - MARGIN, S - MARGIN], fill=pal["soft"])
+    d.line([MARGIN, cy, S - MARGIN, cy], fill=pal["ink"], width=10)
+    hit = (S / 2, cy)
+    d.line([MARGIN + 80, cy - 340, hit[0], hit[1]], fill=pal["ink"], width=12)
+    d.line([hit[0], hit[1], S - MARGIN - 200, S - MARGIN - 40], fill=pal["accent"], width=12)
+    for i in range(9):                                  # 原方向用虚线示意
+        t0, t1 = i / 9, i / 9 + 0.05
+        x0 = hit[0] + (hit[0] - (MARGIN + 80)) * t0
+        y0 = hit[1] + (hit[1] - (cy - 340)) * t0
+        x1 = hit[0] + (hit[0] - (MARGIN + 80)) * t1
+        y1 = hit[1] + (hit[1] - (cy - 340)) * t1
+        d.line([x0, y0, x1, y1], fill=pal["soft"], width=6)
+    return "1 条入射光 + 1 条折射后的光 + 1 条虚线（原方向）"
+
+
+@page("rainbow", 4)
+def _(d, pal):
+    """光在一颗水滴里拐弯、反射、再拐弯出来。"""
+    cx, cy, R = S / 2 + 60, S / 2, 300
+    disc(d, cx, cy, R, pal["paper"], pal, w=10)
+    entry = (cx - R * 0.62, cy - R * 0.62)
+    back = (cx + R * 0.86, cy + R * 0.10)
+    d.line([MARGIN, cy - R, entry[0], entry[1]], fill=pal["ink"], width=11)
+    d.line([entry[0], entry[1], back[0], back[1]], fill=pal["ink"], width=11)
+    bands = ["#c0392b", "#e67e22", "#f1c40f", "#27ae60", "#2980b9", "#4b3fa0", "#7d3c98"]
+    for i, col in enumerate(bands):
+        d.line([back[0], back[1], MARGIN + 40, cy + 160 + i * 34], fill=col, width=8)
+    return "1 颗水滴 + 入射 1 条 + 内部反射 1 条 + 出射 7 条彩色光"
+
+
+@page("rainbow", 6)
+def _(d, pal):
+    """彩虹总在太阳的对面。"""
+    disc(d, MARGIN + 140, MARGIN + 160, 100, pal["accent"], pal, w=8)
+    cx = S / 2 + 40
+    d.rounded_rectangle([cx - 40, S / 2 - 40, cx + 40, S / 2 + 200], radius=24,
+                        fill=pal["soft"], outline=pal["ink"], width=8)
+    disc(d, cx, S / 2 - 90, 52, pal["soft"], pal, w=8)
+    bands = ["#c0392b", "#e67e22", "#f1c40f", "#27ae60", "#2980b9", "#4b3fa0", "#7d3c98"]
+    for i, col in enumerate(bands):
+        r = 300 - i * 26
+        d.arc([S - MARGIN - 2 * r, S / 2 + 120 - r, S - MARGIN, S / 2 + 120 + r],
+              180, 360, fill=col, width=20)
+    return "左边 1 个太阳 + 中间 1 个背对太阳的人 + 右边 1 条七色彩虹"
+
+
+@page("rainbow", 8)
+def _(d, pal):
+    """颜色顺序不变：红在最外，紫在最里。"""
+    bands = ["#c0392b", "#e67e22", "#f1c40f", "#27ae60", "#2980b9", "#4b3fa0", "#7d3c98"]
+    cx, cy = S / 2, S - MARGIN - 60
+    for i, col in enumerate(bands):
+        r = 420 - i * 52
+        d.arc([cx - r, cy - r, cx + r, cy + r], 180, 360, fill=col, width=44)
+    return "7 条同心弧，最外红、最内紫"
+
+
+@page("glass", 3)
+def _(d, pal):
+    """沙子烧到很热就熔化，变成会流动的液体。"""
+    for (cx, cy, w_, h_), molten in zip(panel2(d, pal), (False, True)):
+        d.pieslice([cx - w_ * 0.32, cy - 40, cx + w_ * 0.32, cy + 260], 0, 180,
+                   fill=pal["paper"], outline=pal["ink"], width=9)
+        if molten:
+            d.pieslice([cx - w_ * 0.26, cy + 20, cx + w_ * 0.26, cy + 200], 0, 180,
+                       fill=pal["accent"])
+        else:
+            rnd = random.Random(9)
+            for _ in range(70):
+                x = cx + rnd.uniform(-w_ * 0.24, w_ * 0.24)
+                y = cy + rnd.uniform(40, 180)
+                disc(d, x, y, 7, pal["bark"], pal, w=2)
+    return "左格：一碗散沙粒 / 右格：一碗流动的熔液"
+
+
+@page("glass", 4)
+def _(d, pal):
+    """用长管子蘸一团，往里吹气。"""
+    cy = S / 2
+    d.rounded_rectangle([MARGIN + 40, cy - 22, S - MARGIN - 260, cy + 22], radius=18,
+                        fill=pal["soft"], outline=pal["ink"], width=8)
+    disc(d, S - MARGIN - 180, cy, 150, pal["accent"], pal, w=9)
+    arrow(d, MARGIN - 10, cy, MARGIN + 120, cy, pal, w=12, head=30)
+    return "1 根长管 + 管端 1 团熔玻璃 + 1 支吹入的箭头"
+
+
+@page("glass", 5)
+def _(d, pal):
+    """一边吹一边转，慢慢鼓成空心的杯子。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    # 上一版第三个画成了方框，整排读作「甜甜圈变相框」。第三个改成侧视杯形：
+    # 上沿开口、杯壁两侧收进去、杯底平 —— 一眼看得出是在吹一只杯子。
+    for k, cx in enumerate(xs):
+        R = 90 + k * 36
+        if k == 0:
+            disc(d, cx, cy, R, pal["accent"], pal, w=9)
+        elif k == 1:
+            disc(d, cx, cy, R, pal["accent"], pal, w=9)
+            disc(d, cx, cy, R * 0.46, pal["ground"], pal, w=6)
+        else:
+            top, bot = cy - R, cy + R
+            outer = [(cx - R * 0.76, top), (cx + R * 0.76, top),
+                     (cx + R * 0.60, bot), (cx - R * 0.60, bot)]
+            d.polygon(outer, fill=pal["accent"])
+            for a, b in zip(outer, outer[1:] + outer[:1]):
+                d.line([a, b], fill=pal["ink"], width=9)
+            inner = [(cx - R * 0.60, top + 26), (cx + R * 0.60, top + 26),
+                     (cx + R * 0.44, bot - 34), (cx - R * 0.44, bot - 34)]
+            d.polygon(inner, fill=pal["ground"])
+            for a, b in zip(inner, inner[1:] + inner[:1]):
+                d.line([a, b], fill=pal["ink"], width=6)
+    return "3 个阶段：实心团 → 中间鼓出空心 → 侧视杯形（开口在上、杯壁收进去）"
+
+
+@page("glass", 7)
+def _(d, pal):
+    """玻璃硬得脆，一摔就碎，碎片很锋利。"""
+    cx = S / 2 - 220
+    d.rounded_rectangle([cx - 90, S / 2 - 180, cx + 90, S / 2 + 180], radius=26,
+                        fill=pal["paper"], outline=pal["ink"], width=9)
+    rnd = random.Random(4)
+    for _ in range(9):
+        px = S / 2 + 160 + rnd.uniform(-140, 200)
+        py = S / 2 + rnd.uniform(-180, 180)
+        a = rnd.uniform(0, math.pi)
+        size = rnd.uniform(40, 90)
+        pts = [(px, py),
+               (px + size * math.cos(a), py + size * math.sin(a)),
+               (px + size * 0.6 * math.cos(a + 1.6), py + size * 0.6 * math.sin(a + 1.6))]
+        d.polygon(pts, fill=pal["paper"])
+        for p, q in zip(pts, pts[1:] + pts[:1]):
+            d.line([p, q], fill=pal["ink"], width=6)
+    return "左边 1 只完整的杯子 + 右边 9 块带尖角的碎片"
+
+
+@page("glass", 9)
+def _(d, pal):
+    """玻璃可以一直回收。"""
+    cx, cy, R = S / 2, S / 2, 280
+    for i in range(3):
+        a0 = i * 120 - 80
+        d.arc([cx - R, cy - R, cx + R, cy + R], a0, a0 + 80, fill=pal["accent"], width=16)
+        a_end = math.radians(a0 + 80)
+        a_pre = math.radians(a0 + 66)
+        arrow(d, cx + R * math.cos(a_pre), cy + R * math.sin(a_pre),
+              cx + R * math.cos(a_end), cy + R * math.sin(a_end), pal, w=10, head=26)
+    spots = [(cx, cy - R), (cx + R * 0.87, cy + R * 0.5), (cx - R * 0.87, cy + R * 0.5)]
+    d.rounded_rectangle([spots[0][0] - 34, spots[0][1] - 70, spots[0][0] + 34, spots[0][1] + 70],
+                        radius=16, fill=pal["paper"], outline=pal["ink"], width=7)
+    for dx in (-30, 0, 30):
+        d.polygon([(spots[1][0] + dx, spots[1][1] - 30), (spots[1][0] + dx + 26, spots[1][1] + 24),
+                   (spots[1][0] + dx - 18, spots[1][1] + 20)], fill=pal["paper"])
+    d.pieslice([spots[2][0] - 60, spots[2][1] - 50, spots[2][0] + 60, spots[2][1] + 70],
+               0, 180, fill=pal["accent"], outline=pal["ink"], width=7)
+    return "1 个三段循环箭头 + 瓶子 / 碎片 / 熔炉 三个符号"
+
+
 # ---------------------------------------------------------------- 第五批新书：hungry / fever / print / year
 
 @page("hungry", 3)
@@ -1112,15 +1846,23 @@ def _(d, pal):
         d.line([cx + (R - 44) * math.cos(a), cy + (R - 44) * math.sin(a),
                 cx + (R - 12) * math.cos(a), cy + (R - 12) * math.sin(a)],
                fill=pal["ink"], width=8)
-    a_old = math.radians(180 + 4 * 18)
-    a_new = math.radians(180 + 7 * 18)
-    d.line([cx, cy, cx + (R - 80) * math.cos(a_old), cy + (R - 80) * math.sin(a_old)],
+    # 上一版两根指针都在上方、夹角太小，「从低调到高」读不出方向。
+    # 旧指针放在左下（低），新指针放在右上（高），中间一段粗弧 + 箭头标出转向。
+    a_old = math.radians(180 + 1 * 18)          # 左下，接近最低刻度
+    a_new = math.radians(180 + 8 * 18)          # 右上，接近最高刻度
+    d.line([cx, cy, cx + (R - 70) * math.cos(a_old), cy + (R - 70) * math.sin(a_old)],
            fill=pal["soft"], width=14)
-    d.line([cx, cy, cx + (R - 80) * math.cos(a_new), cy + (R - 80) * math.sin(a_new)],
-           fill=pal["accent"], width=20)
-    d.arc([cx - R + 60, cy - R + 60, cx + R - 60, cy + R - 60],
-          180 + 4 * 18, 180 + 7 * 18, fill=pal["accent"], width=10)
-    return "1 个刻度盘 + 旧指针（浅）+ 新指针（深，高 3 格）+ 1 段弧"
+    d.line([cx, cy, cx + (R - 70) * math.cos(a_new), cy + (R - 70) * math.sin(a_new)],
+           fill=pal["accent"], width=24)
+    rr = R - 150
+    d.arc([cx - rr, cy - rr, cx + rr, cy + rr], 180 + 1 * 18, 180 + 8 * 18,
+          fill=pal["accent"], width=14)
+    a_tip = math.radians(180 + 8 * 18)
+    a_pre = math.radians(180 + 7 * 18)
+    arrow(d, cx + rr * math.cos(a_pre), cy + rr * math.sin(a_pre),
+          cx + rr * math.cos(a_tip), cy + rr * math.sin(a_tip), pal, w=12, head=30)
+    disc(d, cx, cy, 18, pal["ink"], pal, w=3)
+    return "1 个刻度盘 + 旧指针（浅，偏低）+ 新指针（深，偏高）+ 1 段带箭头的弧"
 
 
 @page("fever", 6)
@@ -1277,17 +2019,21 @@ def _(d, pal):
 @page("year", 3)
 def _(d, pal):
     """每月的天数：二月最短。"""
+    # 柱宽和间距要分开算：上一版用 step-16 当宽度、又加了 8 的左偏移，
+    # 矮柱两侧留出视觉空隙，十二根看着像十一根加一根。
     n = 12
-    step = (S - 2 * MARGIN) / n
+    gap = 10
+    avail = S - 2 * MARGIN
+    bw = (avail - gap * (n - 1)) / n
     base = S - MARGIN - 120
     for i in range(n):
         h = 420 if i != 1 else 300
-        x = MARGIN + step * i + 8
-        d.rounded_rectangle([x, base - h, x + step - 16, base], radius=10,
+        x = MARGIN + i * (bw + gap)
+        d.rounded_rectangle([x, base - h, x + bw, base], radius=8,
                             fill=pal["accent"] if i == 1 else pal["paper"],
                             outline=pal["ink"], width=6)
     d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=8)
-    return "12 根柱子，第 2 根明显更矮"
+    return f"12 根等宽柱子（宽 {bw:.0f}、间距 {gap}），第 2 根明显更矮"
 
 
 @page("year", 5)
