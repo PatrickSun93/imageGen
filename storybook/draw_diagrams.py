@@ -1304,18 +1304,19 @@ def _(d, pal):
 @page("hiccup", 2)
 def _(d, pal):
     """膈肌是胸腔下面一块平平的、像伞一样的肉。"""
+    # 正面对称构图（方框 + 两个圆 + 一道横弧）无论怎么配色都读成人脸，已经错两次。
+    # 换成侧视剖面：身体侧着朝左，肺在上方、膈肌是一道横贯身体的弧 —— 对称性一破，
+    # 脸就不成立了。这和 magnet p9 退成指南针是同一个判断：参数调不动时，问题在构图。
+    # 第三次了。正面对称读成脸，侧视剖面读成歪盒子 —— 扁平几何画不出「立体结构」。
+    # 退成最朴素的画法：一个竖向躯干轮廓，上部一片肺，中间一条明显的横线标出膈肌。
+    # 同 magnet p9 退成指南针、bee p11 接受勺子：信息到位就不再追求「像解剖图」。
     cx, cy = S / 2, S / 2
-    d.rounded_rectangle([cx - 260, cy - 320, cx + 260, cy + 300], radius=60,
-                        fill=pal["paper"], outline=pal["ink"], width=9)
-    # 上一版两片深色肺 + 一道红弧，整页读成一张脸（两只眼睛加一张嘴）。
-    # 肺改成浅色、缩小、贴着胸腔上部；膈肌改成贴住胸腔下缘的实心带。
-    for s in (-1, 1):
-        d.ellipse([cx + s * 26 - (0 if s > 0 else 150), cy - 250,
-                   cx + s * 26 + (150 if s > 0 else 0), cy - 90],
-                  fill=pal["paper"], outline=pal["ink"], width=6)
-    d.pieslice([cx - 250, cy - 20, cx + 250, cy + 300], 180, 360,
-               fill=pal["accent"], outline=pal["ink"], width=8)          # 伞形膈肌，实心
-    return "1 个胸腔 + 上方 2 片浅色肺 + 下缘 1 块实心伞形膈肌"
+    d.rounded_rectangle([cx - 200, cy - 340, cx + 200, cy + 340], radius=100,
+                        fill=pal["paper"], outline=pal["ink"], width=10)
+    d.ellipse([cx - 130, cy - 280, cx + 130, cy - 80],
+              fill=pal["soft"], outline=pal["ink"], width=8)             # 肺，在上
+    d.line([cx - 205, cy + 20, cx + 205, cy + 20], fill=pal["accent"], width=30)  # 膈肌，一条横线
+    return "1 个躯干轮廓 + 上部 1 片肺 + 中间 1 条横线（膈肌）"
 
 
 @page("hiccup", 3)
@@ -1364,15 +1365,18 @@ def _(d, pal):
     cx, cy = S / 2, S / 2
     # 上一版只用 d.line 画轮廓，翼面是空心梯形；气流又飘在离翼很远的上方。
     # 改成填充实心翼面，气流贴着上表面走。
+    # 翼面用 soft（深褐）填充时和黑描边糊成一团，下缘的直线也被盖住，
+    # 「上拱下平」看不出来。改成浅色翼面 + 最后单独压一条深色下缘线。
     pts = [(cx - 320, cy), (cx - 180, cy - 110), (cx + 60, cy - 120), (cx + 320, cy)]
-    d.polygon(pts, fill=pal["soft"])
+    d.polygon(pts, fill=pal["paper"])
     for a, b in zip(pts, pts[1:] + pts[:1]):
-        d.line([a, b], fill=pal["ink"], width=10)
+        d.line([a, b], fill=pal["ink"], width=8)
+    d.line([cx - 320, cy, cx + 320, cy], fill=pal["ink"], width=16)      # 平直的下缘，压在最上层
     for i in range(3):                                                   # 紧贴上表面的气流
-        y = cy - 150 - i * 46
+        y = cy - 160 - i * 46
         arrow(d, cx - 330, y, cx + 330, y - 10, pal, w=7, head=20)
-    arrow(d, cx, cy + 170, cx, cy + 40, pal, w=12, head=30)              # 升力向上
-    return "1 个实心的上拱下平翼形 + 上方 3 支贴面气流 + 1 支向上的升力箭头"
+    arrow(d, cx, cy + 180, cx, cy + 44, pal, w=12, head=30)              # 升力向上
+    return "1 个浅色翼面（上拱、下缘一条粗直线）+ 上方 3 支贴面气流 + 1 支升力箭头"
 
 
 @page("bird", 9)
