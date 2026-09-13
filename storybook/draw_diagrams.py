@@ -994,6 +994,439 @@ def _(d, pal):
     return "1 个分成 12 格的勺子（盘小柄粗），只有 1 格是满的"
 
 
+# ---------------------------------------------------------------- A 类最后一批（meteor / sky / sundial / crab / power / fish）
+
+@page("meteor", 3)
+def _(d, pal):
+    """太空里的小石头绕着太阳跑 —— 一条环带，不是地上的路。"""
+    cx, cy = S / 2, S / 2
+    disc(d, cx, cy, 92, pal["accent"], pal, w=9)
+    rnd = random.Random(13)
+    for i in range(26):                                   # 石头沿一条宽环带分布
+        a = rnd.uniform(0, 2 * math.pi)
+        r = rnd.uniform(280, 400)
+        disc(d, cx + r * math.cos(a), cy + r * math.sin(a) * 0.86,
+             rnd.uniform(9, 18), pal["bark"], pal, w=4)
+    d.ellipse([cx - 400, cy - 344, cx + 400, cy + 344], outline=pal["soft"], width=5)
+    d.ellipse([cx - 280, cy - 240, cx + 280, cy + 240], outline=pal["soft"], width=5)
+    return "1 个太阳 + 26 块石头分布在一条环带上"
+
+
+@page("meteor", 5)
+def _(d, pal):
+    """石头冲进空气，前面的空气被挤得又热又亮 —— 亮的在石头前方。"""
+    # 上一版把发亮弧画成一道拱悬在石头上方，像彩虹；正文说亮的在石头「前面」。
+    # 石头自右上飞向左下，发亮楔形就贴在它左下方的行进前侧。
+    cx, cy = S / 2 + 40, S / 2 - 20
+    d.line([0, 760, S, 700], fill=pal["soft"], width=6)                 # 空气层顶界
+    ang = math.radians(215)                                             # 行进方向：左下
+    for i in range(5):                                                   # 五道弧，越靠前越大
+        k = 0.5 + i * 0.22
+        r = 90 * k
+        px, py = cx + (60 + i * 26) * math.cos(ang), cy + (60 + i * 26) * math.sin(ang)
+        d.arc([px - r, py - r, px + r, py + r],
+              math.degrees(ang) - 70, math.degrees(ang) + 70,
+              fill=pal["accent"], width=11)
+    disc(d, cx, cy, 46, pal["bark"], pal, w=8)
+    arrow(d, cx + 230, cy - 190, cx + 80, cy - 66, pal, w=10, head=26)  # 来向
+    return "1 块石头（居中）+ 行进前方 5 道发亮弧 + 1 支来向箭头"
+
+
+@page("meteor", 8)
+def _(d, pal):
+    """地球穿过一条布满尘粒的路，于是看到许多流星。"""
+    cx, cy = S / 2 - 120, S / 2
+    band_y = cy + 40
+    rnd = random.Random(17)
+    for _ in range(120):                                                 # 尘带：一条斜向的带
+        t = rnd.uniform(0, 1)
+        x = 200 + t * (S - 120)
+        y = band_y + (t - 0.5) * 160 + rnd.uniform(-26, 26)
+        disc(d, x, y, rnd.uniform(2, 5), pal["soft"], pal, w=1)
+    disc(d, cx, cy, 130, pal["bark"], pal, w=9)
+    for i in range(5):                                                   # 迎着尘带的一侧有流星条纹
+        y = cy - 90 + i * 46
+        d.line([cx + 120, y, cx + 190, y - 26], fill=pal["accent"], width=7)
+    arrow(d, cx - 230, cy, cx - 150, cy, pal, w=10, head=26)
+    return "1 个地球 + 1 条尘带 + 迎面 5 道流星条纹 + 1 支行进箭头"
+
+
+@page("meteor", 10)
+def _(d, pal):
+    """彗尾总是背着太阳。"""
+    sx, sy = MARGIN + 110, S / 2
+    disc(d, sx, sy, 96, pal["accent"], pal, w=9)
+    hx, hy = S - MARGIN - 300, S / 2 - 60
+    disc(d, hx, hy, 54, pal["paper"], pal, w=8)
+    rnd = random.Random(23)
+    for _ in range(90):                                                  # 尾巴：从彗核背离太阳方向铺开
+        t = rnd.uniform(0, 1)
+        spread_ = 26 + t * 120
+        x = hx + t * 300
+        y = hy + rnd.uniform(-spread_, spread_) * 0.7
+        disc(d, x, y, rnd.uniform(2, 6), pal["soft"], pal, w=1)
+    arrow(d, hx + 70, hy - 150, hx + 250, hy - 200, pal, w=8, head=22)
+    return "1 个太阳（左）+ 1 个彗核 + 1 条朝右背离太阳的尾巴"
+
+
+@page("sky", 4)
+def _(d, pal):
+    """蓝光被撞得到处跑，红光几乎直直穿过去。"""
+    for (cx, cy, w_, h_), scatter in zip(panel2(d, pal), (True, False)):
+        col = pal["accent"] if not scatter else pal["soft"]
+        disc(d, cx, cy, 26, pal["ink"], pal, w=5)
+        arrow(d, cx - w_ * 0.40, cy, cx - 40, cy, pal, w=9, head=24)
+        if scatter:
+            for i in range(7):                                           # 撞散：多方向射出
+                a = -1.2 + i * 0.4
+                arrow(d, cx + 30 * math.cos(a), cy + 30 * math.sin(a),
+                      cx + 170 * math.cos(a), cy + 170 * math.sin(a), pal, w=7, head=20)
+        else:
+            arrow(d, cx + 40, cy, cx + w_ * 0.40, cy, pal, w=9, head=24)
+    return "左格：1 支入射 + 7 支散开（蓝光）/ 右格：1 支入射 + 1 支直穿（红光）"
+
+
+@page("sky", 10)
+def _(d, pal):
+    """月亮上没有空气，太阳照着天也是黑的。"""
+    d.rectangle([0, 0, S, S], fill="#12141c")
+    rnd = random.Random(31)
+    for _ in range(70):
+        x, y = rnd.uniform(20, S - 20), rnd.uniform(20, 620)
+        r = rnd.choice((2, 2, 3))
+        d.ellipse([x - r, y - r, x + r, y + r], fill=pal["paper"])
+    disc(d, S / 2 + 230, 220, 90, pal["accent"], pal, w=8)               # 太阳当空
+    d.pieslice([-200, 620, S + 200, S + 500], 180, 360,
+               fill=pal["soft"], outline=pal["ink"], width=8)            # 月面
+    rnd2 = random.Random(5)
+    for _ in range(9):
+        x = rnd2.uniform(60, S - 60)
+        y = rnd2.uniform(700, 900)
+        r = rnd2.uniform(18, 46)
+        d.ellipse([x - r, y - r * 0.5, x + r, y + r * 0.5],
+                  outline=pal["ink"], width=5)
+    return "黑天 + 70 颗星 + 1 个太阳 + 1 片带 9 个环形坑的月面"
+
+
+@page("sundial", 7)
+def _(d, pal):
+    """八点、九点、十点各画一个记号 —— 三个记号必须都在。"""
+    gy = 700
+    d.rectangle([0, gy, S, S], fill=pal["bark"])
+    d.line([0, gy, S, gy], fill=pal["ink"], width=8)
+    cx = S / 2 + 120
+    d.rounded_rectangle([cx - 16, gy - 340, cx + 16, gy], radius=10,
+                        fill=pal["paper"], outline=pal["ink"], width=8)  # 直立的棍子
+    for i, (dx, ln) in enumerate(((-430, 300), (-300, 210), (-190, 140))):
+        d.line([cx, gy + 20, cx + dx, gy + 20 + ln * 0.30],
+               fill=pal["soft"], width=9)                                # 三条影子
+        d.ellipse([cx + dx - 22, gy + 20 + ln * 0.30 - 22,
+                   cx + dx + 22, gy + 20 + ln * 0.30 + 22],
+                  fill=pal["accent"], outline=pal["ink"], width=6)       # 三个记号
+    return "1 根直立的棍子 + 3 条影子 + 3 个记号"
+
+
+@page("sundial", 9)
+def _(d, pal):
+    """阴天没有影子：一朵云遮住太阳，棍子脚下什么都没有。"""
+    gy = 700
+    d.rectangle([0, gy, S, S], fill=pal["bark"])
+    d.line([0, gy, S, gy], fill=pal["ink"], width=8)
+    cx = S / 2
+    d.rounded_rectangle([cx - 16, gy - 340, cx + 16, gy], radius=10,
+                        fill=pal["paper"], outline=pal["ink"], width=8)
+    for dx, dy, r in ((-150, 0, 90), (-30, -40, 110), (110, 0, 86), (0, 30, 100)):
+        disc(d, cx + dx, 250 + dy, r, pal["soft"], pal, w=7)             # 一朵厚云
+    return "1 根直立的棍子 + 1 朵遮住天空的云，地上没有影子"
+
+
+@page("sundial", 10)
+def _(d, pal):
+    """夏天太阳走得高，冬天走得低 —— 两条弧高低必须差得出来。"""
+    gy = 760
+    d.line([0, gy, S, gy], fill=pal["ink"], width=8)
+    d.arc([MARGIN, gy - 620, S - MARGIN, gy + 620], 180, 360,
+          fill=pal["accent"], width=14)                                  # 夏：高
+    d.arc([MARGIN + 120, gy - 250, S - MARGIN - 120, gy + 250], 180, 360,
+          fill=pal["soft"], width=14)                                    # 冬：低
+    disc(d, S / 2, gy - 620, 40, pal["accent"], pal, w=7)
+    disc(d, S / 2, gy - 250, 36, pal["soft"], pal, w=7)
+    return "1 条地平线 + 1 条高弧（夏）+ 1 条低弧（冬）"
+
+
+@page("crab", 9)
+def _(d, pal):
+    """一队寄居蟹，每只都背着壳，旧壳留给小的。"""
+    xs, slot = lay(5)
+    for i, cx in enumerate(xs):
+        R = 88 - i * 12
+        disc(d, cx, S / 2, R, pal["paper"], pal, w=8)                    # 壳
+        for k in range(3):                                               # 壳上的螺旋
+            rr = R * (0.72 - k * 0.22)
+            d.arc([cx - rr, S / 2 - rr, cx + rr, S / 2 + rr], 20, 300,
+                  fill=pal["ink"], width=5)
+        for s in (-1, 1):                                                # 露出的脚
+            d.line([cx + s * R * 0.6, S / 2 + R * 0.7,
+                    cx + s * (R + 40), S / 2 + R + 30], fill=pal["ink"], width=7)
+    return "5 只寄居蟹排成一队，壳一只比一只小，每只都背着壳"
+
+
+@page("power", 8)
+def _(d, pal):
+    """电表在前、配电箱在后：一进一出，顺序不能反。"""
+    cy = S / 2
+    mx, bx = MARGIN + 200, S - MARGIN - 240
+    d.rounded_rectangle([mx - 110, cy - 130, mx + 110, cy + 130], radius=20,
+                        fill=pal["paper"], outline=pal["ink"], width=9)  # 电表
+    disc(d, mx, cy - 20, 58, pal["soft"], pal, w=7)
+    d.rounded_rectangle([bx - 120, cy - 160, bx + 120, cy + 160], radius=20,
+                        fill=pal["bark"], outline=pal["ink"], width=9)   # 配电箱
+    arrow(d, MARGIN - 10, cy, mx - 120, cy, pal, w=10, head=26)          # 进线
+    arrow(d, mx + 120, cy, bx - 130, cy, pal, w=10, head=26)             # 表→箱
+    for i, dy in enumerate((-90, 0, 90)):                                # 箱→三路
+        arrow(d, bx + 130, cy + dy, S - MARGIN + 10, cy + dy, pal, w=9, head=24)
+    return "进线 → 电表 → 配电箱 → 3 路出线，箭头全部同向"
+
+
+# ---------------------------------------------------------------- 生物剖面与过程图（批量写，抽样验收）
+
+def seed_halves(d, cx, cy, R, pal, gap=18):
+    """一颗豆子剖开：两片厚子叶面对面，中间一道缝，缝里一个小芽。"""
+    d.pieslice([cx - gap / 2 - R, cy - R, cx - gap / 2 + R, cy + R], 90, 270,
+               fill=pal["paper"], outline=pal["ink"], width=8)
+    d.pieslice([cx + gap / 2 - R, cy - R, cx + gap / 2 + R, cy + R], 270, 90,
+               fill=pal["paper"], outline=pal["ink"], width=8)
+    return cx, cy
+
+
+@page("sprout", 2)
+def _(d, pal):
+    """剖开一颗豆子：里面是两片厚子叶，不是一荚好几颗。"""
+    cx, cy = S / 2, S / 2
+    seed_halves(d, cx, cy, 230, pal, gap=26)
+    d.line([cx, cy - 80, cx, cy + 120], fill=pal["accent"], width=12)   # 中间的小芽
+    d.line([cx, cy - 80, cx - 44, cy - 140], fill=pal["accent"], width=10)
+    d.line([cx, cy - 80, cx + 44, cy - 140], fill=pal["accent"], width=10)
+    return "1 颗豆子剖开 = 2 片子叶 + 1 个小芽"
+
+
+@page("sprout", 3)
+def _(d, pal):
+    """两片子叶中间藏着小芽：上面长茎叶，下面长根。"""
+    cx, cy = S / 2, S / 2
+    seed_halves(d, cx, cy, 210, pal, gap=150)
+    d.line([cx, cy - 140, cx, cy + 60], fill=pal["accent"], width=14)
+    d.line([cx, cy - 140, cx - 50, cy - 200], fill=pal["accent"], width=11)
+    d.line([cx, cy - 140, cx + 50, cy - 200], fill=pal["accent"], width=11)
+    for i, dx in enumerate((-46, 0, 46)):                               # 三条根往下
+        d.line([cx, cy + 60, cx + dx, cy + 230], fill=pal["bark"], width=9)
+    return "2 片子叶 + 中间 1 个芽（上 2 片叶 / 下 3 条根）"
+
+
+@page("sprout", 6)
+def _(d, pal):
+    """最先钻出来的是根：只有根，还没有叶子。"""
+    gy = 420
+    d.rectangle([0, gy, S, S], fill=pal["bark"])
+    d.line([0, gy, S, gy], fill=pal["ink"], width=8)
+    cx = S / 2
+    seed_halves(d, cx, gy + 90, 84, pal, gap=12)
+    d.line([cx, gy + 174, cx, gy + 400], fill=pal["paper"], width=14)   # 一条主根向下
+    for dx, dy in ((-60, 330), (60, 350)):
+        d.line([cx, gy + 260, cx + dx, gy + dy], fill=pal["paper"], width=9)
+    return "1 颗豆子在土里 + 1 条主根 + 2 条侧根，地面上什么都没有"
+
+
+@page("sprout", 7)
+def _(d, pal):
+    """弯着腰像个钩子，用背顶开土 —— 芽还没出土。"""
+    gy = 380
+    d.rectangle([0, gy, S, S], fill=pal["bark"])
+    d.line([0, gy, S, gy], fill=pal["ink"], width=8)
+    cx = S / 2
+    pts = [(cx, gy + 380), (cx, gy + 200), (cx - 30, gy + 90), (cx - 110, gy + 70)]
+    d.line(pts, fill=pal["paper"], width=16, joint="curve")
+    d.line([cx, gy + 380, cx, gy + 470], fill=pal["paper"], width=10)
+    return "1 株弯成钩形的芽，钩顶仍在土面以下"
+
+
+@page("sprout", 8)
+def _(d, pal):
+    """钻出地面，举起两片厚子叶。"""
+    gy = 620
+    d.rectangle([0, gy, S, S], fill=pal["bark"])
+    d.line([0, gy, S, gy], fill=pal["ink"], width=8)
+    cx = S / 2
+    d.line([cx, gy, cx, gy - 240], fill=pal["accent"], width=14)
+    for s in (-1, 1):
+        d.ellipse([cx + s * 20 - (0 if s > 0 else 150), gy - 300,
+                   cx + s * 20 + (150 if s > 0 else 0), gy - 200],
+                  fill=pal["paper"], outline=pal["ink"], width=8)
+    return "1 根茎 + 2 片厚子叶（地面之上）"
+
+
+@page("sprout", 10)
+def _(d, pal):
+    """真叶长出来，两片子叶变黄、掉下来。"""
+    gy = 660
+    d.rectangle([0, gy, S, S], fill=pal["bark"])
+    d.line([0, gy, S, gy], fill=pal["ink"], width=8)
+    cx = S / 2
+    d.line([cx, gy, cx, gy - 380], fill=pal["accent"], width=14)
+    for s in (-1, 1):                                                   # 上方两片绿真叶
+        d.ellipse([cx + s * 24 - (0 if s > 0 else 140), gy - 430,
+                   cx + s * 24 + (140 if s > 0 else 0), gy - 340],
+                  fill=pal["accent"], outline=pal["ink"], width=7)
+    for s in (-1, 1):                                                   # 下方两片黄子叶
+        d.ellipse([cx + s * 20 - (0 if s > 0 else 110), gy - 190,
+                   cx + s * 20 + (110 if s > 0 else 0), gy - 120],
+                  fill=pal["bark"], outline=pal["ink"], width=7)
+    return "上 2 片绿真叶 + 下 2 片黄子叶"
+
+
+@page("sprout", 11)
+def _(d, pal):
+    """光从一边来，茎就朝那边弯。"""
+    gy = 700
+    d.rectangle([0, gy, S, S], fill=pal["bark"])
+    d.line([0, gy, S, gy], fill=pal["ink"], width=8)
+    for i in range(4):                                                  # 左侧射来的光线
+        y = 200 + i * 90
+        arrow(d, 60, y, 300, y + 30, pal, w=8, head=22)
+    cx = 660
+    pts = [(cx, gy), (cx - 40, gy - 180), (cx - 140, gy - 300)]
+    d.line(pts, fill=pal["accent"], width=16, joint="curve")
+    d.ellipse([cx - 250, gy - 350, cx - 100, gy - 270],
+              fill=pal["paper"], outline=pal["ink"], width=8)
+    return "4 支自左射来的光 + 1 株朝左弯的茎"
+
+
+@page("hiccup", 2)
+def _(d, pal):
+    """膈肌是胸腔下面一块平平的、像伞一样的肉。"""
+    cx, cy = S / 2, S / 2
+    d.rounded_rectangle([cx - 260, cy - 320, cx + 260, cy + 300], radius=60,
+                        fill=pal["paper"], outline=pal["ink"], width=9)
+    # 上一版两片深色肺 + 一道红弧，整页读成一张脸（两只眼睛加一张嘴）。
+    # 肺改成浅色、缩小、贴着胸腔上部；膈肌改成贴住胸腔下缘的实心带。
+    for s in (-1, 1):
+        d.ellipse([cx + s * 26 - (0 if s > 0 else 150), cy - 250,
+                   cx + s * 26 + (150 if s > 0 else 0), cy - 90],
+                  fill=pal["paper"], outline=pal["ink"], width=6)
+    d.pieslice([cx - 250, cy - 20, cx + 250, cy + 300], 180, 360,
+               fill=pal["accent"], outline=pal["ink"], width=8)          # 伞形膈肌，实心
+    return "1 个胸腔 + 上方 2 片浅色肺 + 下缘 1 块实心伞形膈肌"
+
+
+@page("hiccup", 3)
+def _(d, pal):
+    """吸气时膈肌下拉、肺变大；呼气时膈肌上顶、肺变小。"""
+    for (cx, cy, w_, h_), inhale in zip(panel2(d, pal), (True, False)):
+        lung_h = 190 if inhale else 120
+        for s in (-1, 1):
+            d.ellipse([cx + s * 22 - (0 if s > 0 else 130), cy - 200,
+                       cx + s * 22 + (130 if s > 0 else 0), cy - 200 + lung_h],
+                      fill=pal["soft"], outline=pal["ink"], width=7)
+        dy = 90 if inhale else 0
+        d.arc([cx - 170, cy + dy - 40, cx + 170, cy + dy + 140], 180, 360,
+              fill=pal["accent"], width=16)
+        arrow(d, cx, cy + dy + 180, cx, cy + dy + (250 if inhale else 110), pal, w=10, head=26)
+    return "左格：膈肌下拉、肺大、箭头向下 / 右格：膈肌上顶、肺小、箭头向上"
+
+
+@page("hiccup", 5)
+def _(d, pal):
+    """声门啪地关上，空气撞在关着的门上 —— 这是喉咙，不是胃。"""
+    cx, cy = S / 2, S / 2
+    d.rounded_rectangle([cx - 130, cy - 330, cx + 130, cy + 330], radius=40,
+                        fill=pal["paper"], outline=pal["ink"], width=9)  # 气管
+    d.line([cx - 130, cy, cx + 130, cy], fill=pal["accent"], width=22)   # 关闭的声门
+    arrow(d, cx, cy + 260, cx, cy + 60, pal, w=12, head=32)              # 空气自下撞上来
+    return "1 条气管 + 1 道关闭的声门 + 1 支自下而上的箭头"
+
+
+@page("bird", 4)
+def _(d, pal):
+    """鸟的骨头是空心的，里面有细细的支架。"""
+    cx, cy = S / 2, S / 2
+    d.rounded_rectangle([cx - 330, cy - 90, cx + 330, cy + 90], radius=90,
+                        fill=pal["paper"], outline=pal["ink"], width=10)
+    for i in range(7):                                                   # 内部斜撑
+        x = cx - 260 + i * 87
+        d.line([x, cy - 70, x + 60, cy + 70], fill=pal["soft"], width=8)
+        d.line([x + 60, cy - 70, x, cy + 70], fill=pal["soft"], width=8)
+    return "1 段空心骨 + 7 组交叉支架"
+
+
+@page("bird", 5)
+def _(d, pal):
+    """机翼上面拱起、下面平直。"""
+    cx, cy = S / 2, S / 2
+    # 上一版只用 d.line 画轮廓，翼面是空心梯形；气流又飘在离翼很远的上方。
+    # 改成填充实心翼面，气流贴着上表面走。
+    pts = [(cx - 320, cy), (cx - 180, cy - 110), (cx + 60, cy - 120), (cx + 320, cy)]
+    d.polygon(pts, fill=pal["soft"])
+    for a, b in zip(pts, pts[1:] + pts[:1]):
+        d.line([a, b], fill=pal["ink"], width=10)
+    for i in range(3):                                                   # 紧贴上表面的气流
+        y = cy - 150 - i * 46
+        arrow(d, cx - 330, y, cx + 330, y - 10, pal, w=7, head=20)
+    arrow(d, cx, cy + 170, cx, cy + 40, pal, w=12, head=30)              # 升力向上
+    return "1 个实心的上拱下平翼形 + 上方 3 支贴面气流 + 1 支向上的升力箭头"
+
+
+@page("bird", 9)
+def _(d, pal):
+    """三种翅膀：又长又窄、又短又圆、很尖。"""
+    shapes = (((-1, 0), (0.0, -0.30), (0.9, -0.16), (1, 0)),            # 长窄
+              ((-1, 0), (-0.2, -0.62), (0.5, -0.40), (1, 0)),           # 短圆
+              ((-1, 0), (0.3, -0.50), (0.8, -0.06), (1, 0)))            # 尖
+    for k, sh in enumerate(shapes):
+        cx = MARGIN + 170 + k * 300
+        cy = S / 2 + 80
+        pts = [(cx + x * 150, cy + y * 300) for x, y in sh]
+        d.line(pts + [pts[0]], fill=pal["ink"], width=10, joint="curve")
+    return "3 种翅形：长窄 / 短圆 / 尖"
+
+
+@page("rocket", 6)
+def _(d, pal):
+    """烧完一段就扔掉一段：下面那一级正在脱开。"""
+    cx = S / 2
+    d.polygon([(cx, 120), (cx - 70, 300), (cx + 70, 300)], fill=pal["accent"])
+    d.rounded_rectangle([cx - 70, 300, cx + 70, 520], radius=14,
+                        fill=pal["paper"], outline=pal["ink"], width=8)
+    d.rounded_rectangle([cx - 70, 620, cx + 70, 860], radius=14,
+                        fill=pal["soft"], outline=pal["ink"], width=8)   # 脱开的一级，有明显间隙
+    arrow(d, cx + 150, 660, cx + 150, 860, pal, w=10, head=26)
+    return "上段火箭 + 下段已脱开（中间 100px 间隙）+ 1 支下落箭头"
+
+
+@page("rocket", 7)
+def _(d, pal):
+    """最上面那一小截飞上去：只有小小的返回舱，没有整枚火箭。"""
+    cx, cy = S / 2, S / 2
+    d.polygon([(cx, cy - 200), (cx - 120, cy + 60), (cx + 120, cy + 60)], fill=pal["accent"])
+    for a, b in (((cx, cy - 200), (cx - 120, cy + 60)), ((cx - 120, cy + 60), (cx + 120, cy + 60)),
+                 ((cx + 120, cy + 60), (cx, cy - 200))):
+        d.line([a, b], fill=pal["ink"], width=9)
+    disc(d, cx, cy - 40, 44, pal["paper"], pal, w=7)                     # 舷窗
+    return "1 个小返回舱（圆锥 + 1 个舷窗），没有箭体和尾焰"
+
+
+@page("rocket", 10)
+def _(d, pal):
+    """返回舱冲进大气层，外面烧得通红 —— 它在往下掉。"""
+    cx = S / 2
+    d.arc([cx - 460, 180, cx + 460, 620], 0, 180, fill=pal["soft"], width=14)  # 大气层弧
+    d.polygon([(cx, 620), (cx - 110, 400), (cx + 110, 400)], fill=pal["accent"])
+    for a, b in (((cx, 620), (cx - 110, 400)), ((cx - 110, 400), (cx + 110, 400)),
+                 ((cx + 110, 400), (cx, 620))):
+        d.line([a, b], fill=pal["ink"], width=9)
+    arrow(d, cx, 700, cx, 880, pal, w=12, head=32)                        # 向下
+    return "1 道大气层弧 + 1 个尖端朝下的返回舱 + 1 支向下箭头"
+
+
 # ---------------------------------------------------------------- 数学书剩下的计数与等分页
 
 @page("minus", 8)
