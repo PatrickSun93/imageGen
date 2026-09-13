@@ -1236,16 +1236,34 @@ def _(d, pal):
     return "2 个对话框：左边小的（孩子问）/ 右边大的（医生答）"
 
 
+def share_box(d, pal, cx, cy, half_w, half_h, n, cols=1):
+    """一个装 n 个圆的框。圆的半径由框宽反推，保证不压在框线上。
+
+    share 整本 10 页都用这个版式，所以半径必须由框反推 —— 写死半径会让圆
+    穿出盒子（p7 第一版就是这样）。
+    """
+    d.rounded_rectangle([cx - half_w, cy - half_h, cx + half_w, cy + half_h],
+                        radius=20, fill=pal["paper"], outline=pal["ink"], width=8)
+    rows = math.ceil(n / cols)
+    r = min(half_w / cols, half_h / rows) * 0.72
+    # 列距和行距都要再收一点，否则圆心正好落在半宽/半高处、圆会贴着框壁
+    # （p7 两列时两个圆几乎顶到左右边线）。0.78 留出一圈明显的内边距。
+    pitch_x = 2 * half_w / cols * 0.78
+    pitch_y = 2 * half_h / rows * 0.78
+    for i in range(n):
+        col, row = i % cols, i // cols
+        x = cx + (col - (cols - 1) / 2) * pitch_x
+        y = cy + (row - (rows - 1) / 2) * pitch_y
+        disc(d, x, y, r, pal["accent"], pal, w=7)
+    return r
+
+
 @page("share", 2)
 def _(d, pal):
     """六块分给三个人，每人两块。"""
     xs, slot = lay(3)
-    cy = S / 2
     for cx in xs:
-        d.rounded_rectangle([cx - slot * 0.36, cy - 150, cx + slot * 0.36, cy + 150],
-                            radius=20, fill=pal["paper"], outline=pal["ink"], width=8)
-        for k in (-1, 1):
-            disc(d, cx + k * 70, cy, 56, pal["accent"], pal, w=8)
+        share_box(d, pal, cx, S / 2, slot * 0.36, 150, 2, cols=2)
     return "3 个框，每框 2 个圆（共 6 个）"
 
 
@@ -1267,10 +1285,7 @@ def _(d, pal):
         disc(d, cx, S / 2 - 180, 42, pal["accent"], pal, w=7)
     xs, slot = lay(3)
     for cx in xs:
-        d.rounded_rectangle([cx - slot * 0.32, S / 2 + 60, cx + slot * 0.32, S / 2 + 300],
-                            radius=18, fill=pal["paper"], outline=pal["ink"], width=8)
-        for k in (-1, 1):
-            disc(d, cx + k * 60, S / 2 + 180, 46, pal["accent"], pal, w=7)
+        share_box(d, pal, cx, S / 2 + 180, slot * 0.32, 120, 2, cols=2)
     return "上排 6 个圆 → 下排 3 个框各 2 个圆"
 
 
@@ -1278,11 +1293,8 @@ def _(d, pal):
 def _(d, pal):
     """六个人分六块，每人一块。"""
     xs, slot = lay(6)
-    cy = S / 2
     for cx in xs:
-        d.rounded_rectangle([cx - slot * 0.38, cy - 120, cx + slot * 0.38, cy + 120],
-                            radius=16, fill=pal["paper"], outline=pal["ink"], width=7)
-        disc(d, cx, cy, 44, pal["accent"], pal, w=7)
+        share_box(d, pal, cx, S / 2, slot * 0.38, 120, 1, cols=1)
     return "6 个框，每框 1 个圆"
 
 
@@ -1290,12 +1302,8 @@ def _(d, pal):
 def _(d, pal):
     """两个人分六块，每人三块。"""
     xs, slot = lay(2)
-    cy = S / 2
     for cx in xs:
-        d.rounded_rectangle([cx - slot * 0.34, cy - 190, cx + slot * 0.34, cy + 190],
-                            radius=24, fill=pal["paper"], outline=pal["ink"], width=9)
-        for k in (-1, 0, 1):
-            disc(d, cx, cy + k * 118, 52, pal["accent"], pal, w=8)
+        share_box(d, pal, cx, S / 2, slot * 0.34, 220, 3, cols=1)
     return "2 个框，每框 3 个圆"
 
 
@@ -1303,12 +1311,8 @@ def _(d, pal):
 def _(d, pal):
     """七块分给三个人，还剩一块。"""
     xs, slot = lay(3)
-    cy = S / 2 - 60
     for cx in xs:
-        d.rounded_rectangle([cx - slot * 0.34, cy - 140, cx + slot * 0.34, cy + 140],
-                            radius=20, fill=pal["paper"], outline=pal["ink"], width=8)
-        for k in (-1, 1):
-            disc(d, cx + k * 66, cy, 52, pal["accent"], pal, w=8)
+        share_box(d, pal, cx, S / 2 - 60, slot * 0.34, 140, 2, cols=2)
     disc(d, S / 2, S - MARGIN - 160, 62, pal["soft"], pal, w=9)
     return "3 个框各 2 个圆 + 框外单独 1 个圆（余数）"
 
@@ -1357,10 +1361,7 @@ def _(d, pal):
     xs, slot = lay(2)
     cy = S / 2 + 40
     for cx in xs:
-        d.rounded_rectangle([cx - slot * 0.32, cy - 150, cx + slot * 0.32, cy + 150],
-                            radius=20, fill=pal["paper"], outline=pal["ink"], width=8)
-        for k in (-1, 0, 1):
-            disc(d, cx, cy + k * 96, 42, pal["accent"], pal, w=7)
+        share_box(d, pal, cx, cy, slot * 0.32, 180, 3, cols=1)
     d.rounded_rectangle([xs[0] - 40, MARGIN + 60, xs[0] + 40, MARGIN + 200], radius=18,
                         fill=pal["soft"], outline=pal["ink"], width=7)
     arrow(d, xs[1], MARGIN + 90, xs[1], cy - 180, pal, w=11, head=28)
