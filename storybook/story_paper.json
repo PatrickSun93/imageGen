@@ -8,10 +8,13 @@
   "style_label": "牛皮纸拼贴",
   "keyword": "纸浆",
   "diagram_pages": [
+    2,
     3,
     4,
     5,
+    6,
     7,
+    9,
     10
   ],
   "palette": {
@@ -41,7 +44,7 @@
     {
       "n": 1,
       "zh": "我撕了一张纸，\n边上毛毛的。\n爸爸说，\n那些毛毛的东西\n是从树上来的。",
-      "scene": "The little boy holds a torn sheet of paper close to his face, looking at its fuzzy edge, curious.",
+      "scene": "The little boy holds a torn sheet of paper out in front of him at arm's length, turning it towards the light to look along its fuzzy torn edge, curious.",
       "has_boy": true
     },
     {

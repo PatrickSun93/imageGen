@@ -11,6 +11,7 @@
     3,
     4,
     6,
+    7,
     9,
     10
   ],
@@ -77,7 +78,7 @@
     {
       "n": 7,
       "zh": "青蛙和乌龟\n钻进池塘底的泥里。\n那里的水不会结冰，\n它们把自己埋起来，\n慢慢等。",
-      "scene": "One pond cross-section on a cream background with ice on top and a small frog buried in the mud at the bottom. Nothing else in the picture.",
+      "scene": "One pond cross-section on a cream background with ice on top, a frog and a turtle both buried in the mud at the bottom.",
       "has_boy": false
     },
     {

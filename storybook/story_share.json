@@ -46,7 +46,7 @@
     {
       "n": 1,
       "zh": "桌上有六块饼干，\n我们有三个人。\n要怎么分\n才公平呢？",
-      "scene": "The little boy stands at a table with six biscuits on a plate, two other children beside him, thinking.",
+      "scene": "The little boy stands at a table looking down at a plate of biscuits, two other children standing beside him at the same table, all three seen from the waist up and completely inside the picture, thinking.",
       "has_boy": true
     },
     {
@@ -112,7 +112,7 @@
     {
       "n": 12,
       "zh": "我把六块饼干\n一人两块分好了。\n大家都没有多，\n也都没有少。\n分东西原来这么简单。",
-      "scene": "The little boy hands biscuits to two other children at the table, each of them holding two, all smiling.",
+      "scene": "The little boy and two other children stand around the table, each holding a small plate, all three seen from the waist up and completely inside the picture, smiling at each other.",
       "has_boy": true
     }
   ]

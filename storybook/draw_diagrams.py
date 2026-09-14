@@ -3722,6 +3722,382 @@ def _(d, pal):
     return "左 1 个正六边形板 / 右 1 片六个角的枝状雪花"
 
 
+# ---------------------------------------------------------------- 复审第二轮打回的 12 页（2026-09-13）
+# 这批页重画过一次，第二次审还是错，错法全落在模型的老毛病上：
+#   纸底纹    wind p8 画在撕边纸上、sleepwin p7 画在卷边旧纸上、doctor p7 浮在纸卡上
+#   乱码字    post p4 告示牌、post p9 信箱铭牌、paper p9 两页假手写
+#   摊开的书  paper p6 / paper p9 / doctor p5（paper 这本讲的就是纸，主体本身招书）
+#   确数      thunder p7 该竖三根手指画了五根
+#   比例      doctor p2 成年医生画成穿白大褂的小孩
+# 都是「奶油底上摆一两个东西」的示意图。按 4.2b 交给程序：程序不会写字，
+# 不会自带纸底纹，手指有几根由参数决定。
+
+def finger(d, x, top, bottom, pal, half=30, w=10, fill=None):
+    """一根手指：先填进掌里，再只描「左边—顶弧—右边」这个 U 形。
+
+    直接画整个圆角矩形会在掌面上留一条横线（指根被自己的描边切断）。
+    """
+    d.rounded_rectangle([x - half, top, x + half, bottom], radius=half,
+                        fill=fill or pal["paper"])
+    d.arc([x - half, top, x + half, top + 2 * half], 180, 360, fill=pal["ink"], width=w)
+    for s in (-1, 1):
+        d.line([x + s * half, top + half, x + s * half, bottom], fill=pal["ink"], width=w)
+
+
+@page("post", 4)
+def _(d, pal):
+    """邮筒里的信被收走，装进大袋子。铭牌一律不画 —— 模型两次都在那儿写乱码。"""
+    ground = S - MARGIN - 130
+    d.line([MARGIN, ground, S - MARGIN, ground], fill=pal["ink"], width=10)
+    bx, bw = MARGIN + 250, 230
+    d.rounded_rectangle([bx - bw / 2, ground - 540, bx + bw / 2, ground], radius=28,
+                        fill=pal["accent"], outline=pal["ink"], width=10)
+    d.pieslice([bx - bw / 2 - 14, ground - 640, bx + bw / 2 + 14, ground - 460], 180, 360,
+               fill=pal["accent"], outline=pal["ink"], width=10)
+    d.rounded_rectangle([bx - 76, ground - 450, bx + 76, ground - 408], radius=10,
+                        fill=pal["ink"])                                  # 投信口
+    sx = S - MARGIN - 280
+    d.rounded_rectangle([sx - 190, ground - 330, sx + 190, ground], radius=70,
+                        fill=pal["soft"], outline=pal["ink"], width=10)   # 鼓起来的袋身
+    d.rounded_rectangle([sx - 92, ground - 430, sx + 92, ground - 300], radius=26,
+                        fill=pal["soft"], outline=pal["ink"], width=10)   # 袋口
+    d.line([sx - 96, ground - 330, sx + 96, ground - 330], fill=pal["ink"], width=10)
+    for dx in (-44, 44):                                                  # 露出来的信封角
+        d.rounded_rectangle([sx + dx - 46, ground - 500, sx + dx + 46, ground - 410],
+                            radius=8, fill=pal["paper"], outline=pal["ink"], width=7)
+    return "1 个邮筒（圆顶 + 1 条投信口）+ 1 个扎着口的邮袋，露出 2 个信封角；画面里没有字"
+
+
+@page("post", 9)
+def _(d, pal):
+    """邮递员的车，和门口一排信箱。"""
+    ground = S - MARGIN - 110
+    d.line([MARGIN, ground, S - MARGIN, ground], fill=pal["ink"], width=10)
+    x1, x2, R = MARGIN + 170, MARGIN + 400, 100
+    for wx in (x1, x2):
+        disc(d, wx, ground - R, R, pal["ground"], pal, w=12)
+        disc(d, wx, ground - R, 24, pal["soft"], pal, w=6)
+    seat, head = ((x1 + x2) / 2 - 10, ground - R - 180), (x2, ground - R - 160)
+    for a, b in ((( x1, ground - R), seat), (seat, (x2, ground - R)),
+                 (seat, head), (head, (x2, ground - R)), ((x1, ground - R), (x2, ground - R))):
+        d.line([a, b], fill=pal["ink"], width=11)
+    d.line([head, (x2 + 70, ground - R - 190)], fill=pal["ink"], width=11)     # 车把
+    d.rounded_rectangle([x2 - 40, ground - R - 300, x2 + 110, ground - R - 175], radius=14,
+                        fill=pal["soft"], outline=pal["ink"], width=8)         # 车筐
+    for dx in (-6, 34, 74):                                                    # 筐里的信
+        d.rounded_rectangle([x2 + dx - 26, ground - R - 350, x2 + dx + 26, ground - R - 290],
+                            radius=6, fill=pal["paper"], outline=pal["ink"], width=6)
+    bx0, bx1 = S - MARGIN - 400, S - MARGIN
+    by0, by1 = ground - 450, ground - 150
+    d.rounded_rectangle([bx0, by0, bx1, by1], radius=16, fill=pal["soft"],
+                        outline=pal["ink"], width=9)
+    for leg in (bx0 + 40, bx1 - 70):
+        d.rectangle([leg, by1, leg + 30, ground], fill=pal["ink"])
+    bw_, bh_ = (bx1 - bx0 - 80) / 3, (by1 - by0 - 60) / 2
+    for r_ in range(2):
+        for c_ in range(3):
+            cx_ = bx0 + 20 + c_ * (bw_ + 20) + bw_ / 2
+            cy_ = by0 + 20 + r_ * (bh_ + 20) + bh_ / 2
+            d.rounded_rectangle([cx_ - bw_ / 2, cy_ - bh_ / 2, cx_ + bw_ / 2, cy_ + bh_ / 2],
+                                radius=10, fill=pal["paper"], outline=pal["ink"], width=7)
+            d.rounded_rectangle([cx_ - bw_ * 0.30, cy_ - 12, cx_ + bw_ * 0.30, cy_ + 12],
+                                radius=6, fill=pal["ink"])
+    return "1 辆邮车（2 个轮子 + 1 个装 3 封信的筐）+ 1 组 6 个信箱（每个 1 条投信口）；画面里没有字"
+
+
+@page("paper", 2)
+def _(d, pal):
+    """树干里那些很细的丝：从中心射向外圈，不是一圈一圈的年轮。"""
+    cx, cy, R = S / 2, S / 2, 360
+    disc(d, cx, cy, R, pal["paper"], pal, w=11)
+    n = 60
+    for i in range(n):
+        a = 2 * math.pi * i / n
+        d.line([cx + R * 0.12 * math.cos(a), cy + R * 0.12 * math.sin(a),
+                cx + (R - 14) * math.cos(a), cy + (R - 14) * math.sin(a)],
+               fill=pal["bark"] if i % 2 else pal["soft"], width=6)
+    disc(d, cx, cy, R * 0.12, pal["soft"], pal, w=8)
+    return f"1 个树干横截面 + {n} 条从中心射向外圈的细丝（整幅没有一个同心圆）"
+
+
+@page("paper", 6)
+def _(d, pal):
+    """三种纸：软的、硬的、滑的。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    w_, h_ = min(slot * 0.70, 240), 400
+    x = xs[0]                                                   # 抽纸：两边起皱
+    pts = [(x - w_ / 2 + 20 * math.sin(i / 12 * 6 * math.pi), cy - h_ / 2 + i / 12 * h_)
+           for i in range(13)]
+    pts += [(x + w_ / 2 + 20 * math.sin((1 - i / 12) * 6 * math.pi), cy + h_ / 2 - i / 12 * h_)
+            for i in range(13)]
+    d.polygon(pts, fill=pal["paper"])
+    d.line(pts + [pts[0]], fill=pal["ink"], width=7, joint="curve")
+    x = xs[1]                                                   # 纸箱：侧面露出瓦楞
+    d.rectangle([x - w_ / 2, cy - h_ / 2, x + w_ / 2, cy + h_ / 2],
+                fill=pal["soft"], outline=pal["ink"], width=8)
+    fy0, fy1 = cy + h_ / 2 - 96, cy + h_ / 2 - 24
+    d.rectangle([x - w_ / 2, fy0, x + w_ / 2, fy1], fill=pal["paper"],
+                outline=pal["ink"], width=6)
+    step = 40
+    flutes = int((w_ - 12) // step)
+    for k in range(flutes):
+        sx = x - w_ / 2 + 6 + k * step
+        d.arc([sx, fy0 + 5, sx + step, fy1 - 5], 180, 360, fill=pal["ink"], width=6)
+    x = xs[2]                                                   # 照片纸：一道斜高光
+    d.rectangle([x - w_ / 2, cy - h_ / 2, x + w_ / 2, cy + h_ / 2],
+                fill=pal["paper"], outline=pal["ink"], width=8)
+    d.polygon([(x - w_ / 2 + 18, cy + h_ / 2 - 18), (x + w_ / 2 - 96, cy - h_ / 2 + 18),
+               (x + w_ / 2 - 18, cy - h_ / 2 + 18), (x - w_ / 2 + 96, cy + h_ / 2 - 18)],
+              fill=pal["ground"])
+    return f"3 张纸样并排：1 张两边起皱的软纸 / 1 张露出 {flutes} 道瓦楞的硬纸板 / 1 张带斜高光的滑纸"
+
+
+@page("paper", 9)
+def _(d, pal):
+    """一张纸的正面和反面，两面都写了。字迹只画成线条，不写字。"""
+    boxes = panel2(d, pal)
+    for (cx, cy, w_, h_), back in zip(boxes, (False, True)):
+        for i in range(5):
+            y = cy - h_ * 0.26 + i * h_ * 0.13
+            short = 90 if i == 4 else 0
+            d.line([cx - w_ * 0.32, y, cx + w_ * 0.32 - short, y], fill=pal["soft"], width=15)
+        if back:                                                # 背面：折起来的一角
+            k = 90
+            d.polygon([(cx + w_ / 2 - k, cy - h_ / 2), (cx + w_ / 2, cy - h_ / 2),
+                       (cx + w_ / 2, cy - h_ / 2 + k)], fill=pal["ground"])
+            d.line([cx + w_ / 2 - k, cy - h_ / 2, cx + w_ / 2, cy - h_ / 2 + k],
+                   fill=pal["ink"], width=7)
+    (ax, _, aw, ah) = boxes[0]
+    top = boxes[0][1] - ah / 2
+    d.arc([ax, top - 150, boxes[1][0], top + 30], 180, 360, fill=pal["ink"], width=10)
+    arrow(d, boxes[1][0] - 40, top - 58, boxes[1][0], top - 10, pal, w=10, head=26)
+    return "左格：正面 5 行字迹 / 右格：背面 5 行字迹 + 折角，上方 1 支「翻过来」的弧形箭头（字迹是线条，不是字）"
+
+
+@page("wind", 8)
+def _(d, pal):
+    """风能帮我们做事：帆船、风车、种子。直接画在底色上，不铺纸。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    x = xs[0]
+    d.line([x - 160, cy + 160, x + 160, cy + 160], fill=pal["ink"], width=10)
+    hull = [(x - 130, cy + 66), (x + 130, cy + 66), (x + 84, cy + 158), (x - 84, cy + 158)]
+    d.polygon(hull, fill=pal["soft"])
+    for a, b in zip(hull, hull[1:] + hull[:1]):
+        d.line([a, b], fill=pal["ink"], width=8)
+    d.line([x, cy + 60, x, cy - 210], fill=pal["ink"], width=10)
+    sail = [(x + 12, cy - 200), (x + 140, cy + 40), (x + 12, cy + 40)]
+    d.polygon(sail, fill=pal["accent"])
+    for a, b in zip(sail, sail[1:] + sail[:1]):
+        d.line([a, b], fill=pal["ink"], width=8)
+    x = xs[1]
+    tower = [(x - 36, cy + 220), (x + 36, cy + 220), (x + 16, cy - 120), (x - 16, cy - 120)]
+    d.polygon(tower, fill=pal["paper"])
+    for a, b in zip(tower, tower[1:] + tower[:1]):
+        d.line([a, b], fill=pal["ink"], width=8)
+    hub = (x, cy - 130)
+    for i in range(3):
+        a = math.radians(i * 120 - 90)
+        blade = [(hub[0] + 28 * math.cos(a + 1.9), hub[1] + 28 * math.sin(a + 1.9)),
+                 (hub[0] + 180 * math.cos(a), hub[1] + 180 * math.sin(a)),
+                 (hub[0] + 28 * math.cos(a - 1.9), hub[1] + 28 * math.sin(a - 1.9))]
+        d.polygon(blade, fill=pal["accent"])
+        for p, q in zip(blade, blade[1:] + blade[:1]):
+            d.line([p, q], fill=pal["ink"], width=7)
+    disc(d, hub[0], hub[1], 28, pal["paper"], pal, w=7)
+    x = xs[2]
+    px, py, fluff = x + 10, cy - 60, 12
+    for i in range(fluff):
+        a = math.radians(i * 360 / fluff)
+        d.line([px, py, px + 96 * math.cos(a), py + 96 * math.sin(a)],
+               fill=pal["soft"], width=6)
+    d.line([px, py, px - 30, cy + 160], fill=pal["ink"], width=8, joint="curve")
+    disc(d, px - 30, cy + 160, 20, pal["accent"], pal, w=6)
+    d.arc([x - 150, cy + 40, x + 190, cy + 300], 200, 330, fill=pal["soft"], width=8)
+    return f"3 个并排的小图：1 条帆船（1 面帆）/ 1 座风车（3 片叶）/ 1 颗蒲公英种子（{fluff} 根绒毛）；底色上没有纸边"
+
+
+@page("thunder", 7)
+def _(d, pal):
+    """数一数：竖起来的手指正好三根，由 slots 决定。
+
+    上一版把掌、指、拇指当成几个圆角矩形分开画，深色填充又和这本的夜色底几乎同色，
+    看着像散落的药丸。这版整只手是一条闭合轮廓，一次画完 —— 内部不会再有接缝。
+    """
+    cx, cy = S / 2, S / 2 + 90
+    ptop, pbot, wrist = cy - 150, cy + 150, 862
+    half, gap = 30, 72
+    slots = [cx - 108, cx - 36, cx + 36, cx + 108]
+    tips = [232, 232, 232, 408]          # 前三根竖起来，小指收着
+
+    def cap(l, r, top, steps=14):
+        """指尖的半圆，从左侧顶点走到右侧顶点。"""
+        hw = (r - l) / 2
+        mx, my = (l + r) / 2, top + hw
+        return [(mx + hw * math.cos(a), my + hw * math.sin(a))
+                for a in (math.pi + math.pi * i / steps for i in range(steps + 1))]
+
+    pts = [(cx - 92, wrist), (cx - 92, pbot), (cx - 160, pbot), (cx - 160, 712)]
+    pts += [(cx - 160 + 130 * math.cos(a), 651 + 61 * math.sin(a))      # 伸出去的拇指
+            for a in (math.pi / 2 + math.pi * i / 14 for i in range(15))]
+    pts += [(cx - 160, 590), (cx - 160, ptop)]
+    for x, tip in zip(slots, tips):
+        pts.append((x - half, ptop))
+        pts += cap(x - half, x + half, tip)
+        pts.append((x + half, ptop))
+    pts += [(cx + 160, ptop), (cx + 160, pbot), (cx + 92, pbot), (cx + 92, wrist)]
+    d.polygon(pts, fill=pal["soft"])
+    d.line(pts + [pts[0]], fill=pal["ink"], width=10, joint="curve")
+    up = sum(1 for t in tips if t < ptop - 100)
+    return (f"1 只手，外轮廓一笔画完：{up} 根竖起的手指（等宽 {half * 2}px、等距 {gap}px）"
+            f"+ 1 根收起的小指 + 1 根伸出去的拇指；掌和指之间没有横线")
+
+
+@page("doctor", 2)
+def _(d, pal):
+    """医生是大人：身高按 6.7 个头画，靠比例而不是靠画风保证。"""
+    cx = S / 2
+    d.rectangle([cx - 190, 700, cx + 190, 736], fill=pal["soft"], outline=pal["ink"], width=8)
+    for lx in (cx - 170, cx + 140):
+        d.rectangle([lx, 736, lx + 30, 900], fill=pal["soft"], outline=pal["ink"], width=7)
+    coat = [(cx - 150, 320), (cx + 150, 320), (cx + 120, 700), (cx - 120, 700)]
+    for s in (-1, 1):                                            # 手臂：先粗描边再填色
+        pts = [(cx + s * 140, 350), (cx + s * 190, 520), (cx + s * 120, 660)]
+        d.line(pts, fill=pal["ink"], width=62, joint="curve")
+        d.line(pts, fill=pal["paper"], width=46, joint="curve")
+    d.polygon(coat, fill=pal["paper"])
+    for a, b in zip(coat, coat[1:] + coat[:1]):
+        d.line([a, b], fill=pal["ink"], width=9)
+    for s in (-1, 1):
+        d.line([cx + s * 62, 325, cx, 430], fill=pal["ink"], width=8)      # 翻领
+        d.line([cx + s * 70, 336, cx + s * 24, 520], fill=pal["ink"], width=10,
+               joint="curve")                                              # 听诊器管
+        disc(d, cx + s * 120, 660, 28, pal["soft"], pal, w=7)              # 手
+    disc(d, cx + 24, 556, 36, pal["accent"], pal, w=8)                     # 听诊器圆片
+    for by in (480, 570):
+        disc(d, cx, by, 12, pal["soft"], pal, w=5)
+    for s in (-1, 1):                                                      # 腿
+        d.line([cx + s * 70, 700, cx + s * 90, 840], fill=pal["ink"], width=76, joint="curve")
+        d.line([cx + s * 70, 700, cx + s * 90, 840], fill=pal["soft"], width=60, joint="curve")
+        d.rounded_rectangle([cx + s * 90 - 54, 846, cx + s * 90 + 54, 900], radius=18,
+                            fill=pal["ink"])
+    d.rectangle([cx - 18, 262, cx + 18, 322], fill=pal["paper"], outline=pal["ink"], width=8)
+    head_r = 54
+    disc(d, cx, 215, head_r, pal["paper"], pal, w=9)
+    d.pieslice([cx - head_r - 4, 152, cx + head_r + 4, 258], 180, 360, fill=pal["ink"])
+    for s in (-1, 1):
+        disc(d, cx + s * 26, 224, 17, pal["ground"], pal, w=6)             # 眼镜
+    d.line([cx - 9, 224, cx + 9, 224], fill=pal["ink"], width=6)
+    d.arc([cx - 22, 238, cx + 22, 268], 0, 180, fill=pal["ink"], width=6)
+    ratio = round((900 - (215 - head_r)) / (2 * head_r), 1)
+    return f"1 位坐在凳子上的成年医生：身高 {ratio} 个头（小孩只有 4~5 个）+ 眼镜 + 白大褂 + 脖子上 1 个听诊器"
+
+
+@page("doctor", 5)
+def _(d, pal):
+    """听诊器的金属圆片：中间没有孔，所以不会变成光盘。"""
+    cx, cy = S / 2, S / 2 + 20
+    disc(d, cx, cy, 300, pal["soft"], pal, w=12)
+    disc(d, cx, cy, 244, pal["paper"], pal, w=9)
+    d.arc([cx - 200, cy - 200, cx + 200, cy + 200], 186, 250, fill=pal["ground"], width=22)
+    d.rounded_rectangle([cx - 44, cy - 400, cx + 44, cy - 286], radius=20,
+                        fill=pal["soft"], outline=pal["ink"], width=9)      # 接管子的那截
+    return "1 个金属圆片：1 圈外沿 + 1 块平面 + 1 道高光 + 上方 1 截管口；中间没有孔（不是光盘）"
+
+
+@page("doctor", 7)
+def _(d, pal):
+    """创可贴本身，直接画在底色上 —— 不放在任何纸卡上。"""
+    cx, cy = S / 2, S / 2
+    bw, bh = 640, 230
+    d.rounded_rectangle([cx - bw / 2, cy - bh / 2, cx + bw / 2, cy + bh / 2], radius=56,
+                        fill=pal["accent"], outline=pal["ink"], width=10)
+    d.rounded_rectangle([cx - 120, cy - 84, cx + 120, cy + 84], radius=14,
+                        fill=pal["paper"], outline=pal["ink"], width=8)     # 药垫
+    holes = 0
+    for s in (-1, 1):
+        for r_ in range(2):
+            for c_ in range(3):
+                hx = cx + s * (170 + c_ * 58)
+                hy = cy - 40 + r_ * 80
+                disc(d, hx, hy, 11, pal["ink"], pal, w=0)
+                holes += 1
+    return f"1 张创可贴：中间 1 块药垫 + 左右共 {holes} 个小孔；直接画在底色上，没有纸卡"
+
+
+@page("doctor", 11)
+def _(d, pal):
+    """三件事：按时吃药、多喝水、早点睡。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    x = xs[0]                                                   # 药瓶：不透明 + 十字标
+    d.rounded_rectangle([x - 96, cy - 150, x + 96, cy + 210], radius=22,
+                        fill=pal["soft"], outline=pal["ink"], width=9)
+    d.rounded_rectangle([x - 70, cy - 230, x + 70, cy - 140], radius=14,
+                        fill=pal["accent"], outline=pal["ink"], width=9)
+    for rx in range(-50, 51, 25):
+        d.line([x + rx, cy - 222, x + rx, cy - 150], fill=pal["ink"], width=5)
+    d.rounded_rectangle([x - 74, cy - 70, x + 74, cy + 140], radius=10,
+                        fill=pal["paper"], outline=pal["ink"], width=7)
+    d.rectangle([x - 16, cy - 30, x + 16, cy + 100], fill=pal["accent"])
+    d.rectangle([x - 58, cy + 12, x + 58, cy + 58], fill=pal["accent"])
+    x = xs[1]                                                   # 一杯水：杯口敞开
+    cup = [(x - 92, cy - 170), (x + 92, cy - 170), (x + 66, cy + 190), (x - 66, cy + 190)]
+    d.polygon(cup, fill=pal["paper"])
+    d.polygon([(x - 78, cy - 40), (x + 78, cy - 40), (x + 66, cy + 190), (x - 66, cy + 190)],
+              fill=pal["accent"])
+    for a, b in zip(cup, cup[1:]):
+        d.line([a, b], fill=pal["ink"], width=9)
+    d.line([cup[3], cup[0]], fill=pal["ink"], width=9)
+    d.line([x - 78, cy - 40, x + 78, cy - 40], fill=pal["ink"], width=7)
+    x = xs[2]                                                   # 一张床：侧面
+    d.rectangle([x - 130, cy - 150, x - 96, cy + 130], fill=pal["soft"],
+                outline=pal["ink"], width=8)
+    d.rounded_rectangle([x - 130, cy - 10, x + 140, cy + 90], radius=14,
+                        fill=pal["paper"], outline=pal["ink"], width=9)
+    d.rounded_rectangle([x - 112, cy - 78, x - 16, cy - 6], radius=18,
+                        fill=pal["accent"], outline=pal["ink"], width=8)
+    for lx in (x - 122, x + 108):
+        d.rectangle([lx, cy + 90, lx + 26, cy + 180], fill=pal["soft"],
+                    outline=pal["ink"], width=7)
+    return "3 个符号：1 个带十字标的药瓶（瓶身不透明）/ 1 杯水（杯口敞开）/ 1 张带枕头的床"
+
+
+@page("sleepwin", 7)
+def _(d, pal):
+    """池塘剖面：冰在上面，青蛙和乌龟都埋在泥里。"""
+    ice0, ice1 = 300, 370
+    mud0 = S - MARGIN - 230
+    d.rectangle([MARGIN, ice1, S - MARGIN, mud0], fill=pal["soft"])          # 水
+    d.rectangle([MARGIN, ice0, S - MARGIN, ice1], fill=pal["paper"],
+                outline=pal["ink"], width=8)                                 # 冰
+    for cxk in range(MARGIN + 120, S - MARGIN - 60, 170):
+        d.line([cxk, ice0 + 8, cxk + 26, ice1 - 8], fill=pal["ink"], width=5)
+    d.rectangle([MARGIN, mud0, S - MARGIN, S - MARGIN], fill=pal["bark"],
+                outline=pal["ink"], width=8)                                 # 泥
+    fx, fy = S / 2 - 190, mud0 + 110                                         # 青蛙
+    d.ellipse([fx - 110, fy - 60, fx + 110, fy + 60], fill=pal["accent"],
+              outline=pal["ink"], width=8)
+    for s in (-1, 1):
+        disc(d, fx + s * 52, fy - 58, 30, pal["accent"], pal, w=8)
+        disc(d, fx + s * 52, fy - 62, 10, pal["ink"], pal, w=0)
+        d.line([fx + s * 96, fy + 20, fx + s * 140, fy + 54], fill=pal["ink"], width=12)
+    tx, ty = S / 2 + 190, mud0 + 110                                         # 乌龟
+    # 头要先画、壳后画压住头根，否则头会变成飘在壳边上的一个球（上一版就是）
+    disc(d, tx + 132, ty - 30, 38, pal["accent"], pal, w=8)
+    disc(d, tx + 148, ty - 38, 9, pal["ink"], pal, w=0)
+    d.pieslice([tx - 130, ty - 110, tx + 130, ty + 110], 180, 360,
+               fill=pal["paper"], outline=pal["ink"], width=8)
+    d.line([tx - 130, ty, tx + 130, ty], fill=pal["ink"], width=8)
+    for k in range(-1, 2):
+        d.line([tx + k * 62, ty - 4, tx + k * 40, ty - 96], fill=pal["ink"], width=6)
+    for s in (-1, 1):
+        d.rounded_rectangle([tx + s * 96 - 26, ty - 6, tx + s * 96 + 26, ty + 46], radius=12,
+                            fill=pal["accent"], outline=pal["ink"], width=7)
+    return "1 个池塘剖面：1 层冰（4 道裂纹）+ 1 池水 + 1 层泥，泥里埋着 1 只青蛙和 1 只乌龟"
+
+
 def render(slug):
     pal = palette(slug)
     done = []

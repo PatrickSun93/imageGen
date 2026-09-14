@@ -12,6 +12,7 @@
     4,
     5,
     6,
+    7,
     9
   ],
   "palette": {
@@ -107,7 +108,7 @@
     {
       "n": 12,
       "zh": "又亮了一下。\n我开始数：一、二、三、四、五……\n轰隆。\n五公里外呢。\n我一点也不怕了。",
-      "scene": "The little boy sits on his bed in pyjamas counting on his fingers, looking calm, a lit window behind him.",
+      "scene": "The little boy sits on his bed in pyjamas, one hand raised beside his face with all five fingers spread wide open, looking calm and pleased, a lit window behind him.",
       "has_boy": true
     }
   ]
