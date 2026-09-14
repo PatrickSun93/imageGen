@@ -3757,14 +3757,24 @@ def _(d, pal):
     d.rounded_rectangle([bx - 76, ground - 450, bx + 76, ground - 408], radius=10,
                         fill=pal["ink"])                                  # 投信口
     sx = S - MARGIN - 280
-    d.rounded_rectangle([sx - 190, ground - 330, sx + 190, ground], radius=70,
-                        fill=pal["soft"], outline=pal["ink"], width=10)   # 鼓起来的袋身
-    d.rounded_rectangle([sx - 92, ground - 430, sx + 92, ground - 300], radius=26,
-                        fill=pal["soft"], outline=pal["ink"], width=10)   # 袋口
-    d.line([sx - 96, ground - 330, sx + 96, ground - 330], fill=pal["ink"], width=10)
-    for dx in (-44, 44):                                                  # 露出来的信封角
-        d.rounded_rectangle([sx + dx - 46, ground - 500, sx + dx + 46, ground - 410],
+    for dx in (-44, 44):                                    # 信封先画，袋口会压住下半截
+        d.rounded_rectangle([sx + dx - 46, ground - 470, sx + dx + 46, ground - 360],
                             radius=8, fill=pal["paper"], outline=pal["ink"], width=7)
+    # 袋身和袋口用一条闭合轮廓画：两个圆角矩形叠出来的是个直筒，会被读成瓶子
+    sack = [(sx - 150, ground), (sx - 196, ground - 90), (sx - 186, ground - 200),
+            (sx - 120, ground - 272), (sx - 70, ground - 300), (sx - 116, ground - 392),
+            (sx - 40, ground - 372), (sx + 40, ground - 372), (sx + 116, ground - 392),
+            (sx + 70, ground - 300), (sx + 120, ground - 272), (sx + 186, ground - 200),
+            (sx + 196, ground - 90), (sx + 150, ground)]
+    d.polygon(sack, fill=pal["soft"])
+    d.line(sack + [sack[0]], fill=pal["ink"], width=10, joint="curve")
+    d.line([sx - 104, ground - 288, sx + 104, ground - 288], fill=pal["ink"], width=12)
+    for s_ in (-1, 1):                                      # 扎口的绳头
+        d.line([sx + s_ * 96, ground - 288, sx + s_ * 150, ground - 238],
+               fill=pal["ink"], width=9)
+    for dx in (-90, 0, 90):                                 # 袋身上的褶
+        d.arc([sx + dx - 40, ground - 230, sx + dx + 40, ground - 60], 250, 320,
+              fill=pal["ink"], width=6)
     return "1 个邮筒（圆顶 + 1 条投信口）+ 1 个扎着口的邮袋，露出 2 个信封角；画面里没有字"
 
 
