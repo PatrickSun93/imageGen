@@ -4,8 +4,8 @@
   "slug": "trex",
   "seed_base": 72000,
   "character": "wearing a rust orange t-shirt, dark teal shorts and white sneakers, short black hair",
-  "style": "children's picture book illustration, bold flat graphic art with thick clean outlines and flat fills, deep teal, rust orange and cream",
-  "style_label": "平涂线条",
+  "style": "children's picture book illustration, soft watercolour washes with fine pencil outlines and visible paper grain, warm earth tones with deep teal and rust orange",
+  "style_label": "水彩铅笔",
   "keyword": "牙齿",
   "diagram_pages": [
     2,
@@ -42,7 +42,7 @@
     {
       "n": 1,
       "zh": "玻璃柜里放着一颗牙。\n它比我的手掌还长，\n边上还有\n一排小锯齿。\n爸爸说那是霸王龙的。",
-      "scene": "The little boy stands beside one huge fossil tooth as long as his forearm, looking closely at it: the tooth is a curved cone, wide at the base and tapering to one sharp point at the top, with a row of tiny notches running down its edge. Plain pale background, nothing else in the picture.",
+      "scene": "Waist-up view of the little boy indoors, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, his mouth open in surprise, one hand raised beside one huge fossil tooth as tall as his head standing upright on the floor: a smooth pale cone, wide and rounded at its base and tapering to one sharp point at the top. A plain pale wall behind him.",
       "has_boy": true
     },
     {
@@ -108,7 +108,7 @@
     {
       "n": 12,
       "zh": "我把手贴在玻璃上，\n和那颗牙比一比。\n它一颗牙，\n就有我半只手\n那么长。",
-      "scene": "The little boy holds one open palm up flat beside a huge fossil tooth standing upright on its base, his fingers straight and spread wide, the tooth a curved cone tapering to one sharp point and as long as his whole hand, smiling. Plain pale background.",
+      "scene": "Waist-up view of the little boy, his face large in the frame and turned towards the viewer, smiling, both eyes clearly drawn with white, a dark round iris and a small bright highlight, holding one open palm up flat with fingers spread beside one huge fossil tooth as tall as his head standing upright on the floor: a smooth pale cone, wide and rounded at its base and tapering to one sharp point at the top, comparing their length. A plain pale wall behind him.",
       "has_boy": true
     }
   ]
