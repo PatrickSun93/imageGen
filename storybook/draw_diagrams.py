@@ -12,7 +12,7 @@ Pages are written straight into the assembled book AND back into out/bakeoff/ so
 rerun cannot copy an old model render over them.
 """
 import json, math, os, random, sys
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 sys.stdout.reconfigure(encoding="utf-8")
 REPO = r"C:\FlowDev\githubdevitems\comfyUIItems"
@@ -4121,11 +4121,15 @@ def _(d, pal):
 ASSET_CACHE = {}
 
 
-def asset(book, n, tol=30):
+def asset(book, n, tol=45):
     """读第 n 个素材并抠掉背景，返回裁到外框的 RGBA。
 
     从八个边缘点 floodfill：只有和画布边缘连通的背景色会被抠掉，
     物体内部同色的浅块不会被穿孔。
+
+    抠完还要把蒙版向内收 2px（MinFilter）。水彩画风的素材脚下自带一片渐变的
+    铅笔投影，floodfill 只吃得掉最外层，剩下一圈过渡色 —— 贴到深色地层上
+    就是物体周围一圈白光晕，而且外框底部量到的是影子不是脚，物体会悬空。
     """
     import numpy as np
     key = (book, n, tol)
@@ -4140,7 +4144,7 @@ def asset(book, n, tol=30):
         ImageDraw.floodfill(tmp, c, KEY, thresh=tol)
     m = (~np.all(np.array(tmp) == KEY, axis=-1)).astype("uint8") * 255
     out = src.convert("RGBA")
-    out.putalpha(Image.fromarray(m, "L"))
+    out.putalpha(Image.fromarray(m, "L").filter(ImageFilter.MinFilter(5)))
     bb = out.getchannel("A").getbbox()
     out = out.crop(bb) if bb else out
     ASSET_CACHE[key] = out
