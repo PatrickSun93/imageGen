@@ -5371,6 +5371,81 @@ def _(d, pal):
     return f"1 块剖开的皮，里面嵌着 {n} 块骨板"
 
 
+# ---------------------------------------------------------------- 复审打回、改判给程序的 4 页
+# 模型在这四页上画的是：人的脚印（五趾带足弓）、牙医海报上的臼齿（两次）、
+# 绑在尾巴上的金属矛头。形状简单又必须准确，正是程序的活。
+
+@page("dinospeed", 7)
+def _(d, pal):
+    """一串脚印留在河边的泥地上。模型画的是人的脚印。"""
+    y0 = S / 2 - 200
+    d.rectangle([MARGIN, y0, S - MARGIN, y0 + 470], fill=pal["bark"],
+                outline=pal["ink"], width=9)
+    n, x = 0, MARGIN + 120
+    while x < S - MARGIN - 90:
+        footprint(d, x, y0 + 160 + (140 if n % 2 else 0), 110, pal, pal["soft"])
+        x += 155
+        n += 1
+    return f"1 块泥地 + {n} 个左右交错的三趾脚印"
+
+
+@page("trex", 11)
+def _(d, pal):
+    """掉下来的牙埋进泥沙，慢慢变成石头。"""
+    n, h = 5, 128
+    top = MARGIN + 70
+    for i in range(n):
+        y = top + i * h
+        d.rectangle([MARGIN, y, S - MARGIN, y + h], fill=pal["soft"] if i % 2 else pal["bark"],
+                    outline=pal["ink"], width=7)
+    cx, cy = S / 2, top + 2.5 * h
+    poly(d, [(cx, cy - 165), (cx + 74, cy - 40), (cx + 58, cy + 165), (cx - 58, cy + 165),
+             (cx - 74, cy - 40)], pal, pal["paper"], 9)
+    for i in range(6):
+        t = 0.2 + i * 0.13
+        d.line([cx + 74 * t - 4, cy - 165 + 205 * t, cx + 74 * t + 22, cy - 174 + 205 * t],
+               fill=pal["ink"], width=4)
+    return f"{n} 层地层，中间那层里埋着 1 颗带锯齿的牙（不是人的臼齿）"
+
+
+@page("fossil", 10)
+def _(d, pal):
+    """化石会说话：牙、腿骨、蛋。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    poly(d, [(xs[0], cy - 230), (xs[0] + 84, cy - 90), (xs[0] + 66, cy + 230),
+             (xs[0] - 66, cy + 230), (xs[0] - 84, cy - 90)], pal, pal["paper"], 9)
+    bx = xs[1]
+    poly(d, [(bx - 40, cy - 150), (bx - 74, cy - 194), (bx - 40, cy - 232), (bx, cy - 206),
+             (bx + 40, cy - 232), (bx + 74, cy - 194), (bx + 40, cy - 150),
+             (bx + 40, cy + 150), (bx + 74, cy + 194), (bx + 40, cy + 232), (bx, cy + 206),
+             (bx - 40, cy + 232), (bx - 74, cy + 194), (bx - 40, cy + 150)],
+         pal, pal["paper"], 9)
+    egg_shape(d, xs[2], cy, 430, pal, pal["paper"], 9)
+    return "3 样化石并排：1 颗锥形的牙 / 1 根两端膨大的腿骨 / 1 个蛋"
+
+
+@page("dinoskin", 11)
+def _(d, pal):
+    """甲龙尾巴尖上那个骨头做的锤子 —— 是骨头，不是绑上去的金属。"""
+    cy = S / 2
+    x0, x1 = MARGIN + 30, S - MARGIN - 330
+    poly(d, [(x0, cy - 76), (x1, cy - 50), (x1, cy + 50), (x0, cy + 76)], pal, pal["soft"], 9)
+    n = 6
+    for i in range(n):
+        sx = x0 + (x1 - x0) * (i + 0.5) / n
+        d.line([sx, cy - 68, sx, cy + 68], fill=pal["ink"], width=6)
+    cx = x1 + 170
+    for dy in (-118, 118):
+        disc(d, cx + 44, cy + dy, 74, pal["paper"], pal, w=9)
+    d.ellipse([cx - 156, cy - 116, cx + 156, cy + 116], fill=pal["paper"],
+              outline=pal["ink"], width=10)
+    for s in (-1, 1):
+        d.arc([cx - 210, cy + s * 300 - 70, cx + 210, cy + s * 300 + 70],
+              0 if s > 0 else 180, 180 if s > 0 else 360, fill=pal["ink"], width=8)
+    return f"1 条分 {n} 节的尾巴 + 尖上 1 个骨锤（大椭圆带 2 个凸起）+ 上下 2 道甩动的弧线"
+
+
 def render(slug):
     pal = palette(slug)
     done = []

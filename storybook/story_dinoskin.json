@@ -12,7 +12,8 @@
     4,
     6,
     8,
-    10
+    10,
+    11
   ],
   "palette": {
     "ink": "#2b2620",
@@ -53,7 +54,7 @@
     {
       "n": 3,
       "zh": "皮本来是软的，\n烂得最快。\n可要是刚好\n被很细的泥盖住，\n就能印下一个印子。",
-      "scene": "One piece of dinosaur skin pressed into fine mud on a cream background, leaving a pebbled imprint. Nothing else in the picture.",
+      "scene": "A flat bed of fine wet grey mud filling the whole picture, with one rectangular patch of pebbled scale texture pressed into its surface, the mud smooth and empty all around that patch.",
       "has_boy": false
     },
     {
@@ -77,7 +78,7 @@
     {
       "n": 7,
       "zh": "有一种小恐龙，\n身上是栗红色的，\n尾巴上还有\n一圈一圈的白环，\n像浣熊的尾巴。",
-      "scene": "One small chestnut red feathered dinosaur with white rings banding its long tail, on a cream background. Nothing else in the picture.",
+      "scene": "One small feathered dinosaur standing on a cream background, every feather on its body a deep chestnut red brown, its long tail banded from base to tip with evenly spaced cream white rings.",
       "has_boy": false
     },
     {

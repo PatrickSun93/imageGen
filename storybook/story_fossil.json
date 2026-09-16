@@ -13,6 +13,7 @@
     5,
     7,
     9,
+    10,
     11
   ],
   "palette": {
@@ -84,7 +85,7 @@
     {
       "n": 8,
       "zh": "挖出来以后，\n要用石膏\n把它整个包起来，\n像打石膏一样，\n免得路上碰碎了。",
-      "scene": "One large fossil bone wrapped in a white plaster jacket on a cream background. Nothing else in the picture.",
+      "scene": "One large fossil bone wrapped in a white plaster jacket, lying on bare earth that fills the whole picture from edge to edge.",
       "has_boy": false
     },
     {

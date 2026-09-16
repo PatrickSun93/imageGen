@@ -11,6 +11,7 @@
     2,
     4,
     6,
+    7,
     8,
     10
   ],
@@ -65,7 +66,7 @@
     {
       "n": 5,
       "zh": "用两条腿跑的\n一般都快。\n四条腿的身体太重，\n跑不了几步\n就得停下来歇。",
-      "scene": "One two-legged dinosaur running past one heavy four-legged dinosaur standing still, on a cream background. Nothing else in the picture.",
+      "scene": "On a cream background, two dinosaurs well apart from each other: on the left one slim two-legged dinosaur in mid-stride with both feet off the ground and its tail streaming straight out behind it; far to the right one heavy four-legged dinosaur with a smooth plain back standing still with all four feet planted.",
       "has_boy": false
     },
     {
