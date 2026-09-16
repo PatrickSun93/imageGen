@@ -4113,6 +4113,71 @@ def _(d, pal):
 # 恐龙的形状统一走剪影：轮廓一条闭合多边形画完（手册 4.2f —— 拼圆角矩形会散架），
 # 单位坐标里设计一次，各页按 L 缩放，所以同一种恐龙在十本里长得一样。
 
+# ---------------------------------------------------------------- 素材拼合
+# 剪影是程序一笔一笔画的，比例准但难看。更好的分工是：模型只画**单个物体**
+# （纯色背景、居中、占满画面），程序把背景抠掉、按精确尺寸缩放、拼到页面上 ——
+# 比例和数目仍然由代码保证，画面质量归模型。素材由 story_assets_<book>.json 出图。
+
+ASSET_CACHE = {}
+
+
+def asset(book, n, tol=30):
+    """读第 n 个素材并抠掉背景，返回裁到外框的 RGBA。
+
+    从八个边缘点 floodfill：只有和画布边缘连通的背景色会被抠掉，
+    物体内部同色的浅块不会被穿孔。
+    """
+    import numpy as np
+    key = (book, n, tol)
+    if key in ASSET_CACHE:
+        return ASSET_CACHE[key]
+    path = os.path.join(OUT, "bakeoff", f"assets_{book}_p{n:02d}_lightning8.png")
+    src = Image.open(path).convert("RGB")
+    tmp, (w, h) = src.copy(), src.size
+    KEY = (255, 0, 255)
+    for c in ((0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1),
+              (w // 2, 0), (w // 2, h - 1), (0, h // 2), (w - 1, h // 2)):
+        ImageDraw.floodfill(tmp, c, KEY, thresh=tol)
+    m = (~np.all(np.array(tmp) == KEY, axis=-1)).astype("uint8") * 255
+    out = src.convert("RGBA")
+    out.putalpha(Image.fromarray(m, "L"))
+    bb = out.getchannel("A").getbbox()
+    out = out.crop(bb) if bb else out
+    ASSET_CACHE[key] = out
+    return out
+
+
+def lie_flat(a):
+    """把斜放的素材转到水平：试一圈角度，取外框最扁的那个。
+
+    手调角度总是差几度（香蕉试了两次都还是斜的），让程序自己找最扁的那一档更可靠。
+    """
+    best, ratio = a, 0
+    for ang in range(-90, 91, 5):
+        r = a.rotate(ang, expand=True, resample=Image.BICUBIC)
+        bb = r.getchannel("A").getbbox()
+        if not bb:
+            continue
+        w_, h_ = bb[2] - bb[0], bb[3] - bb[1]
+        if h_ and w_ / h_ > ratio:
+            ratio, best = w_ / h_, r.crop(bb)
+    return best
+
+
+def place(img, a, cx, cy, h=None, w=None, anchor="center"):
+    """把素材缩放到目标高度 h（或宽度 w）再贴上。anchor='bottom' 时 cy 是脚底。
+
+    返回实际占位 (宽, 高) —— 构造清单里直接打这个数，比例对不对一目了然。
+    """
+    aw, ah = a.size
+    s = (h / ah) if h else ((w / aw) if w else 1.0)
+    nw, nh = max(1, round(aw * s)), max(1, round(ah * s))
+    r = a.resize((nw, nh), Image.LANCZOS)
+    y = round(cy - nh) if anchor == "bottom" else round(cy - nh / 2)
+    img.paste(r, (round(cx - nw / 2), y), r)
+    return nw, nh
+
+
 def poly(d, pts, pal, fill=None, w=7):
     """闭合多边形 + 描边。polygon 的 outline 不支持 width，只能自己描。"""
     d.polygon(pts, fill=fill if fill is not None else pal["soft"])
@@ -4428,54 +4493,41 @@ def _(d, pal):
 
 
 @page("trex", 2)
-def _(d, pal):
-    """一颗牙和一根香蕉一样长。"""
-    cy = S / 2
-    ln = 580
-    top, bot = cy - ln / 2, cy + ln / 2
-    gum = top + ln / 3                                   # 牙龈线：上面 1/3 露出，下面 2/3 埋着
-    tx = S / 2 - 170
-    d.rounded_rectangle([tx - 200, gum, tx + 200, bot + 40], radius=26,
-                        fill=pal["soft"], outline=pal["ink"], width=9)
-    tooth = [(tx, top), (tx + 76, gum + 40), (tx + 62, bot), (tx - 62, bot), (tx - 76, gum + 40)]
-    poly(d, tooth, pal, pal["paper"], 9)
-    d.line([tx - 190, gum, tx + 190, gum], fill=pal["ink"], width=10)
-    n = 10
-    for i in range(n):                                   # 锯齿必须贴着牙的右缘长
-        t = 0.16 + i * 0.078
-        ex, ey = tx + 76 * t, top + (gum + 40 - top) * t
-        d.line([ex - 4, ey, ex + 24, ey - 9], fill=pal["ink"], width=5)
+def _(d, pal, img):
+    """一颗牙和一根香蕉一样长；露在牙床外面的只有上面一小截。
 
-    def bez(p0, p1, p2, k=17):
-        return [((1 - t) ** 2 * p0[0] + 2 * (1 - t) * t * p1[0] + t * t * p2[0],
-                 (1 - t) ** 2 * p0[1] + 2 * (1 - t) * t * p1[1] + t * t * p2[1])
-                for t in (i / (k - 1) for i in range(k))]
-    bx = S / 2 + 210                                     # 香蕉必须是弯的，直板读不出来
-    outer = bez((bx + 20, top), (bx - 150, cy), (bx + 20, bot))
-    inner = bez((bx + 26, top + 26), (bx - 66, cy), (bx + 26, bot - 26))
-    poly(d, outer + inner[::-1], pal, pal["accent"], 9)
-    return (f"1 颗牙（全长 {ln}px，牙龈线以上露出 1/3、以下埋着 2/3，露出那截有 {n} 道锯齿）"
-            f"+ 1 根弯香蕉，两端都在同一对水平线上")
+    牙和香蕉都换成模型画的素材，程序只管缩放到严格等高、摆位、画牙床。
+    """
+    # 两样都横过来、左右端对齐，比长度最清楚。上一版把牙立在牙床里，
+    # 牙只露出一点点尖，反而没法和香蕉比长短了；「埋着一大半」交给 p4 的牙床剖面讲。
+    ln = S - 2 * MARGIN - 150
+    x0 = MARGIN + 75
+    tw, th = place(img, lie_flat(asset("trex", 1)), x0 + ln / 2, S / 2 - 160, w=ln)
+    bw, bh = place(img, lie_flat(asset("trex", 2)), x0 + ln / 2, S / 2 + 180, w=ln)
+    for x in (x0, x0 + ln):
+        for seg in range(11):
+            y = S / 2 - 330 + seg * 46
+            d.line([x, y, x, y + 24], fill=pal["line"], width=5)
+    return f"1 颗横躺的牙（{tw}px）+ 1 根横躺的香蕉（{bw}px），两端各 1 条对齐虚线，长度严格相同"
 
 
 @page("trex", 3)
-def _(d, pal):
-    """牙缘的锯齿和面包刀是一样的。"""
+def _(d, pal, img):
+    """牙的边上有锯齿，和面包刀一样 —— 两样东西用素材，锯齿由程序保证一样多。"""
+    n = 11
     for (cx, cy, w_, h_), knife in zip(panel2(d, pal), (False, True)):
-        y = cy
-        x0, x1 = cx - w_ * 0.34, cx + w_ * 0.34
+        a = asset("trex", 3 if knife else 1)
         if knife:
-            d.rounded_rectangle([x0, y - 34, x1 - 90, y + 34], radius=10,
-                                fill=pal["paper"], outline=pal["ink"], width=8)
-            d.rounded_rectangle([x1 - 96, y - 22, x1, y + 22], radius=12,
-                                fill=pal["bark"], outline=pal["ink"], width=8)
+            place(img, a, cx, cy - 70, w=w_ * 0.88)
         else:
-            poly(d, [(x0, y - 60), (x1, y - 20), (x1, y + 34), (x0, y + 34)], pal, pal["paper"], 8)
-        n = 11
-        for i in range(n):
-            sx = x0 + 14 + i * (x1 - x0 - 120) / n
-            poly(d, [(sx, y + 34), (sx + 18, y + 72), (sx + 36, y + 34)], pal, pal["accent"], 5)
-    return "左格牙缘 / 右格面包刀，两边各 11 个一样的锯齿"
+            place(img, a, cx, cy - 60, h=h_ * 0.50)
+        for i in range(n):                               # 放大出来的锯齿，两格数目一致
+            sx = cx - w_ * 0.34 + i * (w_ * 0.66) / n
+            poly(d, [(sx, cy + h_ * 0.28), (sx + w_ * 0.030, cy + h_ * 0.345),
+                     (sx + w_ * 0.060, cy + h_ * 0.28)], pal, pal["accent"], 4)
+        d.line([cx - w_ * 0.36, cy + h_ * 0.28, cx + w_ * 0.36, cy + h_ * 0.28],
+               fill=pal["ink"], width=6)
+    return f"左格 1 颗牙 / 右格 1 把面包刀（都是模型画的素材），下方各 {n} 个一样的锯齿"
 
 
 @page("trex", 4)
@@ -4506,15 +4558,18 @@ def _(d, pal):
 
 
 @page("trex", 8)
-def _(d, pal):
+def _(d, pal, img):
     """前爪小到摸不到自己的嘴。"""
-    base = S - MARGIN - 140
+    # 剪影换成模型画的整只霸王龙素材，程序只管缩放、落地和圈出前肢
+    base = S - MARGIN - 130
     d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
-    L = S - 2 * MARGIN - 60
-    dino_theropod(d, S / 2, base - L * 0.33, L, pal, pal["paper"], w=8)
-    ax, ay = S / 2 - L * 0.22, base - L * 0.33 - L * 0.04
-    d.ellipse([ax - 95, ay - 80, ax + 95, ay + 80], outline=pal["accent"], width=12)
-    return "1 只兽脚类侧影 + 1 个圈，圈住那两条很短的前肢"
+    a = asset("trex", 4)
+    w_, h_ = place(img, a, S / 2, base, h=S - 2 * MARGIN - 250, anchor="bottom")
+    ax = S / 2 - w_ / 2 + w_ * 0.28
+    ay = base - h_ + h_ * 0.53
+    d.ellipse([ax - w_ * 0.11, ay - h_ * 0.10, ax + w_ * 0.11, ay + h_ * 0.10],
+              outline=pal["accent"], width=12)
+    return f"1 只霸王龙（模型画的素材，缩到高 {h_}px）+ 1 个圈住那两条很短前肢的圈"
 
 
 @page("longneck", 2)
@@ -5390,7 +5445,7 @@ def _(d, pal):
 
 
 @page("trex", 11)
-def _(d, pal):
+def _(d, pal, img):
     """掉下来的牙埋进泥沙，慢慢变成石头。"""
     n, h = 5, 128
     top = MARGIN + 70
@@ -5398,14 +5453,9 @@ def _(d, pal):
         y = top + i * h
         d.rectangle([MARGIN, y, S - MARGIN, y + h], fill=pal["soft"] if i % 2 else pal["bark"],
                     outline=pal["ink"], width=7)
-    cx, cy = S / 2, top + 2.5 * h
-    poly(d, [(cx, cy - 165), (cx + 74, cy - 40), (cx + 58, cy + 165), (cx - 58, cy + 165),
-             (cx - 74, cy - 40)], pal, pal["paper"], 9)
-    for i in range(6):
-        t = 0.2 + i * 0.13
-        d.line([cx + 74 * t - 4, cy - 165 + 205 * t, cx + 74 * t + 22, cy - 174 + 205 * t],
-               fill=pal["ink"], width=4)
-    return f"{n} 层地层，中间那层里埋着 1 颗带锯齿的牙（不是人的臼齿）"
+    a = asset("trex", 1).rotate(26, expand=True, resample=Image.BICUBIC)
+    aw, ah = place(img, a, S / 2, top + 2.55 * h, h=270)
+    return f"{n} 层地层，中间那层里斜埋着 1 颗牙（模型画的素材，高 {ah}px）"
 
 
 @page("fossil", 10)
@@ -5454,7 +5504,8 @@ def render(slug):
             continue
         img = Image.new("RGB", (S, S), pal["ground"])
         d = ImageDraw.Draw(img)
-        note = fn(d, pal)          # 页面函数返回“这页画了什么”的构造清单
+        # 用素材拼合的页要拿到底图才能 paste，所以多接一个参数；老页面函数照旧两个参数
+        note = fn(d, pal, img) if fn.__code__.co_argcount == 3 else fn(d, pal)
         grain(img)
         # 成品目录的后缀不统一：新书是 _qwen，早期 LoRA 书是 _lora / _qwen_lora。
         # 写死 _qwen 会在一个本不存在的目录里凭空建出单页（crab 就这么中过招，
