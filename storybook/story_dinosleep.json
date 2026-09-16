@@ -1,0 +1,115 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "恐龙怎么睡觉",
+  "subtitle": "蜷成一团，把头埋进胳膊里",
+  "slug": "dinosleep",
+  "seed_base": 99000,
+  "character": "wearing a dark blue t-shirt, grey shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, oil pastel drawing with thick waxy strokes and rich blended colour, deep indigo, warm amber and dusty cream",
+  "style_label": "油画棒",
+  "keyword": "睡觉",
+  "diagram_pages": [
+    2,
+    3,
+    5,
+    7,
+    8,
+    10
+  ],
+  "palette": {
+    "ink": "#232433",
+    "soft": "#5f6486",
+    "ground": "#f2f0ea",
+    "paper": "#fcfaf5",
+    "accent": "#c97b52",
+    "bark": "#7c7260",
+    "line": "#dbd8cc",
+    "ink_d": "#ebe8dc",
+    "soft_d": "#8d93b5",
+    "ground_d": "#0d0e18",
+    "paper_d": "#171a26",
+    "accent_d": "#dd9066",
+    "bark_d": "#7c7260",
+    "line_d": "#33354a"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "石头上有一只恐龙，\n缩成小小一团，\n头埋在胳膊底下。\n爸爸说它是睡着的。",
+      "scene": "Waist-up view of the little boy in a museum in front of one small curled-up dinosaur fossil in a slab of rock, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, curious.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "这只恐龙不大，\n和一只鸭子差不多。\n名字叫寐龙，\n寐就是睡觉的意思。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "它是这样睡的：\n四条腿收在身子下，\n尾巴绕过来\n圈住自己，\n头掖进前肢里。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "鸟睡觉也这样。\n站在树枝上，\n脖子往后一弯，\n把嘴埋进翅膀里，\n一动不动。",
+      "scene": "One small bird asleep on a branch on a cream background, its neck turned back and its beak tucked under one wing. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "为什么要埋起头？\n为了暖和。\n嘴巴一埋进去，\n呼出来的气\n就不会白白跑掉。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "石头里全是火山灰。\n那天夜里火山喷了，\n灰一层一层落下来，\n盖住了它，\n它就没再醒。",
+      "scene": "One small curled-up dinosaur lying asleep on the ground on a cream background with grey volcanic ash falling thickly over it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "这样的化石\n前后找到了两只，\n睡觉的姿势\n一模一样，\n可见不是碰巧摆的。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "大恐龙蜷不起来。\n它们太沉了，\n只能就地趴下，\n把肚子贴住地，\n头搁在前面。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "长脖子的那种\n睡觉更麻烦。\n那么长一条脖子，\n只好放下来，\n盘在身子边上。",
+      "scene": "One long-necked dinosaur lying asleep on the ground on a cream background, its long neck laid down and resting beside its body. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "怎么知道谁夜里醒着？\n看眼睛周围\n那一圈小骨头。\n这圈骨头大的，\n夜里也看得见。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "睡着了最危险。\n所以它们睡得浅，\n一点点动静\n就睁开眼睛。\n有的还轮着睡。",
+      "scene": "One dinosaur lying curled asleep on open ground on a cream background with one eye open. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "晚上我也蜷着睡，\n手塞在脸底下。\n一亿年前的那只，\n睡的姿势\n和我差不多。",
+      "scene": "Waist-up view of the little boy curled up in bed at night with both hands tucked under his cheek, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, sleepy.",
+      "has_boy": true
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "加州有没有恐龙 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_california",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, fine pen lines with light transparent watercolour washes, sea blue, warm sand and soft ink grey",
+  "style_label": "钢笔淡彩",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#21262c",
+    "soft": "#5d7f8c",
+    "ground": "#eef1f0",
+    "paper": "#f9fbfa",
+    "accent": "#c26a4a",
+    "bark": "#7b6f5e",
+    "line": "#d2d9d8",
+    "ink_d": "#e4ebea",
+    "soft_d": "#86a7b3",
+    "ground_d": "#0d1216",
+    "paper_d": "#171d20",
+    "accent_d": "#d4825f",
+    "bark_d": "#7b6f5e",
+    "line_d": "#2c3538"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single ammonite shell coiled into a flat round spiral, seen from the side, its whole shape inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single large sea reptile with a long body, four flippers and a long tail, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single duck-billed dinosaur standing on four legs, seen from the side facing left, its flat wide snout lowered, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single sabre-toothed cat standing on four legs, seen from the side facing left, two long teeth hanging down from its upper jaw, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

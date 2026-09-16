@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "冰雹是怎么长大的 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_hail",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, coloured pencil drawing with visible layered strokes and grainy hatching, slate blue, ice white and warm ochre",
+  "style_label": "彩色铅笔",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#232a31",
+    "soft": "#6b7d8c",
+    "ground": "#eef2f4",
+    "paper": "#f9fbfc",
+    "accent": "#c2622f",
+    "bark": "#7d8a93",
+    "line": "#d3dbe0",
+    "ink_d": "#e6ecf0",
+    "soft_d": "#8fa3b2",
+    "ground_d": "#0d1218",
+    "paper_d": "#141b22",
+    "accent_d": "#d8834d",
+    "bark_d": "#7d8a93",
+    "line_d": "#2a343d"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single round hailstone of white and clear ice, about as big as a walnut, lying on its own. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single hailstone sawn in half and seen face on, showing many rings of white and clear ice one inside the other, from a tiny core out to the rim. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single tall storm cloud seen from far away, dark and heavy along its base and spread flat and wide across its top. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single onion cut in half and seen face on, showing its many layers one inside the other. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

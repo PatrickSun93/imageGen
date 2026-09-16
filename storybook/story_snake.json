@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "蛇没有腿怎么走",
+  "subtitle": "靠鳞片和肌肉一推一推",
+  "slug": "snake",
+  "seed_base": 124000,
+  "character": "wearing a moss green sweatshirt, dark grey trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration, fine pen lines with light transparent watercolour washes, moss green, warm grey and soft amber",
+  "style_label": "钢笔淡彩",
+  "keyword": "蛇",
+  "diagram_pages": [
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "palette": {
+    "ink": "#26291f",
+    "soft": "#6f7f5c",
+    "ground": "#f1f2ea",
+    "paper": "#fbfcf6",
+    "accent": "#b5713a",
+    "bark": "#7f7a5e",
+    "line": "#d8dcc9",
+    "ink_d": "#e9ecdd",
+    "soft_d": "#9aa987",
+    "ground_d": "#0f1309",
+    "paper_d": "#1a1e11",
+    "accent_d": "#cb8b55",
+    "bark_d": "#7f7a5e",
+    "line_d": "#2f3423"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "玻璃箱里那条蛇\n一动就往前溜。\n它一条腿也没有，\n我盯着看了半天，\n还是没看懂。",
+      "scene": "Waist-up view of the little boy crouching in front of a glass tank, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, puzzled; a green snake glides across the sand behind the glass.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "爸爸让我看它肚子。\n肚皮上有一排鳞，\n一片挨着一片，\n横着排过去，\n从脖子排到尾巴。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "这排鳞又宽又扁，\n后面那条边\n翘起来一点点。\n往前推不费劲，\n往后就勾住地。",
+      "scene": "Close view of a snake's underside on a cream background, one row of wide flat belly scales running along it, each scale's back edge lifted a little. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "所以它一使劲，\n鳞就勾着地面，\n身子被推着往前。\n勾一下，走一点，\n一推一推地走。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "最常见的走法\n是把身子弯成波浪，\n一边一边地弯。\n每个弯的外边\n都在蹬着地。",
+      "scene": "One snake moving through short grass on a cream background, its body bent into a wave, pressing against small stones on the outside of each bend. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "弯不是白弯的。\n一个弯推一下，\n一个弯又推一下，\n像浪一样从头\n传到尾巴尖。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "它还会直着走。\n身子一点不弯，\n肚皮下的鳞\n一片一片往后拨，\n像许多只小脚。",
+      "scene": "One snake moving straight forward along a fallen log on a cream background, its body held in a straight line. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "它的骨头也多。\n我们只有二十四根肋骨，\n它有好几百根，\n一根连着一根，\n所以怎么弯都行。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "可它怕光溜的地方。\n放在玻璃上，\n鳞勾不住东西，\n使多大的劲\n也挪不了几步。",
+      "scene": "One snake lying on a wide sheet of smooth polished stone on a cream background, its body bent but going nowhere. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "沙漠里的蛇\n还有另一种走法：\n身子斜着甩出去，\n一段一段落下，\n沙上留下一排斜道。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "爬树的时候，\n它先绕住树干，\n把身子箍紧，\n再一节一节\n往上挪上去。",
+      "scene": "One snake wound around a rough tree trunk on a cream background, gripping it tightly as it works its way upward. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我趴在玻璃上\n看它肚皮底下。\n那排鳞真的在动，\n一片接着一片，\n把它推着往前走。",
+      "scene": "Waist-up view of the little boy lying on the floor with his chin near the glass tank, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, absorbed; the green snake moves past on the other side.",
+      "has_boy": true
+    }
+  ]
+}

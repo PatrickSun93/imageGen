@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "蛇没有腿怎么走 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_snake",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, fine pen lines with light transparent watercolour washes, moss green, warm grey and soft amber",
+  "style_label": "钢笔淡彩",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#26291f",
+    "soft": "#6f7f5c",
+    "ground": "#f1f2ea",
+    "paper": "#fbfcf6",
+    "accent": "#b5713a",
+    "bark": "#7f7a5e",
+    "line": "#d8dcc9",
+    "ink_d": "#e9ecdd",
+    "soft_d": "#9aa987",
+    "ground_d": "#0f1309",
+    "paper_d": "#1a1e11",
+    "accent_d": "#cb8b55",
+    "bark_d": "#7f7a5e",
+    "line_d": "#2f3423"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single snake stretched out on the ground, seen from above, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single wide flat belly scale of a snake lying alone, its back edge lifted a little off the ground. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single length of snake backbone, many small bones joined end to end, each with a pair of thin ribs. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single smooth polished stone lying alone. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

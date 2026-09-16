@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "海龟怎么找回出生的那片海滩",
+  "subtitle": "它记得沙子的味道",
+  "slug": "seaturtle",
+  "seed_base": 126000,
+  "character": "wearing a light blue t-shirt, sand coloured shorts and bare feet, short black hair",
+  "style": "children's picture book illustration, soft pastel drawing with powdery blended strokes and visible tooth of the surface, sea blue, warm sand and coral orange",
+  "style_label": "软色粉",
+  "keyword": "海龟",
+  "diagram_pages": [
+    3,
+    4,
+    7,
+    8,
+    10
+  ],
+  "palette": {
+    "ink": "#22282e",
+    "soft": "#5a7684",
+    "ground": "#ecf0f1",
+    "paper": "#f8fafa",
+    "accent": "#d99a52",
+    "bark": "#8a7b63",
+    "line": "#cdd8dc",
+    "ink_d": "#e4ebee",
+    "soft_d": "#84a0ad",
+    "ground_d": "#0a1016",
+    "paper_d": "#12181f",
+    "accent_d": "#e0a866",
+    "bark_d": "#8a7b63",
+    "line_d": "#26333b"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "海边的沙子很烫。\n退潮的地方\n有一道浅浅的印子，\n从水里一直爬上来。\n爸爸说是海龟爬的。",
+      "scene": "Waist-up view of the little boy standing on a beach at low tide, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, pointing down at a track in the sand.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "夏天的半夜，\n一只母海龟上了岸。\n它在水里很轻快，\n到了沙滩上\n只能一点一点往前挪。",
+      "scene": "One large sea turtle hauling itself slowly up a beach at night on a cream background, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "它用后脚挖坑，\n挖得比自己还深。\n然后把蛋下进去，\n一百多个，\n再把沙子盖回来。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "蛋埋在沙子里，\n靠太阳的热气孵。\n沙子凉的时候，\n孵出来多是男孩；\n热的时候多是女孩。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "两个月以后，\n蛋壳里传出响动。\n小海龟用嘴上的\n一个小尖，\n把壳顶开一道缝。",
+      "scene": "One baby sea turtle breaking out of a white egg on a cream background, a crack opening along the shell. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "它们等到天黑才出来。\n一窝几十只，\n一起往海的方向爬。\n谁也不回头，\n谁也不停下。",
+      "scene": "Many baby sea turtles on a cream background seen from above, all crawling in the same direction. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "就在爬这几分钟里，\n它们把这片沙滩\n记了下来。\n记的不是样子，\n是地下磁力的方向。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "地球本身是块大磁铁。\n每一段海岸，\n磁力的劲儿都不一样。\n小海龟记住的，\n就是这里的那一份。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "然后它们游走了。\n游进大洋，\n一游就是好多年，\n绕着地球转半圈，\n谁也不知道它在哪。",
+      "scene": "One sea turtle swimming alone in open water on a cream background, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "有的海龟游过的路，\n加起来上万公里，\n比从我们家\n走到南极还要远。\n它一路都没有地图。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "二十年后，\n它长成了大海龟，\n又回到这片沙滩。\n不是旁边那一片，\n就是它出生的这一片。",
+      "scene": "One large sea turtle coming out of the water onto sand on a cream background, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我在沙滩上走，\n沙子是一样的沙子。\n可海龟分得出来。\n它记住的不是路，\n是这一片沙的味道。",
+      "scene": "Waist-up view of the little boy sitting on the sand with a handful of it running through his fingers, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, quiet.",
+      "has_boy": true
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "尾巴有什么用 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_tails",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, soft pastel drawing with powdery blended strokes and grainy texture, dusty plum, warm grey and pale sand",
+  "style_label": "软色粉",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#272430",
+    "soft": "#7d7a92",
+    "ground": "#f4f1ec",
+    "paper": "#fdfbf8",
+    "accent": "#8a6096",
+    "bark": "#8b7a70",
+    "line": "#ded9d6",
+    "ink_d": "#ece8e4",
+    "soft_d": "#a49fb4",
+    "ground_d": "#14121a",
+    "paper_d": "#201d27",
+    "accent_d": "#a97fb4",
+    "bark_d": "#8b7a70",
+    "line_d": "#38333f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single diplodocus standing on four legs, seen from the side facing left, with a long neck and a very long tail stretching far out behind it and thinning to a fine tip, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single tyrannosaurus standing on two legs, seen from the side facing left, its heavy tail held straight out behind it, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single long leather whip lying stretched out flat, thick at one end and thin at the other. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

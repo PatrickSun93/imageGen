@@ -1,0 +1,54 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "甲龙的尾巴锤 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_ankylo",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, thick opaque gouache with bold brush marks and visible texture, olive green, rust brown and bone cream",
+  "style_label": "厚涂水粉",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a271f",
+    "soft": "#6d6b52",
+    "ground": "#f2f0e6",
+    "paper": "#fbfaf4",
+    "accent": "#a65f3c",
+    "bark": "#847a5e",
+    "line": "#d9d6c5",
+    "ink_d": "#eae7d8",
+    "soft_d": "#9c9a80",
+    "ground_d": "#151208",
+    "paper_d": "#211e12",
+    "accent_d": "#c07a54",
+    "bark_d": "#847a5e",
+    "line_d": "#37341f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single ankylosaurus standing low on four short legs, seen from the side facing left, its whole back covered in rows of bony plates and knobs, and a large round bony club at the tip of its tail. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single large round bony tail club, two heavy knobs of bone fused together at the end of a short length of tail. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single large meat-eating dinosaur standing on two legs, seen from the side facing right, its mouth open. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

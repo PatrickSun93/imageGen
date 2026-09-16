@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "它们为什么一起走 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_herd",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, soft pastel drawing with powdery blended strokes and visible grain, dusty blue, warm clay and pale sand",
+  "style_label": "软色粉",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#262a2e",
+    "soft": "#7d8b95",
+    "ground": "#f1f0ea",
+    "paper": "#fbfaf6",
+    "accent": "#b2593f",
+    "bark": "#7f7566",
+    "line": "#d8d6cc",
+    "ink_d": "#e9e6dc",
+    "soft_d": "#9fb0ba",
+    "ground_d": "#0f1316",
+    "paper_d": "#1a1e22",
+    "accent_d": "#cb7358",
+    "bark_d": "#7f7566",
+    "line_d": "#313739"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single long-necked dinosaur standing on four thick legs, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single young long-necked dinosaur standing on four legs, seen from the side facing left, small with a short neck, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single large round dinosaur track seen from straight above, a wide deep hollow pressed into flat ground. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single round metal washtub seen from straight above, wide and shallow. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

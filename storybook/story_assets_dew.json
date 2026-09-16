@@ -1,0 +1,54 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "早上草叶上的水珠 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_dew",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, soft pastel drawing with velvety blended tones and a gentle grain, dawn lilac, misty green and pale gold",
+  "style_label": "软色粉",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2b2a33",
+    "soft": "#7c8a86",
+    "ground": "#f1f3ef",
+    "paper": "#fbfcf9",
+    "accent": "#8f7bb5",
+    "bark": "#8a8577",
+    "line": "#dadfd8",
+    "ink_d": "#e9eae4",
+    "soft_d": "#9aa8a2",
+    "ground_d": "#0f1116",
+    "paper_d": "#191b21",
+    "accent_d": "#a892cf",
+    "bark_d": "#8a8577",
+    "line_d": "#2e3239"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single blade of green grass standing upright with several round clear water drops resting along it. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single green leaf lying flat and seen from above, covered all over with tiny round water drops. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single sprig of grass stiff with white frost, its edges fringed with small white ice needles. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

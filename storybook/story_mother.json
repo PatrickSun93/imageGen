@@ -1,0 +1,115 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "恐龙会照顾宝宝吗",
+  "subtitle": "有的守着窝，有的下完就走",
+  "slug": "mother",
+  "seed_base": 97000,
+  "character": "wearing a mustard yellow t-shirt, green shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown",
+  "style_label": "彩色铅笔",
+  "keyword": "窝",
+  "diagram_pages": [
+    2,
+    3,
+    5,
+    6,
+    8,
+    11
+  ],
+  "palette": {
+    "ink": "#2b2a24",
+    "soft": "#7a8a6e",
+    "ground": "#f3f1e8",
+    "paper": "#fcfbf6",
+    "accent": "#c98a3e",
+    "bark": "#8b7d63",
+    "line": "#dedbcb",
+    "ink_d": "#eae7d9",
+    "soft_d": "#a3b193",
+    "ground_d": "#131509",
+    "paper_d": "#1e2013",
+    "accent_d": "#dda25a",
+    "bark_d": "#8b7d63",
+    "line_d": "#35381f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "博物馆里摆着一窝蛋，\n十几个挨在一起，\n围成一个圈。\n爸爸说这是恐龙的窝。",
+      "scene": "Waist-up view of the little boy in a museum beside a mounted nest of fossil eggs, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, his mouth open in surprise.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "窝是一个泥坑，\n边上堆起一圈土。\n有澡盆那么大，\n蛋就一个挨一个\n一个个竖在坑里。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "蛋并不大，\n和柚子差不多。\n那么大的恐龙，\n下出来的蛋\n只有这么一点。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "壳碎了以后，\n小恐龙爬出来，\n只有猫那么大，\n腿软软的，\n站都站不稳。",
+      "scene": "Several newly hatched dinosaurs with scaly skin, beaked snouts and stubby tails sitting in a bowl-shaped mud nest on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "看它们的腿骨，\n两头还软软的，\n没有长结实。\n这样的腿脚\n走不了远路。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "可它们的小牙\n已经磨平了一点。\n牙被磨平，\n就是吃过东西。\n没出窝也有得吃。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "窝里还留着\n嚼碎的叶子。\n小恐龙嚼不动，\n是大恐龙嚼好了，\n叼回来喂它们。",
+      "scene": "One adult duck-billed dinosaur lowering its head over a bowl-shaped mud nest and dropping chewed leaves to several hatchlings with scaly skin, beaked snouts and stubby tails, on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "这样的窝不止一个，\n一大片排在一起。\n窝和窝隔开的距离，\n正好是一只\n大恐龙的长度。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "另一种恐龙\n干脆趴在窝上，\n前肢张得开开的，\n把整整一圈蛋\n都盖在身子底下。",
+      "scene": "One feathered dinosaur crouching low on top of a ring of oval eggs on a cream background, its arms spread wide out over them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "也有的恐龙\n根本不守窝。\n找一块暖沙地，\n把蛋埋进去，\n扭头就走了。",
+      "scene": "One long-necked dinosaur walking away from a patch of sandy ground where oval eggs lie half buried, on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "不守窝的那种\n一次下几十个蛋，\n能活几个算几个。\n守窝的下得少，\n可是一个个看得住。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我数了数那窝蛋，\n一共十七个。\n真有大恐龙\n嚼碎了叶子\n回来喂它们吗？",
+      "scene": "Waist-up view of the little boy leaning over a low glass case of fossil eggs and counting them with one raised finger, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, curious.",
+      "has_boy": true
+    }
+  ]
+}

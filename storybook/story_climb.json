@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "会爬树的恐龙",
+  "subtitle": "小小的，抓着树干往上蹭",
+  "slug": "climb",
+  "seed_base": 105000,
+  "character": "wearing a mustard yellow t-shirt, dark blue shorts and grey sneakers, short black hair",
+  "style": "children's picture book illustration, coloured pencil drawing with visible hatching strokes and soft layered shading, moss green, warm brown and pale gold",
+  "style_label": "彩色铅笔",
+  "keyword": "小盗龙",
+  "diagram_pages": [
+    2,
+    4,
+    6,
+    8,
+    11
+  ],
+  "palette": {
+    "ink": "#2b2a24",
+    "soft": "#6b7a5a",
+    "ground": "#f1f0e6",
+    "paper": "#fbfaf4",
+    "accent": "#b5703f",
+    "bark": "#7d6a4f",
+    "line": "#d8d8c6",
+    "ink_d": "#e9e7d9",
+    "soft_d": "#93a382",
+    "ground_d": "#12140d",
+    "paper_d": "#1e2015",
+    "accent_d": "#cb8558",
+    "bark_d": "#7d6a4f",
+    "line_d": "#35382a"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "院子里那棵树\n我爬不上去。\n爸爸说很久以前，\n有一种小恐龙\n天天住在树上。",
+      "scene": "Waist-up view of the little boy standing under a tall tree in a backyard, one hand resting on the trunk, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, a little frustrated.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "它叫小盗龙。\n从头到尾巴尖，\n只有乌鸦那么长。\n站在地上，\n还没我小腿高。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "它的爪子又细又尖，\n一钩就挂住树皮。\n后腿一蹬，\n身子往上蹭一截，\n再往上钩一下。",
+      "scene": "One small feathered dinosaur gripping the side of a tall tree trunk with its front claws, its body held upright against the bark. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "最奇怪的是，\n它四条腿上\n都长着长羽毛。\n前面两片，\n后面还有两片。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "它大概不会扇翅膀，\n只会往下滑。\n从这棵树跳出去，\n在空中飘一段，\n落到那棵树上。",
+      "scene": "One small feathered dinosaur gliding through the air between two tall trees with its arms and legs spread wide and its feathers fanned out. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "会爬树的鸟，\n爪子弯得厉害；\n在地上跑的鸟，\n爪子要直一些。\n小盗龙的爪子很弯。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "树上有什么好？\n树上没有大家伙。\n它睡在高高的枝上，\n地面上谁走过，\n都够不着它。",
+      "scene": "One small feathered dinosaur asleep on a high branch while a much larger dinosaur walks past on the ground far below. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "从十米高的树上跳，\n它能飘出去\n二三十米远。\n再高一点的树，\n就能飘得更远。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "它的化石压在石板里，\n羽毛一根一根\n留在石头上。\n一亿两千万年了，\n还看得清清楚楚。",
+      "scene": "A flat grey slab of rock holding a small dinosaur skeleton pressed flat, with the shapes of long feathers preserved in the stone around its arms and legs. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "有一块化石的肚子里，\n还留着半条鱼。\n另一块里，\n有一只小鸟的脚。\n它就吃这些。",
+      "scene": "A fossil of a small dinosaur lying on grey stone with the bones of a small fish visible inside its ribcage. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "地上跑的恐龙\n个个又大又凶。\n它谁也打不过，\n就搬到高处去，\n住在别人上不去的地方。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我又去看院子里的树。\n树皮糙糙的。\n要是我也有\n那样一双爪子，\n是不是就爬上去了？",
+      "scene": "Waist-up view of the little boy pressing his hand flat against the rough bark of a tree trunk, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, thinking.",
+      "has_boy": true
+    }
+  ]
+}

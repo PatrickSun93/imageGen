@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "长羽毛的恐龙 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_feather",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, oil pastel drawing with thick waxy strokes and grainy overlaps, rust red, warm cream and deep forest green",
+  "style_label": "油画棒",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2422",
+    "soft": "#6b7a63",
+    "ground": "#f2efe6",
+    "paper": "#fbf9f3",
+    "accent": "#b5533a",
+    "bark": "#8a7457",
+    "line": "#dad5c6",
+    "ink_d": "#eae5d7",
+    "soft_d": "#9aa88f",
+    "ground_d": "#14110c",
+    "paper_d": "#201c15",
+    "accent_d": "#cd6d4f",
+    "bark_d": "#8a7457",
+    "line_d": "#37332a"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single thin straight hair-like strand standing upright. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single tuft of several thin straight strands joined together at one root. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single flat bird feather with a straight central shaft and fine barbs along both sides. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single small feathered dinosaur standing on two legs, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "雾就是落在地上的云",
+  "subtitle": "走进云里是什么感觉",
+  "slug": "fog",
+  "seed_base": 112000,
+  "character": "wearing a red raincoat over a grey t-shirt, dark green trousers and yellow rain boots, short black hair",
+  "style": "children's picture book illustration, oil pastel with thick waxy strokes and visible smudging, misty grey green, dull gold and deep pine",
+  "style_label": "油画棒",
+  "keyword": "雾",
+  "diagram_pages": [
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "palette": {
+    "ink": "#292d2b",
+    "soft": "#6d7a74",
+    "ground": "#f0f2ef",
+    "paper": "#fafbf8",
+    "accent": "#c07a52",
+    "bark": "#7b7a68",
+    "line": "#d6dbd5",
+    "ink_d": "#e9ece8",
+    "soft_d": "#95a19a",
+    "ground_d": "#101413",
+    "paper_d": "#1c211e",
+    "accent_d": "#d18f66",
+    "bark_d": "#7b7a68",
+    "line_d": "#333936"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "早上我推开门，\n外面白茫茫的。\n对面的楼不见了，\n路口那棵树\n也只剩一个影子。",
+      "scene": "Waist-up view of the little boy standing in an open doorway early in the morning, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, wondering, with thick white fog filling the whole picture behind him right out to all four edges.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "爸爸说，这是雾。\n雾其实就是云，\n只不过这一朵\n没有飘在天上，\n而是贴着地面。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "夜里地面凉得快。\n太阳一落，\n热就一点点跑掉，\n贴着地的那层空气\n跟着冷下来。",
+      "scene": "A cold dark meadow at night with thin mist just beginning to settle over it, the misty air filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "空气一冷，\n里头的水汽\n就待不住了，\n变成小水珠，\n悬在半空中。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "我走进雾里。\n脸上凉凉的，\n还有一点点湿。\n那是小水珠\n落在了我脸上。",
+      "scene": "Thick white fog filling the whole picture right out to all four edges, with a narrow path just visible fading away into it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "低头一看，\n袖子上、头发上，\n全挂着细细的水珠，\n一颗一颗，\n像撒了一层糖霜。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "雾里看不远。\n前面才五步，\n就只剩灰影子。\n是水珠把光\n弹得到处都是。",
+      "scene": "Thick white fog filling the whole picture right out to all four edges, with one dark tree showing only as a soft grey shape inside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "所以雾天走路\n要慢一点。\n车看不见人，\n人也看不见车，\n手要牵好大人的手。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "山上常常有雾。\n我们在山里走，\n觉得是雾；\n山下的人抬头看，\n说那是一朵云。",
+      "scene": "A green hill with a band of white cloud lying across its middle, the cloudy sky filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "太阳一出来，\n地面暖起来，\n小水珠一颗一颗\n又变回看不见的气，\n雾就散了。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "雾散完了，\n草叶上还挂着水珠，\n一碰就滚下来。\n那是雾留下来的，\n一点点痕迹。",
+      "scene": "Low morning sunlight over wet grass, the last thin fog clearing away and still filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "原来今天早上，\n我走进过一朵云。\n云不在天上的时候，\n就在我脸上，\n凉凉的，湿湿的。",
+      "scene": "Waist-up view of the little boy walking in the fog with his arms stretched out, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, laughing, with the fog filling the whole picture behind him right out to all four edges.",
+      "has_boy": true
+    }
+  ]
+}

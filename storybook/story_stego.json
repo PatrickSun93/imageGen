@@ -1,0 +1,115 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "剑龙背上的板",
+  "subtitle": "散热，还是吓唬人",
+  "slug": "stego",
+  "seed_base": 91000,
+  "character": "wearing a sage green t-shirt, brown shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, soft watercolour washes with fine pencil outlines and visible paper grain, sage green, warm ochre and dusty rose",
+  "style_label": "水彩铅笔",
+  "keyword": "剑龙",
+  "diagram_pages": [
+    2,
+    3,
+    5,
+    6,
+    9,
+    11
+  ],
+  "palette": {
+    "ink": "#2c2b23",
+    "soft": "#6f7360",
+    "ground": "#f2f1e7",
+    "paper": "#fbfbf5",
+    "accent": "#b06a4e",
+    "bark": "#8a7f66",
+    "line": "#dbd9c9",
+    "ink_d": "#eae8da",
+    "soft_d": "#9ba08a",
+    "ground_d": "#14140c",
+    "paper_d": "#201f15",
+    "accent_d": "#c8836a",
+    "bark_d": "#8a7f66",
+    "line_d": "#383626"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "博物馆里有一只恐龙，\n背上竖着一排板，\n像一把一把\n插在背上的扇子。\n爸爸说，它叫剑龙。",
+      "scene": "Waist-up view of the little boy in a museum, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, his mouth open in surprise; behind him rises the back of a stegosaurus skeleton with a row of tall flat plates.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "最大的一块板，\n比我的脸还大。\n一共十七块，\n沿着背脊\n一路排到尾巴根。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "奇怪的是，\n这些板\n并不长在脊椎上。\n它们埋在皮里，\n像插在土里的牌子。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "把板切开看，\n里面全是细细的管子。\n血从管子里流过。\n这说明那些板\n是活的，会流血。",
+      "scene": "One tall bony plate cut open on a cream background, showing many fine branching channels running through it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "有人说，\n板是用来散热的。\n热血流进板里，\n风一吹就凉下来，\n像汽车前面的水箱。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "也有人说，\n板是用来吓唬人的。\n血一涌上去，\n板就变得通红，\n看着大了一圈。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "到底是哪一种呢？\n也许两样都是。\n一样东西\n本来就可以\n有好几个用处。",
+      "scene": "One stegosaurus standing in profile on a cream background with its plates flushed a warm red, one other dinosaur backing away from it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "它的尾巴尖上\n还有四根长刺，\n每根都有大人的胳膊那么长。\n甩起来呼呼响，\n谁都得躲开。",
+      "scene": "Close view of a stegosaurus tail tip on a cream background, four long sharp spikes spreading out from it, swinging, with motion lines behind. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "剑龙的头很小，\n脑子只有核桃那么大。\n可它在地球上\n活了好几千万年，\n看来脑子小也不耽误事。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "它的脖子不长，\n嘴巴几乎贴着地。\n它吃的是矮矮的蕨叶，\n不跟长脖子的\n抢树顶那一层。",
+      "scene": "One stegosaurus lowering its head to eat low ferns on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "那排板\n不是两边对齐的。\n是左一块、右一块\n错开着排，\n看上去更宽更唬人。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我伸手\n摸了摸那块板。\n薄薄的，边上还有点糙。\n它当年\n真的会变红吗？",
+      "scene": "Waist-up view of the little boy reaching out to touch one tall bony plate on a museum mount, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, thoughtful.",
+      "has_boy": true
+    }
+  ]
+}

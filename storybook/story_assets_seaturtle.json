@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "海龟怎么找回出生的那片海滩 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_seaturtle",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, soft pastel drawing with powdery blended strokes and visible tooth of the surface, sea blue, warm sand and coral orange",
+  "style_label": "软色粉",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#22282e",
+    "soft": "#5a7684",
+    "ground": "#ecf0f1",
+    "paper": "#f8fafa",
+    "accent": "#d99a52",
+    "bark": "#8a7b63",
+    "line": "#cdd8dc",
+    "ink_d": "#e4ebee",
+    "soft_d": "#84a0ad",
+    "ground_d": "#0a1016",
+    "paper_d": "#12181f",
+    "accent_d": "#e0a866",
+    "bark_d": "#8a7b63",
+    "line_d": "#26333b"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single sea turtle swimming, seen from the side facing left, four long flippers spread out and a broad shell, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single baby sea turtle seen from above, its four small flippers spread out, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single white round turtle egg, about the size of a ping pong ball. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single bar magnet lying flat on its side, a short straight metal bar. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

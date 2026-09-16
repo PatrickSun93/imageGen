@@ -1,0 +1,115 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "恐龙有几根手指",
+  "subtitle": "有的五根，有的只剩两根",
+  "slug": "fingers",
+  "seed_base": 95000,
+  "character": "wearing a deep blue t-shirt, mustard yellow shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, oil pastel drawing with thick waxy strokes and visible smudges, deep blue, mustard yellow and warm cream",
+  "style_label": "油画棒",
+  "keyword": "手指",
+  "diagram_pages": [
+    2,
+    3,
+    5,
+    7,
+    9,
+    11
+  ],
+  "palette": {
+    "ink": "#1f2430",
+    "soft": "#5f7188",
+    "ground": "#f3f0e4",
+    "paper": "#fbf9f0",
+    "accent": "#35618f",
+    "bark": "#9a7d52",
+    "line": "#dcd7c4",
+    "ink_d": "#eae6d8",
+    "soft_d": "#8f9fb4",
+    "ground_d": "#0f131a",
+    "paper_d": "#1b202a",
+    "accent_d": "#5a87b6",
+    "bark_d": "#9a7d52",
+    "line_d": "#32363f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我把手贴在玻璃上，\n一根、两根、三根……\n一共五根。\n柜子里那只恐龙的手，\n只有两根。",
+      "scene": "Waist-up view of the little boy pressing his open hand flat against the glass of a museum case, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, counting; behind the glass is the small two-fingered hand of a dinosaur skeleton.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "最早的恐龙\n也是五根手指。\n后来变成了三根，\n再往后\n就只剩下两根了。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "先没的是\n最外边那两根。\n它们本来就又细又短，\n真要抓东西，\n一点忙也帮不上。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "异特龙还有三根。\n每根上头\n都套着一只钩爪。\n三根一合，\n正好扣住。",
+      "scene": "One large two-legged dinosaur on a cream background holding out one front hand with three long clawed fingers closing together. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "霸王龙只剩两根，\n还都长在\n一条很短的胳膊上。\n跟它的大脑袋比，\n小得不像话。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "这么短的手\n够不到自己的嘴，\n也挠不到脸。\n有人说，\n是趴着起身时撑地用的。",
+      "scene": "One large two-legged dinosaur lying on the ground on a cream background, pushing itself up with its two small front hands. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "那第三根呢？\n也没有全没。\n它的肉里面\n还埋着一小截骨头，\n从外面看不出来。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "禽龙的手最怪。\n它的大拇指\n变成了一根尖钉，\n硬邦邦地立着，\n收都收不回去。",
+      "scene": "One plant-eating dinosaur on a cream background holding up one front hand, one sharp cone-shaped spike standing out where its thumb should be. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "一只手上\n摆着三样东西：\n一根钉、三个蹄，\n最外边那根\n还能弯过来夹住树枝。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "最大的那些恐龙\n把手指并成一圈，\n变成一根柱子。\n它不用手抓东西，\n它只要站得稳。",
+      "scene": "A close view of the thick round front foot of one huge long-necked dinosaur standing on a cream background, its toes packed together into a ring like a pillar. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "今天的鸟\n翅膀里面\n还藏着三根手指。\n那是恐龙的手\n剩下的最后一点。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我张开五根手指，\n一根一根数过去。\n用得着的留下来，\n用不着的\n慢慢就没有了。",
+      "scene": "Waist-up view of the little boy holding up his open hand and counting his fingers with the other hand, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, thoughtful.",
+      "has_boy": true
+    }
+  ]
+}

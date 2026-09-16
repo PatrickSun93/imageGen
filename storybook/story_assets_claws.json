@@ -1,0 +1,54 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "恐龙的爪子 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_claws",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, coloured pencil drawing with visible pencil strokes and layered hatching, brick red, warm grey and pale olive",
+  "style_label": "彩色铅笔",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#262620",
+    "soft": "#6b6f7a",
+    "ground": "#f3f1e9",
+    "paper": "#fcfbf6",
+    "accent": "#b5563a",
+    "bark": "#8b7d64",
+    "line": "#dcd9cb",
+    "ink_d": "#e9e6da",
+    "soft_d": "#959aa6",
+    "ground_d": "#131310",
+    "paper_d": "#1e1e18",
+    "accent_d": "#cd7057",
+    "bark_d": "#8b7d64",
+    "line_d": "#34332a"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single therizinosaurus standing on two legs, seen from the side facing left, with three very long straight claws on each hand hanging down past its knees, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single large claw bone standing alone, wide and thick at its base and narrowing to one sharp point at the top. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single garden trowel seen from the side, a broad flat blade on a short straight handle. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

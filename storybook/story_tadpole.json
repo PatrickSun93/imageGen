@@ -1,0 +1,115 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "小蝌蚪怎么变成青蛙",
+  "subtitle": "先长后腿，再长前腿，尾巴自己没了",
+  "slug": "tadpole",
+  "seed_base": 125000,
+  "character": "wearing a grass green t-shirt, khaki shorts and blue rubber boots, short black hair",
+  "style": "children's picture book illustration, coloured pencil drawing with visible hatching strokes and grainy layered colour, pond green, warm yellow and soft brown",
+  "style_label": "彩色铅笔",
+  "keyword": "蝌蚪",
+  "diagram_pages": [
+    3,
+    4,
+    5,
+    7,
+    8,
+    11
+  ],
+  "palette": {
+    "ink": "#242a20",
+    "soft": "#5f7a55",
+    "ground": "#eef2e7",
+    "paper": "#f9fbf4",
+    "accent": "#7fa23c",
+    "bark": "#7a7a52",
+    "line": "#d3ddc7",
+    "ink_d": "#e6eddd",
+    "soft_d": "#8fa87f",
+    "ground_d": "#0f1408",
+    "paper_d": "#181d10",
+    "accent_d": "#9dbf5a",
+    "bark_d": "#7a7a52",
+    "line_d": "#2d3524"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "春天，池塘边，\n水里有一群黑点。\n它们摆着尾巴游，\n爸爸说那不是鱼，\n是小蝌蚪。",
+      "scene": "Waist-up view of the little boy crouching at the edge of a pond, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, looking down into the water with delight.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "它们从卵里孵出来。\n一团透明的果冻，\n里面点着黑芝麻。\n每一粒黑芝麻，\n将来都是一只青蛙。",
+      "scene": "One clear jelly mass of frog eggs floating in still water on a cream background, many small dark dots set inside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "刚出来的蝌蚪\n没有腿，也没有肺。\n它的脖子两边\n长着一丛鳃，\n像鱼一样在水里呼吸。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "过了几个星期，\n它的屁股后面\n先鼓出两个小包。\n小包慢慢伸长，\n变成两条后腿。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "后腿长好了，\n前腿才开始长。\n前腿先藏在皮里，\n有一天早上，\n忽然从两边顶出来。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "这时候尾巴\n开始一天天变短。\n它不是断掉的，\n也不是被谁咬掉的。\n是身体把它吃回去了。",
+      "scene": "One tadpole with four legs and only a very short stub of tail left on a cream background, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "鳃也在慢慢不见。\n身体里长出了肺。\n从今往后，\n它得浮到水面上，\n用鼻孔吸一口空气。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "肚子里也在变。\n蝌蚪吃水草，\n肠子盘得又细又长。\n青蛙要吃虫子，\n肠子就变短变粗。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "从吃素改成吃肉，\n嘴也跟着变宽了。\n还多了一条长舌头，\n卷住一只虫子\n只要一眨眼。",
+      "scene": "One frog on a cream background shooting out its long tongue to catch a small flying insect. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "尾巴剩最后一点点，\n它就爬上了荷叶。\n四条腿一蹬，\n扑通一声跳进水里，\n这回是青蛙了。",
+      "scene": "One frog sitting on a flat lily pad on a cream background, seen from the side, crouched and about to jump. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "卵、蝌蚪、\n长腿蝌蚪、青蛙，\n四个模样，\n是同一只小东西。\n它把自己改了一遍。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我蹲在池塘边看，\n找那只尾巴最短的。\n尾巴不是丢了，\n是变成了它自己\n身上的一部分。",
+      "scene": "Waist-up view of the little boy at the pond holding a clear jar with one tadpole in it, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, thoughtful.",
+      "has_boy": true
+    }
+  ]
+}

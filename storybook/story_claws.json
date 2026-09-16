@@ -1,0 +1,115 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "恐龙的爪子",
+  "subtitle": "抓、挖、还是钩",
+  "slug": "claws",
+  "seed_base": 93000,
+  "character": "wearing a brick red t-shirt, grey shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, coloured pencil drawing with visible pencil strokes and layered hatching, brick red, warm grey and pale olive",
+  "style_label": "彩色铅笔",
+  "keyword": "爪子",
+  "diagram_pages": [
+    2,
+    3,
+    5,
+    7,
+    9,
+    11
+  ],
+  "palette": {
+    "ink": "#262620",
+    "soft": "#6b6f7a",
+    "ground": "#f3f1e9",
+    "paper": "#fcfbf6",
+    "accent": "#b5563a",
+    "bark": "#8b7d64",
+    "line": "#dcd9cb",
+    "ink_d": "#e9e6da",
+    "soft_d": "#959aa6",
+    "ground_d": "#131310",
+    "paper_d": "#1e1e18",
+    "accent_d": "#cd7057",
+    "bark_d": "#8b7d64",
+    "line_d": "#34332a"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "柜子里放着一只爪子。\n又长又尖，\n比我的手还大。\n爸爸说，\n这只恐龙还不吃肉。",
+      "scene": "Waist-up view of the little boy in a museum leaning close to a glass case, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, his mouth open in surprise; inside the case stands one very long pale claw as big as his hand.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "我们看见的爪子，\n其实只是骨头。\n真的爪子\n外面还套着一层壳，\n比骨头还长一截。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "这只恐龙叫镰刀龙。\n它的爪子\n有我的胳膊那么长，\n是所有恐龙里\n最长的一双手。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "这么长的爪子\n不是用来打架的。\n它把高处的树枝\n一根根钩下来，\n慢慢吃上面的叶子。",
+      "scene": "One large long-armed dinosaur standing on two legs on a cream background, hooking a high branch down towards its mouth with the long claws of one hand. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "还有一种爪子\n长在脚上。\n第二个脚趾上\n挂着一只大钩子，\n走路的时候翘着。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "翘着是为了不磨坏。\n要用的时候\n才放下来。\n一下子扣进去，\n再也挣不开。",
+      "scene": "One small feathered two-legged dinosaur standing on a cream background with one foot lifted, the big hooked claw on its second toe pointing down. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "前面那三根手指\n也带着爪。\n三根能合到一起，\n像三把钩子\n一起抓住东西。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "另有一种恐龙，\n爪子又短又粗，\n像三把小铲子。\n它不抓东西，\n它专门挖。",
+      "scene": "One small two-legged dinosaur on a cream background digging into a tall termite mound with its short thick front claws. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "挖土的爪子\n又宽又钝，\n像一把铲。\n抓肉的爪子\n又细又尖，像一把钩。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "最大的那些恐龙\n反而没什么爪。\n前脚粗得像柱子，\n只在里面那根趾头上\n留了一个。",
+      "scene": "A close view of the thick round front foot of one huge long-necked dinosaur standing on a cream background, one single claw on its inner toe. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "钩的、抓的、挖的，\n还有干脆不用的。\n爪子长成什么形状，\n就等于告诉你\n它是干什么用的。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我把手举到玻璃上，\n跟它比了一下。\n我的指甲\n也是那层壳做的，\n只是短得多。",
+      "scene": "Waist-up view of the little boy holding his open hand up against the glass of a museum case, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, comparing his short fingernails with one huge pale claw behind the glass.",
+      "has_boy": true
+    }
+  ]
+}

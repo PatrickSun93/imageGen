@@ -1,0 +1,54 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "猫的胡须有什么用 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_whisker",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, coloured pencil drawing with visible strokes and layered hatching on textured paper, warm grey, mustard yellow and soft orange",
+  "style_label": "彩色铅笔",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2b2a26",
+    "soft": "#7a7468",
+    "ground": "#f3f1ea",
+    "paper": "#fbfaf5",
+    "accent": "#c17a45",
+    "bark": "#8d8272",
+    "line": "#dcd8cc",
+    "ink_d": "#eae7dd",
+    "soft_d": "#a09889",
+    "ground_d": "#14130e",
+    "paper_d": "#201e16",
+    "accent_d": "#d9925b",
+    "bark_d": "#8d8272",
+    "line_d": "#383428"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single short-haired cat sitting upright, seen from the side facing left, its long straight whiskers spreading out to both sides of its face, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single long white cat whisker lying straight and alone, thicker at one end and fine at the other. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single cardboard box standing on the floor, seen straight from the front, with a square hole cut in its side. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

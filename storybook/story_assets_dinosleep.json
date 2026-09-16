@@ -1,0 +1,54 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "恐龙怎么睡觉 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_dinosleep",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, oil pastel drawing with thick waxy strokes and rich blended colour, deep indigo, warm amber and dusty cream",
+  "style_label": "油画棒",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#232433",
+    "soft": "#5f6486",
+    "ground": "#f2f0ea",
+    "paper": "#fcfaf5",
+    "accent": "#c97b52",
+    "bark": "#7c7260",
+    "line": "#dbd8cc",
+    "ink_d": "#ebe8dc",
+    "soft_d": "#8d93b5",
+    "ground_d": "#0d0e18",
+    "paper_d": "#171a26",
+    "accent_d": "#dd9066",
+    "bark_d": "#7c7260",
+    "line_d": "#33354a"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single small feathered dinosaur curled up asleep on the ground, seen from the side, its legs folded under its body, its tail wrapped around it and its snout tucked under one forelimb. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single duck standing on two legs, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single small bird asleep, seen from the side, its neck turned back and its beak tucked under one wing. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

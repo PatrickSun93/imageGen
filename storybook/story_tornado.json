@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "龙卷风",
+  "subtitle": "一根从云里垂下来的柱子",
+  "slug": "tornado",
+  "seed_base": 114000,
+  "character": "wearing a red and white striped t-shirt, denim overalls and blue sneakers, short black hair",
+  "style": "children's picture book illustration, oil pastel drawing with thick waxy strokes and smudged blending, storm grey, olive green and warm ochre",
+  "style_label": "油画棒",
+  "keyword": "龙卷风",
+  "diagram_pages": [
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "palette": {
+    "ink": "#26241c",
+    "soft": "#6e7461",
+    "ground": "#f0eee4",
+    "paper": "#faf9f2",
+    "accent": "#c06a34",
+    "bark": "#857b63",
+    "line": "#d7d5c4",
+    "ink_d": "#e9e6d9",
+    "soft_d": "#98a088",
+    "ground_d": "#121309",
+    "paper_d": "#1d1e12",
+    "accent_d": "#d78a54",
+    "bark_d": "#857b63",
+    "line_d": "#343524"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "叔叔在堪萨斯，\n发来一段视频。\n天边垂下一根柱子，\n慢慢扫过田地。\n那是龙卷风。",
+      "scene": "Waist-up view of the little boy holding a small tablet in both hands and looking up, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, wide-eyed.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "龙卷风这东西，\n是从云里长出来的。\n先得有一朵大雷云，\n云底下的空气\n开始慢慢打转。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "一开始转得很宽，\n也转得很慢，\n像一锅搅动的汤。\n从地上看上去，\n只是云压得很低。",
+      "scene": "One huge dark storm cloud with a low flat base hanging over open fields, the sky filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "空气一边转，\n一边往中间挤。\n圈子越挤越小，\n转得就越来越快，\n像滑冰时收起胳膊。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "转得快了，\n云底垂下一个尖，\n像一根倒过来的\n细细的萝卜，\n越伸越长。",
+      "scene": "One grey funnel of air hanging halfway down from the flat base of a dark storm cloud, narrowing towards its tip, the sky filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "尖一直往下伸。\n碰到地面那一下，\n它才算龙卷风。\n没碰到地的，\n只能叫漏斗云。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "一接到地，\n地上的土和草\n就被卷起来，\n跟着它一起转，\n柱子立刻变黑了。",
+      "scene": "One tornado touching the ground with dust and bits of grass whirling up around its foot, the storm sky filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "柱子越细，\n转得越凶。\n最凶的龙卷风，\n比高速路上的车\n还要快上一倍。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "它走得并不快，\n开车都能追上。\n可它走过的地方，\n房顶、大树、汽车，\n全被抬起来扔出去。",
+      "scene": "One narrow tornado crossing an empty flat field, its column leaning slightly, the storm sky filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "美国中部的平原，\n年年都有很多。\n那儿暖空气和冷空气\n老撞在一起。\n我们加州几乎没有。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "它也转不了多久。\n慢慢变细，\n细得像一根绳子，\n晃了两下，\n就缩回云里去了。",
+      "scene": "One thin ropelike tornado bending and lifting away from the ground back towards the cloud base, the sky filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我把那段视频\n又看了一遍。\n那根粗大的柱子，\n原来是空气\n自己转出来的。",
+      "scene": "Waist-up view of the little boy sitting and holding the small tablet on his knees, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, thoughtful.",
+      "has_boy": true
+    }
+  ]
+}

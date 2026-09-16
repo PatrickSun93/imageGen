@@ -1,0 +1,54 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "背上长帆的恐龙 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_sail",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, fine pen line work with light transparent watercolour washes, sandstone ochre, dusty teal and warm grey",
+  "style_label": "钢笔淡彩",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#24262a",
+    "soft": "#5f7b7c",
+    "ground": "#f2f0e8",
+    "paper": "#fcfaf5",
+    "accent": "#c07a3a",
+    "bark": "#7f7561",
+    "line": "#d7d4c6",
+    "ink_d": "#e9e6da",
+    "soft_d": "#90a8a8",
+    "ground_d": "#101315",
+    "paper_d": "#1c1f22",
+    "accent_d": "#d18f58",
+    "bark_d": "#7f7561",
+    "line_d": "#34383b"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single spinosaurus standing on two legs, seen from the side facing left, a tall sail rising along its back and a long narrow snout, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single tall straight bony rod standing upright, thick at the bottom and tapering towards the top. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single wooden door standing upright and closed inside a plain frame. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

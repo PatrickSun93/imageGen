@@ -1,0 +1,115 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "明天会下雨吗",
+  "subtitle": "天气预报是怎么做出来的",
+  "slug": "forecast",
+  "seed_base": 115000,
+  "character": "wearing a teal blue t-shirt, khaki shorts and orange sneakers, short black hair",
+  "style": "children's picture book illustration, fine pen lines with light transparent watercolour washes, teal blue, pale grey and warm sand",
+  "style_label": "钢笔淡彩",
+  "keyword": "天气预报",
+  "diagram_pages": [
+    2,
+    5,
+    7,
+    9,
+    10,
+    11
+  ],
+  "palette": {
+    "ink": "#1f2a2e",
+    "soft": "#5f7f85",
+    "ground": "#eef2f2",
+    "paper": "#fafcfb",
+    "accent": "#c87a35",
+    "bark": "#7c8c8b",
+    "line": "#d2dedd",
+    "ink_d": "#e4edec",
+    "soft_d": "#86a4a8",
+    "ground_d": "#0b1315",
+    "paper_d": "#121c1e",
+    "accent_d": "#dd964f",
+    "bark_d": "#7c8c8b",
+    "line_d": "#26363a"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "明天要去海边。\n我问爸爸，\n明天会下雨吗？\n他看看手机说，\n下雨的可能是一成。",
+      "scene": "Waist-up view of the little boy looking up and asking a question, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, eyebrows raised.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "要算明天，\n先得量今天。\n量温度，量气压，\n量风往哪儿吹，\n量空气有多潮。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "地上到处是气象站。\n一个白白的小箱子，\n立在草地当中。\n箱子上有小百叶窗，\n风能吹进去。",
+      "scene": "One white louvred weather station box on four legs standing in a wide grass field under an open sky, the field and sky filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "天上也得量。\n每天两次，\n一只大气球\n带着小盒子往上飘，\n一边飘一边发数字。",
+      "scene": "One large white weather balloon rising high with a small instrument box swinging below it, the open sky filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "气球一路往上，\n越高越冷。\n飘到最高的地方，\n盒子外头的空气，\n比冰箱里冷得多。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "还有雷达。\n那是一个大白球，\n蹲在山顶上。\n球里面的天线\n一圈一圈地转。",
+      "scene": "One white ball-shaped radar dome on a short tower standing on a bare hilltop under a wide open sky, the hill and sky filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "雷达往外发一下，\n碰到雨点，\n就弹回来一点点。\n弹回来得越强，\n那边的雨就越大。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "更高的地方\n还有卫星。\n它从上往下看，\n一眼就看得见\n整片云往哪儿走。",
+      "scene": "One weather satellite with two long solar wings floating high above the curved edge of the Earth, dark space and the bright edge of the planet filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "量到的数字\n都填进一张大格子。\n把空气切成\n一个一个小方块，\n每块都有自己的数。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "再交给计算机。\n它算这块空气\n一小时后到哪儿，\n三小时后变成什么样，\n一步一步往前推。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "所以算明天很准。\n算下个星期，\n就没那么准了。\n空气的事，\n差一点就跑偏。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "第二天早上，\n天真的没下雨。\n那句话不是猜的，\n是一格一格\n算出来的。",
+      "scene": "Waist-up view of the little boy standing on a sunny beach with a bucket in one hand, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, grinning.",
+      "has_boy": true
+    }
+  ]
+}

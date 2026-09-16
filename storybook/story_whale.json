@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "鲸鱼在水里怎么呼吸",
+  "subtitle": "头顶上有个喷气孔",
+  "slug": "whale",
+  "seed_base": 128000,
+  "character": "wearing a navy blue windbreaker, grey trousers and a red life vest, short black hair",
+  "style": "children's picture book illustration, oil pastel drawing with thick waxy strokes and blunt smudged edges, deep sea blue, pale grey and bright teal",
+  "style_label": "油画棒",
+  "keyword": "鲸",
+  "diagram_pages": [
+    3,
+    4,
+    6,
+    8,
+    10
+  ],
+  "palette": {
+    "ink": "#1e2430",
+    "soft": "#4d6b86",
+    "ground": "#eaeff4",
+    "paper": "#f7fafc",
+    "accent": "#2f7fa8",
+    "bark": "#6d7787",
+    "line": "#ccd8e2",
+    "ink_d": "#e5ecf3",
+    "soft_d": "#7d9ab3",
+    "ground_d": "#070d16",
+    "paper_d": "#10161f",
+    "accent_d": "#4ea6cc",
+    "bark_d": "#6d7787",
+    "line_d": "#212c3a"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我们坐船去看鲸。\n海面上先冒出\n一根白白的柱子，\n又高又直。\n爸爸说，它在那儿。",
+      "scene": "Waist-up view of the little boy at the rail of a small boat at sea, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, excited, wind in his hair.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "白柱子底下，\n浮起一道黑背，\n又长又滑，\n慢慢从水里升上来，\n又慢慢沉下去。",
+      "scene": "One long dark whale back rising above the sea surface on a cream background, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "鲸长得像鱼，\n可它不是鱼。\n它和我们一样用肺，\n生下来就是小宝宝，\n还要喝妈妈的奶。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "鱼长着鳃，\n泡在水里就能呼吸。\n鲸没有鳃。\n它的鼻孔搬了家，\n搬到了头顶上。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "所以它换气的时候，\n不用把整个头抬起来。\n只要把头顶\n露出水面一点点，\n就够用了。",
+      "scene": "One whale at the sea surface on a cream background with only the top of its head showing above the water. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "换气分两步。\n先噗的一声，\n把憋久的废气喷出去，\n再张开那个孔，\n吸一大口新的。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "喷出来的那根柱子，\n不是海里的水。\n是肚子里的热气\n一碰到冷空气，\n变成的白雾。",
+      "scene": "Close view of a whale blowhole on a cream background with a tall column of white mist bursting upward out of it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "我憋气能憋多久？\n数到六十就难受了。\n海豚能憋十分钟。\n抹香鲸下去一趟，\n一个多小时才上来。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "它为什么憋这么久？\n因为它要一直潜到\n很深很黑的地方，\n去抓住在那里的\n大鱿鱼吃。",
+      "scene": "One sperm whale swimming downward in deep dark water on a cream background, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "它睡觉也不能全睡。\n睡死了会忘记上浮。\n所以它一次\n只睡半边脑子，\n另外半边替它守着。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "小鲸刚生下来，\n第一件事不是吃奶。\n是妈妈用头托着它，\n送到水面上，\n吸进第一口气。",
+      "scene": "One whale mother nudging a small newborn whale up towards the water surface on a cream background, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我趴在船边等。\n又一根白柱子。\n它一辈子住在海里，\n可每一口气，\n都得到水面上来拿。",
+      "scene": "Waist-up view of the little boy leaning on the boat rail watching the sea, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, calm and happy.",
+      "has_boy": true
+    }
+  ]
+}

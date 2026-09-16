@@ -1,0 +1,54 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "剑龙背上的板 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_stego",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, soft watercolour washes with fine pencil outlines and visible paper grain, sage green, warm ochre and dusty rose",
+  "style_label": "水彩铅笔",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2c2b23",
+    "soft": "#6f7360",
+    "ground": "#f2f1e7",
+    "paper": "#fbfbf5",
+    "accent": "#b06a4e",
+    "bark": "#8a7f66",
+    "line": "#dbd9c9",
+    "ink_d": "#eae8da",
+    "soft_d": "#9ba08a",
+    "ground_d": "#14140c",
+    "paper_d": "#201f15",
+    "accent_d": "#c8836a",
+    "bark_d": "#8a7f66",
+    "line_d": "#383626"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single stegosaurus standing on four legs, seen from the side facing left, a double row of tall flat plates running along its back and four long spikes at the tip of its tail, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single tall flat bony plate standing upright, shaped like a rounded triangle, its surface covered in fine branching grooves. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single car radiator seen from the front, a flat rectangular grid of thin metal fins. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

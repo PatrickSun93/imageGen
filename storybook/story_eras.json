@@ -1,0 +1,115 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "恐龙住了一亿六千万年",
+  "subtitle": "三个时代，长得都不一样",
+  "slug": "eras",
+  "seed_base": 106000,
+  "character": "wearing a dusty purple hoodie, grey trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration, soft chalk pastel with grainy blended strokes and visible tooth of the surface, dusty violet, slate blue and warm rose",
+  "style_label": "软色粉",
+  "keyword": "恐龙时代",
+  "diagram_pages": [
+    2,
+    4,
+    6,
+    8,
+    9,
+    10
+  ],
+  "palette": {
+    "ink": "#2a2733",
+    "soft": "#7a7490",
+    "ground": "#f2f0f0",
+    "paper": "#fbf9f8",
+    "accent": "#b4677a",
+    "bark": "#8a7a72",
+    "line": "#dcd7dd",
+    "ink_d": "#e9e5ea",
+    "soft_d": "#a09ab4",
+    "ground_d": "#141020",
+    "paper_d": "#201c28",
+    "accent_d": "#cc8095",
+    "bark_d": "#8a7a72",
+    "line_d": "#383044"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我问爸爸，\n恐龙住了多久。\n他说了一个数：\n一亿六千万年。\n这个数我数不完。",
+      "scene": "Waist-up view of the little boy holding up five fingers in front of him, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, puzzled.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "这么长的日子，\n人们把它分成三段：\n三叠纪、侏罗纪，\n还有白垩纪。\n一段比一段长。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "最早的恐龙不大。\n两条腿跑得快，\n尾巴伸得直直的，\n站起来大概\n跟一只大狗一样高。",
+      "scene": "One small early dinosaur about the size of a big dog running on two legs with its long tail held straight out behind it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "那时候它们还不厉害。\n地上有别的爬行动物，\n比它们大，\n也比它们多。\n恐龙只是小小一群。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "到了侏罗纪，\n恐龙一下子长大了。\n脖子伸到树顶，\n一步迈出去，\n比我一间屋子还长。",
+      "scene": "One huge long-necked dinosaur standing among tall conifer trees with its head up in the treetops. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "最早的那种小恐龙，\n站在它脚边，\n只到它的膝盖。\n这中间隔了\n五千多万年。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "再往后是白垩纪。\n霸王龙来了，\n三角龙也来了。\n地上开始有花，\n以前的恐龙没见过。",
+      "scene": "One tyrannosaurus and one horned dinosaur standing apart on open ground with small flowering plants growing between them. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "剑龙和霸王龙\n没见过面。\n剑龙先走，\n八千万年以后，\n霸王龙才出来。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "换句话说，\n霸王龙离我们，\n比离剑龙还近。\n我们和它中间，\n才隔六千六百万年。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "从三个时代里\n各挑一只排好：\n一只像大狗，\n一只高得像楼，\n一只满嘴是牙。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "它们自己当然不知道\n住了多少年。\n对它们来说，\n就是一天一天过，\n过了一亿多年。",
+      "scene": "One long-necked dinosaur walking slowly across open ground under a low evening sun. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我今年五岁。\n一亿六千万年，\n是我三千多万个五岁。\n我把手张开，\n还是想不出来。",
+      "scene": "Waist-up view of the little boy holding both hands open in front of him as if measuring something far too big, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, amazed.",
+      "has_boy": true
+    }
+  ]
+}

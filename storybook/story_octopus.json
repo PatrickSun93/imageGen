@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "章鱼有三个心脏",
+  "subtitle": "还有八条会自己想事的胳膊",
+  "slug": "octopus",
+  "seed_base": 121000,
+  "character": "wearing a deep blue hoodie, grey shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, soft chalk pastel with velvety grain and smudged blended edges, deep sea blue, coral red and warm sand",
+  "style_label": "软色粉",
+  "keyword": "章鱼",
+  "diagram_pages": [
+    2,
+    4,
+    6,
+    9,
+    11
+  ],
+  "palette": {
+    "ink": "#232a30",
+    "soft": "#5f7d8c",
+    "ground": "#eef2f2",
+    "paper": "#f8fbfa",
+    "accent": "#c2543f",
+    "bark": "#7d7a66",
+    "line": "#cfd9d8",
+    "ink_d": "#e6ecec",
+    "soft_d": "#8ba7b3",
+    "ground_d": "#0d1418",
+    "paper_d": "#151d22",
+    "accent_d": "#d97a62",
+    "bark_d": "#7d7a66",
+    "line_d": "#2a3238"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "水族馆的玻璃后面，\n一团红红的东西\n正贴着石头挪。\n爸爸说那是章鱼，\n它有八条胳膊。",
+      "scene": "Waist-up view of the little boy at an aquarium window, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, his nose almost touching the glass; behind the glass a red octopus rests against a rock.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "章鱼有三个心脏。\n两个小的挨着鳃，\n把血压进鳃里去。\n中间那个大的，\n再把血送到全身。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "它的血不是红的，\n是淡淡的蓝色。\n因为里面带的是铜，\n不像我们带着铁。\n铜一遇上氧就发蓝。",
+      "scene": "A close view of one octopus arm opened on a cream background, pale blue blood showing in the fine vessels inside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "它游起来的时候，\n中间那个大心脏\n会停下来不跳。\n所以章鱼不爱游，\n更爱慢慢地爬。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "它的八条胳膊上\n排满了圆吸盘，\n一条腕排着两行，\n加起来好几百个。\n吸住了就不容易掉。",
+      "scene": "Close view of one octopus arm lying across a cream background, two neat rows of round suckers along its underside. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "它的神经细胞\n不全在脑袋里。\n有一大半都长在\n那八条胳膊上，\n脑袋里反而少。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "所以每条胳膊\n都能自己拿主意。\n一条去翻石头，\n一条去摸缝，\n谁也不用等谁。",
+      "scene": "One octopus on a cream background with its eight arms reaching in different directions, one arm lifting a small stone and another arm feeling into a narrow gap between rocks. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "有人说，章鱼\n像是有九个脑子：\n一个长在头上，\n八个长在胳膊里，\n各想各的事。",
+      "scene": "One single octopus arm lying alone on a cream background, its tip closing around a small crab. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "它全身上下\n只有嘴是硬的。\n一个嘴那么大的洞，\n整只章鱼\n都能挤着钻过去。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "它的皮肤里面\n藏着许多色素袋。\n肌肉一拉一松，\n颜色就跟着变，\n一眨眼就和石头一样。",
+      "scene": "One octopus pressed against a rough grey rock on a cream background, half of its skin already the same grey as the rock and half still smooth and red. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "它的吸盘还能尝味。\n胳膊一贴上石头，\n就知道底下\n藏没藏着螃蟹，\n眼睛都不用看。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我隔着玻璃\n一条一条数胳膊。\n数到第八条的时候，\n它那三个心脏\n正一起跳着呢。",
+      "scene": "Waist-up view of the little boy counting on his fingers at the aquarium window, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, delighted; the red octopus spreads its arms behind the glass.",
+      "has_boy": true
+    }
+  ]
+}

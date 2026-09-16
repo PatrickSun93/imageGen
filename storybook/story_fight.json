@@ -1,0 +1,115 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "打到一半被埋住了",
+  "subtitle": "一块化石里的两只恐龙",
+  "slug": "fight",
+  "seed_base": 100000,
+  "character": "wearing a brick red t-shirt, khaki shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, fine pen line work with light watercolour washes, sand ochre, brick red and warm grey",
+  "style_label": "钢笔淡彩",
+  "keyword": "搏斗化石",
+  "diagram_pages": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    10
+  ],
+  "palette": {
+    "ink": "#1f1e1a",
+    "soft": "#6b6a58",
+    "ground": "#f2efe4",
+    "paper": "#fcfaf3",
+    "accent": "#a8503a",
+    "bark": "#8a7a5c",
+    "line": "#dcd8c7",
+    "ink_d": "#ece8d9",
+    "soft_d": "#9d9c86",
+    "ground_d": "#121108",
+    "paper_d": "#1e1c10",
+    "accent_d": "#c56a4e",
+    "bark_d": "#8a7a5c",
+    "line_d": "#37341e"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "一块石头里\n卡着两只恐龙，\n一只咬住对方的胳膊，\n另一只的爪子\n钩在它脖子上。",
+      "scene": "Waist-up view of the little boy in a museum beside one slab of rock holding two dinosaur skeletons locked together, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, his mouth open in surprise.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "一只是伶盗龙，\n两条腿，尖爪子。\n一只是原角龙，\n四条腿走路，\n嘴巴像鹦鹉。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "伶盗龙后脚上\n有一根大爪子，\n平时翘着不落地，\n要用的时候\n才扳下来。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "那根大爪子\n就卡在原角龙\n脖子那块地方。\n那儿有大血管。\n它知道往哪儿下手。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "原角龙也没闲着。\n它的嘴像一把钳子，\n死死咬住了\n伶盗龙的右胳膊，\n骨头都咬断了。",
+      "scene": "Close view of one parrot-beaked dinosaur's beak clamped tightly on the forearm of a smaller two-legged dinosaur on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "谁也不松开。\n一个钩着脖子，\n一个咬着胳膊，\n就这样僵在那儿，\n动不了了。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "就在这时候，\n旁边的沙丘塌了。\n几吨重的沙子\n一下子压下来，\n把它们盖住。",
+      "scene": "A steep sand dune collapsing and pouring down over two dinosaurs locked together on the ground on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "沙子埋得太快，\n它们来不及倒下，\n也没被别人拖走。\n所以打架的样子\n原封不动留到今天。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "八千万年以后，\n有人在蒙古的沙漠里\n挖到了这块石头。\n一挖出来\n就看呆了。",
+      "scene": "Two dinosaur skeletons still locked together, lying half uncovered in desert sand on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "伶盗龙其实不大，\n只有火鸡那么高，\n身上还长着羽毛，\n站直了身子\n才到我胸口。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "那谁赢了呢？\n谁也没赢。\n两只一起被埋，\n一起变成石头，\n到现在还没分开。",
+      "scene": "Close view of one large sharp claw on the back foot of a small two-legged dinosaur, still hooked into the neck of a larger four-legged dinosaur, on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我趴在玻璃上看。\n它们打到一半，\n沙子就下来了。\n八千万年过去，\n还是那个姿势。",
+      "scene": "Waist-up view of the little boy with both hands pressed flat on a glass case, two dinosaur skeletons locked together inside it, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, thoughtful.",
+      "has_boy": true
+    }
+  ]
+}

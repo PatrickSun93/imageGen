@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "蝙蝠在黑里怎么飞 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_bat",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, fine pen lines with light transparent watercolour washes and visible paper grain, dusk blue, soft violet and warm cream",
+  "style_label": "钢笔淡彩",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#262633",
+    "soft": "#6b6f85",
+    "ground": "#f0f0ee",
+    "paper": "#fafaf7",
+    "accent": "#a86a7a",
+    "bark": "#7c7a70",
+    "line": "#d6d7d4",
+    "ink_d": "#e7e7e2",
+    "soft_d": "#949ab0",
+    "ground_d": "#101018",
+    "paper_d": "#1b1b22",
+    "accent_d": "#c4838f",
+    "bark_d": "#7c7a70",
+    "line_d": "#33333c"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single bat in flight seen from below, its wings stretched out flat to both sides and its thin finger bones showing through the thin skin, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single wooden door standing upright and closed, seen straight from the front. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single small moth with its wings open, seen from above. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single red rubber ball resting on the ground. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

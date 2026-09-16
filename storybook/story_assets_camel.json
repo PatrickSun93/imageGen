@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "驼峰里装的是什么 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_camel",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, oil pastel with thick waxy strokes and blended edges, sand ochre, terracotta and dusty sky blue",
+  "style_label": "油画棒",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2e2820",
+    "soft": "#8a7a5a",
+    "ground": "#f4f0e6",
+    "paper": "#fdfaf2",
+    "accent": "#b8603a",
+    "bark": "#8a7150",
+    "line": "#e0d8c4",
+    "ink_d": "#efe9da",
+    "soft_d": "#a99a78",
+    "ground_d": "#171208",
+    "paper_d": "#221c10",
+    "accent_d": "#cf7d50",
+    "bark_d": "#8a7150",
+    "line_d": "#3a3220"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single camel standing on four legs, seen from the side facing left, two humps on its back, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single metal water bucket standing upright with a handle across the top. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single thick block of pale yellow butter lying on its side. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single thorny desert branch lying alone. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "猫头鹰的眼睛不会转",
+  "subtitle": "所以它把整个头转过来",
+  "slug": "owl",
+  "seed_base": 127000,
+  "character": "wearing a mustard yellow hoodie, dark blue jeans and grey sneakers, short black hair",
+  "style": "children's picture book illustration, fine pen lines with thin transparent watercolour washes laid loosely over them, warm brown, indigo and pale gold",
+  "style_label": "钢笔淡彩",
+  "keyword": "猫头鹰",
+  "diagram_pages": [
+    3,
+    4,
+    6,
+    7,
+    8
+  ],
+  "palette": {
+    "ink": "#251f1a",
+    "soft": "#6b5f4e",
+    "ground": "#f3efe6",
+    "paper": "#fcfaf3",
+    "accent": "#c08a3e",
+    "bark": "#7d6a4f",
+    "line": "#dcd5c4",
+    "ink_d": "#ece7da",
+    "soft_d": "#9b8d78",
+    "ground_d": "#120e08",
+    "paper_d": "#1c1710",
+    "accent_d": "#d7a458",
+    "bark_d": "#7d6a4f",
+    "line_d": "#342c1f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "动物园的笼子里，\n一只猫头鹰\n一直在看着我。\n我走到哪一边，\n它的头就转到哪边。",
+      "scene": "Waist-up view of the little boy standing in front of a large aviary, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, wide-eyed; an owl sits on a branch behind him.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "它的眼睛又大又圆，\n两只都朝着前面，\n像两盏小灯。\n我看了很久，\n它一次也没转眼珠。",
+      "scene": "One owl perched on a bare branch on a cream background, seen from the front, its two large round eyes facing forward. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "因为它的眼睛\n根本不是球。\n是两根小管子，\n前面粗，后面细，\n一直插进脑袋里。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "管子太长了，\n被骨头卡在眼窝里，\n一动也动不了。\n我们能斜着眼看人，\n它一点也不能。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "想看左边的东西，\n它只有一个办法，\n把整个头转过去。\n身子站得稳稳的，\n一动都不动。",
+      "scene": "One owl on a bare branch on a cream background, its body facing the viewer and its head turned far round to one side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "它的脖子里面\n藏着十四节骨头。\n我们的脖子\n只有七节。\n它的零件多一倍。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "所以它的头\n能转到身子后面，\n差不多两百七十度。\n一圈里的四分之三，\n再多就不行了。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "脖子转这么狠，\n血管不会拧断吗？\n它的血管比骨头洞细，\n旁边还有小口袋，\n存着血备用。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "夜里，它的瞳孔\n张得特别特别大。\n一点点星光\n就够它看清楚\n草丛里的动静。",
+      "scene": "Close view of one owl face at night on a cream background, its two round eyes wide open with very large dark pupils. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "它的两只耳朵\n一只高一只低。\n声音先到哪一只，\n它就能听出来\n老鼠在哪个方向。",
+      "scene": "One owl head seen from the front on a cream background, one ear opening set higher than the other under the feathers. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "它飞起来没有声音。\n翅膀边上的羽毛\n长着一排细齿，\n把风梳散了，\n呼呼声就没有了。",
+      "scene": "One owl flying low with both wings spread wide on a cream background, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我也试着不转眼珠，\n只用脖子看东西。\n转到一半就酸了。\n眼睛转不动的，\n就把整个头转过来。",
+      "scene": "Waist-up view of the little boy turning his head as far round as he can while keeping his shoulders still, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, trying hard.",
+      "has_boy": true
+    }
+  ]
+}

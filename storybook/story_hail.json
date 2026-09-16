@@ -1,0 +1,115 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "冰雹是怎么长大的",
+  "subtitle": "在云里上上下下滚了好多趟",
+  "slug": "hail",
+  "seed_base": 113000,
+  "character": "wearing a mustard yellow hoodie, dark blue jeans and grey sneakers, short black hair",
+  "style": "children's picture book illustration, coloured pencil drawing with visible layered strokes and grainy hatching, slate blue, ice white and warm ochre",
+  "style_label": "彩色铅笔",
+  "keyword": "冰雹",
+  "diagram_pages": [
+    2,
+    4,
+    5,
+    7,
+    9,
+    11
+  ],
+  "palette": {
+    "ink": "#232a31",
+    "soft": "#6b7d8c",
+    "ground": "#eef2f4",
+    "paper": "#f9fbfc",
+    "accent": "#c2622f",
+    "bark": "#7d8a93",
+    "line": "#d3dbe0",
+    "ink_d": "#e6ecf0",
+    "soft_d": "#8fa3b2",
+    "ground_d": "#0d1218",
+    "paper_d": "#141b22",
+    "accent_d": "#d8834d",
+    "bark_d": "#7d8a93",
+    "line_d": "#2a343d"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "屋顶忽然噼啪响。\n跑到窗边一看，\n草地上蹦着\n一粒一粒小白珠。\n爸爸说，那是冰雹。",
+      "scene": "Waist-up view of the little boy at a window with small white ice pellets bouncing on the grass outside, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, his mouth open in surprise.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "冰雹不是雨冻的。\n它长在一朵\n又高又厚的云里。\n那种云叫积雨云，\n顶比飞机还高。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "那朵云的里面\n有一股很强的风，\n是竖着往上吹的。\n它能把水珠\n一直往上顶。",
+      "scene": "One enormous storm cloud seen from far below, dark and flat along its base and piled up high into a wide flat top, the sky filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "云里面的风\n不只是往上。\n有的地方往上冲，\n旁边就往下沉，\n上上下下转个不停。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "越往上越冷。\n升过某一条线，\n水就冻住了。\n水珠一过那儿，\n立刻裹上一层冰。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "小冰粒变沉了，\n开始往下掉。\n还没落到地面，\n又被一股风\n托了回去。",
+      "scene": "One small round pellet of ice deep inside a dark storm cloud, tilted as it is carried upward, the churning cloud filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "上去，结一层冰。\n掉下来，化一点。\n再上去，又结一层。\n这样来回好多趟，\n它就一点点变大。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "什么时候才掉下来？\n等它太重了，\n风托不住了，\n就一路砸下来，\n谁也拦不住。",
+      "scene": "One hailstone falling fast out of the dark flat base of a storm cloud with a streak of motion behind it, the cloud and sky filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "把一颗冰雹切开，\n里面一圈套一圈，\n像切开的洋葱。\n数一数有几圈，\n就知道它上去过几趟。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "大多数冰雹\n只有豆子那么大。\n可也下过几回\n拳头那么大的，\n把车顶砸出坑。",
+      "scene": "A close view of green grass with hailstones of several sizes resting on it, from tiny pellets to one as big as a fist, the grass filling the whole picture right out to all four edges. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "我们洛杉矶\n几乎不下冰雹。\n这儿的云不够高，\n也不够冷。\n别的地方年年都有。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我捡起一粒，\n凉凉的，很快化了。\n它在那朵云里\n上上下下跑了那么久，\n才跑到我手上。",
+      "scene": "Waist-up view of the little boy holding one small white hailstone in his open palm and looking down at it, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, quietly amazed.",
+      "has_boy": true
+    }
+  ]
+}

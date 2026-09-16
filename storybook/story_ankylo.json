@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "甲龙的尾巴锤",
+  "subtitle": "一身盔甲，外加一把锤",
+  "slug": "ankylo",
+  "seed_base": 92000,
+  "character": "wearing an olive green t-shirt, rust brown shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, thick opaque gouache with bold brush marks and visible texture, olive green, rust brown and bone cream",
+  "style_label": "厚涂水粉",
+  "keyword": "甲龙",
+  "diagram_pages": [
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "palette": {
+    "ink": "#2a271f",
+    "soft": "#6d6b52",
+    "ground": "#f2f0e6",
+    "paper": "#fbfaf4",
+    "accent": "#a65f3c",
+    "bark": "#847a5e",
+    "line": "#d9d6c5",
+    "ink_d": "#eae7d8",
+    "soft_d": "#9c9a80",
+    "ground_d": "#151208",
+    "paper_d": "#211e12",
+    "accent_d": "#c07a54",
+    "bark_d": "#847a5e",
+    "line_d": "#37341f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "这只恐龙矮矮的，\n背上全是疙瘩，\n尾巴尖上\n还挂着一个大球。\n爸爸说，那是一把锤子。",
+      "scene": "Waist-up view of the little boy in a museum beside a low armoured dinosaur model, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, curious.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "它从头到尾\n都盖着骨头板。\n背上、脖子上，\n连眼皮上\n都长着一小块骨头。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "这身盔甲\n不是披上去的，\n是从皮里长出来的。\n一块一块嵌在皮里，\n脱都脱不下来。",
+      "scene": "A cut-away view of a piece of thick skin on a cream background, several solid bony plates embedded inside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "尾巴尖上那个锤，\n是两块骨头\n长在一起长成的。\n有西瓜那么大，\n也有西瓜那么沉。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "锤子\n不是天生就有的。\n小甲龙的尾巴是光的，\n长大了\n骨头才慢慢长成一团。",
+      "scene": "Two ankylosaurus tails side by side on a cream background: a short plain young tail and a long tail with a big round club at the end. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "挥起来有多重呢？\n一下能把\n追它的那只\n小腿骨打断。\n所以没人敢从后面来。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "它打不过就趴下。\n四条腿一收，\n整个身子贴住地，\n只剩一身骨板朝上，\n谁也咬不动。",
+      "scene": "One armoured dinosaur crouched flat on the ground on a cream background, its legs tucked under and only its armoured back showing. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "它的肚子\n是软的。\n所以它从不翻身，\n也很少跑，\n就那样稳稳地趴着走。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "它吃的是\n地上的矮草和蕨。\n嘴前面有一片喙，\n剪断，\n再用后面的小牙磨。",
+      "scene": "One armoured dinosaur lowering its beak to crop low plants on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "一身盔甲加一把锤，\n这样的搭配\n在恐龙里也不多见。\n它不追谁，\n谁也别想追它。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "甲龙一直活到最后。\n那块石头砸下来那天，\n它还在地上慢慢走。\n盔甲挡得住牙，\n挡不住那一下。",
+      "scene": "One armoured dinosaur walking slowly across bare ground under a dim grey sky on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我绕着它走了一圈，\n从头看到尾。\n锤子就挂在那儿，\n沉甸甸的，\n像是随时会甩起来。",
+      "scene": "Waist-up view of the little boy standing beside the tail end of an armoured dinosaur model, looking at the big round bony club, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, impressed.",
+      "has_boy": true
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "谁第一个发现恐龙 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_firstfind",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, coloured pencil drawing with visible hatching strokes and grainy layered colour, warm ochre, moss green and brick red",
+  "style_label": "彩色铅笔",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2b2820",
+    "soft": "#6e6b55",
+    "ground": "#f3f0e5",
+    "paper": "#fcfaf3",
+    "accent": "#9a5b3e",
+    "bark": "#857a5f",
+    "line": "#dcd8c6",
+    "ink_d": "#ece9db",
+    "soft_d": "#9a9782",
+    "ground_d": "#151209",
+    "paper_d": "#221f13",
+    "accent_d": "#bd7a56",
+    "bark_d": "#857a5f",
+    "line_d": "#37341f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single fossil tooth lying flat, seen from the side, wide and flat like a leaf with a row of small points along one edge, its whole shape inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single green iguana lizard standing on four legs, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single iguanodon standing on four legs, seen from the side facing left, a pointed spike on each thumb, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single grey lump of broken road stone lying on the ground, seen from the side, its whole shape inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

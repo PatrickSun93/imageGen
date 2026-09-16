@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "松鼠记得埋在哪儿吗",
+  "subtitle": "忘掉的那些长成了树",
+  "slug": "squirrel",
+  "seed_base": 119000,
+  "character": "wearing a rust orange hoodie, dark green trousers and white sneakers, short black hair",
+  "style": "children's picture book illustration, oil pastel drawing with thick waxy strokes and softly blended edges, burnt orange, moss green and warm cream",
+  "style_label": "油画棒",
+  "keyword": "松鼠",
+  "diagram_pages": [
+    2,
+    4,
+    6,
+    9,
+    11
+  ],
+  "palette": {
+    "ink": "#2d2720",
+    "soft": "#7d7050",
+    "ground": "#f4f0e4",
+    "paper": "#fcfaf2",
+    "accent": "#c26a34",
+    "bark": "#8b7550",
+    "line": "#ded7c0",
+    "ink_d": "#ece6d4",
+    "soft_d": "#a1926e",
+    "ground_d": "#17120a",
+    "paper_d": "#221c11",
+    "accent_d": "#d68449",
+    "bark_d": "#8b7550",
+    "line_d": "#3a3220"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "公园的草地上，\n一只松鼠在刨土。\n刨两下，停一停，\n左看看，右看看，\n再低头接着刨。",
+      "scene": "Waist-up view of the little boy kneeling on park grass, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, watching quietly; one squirrel digs in the earth just in front of him. No other person in the picture.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "一整个秋天，\n它能埋下几千个果子。\n不是几十个，\n是好几千个，\n一个一个地埋。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "它不把果子\n堆在一个窝里。\n这儿埋一个，\n那儿埋一个，\n分开埋在好多地方。",
+      "scene": "One single squirrel on grass on a cream background pressing one nut into a small hole, with several other patches of freshly turned earth scattered far apart around it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "埋下去以前，\n它先把果子\n在自己脸上蹭一蹭。\n蹭上一点味道，\n以后就好认了。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "它还记地方。\n这棵树，那块石头，\n谁跟谁隔多远，\n它都记在心里，\n像记一张地图。",
+      "scene": "One single squirrel sitting upright on the ground on a cream background between a large stone and a thick tree root, looking around. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "到了冬天，\n它一个一个挖回来。\n埋下十个，\n大概能找回七八个。\n剩下的，忘了。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "雪盖住了地面，\n它照样能找到。\n鼻子贴着雪闻一闻，\n闻准了以后，\n两只前爪一起刨。",
+      "scene": "One single squirrel digging down into deep snow with both front paws on a cream background, its nose pushed into the hole. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "有时候它会装样子。\n明明没放东西，\n也假装埋一个，\n把土盖好，\n骗那些偷看的鸟。",
+      "scene": "One single squirrel patting loose earth flat over an empty hole with its front paws on a cream background, one bird watching from a branch above. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "忘掉的那几个\n就一直留在土里。\n外面下着雪，\n里面一动不动，\n慢慢等着春天。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "春天一暖，\n果子裂开一道缝，\n伸出一根细细的芽，\n顶开泥土，\n往有光的地方长。",
+      "scene": "One single acorn lying in dark earth on a cream background, split open along one side with a thin pale shoot rising out of it towards the light. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "所以一片林子里，\n总有好些棵树\n是松鼠种下的。\n它当初只是想\n留着自己冬天吃。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我看着那只松鼠\n又埋下一个。\n它忘掉的那些，\n后来都变成了树。\n忘一点，也挺好。",
+      "scene": "Waist-up view of the little boy sitting on the grass holding one acorn in his open hand, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, thoughtful; one squirrel sits a little way off on the grass. No other person in the picture.",
+      "has_boy": true
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "title": "恐龙为什么不见了 · 素材",
+  "subtitle": "给对比页用的单体素材，不是一本书",
+  "slug": "assets_extinct",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, bold oil pastel strokes with visible texture, deep indigo, ember orange and ash grey",
+  "style_label": "油画棒",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#241f2b",
+    "soft": "#66607a",
+    "ground": "#f0eef2",
+    "paper": "#fbfafc",
+    "accent": "#c2582b",
+    "bark": "#6f6656",
+    "line": "#d8d4dd",
+    "ink_d": "#e8e5ee",
+    "soft_d": "#948da8",
+    "ground_d": "#12101a",
+    "paper_d": "#1d1a26",
+    "accent_d": "#d97a4c",
+    "bark_d": "#6f6656",
+    "line_d": "#332f3f"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single rough round boulder of dark rock, its outline lumpy and uneven. Centred and filling most of the picture on a flat cream background of one single even colour, nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single mountain seen from a distance, a wide triangle of rock rising to one peak, its lower slopes darker. Centred and filling most of the picture on a flat cream background of one single even colour, nothing else in the picture.",
+      "has_boy": false
+    }
+  ]
+}

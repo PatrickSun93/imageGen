@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "长羽毛的恐龙",
+  "subtitle": "先是绒毛，后来才会飞",
+  "slug": "feather",
+  "seed_base": 103000,
+  "character": "wearing a rust red t-shirt, forest green shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, oil pastel drawing with thick waxy strokes and grainy overlaps, rust red, warm cream and deep forest green",
+  "style_label": "油画棒",
+  "keyword": "羽毛",
+  "diagram_pages": [
+    2,
+    4,
+    5,
+    7,
+    10
+  ],
+  "palette": {
+    "ink": "#2a2422",
+    "soft": "#6b7a63",
+    "ground": "#f2efe6",
+    "paper": "#fbf9f3",
+    "accent": "#b5533a",
+    "bark": "#8a7457",
+    "line": "#dad5c6",
+    "ink_d": "#eae5d7",
+    "soft_d": "#9aa88f",
+    "ground_d": "#14110c",
+    "paper_d": "#201c15",
+    "accent_d": "#cd6d4f",
+    "bark_d": "#8a7457",
+    "line_d": "#37332a"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "石头上有一只恐龙，\n骨头旁边\n还留着一圈毛。\n爸爸说，\n那是羽毛的印子。",
+      "scene": "Waist-up view of the little boy leaning close to a stone slab with a small dinosaur skeleton and faint feather marks pressed into it, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, curious.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "最早的羽毛\n不是一片，\n是一根。\n细细的一根丝，\n像小狗身上的绒毛。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "它满身都是这种丝。\n一根一根立着，\n把身子裹起来。\n风吹不透，\n身上就一直是暖的。",
+      "scene": "One small dinosaur standing on two legs covered all over in short fine fuzz, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "后来这根丝\n从根上分了叉。\n一根变成好几根，\n聚成一小簇，\n蓬蓬的更暖和。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "再后来，\n中间长出一根梗，\n两边排开细丝，\n合成平平的一片。\n这才叫一根羽毛。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "羽毛还有颜色。\n有的漆黑，\n有的会发亮。\n它把脖子一伸，\n远远的就看得见。",
+      "scene": "One small feathered dinosaur standing tall with its neck stretched up and its dark glossy neck feathers raised, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "它胳膊上的羽毛\n长得最长。\n越靠外越长，\n一排排开，\n合起来像一把扇子。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "有一天它跳了下来。\n胳膊往两边一张，\n羽毛兜住风，\n身子慢慢往下飘，\n一点也没摔疼。",
+      "scene": "One small feathered dinosaur leaping off a tree branch with both feathered arms spread wide and gliding down through the air, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "羽毛还有一个用处。\n它蹲在窝上，\n把翅膀盖下去，\n底下的那些蛋\n就一直是暖的。",
+      "scene": "One feathered dinosaur crouching on a nest of eggs with its feathered arms spread over them, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "今天的鸟\n身上也是这个。\n把两根羽毛\n并在一起比一比，\n几乎分不出来。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "羽毛那么软，\n本来留不下来。\n可它落进细泥里，\n泥慢慢变成石头，\n印子就留住了。",
+      "scene": "One flat stone with the clear mark of a single feather pressed into it, seen from directly above on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "楼下捡到一根羽毛。\n羽毛不是为了飞\n才长出来的，\n是先长出来，\n后来才用来飞。",
+      "scene": "Waist-up view of the little boy holding up one small feather between two fingers, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, smiling.",
+      "has_boy": true
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "明天会下雨吗 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_forecast",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, fine pen lines with light transparent watercolour washes, teal blue, pale grey and warm sand",
+  "style_label": "钢笔淡彩",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#1f2a2e",
+    "soft": "#5f7f85",
+    "ground": "#eef2f2",
+    "paper": "#fafcfb",
+    "accent": "#c87a35",
+    "bark": "#7c8c8b",
+    "line": "#d2dedd",
+    "ink_d": "#e4edec",
+    "soft_d": "#86a4a8",
+    "ground_d": "#0b1315",
+    "paper_d": "#121c1e",
+    "accent_d": "#dd964f",
+    "bark_d": "#7c8c8b",
+    "line_d": "#26363a"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single white louvred weather station box standing on four thin legs on short grass. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single large white weather balloon in flight with a small white instrument box hanging below it on a thin line. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single white radar dome shaped like a ball, sitting on top of a short square tower. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single weather satellite with two long flat solar wings and a small dish on its body. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

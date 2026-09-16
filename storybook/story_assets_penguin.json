@@ -1,0 +1,54 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "企鹅站在冰上为什么不冷 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_penguin",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, coloured pencil with visible hatching strokes and layered shading, ice blue, slate grey and pale gold",
+  "style_label": "彩色铅笔",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#24272e",
+    "soft": "#6a7a8c",
+    "ground": "#f0f2f4",
+    "paper": "#fafbfc",
+    "accent": "#d09a3c",
+    "bark": "#7b7668",
+    "line": "#d5dade",
+    "ink_d": "#e8eaee",
+    "soft_d": "#93a3b2",
+    "ground_d": "#0e1216",
+    "paper_d": "#171b20",
+    "accent_d": "#e0b05c",
+    "bark_d": "#7b7668",
+    "line_d": "#2d3238"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single emperor penguin standing upright on both feet, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single penguin feather lying alone, short and stiff with a tuft of soft down at its base. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single thick woollen blanket folded into a neat rectangle, lying alone. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

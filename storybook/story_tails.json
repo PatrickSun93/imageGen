@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "尾巴有什么用",
+  "subtitle": "平衡、武器、还是撑着",
+  "slug": "tails",
+  "seed_base": 94000,
+  "character": "wearing a plum purple t-shirt, sand coloured shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, soft pastel drawing with powdery blended strokes and grainy texture, dusty plum, warm grey and pale sand",
+  "style_label": "软色粉",
+  "keyword": "尾巴",
+  "diagram_pages": [
+    2,
+    4,
+    6,
+    8,
+    11
+  ],
+  "palette": {
+    "ink": "#272430",
+    "soft": "#7d7a92",
+    "ground": "#f4f1ec",
+    "paper": "#fdfbf8",
+    "accent": "#8a6096",
+    "bark": "#8b7a70",
+    "line": "#ded9d6",
+    "ink_d": "#ece8e4",
+    "soft_d": "#a49fb4",
+    "ground_d": "#14121a",
+    "paper_d": "#201d27",
+    "accent_d": "#a97fb4",
+    "bark_d": "#8b7a70",
+    "line_d": "#38333f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "这条尾巴真长。\n从展台这一头\n一直伸到那一头。\n爸爸说，\n它比脖子还长。",
+      "scene": "Waist-up view of the little boy standing beside the long tail of a mounted dinosaur skeleton in a museum, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, looking amazed.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "尾巴不是一根。\n是一节一节的骨头\n接起来的。\n梁龙的尾巴\n有八十多节。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "地上留下了脚印，\n尾巴的印子\n却一条也没有。\n所以它走路的时候，\n尾巴是抬着的。",
+      "scene": "A line of large three-toed dinosaur tracks pressed into wet mud on a cream background, the ground between the tracks smooth and unmarked. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "为什么抬得起来？\n因为前后一样沉。\n头和脖子在前边，\n尾巴在后边，\n腿正好在中间。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "跑起来要拐弯，\n它就把尾巴\n甩到一边去。\n身子跟着一歪，\n就拐过去了。",
+      "scene": "One two-legged dinosaur running on a cream background and turning, its long tail swung out to one side, with motion lines behind it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "尾巴里面\n还藏着一大块肉。\n一头连着尾骨，\n一头连着大腿。\n一使劲，腿就往后蹬。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "梁龙的尾巴\n越往后越细。\n最后那几十节，\n细得像一根鞭子\n拖在地上。",
+      "scene": "One very long-necked dinosaur standing in profile on a cream background, its tail stretching far out behind it and thinning to a fine whip-like tip. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "甩起来会不会响？\n有人算过。\n尖上甩得那么快，\n也许真会\n啪的一声。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "还有的把尾巴\n往地上一杵，\n后腿一使劲站起来，\n像搭了个三脚架，\n专去够树顶的叶子。",
+      "scene": "One long-necked dinosaur rearing up on its two back legs on a cream background, the thick base of its tail pressed down onto the ground behind it like a third leg, reaching up towards high leaves. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "有的尾巴\n干脆做成了武器。\n尖上挂着骨锤，\n或者插着长刺。\n谁靠近就甩谁。",
+      "scene": "One armoured dinosaur on a cream background swinging its tail sideways, a heavy round ball of bone at the tip. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "撑着的、甩响的、\n打人的、管平衡的。\n尾巴不是\n多长出来的一截，\n它一直在帮忙。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "回家的路上\n我学恐龙走了几步：\n身子往前一低，\n胳膊往后一伸——\n可惜我没有尾巴。",
+      "scene": "Waist-up view of the little boy outdoors leaning forward with both arms stretched back behind him, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, laughing.",
+      "has_boy": true
+    }
+  ]
+}

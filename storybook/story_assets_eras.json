@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "恐龙住了一亿六千万年 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_eras",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, soft chalk pastel with grainy blended strokes and visible tooth of the surface, dusty violet, slate blue and warm rose",
+  "style_label": "软色粉",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2733",
+    "soft": "#7a7490",
+    "ground": "#f2f0f0",
+    "paper": "#fbf9f8",
+    "accent": "#b4677a",
+    "bark": "#8a7a72",
+    "line": "#dcd7dd",
+    "ink_d": "#e9e5ea",
+    "soft_d": "#a09ab4",
+    "ground_d": "#141020",
+    "paper_d": "#201c28",
+    "accent_d": "#cc8095",
+    "bark_d": "#8a7a72",
+    "line_d": "#383044"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single small early dinosaur about the size of a big dog, standing on two legs, seen from the side facing left, with a long tail held straight out behind it, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single very large long-necked dinosaur standing on four legs, seen from the side facing left, its neck reaching high up, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single tyrannosaurus standing on two legs, seen from the side facing left, its big head low and its mouth open, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single stegosaurus standing on four legs, seen from the side facing left, a row of tall flat plates along its back, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

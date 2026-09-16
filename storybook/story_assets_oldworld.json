@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "那时候的地球长什么样 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_oldworld",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, oil pastel with thick waxy strokes and rich layered colour, deep fern green, warm ochre and burnt orange",
+  "style_label": "油画棒",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#26281f",
+    "soft": "#6a7b4a",
+    "ground": "#f1efe3",
+    "paper": "#faf8ef",
+    "accent": "#c07a2e",
+    "bark": "#7c6a4a",
+    "line": "#d7d5c0",
+    "ink_d": "#e8e6d5",
+    "soft_d": "#91a472",
+    "ground_d": "#101208",
+    "paper_d": "#1c1e12",
+    "accent_d": "#d4913f",
+    "bark_d": "#7c6a4a",
+    "line_d": "#343722"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single clump of ferns growing from the ground, its long leaves spreading outwards, the whole clump inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single tall conifer tree with a straight trunk, its whole shape inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single very large long-necked dinosaur standing on four legs, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single small flower with a few open petals on a short stem. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

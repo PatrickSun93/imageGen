@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "恐龙的名字是怎么来的 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_dinonames",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, fine pen lines with light watercolour washes laid over them, ink blue, warm sand and terracotta",
+  "style_label": "钢笔淡彩",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#22262e",
+    "soft": "#5f6b78",
+    "ground": "#eef1f2",
+    "paper": "#fafcfb",
+    "accent": "#b0653f",
+    "bark": "#7d7566",
+    "line": "#d3d9dc",
+    "ink_d": "#e6ebee",
+    "soft_d": "#8e9aa6",
+    "ground_d": "#0e1116",
+    "paper_d": "#191d23",
+    "accent_d": "#c88359",
+    "bark_d": "#7d7566",
+    "line_d": "#2e343c"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single triceratops standing on four legs, seen from the side facing left, three horns on its face and a broad bony frill behind its head, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single tyrannosaurus rex standing on two legs, seen from the side facing left, a very large head and two short arms, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single velociraptor standing on two legs, seen from the side facing left, a slim feathered body and a long stiff tail, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single brachiosaurus standing on four legs, seen from the side facing left, its front legs longer than its back legs and its long neck held high, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "它们为什么一起走",
+  "subtitle": "一串脚印看出来的事",
+  "slug": "herd",
+  "seed_base": 98000,
+  "character": "wearing a dusty blue t-shirt, sand coloured shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, soft pastel drawing with powdery blended strokes and visible grain, dusty blue, warm clay and pale sand",
+  "style_label": "软色粉",
+  "keyword": "脚印",
+  "diagram_pages": [
+    2,
+    3,
+    5,
+    6,
+    8,
+    10
+  ],
+  "palette": {
+    "ink": "#262a2e",
+    "soft": "#7d8b95",
+    "ground": "#f1f0ea",
+    "paper": "#fbfaf6",
+    "accent": "#b2593f",
+    "bark": "#7f7566",
+    "line": "#d8d6cc",
+    "ink_d": "#e9e6dc",
+    "soft_d": "#9fb0ba",
+    "ground_d": "#0f1316",
+    "paper_d": "#1a1e22",
+    "accent_d": "#cb7358",
+    "bark_d": "#7f7566",
+    "line_d": "#313739"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "博物馆的地上\n铺着一块大石板，\n上面一个个坑。\n爸爸说那是脚印，\n恐龙踩出来的。",
+      "scene": "Waist-up view of the little boy standing on a big flat slab of rock covered in large dinosaur tracks, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, surprised.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "最大的那个脚印\n比脸盆还大，\n我整个人坐进去\n还空出一圈。\n那是后脚踩的。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "脚印有两种，\n一大一小。\n大的是后脚，\n小的是前脚。\n它是四条腿走路的。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "这样的脚印不止一串。\n二十几串排在一起，\n一串挨着一串，\n而且全都朝着\n同一个方向去。",
+      "scene": "Many rows of large round dinosaur tracks pressed into flat rock on a cream background, all the rows running in the same direction. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "没有哪一串\n压在另一串上面，\n谁也没踩着谁。\n这说明它们\n是同时走过去的。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "再看得仔细些：\n大脚印走在两边，\n小脚印夹在中间。\n大的在外面，\n小的在里面。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "外面才有危险。\n大的走在外圈，\n小的走在当中，\n这样就不容易\n被谁叼走。",
+      "scene": "A group of long-necked dinosaurs walking together across open ground on a cream background, the largest ones on the outside and the smaller ones in the middle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "量一量两个脚印\n中间隔多远，\n就能算出来，\n它当时走得多快。\n答案是：不快。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "这一串脚印\n是踩在湿泥上的。\n太阳晒了几天，\n泥就变硬，\n后来变成了石头。",
+      "scene": "One large round dinosaur track pressed deep into wet mud on a cream background, water gathering in the bottom of it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "它们一起走，\n是要换个地方。\n一片树叶吃光了，\n就往前挪一挪，\n再找一片。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "也不是都这样。\n有的石头上\n从头到尾只有一串，\n孤零零的，\n那是自己走的。",
+      "scene": "One single line of large round dinosaur tracks crossing flat rock on a cream background, with no other tracks anywhere. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我踩在脚印里，\n一步一步往前走。\n一亿年前，\n这里真的走过\n一大群恐龙。",
+      "scene": "Waist-up view of the little boy standing with one foot inside a huge dinosaur track in the rock, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, smiling.",
+      "has_boy": true
+    }
+  ]
+}

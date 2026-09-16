@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "驼峰里装的是什么",
+  "subtitle": "不是水，是脂肪",
+  "slug": "camel",
+  "seed_base": 123000,
+  "character": "wearing a pale yellow shirt, khaki shorts and brown sandals, short black hair",
+  "style": "children's picture book illustration, oil pastel with thick waxy strokes and blended edges, sand ochre, terracotta and dusty sky blue",
+  "style_label": "油画棒",
+  "keyword": "骆驼",
+  "diagram_pages": [
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "palette": {
+    "ink": "#2e2820",
+    "soft": "#8a7a5a",
+    "ground": "#f4f0e6",
+    "paper": "#fdfaf2",
+    "accent": "#b8603a",
+    "bark": "#8a7150",
+    "line": "#e0d8c4",
+    "ink_d": "#efe9da",
+    "soft_d": "#a99a78",
+    "ground_d": "#171208",
+    "paper_d": "#221c10",
+    "accent_d": "#cf7d50",
+    "bark_d": "#8a7150",
+    "line_d": "#3a3220"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "动物园里那只骆驼，\n背上鼓着两个包。\n我仰着头问爸爸，\n那里面装的\n是不是一包水。",
+      "scene": "Waist-up view of the little boy at a zoo rail looking up, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, asking a question; behind him stands a camel with two humps.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "爸爸说不是水。\n驼峰里装的是脂肪，\n像一大块黄油。\n两个包加起来，\n有三十多公斤重。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "脂肪一天天用掉，\n驼峰就瘪下去，\n软软地歪到一边。\n吃饱睡足几天，\n它又鼓起来了。",
+      "scene": "Two camels standing side by side on a cream background, one with two full upright humps and one with two empty humps flopping over. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "脂肪化开的时候，\n一边出力气，\n一边还出一点水。\n所以不喝水的日子，\n它也能撑很久。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "可它一见到水，\n就没完没了地喝。\n十分钟能灌下\n一百多升水，\n差不多一大缸。",
+      "scene": "One camel lowering its head to drink from a long stone trough on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "一百升是多少呢？\n够装满十个水桶。\n我一天喝的水，\n连一桶都不到，\n它一口气就喝完。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "沙子刮起来的时候，\n它把鼻孔一闭，\n睫毛又长又密，\n像两排小帘子，\n沙就进不去了。",
+      "scene": "Close view of a camel's head facing the viewer in blowing sand on a cream background, its nostrils squeezed shut and its long lashes lowered. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "它还有个省水的法子：\n白天让身子变热，\n热得受不了才出汗。\n少出一点汗，\n就少丢一点水。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "它连带刺的枝子\n也能嚼着吃。\n嘴唇又厚又灵活，\n刺扎不进去，\n照样咽下肚。",
+      "scene": "One camel biting a thorny branch on a cream background, its thick lips folded around the spines. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "它的血也不一样。\n里面的红细胞\n是长长的椭圆，\n缺水的时候\n也能挤着往前走。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "它的脚掌很宽，\n踩下去铺开一片，\n像两块软垫子，\n所以走在沙上\n不会往下陷。",
+      "scene": "Close view of one camel foot pressed onto sand on a cream background, the broad pad spread out wide and leaving a shallow dent. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我算是记住了：\n驼峰里不是水，\n是一大块脂肪。\n它不是背着一壶水，\n是背着一袋干粮。",
+      "scene": "Waist-up view of the little boy at the zoo rail nodding to himself, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, pleased; the two-humped camel stands behind him.",
+      "has_boy": true
+    }
+  ]
+}

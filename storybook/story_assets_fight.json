@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "打到一半被埋住了 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_fight",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, fine pen line work with light watercolour washes, sand ochre, brick red and warm grey",
+  "style_label": "钢笔淡彩",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#1f1e1a",
+    "soft": "#6b6a58",
+    "ground": "#f2efe4",
+    "paper": "#fcfaf3",
+    "accent": "#a8503a",
+    "bark": "#8a7a5c",
+    "line": "#dcd8c7",
+    "ink_d": "#ece8d9",
+    "soft_d": "#9d9c86",
+    "ground_d": "#121108",
+    "paper_d": "#1e1c10",
+    "accent_d": "#c56a4e",
+    "bark_d": "#8a7a5c",
+    "line_d": "#37341e"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single small two-legged dinosaur covered in feathers, seen from the side facing left, a long stiff tail behind it and one large sharp claw held up off the ground on each back foot, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single four-legged dinosaur with a parrot-like beak and a short bony frill behind its head, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single turkey standing on two legs, seen from the side facing left. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single large sharp claw of bone, thick and heavy at its base and narrowing to one fine point. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

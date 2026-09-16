@@ -1,0 +1,60 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 (Q3)",
+    "lora": "素材页，无人物",
+    "strength": 1.3
+  },
+  "title": "云是怎么来的 · 素材",
+  "subtitle": "给对比页用的单体素材",
+  "slug": "assets_cloud",
+  "seed_base": 90000,
+  "character": "",
+  "style": "children's picture book illustration, soft pastel with powdery blended strokes and visible chalk texture, sky blue, cloud white and warm apricot",
+  "style_label": "软色粉",
+  "keyword": "素材",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#26303a",
+    "soft": "#6b7f92",
+    "ground": "#eef4f8",
+    "paper": "#fbfdfe",
+    "accent": "#d98b5f",
+    "bark": "#7f8b96",
+    "line": "#d2dee6",
+    "ink_d": "#e8eff5",
+    "soft_d": "#94a6b6",
+    "ground_d": "#0d1319",
+    "paper_d": "#171f26",
+    "accent_d": "#e0a077",
+    "bark_d": "#7f8b96",
+    "line_d": "#2c3a45"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "素材 1",
+      "scene": "One single tall white cumulus cloud floating alone, its whole shape inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 2,
+      "zh": "素材 2",
+      "scene": "One single small round drop of water, seen from the side, its whole shape inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "素材 3",
+      "scene": "One single tiny grey grain of dust, its whole shape inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single yellow sun with straight rays reaching out from it, its whole shape inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
+      "has_boy": false
+    }
+  ]
+}

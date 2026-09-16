@@ -1,0 +1,114 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "背上长帆的恐龙",
+  "subtitle": "棘龙和它的大帆",
+  "slug": "sail",
+  "seed_base": 104000,
+  "character": "wearing a sandstone ochre t-shirt, dusty teal shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, fine pen line work with light transparent watercolour washes, sandstone ochre, dusty teal and warm grey",
+  "style_label": "钢笔淡彩",
+  "keyword": "帆",
+  "diagram_pages": [
+    2,
+    3,
+    4,
+    7,
+    10
+  ],
+  "palette": {
+    "ink": "#24262a",
+    "soft": "#5f7b7c",
+    "ground": "#f2f0e8",
+    "paper": "#fcfaf5",
+    "accent": "#c07a3a",
+    "bark": "#7f7561",
+    "line": "#d7d4c6",
+    "ink_d": "#e9e6da",
+    "soft_d": "#90a8a8",
+    "ground_d": "#101315",
+    "paper_d": "#1c1f22",
+    "accent_d": "#d18f58",
+    "bark_d": "#7f7561",
+    "line_d": "#34383b"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "这只恐龙背上\n竖着一面帆。\n比展厅的门还高，\n从脖子后面\n一直排到屁股。",
+      "scene": "Waist-up view of the little boy standing in front of a huge dinosaur skeleton with a tall sail of bone rising along its back, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, his mouth open in surprise.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "帆最高的地方\n有两米。\n比一扇门还高。\n人站在下面，\n连帆顶都够不着。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "帆不是皮长出来的。\n它是骨头撑起来的。\n每一节脊椎骨\n往上长出一根长棒，\n一根挨着一根。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "别的恐龙也有这根棒，\n可只有短短一截。\n棘龙的这一根\n长得吓人，\n有我这么高。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "从正面看过去，\n这面帆薄薄的，\n只有手掌那么厚。\n它一侧过身，\n帆就几乎不见了。",
+      "scene": "One spinosaurus seen from directly in front, the tall sail on its back showing only as a thin upright edge. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "帆是干什么用的呢？\n也许是拿来显摆的。\n两只碰上了，\n谁的帆更大，\n谁就不用动手打。",
+      "scene": "Two spinosaurus standing facing each other with their tall back sails raised high, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "血一涌上帆，\n帆就慢慢变红。\n远远看过去，\n那个身子\n好像又大了一圈。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "它的嘴又长又窄。\n牙是圆锥形的，\n不是刀片。\n这样的牙\n最适合叼鱼。",
+      "scene": "One spinosaurus lowering its long narrow snout into a river and catching a large fish, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "它的骨头很实，\n沉甸甸的。\n沉一点\n就不容易被水托起，\n站在河里更稳当。",
+      "scene": "One spinosaurus standing in a river with its legs under the water, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "它比霸王龙还长。\n从鼻子到尾巴尖，\n足足十五米。\n两辆小汽车\n接起来还不够。",
+      "scene": "",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "这些长棒\n埋在沙漠的石头里。\n一根一根挖出来，\n再拼到一起，\n才知道是一面帆。",
+      "scene": "Several long bony rods lying half buried in dry desert rock, seen from the side. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我站在帆底下\n抬头看。\n那面帆不是皮长的，\n是骨头\n一根一根撑起来的。",
+      "scene": "Waist-up view of the little boy standing below the tall bony back sail of a huge dinosaur skeleton and looking up at it, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, amazed.",
+      "has_boy": true
+    }
+  ]
+}
