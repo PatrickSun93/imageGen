@@ -1,0 +1,114 @@
+{
+  "title": "霸王龙的牙齿",
+  "subtitle": "一辈子换个不停",
+  "slug": "trex",
+  "seed_base": 72000,
+  "character": "wearing a rust orange t-shirt, dark teal shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, bold flat graphic art with thick clean outlines and flat fills, deep teal, rust orange and cream",
+  "style_label": "平涂线条",
+  "keyword": "牙齿",
+  "diagram_pages": [
+    2,
+    3,
+    4,
+    6,
+    8
+  ],
+  "palette": {
+    "ink": "#22282b",
+    "soft": "#5f7a7e",
+    "ground": "#f2efe7",
+    "paper": "#fcfaf5",
+    "accent": "#c2542c",
+    "bark": "#7a6a55",
+    "line": "#d6d2c6",
+    "ink_d": "#e8e3d6",
+    "soft_d": "#8fa5a8",
+    "ground_d": "#101416",
+    "paper_d": "#1b2124",
+    "accent_d": "#d9714a",
+    "bark_d": "#7a6a55",
+    "line_d": "#333a3d"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "玻璃柜里放着一颗牙。\n它比我的手掌还长，\n边上还有\n一排小锯齿。\n爸爸说那是霸王龙的。",
+      "scene": "The little boy looks through a museum glass case at one huge dinosaur tooth on a stand, leaning close, curious.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "这颗牙有多大呢？\n和香蕉差不多长。\n露在牙床外面的\n只是上面一小截，\n底下还埋着一大半。",
+      "scene": "A simple clear diagram, drawn flat and plain: one large pointed tooth shape and one banana shape lying side by side on a cream background, exactly the same length. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "牙的边上有锯齿，\n和面包刀一样。\n这样咬下去，\n不是切断，\n是撕开。",
+      "scene": "A simple clear diagram, drawn flat and plain: one tooth edge shown large on a cream background with small even saw teeth along it, and one bread knife below it with the same saw edge. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "牙断了怎么办？\n不要紧。\n下面早就长好了新的，\n顶上来接着用，\n一辈子换个不停。",
+      "scene": "A simple clear diagram, drawn flat and plain: one jaw cut open on a cream background showing one tooth standing in place and one new tooth growing underneath it, with an arrow pointing up. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "它咬得有多狠？\n一口下去，\n骨头都能咬碎。\n骨头碎了，\n里面的骨髓也吃得到。",
+      "scene": "One large meat-eating dinosaur head biting down on a big bone on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "我们咬东西的力气，\n和它一比\n差得太远了。\n它咬一口的力气，\n抵得上好几十个大人。",
+      "scene": "A simple clear diagram, drawn flat and plain: two horizontal bars on a cream background starting from the same left edge, the top bar very short and the bottom bar running almost the whole width. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "它的头很大，\n头骨上却有好多空洞。\n这样又轻又结实，\n咬下去的时候\n才不会把自己震坏。",
+      "scene": "One large dinosaur skull seen from the side on a cream background, with several big openings in the bone. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "它的前爪特别小，\n小到摸不到自己的嘴。\n可它力气不小，\n能牢牢钩住东西\n不让跑掉。",
+      "scene": "A simple clear diagram, drawn flat and plain: one meat-eating dinosaur silhouette on a cream background with a circle drawn around its two very short front arms. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "它的鼻子很灵。\n风一吹过来，\n很远的地方\n有什么东西死掉了，\n它就闻得到。",
+      "scene": "One meat-eating dinosaur standing with its head raised and nose lifted into the wind on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "它吃活的，\n也吃死的。\n碰上现成的，\n就不用自己去追，\n省好多力气。",
+      "scene": "One meat-eating dinosaur walking towards a big bone lying on the ground on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "掉下来的牙\n埋进泥沙里，\n过了很久很久，\n慢慢变成石头。\n我们今天才捡得到。",
+      "scene": "One large tooth lying half buried in layered ground on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我把手贴在玻璃上，\n和那颗牙比一比。\n它一颗牙，\n就有我半只手\n那么长。",
+      "scene": "The little boy presses his open hand flat against the museum glass beside the big tooth, comparing them, smiling.",
+      "has_boy": true
+    }
+  ]
+}

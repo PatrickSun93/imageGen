@@ -1,0 +1,114 @@
+{
+  "title": "恐龙蛋里面是什么",
+  "subtitle": "壳太厚就出不来了",
+  "slug": "dinoegg",
+  "seed_base": 75000,
+  "character": "wearing a peach t-shirt, sand coloured shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, soft transparent watercolour with clean wet washes, warm sand, pale peach and soft grey green",
+  "style_label": "水彩",
+  "keyword": "恐龙蛋",
+  "diagram_pages": [
+    2,
+    3,
+    5,
+    7,
+    11
+  ],
+  "palette": {
+    "ink": "#33291f",
+    "soft": "#7e7060",
+    "ground": "#f5f1e8",
+    "paper": "#fdfbf6",
+    "accent": "#c77a4e",
+    "bark": "#8f8266",
+    "line": "#e0d8c8",
+    "ink_d": "#ece5d9",
+    "soft_d": "#a99884",
+    "ground_d": "#181207",
+    "paper_d": "#241c12",
+    "accent_d": "#d99368",
+    "bark_d": "#8f8266",
+    "line_d": "#3c3427"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "柜子里放着几个蛋，\n灰灰的，\n看上去像石头。\n爸爸说，\n里面本来有小恐龙。",
+      "scene": "The little boy leans close to a museum case holding several round fossil dinosaur eggs, looking at them, curious.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "恐龙蛋有多大呢？\n最大的\n和一个足球差不多。\n可再大的恐龙，\n蛋也大不到哪里去。",
+      "scene": "A simple clear diagram, drawn flat and plain: one chicken egg shape and one football-sized egg shape side by side on a cream background, the big one clearly larger. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "蛋要是太大，\n壳就得很厚。\n壳太厚，\n里面的小恐龙\n就啄不破，出不来了。",
+      "scene": "A simple clear diagram, drawn flat and plain: two eggs cut open side by side on a cream background, one with a thin shell and one with a very thick shell. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "下蛋以前，\n它先在地上挖一个坑，\n铺上叶子，\n再把蛋一个一个\n摆进去。",
+      "scene": "One dinosaur crouching over a shallow nest pit lined with leaves on a cream background, placing eggs into it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "蛋不是乱放的。\n有的绕成一圈一圈，\n中间空着。\n这样每一个蛋\n都晒得到太阳。",
+      "scene": "A simple clear diagram, drawn flat and plain: one round nest seen from above on a cream background with eggs arranged in a ring around an empty middle. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "有的恐龙\n会趴在窝边上，\n用身体和前肢\n把蛋轻轻盖住，\n不让它们变凉。",
+      "scene": "One feathered dinosaur sitting over a nest with its arms spread across the eggs on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "蛋壳上有很多小孔，\n小到看不见。\n空气从小孔钻进去，\n里面的小恐龙\n才能呼吸。",
+      "scene": "A simple clear diagram, drawn flat and plain: one piece of eggshell shown greatly magnified on a cream background with many tiny holes through it and small arrows passing inward. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "时候到了，\n小恐龙用鼻子上的小尖\n把壳顶开一道缝，\n再一点一点\n钻出来。",
+      "scene": "One baby dinosaur pushing its head out through a crack in an egg on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "刚出来的小恐龙\n很小，腿也软，\n站都站不稳。\n它们挤在一起，\n互相靠着取暖。",
+      "scene": "Three newly hatched baby dinosaurs huddled together in a nest on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "爸爸妈妈\n要一趟一趟\n把吃的带回来。\n窝里全是张着嘴\n等着吃的小家伙。",
+      "scene": "One adult dinosaur standing over a nest of babies with their mouths open wide on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "小恐龙长得很快。\n几年工夫，\n就从和猫一样大，\n长到比一辆车\n还要大。",
+      "scene": "A simple clear diagram, drawn flat and plain: four dinosaur silhouettes in a row on a cream background, each much taller than the one before, with a rising line drawn over their heads. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我趴在玻璃前面\n看那几个蛋。\n它们还是圆圆的，\n只是里面\n已经空了。",
+      "scene": "The little boy rests his chin on the edge of the museum case, looking quietly at the round fossil eggs.",
+      "has_boy": true
+    }
+  ]
+}

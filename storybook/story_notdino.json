@@ -1,0 +1,115 @@
+{
+  "title": "谁不是恐龙",
+  "subtitle": "会飞的、游泳的，都不算",
+  "slug": "notdino",
+  "seed_base": 78000,
+  "character": "wearing a brick red t-shirt, olive shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, fine pen and ink lines with light washes, muted olive, brick red and warm grey",
+  "style_label": "钢笔淡彩",
+  "keyword": "分类",
+  "diagram_pages": [
+    2,
+    3,
+    5,
+    7,
+    9,
+    11
+  ],
+  "palette": {
+    "ink": "#272621",
+    "soft": "#6e6b5c",
+    "ground": "#f2f1ea",
+    "paper": "#fbfbf6",
+    "accent": "#a8503a",
+    "bark": "#847b64",
+    "line": "#dad7ca",
+    "ink_d": "#e9e7db",
+    "soft_d": "#9b9782",
+    "ground_d": "#141309",
+    "paper_d": "#1f1e14",
+    "accent_d": "#c26a4f",
+    "bark_d": "#847b64",
+    "line_d": "#373528"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我指着天上挂的那只说，\n这也是恐龙。\n爸爸摇摇头。\n它会飞，\n可它真的不是恐龙。",
+      "scene": "The little boy in a museum points up at a large flying reptile model hanging from the ceiling, his father standing beside him.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "怎么分呢？\n看腿。\n恐龙的腿\n直直地长在身体下面，\n像四根柱子撑着。",
+      "scene": "A simple clear diagram, drawn flat and plain: one animal body seen from the front on a cream background with its four legs running straight down underneath it like four posts. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "蜥蜴和鳄鱼不一样。\n它们的腿\n是朝两边撇出去的，\n走起路来\n身体左右扭。",
+      "scene": "A simple clear diagram, drawn flat and plain: one animal body seen from the front on a cream background with its four legs bent out sideways away from the body. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "天上飞的那种叫翼龙。\n它的翅膀，\n是一根特别长的手指\n撑起来的一张皮。\n它不是恐龙。",
+      "scene": "One flying reptile gliding with its wing membrane stretched from one very long finger, on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "翅膀有三种做法。\n翼龙用一根手指撑，\n蝙蝠用四根手指撑，\n鸟用羽毛铺。\n各有各的办法。",
+      "scene": "A simple clear diagram, drawn flat and plain: three wing outlines in a row on a cream background, the first with one very long finger bone, the second with four spread finger bones, the third with layered feathers. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "水里游的那些\n也不是恐龙。\n有的像一条大蜥蜴，\n有的长得像海豚，\n可它们都不算。",
+      "scene": "Two large sea reptiles swimming underwater on a cream background, one long and lizard-like, one shaped like a dolphin. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "分成三堆就清楚了：\n天上飞的翼龙，\n水里游的大家伙，\n地上走的恐龙。\n只有最后一堆才叫恐龙。",
+      "scene": "A simple clear diagram, drawn flat and plain: a cream background in three horizontal rows, the top row holding two flying shapes, the middle row two swimming shapes, the bottom row three walking shapes, with a ring drawn around the bottom row only. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "那时候的恐龙\n都在陆地上走。\n后来有一小支\n长出羽毛，飞了起来。\n那就是鸟。",
+      "scene": "One small feathered dinosaur lifting off from the ground on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "所以鸟\n反过来是恐龙。\n窗外的麻雀，\n院子里的鸡，\n都是恐龙的后代。",
+      "scene": "A simple clear diagram, drawn flat and plain: one branching tree drawn on a cream background with a thick trunk marked by a dinosaur silhouette and one branch leading up to a bird silhouette. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "还有一个常弄混的。\n长毛的大象\n和剑齿虎，\n比恐龙晚得多，\n那时候恐龙早就没了。",
+      "scene": "One woolly mammoth and one sabre-toothed cat standing on snowy ground on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "把时间排一排\n就清楚了。\n先是恐龙，\n中间隔了好久好久，\n才轮到长毛象，最后是我们。",
+      "scene": "A simple clear diagram, drawn flat and plain: one long horizontal timeline on a cream background with three marks placed far apart along it, a dinosaur shape at the first, a mammoth shape at the second and a small human shape at the third. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我又看了一眼\n天上挂的那只。\n它不是恐龙。\n可它和恐龙，\n是一个时候的邻居。",
+      "scene": "The little boy looks up once more at the hanging flying reptile model, thoughtful, one hand on the railing.",
+      "has_boy": true
+    }
+  ]
+}

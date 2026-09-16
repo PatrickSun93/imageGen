@@ -1,0 +1,115 @@
+{
+  "title": "长脖子够得到树顶",
+  "subtitle": "脖子里有十五块骨头",
+  "slug": "longneck",
+  "seed_base": 73000,
+  "character": "wearing a pale blue t-shirt, brown shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, soft coloured pencil drawing with light hatching, forest green, warm brown and pale sky blue",
+  "style_label": "彩铅",
+  "keyword": "蜥脚类",
+  "diagram_pages": [
+    2,
+    3,
+    5,
+    7,
+    9,
+    11
+  ],
+  "palette": {
+    "ink": "#2a2c24",
+    "soft": "#6b7a5e",
+    "ground": "#f1f2e9",
+    "paper": "#fbfcf6",
+    "accent": "#a8763e",
+    "bark": "#77684f",
+    "line": "#d9dccb",
+    "ink_d": "#e9ebdc",
+    "soft_d": "#97a487",
+    "ground_d": "#131610",
+    "paper_d": "#1e2218",
+    "accent_d": "#c59158",
+    "bark_d": "#77684f",
+    "line_d": "#353a2c"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "院子里的果子\n长得太高了。\n我踮起脚，\n伸直胳膊，\n还是够不到。",
+      "scene": "The little boy stands under a fruit tree in a garden, up on his toes with one arm stretched high, still not reaching the fruit.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "有一种恐龙，\n脖子特别长。\n比一辆公交车还长，\n站在地上\n就能吃到三楼的叶子。",
+      "scene": "A simple clear diagram, drawn flat and plain: one long-necked dinosaur silhouette on a cream background standing beside the outline of a three-storey building, its head level with the top floor. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "脖子这么长，\n里面有多少块骨头？\n十五块。\n我们的脖子里\n只有七块。",
+      "scene": "A simple clear diagram, drawn flat and plain: two neck outlines side by side on a cream background, the long one divided into fifteen blocks and the short one into seven blocks. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "脖子长有个好处：\n不用走来走去。\n站在一个地方，\n脖子转一圈，\n周围的叶子都吃得到。",
+      "scene": "One long-necked dinosaur standing still among several trees on a cream background, its head turned to one side reaching leaves. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "它的头却很小，\n和身体比起来\n小得不像话。\n头要是太重，\n脖子就抬不起来了。",
+      "scene": "A simple clear diagram, drawn flat and plain: one long-necked dinosaur silhouette on a cream background with a circle drawn around its very small head. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "它的牙像一排耙子，\n只管把叶子捋下来，\n不嚼，\n直接吞下去。\n嚼太费时间了。",
+      "scene": "One long-necked dinosaur head close up on a cream background pulling leaves off a branch with its rake-like teeth. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "不嚼怎么消化呢？\n它吞石头。\n石头在肚子里\n滚来滚去把叶子磨碎，\n代替牙齿干活。",
+      "scene": "A simple clear diagram, drawn flat and plain: one stomach outline on a cream background with leaves and several round smooth stones inside it. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "它一天\n要吃好几百公斤叶子。\n吃完这一棵，\n就慢慢走到下一棵，\n一天到晚都在吃。",
+      "scene": "One long-necked dinosaur walking slowly from one tree to another on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "血要从心脏\n一直送到头上去，\n那么高。\n所以它的心脏\n特别大，特别有力气。",
+      "scene": "A simple clear diagram, drawn flat and plain: one long-necked dinosaur body outline on a cream background with a heart marked in the chest and one arrow running all the way up the neck to the head. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "它的尾巴也很长，\n甩起来像一条鞭子。\n啪的一声，\n谁都不敢\n靠得太近。",
+      "scene": "One long-necked dinosaur swinging its long tail on a cream background, motion lines behind the tail tip. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "脖子往前伸，\n尾巴往后伸，\n中间搭在四条腿上。\n整个身体\n就像一座桥，稳稳的。",
+      "scene": "A simple clear diagram, drawn flat and plain: one long-necked dinosaur seen from the side on a cream background with its neck and tail drawn as the two arms of a bridge and its legs as the bridge supports. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "爸爸把我举起来，\n我一伸手\n就够到了那个果子。\n原来长脖子\n是这种感觉。",
+      "scene": "The father lifts the little boy up on his shoulders in the garden and the boy reaches out and picks the fruit, delighted.",
+      "has_boy": true
+    }
+  ]
+}

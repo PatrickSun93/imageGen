@@ -1,0 +1,115 @@
+{
+  "title": "三角龙的角",
+  "subtitle": "三只角和一块大盾",
+  "slug": "triceratops",
+  "seed_base": 74000,
+  "character": "wearing a mustard yellow t-shirt, olive shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, thick wax crayon drawing with grainy strokes, clay red, mustard yellow and dusty green",
+  "style_label": "蜡笔",
+  "keyword": "三角龙",
+  "diagram_pages": [
+    2,
+    3,
+    5,
+    7,
+    9,
+    11
+  ],
+  "palette": {
+    "ink": "#2e2620",
+    "soft": "#7b6a58",
+    "ground": "#f3efe6",
+    "paper": "#fcfaf4",
+    "accent": "#b0492f",
+    "bark": "#8a7a5e",
+    "line": "#ded6c6",
+    "ink_d": "#ebe4d7",
+    "soft_d": "#a6937c",
+    "ground_d": "#171109",
+    "paper_d": "#231b12",
+    "accent_d": "#cb6a4c",
+    "bark_d": "#8a7a5e",
+    "line_d": "#3b3225"
+  },
+  "neg_extra": "",
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "这个头\n比我整个人还高。\n上面有三只角，\n后面还顶着\n一块大大的盾。",
+      "scene": "The little boy stands beside a huge triceratops skull in a museum, looking up at it, his head no higher than the skull's beak.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "它的角一共三只。\n鼻子上一只短的，\n两只眼睛上面\n各有一只长的。\n所以它叫三角龙。",
+      "scene": "A simple clear diagram, drawn flat and plain: one triceratops head seen from the front on a cream background with one short horn on the nose and one long horn above each eye, three horns in total. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 3,
+      "zh": "眼睛上面那两只角，\n有一米那么长，\n比大人的胳膊还长。\n尖尖的，\n谁也不敢乱碰。",
+      "scene": "A simple clear diagram, drawn flat and plain: one long pointed horn shape lying beside one outstretched adult arm outline on a cream background, the horn clearly longer. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 4,
+      "zh": "脖子后面那块大盾，\n是骨头长出来的。\n它一低头，\n盾正好\n挡在脖子前面。",
+      "scene": "One triceratops seen from the side on a cream background with its head lowered so the bony frill shields its neck. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 5,
+      "zh": "这块盾有什么用呢？\n能挡住咬过来的嘴，\n能撑得很大吓唬对手，\n同伴远远看见，\n也认得出是自己人。",
+      "scene": "A simple clear diagram, drawn flat and plain: three small triceratops head shapes in a row on a cream background, the first with a bite mark stopped at the frill, the second with the frill drawn extra wide, the third with a patterned frill. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 6,
+      "zh": "两只三角龙\n也会打架。\n角对着角\n顶来顶去，\n谁先退开谁就算输。",
+      "scene": "Two triceratops facing each other on a cream background with their horns locked together, pushing. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 7,
+      "zh": "它的嘴像鸟喙，\n又硬又尖，\n专门剪断粗树枝。\n后面的牙\n再把叶子磨碎。",
+      "scene": "A simple clear diagram, drawn flat and plain: one triceratops jaw seen from the side on a cream background, the front drawn as a hard pointed beak and the back as rows of flat grinding teeth. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 8,
+      "zh": "它有四条腿，\n又粗又壮。\n身体那么重，\n走起路来\n地面都跟着抖。",
+      "scene": "One triceratops walking on four thick sturdy legs on a cream background. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 9,
+      "zh": "它有多大呢？\n和一辆小汽车\n差不多长，\n可是要重得多，\n三辆车加起来才够。",
+      "scene": "A simple clear diagram, drawn flat and plain: one triceratops silhouette and one car shape standing one above the other on a cream background, exactly the same length. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 10,
+      "zh": "它们常常\n一大群走在一起。\n小的走在中间，\n大的围在外面，\n角全都朝着外面。",
+      "scene": "A group of triceratops standing in a ring on a cream background with the small ones in the middle and the big ones facing outward. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 11,
+      "zh": "它的头骨又大又硬，\n埋在泥沙里\n不容易碎。\n所以我们挖出来的\n三角龙头骨特别多。",
+      "scene": "A simple clear diagram, drawn flat and plain: one cross-section of layered ground on a cream background with one large triceratops skull embedded in the middle layer. Nothing else in the picture.",
+      "has_boy": false
+    },
+    {
+      "n": 12,
+      "zh": "我摸了摸\n那块盾的边。\n凉凉的，硬硬的。\n它到底\n顶过多少次呢？",
+      "scene": "The little boy reaches up and touches the edge of the triceratops skull's frill with one hand, thoughtful.",
+      "has_boy": true
+    }
+  ]
+}
