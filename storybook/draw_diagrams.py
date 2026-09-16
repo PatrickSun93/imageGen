@@ -4108,6 +4108,1140 @@ def _(d, pal):
     return "1 个池塘剖面：1 层冰（4 道裂纹）+ 1 池水 + 1 层泥，泥里埋着 1 只青蛙和 1 只乌龟"
 
 
+# ================================================================ 第六批：恐龙十本
+# 这批的示意图几乎全是「比大小、比长短、数数目、看方向」，正是程序的活。
+# 恐龙的形状统一走剪影：轮廓一条闭合多边形画完（手册 4.2f —— 拼圆角矩形会散架），
+# 单位坐标里设计一次，各页按 L 缩放，所以同一种恐龙在十本里长得一样。
+
+def poly(d, pts, pal, fill=None, w=7):
+    """闭合多边形 + 描边。polygon 的 outline 不支持 width，只能自己描。"""
+    d.polygon(pts, fill=fill if fill is not None else pal["soft"])
+    for a, b in zip(pts, pts[1:] + pts[:1]):
+        d.line([a, b], fill=pal["ink"], width=w)
+
+
+def at(unit, cx, cy, L, flip=False):
+    """把单位坐标（体长 1.0，原点在臀部）放到画面上。"""
+    s = -1 if flip else 1
+    return [(cx + s * x * L, cy + y * L) for x, y in unit]
+
+
+def limb(d, unit, cx, cy, L, pal, fill=None, w=7, flip=False):
+    """一条腿：先描一道粗的 ink，再压一道细的填充色，等于给粗线加了描边。"""
+    pts = at(unit, cx, cy, L, flip)
+    d.line(pts, fill=pal["ink"], width=int(L * 0.075) + w, joint="curve")
+    d.line(pts, fill=fill if fill is not None else pal["soft"],
+           width=max(2, int(L * 0.075) - w // 2), joint="curve")
+
+
+# 剪影的点列：体长 1.0，原点在髋，y 向下为正。
+# 第一版身体太厚、脖子没有收窄，兽脚类画出来是一块平板、蜥脚类是只肥鸭；
+# 这版给头、颈、躯干、尾各自留了明确的段落，尾巴一路收细。
+THEROPOD = [(-.50, -.26), (-.47, -.32), (-.40, -.33), (-.34, -.28), (-.28, -.24),
+            (-.18, -.20), (-.05, -.19), (.06, -.17), (.20, -.14), (.34, -.10),
+            (.50, -.06), (.34, -.03), (.20, .01), (.06, .06), (-.08, .05),
+            (-.20, .00), (-.30, -.14), (-.38, -.20), (-.49, -.20)]
+THIGH = [(-.02, -.06), (.08, -.04), (.13, .13), (.05, .14)]
+SHIN = [(.05, .14), (.13, .13), (.07, .27), (.01, .26)]
+FOOT = [(.01, .26), (.07, .27), (.14, .33), (-.03, .33)]
+
+SAUROPOD = [(-.50, -.40), (-.46, -.44), (-.42, -.41), (-.38, -.36), (-.16, -.14),
+            (.00, -.17), (.18, -.14), (.32, -.10), (.50, -.05), (.32, -.04),
+            (.18, .05), (.00, .08), (-.16, .03), (-.36, -.30), (-.48, -.38)]
+CERATOPS = [(-.50, -.02), (-.44, -.11), (-.35, -.15), (-.27, -.27), (-.10, -.31),
+            (-.05, -.18), (.10, -.16), (.26, -.12), (.50, -.05), (.26, .02),
+            (.05, .10), (-.22, .07), (-.42, .03)]
+
+
+def dino_theropod(d, cx, cy, L, pal, fill=None, w=7, flip=False, run=False):
+    """侧视兽脚类。站立高度约 0.66L，脚底在 cy + 0.33L。
+
+    腿用三段多边形（大腿 / 小腿 / 脚）而不是粗线段 —— 粗线段画出来两条腿会绞在一起。
+    远侧的一条先画、填深色，近侧的后画，这样前后分得开。
+    """
+    off = .075 if run else .018
+    far = pal["bark"]
+    for part in (THIGH, SHIN, FOOT):
+        poly(d, at([(x - off, y) for x, y in part], cx, cy, L, flip), pal, far, max(3, w - 2))
+    body = [(x, y - (.04 if x > .15 else 0)) for x, y in THEROPOD] if run else THEROPOD
+    poly(d, at(body, cx, cy, L, flip), pal, fill, w)
+    poly(d, at([(-.19, -.03), (-.13, .01), (-.15, .07), (-.21, .04)], cx, cy, L, flip),
+         pal, fill, max(3, w - 3))                                   # 那条很短的前肢
+    for part in (THIGH, SHIN, FOOT):
+        poly(d, at([(x + off, y) for x, y in part], cx, cy, L, flip), pal, fill, max(3, w - 2))
+    ex, ey = at([(-.42, -.28)], cx, cy, L, flip)[0]
+    disc(d, ex, ey, max(3, L * .013), pal["ink"], pal, w=0)
+    return at(body, cx, cy, L, flip)
+
+
+def dino_sauropod(d, cx, cy, L, pal, fill=None, w=7, flip=False):
+    """侧视蜥脚类。站立高度约 0.76L，脚底在 cy + 0.32L。腿是上粗下细的柱子。"""
+    def leg(dx, top, bot, half_t, half_b):
+        return [(dx - half_t, top), (dx + half_t, top), (dx + half_b, bot), (dx - half_b, bot)]
+    for dx in (-.13, .17):
+        poly(d, at(leg(dx, .00, .30, .034, .026), cx, cy, L, flip), pal, pal["bark"], max(3, w - 2))
+    poly(d, at(SAUROPOD, cx, cy, L, flip), pal, fill, w)
+    for dx in (-.19, .11):
+        poly(d, at(leg(dx, .00, .32, .040, .031), cx, cy, L, flip), pal, fill, max(3, w - 2))
+    ex, ey = at([(-.45, -.40)], cx, cy, L, flip)[0]
+    disc(d, ex, ey, max(3, L * .011), pal["ink"], pal, w=0)
+    return at(SAUROPOD, cx, cy, L, flip)
+
+
+def dino_ceratops(d, cx, cy, L, pal, fill=None, w=7, flip=False, horns=True):
+    """侧视三角龙。horns=True 画出鼻角和一只眉角（侧视只看得见一只）。"""
+    for dx in (-.16, .14):
+        limb(d, [(dx, .04), (dx + .015, .30)], cx, cy, L, pal, fill, w, flip)
+    poly(d, at(CERATOPS, cx, cy, L, flip), pal, fill, w)
+    for dx in (-.20, .10):
+        limb(d, [(dx, .04), (dx, .32)], cx, cy, L, pal, fill, w, flip)
+    if horns:
+        poly(d, at([(-.46, -.06), (-.40, -.10), (-.43, -.02)], cx, cy, L, flip), pal, fill, max(3, w - 3))
+        poly(d, at([(-.38, -.14), (-.20, -.30), (-.31, -.11)], cx, cy, L, flip), pal, fill, max(3, w - 3))
+    return at(CERATOPS, cx, cy, L, flip)
+
+
+def bird_shape(d, cx, cy, L, pal, fill=None, w=6, flip=False):
+    """一只小鸟：身体、头、喙、尾，两条细腿。"""
+    body = [(-.30, -.10), (-.16, -.26), (.04, -.22), (.22, -.06), (.50, -.16),
+            (.44, .04), (.18, .10), (-.10, .10), (-.26, .02)]
+    poly(d, at(body, cx, cy, L, flip), pal, fill, w)
+    poly(d, at([(-.30, -.10), (-.50, -.06), (-.30, -.02)], cx, cy, L, flip), pal,
+         pal["accent"], max(3, w - 2))
+    for dx in (-.02, .08):
+        limb(d, [(dx, .08), (dx, .22)], cx, cy, L, pal, fill, max(3, w - 3), flip)
+
+
+def chicken_shape(d, cx, cy, H, pal, fill=None, w=6):
+    """一只鸡，按站立高度 H 画：脚底在 cy + 0.5H，冠顶在 cy - 0.5H。
+
+    第一版把整只鸡塞进一个多边形，出来是个球；改成身体、头、冠、喙、尾分件拼。
+    """
+    F = fill if fill is not None else pal["paper"]
+    poly(d, [(cx - H * .26, cy - H * .02), (cx - H * .52, cy - H * .24),
+             (cx - H * .44, cy + H * .14)], pal, F, max(3, w - 2))           # 尾羽，先画好让身体压住根部
+    for dx in (-H * .08, H * .08):                                           # 腿，一直踩到地线
+        d.line([cx + dx, cy + H * .22, cx + dx, cy + H * .50], fill=pal["ink"], width=w + 2)
+        d.line([cx + dx - H * .05, cy + H * .50, cx + dx + H * .06, cy + H * .50],
+               fill=pal["ink"], width=w + 1)
+    d.ellipse([cx - H * .30, cy - H * .19, cx + H * .30, cy + H * .29],
+              fill=F, outline=pal["ink"], width=w)
+    hx, hy = cx + H * .17, cy - H * .32
+    disc(d, hx, hy, H * .13, F, pal, w=w)
+    for i in range(-1, 2):                                                   # 鸡冠三个尖
+        poly(d, [(hx + i * H * .07 - H * .03, hy - H * .11), (hx + i * H * .07, hy - H * .20),
+                 (hx + i * H * .07 + H * .03, hy - H * .11)], pal, pal["accent"], max(3, w - 3))
+    poly(d, [(hx + H * .11, hy - H * .03), (hx + H * .25, hy + H * .01),
+             (hx + H * .11, hy + H * .06)], pal, pal["accent"], max(3, w - 3))
+    disc(d, hx + H * .03, hy - H * .03, max(2, H * .022), pal["ink"], pal, w=0)
+
+
+def bus_shape(d, cx, cy, L, pal, fill=None, w=7, windows=4):
+    """一辆公交车，长度 L。轮子压在 cy + .18L 这条地线上。"""
+    h = L * 0.30
+    d.rounded_rectangle([cx - L / 2, cy - h, cx + L / 2, cy + h * 0.55], radius=L * 0.05,
+                        fill=fill if fill is not None else pal["paper"], outline=pal["ink"], width=w)
+    for i in range(windows):
+        wx = cx - L / 2 + L * (0.10 + i * 0.20)
+        d.rectangle([wx, cy - h * 0.72, wx + L * 0.12, cy - h * 0.18], fill=pal["soft"],
+                    outline=pal["ink"], width=max(3, w - 3))
+    for dx in (-L * 0.30, L * 0.30):
+        disc(d, cx + dx, cy + h * 0.55, L * 0.07, pal["ink"], pal, w=0)
+
+
+def car_shape(d, cx, cy, L, pal, fill=None, w=7):
+    """一辆小汽车，长度 L。"""
+    h = L * 0.24
+    d.rounded_rectangle([cx - L / 2, cy - h * 0.5, cx + L / 2, cy + h * 0.7], radius=L * 0.06,
+                        fill=fill if fill is not None else pal["paper"], outline=pal["ink"], width=w)
+    poly(d, [(cx - L * 0.22, cy - h * 0.5), (cx - L * 0.10, cy - h * 1.25),
+             (cx + L * 0.14, cy - h * 1.25), (cx + L * 0.24, cy - h * 0.5)], pal,
+         fill if fill is not None else pal["paper"], w)
+    for dx in (-L * 0.28, L * 0.28):
+        disc(d, cx + dx, cy + h * 0.7, L * 0.09, pal["ink"], pal, w=0)
+
+
+def elephant_shape(d, cx, cy, H, pal, fill=None, w=6):
+    """一头大象，按肩高 H 画。"""
+    L = H * 1.15
+    body = [(-.34, -.22), (-.16, -.36), (.14, -.34), (.32, -.18), (.34, .04),
+            (-.30, .06), (-.38, -.06)]
+    poly(d, at(body, cx, cy, L), pal, fill, w)
+    poly(d, at([(-.34, -.26), (-.16, -.30), (-.14, -.02), (-.30, -.04)], cx, cy, L), pal,
+         pal["soft"], max(3, w - 2))
+    d.line(at([(-.36, -.10), (-.44, .06), (-.38, .18)], cx, cy, L), fill=pal["ink"],
+           width=max(6, int(L * 0.055)), joint="curve")
+    for dx in (-.22, -.04, .12, .26):
+        limb(d, [(dx, .02), (dx, .22)], cx, cy, L, pal, fill, max(3, w - 2))
+
+
+def hbar(d, x0, cy, length, h, pal, fill=None, w=7):
+    """一根从 x0 起算的横条。比长短的页全用它，左端一律对齐。"""
+    d.rounded_rectangle([x0, cy - h / 2, x0 + length, cy + h / 2], radius=min(h / 2, 18),
+                        fill=fill if fill is not None else pal["accent"],
+                        outline=pal["ink"], width=w)
+
+
+def footprint(d, cx, cy, s, pal, fill=None, w=5):
+    """一个三趾脚印。"""
+    poly(d, [(cx, cy - s * 0.55), (cx + s * 0.30, cy - s * 0.10), (cx + s * 0.22, cy + s * 0.50),
+             (cx, cy + s * 0.22), (cx - s * 0.22, cy + s * 0.50), (cx - s * 0.30, cy - s * 0.10)],
+         pal, fill if fill is not None else pal["bark"], w)
+
+
+@page("dinosize", 2)
+def _(d, pal):
+    """最大的恐龙和三辆公交车一样长 —— 两行必须严格等长。"""
+    span = 780                        # 再长就装不下整只恐龙的高度，会踩到下面那排车
+    cx, cy = S / 2, 380
+    dino_sauropod(d, cx, cy, span, pal, pal["accent"])
+    bus_l = span / 3
+    for i in range(3):
+        bus_shape(d, cx - span / 2 + bus_l * (i + 0.5), 800, bus_l, pal)
+    for x in (cx - span / 2, cx + span / 2):      # 两端拉下来的对齐线
+        for seg in range(6):
+            y = 648 + seg * 18
+            d.line([x, y, x, y + 9], fill=pal["line"], width=5)
+    return f"1 只蜥脚类，体长 {span}px；下面 3 辆公交车首尾相接合计 {bus_l * 3:.0f}px，两端有对齐线"
+
+
+@page("dinosize", 3)
+def _(d, pal):
+    """最小的恐龙和一只鸡一样高 —— 两个的脚都落在同一条地线上。"""
+    base = S / 2 + 180
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    h = 300                              # 两个的脚底都必须落在 base 上，不能穿过去
+    L = h / 0.66                         # 兽脚类站立高度是 0.66L
+    dino_theropod(d, S / 2 - 210, base - L * 0.33, L, pal, pal["accent"], run=True)
+    chicken_shape(d, S / 2 + 230, base - h * 0.50, h, pal, pal["paper"])
+    return f"1 只小兽脚类 + 1 只鸡，脚都踩在同一条地线上，站立高度都是 {h}px"
+
+
+@page("dinosize", 5)
+def _(d, pal):
+    """一头大象 vs 十头大象。右边必须正好十头。"""
+    d.line([S / 2, MARGIN + 60, S / 2, S - MARGIN - 60], fill=pal["line"], width=6)
+    elephant_shape(d, S / 4, S / 2, 190, pal, pal["soft"])
+    n = 0
+    for r in range(2):
+        for c in range(5):
+            elephant_shape(d, S / 2 + 70 + c * 82, S / 2 - 110 + r * 220, 88, pal, pal["accent"])
+            n += 1
+    return f"左边 1 头大象；右边 {n} 头（2 行 ×5），中间 1 条分隔线"
+
+
+@page("dinosize", 7)
+def _(d, pal):
+    """骨头剖开，里面全是空洞。"""
+    x0, x1 = MARGIN + 60, S - MARGIN - 60
+    cy = S / 2
+    d.rounded_rectangle([x0, cy - 150, x1, cy + 150], radius=140,
+                        fill=pal["paper"], outline=pal["ink"], width=11)
+    rnd = random.Random(19)
+    holes = 0
+    for r_ in range(3):
+        for c_ in range(9):
+            hx = x0 + 110 + c_ * (x1 - x0 - 200) / 8
+            hy = cy - 78 + r_ * 78
+            rad = 26 + rnd.randint(-6, 8)
+            disc(d, hx, hy, rad, pal["ground"], pal, w=6)
+            holes += 1
+    return f"1 根剖开的骨头，里面 {holes} 个空洞（3 行 ×9）"
+
+
+@page("dinosize", 9)
+def _(d, pal):
+    """一天的叶子堆得比汽车高。"""
+    base = S - MARGIN - 150
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    hx, hw, hh = S / 2 - 210, 380, 520
+    poly(d, [(hx - hw / 2, base), (hx, base - hh), (hx + hw / 2, base)], pal, pal["accent"], 9)
+    rnd = random.Random(4)
+    for _ in range(22):
+        t = rnd.uniform(0.1, 0.9)
+        lx = hx + rnd.uniform(-1, 1) * (hw / 2) * (1 - t)
+        ly = base - hh * t
+        d.ellipse([lx - 26, ly - 12, lx + 26, ly + 12], fill=pal["soft"],
+                  outline=pal["ink"], width=4)
+    car_shape(d, S / 2 + 250, base - 60, 330, pal)
+    return f"1 堆叶子高 {hh}px（22 片叶子）+ 1 辆车高约 {330 * 0.42:.0f}px，堆明显更高"
+
+
+@page("dinosize", 11)
+def _(d, pal):
+    """从最小排到最大：五只，一只比一只高。"""
+    # 并排放不下 —— 最大那只就有 720px 宽。改成鼻尖左端对齐、同一条地线，
+    # 从大到小依次画上去，尾巴伸得越远的越大。
+    base = S - MARGIN - 120
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    x0 = MARGIN + 30
+    Ls = [720, 560, 400, 260, 150]
+    for i, L in enumerate(Ls):
+        dino_sauropod(d, x0 + L / 2, base - L * 0.32, L, pal,
+                      pal["accent"] if i == 0 else pal["paper"], w=6)
+    return f"5 只蜥脚类，鼻尖都对齐在左边、脚都踩同一条地线，体长 {Ls}，最大的填了强调色"
+
+
+@page("trex", 2)
+def _(d, pal):
+    """一颗牙和一根香蕉一样长。"""
+    cy = S / 2
+    ln = 560
+    tooth = [(S / 2 - 150, cy - ln / 2), (S / 2 - 86, cy - ln / 2 + 40),
+             (S / 2 - 96, cy + ln / 2), (S / 2 - 196, cy + ln / 2 - 30),
+             (S / 2 - 200, cy - ln / 2 + 60)]
+    poly(d, tooth, pal, pal["paper"], 10)
+    for i in range(14):                                  # 牙缘的锯齿
+        ty = cy - ln / 2 + 60 + i * (ln - 90) / 14
+        d.line([S / 2 - 96 - i * 0.4, ty, S / 2 - 76, ty + 10], fill=pal["ink"], width=5)
+    bx = S / 2 + 150
+    poly(d, [(bx - 60, cy - ln / 2), (bx + 40, cy - ln / 2 + 90), (bx + 70, cy + ln / 2 - 90),
+             (bx + 10, cy + ln / 2), (bx - 30, cy + ln / 2 - 120), (bx - 60, cy - ln / 2 + 120)],
+         pal, pal["accent"], 10)
+    return f"1 颗带 14 道锯齿的牙 + 1 根香蕉，两个都是 {ln}px 长，上下端对齐"
+
+
+@page("trex", 3)
+def _(d, pal):
+    """牙缘的锯齿和面包刀是一样的。"""
+    for (cx, cy, w_, h_), knife in zip(panel2(d, pal), (False, True)):
+        y = cy
+        x0, x1 = cx - w_ * 0.34, cx + w_ * 0.34
+        if knife:
+            d.rounded_rectangle([x0, y - 34, x1 - 90, y + 34], radius=10,
+                                fill=pal["paper"], outline=pal["ink"], width=8)
+            d.rounded_rectangle([x1 - 96, y - 22, x1, y + 22], radius=12,
+                                fill=pal["bark"], outline=pal["ink"], width=8)
+        else:
+            poly(d, [(x0, y - 60), (x1, y - 20), (x1, y + 34), (x0, y + 34)], pal, pal["paper"], 8)
+        n = 11
+        for i in range(n):
+            sx = x0 + 14 + i * (x1 - x0 - 120) / n
+            poly(d, [(sx, y + 34), (sx + 18, y + 72), (sx + 36, y + 34)], pal, pal["accent"], 5)
+    return "左格牙缘 / 右格面包刀，两边各 11 个一样的锯齿"
+
+
+@page("trex", 4)
+def _(d, pal):
+    """牙断了，下面早就长好了新的顶上来。"""
+    cx, cy = S / 2, S / 2
+    d.rounded_rectangle([MARGIN + 60, cy - 40, S - MARGIN - 60, cy + 300], radius=30,
+                        fill=pal["soft"], outline=pal["ink"], width=10)
+    poly(d, [(cx - 150, cy - 330), (cx - 80, cy - 300), (cx - 90, cy + 20), (cx - 190, cy + 20)],
+         pal, pal["paper"], 9)
+    poly(d, [(cx + 100, cy + 30), (cx + 165, cy + 60), (cx + 158, cy + 250), (cx + 68, cy + 250)],
+         pal, pal["accent"], 9)
+    arrow(d, cx + 120, cy + 260, cx + 120, cy + 70, pal, w=12, head=32)
+    return "1 副牙床：1 颗立着的旧牙 + 1 颗埋在下面的新牙 + 1 支向上顶的箭头"
+
+
+@page("trex", 6)
+def _(d, pal):
+    """我们咬一口，和它咬一口。"""
+    x0 = MARGIN + 50
+    full = S - 2 * MARGIN - 100
+    hbar(d, x0, S / 2 - 110, full * 0.07, 84, pal, pal["soft"])
+    hbar(d, x0, S / 2 + 110, full, 84, pal, pal["accent"])
+    d.line([x0, S / 2 - 210, x0, S / 2 + 210], fill=pal["ink"], width=8)
+    return "上条只有 7%（人咬一口）/ 下条铺满整幅（霸王龙），左端对齐在同一条线上"
+
+
+@page("trex", 8)
+def _(d, pal):
+    """前爪小到摸不到自己的嘴。"""
+    base = S - MARGIN - 140
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    L = S - 2 * MARGIN - 60
+    dino_theropod(d, S / 2, base - L * 0.33, L, pal, pal["paper"], w=8)
+    ax, ay = S / 2 - L * 0.22, base - L * 0.33 - L * 0.04
+    d.ellipse([ax - 95, ay - 80, ax + 95, ay + 80], outline=pal["accent"], width=12)
+    return "1 只兽脚类侧影 + 1 个圈，圈住那两条很短的前肢"
+
+
+@page("longneck", 2)
+def _(d, pal):
+    """站在地上就够得到三楼。楼高和恐龙的头必须平齐。"""
+    base = S - MARGIN - 110
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    floors, fh = 3, 230
+    bx0, bx1 = S - MARGIN - 300, S - MARGIN - 40
+    for i in range(floors):
+        fy = base - (i + 1) * fh
+        d.rectangle([bx0, fy, bx1, fy + fh], fill=pal["paper"], outline=pal["ink"], width=8)
+        for c_ in range(2):
+            wx = bx0 + 50 + c_ * 130
+            d.rectangle([wx, fy + 60, wx + 80, fy + 150], fill=pal["soft"],
+                        outline=pal["ink"], width=5)
+    L = 640
+    head_y = base - floors * fh + 60                      # 顶层窗口高度
+    dino_sauropod(d, S / 2 - 210, head_y + L * 0.36, L, pal, pal["accent"])
+    return f"1 座 {floors} 层楼（每层 {fh}px）+ 1 只蜥脚类，头正好齐顶层窗口"
+
+
+@page("longneck", 3)
+def _(d, pal):
+    """脖子里的骨头：十五块对七块。"""
+    for (cx, cy, w_, h_), long_ in zip(panel2(d, pal), (True, False)):
+        n = 15 if long_ else 7
+        top, bot = cy - h_ * 0.40, cy + h_ * 0.40
+        seg = (bot - top) / n
+        for i in range(n):
+            y = top + i * seg
+            d.rounded_rectangle([cx - w_ * 0.16, y + 4, cx + w_ * 0.16, y + seg - 4],
+                                radius=12, fill=pal["accent"] if long_ else pal["soft"],
+                                outline=pal["ink"], width=6)
+    return "左格脖子分 15 块骨头（恐龙）/ 右格 7 块（我们），两根脖子一样长"
+
+
+@page("longneck", 5)
+def _(d, pal):
+    """头小得不像话 —— 圈出来给人看。"""
+    L = S - 2 * MARGIN - 80
+    cx, cy = S / 2 + 60, S / 2 + 120
+    pts = dino_sauropod(d, cx, cy, L, pal, pal["paper"], w=8)
+    hx, hy = cx - 0.46 * L, cy - 0.35 * L
+    d.ellipse([hx - 90, hy - 80, hx + 90, hy + 80], outline=pal["accent"], width=12)
+    return "1 只蜥脚类侧影 + 1 个圈，圈住那颗很小的头"
+
+
+@page("longneck", 7)
+def _(d, pal):
+    """肚子里的石头替牙齿磨叶子。"""
+    cx, cy = S / 2, S / 2 + 20
+    poly(d, [(cx - 300, cy - 240), (cx + 260, cy - 280), (cx + 330, cy + 60),
+             (cx + 180, cy + 300), (cx - 180, cy + 280), (cx - 320, cy + 40)],
+         pal, pal["paper"], 11)
+    rnd = random.Random(11)
+    leaves = stones = 0
+    for _ in range(9):
+        lx, ly = cx + rnd.uniform(-220, 220), cy + rnd.uniform(-180, 200)
+        d.ellipse([lx - 46, ly - 20, lx + 46, ly + 20], fill=pal["soft"],
+                  outline=pal["ink"], width=5)
+        leaves += 1
+    for _ in range(7):
+        sx, sy = cx + rnd.uniform(-230, 230), cy + rnd.uniform(-170, 210)
+        disc(d, sx, sy, 34, pal["bark"], pal, w=5)
+        stones += 1
+    return f"1 个胃的轮廓，里面 {leaves} 片叶子 + {stones} 颗磨石"
+
+
+@page("longneck", 9)
+def _(d, pal):
+    """血要一路送到那么高的头上。"""
+    L = S - 2 * MARGIN - 80
+    cx, cy = S / 2 + 40, S / 2 + 160
+    dino_sauropod(d, cx, cy, L, pal, pal["paper"], w=8)
+    hx, hy = cx - 0.16 * L, cy - 0.02 * L
+    poly(d, [(hx, hy + 46), (hx - 48, hy - 6), (hx - 20, hy - 46), (hx, hy - 20),
+             (hx + 20, hy - 46), (hx + 48, hy - 6)], pal, pal["accent"], 7)
+    arrow(d, hx - 20, hy - 50, cx - 0.44 * L, cy - 0.32 * L, pal, w=12, head=30)
+    return "1 只蜥脚类 + 胸口 1 颗心 + 1 支从心脏沿着脖子一路向上到头的箭头"
+
+
+@page("longneck", 11)
+def _(d, pal):
+    """脖子和尾巴像桥的两臂，腿是桥墩。"""
+    base = S - MARGIN - 150
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    L = S - 2 * MARGIN - 60
+    cx, cy = S / 2, base - L * 0.30
+    dino_sauropod(d, cx, cy, L, pal, pal["paper"], w=8)
+    for dx in (-0.17, 0.12):
+        d.line([cx + dx * L, cy + 0.02 * L, cx + dx * L, base], fill=pal["accent"], width=14)
+    d.line([cx - 0.44 * L, cy - 0.30 * L, cx - 0.16 * L, cy - 0.12 * L],
+           fill=pal["accent"], width=12)
+    d.line([cx + 0.16 * L, cy - 0.12 * L, cx + 0.48 * L, cy - 0.02 * L],
+           fill=pal["accent"], width=12)
+    return "1 只蜥脚类 + 2 根画成桥墩的腿 + 脖子和尾巴画成桥的两臂"
+
+
+def ceratops_front(d, cx, cy, W, pal, fill=None, w=8, frill_wide=False, pattern=False):
+    """正面的三角龙头：一块盾 + 一张脸 + 三只角（鼻 1 短，眼上 2 长）。"""
+    fw = W * (1.30 if frill_wide else 1.0)
+    d.pieslice([cx - fw / 2, cy - W * 0.62, cx + fw / 2, cy + W * 0.30], 180, 360,
+               fill=fill if fill is not None else pal["soft"], outline=pal["ink"], width=w)
+    if pattern:
+        for i in range(-2, 3):
+            disc(d, cx + i * fw * 0.17, cy - W * 0.30, W * 0.06, pal["accent"], pal, w=4)
+    # 脸的下端要收成喙，不然是张平截的牛脸；眉角必须从眼睛正上方长出来，
+    # 第一版从脸颊两侧伸出去，看着像兔耳朵。
+    poly(d, [(cx - W * 0.25, cy - W * 0.22), (cx + W * 0.25, cy - W * 0.22),
+             (cx + W * 0.19, cy + W * 0.30), (cx, cy + W * 0.54), (cx - W * 0.19, cy + W * 0.30)],
+         pal, fill if fill is not None else pal["paper"], w)
+    for s in (-1, 1):                                       # 两只眉角，从眼睛正上方斜着向外
+        poly(d, [(cx + s * W * 0.07, cy - W * 0.14), (cx + s * W * 0.30, cy - W * 0.80),
+                 (cx + s * W * 0.21, cy - W * 0.12)], pal, pal["paper"], max(4, w - 3))
+    poly(d, [(cx - W * 0.07, cy + W * 0.26), (cx, cy + W * 0.04), (cx + W * 0.07, cy + W * 0.26)],
+         pal, pal["paper"], max(4, w - 3))                  # 鼻角，在眼睛下面、喙上面
+    for s in (-1, 1):
+        disc(d, cx + s * W * 0.14, cy - W * 0.04, W * 0.045, pal["ink"], pal, w=0)
+    return 3
+
+
+@page("triceratops", 2)
+def _(d, pal):
+    """三只角：鼻子上一只短的，眼睛上两只长的。"""
+    n = ceratops_front(d, S / 2, S / 2, 520, pal, pal["soft"], w=10)
+    return f"1 个正面的三角龙头：{n} 只角（鼻子上 1 只短的 + 眼睛上各 1 只长的）+ 1 块盾"
+
+
+@page("triceratops", 3)
+def _(d, pal):
+    """眉角比大人的胳膊还长。"""
+    cy1, cy2 = S / 2 - 150, S / 2 + 170
+    x0 = MARGIN + 60
+    horn_len, arm_len = S - 2 * MARGIN - 120, (S - 2 * MARGIN - 120) * 0.72
+    poly(d, [(x0, cy1 - 60), (x0 + horn_len, cy1 - 6), (x0 + horn_len, cy1 + 6),
+             (x0, cy1 + 60)], pal, pal["paper"], 9)
+    d.line([x0, cy2, x0 + arm_len, cy2], fill=pal["ink"], width=76)
+    d.line([x0, cy2, x0 + arm_len, cy2], fill=pal["soft"], width=58)
+    disc(d, x0 + arm_len, cy2, 46, pal["soft"], pal, w=8)
+    d.line([x0, cy1 - 100, x0, cy2 + 100], fill=pal["ink"], width=8)
+    return f"上面 1 只角 {horn_len}px / 下面 1 条大人的胳膊 {arm_len:.0f}px，左端对齐，角明显更长"
+
+
+@page("triceratops", 5)
+def _(d, pal):
+    """盾的三个用处：挡、撑大、认亲。"""
+    xs, slot = lay(3)
+    W = min(slot * 0.80, 290)
+    cy = S / 2
+    ceratops_front(d, xs[0], cy, W, pal, pal["soft"], w=7)
+    for k in range(3):                                      # 停在盾上的咬痕
+        d.line([xs[0] - 60 + k * 44, cy - W * 0.52, xs[0] - 40 + k * 44, cy - W * 0.34],
+               fill=pal["accent"], width=9)
+    ceratops_front(d, xs[1], cy, W, pal, pal["soft"], w=7, frill_wide=True)
+    ceratops_front(d, xs[2], cy, W, pal, pal["soft"], w=7, pattern=True)
+    return "3 个三角龙头并排：① 咬痕停在盾上 ② 盾撑得特别宽 ③ 盾上有认亲的花纹"
+
+
+@page("triceratops", 7)
+def _(d, pal):
+    """前面是硬喙剪树枝，后面是磨牙磨叶子。"""
+    cx, cy = S / 2, S / 2
+    poly(d, [(cx - 380, cy - 40), (cx - 200, cy - 110), (cx + 330, cy - 90),
+             (cx + 330, cy + 90), (cx - 200, cy + 110), (cx - 380, cy + 40)],
+         pal, pal["paper"], 10)
+    poly(d, [(cx - 380, cy - 40), (cx - 250, cy - 70), (cx - 250, cy + 70), (cx - 380, cy + 40)],
+         pal, pal["accent"], 8)
+    teeth = 0
+    for i in range(7):
+        tx = cx - 190 + i * 74
+        d.rectangle([tx, cy - 40, tx + 54, cy + 40], fill=pal["soft"], outline=pal["ink"], width=5)
+        teeth += 1
+    return f"1 副侧看的颌：前端 1 个硬喙（填强调色）+ 后面 {teeth} 颗平磨牙"
+
+
+@page("triceratops", 9)
+def _(d, pal):
+    """和一辆小汽车一样长。"""
+    span = S - 2 * MARGIN - 80
+    dino_ceratops(d, S / 2, S / 2 - 140, span, pal, pal["accent"])
+    car_shape(d, S / 2, S / 2 + 260, span, pal)
+    return f"1 只三角龙 + 1 辆小汽车上下并排，都是 {span}px 长"
+
+
+@page("triceratops", 11)
+def _(d, pal):
+    """又大又硬的头骨埋在地层里。"""
+    layer_stack(d, pal, S / 2, S / 2 + 40, S - 2 * MARGIN, n=7, h=104)
+    ceratops_front(d, S / 2, S / 2 + 20, 300, pal, pal["paper"], w=8)
+    return "1 个 7 层的地层剖面，中间那层里嵌着 1 个三角龙头骨"
+
+
+def egg_shape(d, cx, cy, h, pal, fill=None, w=7, shell=0):
+    """一个蛋，总高 h。shell 大于 0 时再画一圈内壁，用来比壳的厚薄。"""
+    def ring(scale, inset):
+        pts = []
+        for i in range(49):
+            a = math.radians(i * 360 / 48)
+            r = h * 0.36 * (1 - 0.18 * math.cos(a)) * scale - inset
+            pts.append((cx + r * math.sin(a), cy - (h / 2 * scale - inset) * math.cos(a)))
+        return pts
+    poly(d, ring(1, 0), pal, fill if fill is not None else pal["paper"], w)
+    if shell:
+        poly(d, ring(1, shell), pal, pal["ground"], max(3, w - 3))
+    return h
+
+
+def skeleton_shape(d, cx, cy, L, pal, w=6, dashed=()):
+    """一副横躺的骨架：头、脊椎、8 根肋骨、2 条腿骨。dashed 里的肋骨画成虚线（补配的）。"""
+    # 头骨画成侧看的楔形（带眼窝和下颌），脊椎画成一节节椎骨 ——
+    # 第一版头是个白方块、脊椎是一条直线，整副看着像一把耙子。
+    skull = at([(-.40, -.05), (-.46, -.09), (-.54, -.06), (-.55, .01), (-.46, .05),
+                (-.40, .04)], cx, cy, L)
+    poly(d, skull, pal, pal["paper"], max(3, w - 2))
+    disc(d, cx - .475 * L, cy - .025 * L, max(3, L * .014), pal["ink"], pal, w=0)
+    d.line(at([(-.54, .04), (-.42, .07)], cx, cy, L), fill=pal["ink"], width=max(3, w - 3))
+    verts = 14
+    for i in range(verts):
+        t = -.40 + i * .062
+        vx = cx + t * L
+        vy = cy + (-.02 + .06 * max(0, t)) * L
+        d.rounded_rectangle([vx - .022 * L, vy - .020 * L, vx + .022 * L, vy + .020 * L],
+                            radius=max(2, L * .008), fill=pal["paper"], outline=pal["ink"],
+                            width=max(2, w - 3))
+    for i in range(8):
+        t = -.30 + i * .075
+        x0 = cx + t * L
+        y0 = cy + (-.03 + .03 * abs(t)) * L
+        pts = [(x0, y0), (x0 - .02 * L, y0 + .09 * L), (x0 + .01 * L, y0 + .16 * L)]
+        if i in dashed:
+            for k in range(0, 5, 2):                      # 虚线：只画奇数段
+                a = (pts[0][0] + (pts[2][0] - pts[0][0]) * k / 5,
+                     pts[0][1] + (pts[2][1] - pts[0][1]) * k / 5)
+                b = (pts[0][0] + (pts[2][0] - pts[0][0]) * (k + 1) / 5,
+                     pts[0][1] + (pts[2][1] - pts[0][1]) * (k + 1) / 5)
+                d.line([a, b], fill=pal["ink"], width=max(3, w - 2))
+        else:
+            d.line(pts, fill=pal["ink"], width=max(4, w - 1), joint="curve")
+    for dx in (-.16, .16):
+        d.line(at([(dx, .01), (dx + .04, .14), (dx - .02, .22)], cx, cy, L),
+               fill=pal["ink"], width=max(4, w - 1), joint="curve")
+    return 8
+
+
+@page("dinoegg", 2)
+def _(d, pal):
+    """最大的蛋和足球差不多，鸡蛋小得多。"""
+    base = S / 2 + 260
+    d.line([MARGIN + 60, base, S - MARGIN - 60, base], fill=pal["ink"], width=8)
+    egg_shape(d, S / 2 - 240, base - 90, 180, pal, pal["paper"], 8)
+    egg_shape(d, S / 2 + 160, base - 230, 460, pal, pal["accent"], 10)
+    return "1 个鸡蛋高 180px + 1 个恐龙蛋高 460px，都立在同一条线上"
+
+
+@page("dinoegg", 3)
+def _(d, pal):
+    """壳太厚，小恐龙就啄不破。"""
+    for (cx, cy, w_, h_), thick in zip(panel2(d, pal), (False, True)):
+        egg_shape(d, cx, cy, h_ * 0.62, pal, pal["soft"], 9, shell=14 if thick else 4)
+    return "左格蛋壳薄（内壁留 4px）/ 右格蛋壳厚（内壁留 14px），两个蛋一样大"
+
+
+@page("dinoegg", 5)
+def _(d, pal):
+    """蛋绕成一圈，中间空着。"""
+    cx, cy, R = S / 2, S / 2, 330
+    disc(d, cx, cy, R + 90, pal["bark"], pal, w=10)
+    disc(d, cx, cy, R - 110, pal["ground"], pal, w=8)
+    n = 10
+    for i in range(n):
+        a = math.radians(i * 360 / n - 90)
+        egg_shape(d, cx + R * math.cos(a), cy + R * math.sin(a), 170, pal, pal["paper"], 7)
+    return f"1 个俯视的窝：{n} 个蛋绕成一圈，中间空着"
+
+
+@page("dinoegg", 7)
+def _(d, pal):
+    """壳上的小孔，空气从这里进去。"""
+    x0, x1 = MARGIN + 80, S - MARGIN - 80
+    y0, y1 = S / 2 - 90, S / 2 + 90
+    d.rectangle([x0, y0, x1, y1], fill=pal["paper"], outline=pal["ink"], width=10)
+    n = 7
+    for i in range(n):
+        hx = x0 + (x1 - x0) * (i + 0.5) / n
+        d.rounded_rectangle([hx - 12, y0, hx + 12, y1], radius=10, fill=pal["ground"],
+                            outline=pal["ink"], width=5)
+        arrow(d, hx, y0 - 150, hx, y0 + 30, pal, w=8, head=22)
+    return f"1 块放大的蛋壳，{n} 个透气的小孔，每个孔上 1 支向里的箭头"
+
+
+@page("dinoegg", 11)
+def _(d, pal):
+    """几年就从猫那么大长到比车还大。"""
+    base = S - MARGIN - 120
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    x0 = MARGIN + 30
+    Ls = [180, 330, 540, 820]
+    tops = []
+    for i, L in enumerate(reversed(Ls)):
+        dino_theropod(d, x0 + L / 2, base - L * 0.33, L, pal,
+                      pal["accent"] if L == max(Ls) else pal["paper"], w=6)
+        tops.append((x0 + L * 0.10, base - L * 0.66))
+    d.line(sorted(tops), fill=pal["accent"], width=9, joint="curve")
+    return f"4 只小恐龙，鼻尖左端对齐、脚踩同一条地线，体长 {Ls}，头顶连成一条上升线"
+
+
+@page("fossil", 2)
+def _(d, pal):
+    """倒在河边，泥沙一层层盖上去。"""
+    n, h = 5, 118
+    top = MARGIN + 40
+    for i in range(n):                       # 层与层之间不留缝，泥沙是压实的
+        y = top + i * h
+        d.rectangle([MARGIN, y, S - MARGIN, y + h], fill=pal["soft"] if i % 2 else pal["bark"],
+                    outline=pal["ink"], width=7)
+    skeleton_shape(d, S / 2, top + n * h + 150, S - 2 * MARGIN - 80, pal, w=7)
+    return f"上面 {n} 层紧挨着的泥沙 + 正下方 1 副躺着的骨架（头骨 + 14 节椎骨 + 8 根肋骨）"
+
+
+@page("fossil", 4)
+def _(d, pal):
+    """水带着矿物渗进骨头，一点点换成石头。"""
+    x0, x1 = MARGIN + 70, S - MARGIN - 70
+    cy = S / 2
+    d.rounded_rectangle([x0, cy - 140, x1, cy + 140], radius=130,
+                        fill=pal["paper"], outline=pal["ink"], width=11)
+    rnd = random.Random(31)
+    grains = 0
+    for _ in range(46):
+        gx, gy = rnd.uniform(x0 + 90, x1 - 90), cy + rnd.uniform(-95, 95)
+        disc(d, gx, gy, rnd.randint(9, 17), pal["bark"], pal, w=0)
+        grains += 1
+    for i in range(4):
+        ax = x0 + 150 + i * (x1 - x0 - 300) / 3
+        arrow(d, ax, cy - 280, ax, cy - 150, pal, w=9, head=24)
+    return f"1 根骨头剖面 + 4 支向里渗的水箭头 + 骨头里 {grains} 颗矿物颗粒"
+
+
+@page("fossil", 5)
+def _(d, pal):
+    """几千万年，人只占最后一丁点。"""
+    x0 = MARGIN + 50
+    full = S - 2 * MARGIN - 100
+    hbar(d, x0, S / 2, full, 96, pal, pal["soft"])
+    segs = 10
+    for i in range(1, segs):
+        sx = x0 + full * i / segs
+        d.line([sx, S / 2 - 48, sx, S / 2 + 48], fill=pal["ink"], width=5)
+    d.rectangle([x0 + full - 14, S / 2 - 48, x0 + full, S / 2 + 48], fill=pal["accent"])
+    arrow(d, x0 + full, S / 2 + 190, x0 + full - 4, S / 2 + 70, pal, w=9, head=24)
+    return f"1 条分成 {segs} 格的长条（几千万年）+ 最右端 14px 宽的一小格，箭头指着它"
+
+
+@page("fossil", 7)
+def _(d, pal):
+    """挖化石的三样家伙：刷子、凿子、镐。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    d.rounded_rectangle([xs[0] - 34, cy - 230, xs[0] + 34, cy + 60], radius=24,
+                        fill=pal["bark"], outline=pal["ink"], width=8)
+    for i in range(7):                                     # 刷毛
+        bx = xs[0] - 30 + i * 10
+        d.line([bx, cy + 60, bx, cy + 190], fill=pal["ink"], width=7)
+    d.rounded_rectangle([xs[1] - 30, cy - 230, xs[1] + 30, cy + 90], radius=16,
+                        fill=pal["soft"], outline=pal["ink"], width=8)
+    poly(d, [(xs[1] - 30, cy + 90), (xs[1] + 30, cy + 90), (xs[1] + 6, cy + 200),
+             (xs[1] - 6, cy + 200)], pal, pal["paper"], 8)
+    d.rounded_rectangle([xs[2] - 26, cy - 140, xs[2] + 26, cy + 200], radius=16,
+                        fill=pal["bark"], outline=pal["ink"], width=8)
+    poly(d, [(xs[2] - 150, cy - 190), (xs[2] + 30, cy - 150), (xs[2] + 30, cy - 90),
+             (xs[2] - 140, cy - 130)], pal, pal["soft"], 8)
+    return "3 样工具并排：1 把刷子（7 根毛）/ 1 把凿子 / 1 把镐"
+
+
+@page("fossil", 9)
+def _(d, pal):
+    """缺掉的骨头是补上去的，画成虚线。"""
+    n = skeleton_shape(d, S / 2, S / 2, S - 2 * MARGIN - 60, pal, w=7, dashed=(2, 5, 6))
+    return f"1 副拼好的骨架：{n} 根肋骨里有 3 根是虚线（后来补配的）"
+
+
+@page("fossil", 11)
+def _(d, pal):
+    """一万只里也许只有一只留了下来。"""
+    cols, rows = 8, 6
+    xs, slot = lay(cols, margin=MARGIN + 20)
+    lucky = (3, 2)
+    n = 0
+    for r_ in range(rows):
+        for c_ in range(cols):
+            cy = MARGIN + 110 + r_ * (S - 2 * MARGIN - 200) / (rows - 1)
+            hit = (c_, r_) == lucky
+            dino_sauropod(d, xs[c_], cy, slot * 0.86,
+                          pal, pal["accent"] if hit else pal["line"], w=3)
+            n += 1
+    return f"{cols}×{rows} = {n} 只一样的小恐龙，只有 1 只填了强调色（运气好变成化石的那只）"
+
+
+@page("extinct", 2)
+def _(d, pal):
+    """砸下来的那块石头，有一座山那么大。"""
+    base = S - MARGIN - 140
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    h = 420
+    poly(d, [(MARGIN + 120, base), (MARGIN + 330, base - h), (MARGIN + 540, base)],
+         pal, pal["soft"], 10)
+    rnd = random.Random(13)
+    rock = []
+    for i in range(20):
+        a = math.radians(i * 18)
+        r = h / 2 * (0.88 + rnd.uniform(0, 0.16))
+        rock.append((S - MARGIN - 300 + r * math.cos(a), base - h / 2 + r * math.sin(a)))
+    poly(d, rock, pal, pal["accent"], 10)
+    return f"1 座山高 {h}px + 1 块砸下来的石头，直径也是 {h}px，两个一样高"
+
+
+@page("extinct", 4)
+def _(d, pal):
+    """灰尘铺在天上，太阳照不下来。"""
+    disc(d, S / 2, MARGIN + 150, 110, pal["accent"], pal, w=10)
+    band_y = S / 2 + 30
+    d.rectangle([MARGIN, band_y - 70, S - MARGIN, band_y + 70], fill=pal["soft"],
+                outline=pal["ink"], width=9)
+    rnd = random.Random(8)
+    for _ in range(40):
+        dx, dy = rnd.uniform(MARGIN + 20, S - MARGIN - 20), band_y + rnd.uniform(-50, 50)
+        disc(d, dx, dy, rnd.randint(7, 15), pal["bark"], pal, w=0)
+    for i in range(5):
+        ax = MARGIN + 110 + i * (S - 2 * MARGIN - 220) / 4
+        arrow(d, ax, MARGIN + 300, ax, band_y - 90, pal, w=9, head=24)
+    d.line([MARGIN, S - MARGIN - 60, S - MARGIN, S - MARGIN - 60], fill=pal["ink"], width=10)
+    return "1 个太阳 + 5 支向下的光箭头，全部停在中间那条灰尘带上，地面在最下面"
+
+
+@page("extinct", 6)
+def _(d, pal):
+    """太阳没了，这一串就全断了。"""
+    xs, slot = lay(4)
+    cy = S / 2
+    disc(d, xs[0], cy, 130, pal["accent"], pal, w=10)
+    for i in range(12):                                   # 太阳的光芒
+        a = math.radians(i * 30)
+        d.line([xs[0] + 148 * math.cos(a), cy + 148 * math.sin(a),
+                xs[0] + 196 * math.cos(a), cy + 196 * math.sin(a)], fill=pal["accent"], width=11)
+    cross(d, xs[0], cy, 150, pal, w=20)
+    d.line([xs[1], cy + 180, xs[1], cy - 150], fill=pal["bark"], width=20)   # 茎
+    for k, s in enumerate((-1, 1, -1, 1)):                # 四片叶子
+        ly = cy + 100 - k * 70
+        poly(d, [(xs[1], ly), (xs[1] + s * 96, ly - 56), (xs[1] + s * 40, ly + 26)],
+             pal, pal["soft"], 6)
+    disc(d, xs[1], cy - 160, 30, pal["soft"], pal, w=6)
+    dino_sauropod(d, xs[2], cy, slot * 0.98, pal, pal["soft"], w=5)
+    dino_theropod(d, xs[3], cy, slot * 0.98, pal, pal["soft"], w=5)
+    for i in range(3):
+        arrow(d, xs[i] + slot * 0.36, cy, xs[i + 1] - slot * 0.36, cy, pal, w=10, head=26)
+    return ("4 样东西连成一串：太阳（12 道光芒，打了叉）→ 一株带 4 片叶的植物 → "
+            "吃植物的蜥脚类 → 吃肉的兽脚类，中间 3 支箭头")
+
+
+@page("extinct", 8)
+def _(d, pal):
+    """大的活不下来，小的活下来了。"""
+    boxes = panel2(d, pal)
+    for (cx, cy, w_, h_), big in zip(boxes, (True, False)):
+        for i in range(3):
+            y = cy - h_ * 0.28 + i * h_ * 0.28
+            L = w_ * (0.78 if big else 0.34)
+            (dino_sauropod if big else dino_theropod)(d, cx, y, L, pal,
+                                                      pal["soft"] if big else pal["accent"], w=5)
+            if big:
+                cross(d, cx, y, w_ * 0.20, pal, w=14)
+    return "左格 3 只大恐龙，每只都打了叉 / 右格 3 只小恐龙，都没打叉"
+
+
+@page("extinct", 10)
+def _(d, pal):
+    """恐龙住了一亿六千万年，人只有细细一条。"""
+    x0 = MARGIN + 50
+    full = S - 2 * MARGIN - 100
+    hbar(d, x0, S / 2 - 90, full, 100, pal, pal["accent"])
+    hbar(d, x0 + full - 16, S / 2 + 110, 16, 100, pal, pal["soft"])
+    d.line([x0 + full, S / 2 - 180, x0 + full, S / 2 + 200], fill=pal["ink"], width=8)
+    return "上条铺满整幅（恐龙）/ 下条只有 16px（人），两条的右端对齐在同一条线上"
+
+
+@page("extinct", 11)
+def _(d, pal):
+    """地层里那条灰线，线下面有恐龙，线上面没有。"""
+    n = 7
+    top = MARGIN + 40
+    h = (S - 2 * MARGIN - 80) / n
+    line_at = 3
+    for i in range(n):
+        y = top + i * h
+        d.rectangle([MARGIN, y, S - MARGIN, y + h], fill=pal["soft"] if i % 2 else pal["bark"],
+                    outline=pal["ink"], width=6)
+    ly = top + line_at * h
+    d.rectangle([MARGIN, ly - 14, S - MARGIN, ly + 14], fill=pal["ink"])
+    for i, cx in enumerate(lay(3)[0]):
+        dino_sauropod(d, cx, ly + h * 1.9, 250, pal, pal["accent"], w=4)
+    return f"1 个 {n} 层的地层 + 中间 1 条黑线；线下面 3 只恐龙，线上面 1 只也没有"
+
+
+def quadruped_front(d, cx, cy, W, pal, fill=None, w=7, sprawl=False):
+    """正面看的四足动物。sprawl=True 时四条腿朝两边撇出去（蜥蜴、鳄鱼）。"""
+    d.ellipse([cx - W * 0.42, cy - W * 0.30, cx + W * 0.42, cy + W * 0.18],
+              fill=fill if fill is not None else pal["paper"], outline=pal["ink"], width=w)
+    for s in (-1, 1):
+        for k, dx in enumerate((0.16, 0.34)):
+            hip = (cx + s * W * dx, cy + W * 0.10)
+            if sprawl:
+                knee = (cx + s * W * (dx + 0.34), cy + W * 0.22)
+                foot = (cx + s * W * (dx + 0.46), cy + W * 0.52)
+            else:
+                knee = (cx + s * W * dx, cy + W * 0.32)
+                foot = (cx + s * W * dx, cy + W * 0.52)
+            d.line([hip, knee, foot], fill=pal["ink"], width=int(W * 0.09) + w,
+                   joint="curve")
+            d.line([hip, knee, foot], fill=fill if fill is not None else pal["paper"],
+                   width=max(3, int(W * 0.09) - 3), joint="curve")
+    d.line([cx - W * 0.75, cy + W * 0.52, cx + W * 0.75, cy + W * 0.52],
+           fill=pal["ink"], width=9)
+    return 4
+
+
+@page("notdino", 2)
+def _(d, pal):
+    """恐龙的腿直直长在身体下面。"""
+    n = quadruped_front(d, S / 2, S / 2 - 40, 520, pal, pal["accent"], w=9)
+    return f"1 个正面看的身体，{n} 条腿直直地长在身体正下方，像 4 根柱子"
+
+
+@page("notdino", 3)
+def _(d, pal):
+    """蜥蜴和鳄鱼的腿朝两边撇。"""
+    n = quadruped_front(d, S / 2, S / 2 - 40, 460, pal, pal["soft"], w=9, sprawl=True)
+    return f"1 个正面看的身体，{n} 条腿全都朝两边撇出去"
+
+
+@page("notdino", 5)
+def _(d, pal):
+    """三种翅膀：一根指头、四根指头、羽毛。"""
+    # 第一版画出来是三个灰三角。翅膀要读得出来，必须有「肩—肘—腕」这条臂骨，
+    # 膜或羽区挂在臂骨后面，三种的差别全在腕子往外那一段。
+    xs, slot = lay(3)
+    cy = S / 2 + 40
+    W = slot * 0.92
+    SH, EL, WR = (0.00, 0.00), (0.32, -0.16), (0.52, -0.26)
+    HIP = (0.10, 0.34)
+    for k, cx in enumerate(xs):
+        def P_(u):
+            return (cx - W * 0.46 + u[0] * W, cy + u[1] * W)
+        if k == 0:
+            tips = [(1.00, -0.44)]
+        elif k == 1:
+            tips = [(1.00, -0.44), (0.90, -0.18), (0.80, 0.06), (0.70, 0.28)]
+        else:
+            tips = [(0.74, -0.34), (0.92, -0.20), (1.00, 0.00), (0.94, 0.18), (0.76, 0.30)]
+        web = [P_(SH), P_(EL), P_(WR)] + [P_(t) for t in tips] + [P_(HIP)]
+        poly(d, web, pal, pal["soft"], 7)
+        d.line([P_(SH), P_(EL), P_(WR)], fill=pal["ink"], width=16, joint="curve")
+        for t in tips:
+            d.line([P_(WR), P_(t)], fill=pal["ink"], width=13 if k < 2 else 8)
+        for j in (SH, EL, WR):
+            disc(d, *P_(j), 13, pal["paper"], pal, w=5)
+    return ("3 只翅膀并排，每只都有肩—肘—腕三个关节："
+            "翼龙腕外 1 根长指骨 / 蝙蝠 4 根指骨 / 鸟 5 根羽毛")
+
+
+@page("notdino", 7)
+def _(d, pal):
+    """分成三堆，只有地上走的那堆才叫恐龙。"""
+    rows = [("sky", MARGIN + 150, 2), ("sea", S / 2, 2), ("ground", S - MARGIN - 190, 3)]
+    for kind, cy, cnt in rows:
+        xs, slot = lay(cnt + 1)
+        for i in range(cnt):
+            cx = xs[i] + slot * 0.5
+            if kind == "sky":
+                poly(d, [(cx - 130, cy), (cx, cy - 80), (cx + 130, cy), (cx, cy + 40)],
+                     pal, pal["soft"], 6)
+            elif kind == "sea":
+                fish_body(d, cx, cy, 250, pal, pal["soft"])
+            else:
+                dino_theropod(d, cx, cy, 250, pal, pal["accent"], w=5)
+    d.rounded_rectangle([MARGIN + 10, S - MARGIN - 330, S - MARGIN - 10, S - MARGIN - 40],
+                        radius=26, outline=pal["accent"], width=12)
+    return "3 行：天上 2 个飞的 / 水里 2 个游的 / 地上 3 只走的，只有地上那一行被圈了起来"
+
+
+@page("notdino", 9)
+def _(d, pal):
+    """鸟是从恐龙那一支上长出来的。"""
+    base = S - MARGIN - 120
+    d.line([S / 2, base, S / 2, S / 2 - 40], fill=pal["bark"], width=26)
+    d.line([S / 2, S / 2 - 40, S / 2 + 210, MARGIN + 210], fill=pal["bark"], width=18)
+    d.line([S / 2, S / 2 - 40, S / 2 - 200, MARGIN + 260], fill=pal["bark"], width=18)
+    dino_theropod(d, S / 2 - 130, base - 130, 330, pal, pal["soft"], w=5)
+    bird_shape(d, S / 2 + 250, MARGIN + 170, 250, pal, pal["accent"])
+    dino_sauropod(d, S / 2 - 230, MARGIN + 290, 260, pal, pal["soft"], w=4)
+    return "1 棵分叉的树：主干是恐龙，右边那一支通到 1 只鸟，左边那一支是别的恐龙"
+
+
+@page("notdino", 11)
+def _(d, pal):
+    """时间排一排：恐龙、长毛象、我们。"""
+    y = S / 2 + 60
+    x0, x1 = MARGIN + 50, S - MARGIN - 50
+    d.line([x0, y, x1, y], fill=pal["ink"], width=12)
+    marks = [(0.10, "dino"), (0.78, "mammoth"), (0.96, "human")]
+    for t, kind in marks:
+        mx = x0 + (x1 - x0) * t
+        d.line([mx, y - 26, mx, y + 26], fill=pal["ink"], width=10)
+        if kind == "dino":
+            dino_sauropod(d, mx, y - 190, 260, pal, pal["accent"], w=4)
+        elif kind == "mammoth":
+            elephant_shape(d, mx, y - 160, 150, pal, pal["soft"])
+            for s in (-1, 1):
+                d.arc([mx - 120, y - 190, mx - 20, y - 90], 20, 150, fill=pal["ink"], width=9)
+        else:
+            disc(d, mx, y - 190, 26, pal["paper"], pal, w=6)
+            d.line([mx, y - 164, mx, y - 90], fill=pal["ink"], width=12)
+            d.line([mx - 34, y - 130, mx + 34, y - 130], fill=pal["ink"], width=10)
+            d.line([mx, y - 90, mx - 26, y - 34], fill=pal["ink"], width=11)
+            d.line([mx, y - 90, mx + 26, y - 34], fill=pal["ink"], width=11)
+    return "1 条时间线，3 个刻度：恐龙在最左（10%）、长毛象在 78%、人在 96%，挤在最右边"
+
+
+@page("dinospeed", 2)
+def _(d, pal):
+    """有的比人快多了，有的走路都慢吞吞。"""
+    x0 = MARGIN + 50
+    full = S - 2 * MARGIN - 100
+    for cy, frac, col in ((S / 2 - 190, 0.44, pal["soft"]),
+                          (S / 2, 1.00, pal["accent"]),
+                          (S / 2 + 190, 0.16, pal["bark"])):
+        hbar(d, x0, cy, full * frac, 96, pal, col)
+    d.line([x0, S / 2 - 290, x0, S / 2 + 290], fill=pal["ink"], width=8)
+    return "3 条横条，左端对齐：人 44% / 跑得快的恐龙 100% / 最慢的 16%"
+
+
+@page("dinospeed", 4)
+def _(d, pal):
+    """跑得快的，小腿比大腿长。"""
+    for (cx, cy, w_, h_), fast in zip(panel2(d, pal), (True, False)):
+        upper = h_ * (0.26 if fast else 0.44)
+        lower = h_ * (0.44 if fast else 0.26)
+        top = cy - (upper + lower) / 2
+        d.rounded_rectangle([cx - 52, top, cx + 52, top + upper], radius=26,
+                            fill=pal["soft"], outline=pal["ink"], width=8)
+        d.rounded_rectangle([cx - 38, top + upper, cx + 38, top + upper + lower], radius=20,
+                            fill=pal["accent"], outline=pal["ink"], width=8)
+        d.line([cx - 90, top + upper, cx + 90, top + upper], fill=pal["ink"], width=6)
+    return "左格大腿短、小腿长（跑得快）/ 右格大腿长、小腿短（跑得慢），两条腿总长一样"
+
+
+@page("dinospeed", 6)
+def _(d, pal):
+    """脚印隔得远是在跑，隔得近是在散步。"""
+    for cy, gap, tag in ((S / 2 - 170, 190, "跑"), (S / 2 + 170, 78, "散步")):
+        x = MARGIN + 70
+        n = 0
+        while x < S - MARGIN - 70:
+            footprint(d, x, cy + (18 if n % 2 else -18), 92, pal)
+            x += gap
+            n += 1
+    return "上排脚印每隔 190px 一个（在跑）/ 下排每隔 78px 一个（在散步）"
+
+
+@page("dinospeed", 8)
+def _(d, pal):
+    """跑起来头往前伸，尾巴往后翘，中间是平衡点。"""
+    base = S - MARGIN - 150
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    L = S - 2 * MARGIN - 80
+    cx, cy = S / 2, base - L * 0.33
+    dino_theropod(d, cx, cy, L, pal, pal["accent"], w=8, run=True)
+    poly(d, [(cx, cy + L * 0.10), (cx - 46, cy + L * 0.10 + 74), (cx + 46, cy + L * 0.10 + 74)],
+         pal, pal["paper"], 8)
+    arrow(d, cx - L * 0.30, cy - L * 0.34, cx - L * 0.52, cy - L * 0.34, pal, w=10, head=26)
+    arrow(d, cx + L * 0.30, cy - L * 0.22, cx + L * 0.54, cy - L * 0.20, pal, w=10, head=26)
+    return "1 只跑着的兽脚类：头往前 1 支箭头 + 尾巴往后 1 支箭头 + 髋下 1 个平衡点三角"
+
+
+@page("dinospeed", 10)
+def _(d, pal):
+    """最快的和骑车的大人差不多。"""
+    L = 420
+    dino_theropod(d, MARGIN + 60 + L / 2, S / 2 - 190, L, pal, pal["accent"], w=7, run=True)
+    bx, by = MARGIN + 100 + L / 2, S / 2 + 230
+    for dx in (-110, 110):
+        disc(d, bx + dx, by, 90, pal["ground"], pal, w=11)
+    d.line([(bx - 110, by), (bx - 30, by - 110), (bx + 60, by - 110), (bx + 110, by)],
+           fill=pal["ink"], width=12, joint="curve")
+    d.line([bx - 30, by - 110, bx + 20, by], fill=pal["ink"], width=12)
+    d.line([bx + 60, by - 110, bx + 40, by - 170], fill=pal["ink"], width=12)
+    d.line([bx + 20, by - 170, bx + 70, by - 170], fill=pal["ink"], width=10)
+    for cy in (S / 2 - 190 + L * 0.20, by):
+        arrow(d, S - MARGIN - 300, cy, S - MARGIN - 40, cy, pal, w=11, head=28)
+    return "1 只跑着的恐龙 + 1 辆自行车，各配 1 支长度完全相同的箭头（260px）"
+
+
+@page("dinoskin", 2)
+def _(d, pal):
+    """鳞片平平地铺着，边对边不留缝。"""
+    x0, y0 = MARGIN + 20, MARGIN + 20
+    side = S - 2 * MARGIN - 40
+    cols = rows = 7
+    cw = side / cols
+    n = 0
+    for r_ in range(rows):
+        for c_ in range(cols):
+            cx = x0 + c_ * cw + (cw / 2 if r_ % 2 else 0)
+            if cx + cw / 2 > x0 + side:
+                continue
+            cy = y0 + r_ * cw * 0.86 + cw / 2
+            poly(d, [(cx, cy - cw * 0.46), (cx + cw * 0.46, cy), (cx, cy + cw * 0.46),
+                     (cx - cw * 0.46, cy)], pal, pal["soft"] if (r_ + c_) % 2 else pal["paper"], 5)
+            n += 1
+    return f"1 块放大的皮：{n} 片菱形鳞片边对边铺满，中间没有缝"
+
+
+@page("dinoskin", 4)
+def _(d, pal):
+    """羽毛的三步：一根丝、一簇丝、一整片。"""
+    xs, slot = lay(3)
+    cy = S / 2
+    d.line([xs[0], cy + 220, xs[0] + 20, cy - 220], fill=pal["ink"], width=12)
+    for i in range(5):
+        a = math.radians(-90 + (i - 2) * 16)
+        d.line([xs[1], cy + 220, xs[1] + 420 * math.cos(a), cy + 220 + 420 * math.sin(a)],
+               fill=pal["ink"], width=10)
+    d.line([xs[2], cy + 220, xs[2] + 16, cy - 220], fill=pal["ink"], width=13)
+    for s in (-1, 1):
+        vane = [(xs[2] + 8, cy - 200)]
+        for i in range(7):
+            t = i / 6
+            vane.append((xs[2] + 8 + s * 86 * math.sin(math.pi * t), cy - 200 + t * 400))
+        vane.append((xs[2] + 14, cy + 200))
+        poly(d, vane, pal, pal["accent"], 6)
+    return "3 个阶段并排：1 根细丝 / 1 簇 5 根丝 / 1 整片羽毛（中轴 + 左右两片羽片）"
+
+
+@page("dinoskin", 6)
+def _(d, pal):
+    """颗粒的形状不一样，颜色就不一样。"""
+    for (cx, cy, w_, h_), rod in zip(panel2(d, pal), (False, True)):
+        if rod:
+            d.rounded_rectangle([cx - 44, cy - 220, cx + 44, cy + 60], radius=44,
+                                fill=pal["bark"], outline=pal["ink"], width=9)
+        else:
+            disc(d, cx, cy - 90, 130, pal["soft"], pal, w=9)
+        d.rounded_rectangle([cx - 150, cy + 140, cx + 150, cy + 300], radius=16,
+                            fill=pal["bark"] if rod else pal["accent"],
+                            outline=pal["ink"], width=9)
+    return "左格 1 颗圆颗粒 + 它对应的色块 / 右格 1 颗长杆颗粒 + 它对应的另一种色块"
+
+
+@page("dinoskin", 8)
+def _(d, pal):
+    """背上深、肚子浅，在太阳底下就看着平了。"""
+    disc(d, S / 2 + 300, MARGIN + 140, 96, pal["accent"], pal, w=9)
+    L = S - 2 * MARGIN - 120
+    cx, cy = S / 2 - 40, S / 2 + 120
+    pts = dino_sauropod(d, cx, cy, L, pal, pal["paper"], w=8)
+    top = [p for p in pts[:9]]
+    d.line(top, fill=pal["bark"], width=34, joint="curve")
+    return "1 只蜥脚类：沿着整条背线压了一道深色（背深），肚子留浅色，右上角 1 个太阳"
+
+
+@page("dinoskin", 10)
+def _(d, pal):
+    """皮里长着骨板，像脱不下来的盔甲。"""
+    y0 = S / 2 - 60
+    d.rectangle([MARGIN + 20, y0, S - MARGIN - 20, y0 + 210], fill=pal["soft"],
+                outline=pal["ink"], width=10)
+    n = 5
+    span = S - 2 * MARGIN - 40
+    for i in range(n):
+        px = MARGIN + 20 + span * (i + 0.5) / n
+        poly(d, [(px - span / n * 0.36, y0 + 40), (px + span / n * 0.36, y0 + 40),
+                 (px + span / n * 0.28, y0 - 90), (px - span / n * 0.28, y0 - 90)],
+             pal, pal["paper"], 8)
+    return f"1 块剖开的皮，里面嵌着 {n} 块骨板"
+
+
 def render(slug):
     pal = palette(slug)
     done = []
