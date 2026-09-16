@@ -4440,11 +4440,11 @@ def _(d, pal):
     tooth = [(tx, top), (tx + 76, gum + 40), (tx + 62, bot), (tx - 62, bot), (tx - 76, gum + 40)]
     poly(d, tooth, pal, pal["paper"], 9)
     d.line([tx - 190, gum, tx + 190, gum], fill=pal["ink"], width=10)
-    n = 12
-    for i in range(n):                                   # 露出那一截上的锯齿
-        t = i / n
-        d.line([tx + 20 + t * 52, top + 26 + t * (gum - top - 20),
-                tx + 44 + t * 52, top + 34 + t * (gum - top - 20)], fill=pal["ink"], width=5)
+    n = 10
+    for i in range(n):                                   # 锯齿必须贴着牙的右缘长
+        t = 0.16 + i * 0.078
+        ex, ey = tx + 76 * t, top + (gum + 40 - top) * t
+        d.line([ex - 4, ey, ex + 24, ey - 9], fill=pal["ink"], width=5)
 
     def bez(p0, p1, p2, k=17):
         return [((1 - t) ** 2 * p0[0] + 2 * (1 - t) * t * p1[0] + t * t * p2[0],
@@ -4841,14 +4841,14 @@ def _(d, pal):
     """几年就从猫那么大长到比车还大。"""
     # 旁白拿猫和车当尺子，画面里就得有猫和车。四只叠在一起会糊成一团，
     # 改成上下两行：刚出生的和猫一样大，长大了比车还大。
-    top_y, bot_y = 300, 760
-    small, big, carl = 200, 560, 300
-    dino_theropod(d, MARGIN + 220, top_y, small, pal, pal["paper"], w=5)
-    cat_shape(d, MARGIN + 460, top_y + small * 0.33 - small * 0.66 * 0.5,
+    top_y, bot_y = 290, 740
+    small, big, carl = 300, 600, 320
+    dino_theropod(d, MARGIN + 250, top_y, small, pal, pal["paper"], w=6)
+    cat_shape(d, MARGIN + 560, top_y + small * 0.33 - small * 0.66 * 0.5,
               small * 0.66, pal, pal["soft"])
-    dino_theropod(d, MARGIN + 340, bot_y, big, pal, pal["accent"], w=7)
-    car_shape(d, S - MARGIN - 200, bot_y + big * 0.20, carl, pal)
-    arrow(d, S / 2 + 300, top_y + 140, S / 2 + 300, bot_y - 240, pal, w=12, head=32)
+    dino_theropod(d, MARGIN + 350, bot_y, big, pal, pal["accent"], w=7)
+    car_shape(d, S - MARGIN - 210, bot_y + big * 0.22, carl, pal)
+    arrow(d, MARGIN + 420, top_y + 190, MARGIN + 420, bot_y - 280, pal, w=12, head=32)
     return (f"上行：1 只刚出生的小恐龙（体长 {small}px）+ 1 只一样高的猫；"
             f"下行：1 只长大的恐龙（体长 {big}px）+ 1 辆比它小的车；中间 1 支向下的箭头")
 
@@ -4856,18 +4856,23 @@ def _(d, pal):
 @page("fossil", 2)
 def _(d, pal):
     """倒在河边，泥沙一层层盖上去。"""
-    # 骨架要埋在最底下那一层「里面」，不能落在层外的空白上 —— 旁白说的是被盖住
-    n, h = 4, 118
-    top = MARGIN + 40
+    # 这一页旁白说的是「一只恐龙倒在河边被泥沙盖住」，那就直接画那只恐龙。
+    # 画骨架试过两版都读成蜈蚣（一根棍子挂几条腿），按三次法则退成最朴素的画法。
+    # 让泥沙真盖住恐龙，头就没了、认不出是恐龙。改成恐龙完整可见，
+    # 泥沙在上面、几支箭头表示正往下盖 —— 信息到位就收手。
+    n, h = 3, 110
+    top = MARGIN + 10
     for i in range(n):
         y = top + i * h
         d.rectangle([MARGIN, y, S - MARGIN, y + h], fill=pal["soft"] if i % 2 else pal["bark"],
                     outline=pal["ink"], width=7)
     floor_y = top + n * h
-    d.rectangle([MARGIN, floor_y, S - MARGIN, floor_y + 250], fill=pal["bark"],
-                outline=pal["ink"], width=7)
-    skeleton_shape(d, S / 2, floor_y + 118, S - 2 * MARGIN - 80, pal, w=7)
-    return f"上面 {n} 层紧挨着的泥沙 + 最底下那层里埋着 1 副骨架（头骨 + 18 节椎骨 + 8 根肋骨）"
+    L = 620
+    dino_theropod(d, S / 2, 700, L, pal, pal["paper"], w=7)
+    for i in range(3):
+        ax = S / 2 - 240 + i * 240
+        arrow(d, ax, floor_y + 24, ax, floor_y + 110, pal, w=9, head=24)
+    return f"上面 {n} 层泥沙 + 3 支向下的箭头 + 下面 1 只完整的兽脚类（体长 {L}px）"
 
 
 @page("fossil", 4)
@@ -4928,8 +4933,30 @@ def _(d, pal):
 @page("fossil", 9)
 def _(d, pal):
     """缺掉的骨头是补上去的，画成虚线。"""
-    n = skeleton_shape(d, S / 2, S / 2, S - 2 * MARGIN - 60, pal, w=7, dashed=(2, 5, 6))
-    return f"1 副拼好的骨架：{n} 根肋骨里有 3 根是虚线（后来补配的）"
+    # 整副骨架画两版都读成蜈蚣。退成最朴素：几块摆在一起的骨头，补配的那几块画成虚线。
+    xs, slot = lay(3)
+    ys = (S / 2 - 200, S / 2 + 160)
+    shapes = [
+        [(-.34, -.06), (-.10, -.12), (.22, -.10), (.34, -.04), (.22, .06), (-.10, .10), (-.34, .08)],
+        [(-.30, -.10), (.30, -.04), (.34, .06), (-.26, .10)],
+        [(-.12, -.34), (.12, -.30), (.16, .10), (.30, .30), (-.02, .22), (-.18, .32), (-.14, .06)],
+        [(-.34, -.04), (-.16, -.14), (.16, -.14), (.34, -.04), (.16, .10), (-.16, .10)],
+        [(-.28, -.12), (.28, -.08), (.30, .04), (-.26, .10)],
+        [(-.10, -.30), (.14, -.26), (.10, .30), (-.14, .26)],
+    ]
+    missing = (1, 4)
+    for k, unit in enumerate(shapes):
+        cx, cy = xs[k % 3], ys[k // 3]
+        pts = at(unit, cx, cy, slot * 0.86)
+        if k in missing:                       # 补配的：只描虚线，不填色
+            for a, b in zip(pts, pts[1:] + pts[:1]):
+                for s in range(0, 6, 2):
+                    p = (a[0] + (b[0] - a[0]) * s / 6, a[1] + (b[1] - a[1]) * s / 6)
+                    q = (a[0] + (b[0] - a[0]) * (s + 1) / 6, a[1] + (b[1] - a[1]) * (s + 1) / 6)
+                    d.line([p, q], fill=pal["ink"], width=7)
+        else:
+            poly(d, pts, pal, pal["paper"], 8)
+    return f"{len(shapes)} 块摆在一起的骨头，其中 {len(missing)} 块画成虚线（后来补配的）"
 
 
 @page("fossil", 11)
