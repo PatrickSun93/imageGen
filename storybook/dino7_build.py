@@ -31,7 +31,8 @@ FACE = ("Waist-up view of the little boy", "turned towards the viewer", "iris")
 from dino7_extra import EXTRA
 
 ASSET_NEG = ("shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, "
-             "dirt patch, grass patch, reflection")
+             "dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, "
+             "scenery, sunset, clouds in the background")
 
 COMMON = {"workflow": "workflows/qwen_image_2512.json",
           "colophon": {"model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",

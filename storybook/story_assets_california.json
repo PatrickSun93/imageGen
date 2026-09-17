@@ -35,37 +35,37 @@
     {
       "n": 1,
       "zh": "素材 1",
-      "scene": "One single ammonite shell coiled into a flat round spiral, seen from the side, its whole shape inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single ammonite shell coiled into a flat round spiral, seen from the side, its whole shape inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     },
     {
       "n": 2,
       "zh": "素材 2",
-      "scene": "One single large sea reptile with a long body, four flippers and a long tail, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single large sea reptile with a long body, four flippers and a long tail, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     },
     {
       "n": 3,
       "zh": "素材 3",
-      "scene": "One single duck-billed dinosaur standing on four legs, seen from the side facing left, its flat wide snout lowered, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single duck-billed dinosaur standing on four legs, seen from the side facing left, its flat wide snout lowered, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     },
     {
       "n": 4,
       "zh": "素材 4",
-      "scene": "One single sabre-toothed cat standing on four legs, seen from the side facing left, two long teeth hanging down from its upper jaw, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single sabre-toothed cat standing on four legs, seen from the side facing left, two long teeth hanging down from its upper jaw, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     },
     {
       "n": 5,
       "zh": "素材 5",
-      "scene": "One single fossil dinosaur leg bone lying flat on its side, seen from the side, a straight shaft with a thick knobbly swelling at each end, pale brown and pitted. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single fossil dinosaur leg bone lying flat on its side, seen from the side, a straight shaft with a thick knobbly swelling at each end, pale brown and pitted. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     }
   ]
 }

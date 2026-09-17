@@ -35,30 +35,30 @@
     {
       "n": 1,
       "zh": "素材 1",
-      "scene": "One single stegosaurus standing on four legs, seen from the side facing left, a double row of tall flat plates running along its back and four long spikes at the tip of its tail, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single stegosaurus standing on four legs, seen from the side facing left, a double row of tall flat plates running along its back and four long spikes at the tip of its tail, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     },
     {
       "n": 2,
       "zh": "素材 2",
-      "scene": "One single tall flat bony plate standing upright, shaped like a rounded triangle, its surface covered in fine branching grooves. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single tall flat bony plate standing upright, shaped like a rounded triangle, its surface covered in fine branching grooves. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     },
     {
       "n": 3,
       "zh": "素材 3",
-      "scene": "One single car radiator seen from the front, a flat rectangular grid of thin metal fins. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single car radiator seen from the front, a flat rectangular grid of thin metal fins. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     },
     {
       "n": 4,
       "zh": "素材 4",
-      "scene": "One single walnut in its hard shell, resting on its side and seen from its broad face, the two halves meeting along one wavy raised seam, the shell deeply wrinkled all over. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single walnut in its hard shell, resting on its side and seen from its broad face, the two halves meeting along one wavy raised seam, the shell deeply wrinkled all over. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     }
   ]
 }

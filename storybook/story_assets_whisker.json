@@ -35,37 +35,37 @@
     {
       "n": 1,
       "zh": "素材 1",
-      "scene": "One single short-haired cat sitting upright, seen from the side facing left, its long straight whiskers spreading out to both sides of its face, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single short-haired cat sitting upright, seen from the side facing left, its long straight whiskers spreading out to both sides of its face, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     },
     {
       "n": 2,
       "zh": "素材 2",
-      "scene": "One single long white cat whisker lying straight and alone, thicker at one end and fine at the other. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single long white cat whisker lying straight and alone, thicker at one end and fine at the other. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     },
     {
       "n": 3,
       "zh": "素材 3",
-      "scene": "One single cardboard box standing on the floor, seen straight from the front, with a square hole cut in its side. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single cardboard box standing on the floor, seen straight from the front, with a square hole cut in its side. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     },
     {
       "n": 4,
       "zh": "素材 4",
-      "scene": "One single short-haired cat seen from straight above, lying stretched out with its head at the top and its tail straight behind it, its long whiskers spreading out sideways past its cheeks. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single short-haired cat seen from straight above, lying stretched out with its head at the top and its tail straight behind it, its long whiskers spreading out sideways past its cheeks. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     },
     {
       "n": 5,
       "zh": "素材 5",
-      "scene": "One single head of a short-haired cat seen from the side facing right, its long straight whiskers spreading out in a wide fan above and below its muzzle. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "scene": "One single head of a short-haired cat seen from the side facing right, its long straight whiskers spreading out in a wide fan above and below its muzzle. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
-      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     }
   ]
 }
