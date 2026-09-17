@@ -13,8 +13,7 @@ BOOKS.append(dict(
               ("#ece9db", "#9a9782", "#151209", "#221f13", "#bd7a56", "#857a5f", "#37341f")),
     diagram=[4, 6, 7, 9, 10, 11],
     assets=[
-        "One single fossil tooth lying flat, seen from the side, wide and flat like a leaf with a "
-        "row of small points along one edge, its whole shape inside the picture. " + BG,
+        "One single fossil tooth lying flat, seen from the side, wide and flat with a row of small points along one edge, hard shiny enamel, definitely a tooth and not a leaf, its whole shape inside the picture. " + BG,
         "One single green iguana lizard standing on four legs, seen from the side facing left, "
         "its whole body inside the picture. " + BG,
         "One single iguanodon standing on four legs, seen from the side facing left, a pointed "
@@ -85,8 +84,7 @@ BOOKS.append(dict(
       "else in the picture.", 0),
      ("它的名字拆开来：\n三，角，脸。\n连起来就是\n「长着三只角的脸」。\n名字就是一句描述。", "", 0),
      ("这只头特别大，\n牙像香蕉那么粗，\n前面两只小手\n短得够不着嘴。\n谁见了都得让路。",
-      "One tyrannosaurus standing in profile on a cream background, its huge head open in a roar, "
-      "its two short arms held close to its chest. Nothing else in the picture.", 0),
+      "One tyrannosaurus standing in profile on a cream background, its huge head open in a roar, its two short arms held close to its chest, a flat illustration filling the whole picture, not a photograph of an open book. Nothing else in the picture.", 0),
      ("它的名字拆开来：\n暴君，蜥蜴，王。\n合起来是\n「暴君蜥蜴之王」。\n听着就不好惹。", "", 0),
      ("这只个头不大，\n身上长着羽毛，\n腿细，跑得飞快，\n专挑别人不留神的时候\n扑上去。",
       "One feathered velociraptor running fast in profile on a cream background, its long stiff "

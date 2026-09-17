@@ -37,8 +37,7 @@ BOOKS.append(dict(
       "One small fly caught in the outer rings of an orb web on a cream background, its thin "
       "wings stuck fast to the silk. Nothing else in the picture.", 0),
      ("网破了怎么办？\n它把旧丝吃回去，\n再吐出新的来。\n一点丝也没浪费，\n又变成了一张网。",
-      "One single spider on a torn orb web on a cream background, half the web gone, the spider "
-      "taking an old loose thread into its mouth. Nothing else in the picture.", 0),
+      "One single spider sitting on its round web on a cream background, half of the web missing and its loose threads hanging, the spider pulling one old thread towards its mouth, a flat illustration filling the whole picture, not a photograph of an open book. Nothing else in the picture.", 0),
      ("织好一整张网，\n只要半个钟头。\n先搭桥，再拉辐条，\n最后一圈一圈绕，\n从来不会弄乱。",
       "One complete orb web strung between two branches at dawn on a cream background, tiny dew "
       "drops hanging along its threads. Nothing else in the picture.", 0),
@@ -60,8 +59,7 @@ BOOKS.append(dict(
     assets=[
         "One single giraffe standing on four legs, seen from the side facing left, its long neck "
         "held upright and its head high, its whole body inside the picture. " + BG,
-        "One single neck bone of a giraffe lying on its side, a long heavy block of bone with a "
-        "knob at each end, its whole shape inside the picture. " + BG,
+        "One single vertebra lying on its side, a long heavy block of pale bone with a rounded knob at each end, no animal and no head attached to it anywhere, its whole shape inside the picture. " + BG,
         "One single tall thorn tree with a wide flat top, its whole shape inside the picture. "
         + BG,
     ],
@@ -77,8 +75,7 @@ BOOKS.append(dict(
      ("最奇怪的是骨头。\n你摸摸自己的脖子，\n里面有七块骨头。\n长颈鹿的脖子里，\n也正好是七块。", "", 0),
      ("它不是多长了骨头，\n是每一块都被拉长了。\n它的一块颈椎骨，\n差不多有我的\n一条胳膊那么长。", "", 0),
      ("头举得那么高，\n血怎么送上去呢？\n它的心脏特别有力，\n有二十多斤重，\n墙一样厚的肌肉。",
-      "One single animal heart with very thick muscular walls, cut open on a cream background to "
-      "show the deep chamber inside. Nothing else in the picture.", 0),
+      "One single real heart organ of dark red muscle with very thick walls, cut open to show the deep hollow chamber inside, an anatomical organ and not a heart symbol, no animal in the picture, on a cream background. Nothing else in the picture.", 0),
      ("心脏一下一下地跳，\n把血往上顶两米高。\n这股劲比我们的\n要大上两三倍，\n不然血就上不去。", "", 0),
      ("喝水的时候才麻烦。\n它得把两条前腿\n向两边劈得很开，\n脖子一路低下去，\n嘴才够得着水。",
       "One single giraffe drinking at a water hole on a cream background, its two front legs "

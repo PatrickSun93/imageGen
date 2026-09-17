@@ -25,8 +25,7 @@ BOOKS.append(dict(
       f"A head-and-shoulders portrait of the little boy crouching at the edge of a pond, his face large in the "
       f"frame and turned towards the viewer, {EYES}, looking down into the water with delight.", 1),
      ("它们从卵里孵出来。\n一团透明的果冻，\n里面点着黑芝麻。\n每一粒黑芝麻，\n将来都是一只青蛙。",
-      "One clear jelly mass of frog eggs floating in still water on a cream background, many "
-      "small dark dots set inside it. Nothing else in the picture.", 0),
+      "One clear round mass of transparent jelly floating in still water on a cream background, many small dark round dots set inside the jelly, no adult animal and no face anywhere in the picture. Nothing else in the picture.", 0),
      ("刚出来的蝌蚪\n没有腿，也没有肺。\n它的脖子两边\n长着一丛鳃，\n像鱼一样在水里呼吸。", "", 0),
      ("过了几个星期，\n它的屁股后面\n先鼓出两个小包。\n小包慢慢伸长，\n变成两条后腿。", "", 0),
      ("后腿长好了，\n前腿才开始长。\n前腿先藏在皮里，\n有一天早上，\n忽然从两边顶出来。", "", 0),
@@ -132,8 +131,7 @@ BOOKS.append(dict(
       "Close view of one owl face at night on a cream background, its two round eyes wide open "
       "with very large dark pupils. Nothing else in the picture.", 0),
      ("它的两只耳朵\n一只高一只低。\n声音先到哪一只，\n它就能听出来\n老鼠在哪个方向。",
-      "One owl head seen from the front on a cream background, one ear opening set higher than "
-      "the other under the feathers. Nothing else in the picture.", 0),
+      "One owl head seen from the front on a cream background, the feathers on each side of the face lifted away to show a dark ear opening behind them, the opening on the left side clearly higher up the head than the one on the right. Nothing else in the picture.", 0),
      ("它飞起来没有声音。\n翅膀边上的羽毛\n长着一排细齿，\n把风梳散了，\n呼呼声就没有了。",
       "One owl flying low with both wings spread wide on a cream background, seen from the side. "
       "Nothing else in the picture.", 0),

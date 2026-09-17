@@ -46,8 +46,7 @@ BOOKS.append(dict(
       "of long feathers preserved in the stone around its arms and legs. Nothing else in the "
       "picture.", 0),
      ("有一块化石的肚子里，\n还留着半条小鱼。\n另外一块里，\n有一只小鸟的脚。\n它就吃这些东西。",
-      "A fossil of a small dinosaur lying on grey stone with the bones of a small fish visible "
-      "inside its ribcage. Nothing else in the picture.", 0),
+      "A fossil of a small dinosaur pressed flat into grey stone, the small bones of a fish visible inside its ribcage, a flat illustration filling the whole picture, not a photograph of an open book. Nothing else in the picture.", 0),
      ("地上跑的恐龙\n个个又大又凶。\n它在地上谁也打不过，\n就搬到高处去，\n住在别人上不去的地方。",
       "", 0),
      ("我又去看院子里的树。\n树皮糙糙的。\n要是我也有\n那样一双尖爪子，\n是不是就爬上去了？",
@@ -187,8 +186,7 @@ BOOKS.append(dict(
       "small fish. Nothing else in the picture.", 0),
      ("还有一种菊石。\n壳一圈一圈盘起来，\n小的像颗纽扣，\n最大的那种，\n比饭桌上的盘子还宽。", "", 0),
      ("鱼龙长得很像海豚，\n可它不是鱼，\n也不是海豚。\n它得浮上水面，\n换一口气再下去。",
-      "One ichthyosaur with a smooth dolphin-shaped body breaking the surface of the sea to take "
-      "a breath. Nothing else in the picture.", 0),
+      "One ichthyosaur breaking the surface of the sea to take a breath, a smooth streamlined reptile with a long narrow pointed snout full of small teeth, a large round eye and a two-lobed upright tail fin, not a dolphin. Nothing else in the picture.", 0),
      ("沧龙、鱼龙、菊石，\n一个都不算恐龙。\n恐龙住在陆地上，\n它们住在水里头。\n这是两回事。", "", 0),
      ("加州也挖到过一只。\n鸭子一样的扁嘴巴，\n在中部的山里找到的。\n现在它就是\n加州的州恐龙。",
       "One duck-billed dinosaur with a flat wide snout standing on a low hillside of dry bare "

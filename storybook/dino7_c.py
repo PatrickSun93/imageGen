@@ -66,8 +66,9 @@ BOOKS.append(dict(
         "left, its whole body inside the picture. " + BG,
         "One single young long-necked dinosaur standing on four legs, seen from the side facing "
         "left, small with a short neck, its whole body inside the picture. " + BG,
-        "One single large round dinosaur track seen from straight above, a wide deep hollow "
-        "pressed into flat ground. " + BG,
+        "One single large three-toed dinosaur footprint seen from straight above, exactly three "
+        "broad blunt toe marks spreading forward from one rounded heel pad, pressed deep "
+        "into flat ground. " + BG,
         "One single round metal washtub seen from straight above, wide and shallow. " + BG,
     ],
     pages=[

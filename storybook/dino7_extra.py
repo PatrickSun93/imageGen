@@ -64,8 +64,7 @@ EXTRA = {
         "into two spreading branches with no leaves left on them at all.",
     ],
     "mother": [
-        "One single row of six small pointed dinosaur teeth set into a strip of pale gum, seen "
-        "from the side, each tooth a narrow leaf-shaped point of the same height.",
+        "One single row of six small pointed teeth set into a strip of pale gum, seen from the side, each tooth a narrow sharp cone of the same height, hard white enamel, no leaves anywhere.",
         "One single straight strip of pale gum lying flat, seen from the side, with six short "
         "flat-topped white stubs standing in a row along its upper edge, all the same height. "
         "There is no mouth, no jaw, no head and no animal in the picture, only the strip.",
@@ -91,10 +90,8 @@ EXTRA = {
     "sail": [
         "One single small family car seen from the side facing left, four round wheels on the "
         "ground and a row of windows along its low roof.",
-        "One single tall back sail of a dinosaur standing upright, seen from the side, thin pale "
-        "skin stretched over a row of long bony rods that fan up from its base.",
-        "One single tall back sail of a dinosaur standing upright, seen from the side, thin skin "
-        "flushed deep red stretched over a row of long bony rods that fan up from its base.",
+        "One single tall fin of thin pale skin stretched over a row of long bony rods that fan up from its base, seen from the side, a body part of an animal and not a ship, floating alone with nothing around it and nothing under it.",
+        "One single tall fin of thin skin flushed deep red stretched over a row of long bony rods that fan up from its base, seen from the side, a body part of an animal and not a ship, floating alone with nothing around it and nothing under it.",
     ],
     "climb": [
         "One single strongly curved bird claw seen from the side, one smooth hook sweeping from "

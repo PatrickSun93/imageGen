@@ -16,8 +16,7 @@ BOOKS.append(dict(
         "seen from the side facing left, its whole body inside the picture. " + BG,
         "One single small heart, a pale muscular lump with two short tubes leaving it, lying "
         "alone. " + BG,
-        "One single gill of a sea animal, a soft feathery comb of many thin pale filaments, lying "
-        "alone. " + BG,
+        "One single soft feathery comb of many thin pale filaments joined along one edge, like a row of fine fringe, floating alone with nothing around it and nothing under it, no fish and no animal in the picture. " + BG,
         "One single small crab seen from above, its whole body inside the picture. " + BG,
     ],
     pages=[
@@ -168,9 +167,7 @@ BOOKS.append(dict(
         "length and not coiled, looped or curled at any point. " + BG,
         # 这一片鳞更麻烦：写 belly scale of a snake，模型画的是整条蛇。
         # 索性一个动物词都不提，只描述那块东西本身。
-        "One single wide flat horny plate lying alone on flat ground, seen from the side, shaped "
-        "like a shallow rectangle much wider than it is tall with a gently rounded front edge, "
-        "its front edge resting flat on the ground and its back edge tilted up a little. " + BG,
+        "One single wide flat scale, a thin smooth shield of horn much wider than it is tall with a gently rounded front edge, seen from slightly above, floating alone with nothing around it and nothing under it. " + BG,
         "One single length of snake backbone, many small bones joined end to end, each with a "
         "pair of thin ribs. " + BG,
         "One single smooth polished stone lying alone. " + BG,

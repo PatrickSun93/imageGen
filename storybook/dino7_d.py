@@ -16,8 +16,7 @@ BOOKS.append(dict(
         "facing left, its whole body inside the picture. " + BG,
         "One single three-toed dinosaur track pressed deep into flat mud, seen from directly "
         "above, the whole print inside the picture. " + BG,
-        "One single set of three straight parallel scratch grooves cut into flat mud, seen from "
-        "directly above. " + BG,
+        "Three straight parallel scratch marks scraped into smooth wet mud, seen from directly above, shallow grooves in the mud surface itself with soft crumbled edges, nothing lying on the mud. " + BG,
     ],
     pages=[
      ("河边这块大石头上，\n有一道一道的痕。\n不是脚印，\n是三条一组的划痕。\n爸爸说，恐龙留的。",
@@ -159,7 +158,8 @@ BOOKS.append(dict(
               ("#e9e6da", "#90a8a8", "#101315", "#1c1f22", "#d18f58", "#7f7561", "#34383b")),
     diagram=[2, 3, 4, 7, 10],
     assets=[
-        "One single spinosaurus standing on two legs, seen from the side facing left, a tall sail "
+        "One single spinosaurus standing on two legs, seen from the side facing left, a tall fin "
+        "of skin held up by long bony rods (a body part, not a ship) "
         "rising along its back and a long narrow snout, its whole body inside the picture. " + BG,
         "One single long slender spine of bone standing upright, perfectly straight and smooth, "
         "pale ivory, no thicker than a finger and at least ten times as tall as it is wide, "

@@ -44,8 +44,7 @@ BOOKS.append(dict(
       "Nothing else in the picture.", 0),
      ("把一颗冰雹切开，\n里面一圈套一圈，\n像切开的洋葱。\n数一数有几圈，\n就知道它上去过几趟。", "", 0),
      ("大多数冰雹\n只有豆子那么大。\n可也下过几回\n拳头那么大的，\n把车顶砸出坑。",
-      "A close view of green grass with hailstones of several sizes resting on it, from tiny "
-      "pellets to one as big as a fist, the grass filling the whole picture right out to all four "
+      "A close view of green grass with round white ice balls of several sizes resting on it, most of them small as peas and one of them much larger, about five centimetres across, no hands and no people in the picture, the grass filling the whole picture right out to all four "
       "edges. Nothing else in the picture.", 0),
      ("我们洛杉矶\n几乎不下冰雹。\n这儿的云不够高，\n也不够冷。\n别的地方年年都有。", "", 0),
      ("我捡起一粒，\n凉凉的，很快化了。\n它在那朵云里\n上上下下跑了那么久，\n才跑到我手上。",
