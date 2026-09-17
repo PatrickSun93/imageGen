@@ -65,7 +65,7 @@ BOOKS.append(dict(
               ("#e9e5ea", "#a09ab4", "#141020", "#201c28", "#cc8095", "#8a7a72", "#383044")),
     diagram=[2, 4, 6, 8, 9, 10],
     assets=[
-        "One single small early dinosaur about the size of a big dog, standing on two legs, seen "
+        "One single small early dinosaur standing on two legs, waist high, seen "
         "from the side facing left, with a long tail held straight out behind it, its whole body "
         "inside the picture. " + BG,
         "One single very large long-necked dinosaur standing on four legs, seen from the side "
@@ -81,7 +81,7 @@ BOOKS.append(dict(
       f"in the frame and turned towards the viewer, {EYES}, puzzled.", 1),
      ("这么长的日子，\n人们把它分成三段：\n三叠纪、侏罗纪，\n最后是白垩纪。\n一段比一段更长。", "", 0),
      ("最早的那批恐龙不大。\n它们用两条腿跑，\n尾巴伸得直直的，\n站起来大概\n跟一只大狗一样高。",
-      "One small early dinosaur about the size of a big dog running on two legs with its long "
+      "One small early dinosaur running on two legs, waist high, with its long "
       "tail held straight out behind it. Nothing else in the picture.", 0),
      ("那时候它们还不厉害。\n地上有别的爬行动物，\n个头比它们大，\n数量比它们多。\n恐龙只是小小一群。",
       "", 0),

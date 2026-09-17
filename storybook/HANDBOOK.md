@@ -446,6 +446,27 @@ for p in story["pages"]:
 **规律**：凡是「某个词在日常生活里有个更常见的所指」，模型就会画那个常见的。
 **物种名靠不住，形状描述靠得住。**
 
+2026-09-16 的四十本又添了两条，都比上面那张表更根上：
+
+**一、写「某动物的某个部件」，出来的是整只动物。** 提示写的是
+`One single wide flat belly scale of a snake lying alone`（一片又宽又扁的腹鳞），
+模型画的是一整条盘起来的眼镜蛇——于是那页从「一排五片鳞」变成「一排五条小蛇」。
+限定语再具体也压不过 `snake` 这个名词。**部件要当物件描述，一个动物词都别提**：
+改成 `One single wide flat horny plate lying alone on flat ground, shaped like a shallow
+rectangle much wider than it is tall`，身份交给同一页的上下文去交代。
+
+**二、主体本身属于天空时，模型会把天空一起画进来。** 云、龙卷风、太阳这几张出的是
+蓝天或灰绿天底，不是平奶油底，`asset()` 根本抠不动——龙卷风那张整幅 1024×1024
+有 91% 是实心的，贴上去就是一整个方块压住半页。提示里那句「the background is one flat
+cream colour」压不住主体的惯性，得**正面写死背后什么都没有**：
+`There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream
+colour is the only thing behind the object, exactly as if the object had been cut out and
+laid on blank paper.`，反向提示再加 `sky, horizon, landscape, scenery`。
+
+**这类错自己看素材很难发现**（一朵云画在蓝天上，看着挺好），要到贴进页面才露馅。
+体检办法：抠完以后如果**外框几乎占满画面、里头又几乎全是实心**，那就是没抠掉。
+188 个素材扫一遍，两个重症一秒钟就抓出来了。
+
 还有一条场景层面的：**博物馆、教室、商店这类场景会自带说明牌、海报、标签，上面全是乱码假字。**
 这批有一页的说明牌、讲解台、连墙上挂的镶框海报都是能认出字母的假词。解法不是写
 「牌子上没有字」（说了反而更有字），而是**换掉那个平面**——背景改成一面素墙，

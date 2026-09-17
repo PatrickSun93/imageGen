@@ -65,7 +65,8 @@ BOOKS.append(dict(
         "left, its whole body inside the picture. " + BG,
         "One single pigeon standing on two feet, seen from the side facing left, its whole body "
         "inside the picture. " + BG,
-        "One single chicken egg standing upright with the narrow end at the top. " + BG,
+        "One single smooth oval egg with a plain pale cream shell, standing upright with its "
+        "narrow end at the top, nothing holding it. " + BG,
         "One single walnut in its shell, seen from the side. " + BG,
     ],
     pages=[
@@ -109,7 +110,9 @@ BOOKS.append(dict(
               ("#eae5d7", "#9aa88f", "#14110c", "#201c15", "#cd6d4f", "#8a7457", "#37332a")),
     diagram=[2, 4, 5, 7, 10],
     assets=[
-        "One single thin straight hair-like strand standing upright. " + BG,
+        "One single hair standing upright on its own: one continuous thread, the same thinness "
+        "from bottom to top, completely alone with nothing at its base and nothing beside "
+        "it. " + BG,
         "One single tuft of several thin straight strands joined together at one root. " + BG,
         "One single flat bird feather with a straight central shaft and fine barbs along both "
         "sides. " + BG,
@@ -158,8 +161,9 @@ BOOKS.append(dict(
     assets=[
         "One single spinosaurus standing on two legs, seen from the side facing left, a tall sail "
         "rising along its back and a long narrow snout, its whole body inside the picture. " + BG,
-        "One single tall straight bony rod standing upright, thick at the bottom and tapering "
-        "towards the top. " + BG,
+        "One single long slender spine of bone standing upright, perfectly straight and smooth, "
+        "pale ivory, no thicker than a finger and at least ten times as tall as it is wide, "
+        "the same thinness all the way up. " + BG,
         "One single wooden door standing upright and closed inside a plain frame. " + BG,
     ],
     pages=[
