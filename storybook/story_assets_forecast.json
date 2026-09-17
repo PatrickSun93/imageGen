@@ -35,26 +35,30 @@
     {
       "n": 1,
       "zh": "素材 1",
-      "scene": "One single white louvred weather station box standing on four thin legs on short grass. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single white louvred weather station box standing on four thin legs on short grass. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     },
     {
       "n": 2,
       "zh": "素材 2",
-      "scene": "One single large white weather balloon in flight with a small white instrument box hanging below it on a thin line. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single large white weather balloon in flight with a small white instrument box hanging below it on a thin line. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     },
     {
       "n": 3,
       "zh": "素材 3",
-      "scene": "One single white radar dome shaped like a ball, sitting on top of a short square tower. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single white radar dome shaped like a ball, sitting on top of a short square tower. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     },
     {
       "n": 4,
       "zh": "素材 4",
-      "scene": "One single weather satellite with two long flat solar wings and a small dish on its body. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single weather satellite with two long flat solar wings and a small dish on its body. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     }
   ]
 }

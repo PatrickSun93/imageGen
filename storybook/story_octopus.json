@@ -40,13 +40,13 @@
   "pages": [
     {
       "n": 1,
-      "zh": "水族馆的玻璃后面，\n一团红红的东西\n正贴着石头挪。\n爸爸说那是章鱼，\n它有八条胳膊。",
+      "zh": "水族馆的玻璃后面，\n一团红红的东西\n正贴着石头慢慢挪。\n爸爸说那是章鱼，\n它有八条胳膊。",
       "scene": "Waist-up view of the little boy at an aquarium window, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, his nose almost touching the glass; behind the glass a red octopus rests against a rock.",
       "has_boy": true
     },
     {
       "n": 2,
-      "zh": "章鱼有三个心脏。\n两个小的挨着鳃，\n把血压进鳃里去。\n中间那个大的，\n再把血送到全身。",
+      "zh": "章鱼有三个心脏。\n两个小的挨着鳃，\n把血压进鳃里去。\n中间那个大的，\n再把血送到全身去。",
       "scene": "",
       "has_boy": false
     },
@@ -58,7 +58,7 @@
     },
     {
       "n": 4,
-      "zh": "它游起来的时候，\n中间那个大心脏\n会停下来不跳。\n所以章鱼不爱游，\n更爱慢慢地爬。",
+      "zh": "它游起来的时候，\n中间那个大心脏\n会停下来不跳了。\n所以章鱼不爱游泳，\n更爱慢慢地爬。",
       "scene": "",
       "has_boy": false
     },
@@ -70,25 +70,25 @@
     },
     {
       "n": 6,
-      "zh": "它的神经细胞\n不全在脑袋里。\n有一大半都长在\n那八条胳膊上，\n脑袋里反而少。",
+      "zh": "它的神经细胞\n并不全在脑袋里。\n有一大半都长在\n那八条胳膊上面，\n脑袋里反而少一些。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 7,
-      "zh": "所以每条胳膊\n都能自己拿主意。\n一条去翻石头，\n一条去摸缝，\n谁也不用等谁。",
+      "zh": "所以它每条胳膊\n都能自己拿主意。\n一条去翻石头，\n另一条去摸石缝，\n谁也不用等谁。",
       "scene": "One octopus on a cream background with its eight arms reaching in different directions, one arm lifting a small stone and another arm feeling into a narrow gap between rocks. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 8,
-      "zh": "有人说，章鱼\n像是有九个脑子：\n一个长在头上，\n八个长在胳膊里，\n各想各的事。",
+      "zh": "人们常说，章鱼\n像是有九个脑子：\n一个长在头顶上，\n八个长在胳膊里，\n各想各的事情。",
       "scene": "One single octopus arm lying alone on a cream background, its tip closing around a small crab. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 9,
-      "zh": "它全身上下\n只有嘴是硬的。\n一个嘴那么大的洞，\n整只章鱼\n都能挤着钻过去。",
+      "zh": "它全身上下，\n只有嘴是硬的。\n一个嘴那么大的洞，\n整只章鱼的身子\n都能挤着钻过去。",
       "scene": "",
       "has_boy": false
     },
@@ -100,13 +100,13 @@
     },
     {
       "n": 11,
-      "zh": "它的吸盘还能尝味。\n胳膊一贴上石头，\n就知道底下\n藏没藏着螃蟹，\n眼睛都不用看。",
+      "zh": "它的吸盘还能尝味。\n胳膊一贴上石头，\n就知道石头底下\n藏没藏着螃蟹，\n连眼睛都不用看。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 12,
-      "zh": "我隔着玻璃\n一条一条数胳膊。\n数到第八条的时候，\n它那三个心脏\n正一起跳着呢。",
+      "zh": "我隔着玻璃，\n一条一条数胳膊。\n数到第八条的时候，\n它身子里那三个心脏\n正一起跳着呢。",
       "scene": "Waist-up view of the little boy counting on his fingers at the aquarium window, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, delighted; the red octopus spreads its arms behind the glass.",
       "has_boy": true
     }

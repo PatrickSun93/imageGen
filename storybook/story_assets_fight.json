@@ -35,26 +35,30 @@
     {
       "n": 1,
       "zh": "素材 1",
-      "scene": "One single small two-legged dinosaur covered in feathers, seen from the side facing left, a long stiff tail behind it and one large sharp claw held up off the ground on each back foot, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single small two-legged dinosaur covered in feathers, seen from the side facing left, a long stiff tail behind it and one large sharp claw held up off the ground on each back foot, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     },
     {
       "n": 2,
       "zh": "素材 2",
-      "scene": "One single four-legged dinosaur with a parrot-like beak and a short bony frill behind its head, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single four-legged dinosaur with a parrot-like beak and a short bony frill behind its head, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     },
     {
       "n": 3,
       "zh": "素材 3",
-      "scene": "One single turkey standing on two legs, seen from the side facing left. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single turkey standing on two legs, seen from the side facing left. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     },
     {
       "n": 4,
       "zh": "素材 4",
-      "scene": "One single large sharp claw of bone, thick and heavy at its base and narrowing to one fine point. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single large sharp claw of bone, thick and heavy at its base and narrowing to one fine point. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     }
   ]
 }

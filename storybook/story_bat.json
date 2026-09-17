@@ -10,7 +10,7 @@
   "slug": "bat",
   "seed_base": 120000,
   "character": "wearing a navy blue jacket, grey trousers and white sneakers, short black hair",
-  "style": "children's picture book illustration, fine pen lines with light transparent watercolour washes and visible paper grain, dusk blue, soft violet and warm cream",
+  "style": "children's picture book illustration, fine pen lines with light transparent watercolour washes and visible grain, dusk blue, soft violet and warm cream",
   "style_label": "钢笔淡彩",
   "keyword": "蝙蝠",
   "diagram_pages": [
@@ -41,73 +41,73 @@
   "pages": [
     {
       "n": 1,
-      "zh": "天快黑了，\n院子上空有东西\n一晃就过去了。\n不像鸟那样滑，\n一忽儿高一忽儿低。",
+      "zh": "天快要黑下来了，\n院子上空有个东西\n一晃就过去了。\n不像鸟那样滑，\n一忽儿高一忽儿低。",
       "scene": "Waist-up view of the little boy standing in a yard at dusk looking up, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, surprised; one small bat flies across the sky behind him. No other person in the picture.",
       "has_boy": true
     },
     {
       "n": 2,
-      "zh": "爸爸说那是蝙蝠。\n它不是鸟。\n它那对翅膀\n是手指撑开的一层皮，\n薄得能透光。",
+      "zh": "爸爸说那是只蝙蝠。\n它其实不是鸟。\n它那对大翅膀，\n是手指撑开的一层皮，\n薄得能透过光。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 3,
-      "zh": "天完全黑下来，\n什么都看不见了。\n它的眼睛\n也帮不上多少忙。\n可它照样飞得很稳。",
+      "zh": "天完全黑下来了，\n什么都看不见了。\n它那双小眼睛\n也帮不上多少忙。\n可它照样飞得很稳。",
       "scene": "One single bat flying with its wings spread wide and its small eyes almost shut, seen from the front on a cream background. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 4,
-      "zh": "秘密在它的嘴里。\n它一边飞，\n一边不停地叫。\n那叫声太高了，\n我们的耳朵听不见。",
+      "zh": "秘密就在它的嘴里。\n它一边往前飞，\n一边不停地叫。\n那叫声高得吓人，\n我们的耳朵听不见。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 5,
-      "zh": "声音喊出去，\n一直往前跑，\n撞到东西就弹回来，\n像皮球扔到墙上\n又弹回手里。",
+      "zh": "喊出去的那一声，\n一直往前头跑，\n撞到东西就弹回来，\n像皮球扔到墙上，\n又弹回自己手里。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 6,
-      "zh": "弹回来得快，\n东西就在近处。\n弹回来得慢，\n东西就还远着。\n它听一听就明白了。",
+      "zh": "回声弹回来得快，\n东西就在近处。\n回声弹回来得慢，\n东西就还远着呢。\n它听一听就明白了。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 7,
-      "zh": "屋里拉一根细线，\n把灯全关上，\n它也能贴着飞过去，\n一下都不碰到。\n它是听出来的。",
+      "zh": "屋里拉一根细细的线，\n再把灯全关上，\n它也能贴着飞过去，\n一根线都不碰到。\n它是听出来的。",
       "scene": "One single bat flying past a thin string stretched across a dark room on a cream background, tilting its body to slip by without touching it. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 8,
-      "zh": "看见小虫的时候，\n它叫得越来越密。\n远的时候慢慢叫，\n快抓住了，\n就叫成一串。",
+      "zh": "发现一只小虫的时候，\n它叫得越来越密。\n离得远就慢慢叫，\n眼看快抓住了，\n就叫成一长串。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 9,
-      "zh": "一个晚上，\n一只小蝙蝠\n能吃掉上千只蚊子。\n夏天坐在院子里，\n少挨好几个包。",
+      "zh": "就这么一个晚上，\n一只小小的蝙蝠\n能吃掉上千只蚊子。\n夏天坐在院子里，\n能少挨好几个包。",
       "scene": "One single bat catching one small moth in mid air on a cream background, its mouth open and its wings swept forward. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 10,
-      "zh": "天亮以后，\n它钻进屋檐底下，\n倒挂着身子，\n翅膀裹得严严的，\n睡上一整个白天。",
+      "zh": "天一亮起来，\n它就钻进屋檐底下，\n倒挂着整个身子，\n翅膀裹得严严的，\n一睡就是一整个白天。",
       "scene": "One single bat hanging upside down from the underside of a roof eave on a cream background, its wings folded around its body, asleep. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 11,
-      "zh": "这个本事有名字，\n叫回声定位。\n海里的船也这么干：\n往水底喊一声，\n听回声有多深。",
+      "zh": "这个本事有名字，\n就叫回声定位。\n海里的船也这么干：\n往水底喊上一声，\n听回声算出有多深。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 12,
-      "zh": "我在院子里\n学着喊了一声。\n回声真的回来了。\n蝙蝠就是这样——\n喊一声，看见一片黑。",
+      "zh": "我站在院子里，\n学着它喊了一声。\n回声真的就回来了。\n蝙蝠就是这样——\n喊一声，看见一片黑。",
       "scene": "Waist-up view of the little boy in the yard at night with his hands cupped around his mouth calling out, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, listening; one bat flies high above him. No other person in the picture.",
       "has_boy": true
     }

@@ -40,7 +40,7 @@
   "pages": [
     {
       "n": 1,
-      "zh": "玻璃箱里那条蛇\n一动就往前溜。\n它一条腿也没有，\n我盯着看了半天，\n还是没看懂。",
+      "zh": "玻璃箱里那条蛇\n一动起来就往前溜。\n它一条腿也没有，\n我盯着看了半天，\n还是没看出门道。",
       "scene": "Waist-up view of the little boy crouching in front of a glass tank, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, puzzled; a green snake glides across the sand behind the glass.",
       "has_boy": true
     },
@@ -52,31 +52,31 @@
     },
     {
       "n": 3,
-      "zh": "这排鳞又宽又扁，\n后面那条边\n翘起来一点点。\n往前推不费劲，\n往后就勾住地。",
+      "zh": "这排鳞又宽又扁，\n每一片的后边\n都翘起来一点点。\n往前推的时候不费劲，\n往后就勾住地面。",
       "scene": "Close view of a snake's underside on a cream background, one row of wide flat belly scales running along it, each scale's back edge lifted a little. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 4,
-      "zh": "所以它一使劲，\n鳞就勾着地面，\n身子被推着往前。\n勾一下，走一点，\n一推一推地走。",
+      "zh": "所以它一使劲，\n鳞片就勾住地面，\n身子被推着往前。\n勾一下，走一点，\n一推一推地往前走。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 5,
-      "zh": "最常见的走法\n是把身子弯成波浪，\n一边一边地弯。\n每个弯的外边\n都在蹬着地。",
+      "zh": "最常见的走法\n是把身子弯成波浪，\n一边一边地弯。\n每个弯的外边\n都在使劲蹬着地。",
       "scene": "One snake moving through short grass on a cream background, its body bent into a wave, pressing against small stones on the outside of each bend. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 6,
-      "zh": "弯不是白弯的。\n一个弯推一下，\n一个弯又推一下，\n像浪一样从头\n传到尾巴尖。",
+      "zh": "身子弯不是白弯的。\n一个弯推一下，\n一个弯又推一下，\n像一道浪从头上\n一直传到尾巴尖。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 7,
-      "zh": "它还会直着走。\n身子一点不弯，\n肚皮下的鳞\n一片一片往后拨，\n像许多只小脚。",
+      "zh": "它还会直着往前走。\n身子一点也不弯，\n肚皮底下的鳞片\n一片一片往后拨，\n像许多只小脚。",
       "scene": "One snake moving straight forward along a fallen log on a cream background, its body held in a straight line. Nothing else in the picture.",
       "has_boy": false
     },
@@ -88,7 +88,7 @@
     },
     {
       "n": 9,
-      "zh": "可它怕光溜的地方。\n放在玻璃上，\n鳞勾不住东西，\n使多大的劲\n也挪不了几步。",
+      "zh": "可它怕光溜的地方。\n把它放到玻璃上，\n鳞片勾不住东西，\n使多大的劲\n也挪不了几步。",
       "scene": "One snake lying on a wide sheet of smooth polished stone on a cream background, its body bent but going nowhere. Nothing else in the picture.",
       "has_boy": false
     },
@@ -100,13 +100,13 @@
     },
     {
       "n": 11,
-      "zh": "爬树的时候，\n它先绕住树干，\n把身子箍紧，\n再一节一节\n往上挪上去。",
+      "zh": "爬树的时候呢，\n它先绕住树干，\n一圈一圈地箍紧，\n再一节一节地\n把自己一点点往上挪。",
       "scene": "One snake wound around a rough tree trunk on a cream background, gripping it tightly as it works its way upward. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 12,
-      "zh": "我趴在玻璃上\n看它肚皮底下。\n那排鳞真的在动，\n一片接着一片，\n把它推着往前走。",
+      "zh": "我趴在玻璃跟前\n看它肚皮底下。\n那排鳞真的在动，\n一片接着一片，\n把它推着往前走。",
       "scene": "Waist-up view of the little boy lying on the floor with his chin near the glass tank, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, absorbed; the green snake moves past on the other side.",
       "has_boy": true
     }

@@ -35,20 +35,23 @@
     {
       "n": 1,
       "zh": "素材 1",
-      "scene": "One single therizinosaurus standing on two legs, seen from the side facing left, with three very long straight claws on each hand hanging down past its knees, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single therizinosaurus standing on two legs, seen from the side facing left, with three very long straight claws on each hand hanging down past its knees, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     },
     {
       "n": 2,
       "zh": "素材 2",
-      "scene": "One single large claw bone standing alone, wide and thick at its base and narrowing to one sharp point at the top. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single large claw bone standing alone, wide and thick at its base and narrowing to one sharp point at the top. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     },
     {
       "n": 3,
       "zh": "素材 3",
-      "scene": "One single garden trowel seen from the side, a broad flat blade on a short straight handle. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single garden trowel seen from the side, a broad flat blade on a short straight handle. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     }
   ]
 }

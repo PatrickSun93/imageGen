@@ -35,26 +35,30 @@
     {
       "n": 1,
       "zh": "素材 1",
-      "scene": "One single ammonite shell coiled into a flat round spiral, seen from the side, its whole shape inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single ammonite shell coiled into a flat round spiral, seen from the side, its whole shape inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     },
     {
       "n": 2,
       "zh": "素材 2",
-      "scene": "One single large sea reptile with a long body, four flippers and a long tail, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single large sea reptile with a long body, four flippers and a long tail, seen from the side facing left, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     },
     {
       "n": 3,
       "zh": "素材 3",
-      "scene": "One single duck-billed dinosaur standing on four legs, seen from the side facing left, its flat wide snout lowered, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single duck-billed dinosaur standing on four legs, seen from the side facing left, its flat wide snout lowered, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     },
     {
       "n": 4,
       "zh": "素材 4",
-      "scene": "One single sabre-toothed cat standing on four legs, seen from the side facing left, two long teeth hanging down from its upper jaw, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges.",
-      "has_boy": false
+      "scene": "One single sabre-toothed cat standing on four legs, seen from the side facing left, two long teeth hanging down from its upper jaw, its whole body inside the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     }
   ]
 }

@@ -40,49 +40,49 @@
   "pages": [
     {
       "n": 1,
-      "zh": "博物馆里的恐龙\n是从别的州运来的。\n我问爸爸：\n加州有没有恐龙？\n他说，很少很少。",
+      "zh": "博物馆里的这些恐龙，\n是从别的州运来的。\n我就问爸爸，\n加州有没有恐龙。\n他说，很少很少。",
       "scene": "Waist-up view of the little boy standing in a museum hall beside a large dinosaur leg bone, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, asking a question.",
       "has_boy": true
     },
     {
       "n": 2,
-      "zh": "蒙大拿、犹他那边，\n恐龙骨头一堆一堆。\n加州挖出来的，\n数得过来，\n一只手都用不完。",
+      "zh": "蒙大拿、犹他那边，\n恐龙骨头一堆一堆。\n加州挖出来的，\n数得过来的，\n一只手都用不完。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 3,
-      "zh": "为什么这么少？\n因为恐龙住着的时候，\n加州这块地方\n大半都在水底下。\n是一片海。",
+      "zh": "为什么这么少呢？\n因为恐龙住着的时候，\n加州这块地方，\n大半都在水底下，\n是一片大海。",
       "scene": "A wide open sea with low waves stretching all the way to the horizon under an empty sky. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 4,
-      "zh": "海里不缺大家伙。\n有一种沧龙，\n身子像大蜥蜴，\n尾巴一摆，\n在水里追着鱼跑。",
+      "zh": "海里不缺大家伙。\n有一种叫沧龙，\n身子像大蜥蜴，\n尾巴左右一摆，\n在水里追着鱼群跑。",
       "scene": "One large sea reptile with a long body and four flippers swimming underwater after a small fish. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 5,
-      "zh": "还有菊石。\n壳一圈一圈盘起来，\n小的像纽扣，\n大的一只，\n比饭桌上的盘子还宽。",
+      "zh": "还有一种菊石。\n壳一圈一圈盘起来，\n小的像颗纽扣，\n最大的那种，\n比饭桌上的盘子还宽。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 6,
-      "zh": "鱼龙长得像海豚，\n可它不是鱼，\n也不是海豚。\n它要浮上来\n换一口气。",
+      "zh": "鱼龙长得很像海豚，\n可它不是鱼，\n也不是海豚。\n它得浮上水面，\n换一口气再下去。",
       "scene": "One ichthyosaur with a smooth dolphin-shaped body breaking the surface of the sea to take a breath. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 7,
-      "zh": "沧龙、鱼龙、菊石，\n一个都不算恐龙。\n恐龙住在陆地上，\n它们住在水里。\n这是两回事。",
+      "zh": "沧龙、鱼龙、菊石，\n一个都不算恐龙。\n恐龙住在陆地上，\n它们住在水里头。\n这是两回事。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 8,
-      "zh": "加州也挖到过一只。\n鸭子一样的扁嘴巴，\n在中部的山里找到的。\n现在它是\n加州的州恐龙。",
+      "zh": "加州也挖到过一只。\n鸭子一样的扁嘴巴，\n在中部的山里找到的。\n现在它就是\n加州的州恐龙。",
       "scene": "One duck-billed dinosaur with a flat wide snout standing on a low hillside of dry bare ground. Nothing else in the picture.",
       "has_boy": false
     },
@@ -94,19 +94,19 @@
     },
     {
       "n": 10,
-      "zh": "沥青是黑的，\n又黏又稠。\n猛犸踩进去\n就拔不出脚，\n一直陷在那里。",
+      "zh": "沥青是黑色的，\n黏糊糊的一大片。\n猛犸一脚踩进去，\n就拔不出来了，\n一直陷在那里面。",
       "scene": "One woolly mammoth standing stuck in a pool of black sticky tar with its legs sunk in up to the knees. Nothing else in the picture.",
       "has_boy": false
     },
     {
       "n": 11,
-      "zh": "坑里最多的\n是一种狼，\n挖出了几千只。\n还有剑齿虎，\n两颗牙有香蕉那么长。",
+      "zh": "坑里数量最多的\n是一种大狼，\n挖出来好几千只。\n还有剑齿虎，\n两颗牙有香蕉那么长。",
       "scene": "",
       "has_boy": false
     },
     {
       "n": 12,
-      "zh": "我们脚底下\n埋的不是恐龙。\n是海里的大蜥蜴，\n是陷住的猛犸。\n一样很了不起。",
+      "zh": "我们脚底下埋的，\n不是恐龙的骨头。\n是海里的大蜥蜴，\n是陷进沥青的猛犸。\n一样很了不起。",
       "scene": "Waist-up view of the little boy standing at a railing beside a black tar pool, his face large in the frame and turned towards the viewer, both eyes clearly drawn with white, a dark round iris and a small bright highlight, serious and proud.",
       "has_boy": true
     }

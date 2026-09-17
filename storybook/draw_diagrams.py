@@ -4124,25 +4124,45 @@ ASSET_CACHE = {}
 def asset(book, n, tol=45):
     """读第 n 个素材并抠掉背景，返回裁到外框的 RGBA。
 
-    从八个边缘点 floodfill：只有和画布边缘连通的背景色会被抠掉，
-    物体内部同色的浅块不会被穿孔。
+    别用 floodfill。模型给的奶油底不是纯色，带一层很细的纸纹，纹理里总有几条
+    像素的色差超过 thresh，把背景切成互不连通的几块 —— floodfill 只吃得掉和
+    画布边缘连通的那块，剩下的奶油色岛屿全留在图里，外框跟着虚高三成，
+    place(h=...) 于是把东西缩小三成。对比页的比例就是这么错的。
 
-    抠完还要把蒙版向内收 2px（MinFilter）。水彩画风的素材脚下自带一片渐变的
-    铅笔投影，floodfill 只吃得掉最外层，剩下一圈过渡色 —— 贴到深色地层上
-    就是物体周围一圈白光晕，而且外框底部量到的是影子不是脚，物体会悬空。
+    改成三步，都不靠连通性：
+      1. 和边框中位色的距离 <= tol 的，是背景；
+      2. 色相和背景几乎一样、只是暗了一点点的（亮度还在背景的七成以上），
+         是脚下那片投影 —— 也当背景。深色描边暗得多，落在七成以下，留得住；
+      3. 剩下的填内洞（binary_fill_holes）—— 这一步保住浅色的肚皮、蛋壳、
+         骨头：它们外面有一圈闭合的深色描边，描边围起来的都算物体。
+
+    最后丢掉面积不到最大块 2% 的碎块（纸纹残渣），蒙版向内收 2px，裁到外框。
     """
     import numpy as np
+    from scipy import ndimage
     key = (book, n, tol)
     if key in ASSET_CACHE:
         return ASSET_CACHE[key]
     path = os.path.join(OUT, "bakeoff", f"assets_{book}_p{n:02d}_lightning8.png")
     src = Image.open(path).convert("RGB")
-    tmp, (w, h) = src.copy(), src.size
-    KEY = (255, 0, 255)
-    for c in ((0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1),
-              (w // 2, 0), (w // 2, h - 1), (0, h // 2), (w - 1, h // 2)):
-        ImageDraw.floodfill(tmp, c, KEY, thresh=tol)
-    m = (~np.all(np.array(tmp) == KEY, axis=-1)).astype("uint8") * 255
+    a = np.asarray(src).astype(np.float32)
+    ring = np.concatenate([a[:6].reshape(-1, 3), a[-6:].reshape(-1, 3),
+                           a[:, :6].reshape(-1, 3), a[:, -6:].reshape(-1, 3)])
+    bg = np.median(ring, 0)
+    dist = np.abs(a - bg).sum(2)
+    chrom = a / (a.sum(2, keepdims=True) + 1e-6)
+    dchrom = np.abs(chrom - bg / bg.sum()).sum(2) * 255
+    lum, blum = a.mean(2), float(bg.mean())
+    flat = dist <= tol
+    shade = (dchrom < 9) & (lum < blum) & (lum > 0.72 * blum)
+    solid = ~(flat | shade)
+    lbl, k = ndimage.label(solid)
+    if k:
+        sz = np.bincount(lbl.ravel())
+        sz[0] = 0
+        solid = np.isin(lbl, np.where(sz >= max(sz.max() * 0.02, 64))[0])
+    solid = ndimage.binary_fill_holes(solid)
+    m = (solid.astype("uint8") * 255)
     out = src.convert("RGBA")
     out.putalpha(Image.fromarray(m, "L").filter(ImageFilter.MinFilter(5)))
     bb = out.getchannel("A").getbbox()

@@ -13,7 +13,9 @@ import os
 
 K = "ink soft ground paper accent bark line".split()
 BG = ("The background is one flat cream colour of a single even tone that fills the whole "
-      "picture right out to all four edges.")
+      "picture right out to all four edges. The object floats on this flat colour: it casts "
+      "no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, "
+      "line or platform of any kind underneath it.")
 EYES = "both eyes clearly drawn with white, a dark round iris and a small bright highlight"
 
 

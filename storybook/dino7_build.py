@@ -28,6 +28,9 @@ from dino7_a import BOOKS                                 # noqa: E402
 
 BAD_SCENE = ("paper", "collage", "print", " page", "book", "babies")
 FACE = ("Waist-up view of the little boy", "turned towards the viewer", "iris")
+ASSET_NEG = ("shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, "
+             "dirt patch, grass patch, reflection")
+
 COMMON = {"workflow": "workflows/qwen_image_2512.json",
           "colophon": {"model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
                        "lora": "照片参考，不用 LoRA", "strength": 1.3}}
@@ -74,7 +77,9 @@ for b in BOOKS:
                   slug=f"assets_{slug}", seed_base=90000, character="", style=b["style"],
                   style_label=b["style_label"], keyword="素材", diagram_pages=[],
                   palette=b["palette"], neg_extra="",
-                  pages=[{"n": i, "zh": f"素材 {i}", "scene": s, "has_boy": False}
+                  pages=[{"n": i, "zh": f"素材 {i}", "scene": s, "has_boy": False,
+                          # bakeoff_qwen 只认 negative_extra 这个键
+                          "negative_extra": ASSET_NEG}
                          for i, s in enumerate(assets, 1)])
         at["colophon"] = {"model": "Qwen-Image-2512 (Q3)", "lora": "素材页，无人物",
                           "strength": 1.3}
