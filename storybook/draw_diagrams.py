@@ -4202,6 +4202,51 @@ def place(img, a, cx, cy, h=None, w=None, anchor="center"):
     return nw, nh
 
 
+def _scaled(a, h=None, w=None):
+    aw, ah = a.size
+    s = (h / ah) if h else ((w / aw) if w else 1.0)
+    return a.resize((max(1, round(aw * s)), max(1, round(ah * s))), Image.LANCZOS)
+
+
+def halo(img, a, cx, cy, h=None, w=None, color=(0, 0, 0), grow=16, width=7,
+         anchor="center"):
+    """沿素材自己的轮廓画一圈强调线，返回占位 (宽, 高)。
+
+    「把这块板圈出来」以前是在板外面画个三角形——板不是三角形，看着就是两个东西
+    摞在一起。这里拿素材自己的 alpha 膨胀 grow 像素再减掉本体，描出来的圈和物体
+    严丝合缝。cy 的含义和 place 一样（anchor='bottom' 时是脚底）。
+    """
+    import numpy as np
+    from scipy import ndimage
+    r = _scaled(a, h, w)
+    nw, nh = r.size
+    m = np.array(r.getchannel("A")) > 128
+    pad = grow + width + 2
+    big = np.zeros((nh + 2 * pad, nw + 2 * pad), bool)
+    big[pad:pad + nh, pad:pad + nw] = m
+    outer = ndimage.binary_dilation(big, iterations=grow + width)
+    inner = ndimage.binary_dilation(big, iterations=grow)
+    ring = (outer & ~inner).astype("uint8") * 255
+    layer = Image.new("RGBA", (nw + 2 * pad, nh + 2 * pad), tuple(color) + (0,))
+    layer.putalpha(Image.fromarray(ring, "L"))
+    y = round(cy - nh) if anchor == "bottom" else round(cy - nh / 2)
+    img.paste(layer, (round(cx - nw / 2) - pad, y - pad), layer)
+    return nw, nh
+
+
+def silhouette(a, color, h=None, w=None):
+    """把素材压成一块单色剪影（形状是真的，颜色是书里的墨色）。
+
+    用在「同一个东西的四种状态」这类页上：以前画四个灰色梯形当尾巴，现在四个都是
+    真尾巴的形状。返回 RGBA，再交给 place 摆。
+    """
+    r = _scaled(a, h, w)
+    out = Image.new("RGBA", r.size, tuple(color) + (255,))
+    # 缩放后边缘是半透明的，直接拿来当剪影会在四周留一圈发白的毛边，二值化掉
+    out.putalpha(r.getchannel("A").point(lambda v: 255 if v > 128 else 0))
+    return out
+
+
 def poly(d, pts, pal, fill=None, w=7):
     """闭合多边形 + 描边。polygon 的 outline 不支持 width，只能自己描。"""
     d.polygon(pts, fill=fill if fill is not None else pal["soft"])
