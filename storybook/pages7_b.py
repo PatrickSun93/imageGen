@@ -170,6 +170,8 @@ def _(d, pal):
         poly(d, [(x - 72, skin_top + skin_h - 14), (x, skin_top - 300), (x + 72, skin_top + skin_h - 14)],
              pal, pal["paper"], 8)
     clear = (vy - 48) - (skin_top + skin_h)
+    arrow(d, S / 2, (skin_top + skin_h + vy - 48) / 2 - 8, S / 2, skin_top + skin_h + 6, pal, w=7, head=20)
+    arrow(d, S / 2, (skin_top + skin_h + vy - 48) / 2 + 8, S / 2, vy - 54, pal, w=7, head=20)
     return (f"1 层皮（厚 {skin_h}px）+ 皮下 {n_v} 块脊椎骨 + 插在皮里的 {n_p} 块板（每块底宽 144px、"
             f"间距 {pslot:.0f}px）；板底和脊椎之间空着 {clear}px，没有一块碰到脊椎")
 
@@ -235,16 +237,17 @@ def _(d, pal):
     """俯视：板不是两边对齐的，是左一块右一块错开着排。"""
     cx = S / 2
     y0, y1 = 140, 930
-    d.rounded_rectangle([cx - 88, y0 - 20, cx + 88, y1 + 20], radius=88,
-                        fill=pal["soft"], outline=pal["ink"], width=9)
+    poly(d, [(cx - 34, y0 - 40), (cx + 34, y0 - 40), (cx + 92, y0 + 120), (cx + 92, y1 - 140),
+             (cx + 30, y1 + 30), (cx - 30, y1 + 30), (cx - 92, y1 - 140), (cx - 92, y0 + 120)],
+         pal, pal["soft"], 9)
     n = 17
     step = (y1 - y0) / (n - 1)
     left = right = 0
     for i in range(n):
         y = y0 + step * i
         s = -1 if i % 2 == 0 else 1
-        poly(d, [(cx + s * 78, y - step * 0.40), (cx + s * 290, y),
-                 (cx + s * 78, y + step * 0.40)], pal,
+        poly(d, [(cx + s * 80, y - step * 0.46), (cx + s * 235, y - step * 0.10),
+                 (cx + s * 80, y + step * 0.46)], pal,
              pal["paper"] if s < 0 else pal["accent"], 7)
         left += s < 0
         right += s > 0
@@ -369,22 +372,20 @@ def _(d, pal, img):
 @page("claws", 5)
 def _(d, pal):
     """脚上的爪：第二个脚趾翘着，挂着一只大钩子。"""
-    gy = 820
+    gy = 780
     d.line([MARGIN, gy, S - MARGIN, gy], fill=pal["ink"], width=10)
-    d.line([660, 230, 600, 600], fill=pal["ink"], width=46)         # 小腿
-    d.line([600, 600, 540, 770], fill=pal["ink"], width=34)         # 跖骨
-    small, big = 52, 150
-    tips = []
-    for a in (2.95, 2.62):                                          # 踩在地上的两根脚趾
-        tx = 540 + 180 * math.cos(a)
-        ty = 770 + 180 * math.sin(a)
-        d.line([540, 770, tx, ty], fill=pal["ink"], width=26)
-        tips.append(_claw(d, tx, ty, small, a + 0.20, pal, pal["paper"], curve=0.8, thick=0.34))
-    lift = 130                                                      # 第二趾翘起来离地
-    hx, hy = 540 - 150, 770 - lift
-    d.line([540, 770, hx, hy], fill=pal["ink"], width=26)
-    _claw(d, hx, hy, big, 3.35, pal, pal["accent"], curve=1.15, thick=0.30)
-    return (f"1 只侧视的脚：3 根脚趾，2 根踩在地线上（爪长 {small}px），"
+    ax, ay = 660, 500                                               # 踝
+    mx, my = 570, 690                                               # 跖骨下端，三根趾都从这里分出去
+    d.line([720, 170, ax, ay], fill=pal["ink"], width=48)           # 小腿
+    d.line([ax, ay, mx, my], fill=pal["ink"], width=38)             # 跖骨
+    small, big, lift = 64, 210, 150
+    for tx in (340, 455):                                           # 两根踩在地上的趾：趾尖正好落在地线上
+        d.line([mx, my, tx, gy], fill=pal["ink"], width=28)
+        _claw(d, tx, gy, small, math.pi - 0.22, pal, pal["paper"], curve=0.55, thick=0.34)
+    hx, hy = mx - 200, gy - lift                                    # 第二趾翘起来离地
+    d.line([mx, my, hx, hy], fill=pal["ink"], width=28)
+    _claw(d, hx, hy, big, 3.30, pal, pal["accent"], curve=1.10, thick=0.28)
+    return (f"1 只侧视的脚：3 根脚趾，2 根的趾尖正好落在地线上（爪长 {small}px），"
             f"第 2 根翘起来离地 {lift}px、挂着 1 只大钩爪（长 {big}px，是另外两只的 {big / small:.1f} 倍）")
 
 
@@ -394,15 +395,16 @@ def _(d, pal):
     n = 3
     tip_sp = []
     for (cx, cy, w_, h_), closed in zip(panel2(d, pal), (False, True)):
-        palm_y = cy + h_ * 0.24
-        L = h_ * (0.30 if closed else 0.24)
-        angs = (-1.36, -1.57, -1.78) if closed else (-2.28, -1.57, -0.86)
+        palm_y = cy + h_ * 0.16
+        L = h_ * 0.26
+        # 左右两根的弯度取相反的符号，三根才是对称的一把
+        spec = ((-1.35, 0.20), (-1.57, 0.0), (-1.79, -0.20)) if closed else                ((-1.95, -0.22), (-1.57, 0.0), (-1.19, 0.22))
         if closed:
-            disc(d, cx, palm_y - L * 0.94, 54, pal["accent"], pal, w=8)
+            disc(d, cx, palm_y - L * 0.92, 54, pal["accent"], pal, w=8)
         tips = []
-        for k, a in enumerate(angs):
+        for k, (a, cv) in enumerate(spec):
             x = cx + (k - 1) * w_ * 0.16
-            tips.append(_claw(d, x, palm_y, L, a, pal, pal["soft"], curve=0.26, thick=0.16))
+            tips.append(_claw(d, x, palm_y, L, a, pal, pal["soft"], curve=cv, thick=0.16))
         d.rounded_rectangle([cx - w_ * 0.26, palm_y, cx + w_ * 0.26, palm_y + h_ * 0.16],
                             radius=42, fill=pal["paper"], outline=pal["ink"], width=9)
         tip_sp.append(abs(tips[2][0] - tips[0][0]))
@@ -429,7 +431,7 @@ def _(d, pal, img):
 def _(d, pal):
     """四种爪并排：钩的、抓的、挖的，还有干脆不用的。"""
     xs, slot = lay(4)
-    cy = 760
+    cy = 660
     ang = -1.95
     specs = [(270, 1.30, 0.13, "accent"), (270, 0.70, 0.20, "soft"),
              (270, 0.30, 0.42, "bark"), (88, 0.55, 0.26, "paper")]
@@ -451,7 +453,7 @@ def _(d, pal):
 def _(d, pal, img):
     """梁龙的尾巴是一节一节接起来的，八十二节。"""
     n, per = 82, 41
-    w_, h_ = place(img, asset("tails", 1), S / 2, 150, w=420)
+    w_, h_ = place(img, asset("tails", 1), S / 2, 150, h=170)
     x0, x1 = MARGIN + 20, S - MARGIN - 20
     step = (x1 - x0) / per
     sw = step * 0.62
@@ -465,7 +467,7 @@ def _(d, pal, img):
                             radius=min(6, sw / 2), fill=pal["accent"] if i % 2 else pal["paper"],
                             outline=pal["ink"], width=3)
     arrow(d, x1 - 40, 560, x0 + 40, 700, pal, w=10, head=26)
-    return (f"1 只梁龙（素材1，宽 {w_}px）+ 它的尾巴拆成 {n} 节：上行 {per} 节、下行 {n - per} 节，"
+    return (f"1 只梁龙（素材1，高 {h_}px）+ 它的尾巴拆成 {n} 节：上行 {per} 节、下行 {n - per} 节，"
             f"每节宽 {sw:.0f}px、中心距 {step:.1f}px（不重叠），高度从 {h_top}px 一路收细到 {h_end}px，"
             f"中间 1 支接着数下去的箭头")
 
@@ -528,10 +530,10 @@ def _(d, pal):
     xs, slot = lay(4)
     top, bot = 330, 760
     for k, x in enumerate(xs):
-        tail = [(x - slot * 0.30, top), (x - slot * 0.18, top + 16),
-                (x + slot * 0.26, bot - 40), (x + slot * 0.16, bot - 10)]
+        tail = [(x - slot * 0.30, top), (x - slot * 0.04, top),
+                (x + slot * 0.24, bot), (x + slot * 0.18, bot)]
         poly(d, tail, pal, pal["soft"], 8)
-        tx, ty = x + slot * 0.21, bot - 25
+        tx, ty = x + slot * 0.21, bot - 6
         if k == 0:                                    # 撑在地上
             d.line([x - slot * 0.36, bot + 60, x + slot * 0.36, bot + 60],
                    fill=pal["ink"], width=10)
@@ -555,11 +557,11 @@ def _(d, pal):
 def _(d, pal, img):
     """五根 → 三根 → 两根，一步一步少下去。"""
     marks = [(0.08, None, "最早"), (0.50, None, "后来"), (0.92, None, "再往后")]
-    note = timeline(img, d, pal, "fingers", marks, y=790)
+    note = timeline(img, d, pal, "fingers", marks, y=670)
     x0, x1 = MARGIN + 50, S - MARGIN - 50
     ns = (5, 3, 2)
     for (t, _a, _lab), n in zip(marks, ns):
-        _hand(d, x0 + (x1 - x0) * t, 580, 215, pal, n)
+        _hand(d, x0 + (x1 - x0) * t, 460, 215, pal, n)
     return note + f"；线上 3 只手，从左到右 {ns[0]} 根 / {ns[1]} 根 / {ns[2]} 根手指"
 
 
@@ -620,7 +622,7 @@ def _(d, pal):
 @page("fingers", 9)
 def _(d, pal):
     """一只手上摆着三样东西：一根钉、三个蹄，最外边那根还能弯过来夹树枝。"""
-    cx, cy = S / 2 - 60, 640
+    cx, cy = S / 2 - 60, 580
     d.rounded_rectangle([cx - 250, cy, cx + 250, cy + 230], radius=44,
                         fill=pal["paper"], outline=pal["ink"], width=9)
     spike = 300
@@ -702,7 +704,7 @@ def _(d, pal):
     d.line(pts, fill=pal["ink"], width=12, joint="curve")
     for x, y in pts:
         disc(d, x, y, r, pal["paper"], pal, w=8)
-        disc(d, x, y, r * 0.44, pal["ground"], pal, w=5)
+        disc(d, x, y, r * 0.56, pal["ground"], pal, w=5)
     sp = min(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(pts, pts[1:]))
     return (f"1 条脖子上 {n} 节骨头（每节直径 {2 * r}px、最小中心距 {sp:.0f}px，不重叠），"
             f"每节中间 1 个空洞，一共 {n} 个空洞")
@@ -783,7 +785,7 @@ def _(d, pal):
     """小牙已经磨平了一点 —— 牙被磨平，就是吃过东西。"""
     n, sharp, worn = 6, 230, 150
     for (cx, cy, w_, h_), is_worn in zip(panel2(d, pal), (False, True)):
-        gum_y = cy + 130
+        gum_y = cy + 40
         step = w_ * 0.68 / (n - 1)
         for i in range(n):
             x = cx - w_ * 0.34 + i * step

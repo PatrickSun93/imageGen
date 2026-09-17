@@ -108,6 +108,17 @@ def _shrinking_radii(r_out, r_in, n, ratio=0.45):
     return rr, [gi * k for gi in g]
 
 
+def _fit(img, a, cx, cy, box_w=None, box_h=None, anchor="center"):
+    """把素材放进一个格子：宽和高谁先顶到边就按谁缩放。
+
+    素材还没出图，长宽比是未知数；凡是排成一行一列的（水桶、腹鳞、颈椎），
+    只按宽度缩放就有可能纵向撑出格子、压到上下那一个。这里两边都卡住。
+    """
+    aw, ah = a.size
+    s = min(box_w / aw if box_w else 1e9, box_h / ah if box_h else 1e9)
+    return place(img, a, cx, cy, w=aw * s, anchor=anchor)
+
+
 def _plen(pts):
     return sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(pts, pts[1:]))
 
@@ -149,13 +160,14 @@ def _(d, pal, img):
     b = asset("camel", 2)
     h = 165
     top = MARGIN + 215
-    bw, bh = place(img, b, S / 2, top, h=h, anchor="bottom")
-    d.line([MARGIN, top + 45, S - MARGIN, top + 45], fill=pal["line"], width=6)
     xs, slot = lay(5)
+    cell = slot * 0.88
+    bw, bh = _fit(img, b, S / 2, top, cell, h, anchor="bottom")
+    d.line([MARGIN, top + 45, S - MARGIN, top + 45], fill=pal["line"], width=6)
     n = 0
     for r_ in range(2):
         for x in xs:
-            place(img, b, x, top + 300 + r_ * 300, h=h, anchor="bottom")
+            _fit(img, b, x, top + 300 + r_ * 300, cell, h, anchor="bottom")
             n += 1
     return (f"上面 1 个水桶（我一天喝的）/ 下面 {n} 个水桶（骆驼一口气，2 行 ×5），"
             f"桶高一律 {bh}px、宽 {bw}px，间距 {slot:.0f}px，中间 1 条分隔线")
@@ -169,6 +181,7 @@ def _(d, pal):
         x0, x1 = cx - w_ * 0.36, cx + w_ * 0.36
         base, top = cy + h_ * 0.30, cy - h_ * 0.38
         ty = base - (base - top) * thr
+        d.line([x0, base, x1, base], fill=pal["line"], width=6)        # 起点（早上的体温）
         d.line([x0, ty, x1, ty], fill=pal["accent"], width=9)          # 出汗线
         pts = [(x0 + (x1 - x0) * t / 12, base - (base - ty) * min(1.0, t / 7.0))
                for t in range(13)]
@@ -209,7 +222,7 @@ def _(d, pal, img):
     unit = span / n
     sc = asset("snake", 2)
     for i in range(n):
-        place(img, sc, MARGIN + 40 + unit * (i + 0.5), 800, w=unit)
+        _fit(img, sc, MARGIN + 40 + unit * (i + 0.5), 800, unit, 150)
     d.line([MARGIN + 40, 700, S - MARGIN - 40, 700], fill=pal["line"], width=5)
     return (f"上面 1 条蛇（素材，宽 {sw}px）/ 下面 {n} 片腹鳞首尾相接铺满 {unit * n:.0f}px，"
             f"每片宽 {unit:.0f}px，一片挨着一片没有缝")
@@ -223,12 +236,12 @@ def _(d, pal, img):
     n = 8
     xs, slot = lay(n)
     sc = asset("snake", 2)
-    sw = 0
+    sw = sh = 0
     for x in xs:
-        sw, sh = place(img, sc, x, base, h=90, anchor="bottom")
+        sw, sh = _fit(img, sc, x, base, slot * 0.86, 110, anchor="bottom")
         arrow(d, x, base + 40, x - 62, base + 96, pal, w=7, head=20)   # 往后勾一下
     arrow(d, MARGIN + 120, 240, S - MARGIN - 120, 240, pal, w=14, head=36)  # 身子往前走
-    return (f"地线上 {n} 片腹鳞（素材，各 {sw}×90px、间距 {slot:.0f}px），"
+    return (f"地线上 {n} 片腹鳞（素材，各 {sw}×{sh}px、间距 {slot:.0f}px），"
             f"每片配 1 支往后勾的小箭头，上方 1 支往前的大箭头（长 {S - 2 * MARGIN - 240}px）")
 
 
@@ -323,21 +336,24 @@ def _(d, pal):
     for (cx, cy, w_, h_), outside in zip(panel2(d, pal), (False, True)):
         L = w_ * 0.74
         r = _tad(d, pal, cx, cy, L, legs=2)
+        hx = cx - L * 0.22                            # 头心
         for i in range(2):
             s = 1 if i else -1
-            bx, by = cx - L * 0.20, cy + s * r * 0.44
-            ex, ey = (bx - L * 0.30, by + s * r * 0.95) if outside else (bx + L * 0.03, by + s * r * 0.40)
-            if outside:
-                pts = [(bx, by), ((bx + ex) / 2, by + s * r * 0.75), (ex, ey)]
+            if outside:                               # 顶出来：从头的边上伸到身子外面
+                pts = [(hx - r * 0.60, cy + s * r * 0.62),
+                       (hx - r * 1.05, cy + s * r * 1.00),
+                       (hx - r * 1.45, cy + s * r * 1.30)]
                 d.line(pts, fill=pal["ink"], width=int(L * 0.05) + 7, joint="curve")
                 d.line(pts, fill=pal["accent"], width=max(3, int(L * 0.05)), joint="curve")
-            else:
-                for k in range(5):                    # 藏在皮里：虚线，整条都在身子轮廓里面
-                    t0, t1 = k / 5 + 0.03, (k + 1) / 5 - 0.03
+            else:                                     # 藏在皮里：虚线，整条都在头的轮廓里面
+                bx, by = hx - r * 0.12, cy + s * r * 0.18
+                ex, ey = hx - r * 0.68, cy + s * r * 0.56
+                for k in range(5):
+                    t0, t1 = k / 5 + 0.04, (k + 1) / 5 - 0.04
                     d.line([bx + (ex - bx) * t0, by + (ey - by) * t0,
                             bx + (ex - bx) * t1, by + (ey - by) * t1],
-                           fill=pal["ink"], width=7)
-        out.append("2 条前腿" + ("伸到身子外面（实线）" if outside else "藏在身子里面（5 段虚线）"))
+                           fill=pal["ink"], width=8)
+        out.append("2 条前腿" + ("伸到身子外面（实线）" if outside else "藏在身子里面（每条 5 段虚线）"))
     return "两格等大，都是 2 条长好的后腿：左格 " + out[0] + " / 右格 " + out[1]
 
 
@@ -346,20 +362,25 @@ def _(d, pal):
     """鳃慢慢不见，身体里长出了肺，得浮到水面吸一口空气。"""
     out = []
     for (cx, cy, w_, h_), surfaced in zip(panel2(d, pal), (False, True)):
-        wl = cy - h_ * 0.34
+        wl = cy - h_ * 0.10
         d.line([cx - w_ * 0.46, wl, cx + w_ * 0.46, wl], fill=pal["line"], width=10)
-        by = wl + (10 if surfaced else h_ * 0.30)
+        by = wl + (14 if surfaced else h_ * 0.26)
         L = w_ * 0.66
         r = _tad(d, pal, cx, by, L)
-        if surfaced:
-            for s in (-1, 1):                          # 身体里 2 个肺
-                disc(d, cx - L * 0.22 + s * r * 0.42, by + r * 0.10, r * 0.34,
-                     pal["accent"], pal, w=6)
-            arrow(d, cx - L * 0.30, wl - 40, cx - L * 0.30, wl - 190, pal, w=11, head=28)
-            out.append("身体里 2 个肺 + 1 支向上的吸气箭头，头顶到水面")
+        hx = cx - L * 0.22
+        if surfaced:                                   # 身体里 2 个肺，上面一根气管
+            d.line([hx, by - r * 0.40, hx, by - r * 0.02], fill=pal["ink"], width=12)
+            for s in (-1, 1):
+                d.ellipse([hx + s * r * 0.44 - r * 0.24, by - r * 0.02,
+                           hx + s * r * 0.44 + r * 0.24, by + r * 0.66],
+                          fill=pal["accent"], outline=pal["ink"], width=7)
+                d.line([hx, by - r * 0.06, hx + s * r * 0.44, by + r * 0.10],
+                       fill=pal["ink"], width=10)
+            arrow(d, hx, wl - 40, hx, wl - 190, pal, w=11, head=28)
+            out.append("身体里 2 个肺（1 根气管连着）+ 1 支向上的吸气箭头，头顶露出水面")
         else:
-            n = _tuft(d, pal, cx - L * 0.24, by - r * 0.80, 110, 3, up=True)
-            _tuft(d, pal, cx - L * 0.24, by + r * 0.80, 110, 3, up=False)
+            n = _tuft(d, pal, hx - r * 0.10, by - r * 1.00, 95, 3, up=True)
+            _tuft(d, pal, hx - r * 0.10, by + r * 1.00, 95, 3, up=False)
             out.append(f"水下 2 丛鳃、每丛 {n} 根（共 {2 * n} 根），0 个肺")
     return "两格等大、水面线一样高：左格（蝌蚪）" + out[0] + " / 右格（青蛙）" + out[1]
 
@@ -406,9 +427,11 @@ def _(d, pal, img):
     d.rounded_rectangle([px0, sand, px0 + pit_w, sand + depth], radius=70,
                         fill=pal["ground"], outline=pal["ink"], width=8)
     tw, th = place(img, asset("seaturtle", 1), S / 2, sand + 8, w=430, anchor="bottom")
-    for seg in range(10):                              # 坑深的量线
+    for seg in range(10):                              # 坑有多深：虚线量到坑底
         y = sand + 14 + seg * (depth - 20) / 10
-        d.line([px0 - 46, y, px0 - 46, y + (depth - 20) / 20], fill=pal["line"], width=6)
+        d.line([px0 - 100, y, px0 - 100, y + (depth - 20) / 20], fill=pal["line"], width=7)
+    # 把龟自己的体长竖过来放在旁边，一眼看得出坑比它还深
+    d.line([px0 - 50, sand, px0 - 50, sand + tw], fill=pal["accent"], width=14)
     cols, rows_ = 12, 9
     pitch, r = 36, 15
     ex0 = S / 2 - pitch * (cols - 1) / 2
@@ -434,7 +457,7 @@ def _(d, pal, img):
             r_, c_ = divmod(i, 3)
             bx = cx + (c_ - 1) * w_ * 0.28
             by = cy - h_ * 0.02 + r_ * h_ * 0.26
-            place(img, baby, bx, by, w=w_ * 0.24)
+            _fit(img, baby, bx, by, w_ * 0.24, h_ * 0.17)
             disc(d, bx, by + h_ * 0.11, 16, pal["accent"] if i < hot else pal["soft"], pal, w=5)
         out.append(f"太阳半径 {sun}px、{n} 只小龟、{hot} 个强调色点 + {n - hot} 个 soft 点")
     return "两格等大：左格（沙子凉）" + out[0] + " / 右格（沙子热）" + out[1]
@@ -450,7 +473,8 @@ def _(d, pal, img):
     xs, slot = lay(n + 1)
     bw = 0
     for i in range(n):
-        bw, bh = place(img, asset("seaturtle", 2), xs[i], sand - 30, w=200, anchor="bottom")
+        bw, bh = _fit(img, asset("seaturtle", 2), xs[i], sand - 30, min(200, slot * 0.9), 210,
+                      anchor="bottom")
     arrow(d, MARGIN + 120, sand - 240, S - MARGIN - 120, sand - 240, pal, w=12, head=32)
     k, ang, alen = 5, 20, 140
     ax, ay = alen * math.cos(math.radians(ang)) / 2, alen * math.sin(math.radians(ang)) / 2
@@ -531,8 +555,8 @@ def _(d, pal):
                 d.rounded_rectangle([cx + s * 76 - 26, base - 250, cx + s * 76 + 26, base + 60],
                                     radius=18, fill=pal["bark"], outline=pal["ink"], width=8)
             arrow(d, cx, base - 250, cx, base - 380, pal, w=10, head=28)
-            for s in (-1, 1):
-                cross(d, cx + s * 168, base - 330, 48, pal)
+            for s in (-1, 1):                          # 斜着看的那两个方向，一律打叉
+                cross(d, cx + s * 193, base - 230, 48, pal)
             out.append("1 根管子 + 2 块卡住它的骨头 + 1 支只能朝正前的箭头 + 2 个叉")
     return "两格等大：左格（我们）" + out[0] + " / 右格（猫头鹰）" + out[1]
 
@@ -691,27 +715,28 @@ def _(d, pal, img):
     cy = S / 2
     note = steps(img, d, pal, "spider", [None, None, None], cy=cy)
     xs, slot = lay(3)
-    half = slot * 0.36
-    sag = 70
+    half = slot * 0.32
+    sag, sy = 70, cy - 40
+    wind = 3
     for k, x in enumerate(xs):
-        d.line([x - half, cy - 210, x - half, cy + 300], fill=pal["bark"], width=34)
-        if k == 2:
-            d.line([x + half, cy - 210, x + half, cy + 300], fill=pal["bark"], width=34)
+        for sx in (x - half, x + half):                # 三格的树枝完全一样，差别只在丝
+            d.line([sx, cy - 250, sx, cy + 290], fill=pal["bark"], width=34)
         if k == 0:                                     # 刚放出来的一根丝，垂在自己这边
-            d.line([(x - half, cy - 120), (x - half + 40, cy + 20), (x - half + 30, cy + 170)],
-                   fill=pal["ink"], width=6, joint="curve")
-            place(img, asset("spider", 1), x - half + 10, cy - 180, h=100)
+            d.line([(x - half, sy), (x - half + 44, sy + 110), (x - half + 34, sy + 220)],
+                   fill=pal["ink"], width=7, joint="curve")
+            place(img, asset("spider", 1), x - half + 34, cy - 130, h=92)
         elif k == 1:                                   # 风把丝吹过去，还没搭上
-            d.line([(x - half, cy - 120), (x, cy - 40), (x + half * 0.9, cy + 30)],
-                   fill=pal["ink"], width=6, joint="curve")
-            for i in range(3):
-                arrow(d, x - half - 10, cy - 250 + i * 70, x + half * 0.8, cy - 250 + i * 70,
-                      pal, w=7, head=20)
+            d.line([(x - half, sy), (x, sy + 50), (x + half - 46, sy + 96)],
+                   fill=pal["ink"], width=7, joint="curve")
+            for i in range(wind):
+                wy = cy - 210 + i * 70
+                arrow(d, x - half - 20, wy, x + half - 8, wy, pal, w=8, head=22)
         else:                                          # 两端都粘住了，桥搭好
-            d.line([(x - half, cy - 120), (x, cy - 120 + sag), (x + half, cy - 120)],
-                   fill=pal["ink"], width=8, joint="curve")
-    return (note + f"：第 1 格 1 只蜘蛛（素材）放出 1 根丝 / 第 2 格 3 支一样长的风箭头把丝吹过去 / "
-            f"第 3 格 1 座搭好的桥（跨 {2 * half:.0f}px、中间下垂 {sag}px），两端各 1 根树枝")
+            d.line([(x - half, sy), (x, sy + sag), (x + half, sy)],
+                   fill=pal["ink"], width=9, joint="curve")
+    return (note + f"：第 1 格 1 只蜘蛛（素材）放出 1 根垂着的丝 / 第 2 格 {wind} 支一样长的风箭头"
+            f"把丝吹过去（离对面还差 46px）/ 第 3 格 1 座搭好的桥（跨 {2 * half:.0f}px、"
+            f"中间下垂 {sag}px）；三格的树枝一模一样，各 2 根")
 
 
 @page("spider", 4)
@@ -755,7 +780,7 @@ def _(d, pal, img):
     """辐条拉完，它从中心往外绕出一圈松松的丝，只当脚手架。"""
     cx, cy, n = SP_CX, SP_CY, SP_N
     R, turns, r0 = 400, 5, 60
-    _spokes(d, pal, cx, cy, n, SP_HUB, SP_R, color=pal["line"], w=4)
+    _spokes(d, pal, cx, cy, n, SP_HUB, SP_R, color=pal["ink"], w=4)
     rr = [r0 + (R - r0) * i / turns for i in range(turns + 1)]
     pts = _spiral_pts(cx, cy, rr)
     d.line(pts, fill=pal["ink"], width=14, joint="curve")
@@ -773,7 +798,7 @@ def _(d, pal, img):
     cx, cy, n = SP_CX, SP_CY, SP_N
     turns = 14
     rr, gaps = _shrinking_radii(420, 70, turns, ratio=0.42)
-    _spokes(d, pal, cx, cy, n, SP_HUB, SP_R, color=pal["line"], w=4)
+    _spokes(d, pal, cx, cy, n, SP_HUB, SP_R, color=pal["ink"], w=4)
     pts = _spiral_pts(cx, cy, rr)
     d.line(pts, fill=pal["ink"], width=13, joint="curve")
     d.line(pts, fill=pal["accent"], width=7, joint="curve")
@@ -804,8 +829,8 @@ def _(d, pal, img):
         r = 70 + k * (300 - 70) / (steps_n - 1)
         px, py = _spoke_pt(cx, cy, n, walk, r)
         disc(d, px, py, 15, pal["soft"], pal, w=5)
-    sx, sy = _spoke_pt(cx, cy, n, walk, 350)
-    place(img, asset("spider", 1), sx, sy, h=140)
+    sx, sy = _spoke_pt(cx, cy, n, walk, 340)
+    place(img, asset("spider", 1), sx, sy, h=115)
     fx, fy = _spiral_pts(cx, cy, rr)[int(2.4 * 96)]
     place(img, asset("spider", 3), fx, fy, h=110)
     return (f"{n} 根辐条用 ink 画、线宽 7px（不粘）+ 1 条 {turns} 圈的螺旋用强调色画、线宽 12px（粘）；"
@@ -838,14 +863,20 @@ def _(d, pal):
 def _(d, pal, img):
     """你摸摸自己的脖子，里面有七块骨头；长颈鹿的脖子里也正好是七块。"""
     bone = lie_flat(asset("giraffe", 2))
-    n = 7
+    n, small = 7, 0.34
+    boxes = panel2(d, pal)
+    w_, h_ = boxes[0][2], boxes[0][3]
+    pitch = h_ * 0.128
+    aw, ah = bone.size
+    # 右格那块能放多大，由格宽和行距共同决定；左格一律取它的 small 倍 ——
+    # 这样不论素材是宽是高，7 块都不会上下压在一起，长短差别也一定在
+    big = min(w_ * 0.86, pitch * 0.88 * aw / ah)
     out = []
-    for (cx, cy, w_, h_), frac in zip(panel2(d, pal), (0.30, 0.86)):
-        pitch = h_ * 0.115
+    for (cx, cy, _w, _h), target in zip(boxes, (big * small, big)):
         top = cy - pitch * (n - 1) / 2
         bw = bh = 0
         for i in range(n):
-            bw, bh = place(img, bone, cx, top + i * pitch, w=w_ * frac)
+            bw, bh = place(img, bone, cx, top + i * pitch, w=target)
         out.append(f"{n} 块颈椎（每块 {bw}×{bh}px，行距 {pitch:.0f}px）")
     return "两格等大，两边都是 7 块：左格（我）" + out[0] + " / 右格（长颈鹿）" + out[1]
 
