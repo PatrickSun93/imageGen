@@ -35,6 +35,17 @@ def gap_arrow(d, pal, x1, y1, x2, y2, r1, r2, w=11, head=30):
           x2 - r2 * math.cos(a), y2 - r2 * math.sin(a), pal, w=w, head=head)
 
 
+def fit(a, max_w, max_h):
+    """返回一个宽度，使素材缩放后同时不超过 max_w 和 max_h。
+
+    只按 w= 摆位是个坑：素材的长宽比是模型给的，我不知道。同一句 place(w=340)，
+    横着的素材乖乖待在框里，竖着的就顶穿了框顶。凡是往框里塞素材，两边都要卡。
+    """
+    aw, ah = a.size
+    s = min(max_w / aw, max_h / ah)
+    return aw * s
+
+
 def cloudlet(d, cx, cy, w, pal, fill=None, edge=8):
     """一朵云：先画一圈放大的墨色圆，再压一圈正常大的填色圆 —— 只剩外轮廓，里面没有多余的线。
 
@@ -270,9 +281,9 @@ def _(d, pal, img):
                 d.arc([wx, top - 22, wx + (w_ - 20) / 9, top + 22], 180, 360,
                       fill=pal["ink"], width=7)
             slot = (cy + h_ / 2 - 20 - top) / 3
-            place(img, asset("california", 2), cx, top + slot * 0.5, w=380)
-            place(img, asset("california", 2), cx, top + slot * 1.5, w=250)
-            place(img, asset("california", 1), cx, top + slot * 2.5, w=150)
+            for a, mw, k in ((2, 380, 0.5), (2, 250, 1.5), (1, 150, 2.5)):
+                el = asset("california", a)
+                place(img, el, cx, top + slot * k, w=fit(el, mw, slot * 0.84))
         else:
             base = cy + h_ / 2 - 70
             d.line([cx - w_ / 2 + 20, base, cx + w_ / 2 - 20, base], fill=pal["ink"], width=9)
@@ -429,7 +440,9 @@ def _(d, pal, img):
     d.rounded_rectangle([MARGIN + 50, y0, S - MARGIN - 50, y1], radius=28,
                         fill=pal["paper"], outline=pal["ink"], width=10)
     d.line([S / 2, y0, S / 2, y1], fill=pal["ink"], width=10)
-    aw, ah = place(img, asset("dinonames", 1), (MARGIN + 50 + S / 2) / 2, (y0 + y1) / 2, w=330)
+    el = asset("dinonames", 1)
+    aw, ah = place(img, el, (MARGIN + 50 + S / 2) / 2, (y0 + y1) / 2,
+                   w=fit(el, 330, y1 - y0 - 40))
     lizard(d, (S - MARGIN - 50 + S / 2) / 2, (y0 + y1) / 2, 300, pal)
     return (f"1 个名字拆成左右两半（1 个大框 + 中间 1 条竖线）："
             f"左半 1 只恐龙的样子（素材1，宽 {aw}px）/ 右半 1 只蜥蜴（体长 300px）")
@@ -451,7 +464,8 @@ def _(d, pal, img):
 
     n, ytop = _name_blocks(d, pal, [g_three, g_horn, g_face])
     base = S - MARGIN - 40
-    aw, ah = place(img, asset("dinonames", 1), S / 2, base, w=640, anchor="bottom")
+    el = asset("dinonames", 1)
+    aw, ah = place(img, el, S / 2, base, w=fit(el, 640, base - ytop - 20), anchor="bottom")
     hx = S / 2 - aw / 2 + aw * 0.16
     hy = base - ah + ah * 0.32
     d.ellipse([hx - aw * 0.15, hy - ah * 0.22, hx + aw * 0.15, hy + ah * 0.22],
@@ -481,7 +495,8 @@ def _(d, pal, img):
 
     n, ytop = _name_blocks(d, pal, [g_tyrant, g_lizard, g_king])
     base = S - MARGIN - 40
-    aw, ah = place(img, asset("dinonames", 2), S / 2, base, w=560, anchor="bottom")
+    el = asset("dinonames", 2)
+    aw, ah = place(img, el, S / 2, base, w=fit(el, 560, base - ytop - 20), anchor="bottom")
     return f"{n} 个词块（{n_teeth} 颗尖牙 / 1 只蜥蜴 / 1 顶王冠）+ 1 支向下的箭头 + 1 只霸王龙（宽 {aw}px）"
 
 
@@ -500,7 +515,8 @@ def _(d, pal, img):
 
     n, ytop = _name_blocks(d, pal, [g_fast, g_thief])
     base = S - MARGIN - 40
-    aw, ah = place(img, asset("dinonames", 3), S / 2, base, w=560, anchor="bottom")
+    el = asset("dinonames", 3)
+    aw, ah = place(img, el, S / 2, base, w=fit(el, 560, base - ytop - 20), anchor="bottom")
     return (f"{n} 个词块（3 支向右的箭头＝快 / 1 枚蛋被 1 支箭头拽走＝贼）+ "
             f"1 支向下的箭头 + 1 只迅猛龙（宽 {aw}px）")
 
@@ -550,7 +566,8 @@ def _(d, pal, img):
 @page("cloud", 2)
 def _(d, pal, img):
     """天上那团白既不是棉花也不是烟，是水变出来的 —— 三样里划掉两样。"""
-    place(img, asset("cloud", 1), S / 2, 250, w=560)
+    el = asset("cloud", 1)
+    place(img, el, S / 2, 250, w=fit(el, 560, 400))
     xs, slot = lay(3)
     cy = 760
     for dx, dy, r in ((-0.55, 0.20, 0.42), (-0.12, -0.20, 0.52), (0.36, 0.06, 0.46),
@@ -600,55 +617,71 @@ def _(d, pal, img):
 
 @page("cloud", 7)
 def _(d, pal):
-    """一颗水珠有多小：几百颗排起来才有一根头发那么宽。"""
-    n = 200
-    band = 800
-    x0 = (S - band) / 2
-    y0, y1 = 140, 884
-    d.rectangle([x0, y0, x0 + band, y1], fill=pal["paper"])
-    for x in (x0, x0 + band):
+    """一颗水珠有多小：几百颗排起来才有一根头发那么宽。
+
+    两百颗画在一根头发里，每颗只有 4px，看上去就是一条虚线 —— 数不清也比不出来。
+    所以分两级：上面是整根头发，圈出它宽度的二十分之一；下面把那一小段放大，
+    里面正好十颗。二十段 × 十颗 = 两百颗，比例还是由参数算出来的。
+    """
+    per_seg, segs = 10, 20
+    bw = 500
+    x0 = (S - bw) / 2
+    y0, y1 = 120, 520
+    d.rectangle([x0, y0, x0 + bw, y1], fill=pal["paper"])
+    for x in (x0, x0 + bw):
         d.line([x, y0, x, y1], fill=pal["ink"], width=9)
-    dia = band / n
-    cy = (y0 + y1) / 2
-    for i in range(n):                       # 两色交替，看得出是一颗一颗，不是一条线
-        cxx = x0 + dia * (i + 0.5)
-        d.ellipse([cxx - dia / 2, cy - dia / 2, cxx + dia / 2, cy + dia / 2],
-                  fill=pal["accent"] if i % 2 else pal["soft"])
-    for x in (x0, x0 + band):                # 两端的对齐刻度
-        for seg in range(5):
-            yy = cy + 60 + seg * 26
-            d.line([x, yy, x, yy + 13], fill=pal["line"], width=5)
-    return (f"1 根放大的头发，宽 {band}px（上下贯穿画面，两条边线）；"
-            f"里面 {n} 颗水珠首尾相接，每颗 {dia:.0f}px，合计正好 {dia * n:.0f}px = 头发的宽度")
+    seg_w = bw / segs
+    sx = x0 + seg_w * 9
+    d.rectangle([sx, y0, sx + seg_w, y1], fill=pal["soft"])
+    for x in (sx, sx + seg_w):
+        d.line([x, y0, x, y1], fill=pal["accent"], width=5)
+    ccx, ccy, cr = sx + seg_w / 2, 320, 78
+    d.ellipse([ccx - cr, ccy - cr, ccx + cr, ccy + cr], outline=pal["accent"], width=12)
+    bx0, bx1, by0, by1 = 112, 912, 640, 880
+    d.line([ccx - cr * 0.7, ccy + cr * 0.7, bx0, by0], fill=pal["line"], width=6)
+    d.line([ccx + cr * 0.7, ccy + cr * 0.7, bx1, by0], fill=pal["line"], width=6)
+    d.rounded_rectangle([bx0, by0, bx1, by1], radius=20, fill=pal["paper"],
+                        outline=pal["ink"], width=9)
+    dia = (bx1 - bx0) / per_seg
+    for i in range(per_seg):
+        cxx = bx0 + dia * (i + 0.5)
+        disc(d, cxx, (by0 + by1) / 2, dia / 2 - 4,
+             pal["accent"] if i % 2 else pal["soft"], pal, w=5)
+    return (f"上面 1 根放大的头发，宽 {bw}px（两条边线）；中间涂色并圈出它宽度的 1/{segs}"
+            f"（{seg_w:.0f}px 宽的一小段）；2 条引线接到下面的框，框里把那一小段再放大"
+            f"{(bx1 - bx0) / seg_w:.0f} 倍：{per_seg} 颗水珠首尾相接，每颗 {dia:.0f}px，"
+            f"合计正好 {dia * per_seg:.0f}px 填满整框 —— 整根头发就是 {segs}×{per_seg} = "
+            f"{segs * per_seg} 颗那么宽")
 
 
 @page("cloud", 8)
 def _(d, pal):
-    """一颗看不见，十颗也看不见，几千亿颗挤在一块儿就看见白了。"""
-    xs, slot = lay(3)
+    """一颗看不见，十颗也看不见，几千亿颗挤在一块儿就看见白了。
+
+    三组的位置是手排的不是 lay()：三组的宽度差着几十倍，均分成三个等宽的槽，
+    最后那片准会顶出右边距，前两组又缩在槽中间够不着箭头。
+    """
     cy = S / 2
-    counts = []
-    disc(d, xs[0], cy, 6, pal["line"], pal, w=0)
-    counts.append(1)
+    g1x, g2x, g3x = 150, 400, 790
+    r = 16
+    disc(d, g1x, cy, r, pal["soft"], pal, w=5)
     n2 = 0
     for r_ in range(2):
         for c_ in range(5):
-            disc(d, xs[1] - 36 + c_ * 18, cy - 9 + r_ * 18, 6, pal["line"], pal, w=0)
+            disc(d, g2x - 92 + c_ * 46, cy - 23 + r_ * 46, r, pal["soft"], pal, w=5)
             n2 += 1
-    counts.append(n2)
-    cols, rows_ = 40, 30
+    cols, rows_, step = 40, 30, 8
     n3 = 0
     for r_ in range(rows_):
         for c_ in range(cols):
-            px = xs[2] - (cols - 1) * 8 / 2 + c_ * 8
-            py = cy - (rows_ - 1) * 8 / 2 + r_ * 8
-            d.ellipse([px - 3, py - 3, px + 3, py + 3], fill=pal["soft"])
+            px = g3x - (cols - 1) * step / 2 + c_ * step
+            py = cy - (rows_ - 1) * step / 2 + r_ * step
+            d.ellipse([px - 3.5, py - 3.5, px + 3.5, py + 3.5], fill=pal["soft"])
             n3 += 1
-    counts.append(n3)
-    arrow(d, xs[0] + 40, cy, xs[1] - 70, cy, pal, w=10, head=26)
-    arrow(d, xs[1] + 70, cy, xs[2] - 180, cy, pal, w=10, head=26)
-    return (f"3 组水珠横着排开：{counts[0]} 颗 / {counts[1]} 颗（2 行 ×5）/ "
-            f"{counts[2]} 颗（{rows_} 行 ×{cols}，挤成一片才看得见白），中间 2 支箭头")
+    arrow(d, g1x + r + 24, cy, g2x - 92 - r - 24, cy, pal, w=10, head=26)
+    arrow(d, g2x + 92 + r + 24, cy, g3x - (cols - 1) * step / 2 - 24, cy, pal, w=10, head=26)
+    return (f"3 组水珠横着排开：1 颗（半径 {r}px）/ {n2} 颗（2 行 ×5，间距 46px，还数得清）/ "
+            f"{n3} 颗（{rows_} 行 ×{cols}，间距 {step}px，挤成一片才看得见白）；中间 2 支箭头")
 
 
 @page("cloud", 11)

@@ -25,11 +25,13 @@ def _cat_side(d, pal, cx, cy, half, reach, n=3, r=60, lim=None):
     for s in (-1, 1):
         for i in range(n):
             ty = cy + s * half * (1 - i * 0.34)
+            th = math.radians(14 + i * 20)          # 根分开落在脸的圆周上，不挤成一个黑点
+            rx, ry = cx + r * math.cos(th), cy + s * r * math.sin(th)
             pts, hit = [], None
             for k in range(25):
                 t = k / 24
-                px = cx + r * 0.6 + (reach - r * 0.6) * t
-                py = cy + (ty - cy) * t - s * 26 * math.sin(math.pi * t)
+                px = rx + (cx + reach - rx) * t
+                py = ry + (ty - ry) * t - s * 26 * math.sin(math.pi * t)
                 if lim and not (lim[0] <= py <= lim[1]):
                     hit = pts[-1] if pts else (px, py)
                     break
@@ -46,9 +48,9 @@ def _cat_side(d, pal, cx, cy, half, reach, n=3, r=60, lim=None):
 @page("forecast", 2)
 def _(d, pal, img):
     """要算明天先得量今天：温度、气压、风向、湿度 —— 正好四样。"""
-    place(img, asset("forecast", 1), S / 2, MARGIN + 330, h=290, anchor="bottom")
+    place(img, asset("forecast", 1), S / 2, MARGIN + 400, h=380, anchor="bottom")
     xs, slot = lay(4)
-    cy = 720
+    cy = 700
     # 1 温度计
     x = xs[0]
     d.rounded_rectangle([x - 28, cy - 160, x + 28, cy + 80], radius=28,
@@ -234,7 +236,7 @@ def _(d, pal):
         d.line([cx - w_ * 0.44, base, cx + w_ * 0.44, base], fill=pal["ink"], width=9)
         for i in range(3):
             gx = cx - 110 + i * 110
-            lean = -1 if i == 1 else 1
+            lean = -1 if i == 0 else 1
             pts = [(gx, base)]
             for k in range(1, 9):
                 t = k / 8
@@ -246,14 +248,14 @@ def _(d, pal):
                     _drop(d, px, py, 15, pal, pal["paper"], 5)
                     drops += 1
         if cloudy:
-            seg, gap_ = 100, 34
+            seg, gap_ = 120, 30
             for i in (-1, 0, 1):
                 sx = cx + i * (seg + gap_)
-                d.rounded_rectangle([sx - seg / 2, ctop, sx + seg / 2, ctop + 96], radius=44,
+                d.rounded_rectangle([sx - seg / 2, ctop, sx + seg / 2, ctop + 104], radius=40,
                                     fill=pal["soft"], outline=pal["ink"], width=8)
             for s in (-1, 1):
-                arrow(d, cx + s * 67, base - 260, cx + s * 67, ctop - 80, pal, w=9, head=24)
-                arrow(d, cx + s * 150, ctop + 120, cx + s * 150, base - 260, pal, w=9, head=24)
+                arrow(d, cx + s * 75, base - 260, cx + s * 75, ctop - 80, pal, w=9, head=24)
+                arrow(d, cx + s * 150, ctop + 128, cx + s * 150, base - 260, pal, w=9, head=24)
             out.append("右格 1 排云（3 段 + 2 条缝）：2 支穿过缝跑掉 + 2 支被云挡回来")
         else:
             for i in range(up):
@@ -359,7 +361,8 @@ def _(d, pal):
         poly(d, [(cx + s * 44, head_y - 104), (cx + s * 126, head_y - 175),
                  (cx + s * 122, head_y - 68)], pal, pal["paper"], 8)
         for i in range(n):
-            rx, ry = cx + s * 95, head_y - 40 + i * 28
+            th = math.radians(-18 + i * 22)          # 根落在头的圆周上，不穿进脸里
+            rx, ry = cx + s * 130 * math.cos(th), head_y + 130 * math.sin(th)
             tx, ty = cx + s * span / 2, head_y - 160 + i * 105
             pts = []
             for k in range(9):
@@ -713,12 +716,12 @@ def _(d, pal, img):
             poly(d, [(cx - 150, top), (cx + 150, top), (cx + 105, top + 90), (cx - 105, top + 90)],
                  pal, pal["paper"], 8)
         else:
-            place(img, asset("bat", 1), cx, top + 40, w=w_ * 0.62)
+            place(img, asset("bat", 1), cx, top + 110, w=w_ * 0.62)
         floor_y = cy + h_ * 0.30
         d.rectangle([cx - w_ * 0.46, floor_y, cx + w_ * 0.46, floor_y + 120],
                     fill=pal["bark"], outline=pal["ink"], width=8)
-        arrow(d, cx - 90, top + 190, cx - 90, floor_y - 40, pal, w=10, head=26)
-        arrow(d, cx + 90, floor_y - 40, cx + 90, top + 190, pal, w=10, head=26)
+        arrow(d, cx - 90, top + 270, cx - 90, floor_y - 40, pal, w=10, head=26)
+        arrow(d, cx + 90, floor_y - 40, cx + 90, top + 270, pal, w=10, head=26)
     return ("左格 1 只蝙蝠 + 下面 1 片墙 / 右格 1 条船 + 下面 1 片海底："
             "两格各 1 支向下的箭头（喊出去）和 1 支向上的箭头（回声弹回来），两支分开左右画")
 
