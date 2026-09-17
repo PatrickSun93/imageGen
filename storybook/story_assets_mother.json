@@ -49,7 +49,7 @@
     {
       "n": 3,
       "zh": "素材 3",
-      "scene": "One single oval dinosaur egg standing upright on its narrower end, pale and smooth. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
+      "scene": "One single oval egg standing upright on its narrower end, pale and smooth, entirely alone: there is no animal, no hatchling and no nest anywhere in the picture. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
       "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     },
@@ -70,7 +70,7 @@
     {
       "n": 6,
       "zh": "素材 6",
-      "scene": "One single row of six small dinosaur teeth set into a strip of pale gum, seen from the side, every tooth ground down to a short flat-topped stub. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
+      "scene": "One single straight strip of pale gum lying flat, seen from the side, with six short flat-topped white stubs standing in a row along its upper edge, all the same height. There is no mouth, no jaw, no head and no animal in the picture, only the strip. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it. There is no sky, no horizon, no clouds and no scenery of any kind behind it: the cream colour is the only thing behind the object, exactly as if the object had been cut out and laid on blank paper.",
       "has_boy": false,
       "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection, sky, blue sky, horizon, landscape, scenery, sunset, clouds in the background"
     }

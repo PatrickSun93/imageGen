@@ -43,13 +43,16 @@ EXTRA = {
         "and hardly longer than it is wide, its tip worn round.",
     ],
     "fingers": [
-        "One single dinosaur front hand seen from the front with its fingers spread apart, three "
-        "separate bony fingers standing up from one broad short palm.",
-        "One single dinosaur front hand seen from the front, only two short bony fingers "
-        "standing up from one broad short palm.",
-        "One single iguanodon front hand seen from the front, one sharp straight spike standing "
-        "up where the thumb should be, three short blunt hoof-tipped fingers in the middle and "
-        "one thin outer finger bending inwards.",
+        "One single dinosaur front hand seen from the front with its fingers spread apart: exactly "
+        "three bony fingers stand up from one broad short palm, and there is no fourth and no "
+        "fifth finger anywhere on it.",
+        "One single dinosaur front hand seen from the front: exactly two short bony fingers stand "
+        "up from one broad short palm, and there is no third, fourth or fifth finger anywhere "
+        "on it.",
+        "One single dinosaur front hand seen from the front, nothing else: one sharp straight "
+        "spike stands up where the thumb should be, three short blunt hoof-tipped fingers in "
+        "the middle, and one thin outer finger bends inwards. It is a hand only, with no head, "
+        "no body and no animal attached to it.",
         "One single bare tree twig held upright, seen from the side, a thin brown woody stem "
         "with two small side shoots.",
         "One single bird wing spread wide open, seen from above, layered rows of short covert "
@@ -64,8 +67,9 @@ EXTRA = {
     "mother": [
         "One single row of six small pointed dinosaur teeth set into a strip of pale gum, seen "
         "from the side, each tooth a narrow leaf-shaped point of the same height.",
-        "One single row of six small dinosaur teeth set into a strip of pale gum, seen from the "
-        "side, every tooth ground down to a short flat-topped stub.",
+        "One single straight strip of pale gum lying flat, seen from the side, with six short "
+        "flat-topped white stubs standing in a row along its upper edge, all the same height. "
+        "There is no mouth, no jaw, no head and no animal in the picture, only the strip.",
     ],
     # —— pages7_c ——
     "dinosleep": [

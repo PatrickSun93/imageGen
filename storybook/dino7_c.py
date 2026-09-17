@@ -17,7 +17,8 @@ BOOKS.append(dict(
         "picture. " + BG,
         "One single bowl-shaped nest of packed mud seen from the side, hollow in the middle and "
         "heaped up all around the rim. " + BG,
-        "One single oval dinosaur egg standing upright on its narrower end, pale and smooth. " + BG,
+        "One single oval egg standing upright on its narrower end, pale and smooth, entirely "
+        "alone: there is no animal, no hatchling and no nest anywhere in the picture. " + BG,
         "One single newly hatched dinosaur with scaly skin, a beaked snout and a stubby tail, "
         "standing on four legs, seen from the side facing left. " + BG,
     ],

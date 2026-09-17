@@ -1,73 +1,115 @@
 # -*- coding: utf-8 -*-
 """第七批示意图页（1/5）：剑龙、甲龙、爪子、尾巴、手指、骨头里的空气、照顾宝宝、成群走。"""
-from draw_diagrams import (S, MARGIN, page, asset, place, lie_flat, poly, disc, arrow, cross,
-                           lay, panel2, hbar, footprint, bands, cmp_len, cmp_height, cmp_count,
-                           bars, timeline, steps, magnify)
+from draw_diagrams import (S, MARGIN, page, asset, place, halo, lie_flat, poly, disc, arrow,
+                           cross, lay, panel2, hbar, bands, cmp_len, cmp_count, bars,
+                           timeline, steps, magnify)
+from PIL import Image, ImageColor, ImageDraw
 import math, random
+
+
+# ---------------------------------------------------------------- 摆素材用的几样量具
+# 素材的长宽比是模型给的，代码不知道。所以「摆哪儿」必须先算后画：先按框算出实际宽高，
+# 再定坐标，最后才 place。只写 place(w=340) 的页，换一张竖素材就顶穿框顶。
+
+def _fit(a, max_w, max_h):
+    """把素材缩进 max_w × max_h 的框里，返回它实际会占的 (宽, 高)。
+
+    两个方向各算一次、取小的那个。返回的是浮点数，用来先排版；真正的占位以 place 的返回为准。
+    """
+    s = min(max_w / a.width, max_h / a.height)
+    return a.width * s, a.height * s
+
+
+def _rgb(c):
+    """调色板里存的是 "#2c2b23" 这样的字符串，halo() 要的是 (r, g, b)。"""
+    return ImageColor.getrgb(c)
+
+
+def _point_right(a):
+    """把一头粗一头尖的素材翻成尖头朝右：哪半边实心面积大，哪半边就是根部。
+
+    爪骨和爪鞘要按根部对齐着叠，可 lie_flat 只保证「躺平」，不保证朝哪头。
+    先各自转正，再叠，才不会一根朝左一根朝右。
+    """
+    import numpy as np
+    m = np.asarray(a.getchannel("A")) > 128
+    half = m.shape[1] // 2
+    return a.transpose(Image.FLIP_LEFT_RIGHT) if m[:, :half].sum() < m[:, half:].sum() else a
+
+
+def _reach(a, x, y, ang, w, h, frac=0.86):
+    """在放好的素材里，从 (x, y) 沿 ang 射出去，返回还留在素材实心部分里的最远长度。
+
+    「三根指骨藏在翅膀里面」这种话不能靠我目测：翅膀是什么形状由模型定，
+    所以直接拿素材自己的 alpha 逐根量，量到哪儿画到哪儿。x/y/w/h 都是贴上去以后的画面尺寸。
+    """
+    import numpy as np
+    m = np.asarray(a.getchannel("A")) > 128
+    ah, aw = m.shape
+    t, step = 0.0, 6.0
+    while t < max(w, h):
+        nx, ny = x + (t + step) * math.cos(ang), y + (t + step) * math.sin(ang)
+        ix, iy = int(nx * aw / w), int(ny * ah / h)
+        if not (0 <= ix < aw and 0 <= iy < ah and m[iy, ix]):
+            break
+        t += step
+    return t * frac
+
+
+def _centroid(a, w, h):
+    """素材实心部分的重心（贴上去以后的画面坐标）—— 一定落在素材里面，适合当引线的起点。"""
+    import numpy as np
+    m = np.asarray(a.getchannel("A")) > 128
+    ys, xs = np.nonzero(m)
+    if not len(xs):
+        return w / 2, h / 2
+    return xs.mean() / m.shape[1] * w, ys.mean() / m.shape[0] * h
+
+
+def _nearest(a, w, h, tx, ty):
+    """素材上离 (tx, ty) 最近的那个实心点（贴上去以后的画面坐标）。
+
+    引线从这里出发才不会横穿整只恐龙——从重心出发的那条线，正好划过脑袋。
+    """
+    import numpy as np
+    m = np.asarray(a.getchannel("A"))[::4, ::4] > 128
+    ys, xs = np.nonzero(m)
+    if not len(xs):
+        return w / 2, h / 2
+    px, py = xs / m.shape[1] * w, ys / m.shape[0] * h
+    i = int(np.argmin((px - tx) ** 2 + (py - ty) ** 2))
+    return float(px[i]), float(py[i])
+
+
+def _extreme(a, w, h, side):
+    """素材最左（side=-1）或最右（side=1）的那个实心点。
+
+    「最外边那两根手指」在哪儿？张开的手，最外两根的指尖就是整张图最左和最右的实心像素，
+    量出来比我按比例猜准得多。
+    """
+    import numpy as np
+    m = np.asarray(a.getchannel("A")) > 128
+    cols = np.nonzero(m.any(0))[0]
+    c = cols[-1] if side > 0 else cols[0]
+    rows = np.nonzero(m[:, c])[0]
+    return c / m.shape[1] * w, rows.mean() / m.shape[0] * h
+
+
+def _thick(a, h=None, w=None):
+    """素材最粗的地方有多粗（缩放到目标尺寸以后的像素）：最大内切圆的直径。
+
+    比外框宽度靠谱得多：钩爪弯成一个圈，外框跟铲爪一样宽，可它本身细得多。
+    「又宽又钝」和「又细又尖」差多少，得量形状，不能量外框。
+    """
+    import numpy as np
+    from scipy import ndimage
+    m = np.asarray(a.getchannel("A")) > 128
+    s = (h / a.height) if h else ((w / a.width) if w else 1.0)
+    return 2 * ndimage.distance_transform_edt(m).max() * s
 
 
 # ---------------------------------------------------------------- 这一批自己要用的小图元
 # 只放通用图元里没有、而且这八本里反复出现的几样：爪、手、骨头、树、爆响星。
-
-def _claw(d, x, y, L, ang, pal, fill=None, curve=0.9, thick=0.30, w=7, n=16):
-    """一只爪：从 (x, y) 出发，长 L，起始方向 ang（弧度），curve 越大越弯，thick 是根部半宽比。
-
-    长度和弯度都是参数，所以「宽钝的铲爪」和「细尖的钩爪」差多少是算出来的，不是画出来的。
-    返回爪尖坐标。
-    """
-    outer, inner = [], []
-    tip = (x, y)
-    for i in range(n + 1):
-        t = i / n
-        a = ang + curve * t
-        px, py = x + L * t * math.cos(a), y + L * t * math.sin(a)
-        th = thick * L * (1 - t) ** 1.1
-        outer.append((px + th * math.cos(a - math.pi / 2), py + th * math.sin(a - math.pi / 2)))
-        inner.append((px + th * math.cos(a + math.pi / 2), py + th * math.sin(a + math.pi / 2)))
-        tip = (px, py)
-    poly(d, outer + inner[::-1], pal, fill if fill is not None else pal["paper"], w)
-    return tip
-
-
-def _claw_span(L, ang, curve, n=16):
-    """一只爪横向占多宽（返回相对起点的 (最左, 最右)）。
-
-    弯爪的爪尖会甩出去很远：curve=1.3 的爪，尖端几乎横在起点右边一整个 L。
-    并排画几只爪时先用这个把每只在自己格子里摆正，不然右边那只会甩进隔壁格。
-    """
-    xs = [L * (i / n) * math.cos(ang + curve * i / n) for i in range(n + 1)]
-    return min(xs), max(xs)
-
-
-def _hand(d, cx, cy_palm, W, pal, n, lens=None, widths=None, fill=None, claw=0.0):
-    """一只正面的手：手掌 + n 根手指。lens/widths 给每根的相对长短和粗细。
-
-    手指先画、手掌后画压住指根 —— 反过来画的话，每根手指的下端会有一道横线穿过手掌。
-    返回每根手指的 (x, 指尖y, 半宽, 长度)。
-    """
-    lens = list(lens or [1.0] * n)
-    widths = list(widths or [1.0] * n)
-    pw = W * 0.72
-    base = W * 0.62
-    slot = pw / n
-    out = []
-    for i in range(n):
-        x = cx - pw / 2 + slot * (i + 0.5)
-        hw = slot * 0.32 * widths[i]
-        L = base * lens[i]
-        d.rounded_rectangle([x - hw, cy_palm - L, x + hw, cy_palm + W * 0.10], radius=hw,
-                            fill=fill if fill is not None else pal["paper"],
-                            outline=pal["ink"], width=6)
-        if claw:
-            poly(d, [(x - hw, cy_palm - L), (x, cy_palm - L - base * claw), (x + hw, cy_palm - L)],
-                 pal, pal["accent"], 5)
-        out.append((x, cy_palm - L, hw, L))
-    d.rounded_rectangle([cx - pw / 2 - W * 0.04, cy_palm, cx + pw / 2 + W * 0.04,
-                         cy_palm + W * 0.46], radius=W * 0.10,
-                        fill=fill if fill is not None else pal["paper"],
-                        outline=pal["ink"], width=8)
-    return out
-
 
 def _bone(d, cx, cy, L, pal, half=34, fill=None, soft=0, w=8):
     """一根立着的长骨：中间一段杆 + 两头各两个骨节。soft>0 时两头各盖一段软骨。"""
@@ -83,27 +125,6 @@ def _bone(d, cx, cy, L, pal, half=34, fill=None, soft=0, w=8):
                                  cx + half * 1.9, cy + s * L / 2 + soft / 2],
                                 radius=soft / 2, fill=pal["accent"], outline=pal["ink"], width=6)
     return L
-
-
-def _tree(d, cx, base, h, pal, leaves=12, cols=6):
-    """一棵树：树干 + 两根枝 + 正好 leaves 片叶子（排成 cols 列几行，片数由参数保证）。"""
-    d.rounded_rectangle([cx - h * 0.055, base - h * 0.55, cx + h * 0.055, base],
-                        radius=h * 0.03, fill=pal["bark"], outline=pal["ink"], width=7)
-    for s in (-1, 1):
-        d.line([cx, base - h * 0.50, cx + s * h * 0.26, base - h * 0.80],
-               fill=pal["ink"], width=10)
-    k = 0
-    rows = math.ceil(leaves / cols) if leaves else 0
-    for r in range(rows):
-        for c in range(cols):
-            if k >= leaves:
-                break
-            lx = cx - h * 0.30 + c * (h * 0.60 / max(1, cols - 1))
-            ly = base - h * 0.98 + r * h * 0.155
-            d.ellipse([lx - h * 0.042, ly - h * 0.028, lx + h * 0.042, ly + h * 0.028],
-                      fill=pal["soft"], outline=pal["ink"], width=4)
-            k += 1
-    return leaves
 
 
 def _star(d, cx, cy, r, pal, n=10, inner=0.44, fill=None, w=7):
@@ -127,53 +148,85 @@ def _dash_v(d, x, y0, y1, pal, seg=18, gap=12, w=5, col=None):
     return n
 
 
+def _dash_h(d, y, x0, x1, pal, seg=22, gap=16, w=6, col=None):
+    """一道横的虚线，返回画了几段。比高矮的页拿它当参考线：够不够得到，一眼看得出来。"""
+    n, x = 0, x0
+    while x < x1:
+        d.line([x, y, min(x + seg, x1), y], fill=col or pal["line"], width=w)
+        x += seg + gap
+        n += 1
+    return n
+
+
 # ================================================================ stego 剑龙背上的板
 
 @page("stego", 2)
 def _(d, pal, img):
     """背上一共十七块板，沿着背脊一路排到尾巴根 —— 十七块就是十七块。"""
-    n = 17
-    x0, x1 = MARGIN + 50, S - MARGIN - 50
-    step = (x1 - x0) / (n - 1)
+    # 十七块板，每块都要看得清（上一版每块只有 28～48px 宽，糊成一排小牙）。
+    # 一行摆不下十七块 200px 的板，所以照尾巴那本的老办法折成两行：数目一块不少，
+    # 板画大，相邻两块允许叠一点——真剑龙背上的板本来也是一块挨一块。
+    n, per = 17, 9
     plate = asset("stego", 2)
-    spine = [(x0 + (x1 - x0) * i / 60, 760 - 150 * math.sin(math.pi * i / 60)) for i in range(61)]
-    d.line(spine, fill=pal["ink"], width=12, joint="curve")
-    ws = []
-    for i in range(n):
-        t = i / (n - 1)
-        x = x0 + (x1 - x0) * t
-        y = 760 - 150 * math.sin(math.pi * t)
-        # 每块的宽度都小于间距，所以相邻两块一定不会叠在一起
-        w_, h_ = place(img, plate, x, y + 14, w=step * 0.88 * (0.58 + 0.42 * math.sin(math.pi * t)),
-                       anchor="bottom")
-        ws.append((w_, h_))
-    return (f"1 条背脊线 + 沿线 {n} 块板（素材2），间距 {step:.0f}px、每块宽 {ws[0][0]}～{ws[n // 2][0]}px"
-            f"（都小于间距，没有两块重叠），最高的一块 {max(h for _, h in ws)}px 在正中间")
+    pw, ph = _fit(plate, 214, 330)
+    # 两端的板是按中心摆的，所以起止点要让开半块板的宽度，不然最外两块有一半在页外
+    x0, x1 = MARGIN + pw / 2 + 6, S - MARGIN - pw / 2 - 6
+    step = (x1 - x0) / (per - 1)
+    # 两行的高度按板的实际高度算：背脊线中间还要拱起 dip，不把它算进去，
+    # 中间那几块板的尖就顶到页外了
+    dip, between = 56, 130
+    top = max(MARGIN + 8, (S - (2 * ph + between + dip)) / 2)
+    bases = (top + dip + ph, top + dip + 2 * ph + between)
+    got, k = [], 0
+    for base in bases:
+        cnt = min(per, n - k)
+        # 背脊线只画到这一行最后一块板为止，两端各多伸 40px —— 多画的那一截会像根没来由的黑棍
+        t_end = (cnt - 1) / (per - 1)
+        spine = [(x0 - 40 + ((x1 - x0) * t_end + 80) * i / 40,
+                  base - dip * math.sin(math.pi * t_end * i / 40)) for i in range(41)]
+        d.line(spine, fill=pal["ink"], width=12, joint="curve")
+        for i in range(cnt):
+            t = i / (per - 1)
+            got.append(place(img, plate, x0 + (x1 - x0) * t,
+                             base - dip * math.sin(math.pi * t), w=pw, anchor="bottom"))
+            k += 1
+    arrow(d, x1 - 30, bases[0] + 54, x0 + 40, bases[1] - got[-1][1] - 34, pal, w=10, head=26)
+    ow = got[0][0] - step
+    return (f"2 段背脊线，沿线一共 {k} 块板（素材2）：上行 {per} 块 / 下行 {k - per} 块，"
+            f"每块宽 {got[0][0]}px 高 {got[0][1]}px、中心距 {step:.0f}px —— 板比间距宽，"
+            f"相邻两块叠 {ow:.0f}px（{ow / got[0][0] * 100:.0f}%，后一块压住前一块），"
+            f"两行之间 1 支接着数下去的箭头")
 
 
 @page("stego", 3)
-def _(d, pal):
+def _(d, pal, img):
     """板不长在脊椎上：它们插在皮里，和脊椎之间还隔着一段空当。"""
-    skin_top, skin_h = 520, 120
+    skin_top, skin_h = 560, 120
+    n_p = 4
+    px, pslot = lay(n_p)
+    plate = asset("stego", 2)
+    bury = 60                                  # 板底埋进皮里多深
+    pw, ph = _fit(plate, pslot * 0.86, 430)
+    got = []
+    for x in px:
+        # 先贴板、后画皮：皮这一条压住板的下半截，看着才是「插在皮里」而不是「立在皮上」
+        got.append(place(img, plate, x, skin_top + bury, w=pw, anchor="bottom"))
     d.rectangle([MARGIN, skin_top, S - MARGIN, skin_top + skin_h],
                 fill=pal["soft"], outline=pal["ink"], width=8)
     n_v = 9
-    vy = skin_top + skin_h + 190
+    vy = skin_top + skin_h + 170
     xs, slot = lay(n_v)
     for x in xs:
         d.rounded_rectangle([x - slot * 0.34, vy - 48, x + slot * 0.34, vy + 48], radius=16,
                             fill=pal["bark"], outline=pal["ink"], width=6)
-    n_p = 5
-    px, pslot = lay(n_p)
-    for x in px:
-        # 板底扎进皮里（比皮底还高 14px），所以是「插在皮里」而不是「立在皮上」
-        poly(d, [(x - 72, skin_top + skin_h - 14), (x, skin_top - 300), (x + 72, skin_top + skin_h - 14)],
-             pal, pal["paper"], 8)
     clear = (vy - 48) - (skin_top + skin_h)
     arrow(d, S / 2, (skin_top + skin_h + vy - 48) / 2 - 8, S / 2, skin_top + skin_h + 6, pal, w=7, head=20)
     arrow(d, S / 2, (skin_top + skin_h + vy - 48) / 2 + 8, S / 2, vy - 54, pal, w=7, head=20)
-    return (f"1 层皮（厚 {skin_h}px）+ 皮下 {n_v} 块脊椎骨 + 插在皮里的 {n_p} 块板（每块底宽 144px、"
-            f"间距 {pslot:.0f}px）；板底和脊椎之间空着 {clear}px，没有一块碰到脊椎")
+    return (f"1 层皮（厚 {skin_h}px）+ 皮下 {n_v} 块脊椎骨 + 插在皮里的 {n_p} 块板"
+            f"（素材2，每块宽 {got[0][0]}px 高 {got[0][1]}px、间距 {pslot:.0f}px，都小于间距不相碰）；"
+            f"每块板的下端埋进皮里 {bury}px（被皮压住看不见）、离皮的底面还差 {skin_h - bury}px；"
+            f"板底到脊椎 {clear + skin_h - bury}px，其中皮和脊椎之间空着的 {clear}px 由 2 支箭头标出，"
+            f"没有一块板碰到脊椎")
 
 
 @page("stego", 5)
@@ -218,18 +271,20 @@ def _(d, pal, img):
 def _(d, pal, img):
     """头很小，脑子只有核桃那么大。"""
     cx, cy = S / 2, S / 2 - 40
-    w_, h_ = place(img, asset("stego", 1), cx, cy, w=S - 2 * MARGIN - 80)
+    stg = asset("stego", 1)
+    w_, h_ = _fit(stg, S - 2 * MARGIN - 80, 620)      # 宽高都卡住，换张竖素材也不会顶穿
+    w_, h_ = place(img, stg, cx, cy, w=w_)
     hx = cx - w_ / 2 + w_ * 0.09
     hy = cy - h_ / 2 + h_ * 0.66
     d.ellipse([hx - w_ * 0.075, hy - h_ * 0.13, hx + w_ * 0.075, hy + h_ * 0.13],
               outline=pal["accent"], width=12)
-    nr = 48
-    nx, ny = MARGIN + 150, S - MARGIN - 110
-    d.line([hx, hy + h_ * 0.13, nx, ny - nr], fill=pal["line"], width=6)
-    disc(d, nx, ny, nr, pal["bark"], pal, w=9)
-    d.line([nx, ny - nr, nx, ny + nr], fill=pal["ink"], width=6)   # 核桃的那道缝
-    return (f"1 只剑龙（素材1，宽 {w_}px）+ 1 个圈住小脑袋的圈 + 左下角 1 颗核桃"
-            f"（直径 {2 * nr}px）+ 1 条把核桃和头连起来的引线")
+    nut = asset("stego", 4)
+    nw, nh = _fit(nut, 300, 250)
+    nx, ny = MARGIN + 40 + nw / 2, S - MARGIN - 20
+    d.line([hx, hy + h_ * 0.13, nx, ny - nh], fill=pal["line"], width=6)
+    nw, nh = place(img, nut, nx, ny, w=nw, anchor="bottom")
+    return (f"1 只剑龙（素材1，宽 {w_}px）+ 1 个圈住小脑袋的圈（宽 {w_ * 0.15:.0f}px）+ "
+            f"左下角 1 颗核桃（素材4，宽 {nw}px 高 {nh}px）+ 1 条把核桃和头连起来的引线")
 
 
 @page("stego", 11)
@@ -281,13 +336,12 @@ def _(d, pal, img):
     cw, ch = place(img, asset("ankylo", 2), MARGIN + 100 + W / 2, base, w=W, anchor="bottom")
     seg = _dash_v(d, MARGIN + 100 + W / 2, base - ch + 20, base - 20, pal,
                   seg=22, gap=16, w=7, col=pal["ink"])
-    mr = W / 2
-    mx = MARGIN + 100 + W + 70 + mr
-    disc(d, mx, base - mr, mr, pal["soft"], pal, w=10)
-    for a in (0.28, 0.60, 0.88):                 # 西瓜的条纹：三道同心的竖椭圆
-        d.ellipse([mx - mr * a, base - 2 * mr, mx + mr * a, base], outline=pal["ink"], width=7)
+    # 西瓜按锤实际量出来的宽度摆，「一样大」就不是我说了算，是同一个数
+    mx = MARGIN + 100 + W + 70 + cw / 2
+    mw, mh = place(img, asset("ankylo", 4), mx, base, w=cw, anchor="bottom")
     return (f"1 个尾锤（素材2，宽 {cw}px 高 {ch}px）+ 中间 1 道把它分成 2 块骨头的竖虚线（{seg} 段）"
-            f"+ 右边 1 个同样宽 {2 * mr:.0f}px 的西瓜（3 道条纹），两个站在同一条地线上，中心相距 {mx - (MARGIN + 100 + W / 2):.0f}px")
+            f"+ 右边 1 个西瓜（素材4，宽 {mw}px 高 {mh}px，宽度和锤一模一样），"
+            f"两个站在同一条地线上，中心相距 {mx - (MARGIN + 100 + W / 2):.0f}px")
 
 
 @page("ankylo", 6)
@@ -350,17 +404,24 @@ def _(d, pal, img):
 @page("claws", 2)
 def _(d, pal, img):
     """我们看见的只是骨头，外面那层壳比骨头还长一截。"""
-    full = S - 2 * MARGIN - 120
-    x0, cy = MARGIN + 60, S / 2
-    bl = full * 0.70
-    bw, bh = place(img, lie_flat(asset("claws", 2)), x0 + bl / 2, cy, w=bl)
-    # 壳的轮廓按骨头量出来的实际高度画，保证一定包得住，尖端再往前伸一截
-    pts = [(x0 - 24, cy - bh / 2 - 26), (x0 + full, cy - 18),
-           (x0 + full, cy + 18), (x0 - 24, cy + bh / 2 + 26)]
-    for a, b in zip(pts, pts[1:] + pts[:1]):
-        d.line([a, b], fill=pal["accent"], width=11)
-    return (f"1 层爪壳的轮廓（长 {full}px）+ 里面 1 根横躺的爪骨（素材2，长 {bw}px、高 {bh}px），"
-            f"壳比骨头多伸出 {full - bw:.0f}px，骨头只有壳的 {bw / full * 100:.0f}%")
+    # 壳套在骨头外面，可两张素材的姿势对不齐，硬叠出来是两件东西摞在一起。
+    # 改成上下两行、根部（左端）对齐：长出来的那一截自己就跳出来，还能用虚线量给人看。
+    x0 = MARGIN + 60
+    sheath = _point_right(lie_flat(asset("claws", 4)))
+    bone = _point_right(lie_flat(asset("claws", 2)))
+    sy, by, frac = 320, 790, 0.70
+    sw, sh = _fit(sheath, S - 2 * MARGIN - 140, 460)
+    sw, sh = place(img, sheath, x0 + sw / 2, sy, w=sw)
+    bw, bh = _fit(bone, sw * frac, 300)
+    bw, bh = place(img, bone, x0 + bw / 2, by, w=bw)
+    top, bot = sy - sh / 2 - 26, by + bh / 2 + 70
+    d.line([x0, top, x0, bot], fill=pal["line"], width=6)          # 左端（根部）对齐线
+    for x in (x0 + bw, x0 + sw):
+        _dash_v(d, x, top, bot, pal, col=pal["ink"])
+    arrow(d, x0 + bw + 12, bot - 30, x0 + sw - 12, bot - 30, pal, w=9, head=24)
+    return (f"上行 1 层爪壳（素材4，长 {sw}px 高 {sh}px）/ 下行 1 根爪骨（素材2，长 {bw}px 高 {bh}px），"
+            f"两件根部都顶在同 1 条左端对齐线上；两个尖端各 1 条竖虚线，"
+            f"壳比骨头多伸出 {sw - bw}px（1 支箭头量的就是这一截），骨头只有壳的 {bw / sw * 100:.0f}%")
 
 
 @page("claws", 3)
@@ -370,81 +431,90 @@ def _(d, pal, img):
 
 
 @page("claws", 5)
-def _(d, pal):
+def _(d, pal, img):
     """脚上的爪：第二个脚趾翘着，挂着一只大钩子。"""
-    gy = 780
+    gy = S - MARGIN - 60
     d.line([MARGIN, gy, S - MARGIN, gy], fill=pal["ink"], width=10)
-    ax, ay = 660, 500                                               # 踝
-    mx, my = 570, 690                                               # 跖骨下端，三根趾都从这里分出去
-    d.line([720, 170, ax, ay], fill=pal["ink"], width=48)           # 小腿
-    d.line([ax, ay, mx, my], fill=pal["ink"], width=38)             # 跖骨
-    small, big, lift = 64, 210, 150
-    for tx in (340, 455):                                           # 两根踩在地上的趾：趾尖正好落在地线上
-        d.line([mx, my, tx, gy], fill=pal["ink"], width=28)
-        _claw(d, tx, gy, small, math.pi - 0.22, pal, pal["paper"], curve=0.55, thick=0.34)
-    hx, hy = mx - 200, gy - lift                                    # 第二趾翘起来离地
-    d.line([mx, my, hx, hy], fill=pal["ink"], width=28)
-    _claw(d, hx, hy, big, 3.30, pal, pal["accent"], curve=1.10, thick=0.28)
-    return (f"1 只侧视的脚：3 根脚趾，2 根的趾尖正好落在地线上（爪长 {small}px），"
-            f"第 2 根翘起来离地 {lift}px、挂着 1 只大钩爪（长 {big}px，是另外两只的 {big / small:.1f} 倍）")
+    foot = asset("claws", 5)
+    fw, fh = _fit(foot, 560, 700)
+    fx = MARGIN + 40 + fw / 2
+    fw, fh = place(img, foot, fx, gy, w=fw, anchor="bottom")         # 两趾踩在地线上
+    hook = asset("claws", 8)
+    hw, hh = _fit(hook, 250, 340)
+    hx, hy = S - MARGIN - 30 - hw / 2, MARGIN + 60 + hh / 2
+    # 引线从素材上离放大件最近的那个实心点起：从重心起的那条会横穿整只恐龙
+    cxx, cyy = _nearest(foot, fw, fh, hx - (fx - fw / 2), hy - (gy - fh))
+    d.line([fx - fw / 2 + cxx, gy - fh + cyy, hx - hw / 2, hy + hh / 2], fill=pal["line"], width=6)
+    hw, hh = place(img, hook, hx, hy, w=hw)
+    halo(img, hook, hx, hy, w=hw, color=_rgb(pal["accent"]), grow=12, width=8)
+    return (f"1 条地线 + 1 只侧视的脚（素材5，宽 {fw}px 高 {fh}px，两趾踩在地线上、翘起的那趾挂着大钩爪）"
+            f"+ 右上角同一只大钩爪的放大件（素材8，宽 {hw}px 高 {hh}px）+ 沿它轮廓的 1 圈强调线 + "
+            f"1 条从脚连到放大件的引线")
 
 
 @page("claws", 7)
-def _(d, pal):
+def _(d, pal, img):
     """前面三根手指都带爪，三根能合到一起抓住东西。"""
-    n = 3
-    tip_sp = []
-    for (cx, cy, w_, h_), closed in zip(panel2(d, pal), (False, True)):
-        palm_y = cy + h_ * 0.16
-        L = h_ * 0.26
-        # 左右两根的弯度取相反的符号，三根才是对称的一把
-        spec = ((-1.35, 0.20), (-1.57, 0.0), (-1.79, -0.20)) if closed else                ((-1.95, -0.22), (-1.57, 0.0), (-1.19, 0.22))
-        if closed:
-            disc(d, cx, palm_y - L * 0.92, 54, pal["accent"], pal, w=8)
-        tips = []
-        for k, (a, cv) in enumerate(spec):
-            x = cx + (k - 1) * w_ * 0.16
-            tips.append(_claw(d, x, palm_y, L, a, pal, pal["soft"], curve=cv, thick=0.16))
-        d.rounded_rectangle([cx - w_ * 0.26, palm_y, cx + w_ * 0.26, palm_y + h_ * 0.16],
-                            radius=42, fill=pal["paper"], outline=pal["ink"], width=9)
-        tip_sp.append(abs(tips[2][0] - tips[0][0]))
-    return (f"左格 1 只手 {n} 根张开的爪（爪尖相距 {tip_sp[0]:.0f}px）/ 右格同样 {n} 根合拢，"
-            f"爪尖收到相距 {tip_sp[1]:.0f}px，三只一起抓住中间 1 个直径 108px 的东西；两格等大、爪数一样")
+    boxes = panel2(d, pal)
+    cx0, cy0, w_, h_ = boxes[0]
+    # 两只手画成一样高：同一只手的两个姿势，大小不该有差别
+    H = min(_fit(asset("claws", k), w_ * 0.94, h_ * 0.62)[1] for k in (6, 7))
+    ball = 180
+    got = []
+    for (cx, cy, w_, h_), a in zip(boxes, (6, 7)):
+        im = asset("claws", a)
+        if a == 7:
+            # 球先画、手后贴：球心抬到手的上沿，下半个被手压住，才像抓在手里
+            disc(d, cx, cy - H * 0.42, ball / 2, pal["accent"], pal, w=8)
+        got.append(place(img, im, cx, cy, h=H))
+    return (f"左格 1 只张开的三指手（素材6，宽 {got[0][0]}px）/ 右格同一只手合拢（素材7，宽 {got[1][0]}px）+ "
+            f"1 个直径 {ball}px 的球画在手后面、被手压住一部分（抓在手里）；"
+            f"两格等大，两只手一样高 {H:.0f}px，差别只在张开还是合拢")
 
 
 @page("claws", 9)
 def _(d, pal, img):
     """挖土的爪又宽又钝像把铲，抓肉的爪又细又尖像把钩。"""
-    wide, thin = 0.42, 0.13
-    for (cx, cy, w_, h_), dig in zip(panel2(d, pal), (True, False)):
-        place(img, asset("claws", 3 if dig else 2), cx, cy - h_ * 0.30, h=h_ * 0.30)
-        _claw(d, cx - (140 if dig else 90), cy + h_ * 0.30, h_ * 0.34,
-              -1.15 if dig else -1.35, pal,
-              pal["bark"] if dig else pal["accent"],
-              curve=0.35 if dig else 1.05, thick=wide if dig else thin)
-    return (f"左格 1 把铲（素材3）+ 1 只又宽又钝的爪（根部半宽是长度的 {wide * 100:.0f}%、弯 0.35 弧度）/ "
-            f"右格 1 只又细又尖的爪骨（素材2）+ 1 只钩（根部半宽只有长度的 {thin * 100:.0f}%、弯 1.05 弧度），"
-            f"左边那只比右边粗 {wide / thin:.1f} 倍，两格等大")
+    boxes = panel2(d, pal)
+    cx0, cy0, w_, h_ = boxes[0]
+    # 两只爪画成一样高，那么「谁更宽」量出来的就是爪本身的胖瘦，不是我缩放缩出来的
+    H = min(_fit(asset("claws", k), w_ * 0.86, h_ * 0.50)[1] for k in (10, 8))
+    got, th_ = [], []
+    for (cx, cy, w_, h_), dig in zip(boxes, (True, False)):
+        tool = asset("claws", 3 if dig else 2)
+        tw, tht = _fit(tool, w_ * 0.66, h_ * 0.30)
+        place(img, tool, cx, cy - h_ * 0.44 + tht / 2, w=tw)
+        claw = asset("claws", 10 if dig else 8)
+        got.append(place(img, claw, cx, cy + h_ * 0.44, h=H, anchor="bottom"))
+        # 「粗细」量的是最大内切圆，不是外框：钩爪弯成一圈，外框跟铲爪一样宽，本身却细得多
+        th_.append(_thick(claw, h=H))
+    return (f"左格 1 把铲（素材3）+ 1 只又宽又钝的铲爪（素材10）/ "
+            f"右格 1 根又细又尖的爪骨（素材2）+ 1 只钩爪（素材8）；"
+            f"两只爪画成一样高 {H:.0f}px、脚底落在同一条高度上，"
+            f"最粗的地方：铲爪 {th_[0]:.0f}px / 钩爪 {th_[1]:.0f}px，"
+            f"铲爪粗 {th_[0] / th_[1]:.1f} 倍，两格等大")
 
 
 @page("claws", 11)
-def _(d, pal):
+def _(d, pal, img):
     """四种爪并排：钩的、抓的、挖的，还有干脆不用的。"""
-    xs, slot = lay(4)
-    cy = 660
-    ang = -1.95
-    specs = [(270, 1.30, 0.13, "accent"), (270, 0.70, 0.20, "soft"),
-             (270, 0.30, 0.42, "bark"), (88, 0.55, 0.26, "paper")]
-    wide = 0
-    for x, (L, cv, th, key) in zip(xs, specs):
-        lo, hi = _claw_span(L, ang, cv)
-        ox = x - (lo + hi) / 2                        # 每只爪在自己格子里居中
-        wide = max(wide, hi - lo)
-        d.line([ox - 66, cy + 40, ox + 66, cy + 40], fill=pal["ink"], width=26)   # 指根
-        _claw(d, ox, cy + 30, L, ang, pal, pal[key], curve=cv, thick=th)
-    return (f"4 种爪并排（格宽 {slot:.0f}px，每只按自己的横向占位居中，最宽的一只占 {wide:.0f}px）："
-            f"1 只钩（长 270px、弯 1.30）/ 1 只抓（长 270px、弯 0.70）/ "
-            f"1 只铲（长 270px、弯 0.30、根部最粗）/ 1 只退化的小短爪（只有 88px，是前三只的 33%）")
+    # 四只排成一行的话，格宽只有 241px，爪子就都缩到 216px 高、挤在页面底下一条。
+    # 改成 2×2，每格宽一倍，爪子跟着大一倍，四只还是两两同基线、能直接比。
+    xs, slot = lay(2)
+    bases = (470, 962)
+    ns, small = (8, 9, 10, 11), 0.33
+    H = min(_fit(asset("claws", k), slot * 0.86, 400)[1] for k in ns[:3])
+    got, th_ = [], []
+    for i, (k, frac) in enumerate(zip(ns, (1, 1, 1, small))):
+        x, base = xs[i % 2], bases[i // 2]
+        got.append(place(img, asset("claws", k), x, base, h=H * frac, anchor="bottom"))
+        th_.append(_thick(asset("claws", k), h=H * frac))
+    for base in bases:
+        d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    return (f"2 行 ×2 格，每行 1 条基线（格宽 {slot:.0f}px，每只在自己格子里居中）："
+            f"1 只钩爪（素材8）/ 1 只抓握爪（素材9）/ 1 只铲爪（素材10）三只一样高 {H:.0f}px，"
+            f"最粗的地方分别是 {th_[0]:.0f} / {th_[1]:.0f} / {th_[2]:.0f}px（钩最细、铲最粗）；"
+            f"+ 1 只退化的小爪（素材11，高 {got[3][1]}px，只有前三只的 {small * 100:.0f}%）")
 
 
 # ================================================================ tails 尾巴有什么用
@@ -453,7 +523,8 @@ def _(d, pal):
 def _(d, pal, img):
     """梁龙的尾巴是一节一节接起来的，八十二节。"""
     n, per = 82, 41
-    w_, h_ = place(img, asset("tails", 1), S / 2, 150, h=170)
+    tw, th = _fit(asset("tails", 1), S - 2 * MARGIN - 120, 300)     # 上一版只有 170px 高，太小
+    w_, h_ = place(img, asset("tails", 1), S / 2, MARGIN + 30 + th / 2, w=tw)
     x0, x1 = MARGIN + 20, S - MARGIN - 20
     step = (x1 - x0) / per
     sw = step * 0.62
@@ -557,26 +628,46 @@ def _(d, pal):
 def _(d, pal, img):
     """五根 → 三根 → 两根，一步一步少下去。"""
     marks = [(0.08, None, "最早"), (0.50, None, "后来"), (0.92, None, "再往后")]
-    note = timeline(img, d, pal, "fingers", marks, y=670)
+    y = 700
+    note = timeline(img, d, pal, "fingers", marks, y=y)
     x0, x1 = MARGIN + 50, S - MARGIN - 50
-    ns = (5, 3, 2)
-    for (t, _a, _lab), n in zip(marks, ns):
-        _hand(d, x0 + (x1 - x0) * t, 460, 215, pal, n)
-    return note + f"；线上 3 只手，从左到右 {ns[0]} 根 / {ns[1]} 根 / {ns[2]} 根手指"
+    ns = ((2, 5), (4, 3), (5, 2))                       # (素材号, 手指数)
+    H = min(_fit(asset("fingers", a), 320, 560)[1] for a, _ in ns)
+    got = []
+    for (t, _a, _lab), (a, k) in zip(marks, ns):
+        im = asset("fingers", a)
+        w = im.width * H / im.height
+        # 时间线两端的手会甩出画外，先算出宽度再把中心夹回页内
+        cx = min(max(x0 + (x1 - x0) * t, MARGIN + w / 2), S - MARGIN - w / 2)
+        got.append(place(img, im, cx, y - 44, h=H, anchor="bottom"))
+        # 手指数是旁白点名的，交给素材就没人保证了：线下面再点 k 个点，数目由程序管
+        dxs, dot = lay(k, width=min(w, 230), margin=0)
+        for dx in dxs:
+            disc(d, cx - min(w, 230) / 2 + dx, y + 64, 15, pal["accent"], pal, w=5)
+    return (note + f"；线上 3 只手（素材2 / 4 / 5），一样高 {H:.0f}px、"
+            f"宽 {got[0][0]}/{got[1][0]}/{got[2][0]}px，"
+            f"每只手下面 1 排点标出手指数：从左到右 {ns[0][1]} 个 / {ns[1][1]} 个 / {ns[2][1]} 个点")
 
 
 @page("fingers", 3)
-def _(d, pal):
+def _(d, pal, img):
     """先没的是最外边那两根 —— 它们本来就又细又短。"""
-    W, cx, cy = 640, S / 2, 660
-    lens = [0.42, 1.00, 1.06, 1.00, 0.42]
-    fs = _hand(d, cx, cy, W, pal, 5, lens=lens, widths=[0.45, 1, 1, 1, 0.45])
-    for i in (0, 4):
-        cross(d, fs[i][0], fs[i][1] - 76, 46, pal)
-    inner = fs[2][3]
-    outer = fs[0][3]
-    return (f"1 只手 5 根手指：中间 3 根长 {inner:.0f}px、最外边 2 根只有 {outer:.0f}px"
-            f"（是中间那几根的 {outer / inner * 100:.0f}%）、也只有一半粗；最外边 2 根各画 1 个叉")
+    hand = asset("fingers", 2)
+    hw, hh = _fit(hand, S - 2 * MARGIN - 120, S - 2 * MARGIN - 180)
+    cx, cy = S / 2, S / 2 + 20
+    hw, hh = place(img, hand, cx, cy, w=hw)
+    # 叉不按比例猜：张开的手，最外两根的指尖就是整张素材最左、最右的实心点，直接量
+    r = 54
+    pts = []
+    for side in (-1, 1):
+        # 量到的是指尖最外那一点，叉心往里挪半个叉，整个叉才压在手指上而不是半个悬在外面
+        ex, ey = _extreme(hand, hw, hh, side)
+        pts.append((cx - hw / 2 + ex - side * r * 0.5, cy - hh / 2 + ey))
+    for x, y in pts:
+        cross(d, x, y, r, pal)
+    return (f"1 只正面五指手（素材2，宽 {hw}px 高 {hh}px）+ 最外边 2 根手指上各 1 个叉"
+            f"（半径 {r}px，叉心按素材最左 / 最右的实心点量出来，相距 {pts[1][0] - pts[0][0]:.0f}px"
+            f" = 手宽的 {(pts[1][0] - pts[0][0]) / hw * 100:.0f}%），中间 3 根没有叉")
 
 
 @page("fingers", 5)
@@ -620,40 +711,62 @@ def _(d, pal):
 
 
 @page("fingers", 9)
-def _(d, pal):
+def _(d, pal, img):
     """一只手上摆着三样东西：一根钉、三个蹄，最外边那根还能弯过来夹树枝。"""
-    cx, cy = S / 2 - 60, 580
-    d.rounded_rectangle([cx - 250, cy, cx + 250, cy + 230], radius=44,
-                        fill=pal["paper"], outline=pal["ink"], width=9)
-    spike = 300
-    poly(d, [(cx - 200 - 44, cy + 10), (cx - 200, cy - spike), (cx - 200 + 44, cy + 10)],
-         pal, pal["accent"], 8)
-    hoof_w, hoof_l = 44, 230
-    for i in range(3):
-        x = cx - 100 + i * 100
-        d.rounded_rectangle([x - hoof_w, cy - hoof_l, x + hoof_w, cy + 10], radius=hoof_w,
-                            fill=pal["paper"], outline=pal["ink"], width=7)
-        disc(d, x, cy - hoof_l, hoof_w * 1.02, pal["bark"], pal, w=7)
-    twig_x = cx + 350
-    d.rounded_rectangle([twig_x - 26, cy - 320, twig_x + 26, cy + 120], radius=26,
-                        fill=pal["bark"], outline=pal["ink"], width=7)
-    _claw(d, cx + 200, cy, 190, -1.30, pal, pal["soft"], curve=1.45, thick=0.19)
-    return (f"1 只手 5 根指：1 根钉子（尖，长 {spike}px）+ 3 个蹄（钝，各宽 {2 * hoof_w}px、长 {hoof_l}px、"
-            f"间距 100px）+ 最外边 1 根弯过来（弯 1.45 弧度）夹住 1 根树枝")
+    base = S - MARGIN - 70
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    hand = asset("fingers", 6)
+    hw, hh = _fit(hand, 620, 700)
+    twig = asset("fingers", 7)
+    tw, th = _fit(twig, 210, 560)
+    over = tw * 0.30                               # 树枝压在手的外指底下，才像被夹住
+    span = hw + tw - over
+    hx = (S - span) / 2 + hw / 2                   # 手和树枝当成一组居中，别都挤在左边
+    tx = hx + hw / 2 - over + tw / 2
+    tx = min(tx, S - MARGIN - 20 - tw / 2)
+    tw, th = place(img, twig, tx, base - 40, w=tw, anchor="bottom")
+    hw, hh = place(img, hand, hx, base, w=hw, anchor="bottom")
+    return (f"1 条地线 + 1 只禽龙的手（素材6，宽 {hw}px 高 {hh}px：钉、蹄、弯过来的外指都在素材里）"
+            f"+ 1 根树枝（素材7，宽 {tw}px 高 {th}px），树枝先贴、手后贴，"
+            f"两件横向重叠 {hx + hw / 2 - (tx - tw / 2):.0f}px（树枝的左边 {(hx + hw / 2 - (tx - tw / 2)) / tw * 100:.0f}% 被手压住 = 夹住）")
 
 
 @page("fingers", 11)
-def _(d, pal):
+def _(d, pal, img):
     """今天的鸟，翅膀里面还藏着三根手指。"""
-    cx, cy = S / 2, S / 2 + 40
-    wing = [(cx - 390, cy + 70), (cx - 310, cy - 130), (cx - 60, cy - 230), (cx + 220, cy - 200),
-            (cx + 390, cy - 60), (cx + 300, cy + 100), (cx + 40, cy + 180), (cx - 230, cy + 170)]
-    poly(d, wing, pal, pal["soft"], 10)
-    lens = (380, 440, 300)
-    for a, L in zip((-0.30, -0.12, 0.08), lens):
-        _claw(d, cx - 150, cy + 30, L, a, pal, pal["paper"], curve=0.10, thick=0.09)
-    return (f"1 只翅膀的轮廓 + 里面 3 根手指骨（长 {lens[0]} / {lens[1]} / {lens[2]}px，"
-            f"从同一个根部散开，全都包在翅膀轮廓里面）")
+    wing = asset("fingers", 8)
+    ww, wh = _fit(wing, S - 2 * MARGIN - 40, S - 2 * MARGIN - 120)
+    cx, cy = S / 2, S / 2 + 20
+    ww, wh = place(img, wing, cx, cy, w=ww)
+    left, top = cx - ww / 2, cy - wh / 2
+    rx, ry = _centroid(wing, ww, wh)               # 根部取翅膀的重心，一定在翅膀里面
+    angs = (-0.40, -0.12, 0.16)
+    # 三根从同一个点出发会叠成一团乱线（上一版就是个「W」）：根部沿垂直方向各错开 70px，
+    # 三根才是三根手指的样子
+    perp = sum(angs) / 3 + math.pi / 2
+    roots = [(rx + s * 70 * math.cos(perp), ry + s * 70 * math.sin(perp)) for s in (-1, 0, 1)]
+    lens = [_reach(wing, x, y, a, ww, wh) for (x, y), a in zip(roots, angs)]
+    # 骨头画在满是羽毛的底子上，不开一扇窗就只是三道白划痕：
+    # 先盖一块半透明的浅色（等于把这一小片翅膀照透），骨头再画在窗上
+    R = max(lens) + 80
+    win = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    ImageDraw.Draw(win).ellipse([left + rx - R * 0.40, top + ry - R * 0.60,
+                                 left + rx + R * 0.96, top + ry + R * 0.60],
+                                fill=tuple(_rgb(pal["paper"])) + (188,))
+    img.paste(win, (0, 0), win)
+    for (x, y), a, L in zip(roots, angs, lens):
+        # 每根的长度是顺着这个方向量出来的「还在翅膀里面」的距离，所以指尖不会戳出轮廓。
+        # 画法照 limb()：先描一道粗的墨线，再压一道细的填充线 —— 等于一根有描边的骨头
+        x0, y0 = left + x, top + y
+        x1, y1 = x0 + L * math.cos(a), y0 + L * math.sin(a)
+        d.line([x0, y0, x1, y1], fill=pal["ink"], width=34)
+        d.line([x0, y0, x1, y1], fill=pal["paper"], width=20)
+        disc(d, x0, y0, 22, pal["paper"], pal, w=7)                 # 腕这一头的关节
+        disc(d, x1, y1, 16, pal["paper"], pal, w=7)                 # 指尖那一头
+    return (f"1 只张开的鸟翅膀（素材8，宽 {ww}px 高 {wh}px）+ 翅膀上 1 块半透明的窗"
+            f"（{1.36 * R:.0f}×{1.20 * R:.0f}px，像照透了一样）+ 窗里 3 根手指骨"
+            f"（长 {lens[0]:.0f} / {lens[1]:.0f} / {lens[2]:.0f}px，根部沿垂直方向各错开 70px、"
+            f"两头各 1 个关节；每根的长度按素材自己的 alpha 量到轮廓内为止，3 根都埋在翅膀里面）")
 
 
 # ================================================================ aircell 骨头里为什么有空气
@@ -749,25 +862,49 @@ def _(d, pal):
 @page("mother", 2)
 def _(d, pal, img):
     """窝是个泥坑，蛋一个挨一个竖在坑里。"""
-    nw, nh = place(img, asset("mother", 2), S / 2, 950, w=830, anchor="bottom")
+    nest = asset("mother", 2)
+    nw, nh = _fit(nest, 830, 720)               # 只卡宽度的话，换一张竖素材窝就顶穿页面
+    nw, nh = place(img, nest, S / 2, 950, w=nw, anchor="bottom")
     e = asset("mother", 3)
-    per, back_h, front_h = 6, 150, 178
-    step = nw * 0.70 / (per - 1)
+    # 上一版一排六个、每个才 150px，蛋小得看不清。旁白没点数目（「一个挨一个」），
+    # 所以减个数、把单个放大：后排 4 + 前排 3，最小的一个也有 210px 高
+    back, front, back_h, front_h = 4, 3, 210, 250
+    step = nw * 0.70 / (back - 1)
     x0 = S / 2 - nw * 0.35
-    for k in range(per):                       # 后排先贴，前排压住它们的下半截，看着才是「在坑里」
-        place(img, e, x0 + k * step, 950 - nh * 0.42, h=back_h, anchor="bottom")
-    for k in range(per):
-        place(img, e, x0 + step * 0.5 + (k - 0.5) * step, 950 - nh * 0.22, h=front_h, anchor="bottom")
-    return (f"1 个窝（素材2，宽 {nw}px）+ 里面 {2 * per} 个竖着的蛋（素材3）："
-            f"后排 {per} 个（高 {back_h}px）+ 前排 {per} 个（高 {front_h}px、左右各错开半格），"
-            f"每排间距 {step:.0f}px，一个挨一个排在坑里")
+    got = []
+    for k in range(back):                      # 后排先贴，前排压住它们的下半截，看着才是「在坑里」
+        got.append(place(img, e, x0 + k * step, 950 - nh * 0.42, h=back_h, anchor="bottom"))
+    for k in range(front):
+        got.append(place(img, e, x0 + step * (k + 0.5), 950 - nh * 0.20, h=front_h, anchor="bottom"))
+    return (f"1 个窝（素材2，宽 {nw}px 高 {nh}px）+ 里面 {back + front} 个竖着的蛋（素材3）："
+            f"后排 {back} 个（高 {back_h}px、宽 {got[0][0]}px）+ 前排 {front} 个"
+            f"（高 {front_h}px、宽 {got[-1][0]}px、左右各错开半格），两排的中心距都是 {step:.0f}px，"
+            f"蛋比间距宽，相邻两个挨着叠 {got[0][0] - step:.0f}px —— 一个挨一个排在坑里")
 
 
 @page("mother", 3)
 def _(d, pal, img):
     """那么大的恐龙，下出来的蛋只有柚子那么点。"""
-    return cmp_height(img, d, pal, "mother",
-                      [(1, 370, S / 2 - 120), (3, 130, S / 2 + 380)])
+    # 蛋要按比例才叫「只有这么一点」，可按比例画出来就只有 130px、看不清。
+    # 所以地线上仍是真比例的小蛋，右上角再挂一个同一个蛋的放大件，两者用引线连起来。
+    base = S - MARGIN - 130
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    dh = 430
+    dw, dh = place(img, asset("mother", 1), MARGIN + 40 + _fit(asset("mother", 1), 700, dh)[0] / 2,
+                   base, h=dh, anchor="bottom")
+    egg = asset("mother", 3)
+    eh = round(dh * 0.30)
+    ew, eh = _fit(egg, 150, eh)
+    ex = S - MARGIN - 20 - ew / 2
+    ew, eh = place(img, egg, ex, base, w=ew, anchor="bottom")
+    halo(img, egg, ex, base, w=ew, color=_rgb(pal["accent"]), grow=12, width=7, anchor="bottom")
+    bw, bh = _fit(egg, 300, 320)
+    bx, by = S - MARGIN - 30 - bw / 2, MARGIN + 40 + bh / 2
+    d.line([ex, base - eh - 26, bx, by + bh / 2 + 20], fill=pal["line"], width=6)
+    bw, bh = place(img, egg, bx, by, w=bw)
+    return (f"1 条地线上 1 只鸭嘴龙（素材1，宽 {dw}px 高 {dh}px）+ 1 个同比例的蛋"
+            f"（素材3，高 {eh}px，只有恐龙的 {eh / dh * 100:.0f}%）+ 沿蛋轮廓的 1 圈强调线；"
+            f"右上角 1 个同一个蛋的放大件（高 {bh}px，是地线上那个的 {bh / eh:.1f} 倍）+ 1 条引线")
 
 
 @page("mother", 5)
@@ -781,41 +918,43 @@ def _(d, pal):
 
 
 @page("mother", 6)
-def _(d, pal):
+def _(d, pal, img):
     """小牙已经磨平了一点 —— 牙被磨平，就是吃过东西。"""
-    n, sharp, worn = 6, 230, 150
-    for (cx, cy, w_, h_), is_worn in zip(panel2(d, pal), (False, True)):
-        gum_y = cy + 40
-        step = w_ * 0.68 / (n - 1)
-        for i in range(n):
-            x = cx - w_ * 0.34 + i * step
-            if is_worn:
-                poly(d, [(x - 26, gum_y), (x - 13, gum_y - worn), (x + 13, gum_y - worn),
-                         (x + 26, gum_y)], pal, pal["paper"], 7)
-            else:
-                poly(d, [(x - 26, gum_y), (x, gum_y - sharp), (x + 26, gum_y)],
-                     pal, pal["paper"], 7)
-        d.rounded_rectangle([cx - w_ * 0.42, gum_y, cx + w_ * 0.42, gum_y + 120], radius=32,
-                            fill=pal["soft"], outline=pal["ink"], width=8)
-    return (f"左格 {n} 颗没磨过的尖牙（尖高 {sharp}px）/ 右格同样 {n} 颗、尖被磨平"
-            f"（只剩 {worn}px，削掉了 {sharp - worn}px），两格牙数一样、牙宽都是 52px")
+    boxes = panel2(d, pal)
+    cx0, cy0, w0, h0 = boxes[0]
+    # 两排牙画成一样宽、牙床落在同一条高度上：那么两排高度之差，就是磨掉的那一截
+    # 两件的取景不一样（素材6 模型画成了整张嘴），所以只敢保证「一样宽、底边落在同一条线上」。
+    # 高度差在这里不是牙磨掉多少，是两张图裁的框不一样——真磨掉多少，只能由素材自己画出来。
+    W = min(_fit(asset("mother", k), w0 * 0.86, h0 * 0.56)[0] for k in (5, 6))
+    gum_y = cy0 + h0 * 0.30
+    got = []
+    for (cx, cy, w_, h_), a in zip(boxes, (5, 6)):
+        got.append(place(img, asset("mother", a), cx, gum_y, w=W, anchor="bottom"))
+    seg = _dash_h(d, gum_y + 24, MARGIN + 20, S - MARGIN - 20, pal, col=pal["accent"])
+    return (f"左格 1 排没磨过的尖牙（素材5，宽 {got[0][0]}px 高 {got[0][1]}px）/ "
+            f"右格同一排、尖被磨平（素材6，宽 {got[1][0]}px 高 {got[1][1]}px）；"
+            f"两件一样宽 {W:.0f}px、底边都落在 y={gum_y:.0f} 这一条线上（1 条横虚线，{seg} 段，"
+            f"横穿两格），两格等大 —— 尖和平的差别只来自素材本身")
 
 
 @page("mother", 8)
 def _(d, pal, img):
     """一大片窝排在一起，窝和窝之间正好空出一只大恐龙那么长。"""
-    rows, cols, R = 3, 3, 48
-    gap = 220
+    # 恐龙的长度 = 两窝之间的空当（旁白点名的那一条），所以把窝的间距拉大，
+    # 恐龙才跟着变大：上一版 gap=220 画出来的恐龙只有 110px 高
+    rows, cols, R = 3, 3, 44
+    gap = 348
     step = 2 * R + gap
-    x0, y0 = S / 2 - step, 230
+    x0, y0 = S / 2 - step, S / 2 - step
     for r in range(rows):
         for c in range(cols):
             x, y = x0 + c * step, y0 + r * step
             disc(d, x, y, R, pal["bark"], pal, w=9)
             disc(d, x, y, R * 0.56, pal["ground"], pal, w=6)
-    w_, h_ = place(img, asset("mother", 1), x0 + step / 2, y0, w=gap)
-    return (f"俯视 {rows * cols} 个窝（{rows} 行 ×{cols}，窝直径 {2 * R}px、窝心间距 {step}px）+ "
-            f"1 只大恐龙（素材1）横在上排相邻两窝中间，体长 {w_}px 正好等于两窝之间空着的 {gap}px")
+    w_, h_ = place(img, asset("mother", 1), x0 + step / 2, y0 + step, w=gap)
+    return (f"俯视 {rows * cols} 个窝（{rows} 行 ×{cols}，窝直径 {2 * R}px、窝心间距 {step}px、"
+            f"两窝之间空着 {gap}px）+ 1 只大恐龙（素材1，长 {w_}px 高 {h_}px）横在中排相邻两窝中间，"
+            f"体长正好等于那 {gap}px —— 两头各顶到一个窝的边上")
 
 
 @page("mother", 11)
@@ -824,22 +963,30 @@ def _(d, pal, img):
     e = asset("mother", 3)
     boxes = panel2(d, pal)
     lx, ly, lw, lh = boxes[0]
-    rows, cols, eh = 5, 6, 84
-    step = lw * 0.84 / cols
+    # 左格上一版 30 个蛋、每个 84px，小得像米粒。半格宽 460px 装不下几十个 140px 的蛋，
+    # 所以隔行错半格、让它们互相叠着堆成一窝 —— 数目一个不少，单个大了 67%
+    rows, cols, eh = 6, 4, 130
+    sx, sy = lw * 0.20, lh * 0.156
+    ew, eh = _fit(e, sx * 1.40, eh)             # 蛋再横也不许超过这个宽度，否则整堆挤出格子
+    got = []
     for r in range(rows):
         for c in range(cols):
-            place(img, e, lx - lw * 0.42 + step * (c + 0.5), ly - lh * 0.28 + r * 118,
-                  h=eh, anchor="bottom")
+            # 隔行各错半格的一半，两行都还是居中的，整堆不会往一边挤出格子
+            got.append(place(img, e, lx + (c - (cols - 1) / 2) * sx + (sx / 4) * (1 if r % 2 else -1),
+                             ly - lh * 0.34 + r * sy, w=ew, anchor="bottom"))
     rx, ry, rw, rh = boxes[1]
     disc(d, rx, ry, 190, pal["bark"], pal, w=10)
     disc(d, rx, ry, 132, pal["ground"], pal, w=7)
-    n2, R2, eh2 = 6, 132, 140
+    n2, R2, eh2 = 6, 130, 185
+    ew2, eh2 = _fit(e, 190, eh2)                # 同理：圈上的蛋也得卡住宽度
     for k in range(n2):
         a = math.radians(k * 360 / n2 - 90)
-        place(img, e, rx + R2 * math.cos(a), ry + R2 * math.sin(a) + eh2 / 2, h=eh2, anchor="bottom")
-    return (f"左格 {rows * cols} 个蛋（{rows} 行 ×{cols}，各高 {eh}px、间距 {step:.0f}px）/ "
-            f"右格 1 个窝 + {n2} 个蛋绕成 1 圈（各高 {eh2}px、圈半径 {R2}px、圈上间距 {2 * math.pi * R2 / n2:.0f}px），"
-            f"两格等大，左边是右边的 {rows * cols // n2} 倍")
+        place(img, e, rx + R2 * math.cos(a), ry + R2 * math.sin(a) + eh2 / 2, w=ew2, anchor="bottom")
+    n1 = rows * cols
+    return (f"左格 {n1} 个蛋（{rows} 行 ×{cols}，各高 {got[0][1]}px 宽 {got[0][0]}px、列距 {sx:.0f}px、"
+            f"行距 {sy:.0f}px、隔行错开，同排相邻两个叠 {got[0][0] - sx:.0f}px，堆成一堆）/ "
+            f"右格 1 个窝 + {n2} 个蛋绕成 1 圈（各高 {eh2:.0f}px、圈半径 {R2}px、"
+            f"圈上间距 {2 * math.pi * R2 / n2:.0f}px）；两格等大，左边是右边的 {n1 // n2} 倍")
 
 
 # ================================================================ herd 它们为什么一起走
@@ -865,44 +1012,57 @@ def _(d, pal, img):
 
 
 @page("herd", 5)
-def _(d, pal):
+def _(d, pal, img):
     """没有哪一串压在另一串上面 —— 谁也没踩着谁。"""
-    rows, per, s, gy, gx = 4, 6, 92, 196, 152
+    a = asset("herd", 3)
+    rows, per, gy, gx, jit = 4, 6, 205, 152, 22
+    pw, ph = _fit(a, gx - 24, gy - 2 * jit - 10)       # 脚印宽必须小于间距，这两条线才咬得住
+    got = []
     for r in range(rows):
-        y = 180 + r * gy
+        y = 165 + r * gy
         for i in range(per):
-            footprint(d, MARGIN + 110 + i * gx, y + (26 if i % 2 else -26), s, pal,
-                      pal["bark"] if r % 2 else pal["soft"])
-    return (f"{rows} 串平行的脚印，每串 {per} 个，一共 {rows * per} 个；"
-            f"行距 {gy}px、同串间距 {gx}px，都大于脚印宽 {s}px，没有任何两个压在一起")
+            got.append(place(img, a, MARGIN + 110 + i * gx, y + (jit if i % 2 else -jit), w=pw))
+    return (f"{rows} 串平行的脚印（素材3），每串 {per} 个，一共 {rows * per} 个；"
+            f"每个宽 {got[0][0]}px 高 {got[0][1]}px，行距 {gy}px、同串间距 {gx}px、"
+            f"串内左右错开 ±{jit}px —— 行距减去错开还有 {gy - 2 * jit}px，都大于脚印本身，"
+            f"没有任何两个压在一起")
 
 
 @page("herd", 6)
-def _(d, pal):
+def _(d, pal, img):
     """大脚印走在两边，小脚印夹在中间。"""
-    xs = (150, 400, 650, 890)
-    per, big, small = 5, 132, 76
+    a = asset("herd", 3)
+    xs, slot = lay(4)
+    per, gy = 4, 230
+    big = _fit(a, slot * 0.86, gy - 16)[0]
+    small = big * 0.56                            # 大小两档只差在 place 的缩放上，形状是同一张素材
+    got = []
     for i, x in enumerate(xs):
-        s = big if i in (0, 3) else small
         for k in range(per):
-            footprint(d, x, 180 + k * 166, s, pal, pal["bark"] if i in (0, 3) else pal["soft"])
-    return (f"俯视 {len(xs)} 串脚印，每串 {per} 个（共 {len(xs) * per} 个）："
-            f"外侧 2 串是大脚印（宽 {big}px）/ 中间 2 串是小脚印（宽 {small}px），"
-            f"大的在外、小的在里，串距 250px")
+            got.append((i, place(img, a, x, 180 + k * gy, w=big if i in (0, 3) else small)))
+    bw = got[0][1][0]
+    sw = got[per][1][0]
+    return (f"俯视 4 串脚印（同 1 个素材3），每串 {per} 个（共 {4 * per} 个）："
+            f"外侧 2 串是大脚印（宽 {bw}px）/ 中间 2 串是小脚印（宽 {sw}px，是大的 {sw / bw * 100:.0f}%），"
+            f"大的在外、小的在里；串距 {slot:.0f}px、行距 {gy}px，都大于脚印本身，互不相碰")
 
 
 @page("herd", 8)
-def _(d, pal):
+def _(d, pal, img):
     """量一量两个脚印中间隔多远，就知道它走得多快 —— 步距一样长。"""
-    n, step, s = 5, 190, 110
-    x0, y, my = MARGIN + 130, 420, 780
+    a = asset("herd", 3)
+    n, step, jit = 5, 185, 40
+    x0, y, my = MARGIN + 120, 400, 800
+    pw, ph = _fit(a, step - 26, 180)
+    got = []
     for i in range(n):
-        footprint(d, x0 + i * step, y + (40 if i % 2 else -40), s, pal, pal["bark"])
+        got.append(place(img, a, x0 + i * step, y + (jit if i % 2 else -jit), w=pw))
         d.line([x0 + i * step, my - 34, x0 + i * step, my + 34], fill=pal["ink"], width=8)
-        _dash_v(d, x0 + i * step, y + 110, my - 44, pal)
+        _dash_v(d, x0 + i * step, y + jit + ph / 2 + 16, my - 44, pal)
     for i in range(n - 1):
         arrow(d, x0 + i * step + 12, my, x0 + (i + 1) * step - 12, my, pal, w=7, head=18)
-    return (f"1 串 {n} 个脚印（宽 {s}px）+ 下面 {n - 1} 段一样长的步距（各 {step}px），"
+    return (f"1 串 {n} 个脚印（素材3，各宽 {got[0][0]}px 高 {got[0][1]}px，左右错开 ±{jit}px）"
+            f"+ 下面 {n - 1} 段一样长的步距（各 {step}px，都大于脚印宽），"
             f"每个脚印下拉 1 条虚线到 {n} 道竖刻度上")
 
 
@@ -911,12 +1071,15 @@ def _(d, pal, img):
     """一片树叶吃光了就往前挪一挪，再找一片。"""
     base = S - MARGIN - 50
     d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
-    full, bare = 12, 0
-    _tree(d, 175, 350, 250, pal, leaves=full)
-    _tree(d, 850, 350, 250, pal, leaves=bare)
-    arrow(d, 640, 250, 370, 250, pal, w=12, head=30)
+    t_full, t_bare = asset("herd", 5), asset("herd", 6)
+    # 两棵树画成一样高：一棵有叶一棵光秃，差别只能来自素材本身，不能来自我缩放
+    th = min(_fit(t, 300, 380)[1] for t in (t_full, t_bare))
+    tree_base = 440
+    tw1, th1 = place(img, t_full, 200, tree_base, h=th, anchor="bottom")
+    tw2, th2 = place(img, t_bare, S - 200, tree_base, h=th, anchor="bottom")
+    arrow(d, S - 200 - tw2 / 2 - 30, 260, 200 + tw1 / 2 + 30, 260, pal, w=12, head=30)
     big, small = asset("herd", 1), asset("herd", 2)
-    ah, jh, gap = 165, 108, 40
+    ah, jh, gap = 300, 210, 40
     aw = big.size[0] * ah / big.size[1]
     jw = small.size[0] * jh / small.size[1]
     total = 2 * aw + jw + 2 * gap
@@ -928,7 +1091,8 @@ def _(d, pal, img):
         aw, ah = place(img, big, x + aw / 2, base, h=ah, anchor="bottom")
         x += aw + gap
     jw, jh = place(img, small, x + jw / 2, base, h=jh, anchor="bottom")
-    return (f"上面 2 棵树：左边 1 棵还满着的（{full} 片叶子）/ 右边 1 棵吃光的（{bare} 片叶子）"
-            f"+ 1 支朝左（往下一片树去）的箭头；下面地线上 3 只恐龙朝左走："
-            f"2 只大的（素材1，各高 {ah}px、宽 {aw}px）+ 1 只小的（素材2，高 {jh}px、宽 {jw}px），"
+    return (f"上面 2 棵一样高 {th1}px 的树：左边 1 棵有叶子的（素材5，宽 {tw1}px）/ "
+            f"右边 1 棵光秃的（素材6，宽 {tw2}px）+ 1 支朝左（往下一片树去）的箭头；"
+            f"下面地线上 3 只恐龙朝左走：2 只大的（素材1，各高 {ah:.0f}px、宽 {aw:.0f}px）+ "
+            f"1 只小的（素材2，高 {jh:.0f}px、宽 {jw:.0f}px，是大的 {jh / ah * 100:.0f}%），"
             f"彼此隔开 {gap:.0f}px，整队宽 {total:.0f}px、居中放在地线上")
