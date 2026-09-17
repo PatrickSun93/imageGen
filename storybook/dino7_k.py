@@ -21,7 +21,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("早上的窗角上，\n挂着一张新网。\n太阳一照丝都亮了，\n一圈一圈地绕着。\n蜘蛛蹲在正中间。",
-      f"Waist-up view of the little boy at a window in the morning light, his face large in the "
+      f"A head-and-shoulders portrait of the little boy at a window in the morning light, his face large in the "
       f"frame and turned towards the viewer, {EYES}, delighted; behind him a round orb web hangs "
       f"in the corner of the window with a spider at its centre.", 1),
      ("织一张网的第一步\n是放出一根丝。\n风一吹，丝飘过去，\n粘在对面的树枝上。\n一座桥就搭好了。", "", 0),
@@ -43,7 +43,7 @@ BOOKS.append(dict(
       "One complete orb web strung between two branches at dawn on a cream background, tiny dew "
       "drops hanging along its threads. Nothing else in the picture.", 0),
      ("我凑近看那张网，\n丝细得几乎看不见。\n这么长的一根线，\n是它从自己身上\n一点一点抽出来的。",
-      f"Waist-up view of the little boy leaning in close to a spider web on a garden fence, his "
+      f"A head-and-shoulders portrait of the little boy leaning in close to a spider web on a garden fence, his "
       f"face large in the frame and turned towards the viewer, {EYES}, looking hard at the fine "
       f"threads.", 1),
     ]))
@@ -67,7 +67,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("长颈鹿走过来了。\n我把头仰到最后，\n才看见它的脸。\n它就站在那儿，\n比一层楼还高。",
-      f"Waist-up view of the little boy at a zoo tilting his head far back, his face large in the "
+      f"A head-and-shoulders portrait of the little boy at a zoo tilting his head far back, his face large in the "
       f"frame and turned towards the viewer, {EYES}, amazed; behind him the long neck and small "
       f"head of a giraffe rise high above him.", 1),
      ("它光是一个脖子，\n就有两米多长。\n比爸爸站着还高，\n比我高出两个头。\n身子还在下面呢。", "", 0),
@@ -92,6 +92,6 @@ BOOKS.append(dict(
       "Two male giraffes standing side by side on a cream background, swinging their long necks "
       "to strike each other. Nothing else in the picture.", 0),
      ("回家的路上我想，\n它的脖子那么长，\n骨头却和我一样多，\n只有七块，\n只是每一块都长。",
-      f"Waist-up view of the little boy walking home with one hand resting on the back of his own "
-      f"neck, his face large in the frame and turned towards the viewer, {EYES}, thoughtful.", 1),
+      f"A head-and-shoulders portrait of the little boy walking home with one hand resting on the back of his own "
+      f"neck, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, thoughtful.", 1),
     ]))

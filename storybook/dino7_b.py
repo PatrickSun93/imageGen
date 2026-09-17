@@ -22,7 +22,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("柜子里放着一只爪子。\n又长又尖，\n比我的手还大。\n爸爸说，\n这只恐龙还不吃肉。",
-      f"Waist-up view of the little boy in a museum leaning close to a glass case, his face large "
+      f"A head-and-shoulders portrait of the little boy in a museum leaning close to a glass case, his face large "
       f"in the frame and turned towards the viewer, {EYES}, his mouth open in surprise; inside "
       f"the case stands one very long pale claw as big as his hand.", 1),
      ("我们看见的爪子，\n其实只是骨头。\n真的爪子\n外面还套着一层壳，\n比骨头还长一截。", "", 0),
@@ -46,8 +46,8 @@ BOOKS.append(dict(
       "cream background, one single claw on its inner toe. Nothing else in the picture.", 0),
      ("钩的、抓的、挖的，\n还有干脆不用的。\n爪子长成什么形状，\n就等于告诉你\n它是干什么用的。", "", 0),
      ("我把手举到玻璃上，\n跟它比了一下。\n我的指甲\n也是那层壳做的，\n只是短得多。",
-      f"Waist-up view of the little boy holding his open hand up against the glass of a museum "
-      f"case, his face large in the frame and turned towards the viewer, {EYES}, comparing his "
+      f"A head-and-shoulders portrait of the little boy holding his open hand up against the glass of a museum "
+      f"case, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, comparing his "
       f"short fingernails with one huge pale claw behind the glass.", 1),
     ]))
 
@@ -71,8 +71,8 @@ BOOKS.append(dict(
     ],
     pages=[
      ("这条尾巴真长。\n从展台这一头\n一直伸到那一头。\n爸爸说，\n它比脖子还长。",
-      f"Waist-up view of the little boy standing beside the long tail of a mounted dinosaur "
-      f"skeleton in a museum, his face large in the frame and turned towards the viewer, {EYES}, "
+      f"A head-and-shoulders portrait of the little boy standing beside the long tail of a mounted dinosaur "
+      f"skeleton in a museum, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, "
       f"looking amazed.", 1),
      ("尾巴不是一根。\n是一节一节的骨头\n接起来的。\n梁龙的尾巴\n有八十多节。", "", 0),
      ("地上留下了脚印，\n尾巴的印子\n却一条也没有。\n所以它走路的时候，\n尾巴是抬着的。",
@@ -97,8 +97,8 @@ BOOKS.append(dict(
       "of bone at the tip. Nothing else in the picture.", 0),
      ("撑着的、甩响的、\n打人的、管平衡的。\n尾巴不是\n多长出来的一截，\n它一直在帮忙。", "", 0),
      ("回家的路上\n我学恐龙走了几步：\n身子往前一低，\n胳膊往后一伸——\n可惜我没有尾巴。",
-      f"Waist-up view of the little boy outdoors leaning forward with both arms stretched back "
-      f"behind him, his face large in the frame and turned towards the viewer, {EYES}, laughing.",
+      f"A head-and-shoulders portrait of the little boy outdoors leaning forward with both arms stretched back "
+      f"behind him, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, laughing.",
       1),
     ]))
 
@@ -123,8 +123,8 @@ BOOKS.append(dict(
     ],
     pages=[
      ("我把手贴在玻璃上，\n一根、两根、三根……\n一共五根。\n柜子里那只恐龙的手，\n只有两根。",
-      f"Waist-up view of the little boy pressing his open hand flat against the glass of a museum "
-      f"case, his face large in the frame and turned towards the viewer, {EYES}, counting; behind "
+      f"A head-and-shoulders portrait of the little boy pressing his open hand flat against the glass of a museum "
+      f"case, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, counting; behind "
       f"the glass is the small two-fingered hand of a dinosaur skeleton.", 1),
      ("最早的恐龙\n也是五根手指。\n后来变成了三根，\n再往后\n就只剩下两根了。", "", 0),
      ("先没的是\n最外边那两根。\n它们本来就又细又短，\n真要抓东西，\n一点忙也帮不上。", "", 0),
@@ -146,8 +146,8 @@ BOOKS.append(dict(
       "picture.", 0),
      ("今天的鸟\n翅膀里面\n还藏着三根手指。\n那是恐龙的手\n剩下的最后一点。", "", 0),
      ("我张开五根手指，\n一根一根数过去。\n用得着的留下来，\n用不着的\n慢慢就没有了。",
-      f"Waist-up view of the little boy holding up his open hand and counting his fingers with "
-      f"the other hand, his face large in the frame and turned towards the viewer, {EYES}, "
+      f"A head-and-shoulders portrait of the little boy holding up his open hand and counting his fingers with "
+      f"the other hand, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, "
       f"thoughtful.", 1),
     ]))
 
@@ -169,7 +169,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("老师递给我\n一块恐龙骨头的模子。\n那么大一块，\n我以为很沉，\n一拿——轻得吓一跳。",
-      f"Waist-up view of the little boy holding a large pale bone model in both hands, his face "
+      f"A head-and-shoulders portrait of the little boy holding a large pale bone model in both hands, his face "
       f"large in the frame and turned towards the viewer, {EYES}, surprised at how light it is.",
       1),
      ("把它锯开看看。\n里面几乎是空的。\n只有薄薄的骨片，\n横一道竖一道\n撑在当中。", "", 0),
@@ -195,6 +195,6 @@ BOOKS.append(dict(
       "bone with round openings in its side lying on the ground in front of it. Nothing else in "
       "the picture.", 0),
      ("我又掂了掂\n手里这块骨头。\n中间掏空了，\n一样结实，\n还轻得多。",
-      f"Waist-up view of the little boy weighing the large pale bone model in one hand, his face "
+      f"A head-and-shoulders portrait of the little boy weighing the large pale bone model in one hand, his face "
       f"large in the frame and turned towards the viewer, {EYES}, smiling.", 1),
     ]))

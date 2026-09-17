@@ -22,7 +22,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("春天，池塘边，\n水里有一群黑点。\n它们摆着尾巴游，\n爸爸说那不是鱼，\n是小蝌蚪。",
-      f"Waist-up view of the little boy crouching at the edge of a pond, his face large in the "
+      f"A head-and-shoulders portrait of the little boy crouching at the edge of a pond, his face large in the "
       f"frame and turned towards the viewer, {EYES}, looking down into the water with delight.", 1),
      ("它们从卵里孵出来。\n一团透明的果冻，\n里面点着黑芝麻。\n每一粒黑芝麻，\n将来都是一只青蛙。",
       "One clear jelly mass of frog eggs floating in still water on a cream background, many "
@@ -43,8 +43,8 @@ BOOKS.append(dict(
       "and about to jump. Nothing else in the picture.", 0),
      ("卵、蝌蚪、\n长腿蝌蚪、青蛙，\n四个模样，\n是同一只小东西。\n它把自己改了一遍。", "", 0),
      ("我蹲在池塘边看，\n找那只尾巴最短的。\n尾巴不是丢了，\n是变成了它自己\n身上的一部分。",
-      f"Waist-up view of the little boy at the pond holding a clear jar with one tadpole in it, "
-      f"his face large in the frame and turned towards the viewer, {EYES}, thoughtful.", 1),
+      f"A head-and-shoulders portrait of the little boy at the pond holding a clear jar with one tadpole in it, "
+      f"only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, thoughtful.", 1),
     ]))
 
 BOOKS.append(dict(
@@ -66,7 +66,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("海边的沙子很烫。\n退潮的地方\n有一道浅浅的印子，\n从水里一直爬上来。\n爸爸说是海龟爬的。",
-      f"Waist-up view of the little boy standing on a beach at low tide, his face large in the "
+      f"A head-and-shoulders portrait of the little boy standing on a beach at low tide, his face large in the "
       f"frame and turned towards the viewer, {EYES}, pointing down at a track in the sand.", 1),
      ("夏天的半夜，\n一只母海龟上了岸。\n它在水里很轻快，\n到了沙滩上\n只能一点一点往前挪。",
       "One large sea turtle hauling itself slowly up a beach at night on a cream background, seen "
@@ -90,8 +90,8 @@ BOOKS.append(dict(
       "One large sea turtle coming out of the water onto sand on a cream background, seen from "
       "the side. Nothing else in the picture.", 0),
      ("我在沙滩上走，\n沙子是一样的沙子。\n可海龟分得出来。\n它记住的不是路，\n是这一片沙的味道。",
-      f"Waist-up view of the little boy sitting on the sand with a handful of it running through "
-      f"his fingers, his face large in the frame and turned towards the viewer, {EYES}, quiet.", 1),
+      f"A head-and-shoulders portrait of the little boy sitting on the sand with a handful of it running through "
+      f"his fingers, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, quiet.", 1),
     ]))
 
 BOOKS.append(dict(
@@ -114,7 +114,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("动物园的笼子里，\n一只猫头鹰\n一直在看着我。\n我走到哪一边，\n它的头就转到哪边。",
-      f"Waist-up view of the little boy standing in front of a large aviary, his face large in "
+      f"A head-and-shoulders portrait of the little boy standing in front of a large aviary, his face large in "
       f"the frame and turned towards the viewer, {EYES}, wide-eyed; an owl sits on a branch "
       f"behind him.", 1),
      ("它的眼睛又大又圆，\n两只都朝着前面，\n像两盏小灯。\n我看了很久，\n它一次也没转眼珠。",
@@ -138,8 +138,8 @@ BOOKS.append(dict(
       "One owl flying low with both wings spread wide on a cream background, seen from the side. "
       "Nothing else in the picture.", 0),
      ("我也试着不转眼珠，\n只用脖子看东西。\n转到一半就酸了。\n眼睛转不动的，\n就把整个头转过来。",
-      f"Waist-up view of the little boy turning his head as far round as he can while keeping his "
-      f"shoulders still, his face large in the frame and turned towards the viewer, {EYES}, "
+      f"A head-and-shoulders portrait of the little boy turning his head as far round as he can while keeping his "
+      f"shoulders still, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, "
       f"trying hard.", 1),
     ]))
 
@@ -162,7 +162,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("我们坐船去看鲸。\n海面上先冒出\n一根白白的柱子，\n又高又直。\n爸爸说，它在那儿。",
-      f"Waist-up view of the little boy at the rail of a small boat at sea, his face large in the "
+      f"A head-and-shoulders portrait of the little boy at the rail of a small boat at sea, his face large in the "
       f"frame and turned towards the viewer, {EYES}, excited, wind in his hair.", 1),
      ("白柱子底下，\n浮起一道黑背，\n又长又滑，\n慢慢从水里升上来，\n又慢慢沉下去。",
       "One long dark whale back rising above the sea surface on a cream background, seen from the "
@@ -187,6 +187,6 @@ BOOKS.append(dict(
       "One whale mother nudging a small newborn whale up towards the water surface on a cream "
       "background, seen from the side. Nothing else in the picture.", 0),
      ("我趴在船边等。\n又一根白柱子。\n它一辈子住在海里，\n可每一口气，\n都得到水面上来拿。",
-      f"Waist-up view of the little boy leaning on the boat rail watching the sea, his face large "
+      f"A head-and-shoulders portrait of the little boy leaning on the boat rail watching the sea, his face large "
       f"in the frame and turned towards the viewer, {EYES}, calm and happy.", 1),
     ]))

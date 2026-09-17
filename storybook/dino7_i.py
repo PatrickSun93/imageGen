@@ -22,7 +22,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("水族馆的玻璃后面，\n一团红红的东西\n正贴着石头慢慢挪。\n爸爸说那是章鱼，\n它有八条胳膊。",
-      f"Waist-up view of the little boy at an aquarium window, his face large in the frame and "
+      f"A head-and-shoulders portrait of the little boy at an aquarium window, his face large in the frame and "
       f"turned towards the viewer, {EYES}, his nose almost touching the glass; behind the glass a "
       f"red octopus rests against a rock.", 1),
      ("章鱼有三个心脏。\n两个小的挨着鳃，\n把血压进鳃里去。\n中间那个大的，\n再把血送到全身去。",
@@ -49,7 +49,7 @@ BOOKS.append(dict(
       "picture.", 0),
      ("它的吸盘还能尝味。\n胳膊一贴上石头，\n就知道石头底下\n藏没藏着螃蟹，\n连眼睛都不用看。", "", 0),
      ("我隔着玻璃，\n一条一条数胳膊。\n数到第八条的时候，\n它身子里那三个心脏\n正一起跳着呢。",
-      f"Waist-up view of the little boy counting on his fingers at the aquarium window, his face "
+      f"A head-and-shoulders portrait of the little boy counting on his fingers at the aquarium window, his face "
       f"large in the frame and turned towards the viewer, {EYES}, delighted; the red octopus "
       f"spreads its arms behind the glass.", 1),
     ]))
@@ -72,7 +72,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("玻璃后面是一块冰，\n几只企鹅站在上面。\n冰凉得直冒白气，\n它们光着两只脚，\n却一点也不缩。",
-      f"Waist-up view of the little boy in a warm jacket at a zoo window, his face large in the "
+      f"A head-and-shoulders portrait of the little boy in a warm jacket at a zoo window, his face large in the "
       f"frame and turned towards the viewer, {EYES}, wondering; behind the glass two penguins "
       f"stand on a slab of ice.", 1),
      ("企鹅身上有三层。\n最外面是羽毛，\n羽毛底下压着空气，\n皮底下还藏着\n厚厚的一层脂肪。", "", 0),
@@ -97,8 +97,8 @@ BOOKS.append(dict(
       "resting on top of his feet and a fold of belly skin hanging over it. Nothing else in the "
       "picture.", 0),
      ("我哈了一口气，\n玻璃上起了白雾。\n擦干净再看过去，\n它还光着两只脚，\n稳稳地站在冰上。",
-      f"Waist-up view of the little boy wiping a patch of fog off the zoo window with his mitten, "
-      f"his face large in the frame and turned towards the viewer, {EYES}, smiling; a penguin "
+      f"A head-and-shoulders portrait of the little boy wiping a patch of fog off the zoo window with his mitten, "
+      f"only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, smiling; a penguin "
       f"stands on ice beyond the glass.", 1),
     ]))
 
@@ -120,7 +120,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("动物园里那只骆驼，\n背上鼓着两个大包。\n我仰着头问爸爸，\n那两个包里装的\n是不是一包水。",
-      f"Waist-up view of the little boy at a zoo rail looking up, his face large in the frame and "
+      f"A head-and-shoulders portrait of the little boy at a zoo rail looking up, his face large in the frame and "
       f"turned towards the viewer, {EYES}, asking a question; behind him stands a camel with two "
       f"humps.", 1),
      ("爸爸说不是水。\n驼峰里装的是脂肪，\n像一大块黄油。\n两个包加在一起，\n有三十多公斤重。", "", 0),
@@ -145,7 +145,7 @@ BOOKS.append(dict(
       "Close view of one camel foot pressed onto sand on a cream background, the broad pad spread "
       "out wide and leaving a shallow dent. Nothing else in the picture.", 0),
      ("我算是记住了：\n驼峰里装的不是水，\n是一大块脂肪。\n它不是背着一壶水，\n是背着一袋干粮。",
-      f"Waist-up view of the little boy at the zoo rail nodding to himself, his face large in the "
+      f"A head-and-shoulders portrait of the little boy at the zoo rail nodding to himself, his face large in the "
       f"frame and turned towards the viewer, {EYES}, pleased; the two-humped camel stands behind "
       f"him.", 1),
     ]))
@@ -177,7 +177,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("玻璃箱里那条蛇\n一动起来就往前溜。\n它一条腿也没有，\n我盯着看了半天，\n还是没看出门道。",
-      f"Waist-up view of the little boy crouching in front of a glass tank, his face large in the "
+      f"A head-and-shoulders portrait of the little boy crouching in front of a glass tank, his face large in the "
       f"frame and turned towards the viewer, {EYES}, puzzled; a green snake glides across the "
       f"sand behind the glass.", 1),
      ("爸爸让我看它肚子。\n肚皮上有一排鳞，\n一片挨着一片，\n横着排过去，\n从脖子排到尾巴。",
@@ -206,7 +206,7 @@ BOOKS.append(dict(
       "One snake wound around a rough tree trunk on a cream background, gripping it tightly as it "
       "works its way upward. Nothing else in the picture.", 0),
      ("我趴在玻璃跟前\n看它肚皮底下。\n那排鳞真的在动，\n一片接着一片，\n把它推着往前走。",
-      f"Waist-up view of the little boy lying on the floor with his chin near the glass tank, his "
+      f"A head-and-shoulders portrait of the little boy lying on the floor with his chin near the glass tank, his "
       f"face large in the frame and turned towards the viewer, {EYES}, absorbed; the green snake "
       f"moves past on the other side.", 1),
     ]))

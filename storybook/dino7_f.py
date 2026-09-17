@@ -24,7 +24,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("博物馆的柜子里，\n躺着一颗小黄牙。\n只有拇指那么大。\n爸爸说，恐龙这件事，\n就是从它开始的。",
-      f"Waist-up view of the little boy in a museum leaning close to a glass case, his face large "
+      f"A head-and-shoulders portrait of the little boy in a museum leaning close to a glass case, his face large "
       f"in the frame and turned towards the viewer, {EYES}, curious; inside the case rests one "
       f"small fossil tooth.", 1),
      ("两百年前的英国，\n乡下有条小路。\n路边堆着碎石头，\n是留着修路用的。\n故事就从这儿起头。",
@@ -48,8 +48,8 @@ BOOKS.append(dict(
      ("再后来，欧文\n把这些大家伙归成一类，\n造了一个新词，\n叫 dinosaur，\n意思是可怕的大蜥蜴。",
       "", 0),
      ("我把大拇指竖起来。\n它的刺就长在这儿。\n一颗小小的牙，\n居然牵出了\n整整一个世界。",
-      f"Waist-up view of the little boy holding one hand up with the thumb raised and looking at "
-      f"it, his face large in the frame and turned towards the viewer, {EYES}, delighted.", 1),
+      f"A head-and-shoulders portrait of the little boy holding one hand up with the thumb raised and looking at "
+      f"it, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, delighted.", 1),
     ]))
 
 BOOKS.append(dict(
@@ -76,8 +76,8 @@ BOOKS.append(dict(
     ],
     pages=[
      ("恐龙的名字\n一个比一个长。\n三角龙、霸王龙、\n迅猛龙……\n为什么都这么叫？",
-      f"Waist-up view of the little boy standing in front of a large dinosaur skull in a museum, "
-      f"his face large in the frame and turned towards the viewer, {EYES}, puzzled.", 1),
+      f"A head-and-shoulders portrait of the little boy standing in front of a large dinosaur skull in a museum, "
+      f"only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, puzzled.", 1),
      ("名字大多是拼出来的。\n前面一半说它的样子，\n后面那个「龙」，\n原本的意思\n是蜥蜴。", "", 0),
      ("这只脸上有三只角，\n两只在眼睛上方，\n一只在鼻子上，\n后面还撑着\n一圈大骨头领子。",
       "One triceratops standing in profile on a cream background, three horns on its face and a "
@@ -98,7 +98,7 @@ BOOKS.append(dict(
      ("还有些名字里\n藏着地名。\n禄丰龙在云南禄丰，\n青岛龙在青岛——\n在哪儿挖出来的。", "", 0),
      ("也有些名字里\n藏着人名，\n记着是谁\n第一个把它\n从石头里挖出来。", "", 0),
      ("原来每个名字\n都是一句短短的话。\n它长什么样，\n有什么本事，\n名字里全写着呢。",
-      f"Waist-up view of the little boy standing beside a triceratops skull in a museum, his face "
+      f"A head-and-shoulders portrait of the little boy standing beside a triceratops skull in a museum, his face "
       f"large in the frame and turned towards the viewer, {EYES}, smiling as if he has just "
       f"understood something.", 1),
     ]))
@@ -123,7 +123,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("天上飘着一团白的，\n软软的，像棉花糖。\n我问爸爸：\n能拿下来\n咬一口吗？",
-      f"Waist-up view of the little boy lying back on grass and looking up, his face large in the "
+      f"A head-and-shoulders portrait of the little boy lying back on grass and looking up, his face large in the "
       f"frame and turned towards the viewer, {EYES}, wondering, with big white clouds in a blue "
       f"sky filling the whole picture behind him right out to all four edges.", 1),
      ("爸爸说那不能吃。\n天上那团白，\n既不是棉花，\n也不是烟，\n它是水变出来的。", "", 0),
@@ -147,7 +147,7 @@ BOOKS.append(dict(
       "picture.", 0),
      ("水珠碰上水珠，\n越碰越大，\n大到托不住了，\n就往下掉。\n掉下来的，就是雨。", "", 0),
      ("我又抬头看了看。\n那不是棉花糖，\n那是好多好多\n小得看不见的水珠，\n挤在一起在天上走。",
-      f"Waist-up view of the little boy standing in a field at dusk and pointing up, his face "
+      f"A head-and-shoulders portrait of the little boy standing in a field at dusk and pointing up, his face "
       f"large in the frame and turned towards the viewer, {EYES}, happy, with the evening sky "
       f"filling the whole picture behind him right out to all four edges.", 1),
     ]))
@@ -174,7 +174,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("早上我推开门，\n外面白茫茫的。\n对面的楼不见了，\n路口那棵树\n也只剩一个影子。",
-      f"Waist-up view of the little boy standing in an open doorway early in the morning, his "
+      f"A head-and-shoulders portrait of the little boy standing in an open doorway early in the morning, his "
       f"face large in the frame and turned towards the viewer, {EYES}, wondering, with thick "
       f"white fog filling the whole picture behind him right out to all four edges.", 1),
      ("爸爸说，这是雾。\n雾其实就是云，\n只不过这一朵\n没有飘在天上，\n而是贴着地面。", "", 0),
@@ -198,7 +198,7 @@ BOOKS.append(dict(
       "Low morning sunlight over wet grass, the last thin fog clearing away and still filling the "
       "whole picture right out to all four edges. Nothing else in the picture.", 0),
      ("原来今天早上，\n我走进过一朵云。\n云不在天上的时候，\n就在我脸上，\n凉凉的，湿湿的。",
-      f"Waist-up view of the little boy walking in the fog with his arms stretched out, his face "
+      f"A head-and-shoulders portrait of the little boy walking in the fog with his arms stretched out, his face "
       f"large in the frame and turned towards the viewer, {EYES}, laughing, with the fog filling "
       f"the whole picture behind him right out to all four edges.", 1),
     ]))

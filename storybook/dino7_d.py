@@ -21,8 +21,8 @@ BOOKS.append(dict(
     ],
     pages=[
      ("河边这块大石头上，\n有一道一道的痕。\n不是脚印，\n是三条一组的划痕。\n爸爸说，恐龙留的。",
-      f"Waist-up view of the little boy beside a large flat rock covered in rows of three long "
-      f"scratch marks, his face large in the frame and turned towards the viewer, {EYES}, his "
+      f"A head-and-shoulders portrait of the little boy beside a large flat rock covered in rows of three long "
+      f"scratch marks, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, his "
       f"mouth open in surprise.", 1),
      ("脚印是整只脚踩的，\n又深又清楚。\n这些划痕却很浅，\n只有爪尖那么宽，\n像用叉子刮过。", "", 0),
      ("先看看真正的脚印。\n三个脚趾，\n一个脚跟，\n稳稳踩在软泥里，\n边上还堆起一圈泥。",
@@ -46,7 +46,7 @@ BOOKS.append(dict(
       "directly above. Nothing else in the picture.", 0),
      ("河底的泥后来干了，\n又埋上一层沙，\n一层一层压成石头。\n那几道爪印\n就这样留到今天。", "", 0),
      ("我把手指\n放进那道浅沟里。\n它不是走过去的，\n是浮着蹬过去的。\n一千万年前的一步。",
-      f"Waist-up view of the little boy crouching beside a slab of rock with three long scratch "
+      f"A head-and-shoulders portrait of the little boy crouching beside a slab of rock with three long scratch "
       f"grooves in it, one finger resting inside a groove, his face large in the frame and turned "
       f"towards the viewer, {EYES}, thoughtful.", 1),
     ]))
@@ -71,8 +71,8 @@ BOOKS.append(dict(
     ],
     pages=[
      ("这个柜子特别小。\n里面那只恐龙，\n从头到尾\n还没有我的胳膊长。\n爸爸说它早就长大了。",
-      f"Waist-up view of the little boy leaning close to a small glass case holding a tiny "
-      f"dinosaur skeleton, his face large in the frame and turned towards the viewer, {EYES}, "
+      f"A head-and-shoulders portrait of the little boy leaning close to a small glass case holding a tiny "
+      f"dinosaur skeleton, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, "
       f"curious.", 1),
      ("它到底有多大呢？\n跟一只鸽子差不多。\n两个并排站着，\n鸽子看着还要\n胖出一圈来。", "", 0),
      ("它又有多重呢？\n只有几十克，\n和一只麻雀一样。\n放在秤上，\n还没有一个鸡蛋沉。", "", 0),
@@ -95,8 +95,8 @@ BOOKS.append(dict(
       "One flat slab of stone on a cream background with the fine skeleton of a small dinosaur "
       "pressed into it and faint feather marks all around it. Nothing else in the picture.", 0),
      ("我把两只手\n合成一个小窝。\n最小的恐龙，\n一只手就能捧住。\n它也是恐龙呀。",
-      f"Waist-up view of the little boy holding both hands cupped together in front of him as if "
-      f"holding something very small, his face large in the frame and turned towards the viewer, "
+      f"A head-and-shoulders portrait of the little boy holding both hands cupped together in front of him as if "
+      f"holding something very small, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, "
       f"{EYES}, smiling.", 1),
     ]))
 
@@ -121,7 +121,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("石头上有一只恐龙，\n骨头旁边\n还留着一圈毛。\n爸爸说，\n那是羽毛的印子。",
-      f"Waist-up view of the little boy leaning close to a stone slab with a small dinosaur "
+      f"A head-and-shoulders portrait of the little boy leaning close to a stone slab with a small dinosaur "
       f"skeleton and faint feather marks pressed into it, his face large in the frame and turned "
       f"towards the viewer, {EYES}, curious.", 1),
      ("最早的羽毛\n不是一片，\n是一根。\n细细的一根丝，\n像小狗身上的绒毛。", "", 0),
@@ -145,7 +145,7 @@ BOOKS.append(dict(
       "One flat stone with the clear mark of a single feather pressed into it, seen from "
       "directly above on a cream background. Nothing else in the picture.", 0),
      ("楼下捡到一根羽毛。\n羽毛不是为了飞\n才长出来的，\n是先长出来，\n后来才用来飞。",
-      f"Waist-up view of the little boy holding up one small feather between two fingers, his "
+      f"A head-and-shoulders portrait of the little boy holding up one small feather between two fingers, his "
       f"face large in the frame and turned towards the viewer, {EYES}, smiling.", 1),
     ]))
 
@@ -168,7 +168,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("这只恐龙背上\n竖着一面帆。\n比展厅的门还高，\n从脖子后面\n一直排到屁股。",
-      f"Waist-up view of the little boy standing in front of a huge dinosaur skeleton with a tall "
+      f"A head-and-shoulders portrait of the little boy standing in front of a huge dinosaur skeleton with a tall "
       f"sail of bone rising along its back, his face large in the frame and turned towards the "
       f"viewer, {EYES}, his mouth open in surprise.", 1),
      ("帆最高的地方\n有两米。\n比一扇门还高。\n人站在下面，\n连帆顶都够不着。", "", 0),
@@ -192,7 +192,7 @@ BOOKS.append(dict(
       "Several long bony rods lying half buried in dry desert rock, seen from the side. Nothing "
       "else in the picture.", 0),
      ("我站在帆底下\n抬头看。\n那面帆不是皮长的，\n是骨头\n一根一根撑起来的。",
-      f"Waist-up view of the little boy standing below the tall bony back sail of a huge dinosaur "
-      f"skeleton and looking up at it, his face large in the frame and turned towards the viewer, "
+      f"A head-and-shoulders portrait of the little boy standing below the tall bony back sail of a huge dinosaur "
+      f"skeleton and looking up at it, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, "
       f"{EYES}, amazed.", 1),
     ]))

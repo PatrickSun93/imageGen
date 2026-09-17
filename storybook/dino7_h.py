@@ -22,7 +22,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("邻居家的猫\n蹲在台阶上晒太阳。\n它嘴边那几根白毛\n直直地向两边翘着，\n比我的手指还长。",
-      f"Waist-up view of the little boy crouching on a doorstep beside one cat, his face large in "
+      f"A head-and-shoulders portrait of the little boy crouching on a doorstep beside one cat, his face large in "
       f"the frame and turned towards the viewer, {EYES}, smiling a little; the cat sits close to "
       f"him with its long whiskers spread wide. No other person in the picture.", 1),
      ("胡须不只长在嘴边。\n眼睛上面有几根，\n下巴上也有几根，\n两条前腿的后面\n还各藏着一小把。", "", 0),
@@ -47,7 +47,7 @@ BOOKS.append(dict(
       "wide fan. Nothing else in the picture.", 0),
      ("胡须也会掉下来。\n偶尔掉了一根，\n过些天又长出来，\n长到该有的长短，\n就自己停住不长了。", "", 0),
      ("我慢慢蹲下来，\n跟它脸对着脸。\n它那几根白胡须\n朝我这边抖了一下——\n它这是在量我呢。",
-      f"Waist-up view of the little boy crouching face to face with one cat, his face large in the "
+      f"A head-and-shoulders portrait of the little boy crouching face to face with one cat, his face large in the "
       f"frame and turned towards the viewer, {EYES}, wide eyed; the cat's white whiskers almost "
       f"touch his cheek. No other person in the picture.", 1),
     ]))
@@ -71,7 +71,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("我牵着狗去散步。\n它一路都低着头，\n这儿停下闻一闻，\n那儿又停下闻闻，\n走得比我还要慢。",
-      f"Waist-up view of the little boy standing on a grass path holding a dog's lead, his face "
+      f"A head-and-shoulders portrait of the little boy standing on a grass path holding a dog's lead, his face "
       f"large in the frame and turned towards the viewer, {EYES}, patient; beside him one dog has "
       f"its nose down in the grass. No other person in the picture.", 1),
      ("我们鼻子里\n有五百万个闻味的细胞。\n狗有整整两亿多个。\n一个一个数过去，\n差了好几十倍。", "", 0),
@@ -96,7 +96,7 @@ BOOKS.append(dict(
       "One single dog wearing a working harness walking through tall grass on a cream background, "
       "its nose down and its tail straight out behind it. Nothing else in the picture.", 0),
      ("我也蹲下去闻了闻，\n草就是草的味儿。\n它抬起头来看看我，\n好像在说一句：\n你什么都没读到吧。",
-      f"Waist-up view of the little boy crouching down with his own nose close to the grass, his "
+      f"A head-and-shoulders portrait of the little boy crouching down with his own nose close to the grass, his "
       f"face large in the frame and turned towards the viewer, {EYES}, puzzled; one dog sits "
       f"beside him watching. No other person in the picture.", 1),
     ]))
@@ -120,7 +120,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("公园的草地上面，\n一只松鼠在刨土。\n刨两下，停一停，\n左看一看，右看一看，\n再低下头接着刨。",
-      f"Waist-up view of the little boy kneeling on park grass, his face large in the frame and "
+      f"A head-and-shoulders portrait of the little boy kneeling on park grass, his face large in the frame and "
       f"turned towards the viewer, {EYES}, watching quietly; one squirrel digs in the earth just "
       f"in front of him. No other person in the picture.", 1),
      ("一整个秋天下来，\n它能埋下几千个果子。\n不是几十个，\n是整整好几千个，\n一个一个埋下去。", "", 0),
@@ -145,8 +145,8 @@ BOOKS.append(dict(
       "a thin pale shoot rising out of it towards the light. Nothing else in the picture.", 0),
      ("所以一片林子里，\n总有好些棵树\n是松鼠种下来的。\n它当初只是想\n留着自己冬天慢慢吃。", "", 0),
      ("我看着那只小松鼠\n又埋下了一个。\n它忘掉的那几个，\n后来都变成了树。\n忘一点，也挺好的。",
-      f"Waist-up view of the little boy sitting on the grass holding one acorn in his open hand, "
-      f"his face large in the frame and turned towards the viewer, {EYES}, thoughtful; one squirrel "
+      f"A head-and-shoulders portrait of the little boy sitting on the grass holding one acorn in his open hand, "
+      f"only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, thoughtful; one squirrel "
       f"sits a little way off on the grass. No other person in the picture.", 1),
     ]))
 
@@ -169,7 +169,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("天快要黑下来了，\n院子上空有个东西\n一晃就过去了。\n不像鸟那样滑，\n一忽儿高一忽儿低。",
-      f"Waist-up view of the little boy standing in a yard at dusk looking up, his face large in "
+      f"A head-and-shoulders portrait of the little boy standing in a yard at dusk looking up, his face large in "
       f"the frame and turned towards the viewer, {EYES}, surprised; one small bat flies across the "
       f"sky behind him. No other person in the picture.", 1),
      ("爸爸说那是只蝙蝠。\n它其实不是鸟。\n它那对大翅膀，\n是手指撑开的一层皮，\n薄得能透过光。", "", 0),
@@ -191,7 +191,7 @@ BOOKS.append(dict(
       "its wings folded around its body, asleep. Nothing else in the picture.", 0),
      ("这个本事有名字，\n就叫回声定位。\n海里的船也这么干：\n往水底喊上一声，\n听回声算出有多深。", "", 0),
      ("我站在院子里，\n学着它喊了一声。\n回声真的就回来了。\n蝙蝠就是这样——\n喊一声，看见一片黑。",
-      f"Waist-up view of the little boy in the yard at night with his hands cupped around his mouth "
-      f"calling out, his face large in the frame and turned towards the viewer, {EYES}, listening; "
+      f"A head-and-shoulders portrait of the little boy in the yard at night with his hands cupped around his mouth "
+      f"calling out, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, listening; "
       f"one bat flies high above him. No other person in the picture.", 1),
     ]))

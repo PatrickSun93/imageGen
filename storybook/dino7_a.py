@@ -49,7 +49,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("博物馆里有一只恐龙，\n背上竖着一排板，\n像一把一把\n插在背上的扇子。\n爸爸说，它叫剑龙。",
-      f"Waist-up view of the little boy in a museum, his face large in the frame and turned "
+      f"A head-and-shoulders portrait of the little boy in a museum, his face large in the frame and turned "
       f"towards the viewer, {EYES}, his mouth open in surprise; behind him rises the back of a "
       f"stegosaurus skeleton with a row of tall flat plates.", 1),
      ("最大的一块板，\n比我的脸还大。\n一共十七块，\n沿着背脊\n一路排到尾巴根。", "", 0),
@@ -72,8 +72,8 @@ BOOKS.append(dict(
       "the picture.", 0),
      ("那排板\n不是两边对齐的。\n是左一块、右一块\n错开着排，\n看上去更宽更唬人。", "", 0),
      ("我伸手\n摸了摸那块板。\n薄薄的，边上还有点糙。\n它当年\n真的会变红吗？",
-      f"Waist-up view of the little boy reaching out to touch one tall bony plate on a museum "
-      f"mount, his face large in the frame and turned towards the viewer, {EYES}, thoughtful.", 1),
+      f"A head-and-shoulders portrait of the little boy reaching out to touch one tall bony plate on a museum "
+      f"mount, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, thoughtful.", 1),
     ]))
 
 BOOKS.append(dict(
@@ -96,7 +96,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("这只恐龙矮矮的，\n背上全是疙瘩，\n尾巴尖上\n还挂着一个大球。\n爸爸说，那是一把锤子。",
-      f"Waist-up view of the little boy in a museum beside a low armoured dinosaur model, his "
+      f"A head-and-shoulders portrait of the little boy in a museum beside a low armoured dinosaur model, his "
       f"face large in the frame and turned towards the viewer, {EYES}, curious.", 1),
      ("它从头到尾\n都盖着骨头板。\n背上、脖子上，\n连眼皮上\n都长着一小块骨头。", "", 0),
      ("这身盔甲\n不是披上去的，\n是从皮里长出来的。\n一块一块嵌在皮里，\n脱都脱不下来。",
@@ -119,7 +119,7 @@ BOOKS.append(dict(
       "One armoured dinosaur walking slowly across bare ground under a dim grey sky on a cream "
       "background. Nothing else in the picture.", 0),
      ("我绕着它走了一圈，\n从头看到尾。\n锤子就挂在那儿，\n沉甸甸的，\n像是随时会甩起来。",
-      f"Waist-up view of the little boy standing beside the tail end of an armoured dinosaur "
+      f"A head-and-shoulders portrait of the little boy standing beside the tail end of an armoured dinosaur "
       f"model, looking at the big round bony club, his face large in the frame and turned "
       f"towards the viewer, {EYES}, impressed.", 1),
     ]))

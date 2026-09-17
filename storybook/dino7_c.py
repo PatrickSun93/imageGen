@@ -24,7 +24,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("博物馆里摆着一窝蛋，\n十几个挨在一起，\n围成一个圈。\n爸爸说这是恐龙的窝。",
-      f"Waist-up view of the little boy in a museum beside a mounted nest of fossil eggs, his "
+      f"A head-and-shoulders portrait of the little boy in a museum beside a mounted nest of fossil eggs, his "
       f"face large in the frame and turned towards the viewer, {EYES}, his mouth open in "
       f"surprise.", 1),
      ("窝是一个泥坑，\n边上堆起一圈土。\n有澡盆那么大，\n蛋就一个挨一个\n一个个竖在坑里。", "", 0),
@@ -47,8 +47,8 @@ BOOKS.append(dict(
       "half buried, on a cream background. Nothing else in the picture.", 0),
      ("不守窝的那种\n一次下几十个蛋，\n能活几个算几个。\n守窝的下得少，\n可是一个个看得住。", "", 0),
      ("我数了数那窝蛋，\n一共十七个。\n真有大恐龙\n嚼碎了叶子\n回来喂它们吗？",
-      f"Waist-up view of the little boy leaning over a low glass case of fossil eggs and counting "
-      f"them with one raised finger, his face large in the frame and turned towards the viewer, "
+      f"A head-and-shoulders portrait of the little boy leaning over a low glass case of fossil eggs and counting "
+      f"them with one raised finger, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, "
       f"{EYES}, curious.", 1),
     ]))
 
@@ -72,8 +72,8 @@ BOOKS.append(dict(
     ],
     pages=[
      ("博物馆的地上\n铺着一块大石板，\n上面一个个坑。\n爸爸说那是脚印，\n恐龙踩出来的。",
-      f"Waist-up view of the little boy standing on a big flat slab of rock covered in large "
-      f"dinosaur tracks, his face large in the frame and turned towards the viewer, {EYES}, "
+      f"A head-and-shoulders portrait of the little boy standing on a big flat slab of rock covered in large "
+      f"dinosaur tracks, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, "
       f"surprised.", 1),
      ("最大的那个脚印\n比脸盆还大，\n我整个人坐进去\n还空出一圈。\n那是后脚踩的。", "", 0),
      ("脚印有两种，\n一大一小。\n大的是后脚，\n小的是前脚。\n它是四条腿走路的。", "", 0),
@@ -95,8 +95,8 @@ BOOKS.append(dict(
       "One single line of large round dinosaur tracks crossing flat rock on a cream background, "
       "with no other tracks anywhere. Nothing else in the picture.", 0),
      ("我踩在脚印里，\n一步一步往前走。\n一亿年前，\n这里真的走过\n一大群恐龙。",
-      f"Waist-up view of the little boy standing with one foot inside a huge dinosaur track "
-      f"in the rock, his face large in the frame and turned towards the viewer, {EYES}, smiling.",
+      f"A head-and-shoulders portrait of the little boy standing with one foot inside a huge dinosaur track "
+      f"in the rock, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, smiling.",
       1),
     ]))
 
@@ -120,8 +120,8 @@ BOOKS.append(dict(
     ],
     pages=[
      ("石头上有一只恐龙，\n缩成小小一团，\n头埋在胳膊底下。\n爸爸说它是睡着的。",
-      f"Waist-up view of the little boy in a museum in front of one small curled-up dinosaur "
-      f"fossil in a slab of rock, his face large in the frame and turned towards the viewer, "
+      f"A head-and-shoulders portrait of the little boy in a museum in front of one small curled-up dinosaur "
+      f"fossil in a slab of rock, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, "
       f"{EYES}, curious.", 1),
      ("这只恐龙不大，\n和一只鸭子差不多。\n名字叫寐龙，\n寐就是睡觉的意思。", "", 0),
      ("它是这样睡的：\n四条腿收在身子下，\n尾巴绕过来\n圈住自己，\n头掖进前肢里。", "", 0),
@@ -142,8 +142,8 @@ BOOKS.append(dict(
       "One dinosaur lying curled asleep on open ground on a cream background with one eye open. "
       "Nothing else in the picture.", 0),
      ("晚上我也蜷着睡，\n手塞在脸底下。\n一亿年前的那只，\n睡的姿势\n和我差不多。",
-      f"Waist-up view of the little boy curled up in bed at night with both hands tucked under "
-      f"his cheek, his face large in the frame and turned towards the viewer, {EYES}, sleepy.", 1),
+      f"A head-and-shoulders portrait of the little boy curled up in bed at night with both hands tucked under "
+      f"his cheek, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, sleepy.", 1),
     ]))
 
 BOOKS.append(dict(
@@ -167,8 +167,8 @@ BOOKS.append(dict(
     ],
     pages=[
      ("一块石头里\n卡着两只恐龙，\n一只咬住对方的胳膊，\n另一只的爪子\n钩在它脖子上。",
-      f"Waist-up view of the little boy in a museum beside one slab of rock holding two dinosaur "
-      f"skeletons locked together, his face large in the frame and turned towards the viewer, "
+      f"A head-and-shoulders portrait of the little boy in a museum beside one slab of rock holding two dinosaur "
+      f"skeletons locked together, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, "
       f"{EYES}, his mouth open in surprise.", 1),
      ("一只是伶盗龙，\n两条腿，尖爪子。\n一只是原角龙，\n四条腿走路，\n嘴巴像鹦鹉。", "", 0),
      ("伶盗龙后脚上\n有一根大爪子，\n平时翘着不落地，\n要用的时候\n才扳下来。", "", 0),
@@ -190,7 +190,7 @@ BOOKS.append(dict(
       "hooked into the neck of a larger four-legged dinosaur, on a cream background. Nothing else "
       "in the picture.", 0),
      ("我趴在玻璃上看。\n它们打到一半，\n沙子就下来了。\n八千万年过去，\n还是那个姿势。",
-      f"Waist-up view of the little boy with both hands pressed flat on a glass case, two "
+      f"A head-and-shoulders portrait of the little boy with both hands pressed flat on a glass case, two "
       f"dinosaur skeletons locked together inside it, his face large in the frame and turned "
       f"towards the viewer, {EYES}, thoughtful.", 1),
     ]))

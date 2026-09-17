@@ -27,7 +27,7 @@ for f in sorted(glob.glob(os.path.join(SB, "dino7_[b-z].py"))):
 from dino7_a import BOOKS                                 # noqa: E402
 
 BAD_SCENE = ("paper", "collage", "print", " page", "book", "babies")
-FACE = ("Waist-up view of the little boy", "turned towards the viewer", "iris")
+FACE = ("A head-and-shoulders portrait of the little boy", "turned towards the viewer", "iris")
 from dino7_extra import EXTRA
 
 ASSET_NEG = ("shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, "
@@ -38,10 +38,28 @@ COMMON = {"workflow": "workflows/qwen_image_2512.json",
           "colophon": {"model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
                        "lora": "照片参考，不用 LoRA", "strength": 1.3}}
 
+
+def FACE_FIX(sc):
+    """把「脸要大」从形容词换成构图指令。
+
+    2026-09-16 那批 80 张实测：写 "Waist-up view ... his face large in the frame"，
+    模型画的是整个人站着、脑袋占不到画面一成——形容词它不当回事。换成明确的
+    构图指令（身子在画面外）以后，脸占到两成半，正好落在手册 4.2h 要的 12~30%。
+
+    放在落地这一步做，不在源码里替换：那句话在 f-string 里被折行拆成了两段，
+    字面匹配不到。
+    """
+    return sc.replace(
+        "his face large in the frame and turned towards the viewer",
+        "only his head and shoulders inside the picture and everything below his chest "
+        "outside the frame, his face turned straight towards the viewer")
+
+
 warn = 0
 for b in BOOKS:
     slug, diag = b["slug"], b["diagram"]
-    pages = [{"n": i, "zh": zh, "scene": sc, "has_boy": bool(hb)}
+    pages = [{"n": i, "zh": zh, "scene": FACE_FIX(sc) if hb else sc,
+              "has_boy": bool(hb)}
              for i, (zh, sc, hb) in enumerate(b["pages"], 1)]
     for p in pages:
         n, sc = p["n"], p["scene"]

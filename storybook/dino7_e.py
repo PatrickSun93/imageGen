@@ -23,8 +23,8 @@ BOOKS.append(dict(
     ],
     pages=[
      ("院子里有一棵大树，\n我怎么也爬不上去。\n爸爸说很久以前，\n有一种小恐龙，\n天天住在树上。",
-      f"Waist-up view of the little boy standing under a tall tree in a backyard, one hand "
-      f"resting on the trunk, his face large in the frame and turned towards the viewer, {EYES}, "
+      f"A head-and-shoulders portrait of the little boy standing under a tall tree in a backyard, one hand "
+      f"resting on the trunk, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, "
       f"a little frustrated.", 1),
      ("它的名字叫小盗龙。\n从头到尾巴尖，\n只有一只乌鸦那么长。\n它站在地上的时候，\n还没我的小腿高。",
       "", 0),
@@ -51,8 +51,8 @@ BOOKS.append(dict(
      ("地上跑的恐龙\n个个又大又凶。\n它在地上谁也打不过，\n就搬到高处去，\n住在别人上不去的地方。",
       "", 0),
      ("我又去看院子里的树。\n树皮糙糙的。\n要是我也有\n那样一双尖爪子，\n是不是就爬上去了？",
-      f"Waist-up view of the little boy pressing his hand flat against the rough bark of a tree "
-      f"trunk, his face large in the frame and turned towards the viewer, {EYES}, thinking.", 1),
+      f"A head-and-shoulders portrait of the little boy pressing his hand flat against the rough bark of a tree "
+      f"trunk, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, thinking.", 1),
     ]))
 
 BOOKS.append(dict(
@@ -77,7 +77,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("我问爸爸一个问题：\n恐龙在地球上住了多久？\n他说了一个数，\n一亿六千万年。\n这个数我数不完。",
-      f"Waist-up view of the little boy holding up five fingers in front of him, his face large "
+      f"A head-and-shoulders portrait of the little boy holding up five fingers in front of him, his face large "
       f"in the frame and turned towards the viewer, {EYES}, puzzled.", 1),
      ("这么长的日子，\n人们把它分成三段：\n三叠纪、侏罗纪，\n最后是白垩纪。\n一段比一段更长。", "", 0),
      ("最早的那批恐龙不大。\n它们用两条腿跑，\n尾巴伸得直直的，\n站起来大概\n跟一只大狗一样高。",
@@ -99,8 +99,8 @@ BOOKS.append(dict(
       "One long-necked dinosaur walking slowly across open ground under a low evening sun. "
       "Nothing else in the picture.", 0),
      ("我今年五岁。\n一亿六千万年，\n是我三千多万个五岁。\n我把两只手张开，\n还是想不出来。",
-      f"Waist-up view of the little boy holding both hands open in front of him as if measuring "
-      f"something far too big, his face large in the frame and turned towards the viewer, "
+      f"A head-and-shoulders portrait of the little boy holding both hands open in front of him as if measuring "
+      f"something far too big, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, "
       f"{EYES}, amazed.", 1),
     ]))
 
@@ -124,8 +124,8 @@ BOOKS.append(dict(
     ],
     pages=[
      ("我们家门口的地上，\n有草，也有花，\n还有一棵大树。\n爸爸说恐龙那时候，\n这些大多还没有。",
-      f"Waist-up view of the little boy standing on a front lawn with small flowers around his "
-      f"feet, his face large in the frame and turned towards the viewer, {EYES}, curious.", 1),
+      f"A head-and-shoulders portrait of the little boy standing on a front lawn with small flowers around his "
+      f"feet, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, curious.", 1),
      ("那时候的地面上，\n长的都是蕨。\n一丛紧挨着一丛，\n叶子像大羽毛，\n踩上去软软的一片。",
       "A stretch of ground covered in low clumps of ferns growing close together with their long "
       "leaves spreading out. Nothing else in the picture.", 0),
@@ -149,8 +149,8 @@ BOOKS.append(dict(
      ("还有一件怪事：\n那时候地球转得快，\n一天比现在短一点，\n一年有三百七十多天，\n比现在多好几天。",
       "", 0),
      ("我跑到院子里，\n拔了一根草，\n又摘了一朵小花。\n就这两样东西，\n恐龙谁也没见过。",
-      f"Waist-up view of the little boy holding one blade of grass in one hand and one small "
-      f"flower in the other, his face large in the frame and turned towards the viewer, {EYES}, "
+      f"A head-and-shoulders portrait of the little boy holding one blade of grass in one hand and one small "
+      f"flower in the other, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, "
       f"pleased with himself.", 1),
     ]))
 
@@ -175,8 +175,8 @@ BOOKS.append(dict(
     ],
     pages=[
      ("博物馆里的这些恐龙，\n是从别的州运来的。\n我就问爸爸，\n加州有没有恐龙。\n他说，很少很少。",
-      f"Waist-up view of the little boy standing in a museum hall beside a large dinosaur leg "
-      f"bone, his face large in the frame and turned towards the viewer, {EYES}, asking a "
+      f"A head-and-shoulders portrait of the little boy standing in a museum hall beside a large dinosaur leg "
+      f"bone, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, asking a "
       f"question.", 1),
      ("蒙大拿、犹他那边，\n恐龙骨头一堆一堆。\n加州挖出来的，\n数得过来的，\n一只手都用不完。", "", 0),
      ("为什么这么少呢？\n因为恐龙住着的时候，\n加州这块地方，\n大半都在水底下，\n是一片大海。",
@@ -200,6 +200,6 @@ BOOKS.append(dict(
       "to the knees. Nothing else in the picture.", 0),
      ("坑里数量最多的\n是一种大狼，\n挖出来好几千只。\n还有剑齿虎，\n两颗牙有香蕉那么长。", "", 0),
      ("我们脚底下埋的，\n不是恐龙的骨头。\n是海里的大蜥蜴，\n是陷进沥青的猛犸。\n一样很了不起。",
-      f"Waist-up view of the little boy standing at a railing beside a black tar pool, his face "
+      f"A head-and-shoulders portrait of the little boy standing at a railing beside a black tar pool, his face "
       f"large in the frame and turned towards the viewer, {EYES}, serious and proud.", 1),
     ]))

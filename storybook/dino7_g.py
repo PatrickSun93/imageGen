@@ -23,8 +23,8 @@ BOOKS.append(dict(
     ],
     pages=[
      ("屋顶忽然噼啪响。\n跑到窗边一看，\n草地上蹦着\n一粒一粒小白珠。\n爸爸说，那是冰雹。",
-      f"Waist-up view of the little boy at a window with small white ice pellets bouncing on the "
-      f"grass outside, his face large in the frame and turned towards the viewer, {EYES}, his "
+      f"A head-and-shoulders portrait of the little boy at a window with small white ice pellets bouncing on the "
+      f"grass outside, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, his "
       f"mouth open in surprise.", 1),
      ("冰雹不是雨冻的。\n它长在一朵\n又高又厚的云里。\n那种云叫积雨云，\n顶比飞机还高。", "", 0),
      ("那朵云的里面\n有一股很强的风，\n是竖着往上吹的。\n它能把水珠\n一直往上顶。",
@@ -49,8 +49,8 @@ BOOKS.append(dict(
       "edges. Nothing else in the picture.", 0),
      ("我们洛杉矶\n几乎不下冰雹。\n这儿的云不够高，\n也不够冷。\n别的地方年年都有。", "", 0),
      ("我捡起一粒，\n凉凉的，很快化了。\n它在那朵云里\n上上下下跑了那么久，\n才跑到我手上。",
-      f"Waist-up view of the little boy holding one small white hailstone in his open palm and "
-      f"looking down at it, his face large in the frame and turned towards the viewer, {EYES}, "
+      f"A head-and-shoulders portrait of the little boy holding one small white hailstone in his open palm and "
+      f"looking down at it, only his head and shoulders inside the picture and everything below his chest outside the frame, his face turned straight towards the viewer, {EYES}, "
       f"quietly amazed.", 1),
     ]))
 
@@ -73,7 +73,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("叔叔在堪萨斯，\n发来一段视频。\n天边垂下一根柱子，\n慢慢扫过田地。\n那是龙卷风。",
-      f"Waist-up view of the little boy holding a small tablet in both hands and looking up, his "
+      f"A head-and-shoulders portrait of the little boy holding a small tablet in both hands and looking up, his "
       f"face large in the frame and turned towards the viewer, {EYES}, wide-eyed.", 1),
      ("龙卷风这东西，\n是从云里长出来的。\n先得有一朵大雷云，\n云底下的空气\n开始慢慢打转。", "", 0),
      ("一开始转得很宽，\n也转得很慢，\n像一锅搅动的汤。\n从地上看上去，\n只是云压得很低。",
@@ -99,7 +99,7 @@ BOOKS.append(dict(
       "base, the sky filling the whole picture right out to all four edges. Nothing else in the "
       "picture.", 0),
      ("我把那段视频\n又看了一遍。\n那根粗大的柱子，\n原来是空气\n自己转出来的。",
-      f"Waist-up view of the little boy sitting and holding the small tablet on his knees, his "
+      f"A head-and-shoulders portrait of the little boy sitting and holding the small tablet on his knees, his "
       f"face large in the frame and turned towards the viewer, {EYES}, thoughtful.", 1),
     ]))
 
@@ -124,7 +124,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("明天要去海边。\n我问爸爸，\n明天会下雨吗？\n他看看手机说，\n下雨的可能是一成。",
-      f"Waist-up view of the little boy looking up and asking a question, his face large in the "
+      f"A head-and-shoulders portrait of the little boy looking up and asking a question, his face large in the "
       f"frame and turned towards the viewer, {EYES}, eyebrows raised.", 1),
      ("要算明天，\n先得量今天。\n量温度，量气压，\n量风往哪儿吹，\n量空气有多潮。", "", 0),
      ("地上到处是气象站。\n一个白白的小箱子，\n立在草地当中。\n箱子上有小百叶窗，\n风能吹进去。",
@@ -149,7 +149,7 @@ BOOKS.append(dict(
      ("再交给计算机。\n它算这块空气\n一小时后到哪儿，\n三小时后变成什么样，\n一步一步往前推。", "", 0),
      ("所以算明天很准。\n算下个星期，\n就没那么准了。\n空气的事，\n差一点就跑偏。", "", 0),
      ("第二天早上，\n天真的没下雨。\n那句话不是猜的，\n是一格一格\n算出来的。",
-      f"Waist-up view of the little boy standing on a sunny beach with a bucket in one hand, his "
+      f"A head-and-shoulders portrait of the little boy standing on a sunny beach with a bucket in one hand, his "
       f"face large in the frame and turned towards the viewer, {EYES}, grinning.", 1),
     ]))
 
@@ -172,7 +172,7 @@ BOOKS.append(dict(
     ],
     pages=[
      ("早上去上学，\n草叶上全是水珠。\n昨天晚上没下雨呀。\n这些水珠到底\n是从哪儿来的？",
-      f"Waist-up view of the little boy crouching beside a dewy lawn in the early morning, his "
+      f"A head-and-shoulders portrait of the little boy crouching beside a dewy lawn in the early morning, his "
       f"face large in the frame and turned towards the viewer, {EYES}, puzzled.", 1),
      ("空气里一直有水，\n只是看不见。\n它散成极小的粒，\n小得看不出来，\n混在空气中间。", "", 0),
      ("草叶是凉的。\n凉东西旁边的空气，\n也跟着凉下来。\n一凉下来，\n它就装不下那么多水。",
@@ -199,6 +199,6 @@ BOOKS.append(dict(
       "blades, the field and the glowing sky filling the whole picture right out to all four "
       "edges. Nothing else in the picture.", 0),
      ("我伸手在草叶上\n抹了一下，\n手心凉凉地湿了。\n这一小片水，\n昨晚一直在我旁边。",
-      f"Waist-up view of the little boy holding up one open palm wet with dew, his face large in "
+      f"A head-and-shoulders portrait of the little boy holding up one open palm wet with dew, his face large in "
       f"the frame and turned towards the viewer, {EYES}, smiling a little.", 1),
     ]))
