@@ -4395,14 +4395,15 @@ def footprint(d, cx, cy, s, pal, fill=None, w=5):
 
 
 @page("dinosize", 2)
-def _(d, pal):
+def _(d, pal, img):
     """最大的恐龙和三辆公交车一样长 —— 两行必须严格等长。"""
     span = 780                        # 再长就装不下整只恐龙的高度，会踩到下面那排车
     cx, cy = S / 2, 380
-    dino_sauropod(d, cx, cy, span, pal, pal["accent"])
+    place(img, asset("dinosize", 1), cx, cy, w=span)
     bus_l = span / 3
+    bus = asset("dinosize", 4)
     for i in range(3):
-        bus_shape(d, cx - span / 2 + bus_l * (i + 0.5), 800, bus_l, pal)
+        place(img, bus, cx - span / 2 + bus_l * (i + 0.5), 820, w=bus_l)
     for x in (cx - span / 2, cx + span / 2):      # 两端拉下来的对齐线
         for seg in range(6):
             y = 648 + seg * 18
@@ -4411,28 +4412,28 @@ def _(d, pal):
 
 
 @page("dinosize", 3)
-def _(d, pal):
+def _(d, pal, img):
     """最小的恐龙和一只鸡一样高 —— 两个的脚都落在同一条地线上。"""
-    base = S / 2 + 180
+    base = S / 2 + 200
     d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
-    h = 300                              # 两个的脚底都必须落在 base 上，不能穿过去
-    L = h / 0.66                         # 兽脚类站立高度是 0.66L
-    dino_theropod(d, S / 2 - 210, base - L * 0.33, L, pal, pal["accent"], run=True)
-    chicken_shape(d, S / 2 + 230, base - h * 0.50, h, pal, pal["paper"])
-    return f"1 只小兽脚类 + 1 只鸡，脚都踩在同一条地线上，站立高度都是 {h}px"
+    h = 330                              # 两个都按站立高度缩放，脚底贴 base
+    place(img, asset("dinosize", 2), S / 2 - 230, base, h=h, anchor="bottom")
+    place(img, asset("dinosize", 3), S / 2 + 230, base, h=h, anchor="bottom")
+    return f"1 只小恐龙 + 1 只鸡（都是模型画的素材），站立高度都缩到 {h}px，脚踩同一条地线"
 
 
 @page("dinosize", 5)
-def _(d, pal):
+def _(d, pal, img):
     """一头大象 vs 十头大象。右边必须正好十头。"""
     d.line([S / 2, MARGIN + 60, S / 2, S - MARGIN - 60], fill=pal["line"], width=6)
-    elephant_shape(d, S / 4, S / 2, 190, pal, pal["soft"])
+    el = asset("dinosize", 5)
+    place(img, el, S / 4, S / 2 + 130, h=250, anchor="bottom")
     n = 0
     for r in range(2):
-        for c in range(5):
-            elephant_shape(d, S / 2 + 70 + c * 82, S / 2 - 110 + r * 220, 88, pal, pal["accent"])
+        for c in range(5):                      # 间距要大于单头宽度，不然十头挤成一群数不清
+            place(img, el, S / 2 + 75 + c * 95, S / 2 - 60 + r * 200, h=85, anchor="bottom")
             n += 1
-    return f"左边 1 头大象；右边 {n} 头（2 行 ×5），中间 1 条分隔线"
+    return f"左边 1 头大象（高 250px）/ 右边 {n} 头（2 行 ×5，各高 85px、间距 95px），中间 1 条分隔线"
 
 
 @page("dinosize", 7)
@@ -4455,45 +4456,28 @@ def _(d, pal):
 
 
 @page("dinosize", 9)
-def _(d, pal):
+def _(d, pal, img):
     """一天的叶子堆得比汽车高。"""
     base = S - MARGIN - 150
     d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
-    hx, hw, hh = S / 2 - 210, 380, 520
-    A = (hx - hw / 2, base)
-    B = (hx, base - hh)
-    C = (hx + hw / 2, base)
-    poly(d, [A, B, C], pal, pal["accent"], 9)
-    # 叶子用重心坐标撒，保证每一片都落在三角形里面（上一版有七八片浮在堆外面）
-    rnd = random.Random(4)
-    n = 22
-    for _ in range(n):
-        r1, r2 = rnd.random(), rnd.random()
-        if r1 + r2 > 1:
-            r1, r2 = 1 - r1, 1 - r2
-        r1, r2 = r1 * 0.82 + 0.06, r2 * 0.82 + 0.06
-        lx = A[0] + r1 * (B[0] - A[0]) + r2 * (C[0] - A[0])
-        ly = A[1] + r1 * (B[1] - A[1]) + r2 * (C[1] - A[1])
-        d.ellipse([lx - 30, ly - 13, lx + 30, ly + 13], fill=pal["soft"],
-                  outline=pal["ink"], width=4)
-        d.line([lx - 24, ly, lx + 24, ly], fill=pal["ink"], width=3)     # 中脉，免得读成石子
-    car_shape(d, S / 2 + 250, base - 60, 330, pal)
-    return f"1 堆叶子高 {hh}px，{n} 片叶子全在堆的轮廓内（每片带中脉）+ 1 辆车，堆明显更高"
+    ph = 520
+    pw, _h = place(img, asset("dinosize", 7), S / 2 - 230, base, h=ph, anchor="bottom")
+    cw, ch = place(img, asset("dinosize", 6), S / 2 + 280, base, h=210, anchor="bottom")
+    return f"1 堆叶子高 {ph}px + 1 辆车高 {ch}px（都是素材），站同一条地线，堆明显更高"
 
 
 @page("dinosize", 11)
-def _(d, pal):
-    """从最小排到最大：五只，一只比一只高。"""
-    # 五只并排放不下（最大那只就有 720px 宽），左端对齐叠放又会把小的埋进大的身体里。
-    # 只画两头 —— 最小的和最大的，中间用三个点表示「还隔着好多种」。
+def _(d, pal, img):
+    """从最小排到最大：只画两头，中间用三个点表示还隔着好多种。"""
     base = S - MARGIN - 120
     d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
-    small, big = 190, 700
-    dino_sauropod(d, MARGIN + 40 + small / 2, base - small * 0.32, small, pal, pal["paper"], w=5)
-    dino_sauropod(d, S - MARGIN - 40 - big / 2, base - big * 0.32, big, pal, pal["accent"], w=7)
+    a = asset("dinosize", 1)
+    small, big = 180, 580                       # 按体长缩放，同一个素材两种大小
+    place(img, a, MARGIN + 40 + small / 2, base, w=small, anchor="bottom")
+    place(img, a, S - MARGIN - 30 - big / 2, base, w=big, anchor="bottom")
     for i in range(3):
-        disc(d, MARGIN + 265 + i * 46, base - 90, 13, pal["soft"], pal, w=0)
-    return f"2 只蜥脚类站同一条地线：左边最小的 {small}px / 右边最大的 {big}px，中间 3 个点表示还有好多种"
+        disc(d, MARGIN + 280 + i * 46, base - 80, 13, pal["soft"], pal, w=0)
+    return f"同一只蜥脚类素材缩成两种大小站在同一条地线上：左边体长 {small}px / 右边 {big}px，中间 3 个点"
 
 
 @page("trex", 2)
@@ -4577,26 +4561,19 @@ def _(d, pal, img):
 
 
 @page("longneck", 2)
-def _(d, pal):
-    """站在地上就够得到三楼。楼高和恐龙的头必须平齐。"""
-    # 恐龙必须真的站在地线上（脚底 = cy + 0.32L），楼高就得跟着恐龙的总高走：
-    # 0.76L = 3 层。上一版按楼定高，恐龙整只悬空了 190px，头还被画布左边切掉。
+def _(d, pal, img):
+    """站在地上就够得到三楼。楼和恐龙都缩到同一个总高，脚底都贴地线。"""
     base = S - MARGIN - 110
     d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
-    L = 620
-    floors = 3
-    fh = L * 0.76 / floors
-    bx0, bx1 = S - MARGIN - 284, S - MARGIN
-    for i in range(floors):
-        fy = base - (i + 1) * fh
-        d.rectangle([bx0, fy, bx1, fy + fh], fill=pal["paper"], outline=pal["ink"], width=8)
-        for c_ in range(2):
-            wx = bx0 + 46 + c_ * 122
-            d.rectangle([wx, fy + 34, wx + 76, fy + fh - 34], fill=pal["soft"],
-                        outline=pal["ink"], width=5)
-    dino_sauropod(d, MARGIN + 10 + L / 2, base - L * 0.32, L, pal, pal["accent"])
-    return (f"1 座 {floors} 层楼（每层 {fh:.0f}px）+ 1 只蜥脚类站在同一条地线上，"
-            f"总高 {L * 0.76:.0f}px 正好等于楼高，头齐顶层")
+    H, floors = 400, 3
+    bw, bh = place(img, asset("longneck", 2), S - MARGIN - 160, base, h=H, anchor="bottom")
+    dw, dh = place(img, asset("longneck", 1), MARGIN + 30 + 330, base, h=H, anchor="bottom")
+    for i in range(1, floors):                    # 楼层分隔线，标出「三层」
+        y = base - H * i / floors
+        d.line([S - MARGIN - 160 - bw / 2, y, S - MARGIN - 160 + bw / 2, y],
+               fill=pal["ink"], width=5)
+    return (f"1 座 {floors} 层楼（高 {bh}px，画了 {floors - 1} 条楼层分隔线）"
+            f"+ 1 只蜥脚类（高 {dh}px），两个总高相同、脚底都贴同一条地线")
 
 
 @page("longneck", 3)
@@ -4615,14 +4592,14 @@ def _(d, pal):
 
 
 @page("longneck", 5)
-def _(d, pal):
+def _(d, pal, img):
     """头小得不像话 —— 圈出来给人看。"""
-    L = S - 2 * MARGIN - 80
-    cx, cy = S / 2 + 60, S / 2 + 120
-    pts = dino_sauropod(d, cx, cy, L, pal, pal["paper"], w=8)
-    hx, hy = cx - 0.46 * L, cy - 0.35 * L
-    d.ellipse([hx - 90, hy - 80, hx + 90, hy + 80], outline=pal["accent"], width=12)
-    return "1 只蜥脚类侧影 + 1 个圈，圈住那颗很小的头"
+    cx, cy = S / 2, S / 2 + 40
+    w_, h_ = place(img, asset("longneck", 1), cx, cy, w=S - 2 * MARGIN - 60)
+    hx, hy = cx - w_ * 0.40, cy - h_ * 0.34          # 素材里头在左上
+    d.ellipse([hx - w_ * 0.10, hy - h_ * 0.16, hx + w_ * 0.10, hy + h_ * 0.16],
+              outline=pal["accent"], width=12)
+    return "1 只蜥脚类（素材）+ 1 个圈，圈住那颗很小的头"
 
 
 @page("longneck", 7)
@@ -4647,38 +4624,35 @@ def _(d, pal):
 
 
 @page("longneck", 9)
-def _(d, pal):
+def _(d, pal, img):
     """血要一路送到那么高的头上。"""
-    # 心要整颗落在胸腔里：x 取 -0.10（那里身体最厚，上缘 -0.155、下缘 +0.06），
-    # 半径按体长算。上一版半径写死 46px，一大半骑到了脖子根外面。
-    L = S - 2 * MARGIN - 80
-    cx, cy = S / 2 + 40, S / 2 + 160
-    dino_sauropod(d, cx, cy, L, pal, pal["paper"], w=8)
-    hx, hy, r = cx - 0.10 * L, cy - 0.05 * L, L * 0.042
+    cx, cy = S / 2, S / 2 + 60
+    w_, h_ = place(img, asset("longneck", 1), cx, cy, w=S - 2 * MARGIN - 60)
+    hx, hy = cx - w_ * 0.06, cy + h_ * 0.10          # 胸腔在身体中前部
+    r = w_ * 0.035
     poly(d, [(hx, hy + r), (hx - r, hy - r * 0.15), (hx - r * 0.45, hy - r),
              (hx, hy - r * 0.45), (hx + r * 0.45, hy - r), (hx + r, hy - r * 0.15)],
          pal, pal["accent"], 6)
-    arrow(d, hx, hy - r * 1.3, cx - 0.44 * L, cy - 0.34 * L, pal, w=12, head=30)
-    return f"1 只蜥脚类 + 胸腔里 1 颗心（半径 {r:.0f}px，整颗在轮廓内）+ 1 支沿脖子向上到头的箭头"
+    arrow(d, hx, hy - r * 1.4, cx - w_ * 0.38, cy - h_ * 0.30, pal, w=12, head=30)
+    return f"1 只蜥脚类（素材）+ 胸腔里 1 颗心（半径 {r:.0f}px）+ 1 支沿脖子向上到头的箭头"
 
 
 @page("longneck", 11)
-def _(d, pal):
+def _(d, pal, img):
     """脖子和尾巴像桥的两臂，腿是桥墩。"""
-    # 脚底必须落在地线上（0.32L，不是 0.30L），桥臂线走脖子和尾巴的中线，
-    # 两端都收在轮廓里面 —— 上一版沿着外缘画，线跑到身体外面去了。
-    base = S - MARGIN - 150
+    base = S - MARGIN - 130
     d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
-    L = S - 2 * MARGIN - 60
-    cx, cy = S / 2, base - L * 0.32
-    dino_sauropod(d, cx, cy, L, pal, pal["paper"], w=8)
-    for dx in (-0.19, 0.11):
-        d.line([cx + dx * L, cy + 0.02 * L, cx + dx * L, base], fill=pal["accent"], width=14)
-    d.line(at([(-.44, -.375), (-.30, -.27), (-.17, -.11)], cx, cy, L),
-           fill=pal["accent"], width=11, joint="curve")
-    d.line(at([(.17, -.10), (.32, -.075), (.45, -.045)], cx, cy, L),
-           fill=pal["accent"], width=11, joint="curve")
-    return "1 只蜥脚类站在地线上 + 2 根画成桥墩的腿 + 脖子和尾巴各 1 条走在轮廓内的桥臂线"
+    cx = S / 2
+    w_, h_ = place(img, asset("longneck", 1), cx, base, w=S - 2 * MARGIN - 60, anchor="bottom")
+    top = base - h_
+    for dx in (-0.07, 0.16):                         # 两根桥墩，画在腿的位置上
+        d.line([cx + w_ * dx, base - h_ * 0.22, cx + w_ * dx, base],
+               fill=pal["accent"], width=14)
+    d.line([(cx - w_ * 0.42, top + h_ * 0.16), (cx - w_ * 0.20, top + h_ * 0.42),
+            (cx - w_ * 0.02, top + h_ * 0.56)], fill=pal["accent"], width=11, joint="curve")
+    d.line([(cx + w_ * 0.18, top + h_ * 0.58), (cx + w_ * 0.34, top + h_ * 0.62),
+            (cx + w_ * 0.47, top + h_ * 0.66)], fill=pal["accent"], width=11, joint="curve")
+    return "1 只蜥脚类（素材）站在地线上 + 2 根画成桥墩的腿 + 脖子和尾巴各 1 条桥臂线"
 
 
 def ceratops_front(d, cx, cy, W, pal, fill=None, w=8, frill_wide=False, pattern=False):
@@ -4712,18 +4686,18 @@ def _(d, pal):
 
 
 @page("triceratops", 3)
-def _(d, pal):
+def _(d, pal, img):
     """眉角比大人的胳膊还长。"""
-    cy1, cy2 = S / 2 - 150, S / 2 + 170
+    cy1, cy2 = S / 2 - 160, S / 2 + 170
     x0 = MARGIN + 60
-    horn_len, arm_len = S - 2 * MARGIN - 120, (S - 2 * MARGIN - 120) * 0.72
-    poly(d, [(x0, cy1 - 60), (x0 + horn_len, cy1 - 6), (x0 + horn_len, cy1 + 6),
-             (x0, cy1 + 60)], pal, pal["paper"], 9)
+    horn_len = S - 2 * MARGIN - 120
+    arm_len = horn_len * 0.72
+    hw, hh = place(img, lie_flat(asset("triceratops", 3)), x0 + horn_len / 2, cy1, w=horn_len)
     d.line([x0, cy2, x0 + arm_len, cy2], fill=pal["ink"], width=76)
     d.line([x0, cy2, x0 + arm_len, cy2], fill=pal["soft"], width=58)
     disc(d, x0 + arm_len, cy2, 46, pal["soft"], pal, w=8)
-    d.line([x0, cy1 - 100, x0, cy2 + 100], fill=pal["ink"], width=8)
-    return f"上面 1 只角 {horn_len}px / 下面 1 条大人的胳膊 {arm_len:.0f}px，左端对齐，角明显更长"
+    d.line([x0, cy1 - 110, x0, cy2 + 100], fill=pal["ink"], width=8)
+    return f"上面 1 只角（素材，摆平后 {hw}px）/ 下面 1 条大人的胳膊 {arm_len:.0f}px，左端对齐，角明显更长"
 
 
 @page("triceratops", 5)
@@ -4765,14 +4739,16 @@ def _(d, pal):
 
 
 @page("triceratops", 9)
-def _(d, pal):
-    """和一辆小汽车一样长。"""
-    # 车的顶棚比车身高出 1.25 倍车高，所以两者要按各自的实际占位错开，
-    # 否则恐龙的腿会插进车顶里（上一版就是站在车里）。
-    span = 700
-    dino_ceratops(d, S / 2, 300, span, pal, pal["accent"])
-    car_shape(d, S / 2, 760, span, pal)
-    return f"1 只三角龙（脚底 {300 + span * 0.32:.0f}px）+ 1 辆小汽车（顶棚顶 {760 - span * 0.30:.0f}px），都是 {span}px 长，上下不相碰"
+def _(d, pal, img):
+    """和一辆小汽车一样长 —— 两个素材按同一个体长缩放，上下并排。"""
+    span = 740
+    dw, dh = place(img, asset("triceratops", 1), S / 2, 420, w=span, anchor="bottom")
+    cw, ch = place(img, asset("triceratops", 2), S / 2, 880, w=span, anchor="bottom")
+    for x in (S / 2 - span / 2, S / 2 + span / 2):
+        for seg in range(4):
+            y = 448 + seg * 24
+            d.line([x, y, x, y + 12], fill=pal["line"], width=5)
+    return f"1 只三角龙 + 1 辆小汽车（都是素材），体长都缩到 {span}px，两端有对齐线"
 
 
 @page("triceratops", 11)
@@ -4838,22 +4814,14 @@ def skeleton_shape(d, cx, cy, L, pal, w=6, dashed=()):
 
 
 @page("dinoegg", 2)
-def _(d, pal):
-    """最大的蛋和足球差不多，鸡蛋小得多。"""
-    # 旁白拿足球当尺子，画面里就必须有足球
-    base = S / 2 + 250
+def _(d, pal, img):
+    """最大的蛋和足球差不多，鸡蛋小得多 —— 旁白拿足球当尺子，画面里就得有足球。"""
+    base = S / 2 + 270
     d.line([MARGIN + 40, base, S - MARGIN - 40, base], fill=pal["ink"], width=8)
-    egg_shape(d, MARGIN + 130, base - 90, 180, pal, pal["paper"], 8)
-    egg_shape(d, S / 2, base - 230, 460, pal, pal["accent"], 10)
-    bx, br = S - MARGIN - 250, 230
-    disc(d, bx, base - br, br, pal["paper"], pal, w=10)
-    pent = [(bx + br * 0.34 * math.cos(math.radians(i * 72 - 90)),
-             base - br + br * 0.34 * math.sin(math.radians(i * 72 - 90))) for i in range(5)]
-    poly(d, pent, pal, pal["ink"], 6)
-    for p in pent:
-        d.line([p, (bx + (p[0] - bx) * 2.6, base - br + (p[1] - (base - br)) * 2.6)],
-               fill=pal["ink"], width=7)
-    return "3 样东西立在同一条线上：鸡蛋高 180px / 恐龙蛋高 460px / 足球直径 460px，蛋和球一样大"
+    sw, sh = place(img, asset("dinoegg", 1), MARGIN + 150, base, h=190, anchor="bottom")
+    bw, bh = place(img, asset("dinoegg", 2), S / 2, base, h=460, anchor="bottom")
+    fw, fh = place(img, asset("dinoegg", 3), S - MARGIN - 270, base, h=460, anchor="bottom")
+    return f"3 样东西立在同一条线上：鸡蛋高 {sh}px / 恐龙蛋高 {bh}px / 足球高 {fh}px，蛋和球一样大"
 
 
 @page("dinoegg", 3)
@@ -5036,23 +5004,16 @@ def _(d, pal):
 
 
 @page("extinct", 2)
-def _(d, pal):
-    """砸下来的那块石头，有一座山那么大。"""
+def _(d, pal, img):
+    """砸下来的那块石头，有一座山那么大 —— 两个缩到同一个高度，左右分开站。"""
     base = S - MARGIN - 140
     d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
-    h = 420
-    poly(d, [(MARGIN + 30, base), (MARGIN + 230, base - h), (MARGIN + 430, base)],
-         pal, pal["soft"], 10)
-    rnd = random.Random(13)
-    rock = []
-    rx = S - MARGIN - 244                    # 石头要整个落在山的右坡外面，不能压住山
-    for i in range(20):
-        a = math.radians(i * 18)
-        r = h / 2 * (0.88 + rnd.uniform(0, 0.16))
-        rock.append((rx + r * math.cos(a), base - h / 2 + r * math.sin(a)))
-    poly(d, rock, pal, pal["accent"], 10)
-    arrow(d, rx + 150, base - h - 120, rx + 40, base - h + 60, pal, w=11, head=28)
-    return f"1 座山高 {h}px（右坡止于 {MARGIN + 430}px）+ 1 块直径 {h}px 的石头（左缘 {rx - h / 2:.0f}px），两个一样高、互不相碰，石头上方 1 支砸下来的箭头"
+    h = 400
+    mw, mh = place(img, asset("extinct", 2), MARGIN + 250, base, h=h, anchor="bottom")
+    rw, rh = place(img, asset("extinct", 1), S - MARGIN - 250, base, h=h, anchor="bottom")
+    arrow(d, S - MARGIN - 110, base - h - 150, S - MARGIN - 250 + rw * 0.30,
+          base - h + 40, pal, w=11, head=28)
+    return f"1 座山高 {mh}px + 1 块石头高 {rh}px（都是素材），左右分开站在同一条地线上，石头上方 1 支砸下来的箭头"
 
 
 @page("extinct", 4)
@@ -5210,39 +5171,34 @@ def _(d, pal):
 
 
 @page("notdino", 7)
-def _(d, pal):
+def _(d, pal, img):
     """分成三堆，只有地上走的那堆才叫恐龙。"""
-    rows = [("sky", MARGIN + 150, 2), ("sea", S / 2, 2), ("ground", S - MARGIN - 190, 3)]
-    for kind, cy, cnt in rows:
+    rows = [(1, MARGIN + 150, 2, 300), (2, S / 2, 2, 290), (5, S - MARGIN - 190, 3, 250)]
+    for a_n, cy, cnt, w_ in rows:
+        a = asset("notdino", a_n)
         xs, slot = lay(cnt + 1)
         for i in range(cnt):
-            cx = xs[i] + slot * 0.5
-            if kind == "sky":
-                pterosaur_shape(d, cx, cy, 270, pal, pal["soft"])   # 光画个菱形会读成风筝
-            elif kind == "sea":
-                fish_body(d, cx, cy, 250, pal, pal["soft"])
-            else:
-                dino_theropod(d, cx, cy, 250, pal, pal["accent"], w=5)
+            place(img, a, xs[i] + slot * 0.5, cy, w=w_)
     d.rounded_rectangle([MARGIN + 10, S - MARGIN - 330, S - MARGIN - 10, S - MARGIN - 40],
                         radius=26, outline=pal["accent"], width=12)
     return "3 行：天上 2 个飞的 / 水里 2 个游的 / 地上 3 只走的，只有地上那一行被圈了起来"
 
 
 @page("notdino", 9)
-def _(d, pal):
+def _(d, pal, img):
     """鸟是从恐龙那一支上长出来的。"""
     base = S - MARGIN - 120
     d.line([S / 2, base, S / 2, S / 2 - 40], fill=pal["bark"], width=26)
     d.line([S / 2, S / 2 - 40, S / 2 + 210, MARGIN + 210], fill=pal["bark"], width=18)
     d.line([S / 2, S / 2 - 40, S / 2 - 200, MARGIN + 260], fill=pal["bark"], width=18)
-    dino_theropod(d, S / 2 - 130, base - 130, 330, pal, pal["soft"], w=5)
-    bird_shape(d, S / 2 + 250, MARGIN + 170, 250, pal, pal["accent"])
-    dino_sauropod(d, S / 2 - 230, MARGIN + 290, 260, pal, pal["soft"], w=4)
-    return "1 棵分叉的树：主干是恐龙，右边那一支通到 1 只鸟，左边那一支是别的恐龙"
+    place(img, asset("notdino", 5), S / 2 - 150, base - 40, w=330, anchor="bottom")
+    place(img, asset("notdino", 3), S / 2 + 250, MARGIN + 190, w=240)
+    place(img, asset("notdino", 5), S / 2 - 240, MARGIN + 290, w=230)
+    return "1 棵分叉的树：主干下面 1 只恐龙（素材），右边那一支通到 1 只鸟，左边一支还是恐龙"
 
 
 @page("notdino", 11)
-def _(d, pal):
+def _(d, pal, img):
     """时间排一排：恐龙、长毛象、我们。"""
     y = S / 2 + 60
     x0, x1 = MARGIN + 50, S - MARGIN - 50
@@ -5252,16 +5208,9 @@ def _(d, pal):
         mx = x0 + (x1 - x0) * t
         d.line([mx, y - 26, mx, y + 26], fill=pal["ink"], width=10)
         if kind == "dino":
-            dino_sauropod(d, mx, y - 190, 260, pal, pal["accent"], w=4)
+            place(img, asset("notdino", 5), mx, y - 40, w=260, anchor="bottom")
         elif kind == "mammoth":
-            H = 150
-            elephant_shape(d, mx, y - 160, H, pal, pal["soft"])
-            L = H * 1.15
-            for k, dy in enumerate((0, 10)):               # 两只象牙，从头部弯出来、错开一点
-                d.line([(mx - L * .30, y - 160 + L * .00 + dy),
-                        (mx - L * .46, y - 160 + L * .10 + dy),
-                        (mx - L * .52, y - 160 - L * .02 + dy)],
-                       fill=pal["paper"] if k else pal["ink"], width=10, joint="curve")
+            place(img, asset("notdino", 4), mx, y - 40, w=230, anchor="bottom")
         else:
             disc(d, mx, y - 190, 26, pal["paper"], pal, w=6)
             d.line([mx, y - 164, mx, y - 90], fill=pal["ink"], width=12)
@@ -5327,21 +5276,14 @@ def _(d, pal):
 
 
 @page("dinospeed", 10)
-def _(d, pal):
-    """最快的和骑车的大人差不多。"""
-    L = 420
-    dino_theropod(d, MARGIN + 60 + L / 2, S / 2 - 190, L, pal, pal["accent"], w=7, run=True)
-    bx, by = MARGIN + 100 + L / 2, S / 2 + 230
-    for dx in (-110, 110):
-        disc(d, bx + dx, by, 90, pal["ground"], pal, w=11)
-    d.line([(bx - 110, by), (bx - 30, by - 110), (bx + 60, by - 110), (bx + 110, by)],
-           fill=pal["ink"], width=12, joint="curve")
-    d.line([bx - 30, by - 110, bx + 20, by], fill=pal["ink"], width=12)
-    d.line([bx + 60, by - 110, bx + 40, by - 170], fill=pal["ink"], width=12)
-    d.line([bx + 20, by - 170, bx + 70, by - 170], fill=pal["ink"], width=10)
-    for cy in (S / 2 - 190 + L * 0.20, by):
+def _(d, pal, img):
+    """最快的和骑车的大人差不多 —— 两支箭头必须一样长。"""
+    L = 430
+    place(img, asset("dinospeed", 1), MARGIN + 60 + L / 2, S / 2 - 160, w=L)
+    place(img, asset("dinospeed", 2), MARGIN + 60 + L / 2, S / 2 + 230, w=L)
+    for cy in (S / 2 - 160, S / 2 + 230):
         arrow(d, S - MARGIN - 300, cy, S - MARGIN - 40, cy, pal, w=11, head=28)
-    return "1 只跑着的恐龙 + 1 辆自行车，各配 1 支长度完全相同的箭头（260px）"
+    return "1 只跑着的恐龙 + 1 辆自行车（都是素材），各配 1 支长度完全相同的箭头（260px）"
 
 
 @page("dinoskin", 2)
@@ -5500,6 +5442,119 @@ def _(d, pal):
     return f"1 条分 {n} 节的尾巴 + 尖上 1 个骨锤（大椭圆带 2 个凸起）+ 上下 2 道甩动的弧线"
 
 
+# ================================================================ 第七批：对比页模板
+# 40 本共 217 页示意图，结构高度重复：比长短、比高矮、比多少、排时间、走流程、
+# 圈局部、切剖面。抽成七个模板，每页三五行调用 —— 写得快，而且四十本的示意图
+# 长得像一家人。比例和数目仍然由参数保证，画面来自模型画的素材。
+
+def cmp_len(img, d, pal, book, a, b, n_b=3, span=780, ay=380, by=820):
+    """等长对比：上面一个 a，下面 n_b 个 b 首尾相接，两行严格等长，两端有对齐线。"""
+    cx = S / 2
+    place(img, asset(book, a), cx, ay, w=span)
+    unit = span / n_b
+    ab = asset(book, b)
+    for i in range(n_b):
+        place(img, ab, cx - span / 2 + unit * (i + 0.5), by, w=unit)
+    for x in (cx - span / 2, cx + span / 2):
+        for seg in range(6):
+            y = (ay + by) / 2 - 54 + seg * 18
+            d.line([x, y, x, y + 9], fill=pal["line"], width=5)
+    return f"上面 1 个（素材{a}）宽 {span}px，下面 {n_b} 个（素材{b}）首尾相接合计 {unit * n_b:.0f}px，两端有对齐线"
+
+
+def cmp_height(img, d, pal, book, items, base=None, line=True):
+    """比高矮：items 是 [(素材号, 目标高, x), ...]，全部脚底贴同一条地线。"""
+    base = base or S - MARGIN - 130
+    if line:
+        d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    out = []
+    for a, h, x in items:
+        w_, h_ = place(img, asset(book, a), x, base, h=h, anchor="bottom")
+        out.append(f"素材{a} 高 {h_}px")
+    return "站在同一条地线上：" + " / ".join(out)
+
+
+def cmp_count(img, d, pal, book, a, n, big_h=250, small_h=90, cols=5):
+    """一个 vs n 个：左边一个大的，右边 n 个小的排成网格，中间一条分隔线。
+
+    间距必须大于单个宽度，否则 n 个挤成一团数不清（第六批的十头大象栽过）。
+    """
+    d.line([S / 2, MARGIN + 60, S / 2, S - MARGIN - 60], fill=pal["line"], width=6)
+    el = asset(book, a)
+    place(img, el, S / 4, S / 2 + 130, h=big_h, anchor="bottom")
+    rows = math.ceil(n / cols)
+    step = (S / 2 - MARGIN - 40) / cols
+    k = 0
+    for r in range(rows):
+        for c in range(cols):
+            if k >= n:
+                break
+            place(img, el, S / 2 + 60 + c * step, S / 2 - 60 + r * (small_h + 110),
+                  h=small_h, anchor="bottom")
+            k += 1
+    return f"左边 1 个（高 {big_h}px）/ 右边 {n} 个（{rows} 行 ×{cols}，各高 {small_h}px、间距 {step:.0f}px）"
+
+
+def bars(d, pal, rows, h=96, gap=190):
+    """横条对比：rows 是 [(比例 0-1, 颜色键, 说明), ...]，左端一律对齐。"""
+    x0 = MARGIN + 50
+    full = S - 2 * MARGIN - 100
+    cy0 = S / 2 - gap * (len(rows) - 1) / 2
+    for i, (frac, key, _) in enumerate(rows):
+        hbar(d, x0, cy0 + i * gap, full * frac, h, pal, pal[key])
+    d.line([x0, cy0 - h, x0, cy0 + gap * (len(rows) - 1) + h], fill=pal["ink"], width=8)
+    return "左端对齐的横条：" + " / ".join(f"{t}{f * 100:.0f}%" for f, _, t in rows)
+
+
+def timeline(img, d, pal, book, marks, y=None):
+    """时间线：marks 是 [(位置 0-1, 素材号或 None, 说明), ...]，刻度按位置落。"""
+    y = y or S / 2 + 80
+    x0, x1 = MARGIN + 50, S - MARGIN - 50
+    d.line([x0, y, x1, y], fill=pal["ink"], width=12)
+    for t, a, _ in marks:
+        mx = x0 + (x1 - x0) * t
+        d.line([mx, y - 26, mx, y + 26], fill=pal["ink"], width=10)
+        if a:
+            place(img, asset(book, a), mx, y - 40, w=250, anchor="bottom")
+    return "1 条时间线，" + str(len(marks)) + " 个刻度：" + " / ".join(
+        f"{t}在 {p * 100:.0f}%" for p, _, t in marks)
+
+
+def steps(img, d, pal, book, ns, cy=None, arrows=True):
+    """几步流程：素材横排，中间加箭头。ns 里可以混素材号和 None（None 留给下面画）。"""
+    cy = cy or S / 2
+    xs, slot = lay(len(ns))
+    for a, x in zip(ns, xs):
+        if a:
+            place(img, asset(book, a), x, cy, w=slot * 0.74)
+    if arrows:
+        for i in range(len(ns) - 1):
+            arrow(d, xs[i] + slot * 0.40, cy, xs[i + 1] - slot * 0.40, cy, pal, w=10, head=26)
+    return f"{len(ns)} 步横着排开，中间 {len(ns) - 1} 支箭头"
+
+
+def magnify(img, d, pal, book, a, spot, w=None, r=0.11):
+    """整体 + 圈出局部。spot 是圈心在素材外框里的相对位置 (0-1, 0-1)。"""
+    cx, cy = S / 2, S / 2 + 30
+    w_, h_ = place(img, asset(book, a), cx, cy, w=w or S - 2 * MARGIN - 60)
+    hx = cx - w_ / 2 + w_ * spot[0]
+    hy = cy - h_ / 2 + h_ * spot[1]
+    d.ellipse([hx - w_ * r, hy - h_ * r * 1.5, hx + w_ * r, hy + h_ * r * 1.5],
+              outline=pal["accent"], width=12)
+    return f"1 个整体（素材{a}）+ 1 个圈，圈在它的 {spot[0] * 100:.0f}% / {spot[1] * 100:.0f}% 处"
+
+
+def bands(d, pal, n, mark=None, top=None, h=None, labels=()):
+    """分层剖面：n 层紧挨着堆起来，mark 那层填强调色。地层、皮层、云层都用它。"""
+    top = top if top is not None else MARGIN + 40
+    h = h or (S - 2 * MARGIN - 80) / n
+    for i in range(n):
+        y = top + i * h
+        fill = pal["accent"] if i == mark else (pal["soft"] if i % 2 else pal["bark"])
+        d.rectangle([MARGIN, y, S - MARGIN, y + h], fill=fill, outline=pal["ink"], width=7)
+    return f"{n} 层紧挨着的剖面" + (f"，第 {mark + 1} 层填了强调色" if mark is not None else "")
+
+
 def render(slug):
     pal = palette(slug)
     done = []
@@ -5536,7 +5591,25 @@ def render(slug):
         print(f"    p{n:02d}  {note}")
 
 
+def _load_batch7():
+    """第七批的页面定义拆在 pages7_*.py 里（几个代理并行写的），这里动态装进来。
+
+    必须等本模块完全加载完再 import，否则 pages7_* 反过来 import 本模块会成环。
+    """
+    import glob as _g
+    import importlib
+    if SB not in sys.path:
+        sys.path.insert(0, SB)
+    # 直接跑本文件时模块名是 __main__，pages7_* 里的 from draw_diagrams import ... 会再装一份
+    # 副本，@page 就注册进那份副本的 PAGES，这边看到的永远是空的（「程序画了 0 页」）。
+    # 先把本模块顶到 draw_diagrams 这个名字下，两边就是同一个 PAGES。
+    sys.modules.setdefault("draw_diagrams", sys.modules["__main__"])
+    for f in sorted(_g.glob(os.path.join(SB, "pages7_*.py"))):
+        importlib.import_module(os.path.basename(f)[:-3])
+
+
 if __name__ == "__main__":
+    _load_batch7()
     if "--check" in sys.argv:
         for s in sorted({s for s, _ in PAGES}):
             print(s, sorted(n for x, n in PAGES if x == s))
