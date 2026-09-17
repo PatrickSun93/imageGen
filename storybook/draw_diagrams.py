@@ -5607,7 +5607,16 @@ def steps(img, d, pal, book, ns, cy=None, arrows=True, cap=None):
 def magnify(img, d, pal, book, a, spot, w=None, r=0.11):
     """整体 + 圈出局部。spot 是圈心在素材外框里的相对位置 (0-1, 0-1)。"""
     cx, cy = S / 2, S / 2 + 30
-    w_, h_ = place(img, asset(book, a), cx, cy, w=w or S - 2 * MARGIN - 60)
+    im = asset(book, a)
+    # 只按宽度缩放会坑扁素材：一张 0.6:1 的图定宽 904，高就撑到一千五，冲出画面
+    # （bat p2 实测越界三万多像素）。两个方向各算一次，取小的那个。
+    bw = w or S - 2 * MARGIN - 60
+    bh = S - 2 * MARGIN - 120
+    kw = h_ = None
+    if im.width / im.height >= bw / bh:
+        w_, h_ = place(img, im, cx, cy, w=bw)
+    else:
+        w_, h_ = place(img, im, cx, cy, h=bh)
     hx = cx - w_ / 2 + w_ * spot[0]
     hy = cy - h_ / 2 + h_ * spot[1]
     d.ellipse([hx - w_ * r, hy - h_ * r * 1.5, hx + w_ * r, hy + h_ * r * 1.5],

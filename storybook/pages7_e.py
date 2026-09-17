@@ -438,7 +438,9 @@ def _(d, pal, img):
     cat, whi, box = asset("whisker", 4), lie_flat(asset("whisker", 2)), asset("whisker", 3)
     bw, bh = _box(box, 300, 230)
     bx, x0 = 810, MARGIN + 60
-    full, cat_h = _box(cat, 430, 355)      # 身子能放多大放多大，它的实际占宽就是那个数
+    # 「那个数」得两行都装得下：身子那行的盒子和胡须那行的盒子各算一次，取小的那个。
+    # 只按身子算的话，素材要是胖一点，胡须那行按同样的宽度摆就会顶出上边的留白。
+    full = min(_box(cat, 430, 355)[0], _box(whi, 430, 190)[0])
     cut = round(full * 0.53)
     rows = ((185, full, whi, 300, "cross", "完整的胡须（素材2）"),
             (445, cut, whi, 560, "in", "剪短以后（同 1 张素材2）"),
@@ -462,10 +464,10 @@ def _(d, pal, img):
 def _(d, pal, img):
     """掉下一根，过些天又长出来，长到该有的长短就停住 —— 第 4 行和第 1 行一样长。"""
     a = lie_flat(asset("whisker", 2))
-    # 整根的长度不再写死 620：先让素材在「宽 620 × 高 190（行距 240 减去缝）」里缩一次，
-    # 拿它实际占的宽当「整根」，短的按 0.4 倍算。素材再胖也撑不破行距，而「第 4 行和
-    # 第 1 行一样长」用的还是同一个变量。
-    full, fh = _box(a, 620, 190)
+    # 整根的长度不再写死 620：先让素材在「宽 620 × 高 178」里缩一次，拿它实际占的宽当
+    # 「整根」，短的按 0.4 倍算。178 是最后一行（y=900）不顶到下边留白的最大半高的两倍，
+    # 所以素材再胖也撑不破行距，而「第 4 行和第 1 行一样长」用的还是同一个变量。
+    full, fh = _box(a, 620, 178)
     short = round(full * 0.4)
     x0 = MARGIN + 90
     ys = (180, 420, 660, 900)
@@ -669,7 +671,10 @@ def _(d, pal, img):
 @page("bat", 2)
 def _(d, pal, img):
     """那对翅膀是手指撑开的一层皮 —— 圈出翅膀上那几根指骨。"""
-    return magnify(img, d, pal, "bat", 1, (0.22, 0.46), w=S - 2 * MARGIN - 80, r=0.13)
+    # magnify() 只按宽度缩放，素材要是瘦长的，高度会冲出画面 —— 那个函数在
+    # draw_diagrams.py 里不归这边改，所以先用 _box 算出一个高度也装得下的宽度再递进去。
+    w_, _h = _box(asset("bat", 1), S - 2 * MARGIN - 80, S - 2 * MARGIN - 60)
+    return magnify(img, d, pal, "bat", 1, (0.22, 0.46), w=w_, r=0.13)
 
 
 @page("bat", 4)
@@ -904,7 +909,7 @@ def _(d, pal, img):
     """羽毛根上的绒把空气兜住了，空气不爱传热，就成了一层被子。"""
     xs, slot = lay(2)
     cy = S / 2
-    fw, fh = _fit(img, asset("penguin", 2), xs[0], cy, slot * 0.72, 560)
+    fw, fh = _fit(img, asset("penguin", 2), xs[0], cy, slot * 0.62, 560)
     bw, bh = _fit(img, asset("penguin", 3), xs[1], cy, slot * 0.74, 420)
     n = 10
     for i in range(n):                       # 小点贴着羽毛的实际外框走，不写死 130px
