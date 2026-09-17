@@ -47,7 +47,7 @@ BOOKS.append(dict(
       "One octopus pressed against a rough grey rock on a cream background, half of its skin "
       "already the same grey as the rock and half still smooth and red. Nothing else in the "
       "picture.", 0),
-     ("它的吸盘还能尝味。\n胳膊一贴上石头，\n就知道石头底下\n藏没藏着螃蟹，\n眼睛都不用看一眼。", "", 0),
+     ("它的吸盘还能尝味。\n胳膊一贴上石头，\n就知道石头底下\n藏没藏着螃蟹，\n连眼睛都不用看。", "", 0),
      ("我隔着玻璃，\n一条一条数胳膊。\n数到第八条的时候，\n它身子里那三个心脏\n正一起跳着呢。",
       f"Waist-up view of the little boy counting on his fingers at the aquarium window, his face "
       f"large in the frame and turned towards the viewer, {EYES}, delighted; the red octopus "
@@ -170,7 +170,7 @@ BOOKS.append(dict(
         "One single smooth polished stone lying alone. " + BG,
     ],
     pages=[
-     ("玻璃箱里那条蛇\n一动起来就往前溜。\n它一条腿也没有，\n我盯着看了半天，\n我还是没看懂。",
+     ("玻璃箱里那条蛇\n一动起来就往前溜。\n它一条腿也没有，\n我盯着看了半天，\n还是没看出门道。",
       f"Waist-up view of the little boy crouching in front of a glass tank, his face large in the "
       f"frame and turned towards the viewer, {EYES}, puzzled; a green snake glides across the "
       f"sand behind the glass.", 1),
@@ -196,7 +196,7 @@ BOOKS.append(dict(
       "bent but going nowhere. Nothing else in the picture.", 0),
      ("沙漠里的蛇\n还有另一种走法：\n身子斜着甩出去，\n一段一段落下，\n沙上留下一排斜道。",
       "", 0),
-     ("爬树的时候呢，\n它先绕住树干，\n一圈一圈地箍紧，\n再一节一节地\n把自己往上挪上去。",
+     ("爬树的时候呢，\n它先绕住树干，\n一圈一圈地箍紧，\n再一节一节地\n把自己一点点往上挪。",
       "One snake wound around a rough tree trunk on a cream background, gripping it tightly as it "
       "works its way upward. Nothing else in the picture.", 0),
      ("我趴在玻璃跟前\n看它肚皮底下。\n那排鳞真的在动，\n一片接着一片，\n把它推着往前走。",
