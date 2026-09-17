@@ -77,7 +77,23 @@ def main(mode, args):
             neg = ", ".join(x for x in [story.get("negative") or NEG, p.get("negative_extra", "")] if x)
             seed = p.get("seed", story.get("seed_base", 2000) + n)   # same seed as the Flux page it is compared with
             t = time.time()
-            f = submit(page_prompt(story, p), neg, seed, f"bake_{slug}_p{n:02d}_{mode}", mode)
+            # ComfyUI 偶尔在 CLIPTextEncode 上报 HostBuffer.read_file_slice failed（读模型
+            # 文件失败，和提示词无关，重来一次就好）。以前这里直接抛出去，一张图的偶发
+            # 失败会把整批剩下的几百张全废掉——2026-09-16 一晚上栽了四次。改成本地重试。
+            for attempt in range(1, 4):
+                try:
+                    f = submit(page_prompt(story, p), neg, seed,
+                               f"bake_{slug}_p{n:02d}_{mode}", mode)
+                    break
+                except Exception as e:
+                    print(f"{slug} p{n:02d} 第 {attempt} 次失败：{str(e)[:120]}", flush=True)
+                    if attempt == 3:
+                        print(f"{slug} p{n:02d} 三次都失败，跳过", flush=True)
+                        f = None
+                        break
+                    time.sleep(20)
+            if f is None:
+                continue
             shutil.copy2(os.path.join(ROOT, "ComfyUI", "output", f[0]), os.path.join(OUT, f"{slug}_p{n:02d}_{mode}.png"))
             print(f"{slug} p{n:02d} {mode} {time.time()-t:.0f}s", flush=True)
         print("sheet:", compose(story, p), flush=True)

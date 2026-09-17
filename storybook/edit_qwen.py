@@ -111,7 +111,20 @@ def main(refs, targets):
             page_refs[0] = f"restyle_{slug}_p{n:02d}.png"
             shutil.copy2(src, os.path.join(INPUT, page_refs[0]))
         t0 = time.time()
-        f = submit(page_prompt(story, p), seed, f"{mode}_{slug}_p{n:02d}", page_refs)
+        # 和 bakeoff_qwen 里同一个毛病：ComfyUI 偶发读模型文件失败，抛出去就把整批
+        # 剩下的全废掉。本地重试三次，三次都不行就跳过这一页，别拖累后面的。
+        f = None
+        for attempt in range(1, 4):
+            try:
+                f = submit(page_prompt(story, p), seed, f"{mode}_{slug}_p{n:02d}", page_refs)
+                break
+            except Exception as e:
+                print(f"{slug} p{n:02d} 第 {attempt} 次失败：{str(e)[:120]}", flush=True)
+                if attempt < 3:
+                    time.sleep(20)
+        if f is None:
+            print(f"{slug} p{n:02d} 三次都失败，跳过", flush=True)
+            continue
         dst = os.path.join(OUT, f"{slug}_p{n:02d}_{mode}.png")
         shutil.copy2(os.path.join(ROOT, "ComfyUI", "output", f[0]), dst)
         print(f"{slug} p{n:02d} {mode} {time.time()-t0:.0f}s  sheet: {compose(slug, n, page_refs, dst)}", flush=True)
