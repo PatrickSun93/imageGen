@@ -28,6 +28,8 @@ from dino7_a import BOOKS                                 # noqa: E402
 
 BAD_SCENE = ("paper", "collage", "print", " page", "book", "babies")
 FACE = ("Waist-up view of the little boy", "turned towards the viewer", "iris")
+from dino7_extra import EXTRA
+
 ASSET_NEG = ("shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, "
              "dirt patch, grass patch, reflection")
 
@@ -71,7 +73,8 @@ for b in BOOKS:
         json.dump(st, f, ensure_ascii=False, indent=2)
         f.write("\n")
 
-    assets = b.get("assets", [])
+    # 补渲的素材接在原有素材后面，原来的下标一个都不动（见 dino7_extra.py）
+    assets = b.get("assets", []) + EXTRA.get(slug, [])
     if assets:
         at = dict(COMMON, title=f"{b['title']} · 素材", subtitle="给对比页用的单体素材",
                   slug=f"assets_{slug}", seed_base=90000, character="", style=b["style"],

@@ -59,6 +59,20 @@
       "scene": "One single newly hatched dinosaur with scaly skin, a beaked snout and a stubby tail, standing on four legs, seen from the side facing left. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
       "has_boy": false,
       "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+    },
+    {
+      "n": 5,
+      "zh": "素材 5",
+      "scene": "One single row of six small pointed dinosaur teeth set into a strip of pale gum, seen from the side, each tooth a narrow leaf-shaped point of the same height. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+    },
+    {
+      "n": 6,
+      "zh": "素材 6",
+      "scene": "One single row of six small dinosaur teeth set into a strip of pale gum, seen from the side, every tooth ground down to a short flat-topped stub. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     }
   ]
 }

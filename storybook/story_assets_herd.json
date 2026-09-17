@@ -59,6 +59,20 @@
       "scene": "One single round metal washtub seen from straight above, wide and shallow. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
       "has_boy": false,
       "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+    },
+    {
+      "n": 5,
+      "zh": "素材 5",
+      "scene": "One single leafy tree standing upright, seen from the side, one straight trunk rising into two spreading branches carrying a crown of separate small oval leaves. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+    },
+    {
+      "n": 6,
+      "zh": "素材 6",
+      "scene": "One single bare tree standing upright, seen from the side, one straight trunk rising into two spreading branches with no leaves left on them at all. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     }
   ]
 }

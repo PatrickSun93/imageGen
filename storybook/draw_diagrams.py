@@ -5585,13 +5585,19 @@ def timeline(img, d, pal, book, marks, y=None):
         f"{t}在 {p * 100:.0f}%" for p, _, t in marks)
 
 
-def steps(img, d, pal, book, ns, cy=None, arrows=True):
+def steps(img, d, pal, book, ns, cy=None, arrows=True, cap=None):
     """几步流程：素材横排，中间加箭头。ns 里可以混素材号和 None（None 留给下面画）。"""
     cy = cy or S / 2
     xs, slot = lay(len(ns))
+    hmax = cap or S * 0.62
     for a, x in zip(ns, xs):
         if a:
-            place(img, asset(book, a), x, cy, w=slot * 0.74)
+            im = asset(book, a)
+            # 只按宽度缩放会坑细长件：一根「头发丝」抠出来长宽比 1:10，宽定到 237
+            # 就把高撑到两千多像素，整根冲出画面。两个方向各算一次，取小的那个。
+            w_ = slot * 0.74
+            place(img, im, x, cy, w=w_ if im.width / im.height >= w_ / hmax else None,
+                  h=None if im.width / im.height >= w_ / hmax else hmax)
     if arrows:
         for i in range(len(ns) - 1):
             arrow(d, xs[i] + slot * 0.40, cy, xs[i + 1] - slot * 0.40, cy, pal, w=10, head=26)

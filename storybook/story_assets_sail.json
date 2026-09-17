@@ -52,6 +52,27 @@
       "scene": "One single wooden door standing upright and closed inside a plain frame. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
       "has_boy": false,
       "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+    },
+    {
+      "n": 4,
+      "zh": "素材 4",
+      "scene": "One single small family car seen from the side facing left, four round wheels on the ground and a row of windows along its low roof. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+    },
+    {
+      "n": 5,
+      "zh": "素材 5",
+      "scene": "One single tall back sail of a dinosaur standing upright, seen from the side, thin pale skin stretched over a row of long bony rods that fan up from its base. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
+    },
+    {
+      "n": 6,
+      "zh": "素材 6",
+      "scene": "One single tall back sail of a dinosaur standing upright, seen from the side, thin skin flushed deep red stretched over a row of long bony rods that fan up from its base. The background is one flat cream colour of a single even tone that fills the whole picture right out to all four edges. The object floats on this flat colour: it casts no shadow and rests on no ground, and there is no darker patch, wash, puddle, base, line or platform of any kind underneath it.",
+      "has_boy": false,
+      "negative_extra": "shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, dirt patch, grass patch, reflection"
     }
   ]
 }
