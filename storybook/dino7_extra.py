@@ -146,8 +146,7 @@ EXTRA = {
         "One single clear round drop of water with one tiny dark grain of dust at its very "
         "centre, seen from the side, light shining through the drop, floating alone with "
         "nothing around it and nothing under it.",
-        "One single falling raindrop seen from the side, rounded and heavy at the bottom and "
-        "drawn out to a point at the top.",
+        "One single drop of water seen from the side, rounded and heavy at one end and drawn out to a point at the other, floating alone with nothing around it and nothing under it, no sky and no rain in the picture.",
     ],
     "fog": [
         "One single white puffy cloud floating on its own, seen from the side, a flat level base "
