@@ -161,10 +161,16 @@ BOOKS.append(dict(
               ("#e9ecdd", "#9aa987", "#0f1309", "#1a1e11", "#cb8b55", "#7f7a5e", "#2f3423")),
     diagram=[2, 4, 6, 8, 10],
     assets=[
-        "One single snake stretched out on the ground, seen from above, its whole body inside the "
-        "picture. " + BG,
-        "One single wide flat belly scale of a snake lying alone, its back edge lifted a little "
-        "off the ground. " + BG,
+        # 「蛇」这个词压过了所有限定语：第一版出的是一条盘起来的眼镜蛇，
+        # 外框近乎正方，按宽度缩放就是一坨压住整页。所以把「直」写死。
+        "One single snake lying stretched out in one perfectly straight line from its head to "
+        "the tip of its tail, seen from directly above, its body straight along its whole "
+        "length and not coiled, looped or curled at any point. " + BG,
+        # 这一片鳞更麻烦：写 belly scale of a snake，模型画的是整条蛇。
+        # 索性一个动物词都不提，只描述那块东西本身。
+        "One single wide flat horny plate lying alone on flat ground, seen from the side, shaped "
+        "like a shallow rectangle much wider than it is tall with a gently rounded front edge, "
+        "its front edge resting flat on the ground and its back edge tilted up a little. " + BG,
         "One single length of snake backbone, many small bones joined end to end, each with a "
         "pair of thin ribs. " + BG,
         "One single smooth polished stone lying alone. " + BG,
