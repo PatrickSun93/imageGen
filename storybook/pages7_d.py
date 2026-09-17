@@ -2,7 +2,7 @@
 """第七批示意图页（3/5）：那时候的地球、加州、第一个发现、名字、云、雾、冰雹、龙卷风。"""
 from draw_diagrams import (S, MARGIN, page, asset, place, halo, lie_flat, poly, disc, arrow,
                            cross, lay, panel2, hbar, footprint, bands, flow_arrows, cmp_len,
-                           cmp_height, cmp_count, bars, timeline, steps, magnify)
+                           cmp_height, cmp_count, bars, timeline, steps, magnify, silhouette)
 from PIL import ImageColor
 import math, random
 
@@ -69,6 +69,42 @@ def half_at(a, frac):
     if not bb:
         return 0.08, 0.5
     return (bb[2] - bb[0]) / 2.0 / w_, (bb[0] + bb[2]) / 2.0 / w_
+
+
+def cut_tail(a, lo=0.55):
+    """切掉素材下缘那块和本体分开的东西：投影、碎屑、模型顺手画上的一小片地面。
+
+    抠图只按颜色走，认不出「这团灰是影子」，于是素材的外框里连着一块本体够不着的
+    东西。两页都栽在这上头：漏斗云整块抬高，它自带的那撮地面跟着悬在半空，一看还是
+    接了地；水珠沿轮廓描一圈冰，连脚下的影子一起描了。
+
+    办法是从 alpha 的行剖面上找下半部最宽的一条空行带 —— 本体和那块东西之间必定隔着
+    它 —— 在那儿把素材切开，只留上面。找不到空行带（本体和它连在一起）就原样返回，
+    不猜着剪。
+    """
+    import numpy as np
+    rows = (np.array(a.getchannel("A")) > 128).any(1)
+    h_ = len(rows)
+    runs, s = [], None
+    for i, v in enumerate(rows):
+        if not v and s is None:
+            s = i
+        elif v and s is not None:
+            runs.append((s, i))
+            s = None
+    runs = [r for r in runs if r[0] >= h_ * lo]      # 只在下半部切，别把本体拦腰剪了
+    if not runs:
+        return a
+    cut = max(runs, key=lambda r: r[1] - r[0])[0]
+    out = a.crop((0, 0, a.width, cut))
+    bb = out.getchannel("A").getbbox()
+    return out.crop(bb) if bb else a
+
+
+def mix(c1, c2, t):
+    """把两个调色板颜色按 t 混一混，返回 (r, g, b) —— 雾里那个「灰影子」要的是中间色。"""
+    a, b = ImageColor.getrgb(c1), ImageColor.getrgb(c2)
+    return tuple(round(a[i] + (b[i] - a[i]) * t) for i in range(3))
 
 
 def rings(d, cx, cy, r, n, pal, w=6):
@@ -752,14 +788,19 @@ def _(d, pal, img):
     最后掉下来的那一颗换成「正在下落的雨滴」素材。位置不走 lay()：四档的宽度差着两三倍，
     均分成四个等宽的槽，小的缩在槽中间够不着箭头，大的又顶出去；这里按各自的实际宽度
     一档一档往右排，两档之间永远留 70px 的箭头位。
+
+    第 4 档是「往下掉」，它得和上面那一排明显分开：上一版雨滴的上缘几乎贴着上排水珠的
+    下缘（素材脚下还连着一团投影，更顶），读起来像横排的第 5 颗，不是掉下来的那一颗。
+    现在雨滴的 y 不再是拍脑袋的常数，而是由上排的实际下缘往下让开 sep px 算出来的 ——
+    素材重出、尺寸一变，这段空白照样在。
     """
-    dr = asset("cloud", 2)
-    rn = asset("cloud", 8)
-    ytop, gap = 290, 95
-    w1 = fit(dr, 120, 200)                         # 小：两颗碰在一起
-    w2 = fit(dr, 210, 260)                         # 中
-    w3 = fit(dr, 250, 320)                         # 大
-    w4 = fit(rn, 250, 320)                         # 大到托不住，掉下来
+    dr = cut_tail(asset("cloud", 2))               # 素材脚下那团投影会顶开间距，切掉
+    rn = cut_tail(asset("cloud", 8))
+    ytop, gap, sep = 250, 95, 150
+    w1 = fit(dr, 120, 190)                         # 小：两颗碰在一起
+    w2 = fit(dr, 200, 240)                         # 中
+    w3 = fit(dr, 240, 290)                         # 大
+    w4 = fit(rn, 230, 250)                         # 大到托不住，掉下来
     x_left = MARGIN + 10
     p1 = x_left + w1 + 4                           # 两颗小水珠贴在一起，合起来的中心
     a1 = place(img, dr, p1 - w1 / 2 - 4, ytop, w=w1)
@@ -770,15 +811,19 @@ def _(d, pal, img):
     a3 = place(img, dr, p3, ytop, w=w3)
     arrow(d, x_left + 2 * w1 + 8 + 16, ytop, p2 - w2 / 2 - 16, ytop, pal, w=11, head=30)
     arrow(d, p2 + w2 / 2 + 16, ytop, p3 - w3 / 2 - 16, ytop, pal, w=11, head=30)
-    cy4, base = 730, S - MARGIN - 20
+    row_bot = ytop + a3[1] / 2                     # 上面那一排真正的下缘
+    h4 = scaled_h(rn, w4)
+    cy4 = row_bot + sep + h4 / 2                   # 往下让开一整段空白再落笔
+    base = S - MARGIN - 20
     a4 = place(img, rn, p3, cy4, w=w4)
-    arrow(d, p3, ytop + a3[1] / 2 + 24, p3, cy4 - a4[1] / 2 - 24, pal, w=12, head=34)
+    arrow(d, p3, row_bot + 24, p3, cy4 - a4[1] / 2 - 24, pal, w=12, head=34)
     arrow(d, p3, cy4 + a4[1] / 2 + 20, p3, base - 24, pal, w=12, head=34)
     d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
     return (f"4 档水珠，一档比一档大：2 颗小的贴在一起（素材2，各 {a1[0]}×{a1[1]}px）→ "
             f"1 颗中的（素材2，{a2[0]}×{a2[1]}px）→ 1 颗大的（素材2，{a3[0]}×{a3[1]}px）→ "
-            f"1 颗正在下落的雨滴（素材8，{a4[0]}×{a4[1]}px）；前三档横着排、中间 2 支横向箭头，"
-            f"第 3 档到第 4 档 1 支向下的箭头，雨滴再 1 支向下的箭头落到地线上")
+            f"1 颗正在下落的雨滴（素材8，{a4[0]}×{a4[1]}px）；前三档横着排在 y={ytop}、"
+            f"中间 2 支横向箭头；雨滴单独在下面 y={cy4:.0f}，它的上缘离上排的下缘 {sep}px，"
+            f"这段空白里只有 1 支向下的箭头；雨滴再 1 支向下的箭头落到 y={base} 的地线上")
 
 
 # ---------------------------------------------------------------- fog（雾就是落在地上的云）
@@ -851,19 +896,65 @@ def _(d, pal, img):
 
 @page("fog", 8)
 def _(d, pal, img):
-    """雾天看得见的距离短得多，所以走路要慢、手要牵好。"""
-    rows = [(1.00, "accent", "晴天能看多远"), (0.12, "soft", "雾天能看多远")]
-    note = bars(d, pal, rows, h=96, gap=300)
-    x0, full = MARGIN + 50, S - 2 * MARGIN - 100
-    cy0 = S / 2 - 300 * (len(rows) - 1) / 2
+    """雾天看得见的距离短得多 —— 所以走路要慢，手要牵好。
+
+    旁白（dino7_f.py 里 fog 的第 8 页）是「所以雾天走路要慢一点。车看不见人，人也看不见
+    车，手要牵好大人的手」。「所以」接的正是上一页的「雾里看不远」，所以这一页画那个
+    「所以」的由来：看得见的距离短了多少。牵手和车没有素材可用，画不了，不硬凑。
+
+    上一版是 bars() 的两根不等长横条，短的那根只剩 12%，画出来是个孤零零的灰方块，
+    两棵树还各自飘在条子外面，整页读不出任何一句旁白。这版改成同一条路量两回：
+    两行的尺子一模一样（同样长、同样密的刻度），两棵树钉在同样的两格上，差别只有雾 ——
+    上行天晴，看得到路尽头那棵；下行整格罩着雾，过了第 2 格，那棵树就只剩一个灰影子。
+    """
+    n_tick = 8
+    near = 2                                   # 两棵树站的格号：近的第 2 格、远的第 8 格
+    x0 = MARGIN + 40
+    span = S - 2 * MARGIN - 160
+    pitch = span / n_tick
     tr = asset("fog", 1)
-    tw = fit(tr, 210, 265)             # 原来 170px 高，两头都卡住才不会顶穿右边距
+    tw = fit(tr, 190, 250)
+    ghost = silhouette(tr, mix(pal["line"], pal["ink"], 0.34), w=tw)
+    h_ = 380
+    n_wisp = 5
     aw = ah = 0
-    for i, (frac, _k, _t) in enumerate(rows):
-        tx = min(x0 + full * frac - 52, S - MARGIN - 10 - tw / 2)
-        aw, ah = place(img, tr, tx, cy0 + i * 300 - 48, w=tw, anchor="bottom")
-    return note + (f"；两条的右端各站 1 棵树（素材1，各 {aw}×{ah}px，能看到的最远处），"
-                   f"树脚就踩在各自那条的上边")
+    for top, foggy, seen in ((100, False, n_tick), (540, True, near)):
+        d.rounded_rectangle([MARGIN, top, S - MARGIN, top + h_], radius=18,
+                            fill=pal["line"] if foggy else pal["paper"],
+                            outline=pal["ink"], width=6)
+        base = top + h_ - 70
+        if foggy:                              # 雾：几缕横着飘的淡痕，只在这一格里
+            # 淡痕画成两头收尖的窄椭圆，长短、高低都错开：横平竖直的圆角条排成一摞，
+            # 读出来是几行空白的字，不是雾
+            haze = mix(pal["line"], pal["paper"], 0.55)   # 和灰底只差一点，是雾不是白条
+            rnd = random.Random(8)
+            for k in range(n_wisp):
+                ww = rnd.uniform(240, 460)
+                wx = rnd.uniform(MARGIN + 30, S - MARGIN - 40 - ww)
+                wy = top + 52 + k * 46 + rnd.uniform(-14, 14)
+                d.ellipse([wx, wy - 14, wx + ww, wy + 14], fill=haze)
+        d.line([x0, base, x0 + span, base], fill=pal["ink"], width=8)      # 同一条路
+        for t in range(n_tick + 1):            # 同一把尺子：同样长、同样密的刻度
+            x = x0 + t * pitch
+            d.line([x, base, x, base + 26], fill=pal["ink"], width=6)
+        disc(d, x0, base - 34, 19, pal["accent"], pal, w=0)                # 站在这儿往前看
+        arrow(d, x0 + 24, base - 34, x0 + seen * pitch, base - 34, pal, w=13, head=34)
+        if seen < n_tick:                      # 看不见的那一段：只剩虚线
+            x = x0 + seen * pitch + 30
+            while x < x0 + span:
+                d.line([x, base - 34, min(x + 26, x0 + span), base - 34],
+                       fill=pal["ink"], width=7)
+                x += 52
+        for t, far in ((near, False), (n_tick, True)):
+            a = ghost if (foggy and far) else tr
+            aw, ah = place(img, a, x0 + t * pitch, base, w=tw, anchor="bottom")
+    return (f"上下 2 行同一条路、同一把尺子：每行 1 条 {span:.0f}px 长的路 + {n_tick + 1} 道"
+            f"间距 {pitch:.0f}px 的刻度（两行的刻度完全一样），路上同样的第 {near} 格和第 "
+            f"{n_tick} 格各站 1 棵树（素材1，各 {aw}×{ah}px）；每行左端 1 个圆点（站在这儿往前看），"
+            f"从它出发 1 支箭头量出看得见多远 —— 上行不带雾（浅底），箭头一直伸到第 {n_tick} 格"
+            f"那棵树，两棵树都是实的；下行整格罩着雾（灰底 + {n_wisp} 道横着的淡痕），箭头只到"
+            f"第 {near} 格那棵树就停了（{near}/{n_tick}），再往前是虚线，第 {n_tick} 格那棵树"
+            f"变成一个灰影子（同一棵树的剪影）")
 
 
 @page("fog", 10)
@@ -951,28 +1042,40 @@ def _(d, pal):
 def _(d, pal, img):
     """越往上越冷，升过某一条线水就冻住 —— 水珠一过那儿立刻裹上一层冰。
 
-    上下两颗是同一个水珠素材、同一个尺寸，差别只有一样：线上那颗外面裹了一层冰。
-    那层冰不画成一个同心圆（水珠不是正圆，套个圆就是两个东西摞着），而是拿 halo()
-    沿水珠自己的轮廓膨胀出来的一圈 —— 结冰是贴着水珠的形状结的。
+    冷暖的上下次序就是这页的全部：上半幅必须是冷色、下半幅是暖色，画反了整页说的
+    是反话（上一版正是上暖下冷）。bands() 的配色跟着 mark 走，排不出「上冷下暖」，
+    所以这两层自己填：上层 soft（冷的蓝灰）、下层 accent（暖的橙）。
+
+    冰也不能再拿 accent 描 —— accent 正是那个暖色，描出来跟「冷」对着干，何况上一版
+    冰和上层同色，等于没画。改成浅蓝（line）的一圈、外面再勾一道墨边，贴着水珠自己
+    的轮廓长出来（grow 收到 2px，冰就紧挨着水面，不会浮成另一个圈）。素材脚下那团
+    投影先切掉，不然连影子一起被描成冰。
     """
-    note = bands(d, pal, 2, mark=0)
     top = MARGIN + 40
     h = (S - 2 * MARGIN - 80) / 2
     line_y = top + h
+    cold, warm = pal["soft"], pal["accent"]
+    for i, fill in enumerate((cold, warm)):                    # 上冷下暖
+        d.rectangle([MARGIN, top + i * h, S - MARGIN, top + (i + 1) * h],
+                    fill=fill, outline=pal["ink"], width=7)
     d.line([MARGIN, line_y, S - MARGIN, line_y], fill=pal["ink"], width=16)
-    dr = asset("hail", 6)
+    dr = cut_tail(asset("hail", 6))
     dw = fit(dr, 210, 210)
-    dh = scaled_h(dr, dw)
-    ice, grow = 30, 8
+    ice, grow, edge = 26, 2, 7
     aw, ah = place(img, dr, S / 2, line_y + 250, w=dw)
-    halo(img, dr, S / 2, line_y - 250, w=dw, color=rgb(pal["accent"]), grow=grow, width=ice)
-    place(img, dr, S / 2, line_y - 250, w=dw)
+    cy_ice = line_y - 250
+    halo(img, dr, S / 2, cy_ice, w=dw, color=rgb(pal["line"]), grow=grow, width=ice)
+    halo(img, dr, S / 2, cy_ice, w=dw, color=rgb(pal["ink"]), grow=grow + ice, width=edge)
+    place(img, dr, S / 2, cy_ice, w=dw)
     y_from = line_y + 250 - ah / 2 - 24
-    y_to = line_y - 250 + ah / 2 + grow + ice + 24
+    y_to = cy_ice + ah / 2 + grow + ice + edge + 24
     arrow(d, S / 2, y_from, S / 2, y_to, pal, w=12, head=34)
-    return (note + f"；分界线在 y={line_y:.0f}（加粗到 16px）；线下 1 颗光水珠（素材6，{aw}×{ah}px）+ "
-            f"1 支穿过分界线的向上箭头（起点 y={y_from:.0f}、终点 y={y_to:.0f}）+ "
-            f"线上同一个素材、同样 {aw}×{ah}px 的水珠，外面沿它自己的轮廓多裹了 {ice}px 厚的一层冰")
+    return (f"上下 2 层等高（各 {h:.0f}px）：上层冷色（soft {cold}）、下层暖色（accent {warm}）"
+            f"—— 越往上越冷；分界线在 y={line_y:.0f}（加粗到 16px）；"
+            f"线下 1 颗光水珠（素材6，{aw}×{ah}px，外面什么都没有）+ 1 支穿过分界线的向上箭头"
+            f"（起点 y={y_from:.0f}、终点 y={y_to:.0f}）+ 线上同一个素材、同样 {aw}×{ah}px 的水珠，"
+            f"沿它自己的轮廓多裹了 {ice}px 厚的一圈浅蓝的冰（line {pal['line']}，外缘再描 {edge}px "
+            f"墨色边）—— 过线之后多出来的就是这层冰")
 
 
 @page("hail", 7)
@@ -1069,18 +1172,40 @@ def _(d, pal):
 
 @page("tornado", 6)
 def _(d, pal, img):
-    """尖碰到地面那一下才算龙卷风，没碰到地的只能叫漏斗云。"""
+    """尖碰到地面那一下才算龙卷风，没碰到地的只能叫漏斗云。
+
+    这页全靠「碰没碰到」这一个差别，所以素材下缘那撮碎屑必须先切掉：它连着一小片
+    地面，整块抬高以后那片地面就悬在半空，左格看上去照样接了地，对比等于没画。
+    cut_tail() 切完只剩漏斗本身，左格的尖停在地线上方（虚线量出这段空当），
+    右格的尖压在地线上 —— 再在接触点上画一段加粗的地线和两边扬起来的尘土，
+    「碰上的那一下」才看得出来。
+    """
     gap = 170
     tw = 300
+    t = cut_tail(asset("tornado", 1))                 # 切掉自带的碎屑和那一小片地面
+    n_dust = 4                                        # 接触点两边各这么多粒尘土
+    aw = ah = 0
+    marks = []
     for (cx, cy, w_, h_), touch in zip(panel2(d, pal), (False, True)):
         base = cy + h_ / 2 - 70
         d.line([cx - w_ / 2 + 20, base, cx + w_ / 2 - 20, base], fill=pal["ink"], width=9)
         tip = base if touch else base - gap
-        place(img, asset("tornado", 1), cx, tip, w=tw, anchor="bottom")
-        if not touch:
-            dashed_v(d, cx, tip + 10, base - 6, pal, seg=16, w=6)
-    return (f"两格等大，同一个龙卷风素材（宽各 {tw}px）：左格它的尖停在离地线 {gap}px 的地方"
-            f"（漏斗云，中间 1 条虚线量出这段空当）/ 右格它的尖正好落在地线上（这才算龙卷风）")
+        aw, ah = place(img, t, cx, tip, w=tw, anchor="bottom")
+        hr = max(20, half_at(t, 0.97)[0] * aw)        # 尖端那一层有多宽，从素材自己身上量
+        if touch:
+            d.line([cx - hr - 60, base, cx + hr + 60, base], fill=pal["accent"], width=18)
+            for k in range(n_dust):
+                for s in (-1, 1):
+                    disc(d, cx + s * (hr + 46 + 40 * k), base - 24 - 16 * k, 13,
+                         pal["accent"], pal, w=0)
+            marks.append(f"接触点画了 1 段 {2 * hr + 120:.0f}px 长、18px 粗的加粗地线 + "
+                         f"两边各 {n_dust} 粒扬起来的尘土（共 {2 * n_dust} 粒）")
+        else:
+            n_seg = dashed_v(d, cx, tip + 12, base - 8, pal, seg=16, w=6)
+            marks.append(f"{n_seg} 段虚线量出这 {gap}px 的空当")
+    return (f"两格等大，同一个漏斗素材、同一个宽度（各 {aw}×{ah}px；素材自带的碎屑和那一小片"
+            f"地面已经切掉，两格里都只剩漏斗本身）：左格漏斗的下缘停在地线上方 {gap}px 处，"
+            f"底下是空的（漏斗云，{marks[0]}）/ 右格漏斗的尖压在地线上（这才算龙卷风，{marks[1]}）")
 
 
 @page("tornado", 8)
