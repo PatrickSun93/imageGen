@@ -129,6 +129,28 @@ def _plen(pts):
     return sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(pts, pts[1:]))
 
 
+def _mid_x(a, frac):
+    """素材在相对高度 frac 那一行上实体的中点，按素材宽度取比例。
+
+    「树梢在哪儿」不该由我数像素：从素材自己的 alpha 上量那一行，丝就从真的枝头放出去。
+    """
+    w_, h_ = a.size
+    y = max(0, min(h_ - 1, int(h_ * frac)))
+    bb = a.getchannel("A").crop((0, y, w_, y + 1)).getbbox()
+    return 0.5 if not bb else (bb[0] + bb[2]) / 2.0 / w_
+
+
+def _bezier(p0, p1, p2, n=48):
+    """二次贝塞尔，用来画飘过去的那根丝 —— 下垂多少写在控制点里，量得出来。"""
+    pts = []
+    for i in range(n + 1):
+        t = i / n
+        u = 1 - t
+        pts.append((u * u * p0[0] + 2 * u * t * p1[0] + t * t * p2[0],
+                    u * u * p0[1] + 2 * u * t * p1[1] + t * t * p2[1]))
+    return pts
+
+
 # ================================================================ camel 驼峰里装的是什么
 
 @page("camel", 2)
@@ -757,37 +779,37 @@ SP_SPIDER = 205                 # 蜘蛛的统一尺寸框，全书六页一样�
 
 @page("spider", 2)
 def _(d, pal, img):
-    """第一步放出一根丝，风一吹飘过去，粘在对面的树枝上 —— 三步。"""
-    cy = S / 2
-    note = steps(img, d, pal, "spider", [None, None, None], cy=cy)
-    xs, slot = lay(3)
-    half = slot * 0.33
-    sag, sy = 70, cy - 60
-    wind = 3
-    twig = asset("spider", 4)                          # 树枝以前是 6 根粗竖条，现在是素材4
+    """放出一根丝，风一吹飘过去，粘在对面的树枝上 —— 一座桥就搭好了。
+
+    上一版把这句话拆成三格来画，结果是六棵小树、三支指向空白的粗箭头和几条断折线，
+    蜘蛛还悬在树的上方，一根丝搭成一座桥这件事一点也看不出来。现在整页只画旁白点到的
+    那几样：左右各 1 棵树、1 根从左边树梢飘到右边树梢的丝、1 支风向箭头、1 只站在左边
+    树梢上的蜘蛛。树梢在哪儿是从素材 alpha 上量的（_mid_x），丝的两头就落在真的枝头上。
+    """
+    tree = asset("spider", 4)
+    ground, xl, xr, f_top = S - MARGIN - 26, 240, 784, 0.14
+    d.line([MARGIN, ground, S - MARGIN, ground], fill=pal["ink"], width=9)
     tw = th = 0
-    sw = sh = 0
-    for k, x in enumerate(xs):
-        for sx in (x - half, x + half):                # 三格的树枝完全一样，差别只在丝
-            tw, th = _fit(img, twig, sx, cy + 20, 120, 600)
-        if k == 0:                                     # 刚放出来的一根丝，垂在自己这边
-            d.line([(x - half, sy), (x - half + 44, sy + 110), (x - half + 34, sy + 220)],
-                   fill=pal["ink"], width=7, joint="curve")
-            sw, sh = _fit(img, asset("spider", 1), x - half + 62, cy - 168,
-                          SP_SPIDER, SP_SPIDER)
-        elif k == 1:                                   # 风把丝吹过去，还没搭上
-            d.line([(x - half, sy), (x, sy + 50), (x + half - 46, sy + 96)],
-                   fill=pal["ink"], width=7, joint="curve")
-            for i in range(wind):
-                wy = cy - 210 + i * 70
-                arrow(d, x - half - 20, wy, x + half - 8, wy, pal, w=8, head=22)
-        else:                                          # 两端都粘住了，桥搭好
-            d.line([(x - half, sy), (x, sy + sag), (x + half, sy)],
-                   fill=pal["ink"], width=9, joint="curve")
-    return (note + f"：第 1 格 1 只蜘蛛（素材1，{sw}×{sh}px）放出 1 根垂着的丝 / "
-            f"第 2 格 {wind} 支一样长的风箭头把丝吹过去（离对面还差 46px）/ "
-            f"第 3 格 1 座搭好的桥（跨 {2 * half:.0f}px、中间下垂 {sag}px）；"
-            f"三格的树枝一模一样，各 2 根（素材4，共 6 根，每根 {tw}×{th}px）")
+    for x in (xl, xr):
+        tw, th = _fit(img, tree, x, ground, 400, 760, anchor="bottom")
+    ytop = ground - th + f_top * th                    # 树梢那一行
+    pl = (xl - tw / 2 + _mid_x(tree, f_top) * tw, ytop)
+    pr = (xr - tw / 2 + _mid_x(tree, f_top) * tw, ytop)
+    sag = 120
+    silk = _bezier((pl[0] + 40, pl[1]), ((pl[0] + pr[0]) / 2, ytop + sag), pr)
+    d.line(silk, fill=pal["ink"], width=7, joint="curve")
+    disc(d, pr[0], pr[1], 15, pal["accent"], pal, w=6)  # 粘住对面枝头的那一点
+    wy = 305
+    arrow(d, MARGIN + 60, wy, S / 2 + 190, wy, pal, w=10, head=30)
+    # 蜘蛛正压在树梢那一点上（素材是俯视的，压上去才像蹲在枝头，不能吊在树顶上方）
+    sw, sh = _fit(img, asset("spider", 1), pl[0], pl[1], SP_SPIDER, SP_SPIDER)
+    return (f"2 棵一样的树（素材4，各 {tw}×{th}px，都站在 y={ground} 的地线上，"
+            f"树心相距 {xr - xl}px）；树梢取素材高度 {f_top * 100:.0f}% 那一行的中点，"
+            f"两边树梢一样高（y={ytop:.0f}）。1 根丝从左边树梢飘到右边树梢："
+            f"跨 {pr[0] - pl[0] - 40:.0f}px、中间最低比树梢低 {sag / 2:.0f}px、"
+            f"拉直了长 {_plen(silk):.0f}px，右头 1 个圆点表示粘住了。"
+            f"树梢上方 1 支从左往右的风箭头（y={wy}，长 {S / 2 + 190 - MARGIN - 60:.0f}px）。"
+            f"1 只蜘蛛（素材1，{sw}×{sh}px）正压在左边树梢那一点上，丝就从它脚下出去")
 
 
 @page("spider", 4)
@@ -872,28 +894,45 @@ def _(d, pal, img):
 
 @page("spider", 8)
 def _(d, pal, img):
-    """辐条的丝不粘，绕圈的丝才粘 —— 蜘蛛只踩辐条走。"""
-    cx, cy, n = SP_CX, SP_CY, SP_N
-    turns = 8
-    rr, gaps = _shrinking_radii(300, 64, turns, ratio=0.5)
-    _spokes(d, pal, cx, cy, n, SP_HUB, SP_R, color=pal["ink"], w=7)     # 不粘：ink，细
-    pts = _spiral_pts(cx, cy, rr)
-    d.line(pts, fill=pal["ink"], width=20, joint="curve")
-    d.line(pts, fill=pal["accent"], width=12, joint="curve")            # 粘：强调色，粗
-    disc(d, cx, cy, SP_HUB, pal["paper"], pal, w=6)
-    walk, steps_n = 9, 6
-    for k in range(steps_n):
-        r = 50 + k * (230 - 50) / (steps_n - 1)
-        px, py = _spoke_pt(cx, cy, n, walk, r)
-        disc(d, px, py, 14, pal["soft"], pal, w=5)
-    sx, sy = _spoke_pt(cx, cy, n, walk, 250)
-    sw, sh = _fit(img, asset("spider", 1), sx, sy, SP_SPIDER, SP_SPIDER)
-    fx, fy = pts[int(1.6 * 96)]                                         # 螺旋绕到 1.6 圈的地方
-    fw, fh = _fit(img, asset("spider", 3), fx, fy, 175, 175)
-    return (f"{n} 根辐条用 ink 画、线宽 7px（不粘）+ 1 条 {turns} 圈的螺旋用强调色画、线宽 12px（粘）；"
-            f"蜘蛛（素材1，{sw}×{sh}px）落在第 {walk + 1} 根辐条上，"
-            f"这根辐条上 {steps_n} 个落脚点、螺旋上 0 个；"
-            f"螺旋上另粘着 1 只苍蝇（素材3，{fw}×{fh}px）")
+    """辐条的丝不粘，绕圈的丝才粘 —— 蜘蛛只踩辐条走，所以从不粘住自己。
+
+    上一版蜘蛛落在半径 250px 的辐条上，可那一圈正是粘丝最密的地方：蜘蛛按全书统一的
+    205px 摆，相邻两圈粘丝之间最宽只有 39px，怎么摆都压在橙色的粘丝上 —— 画出来的正好
+    是这页要否定的事。整张网画在一页里，任何看得清的蜘蛛都塞不进两圈粘丝之间（网半径
+    才 310px，里头要绕 8 圈），所以这一页改成网的一小块放大：圆心落在画外下方 130px，
+    辐条的夹角还是按整张网的 34 根算，粘丝还是同一条越往里越密的螺旋，只是离得近了，
+    两圈之间才腾得出地方，蜘蛛才真站得到辐条上。旁白没提的那只苍蝇去掉。
+    """
+    hx, hy, n = S / 2, S + 130, SP_N
+    step = 2 * math.pi / n
+    r_out, r_in, n_ring = hy - MARGIN, 300, 3
+    rr, gaps = _shrinking_radii(r_out, r_in, n_ring, ratio=0.5)
+    spokes = 0
+    for i in range(-3, 4):                       # 直的、不粘：ink 细线
+        a = -math.pi / 2 + i * step
+        d.line([hx + r_in * 0.4 * math.cos(a), hy + r_in * 0.4 * math.sin(a),
+                hx + r_out * math.cos(a), hy + r_out * math.sin(a)],
+               fill=pal["ink"], width=7)
+        spokes += 1
+    for r in rr:                                 # 绕圈的、粘：强调色粗线
+        # 角度开到 ±1.5rad：每一圈都从画面的边上出去，不会在半空里断掉
+        arc = [(hx + r * math.sin(t * 0.015 - 1.5), hy - r * math.cos(t * 0.015 - 1.5))
+               for t in range(201)]
+        d.line(arc, fill=pal["ink"], width=20, joint="curve")
+        d.line(arc, fill=pal["accent"], width=12, joint="curve")
+    mids = [(rr[k] + rr[k + 1]) / 2 for k in range(len(rr) - 1)] + [r_in - 90]
+    sw, sh = _fit(img, asset("spider", 1), hx, hy - mids[0], SP_SPIDER, SP_SPIDER)
+    for r in mids[1:]:                           # 落脚点：全在辐条上，而且都在两圈粘丝正当中
+        disc(d, hx, hy - r, 15, pal["soft"], pal, w=5)
+    clear = min(abs(mids[0] - rr[0]), abs(mids[0] - rr[1])) - sh / 2
+    return (f"网的一小块放大：圆心在画面下方 {hy - S:.0f}px 处（画外），"
+            f"{spokes} 根直辐条从那里放射出来，夹角还是整张网的 360/{n}={360 / n:.1f}°，"
+            f"用 ink 画、线宽 7px（不粘）；{len(rr)} 圈绕过来的粘丝用强调色画、线宽 12px，"
+            f"圈距从外往里 {gaps[0]:.0f} / {gaps[1]:.0f} / {gaps[2]:.0f}px，越往里越密。"
+            f"蜘蛛（素材1，{sw}×{sh}px）整只落在正中那根辐条上、正卡在最外两圈粘丝当中，"
+            f"上下离粘丝各还有 {clear:.0f}px，一点也没碰着；同一根辐条上另有 "
+            f"{len(mids) - 1} 个落脚点，个个也都在两圈粘丝正当中 —— 粘丝上 0 个。"
+            f"整页没有苍蝇")
 
 
 # ================================================================ giraffe 长颈鹿的脖子

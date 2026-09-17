@@ -71,6 +71,70 @@ def _drop(d, cx, cy, r, pal, fill=None, w=6):
     poly(d, pts, pal, fill if fill is not None else pal["soft"], w)
 
 
+def _row_span(a, frac):
+    """量素材在相对高度 frac（0=顶、1=底）那一行上的左右两端，按素材宽度取比例。
+
+    「这一行有多宽」是程序真量得出来的数（从 alpha 上读），不是猜的。
+    """
+    w_, h_ = a.size
+    y = max(0, min(h_ - 1, int(h_ * frac)))
+    bb = a.getchannel("A").crop((0, y, w_, y + 1)).getbbox()
+    if not bb:
+        return None
+    return bb[0] / w_, bb[2] / w_
+
+
+def _solid_pt(a, frac):
+    """在相对高度 frac 那一行上挑一个一定落在实体上的点：最长那一段实心的中点。
+
+    圆点要打在胳膊上，可胳膊是卷着的，行的中点常常落在卷出来的空当里。
+    取最长的一段实心再取中点，点就一定压在东西上。
+    """
+    import numpy as np
+    w_, h_ = a.size
+    y = max(0, min(h_ - 1, int(h_ * frac)))
+    row = np.array(a.getchannel("A").crop((0, y, w_, y + 1)))[0] > 128
+    best_n, best_i, cur, start = 0, 0, 0, 0
+    for i, v in enumerate(row):
+        if v:
+            start = i if cur == 0 else start
+            cur += 1
+            if cur > best_n:
+                best_n, best_i = cur, start
+        else:
+            cur = 0
+    return 0.5 if best_n == 0 else (best_i + best_n / 2) / w_
+
+
+def _widest_row(a, f0=0.04, f1=0.94, step=0.004):
+    """逐行量过去，返回最宽那一行的 (frac, 左端, 右端) —— 「身上最宽的那一处」。"""
+    best = None
+    f = f0
+    while f <= f1 + 1e-9:
+        sp = _row_span(a, f)
+        if sp and (best is None or sp[1] - sp[0] > best[2] - best[1]):
+            best = (f, sp[0], sp[1])
+        f += step
+    return best or (0.5, 0.0, 1.0)
+
+
+def _foot_frac(a, k=0.35):
+    """脚底在相对高度的哪儿：最后一行还宽得过「最宽那行的 k 倍」的，就是踩地那一行。
+
+    猫是正面素材，四只脚在 84% 高处，尾巴一直垂到 100%。按外框底边落地的话脚会
+    悬空一百来个像素、只有尾巴尖点着地。量出脚底那一行，地线就画在脚上。
+    """
+    fw = _widest_row(a)[2] - _widest_row(a)[1]
+    best = 1.0
+    f = 0.04
+    while f <= 0.99:
+        sp = _row_span(a, f)
+        if sp and sp[1] - sp[0] >= k * fw:
+            best = f
+        f += 0.004
+    return best
+
+
 # 侧看的猫脸以前是「一个圆 + 六根手画的线」，现在整张脸是素材5，胡须的张开由素材
 # 自己的外框量出来 —— 程序不再替模型画脸。
 
@@ -376,22 +440,53 @@ def _(d, pal):
 def _(d, pal, img):
     """胡须向左右张开的宽度，正好等于身上最宽的那一处 —— 两个宽度是同一个数。
 
-    整只猫改成素材4（俯视）。胡须张开多宽是模型画的，程序量不出来，所以「相等」这句话
-    不能再靠 span=620 这个共享变量了 —— 改成靠标注保证：两条竖虚线落在素材外框的左右
-    两边（这是程序真量得出来的数），上下各 1 根一样长的量尺，一根量胡须、一根量身子，
-    两根长度是同一个变量。相等由这两根尺子说了算，不由模型说了算。
+    上一版是「上下两根一样长的量尺 + 两条落在素材外框上的竖虚线」，两根尺其实量的是
+    同一个东西（猫的外框），胡须一根没画出来 —— 画面在撒谎。先试了从 alpha 上量胡须：
+    抠图之后素材外框只剩 456×879（整张图 1024 宽），模型画的那几根淡铅笔胡须早被当成
+    背景扣掉了，一根也没留下，根本量不出来。所以改第二条路：
+
+      - 「身子最宽处」是真量的：_widest_row() 逐行读 alpha，挑出最宽的那一行，
+        两条竖虚线就落在这一行的左右两端 —— 它俩正贴着猫身上那两个点，行不行一看就知道。
+      - 「胡须张开」这个数量不出来，就不假装量：脸颊那一行的左右两端也从 alpha 上量出来，
+        从这两点各拉一条横线出去，正好停在那两条竖虚线上。两条横线加起来的跨度和身子最
+        宽处是同一个变量 span，「相等」由这一个变量保证。
+      - 猫脚踩在地线上，不悬空。
     """
-    cx, cy = S / 2, S / 2 + 10
-    span, tall = _fit(img, asset("whisker", 4), cx, cy, 640, 690)
-    top_y, bot_y = cy - tall / 2 - 75, cy + tall / 2 + 75
+    a = asset("whisker", 4)
+    cx, ground, top_y, bot_y = S / 2, 832, 160, 958
+    ff = _foot_frac(a)                              # 脚底那一行，不是外框底边（底边是尾巴尖）
+    y0 = ground - ff * 640
+    # 先画地线再贴猫：脚正踩在线上，垂下来的尾巴压在线前面
+    d.line([MARGIN + 20, ground, S - MARGIN - 20, ground], fill=pal["ink"], width=10)
+    aw, ah = place(img, a, cx, y0 + 320, h=640)
+    x0 = cx - aw / 2
+    fw, lw, rw = _widest_row(a)                     # 身上最宽的那一行：真从 alpha 上量
+    xl, xr = x0 + lw * aw, x0 + rw * aw
+    span, y_wide = xr - xl, y0 + fw * ah
+    fc = 0.24                                       # 脸颊（胡须根）那一行
+    lc, rc = _row_span(a, fc)
+    cl, cr = x0 + lc * aw, x0 + rc * aw
+    y_cheek = y0 + fc * ah
     segs = 0
-    for s in (-1, 1):
-        segs += _dash(d, pal, cx + s * span / 2, top_y - 45, cx + s * span / 2, bot_y + 45)
-    _ruler(d, pal, cx - span / 2, top_y, span)
-    _ruler(d, pal, cx - span / 2, bot_y, span)
-    return (f"俯视的猫 1 只（素材4，{span}×{tall}px）：两条竖虚线（共 {segs} 段）正落在素材"
-            f"外框的左右两边；上面 1 根量尺量胡须张开、下面 1 根量尺量身子最宽处，"
-            f"两根都是 {span}px —— 同一个变量画出来的，不多也不少")
+    for x in (xl, xr):
+        segs += _dash(d, pal, x, top_y, x, bot_y, seg=26, gap=26, w=5)
+    for xc, xe in ((cl, xl), (cr, xr)):             # 胡须张开：从脸颊拉到竖虚线上
+        d.line([xc, y_cheek, xe, y_cheek], fill=pal["accent"], width=9)
+        disc(d, xc, y_cheek, 11, pal["accent"], pal, w=5)
+        disc(d, xe, y_cheek, 15, pal["accent"], pal, w=6)
+    for x in (xl, xr):                              # 身子最宽处顶在竖虚线上的那两个点
+        disc(d, x, y_wide, 15, pal["soft"], pal, w=6)
+    _ruler(d, pal, xl, top_y, span)
+    _ruler(d, pal, xl, bot_y, span)
+    return (f"1 只猫（素材4，{aw}×{ah}px，脚底那一行在素材高度 {ff * 100:.0f}% 处，"
+            f"正踩在 y={ground} 的地线上，不悬空，垂下来的尾巴压在地线前面）："
+            f"身子最宽的那一行是逐行读素材 alpha 量出来的，在素材高度 {fw * 100:.0f}% 处，"
+            f"宽 {span:.0f}px，左右两端各 1 个圆点正顶在猫身上；两条竖虚线（共 {segs} 段）"
+            f"就立在这两个点上。脸颊那一行（素材高度 {fc * 100:.0f}% 处）也从 alpha 上量，"
+            f"左右两端各拉 1 条胡须张开线出去（共 2 条，各长 {cl - xl:.0f}px / "
+            f"{xr - cr:.0f}px），两条都正停在竖虚线上，加上中间的脸一共跨 {span:.0f}px。"
+            f"上下各 1 根量尺（上=胡须张开、下=身子最宽处），都从 x={xl:.0f} 起算、"
+            f"都是 {span:.0f}px —— 同一个变量，不多也不少")
 
 
 @page("whisker", 6)
@@ -429,35 +524,46 @@ def _(d, pal, img):
 
 @page("whisker", 9)
 def _(d, pal, img):
-    """剪短一截就量不准了：胡须进得去，身子还是过不去。
+    """胡须剪不得：剪短一截就量不准，走路会撞上东西。
 
-    「完整 / 剪短」用的是同一张胡须素材（素材2）的两个长度，剪短那根就是短的那个数；
-    「身子」那行是整只猫（素材4）的实际占宽，第 1 行的胡须就照这个数来 —— 两行是同
-    一个变量，第 5 页那句「一样宽」在这里还站得住。三行右边是同一个箱子。
+    上一版把叉号和箭头的意思弄反了 —— 完整的胡须那行打了叉、剪短的那行反而一支箭头
+    直通洞口，等于说「剪短了照样过得去」，跟旁白正相反。而且三行里第 3 行是整只猫，
+    它上面一行的短标尺、下面一行的长标尺挨得太近，读起来像同一只猫量出了两个宽度。
+
+    现在只剩两行，意思摆正了：完整的胡须（量得准）→ 箭头穿进洞口；剪短的胡须
+    （量不准）→ 停在箱子面上、打叉。两行的胡须是同一张素材的两个长度，剪短那根就是
+    完整那根的 53%；那条竖虚线立在「完整」这个长度上，第 2 行的尺子差多少一眼看得见。
     """
-    cat, whi, box = asset("whisker", 4), lie_flat(asset("whisker", 2)), asset("whisker", 3)
-    bw, bh = _box(box, 300, 230)
-    bx, x0 = 810, MARGIN + 60
-    # 「那个数」得两行都装得下：身子那行的盒子和胡须那行的盒子各算一次，取小的那个。
-    # 只按身子算的话，素材要是胖一点，胡须那行按同样的宽度摆就会顶出上边的留白。
-    full = min(_box(cat, 430, 355)[0], _box(whi, 430, 190)[0])
+    whi, box = lie_flat(asset("whisker", 2)), asset("whisker", 3)
+    bw, bh = _box(box, 330, 260)
+    bx, x0 = 800, MARGIN + 70
+    full, fh = _box(whi, bx - bw / 2 - 60 - (MARGIN + 70), 210)
     cut = round(full * 0.53)
-    rows = ((185, full, whi, 300, "cross", "完整的胡须（素材2）"),
-            (445, cut, whi, 560, "in", "剪短以后（同 1 张素材2）"),
-            (760, full, cat, 962, "cross", "猫的身子（素材4）"))
-    for cy, L, a, my, kind, _t in rows:
+    xd = x0 + full                                  # 「量得准」的那个长度，两行共用
+    segs = _dash(d, pal, xd, 130, xd, 900, seg=26, gap=26, w=5)
+    out = []
+    for cy, L, ok in ((290, full, True), (720, cut, False)):
+        w_, h_ = place(img, whi, x0 + L / 2, cy, w=L)
         place(img, box, bx, cy, w=bw)
-        place(img, a, x0 + L / 2, cy, w=L)
+        my = cy + h_ / 2 + 56
         _ruler(d, pal, x0, my, L)
-        if kind == "in":
-            arrow(d, x0 + L + 40, cy, bx - bw / 2 - 30, cy, pal, w=11, head=28)
-        else:
+        if ok:                                      # 量得准 → 过得去：箭头一直走进洞口里
+            arrow(d, x0 + L + 40, cy, bx + bw * 0.08, cy, pal, w=11, head=28)
+            out.append(f"第 1 行 完整的胡须 {L}×{h_}px，尺子正好顶到竖虚线，"
+                       f"1 支穿进箱子的箭头（量得准，过得去）")
+        else:                                       # 量不准 → 撞上：停在箱面上，箱子打叉
+            _dash(d, pal, x0 + L, my, xd, my, seg=16, gap=16, w=5)
+            # 撞上的那一点要贴着箱子画出来的那条边，不是素材外框的边（外框还带着影子）
+            edge = bx - bw / 2 + _row_span(box, 0.5)[0] * bw
+            arrow(d, x0 + L + 40, cy, edge - 30, cy, pal, w=11, head=28)
+            disc(d, edge - 10, cy, 17, pal["accent"], pal, w=6)
             cross(d, bx, cy, min(bw, bh) * 0.42, pal, w=14)
-    return (f"三行左端都从 {x0}px 起算、各 1 根量尺，右边三次是同一个箱子（素材3，"
-            f"各 {bw}×{bh}px）：第 1 行 完整的胡须 {full}px → 箱子上 1 个叉（过不去）/ "
-            f"第 2 行 剪短后 {cut}px（只有完整的 53%）→ 1 支进箱子的箭头（进得去）/ "
-            f"第 3 行 身子 {full}px，和第 1 行一模一样（用的是同一个数）→ 1 个叉："
-            f"胡须骗了它，身子还是过不去")
+            out.append(f"第 2 行 剪短以后 {L}×{h_}px（同 1 张素材2，只有完整的 "
+                       f"{L / full * 100:.0f}%），尺子离竖虚线还差 {full - L}px，"
+                       f"箭头停在箱子面上、那里 1 个接触点，箱子上 1 个叉（量不准，撞上）")
+    return (f"两行左端都从 x={x0} 起算、各 1 根量尺就摆在自己那根胡须正下方；"
+            f"右边两次是同一个箱子（素材3，各 {bw}×{bh}px）；1 条竖虚线（{segs} 段）"
+            f"立在 x={xd}，那是量得准的长度。" + out[0] + "；" + out[1])
 
 
 @page("whisker", 11)
@@ -842,6 +948,37 @@ def _(d, pal, img):
         d.line([x, cy - 40, x, cy + 40], fill=pal["ink"], width=5)
     return (note + f"；上面那条切成 8 格（八条胳膊各 1 格，每格 {full * arms / 8:.0f}px），"
                    f"下面那条是脑袋，只有上面那条的 {head / arms * 100:.0f}%")
+
+
+@page("octopus", 8)
+def _(d, pal, img):
+    """九个脑子：一个长在头顶上，八个长在胳膊里，各想各的事情。
+
+    这一页原来出的是模型画的「一条腕卷住螃蟹」—— 那是第 11 页（吸盘尝味、石头底下藏
+    没藏着螃蟹）的事，和这页旁白说的九个脑子对不上，整页画错了内容。改成程序画：
+    上面 1 只章鱼、头顶 1 个圆点，下面 8 条胳膊、各 1 个圆点，1 + 8 = 9，数得清。
+    圆点打在哪儿不靠猜 —— 拿 _solid_pt() 从素材 alpha 上挑一个一定落在实体上的点，
+    胳膊卷成一圈也不会把点打进空当里。
+    """
+    from PIL import Image as _Im
+    oct_, arm = asset("octopus", 1), asset("octopus", 5)
+    ocy, f_head = 215, 0.16
+    ow, oh = _fit(img, oct_, S / 2, ocy, 470, 330)
+    dots = [(S / 2 - ow / 2 + _solid_pt(oct_, f_head) * ow, ocy - oh / 2 + f_head * oh)]
+    xs, slot = lay(4)
+    aw = ah = 0
+    for k in range(8):
+        flip = k % 2 == 1
+        a = arm.transpose(_Im.FLIP_LEFT_RIGHT) if flip else arm
+        cx, cy = xs[k % 4], 575 + (k // 4) * 255
+        aw, ah = _fit(img, a, cx, cy, slot * 0.88, 225)
+        dots.append((cx - aw / 2 + _solid_pt(a, 0.5) * aw, cy))
+    for x, y in dots:
+        disc(d, x, y, 27, pal["accent"], pal, w=7)
+    return (f"上面 1 只章鱼（素材1，{ow}×{oh}px），头顶 1 个圆点（打在素材高度 "
+            f"{f_head * 100:.0f}% 那一行的实体上）；下面 8 条胳膊（都是素材5，2 行 4 列，"
+            f"各 {aw}×{ah}px，隔一条左右翻一次），每条身上 1 个圆点（打在各自半高处的"
+            f"实体上）；圆点一共 {len(dots)} 个 = 头顶 1 个 + 胳膊 8 个，半径都是 27px")
 
 
 @page("octopus", 9)
