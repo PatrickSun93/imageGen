@@ -64,12 +64,11 @@ BOOKS.append(dict(
               ("#e9e6d9", "#98a088", "#121309", "#1d1e12", "#d78a54", "#857b63", "#343524")),
     diagram=[2, 4, 6, 8, 10],
     assets=[
-        "One single tornado, a tall twisting column of grey air hanging from a dark cloud base "
-        "down to the ground, wide at the top and narrow at the bottom. " + BG,
+        "One single tall twisting funnel of grey air, wide at the top and narrowing to a point at the bottom, its surface drawn as spiralling bands, floating alone with nothing around it and nothing under it. " + BG,
         "One single dark storm cloud with a low flat rotating base underneath it and a broad flat "
         "top. " + BG,
-        "One single red wooden barn with a pitched roof standing on flat ground. " + BG,
-        "One single wooden spinning top standing upright and spinning on its point. " + BG,
+        "One single red wooden barn with a pitched roof, floating alone with nothing around it and nothing under it. " + BG,
+        "One single wooden spinning top, upright and balanced on its point, floating alone with nothing around it and nothing under it. " + BG,
     ],
     pages=[
      ("叔叔在堪萨斯，\n发来一段视频。\n天边垂下一根柱子，\n慢慢扫过田地。\n那是龙卷风。",

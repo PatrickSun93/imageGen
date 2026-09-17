@@ -117,7 +117,7 @@ BOOKS.append(dict(
         + BG,
         "One single small round drop of water, seen from the side, its whole shape inside the "
         "picture. " + BG,
-        "One single tiny grey grain of dust, its whole shape inside the picture. " + BG,
+        "One single tiny grey grain of dust, floating alone with nothing around it and nothing under it, its whole shape inside the picture. " + BG,
         "One single yellow sun with straight rays reaching out from it, its whole shape inside "
         "the picture. " + BG,
     ],

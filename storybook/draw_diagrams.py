@@ -4121,6 +4121,28 @@ def _(d, pal):
 ASSET_CACHE = {}
 
 
+def _bg_colours(ring, k=3, tol=60):
+    """从边框那一圈里挑出最多 k 种背景色（按出现得多的排）。
+
+    做法很土：把颜色量化到 32 级，数一数哪些格子最多，从多到少取，
+    彼此距离小于 tol 的算同一种。够用了——要分的是「天蓝」和「土黄」
+    这种差得很远的颜色，不是细微的渐变。
+    """
+    import numpy as np
+    q = (ring // 32).astype(int)
+    key = q[:, 0] * 1024 + q[:, 1] * 32 + q[:, 2]
+    vals, counts = np.unique(key, return_counts=True)
+    out = []
+    for v in vals[np.argsort(-counts)]:
+        sel = ring[key == v]
+        c = np.median(sel, 0)
+        if all(np.abs(c - o).sum() > tol for o in out):
+            out.append(c)
+        if len(out) == k:
+            break
+    return out or [np.median(ring, 0)]
+
+
 def asset(book, n, tol=45):
     """读第 n 个素材并抠掉背景，返回裁到外框的 RGBA。
 
@@ -4148,8 +4170,13 @@ def asset(book, n, tol=45):
     a = np.asarray(src).astype(np.float32)
     ring = np.concatenate([a[:6].reshape(-1, 3), a[-6:].reshape(-1, 3),
                            a[:, :6].reshape(-1, 3), a[:, -6:].reshape(-1, 3)])
-    bg = np.median(ring, 0)
-    dist = np.abs(a - bg).sum(2)
+    # 底不一定是一块平色：云、龙卷风、太阳、爬树这类主体，模型总要顺手画上
+    # 蓝天和地面（提示里写死「背后什么都没有」也压不住，重出一轮还是这样）。
+    # 边框那一圈本来就同时含着天色和地色，所以把它聚成几类，每一类都当背景扣，
+    # 而不是只认一个中位色——只认一个的话，扣掉天就留着地。
+    bgs = _bg_colours(ring)
+    dist = np.min([np.abs(a - c).sum(2) for c in bgs], axis=0)
+    bg = bgs[0]
     chrom = a / (a.sum(2, keepdims=True) + 1e-6)
     dchrom = np.abs(chrom - bg / bg.sum()).sum(2) * 255
     lum, blum = a.mean(2), float(bg.mean())

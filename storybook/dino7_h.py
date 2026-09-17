@@ -165,7 +165,7 @@ BOOKS.append(dict(
         + BG,
         "One single wooden door standing upright and closed, seen straight from the front. " + BG,
         "One single small moth with its wings open, seen from above. " + BG,
-        "One single red rubber ball resting on the ground. " + BG,
+        "One single red rubber ball, floating alone with nothing around it and nothing under it. " + BG,
     ],
     pages=[
      ("天快要黑下来了，\n院子上空有个东西\n一晃就过去了。\n不像鸟那样滑，\n一忽儿高一忽儿低。",

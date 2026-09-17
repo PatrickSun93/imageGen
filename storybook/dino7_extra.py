@@ -55,8 +55,7 @@ EXTRA = {
         "no body and no animal attached to it.",
         "One single bare tree twig held upright, seen from the side, a thin brown woody stem "
         "with two small side shoots.",
-        "One single bird wing spread wide open, seen from above, layered rows of short covert "
-        "feathers along its front edge and long pointed flight feathers along its back edge.",
+        "One single bird wing spread wide open, seen from above, layered rows of short covert feathers along its front edge and long pointed flight feathers along its back edge, floating alone with nothing around it and nothing under it.",
     ],
     "herd": [
         "One single leafy tree standing upright, seen from the side, one straight trunk rising "
@@ -145,12 +144,11 @@ EXTRA = {
         "straight shaft with a thick knobbly swelling at each end, pale brown and pitted.",
     ],
     "cloud": [
-        "One single ball of white cotton wool resting on its own, seen from the side, soft "
-        "fluffy fibres standing out all round it.",
-        "One single grey puff of smoke curling upwards, seen from the side, thick and dense at "
-        "the bottom and thinning as it rises.",
+        "One single ball of white cotton wool, seen from the side, soft fluffy fibres standing out all round it, floating alone with nothing around it and nothing under it.",
+        "One single grey puff of smoke, seen from the side, thick and dense at one end and thinning to wisps at the other, floating alone with nothing around it and nothing under it.",
         "One single clear round drop of water with one tiny dark grain of dust at its very "
-        "centre, seen from the side, light shining through the drop.",
+        "centre, seen from the side, light shining through the drop, floating alone with "
+        "nothing around it and nothing under it.",
         "One single falling raindrop seen from the side, rounded and heavy at the bottom and "
         "drawn out to a point at the top.",
     ],
@@ -164,9 +162,7 @@ EXTRA = {
         "One single clear round drop of water seen from the side, light shining through it.",
     ],
     "tornado": [
-        "One single narrow rope-like tornado, a thin twisting column of grey air hanging "
-        "straight down from a flat cloud base, seen from the side, much narrower at its foot "
-        "than at its top.",
+        "One single very thin rope-like funnel of grey air, seen from the side, twisting and much narrower at its foot than at its top, floating alone with nothing around it and nothing under it.",
     ],
     # —— pages7_e ——
     "forecast": [
@@ -197,8 +193,7 @@ EXTRA = {
     "bat": [
         "One single human ear seen from the side, its outer rim curving round to the lobe and "
         "the opening shaded dark in the middle.",
-        "One single small survey boat floating upright on flat water, seen straight from the "
-        "side, a rounded hull with a low cabin and one short funnel.",
+        "One single small survey boat seen straight from the side, a rounded hull with a low cabin and one short funnel, floating alone with nothing around it and nothing under it (no water, no waves).",
     ],
     "octopus": [
         "One single octopus arm lying alone and curving in a gentle S, seen from the side with "

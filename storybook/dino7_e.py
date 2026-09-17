@@ -19,7 +19,7 @@ BOOKS.append(dict(
         "inside the picture. " + BG,
         "One single tall straight tree trunk standing upright, with no leaves and no branches. "
         + BG,
-        "One single bird foot with three long toes and sharp claws, seen from the side. " + BG,
+        "One single bird foot with three long toes and sharp claws, seen from the side, floating alone with nothing around it and nothing under it (not gripping a branch, no perch). " + BG,
     ],
     pages=[
      ("院子里有一棵大树，\n我怎么也爬不上去。\n爸爸说很久以前，\n有一种小恐龙，\n天天住在树上。",
