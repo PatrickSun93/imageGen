@@ -684,7 +684,7 @@ def _(d, pal):
         base = cy + h_ / 2 - 60
         d.line([cx - w_ / 2 + 20, base, cx + w_ / 2 - 20, base], fill=pal["ink"], width=9)
         ccy = (cy - 180) if high else (base - 95)
-        cloudlet(d, cx, ccy, cw, pal)
+        cloudlet(d, cx, ccy, cw, pal, fill=pal["soft"])   # 框底是 paper，云得换个色才看得出来
         ups.append(base - ccy)
     return (f"两格等大，两朵云由同一个 w={cw}px 画出来、形状完全一样："
             f"左格云心离地线 {ups[0]:.0f}px（飘在天上）/ 右格只离 {ups[1]:.0f}px（贴着地面）")
@@ -793,13 +793,15 @@ def _(d, pal):
     for x in up_x:
         arrow(d, x, 790, x, 250, pal, w=12, head=32)
     for x in dn_x:
-        arrow(d, x, 340, x, 780, pal, w=12, head=32)
-    arcs = ((350, 330, -60, -180), (674, 330, -120, 0),
-            (350, 730, 180, 60), (674, 730, 0, 120))
+        arrow(d, x, 380, x, 700, pal, w=12, head=32)
+    # 弧段的起点／终点都离直箭头的头尾留出 30px 以上的缺口：
+    # 接得太近会连成一条闭合的圈，那就读不出「从哪儿来、往哪儿去」了
+    arcs = ((350, 350, -60, -180), (674, 350, -120, 0),
+            (350, 760, 180, 60), (674, 760, 0, 120))
     for acx, acy, a0, a1 in arcs:
         arc_arrow(d, pal, acx, acy, 110, 80, a0, a1, w=10, head=26)
     return (f"1 朵积雨云的剖面：中间 {len(up_x)} 支向上的箭头（从 y=790 升到 y=250）+ "
-            f"两侧 {len(dn_x)} 支向下的箭头（从 y=340 沉到 y=780）+ "
+            f"两侧 {len(dn_x)} 支向下的箭头（从 y=380 沉到 y=700）+ "
             f"{len(arcs)} 段开口的弧线箭头把上下接起来，每段起点 1 个圆点、终点 1 个箭头尖，"
             f"段与段之间留着缺口，画面里没有一条首尾相接的闭环")
 
@@ -825,13 +827,14 @@ def _(d, pal):
 @page("hail", 7)
 def _(d, pal):
     """上去结一层，掉下来化一点，再上去又结一层 —— 来回好多趟，一趟一圈。"""
-    xs, slot = lay(6)
+    # 边距留宽一点：最大那颗半径 84px，用默认边距排到最右会顶出画面
+    xs, slot = lay(6, margin=MARGIN + 60)
     ys = (760, 300, 760, 300, 760, 300)
-    rs = (18, 26, 34, 42, 50, 58)
+    rs = (24, 36, 48, 60, 72, 84)
     ups = sum(1 for i in range(5) if ys[i + 1] < ys[i])
     downs = 5 - ups
     for i, (x, y, r) in enumerate(zip(xs, ys, rs)):
-        rings(d, x, y, r, i + 1, pal, w=4)
+        rings(d, x, y, r, i + 1, pal, w=5)
     for i in range(5):
         gap_arrow(d, pal, xs[i], ys[i], xs[i + 1], ys[i + 1], rs[i] + 18, rs[i + 1] + 26)
     return (f"{len(rs)} 颗越来越大的冰雹（半径 {'/'.join(str(r) for r in rs)}px），"
@@ -927,17 +930,17 @@ def _(d, pal):
     """柱子越细转得越凶，最凶的比高速路上的车还要快上一倍。"""
     n_slow, n_fast = 2, 5
     for cx, wbot, n_spin in ((S / 2 - 250, 150, n_slow), (S / 2 + 250, 60, n_fast)):
-        funnel(d, cx, 80, 430, 220, wbot, pal)
+        funnel(d, cx, 150, 520, 220, wbot, pal)
         for k in range(n_spin):
-            yy = 130 + k * (280 / max(1, n_spin - 1)) if n_spin > 1 else 280
-            half = (220 + (wbot - 220) * (yy - 80) / 350) / 2
+            yy = 200 + k * (280 / max(1, n_spin - 1)) if n_spin > 1 else 340
+            half = (220 + (wbot - 220) * (yy - 150) / 370) / 2
             arc_arrow(d, pal, cx, yy, half + 30, 24, 200, 380, w=8, head=20, dot=False)
             disc(d, cx - half - 30, yy, 9, pal["accent"], pal, w=0)
     x0 = MARGIN + 60
     full = S - 2 * MARGIN - 120
-    hbar(d, x0, 700, full * 0.50, 80, pal, pal["soft"])
-    hbar(d, x0, 850, full * 1.00, 80, pal, pal["accent"])
-    d.line([x0, 640, x0, 910], fill=pal["ink"], width=8)
+    hbar(d, x0, 720, full * 0.50, 80, pal, pal["soft"])
+    hbar(d, x0, 870, full * 1.00, 80, pal, pal["accent"])
+    d.line([x0, 660, x0, 930], fill=pal["ink"], width=8)
     return (f"上面 2 根柱子一样高（350px）：粗的底宽 150px、绕着 {n_slow} 段弧线箭头 / "
             f"细的底宽 60px、绕着 {n_fast} 段；每段弧都有起点圆点和箭头尖，不闭合。"
             f"下面 2 条左端对齐的横条：上条 50%（高速路上的车）/ 下条 100%（最凶的龙卷风），正好一倍")

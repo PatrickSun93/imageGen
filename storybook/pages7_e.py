@@ -449,3 +449,487 @@ def _(d, pal, img):
         arrow(d, x0 - 46, ys[i] + 46, x0 - 46, ys[i + 1] - 46, pal, w=8, head=20)
     return (f"4 行左端对齐、行间 3 支箭头：第 1 行整根 {full}px / 第 2 行空的（掉了）/ "
             f"第 3 行新长出来 {short}px / 第 4 行 {full}px，和第 1 行完全相同（长到该有的长短就停）")
+
+
+# ---------------------------------------------------------------- dognose（狗为什么一路闻过去）
+
+@page("dognose", 2)
+def _(d, pal):
+    """人 1 份，狗 40 份 —— 一个点一份，数得清。"""
+    one, many, cols = 1, 40, 8
+    rows = math.ceil(many / cols)
+    for (cx, cy, w_, h_), dog in zip(panel2(d, pal), (False, True)):
+        if dog:
+            for i in range(many):
+                disc(d, cx - w_ * 0.36 + (i % cols) * (w_ * 0.72 / (cols - 1)),
+                     cy - h_ * 0.30 + (i // cols) * (h_ * 0.60 / (rows - 1)),
+                     18, pal["accent"], pal, w=5)
+        else:
+            disc(d, cx, cy, 18, pal["soft"], pal, w=5)
+    return f"左格 {one} 个点（人）/ 右格 {many} 个点（狗，{rows} 行 ×{cols}），正好 {many // one} 倍"
+
+
+@page("dognose", 4)
+def _(d, pal, img):
+    """左边鼻孔和右边鼻孔分开来闻，两边闻到的不一样多。"""
+    hw, hh = place(img, asset("dognose", 2), S / 2, 275, h=430)
+    for seg in range(8):
+        y = 500 + seg * 62
+        d.line([S / 2, y, S / 2, y + 30], fill=pal["line"], width=6)
+    left_v, right_v = 170, 340
+    for s, v, key in ((-1, left_v, "soft"), (1, right_v, "accent")):
+        x = S / 2 + s * 240
+        d.rounded_rectangle([x - 70, 600, x + 70, 600 + v], radius=24,
+                            fill=pal[key], outline=pal["ink"], width=8)
+        arrow(d, x, 570, S / 2 + s * 70, 470, pal, w=9, head=24)
+    return (f"1 个狗鼻子（素材2，高 {hh}px）+ 中间 1 条竖虚线把左右分开；"
+            f"左边 1 根 {left_v}px 的条、右边 1 根 {right_v}px 的条（右边是左边的 {right_v / left_v:.0f} 倍），"
+            f"各 1 支指向那一侧鼻孔的箭头")
+
+
+@page("dognose", 6)
+def _(d, pal, img):
+    """吸气从鼻孔前面进，呼气从两边的缝里出 —— 出去的风绕开了前面的味。"""
+    cy = 330
+    hw, hh = place(img, asset("dognose", 2), S / 2, cy, h=430)
+    nose = cy + hh * 0.22
+    n = 14
+    for i in range(n):
+        disc(d, S / 2 - 150 + (i % 7) * 50, 760 + (i // 7) * 60, 13, pal["soft"], pal, w=0)
+    arrow(d, S / 2, 720, S / 2, nose + 30, pal, w=12, head=30)
+    for s in (-1, 1):
+        arrow(d, S / 2 + s * 60, nose + 20, S / 2 + s * 330, nose + 250, pal, w=10, head=26)
+    return (f"1 个狗鼻子：1 支从前面那团味道指向鼻孔的箭头（吸进去，向上）+ "
+            f"2 支从鼻子两侧斜着往后下方的箭头（呼出去，绕开前面）；前方 {n} 个味道小点没被吹散")
+
+
+@page("dognose", 8)
+def _(d, pal, img):
+    """一根电线杆上留着好几只狗写下的消息，一张压着一张。"""
+    pw, ph = place(img, asset("dognose", 3), 230, S - MARGIN - 40, h=820, anchor="bottom")
+    n = 6
+    for i in range(n):
+        x = 520 + (i % 2) * 40
+        y = 180 + i * 118
+        d.rectangle([x, y, x + 380, y + 150], fill=pal["paper"] if i % 2 else pal["soft"],
+                    outline=pal["ink"], width=7)
+    return f"1 根电线杆（素材3，{pw}×{ph}px）+ 右边 {n} 张一张压着一张的纸条（每张错开 40px，后贴的压住先贴的）"
+
+
+@page("dognose", 10)
+def _(d, pal):
+    """昨天有只猫从这儿走过去：味道一路变新，所以还知道是往哪边走的。"""
+    n = 7
+    base = S - MARGIN - 180
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=9)
+    xs, slot = lay(n)
+    r0, dr = 18, 7
+    for i, x in enumerate(xs):
+        footprint(d, x, base - 40 + (0 if i % 2 else 50), 74, pal, pal["bark"])
+        r = r0 + i * dr
+        d.ellipse([x - r, 420 - r, x + r, 420 + r], outline=pal["accent"], width=7)
+    arrow(d, xs[0], 200, xs[-1], 200, pal, w=12, head=32)
+    return (f"1 条地线上 {n} 个左右交错的脚印，每个上面 1 个味道圈：半径从 {r0}px 一路涨到 "
+            f"{r0 + (n - 1) * dr}px（越往前越新），上面 1 支指着走向的箭头")
+
+
+# ---------------------------------------------------------------- squirrel（松鼠记得埋在哪儿吗）
+
+@page("squirrel", 2)
+def _(d, pal):
+    """不是几十个，是好几千个 —— 左格 30 个，右格 3000 个。"""
+    few, cols_f = 30, 6
+    many, cols_m = 3000, 40
+    rows_f, rows_m = few // cols_f, many // cols_m
+    for (cx, cy, w_, h_), lots in zip(panel2(d, pal), (False, True)):
+        k, cols, rows = (many, cols_m, rows_m) if lots else (few, cols_f, rows_f)
+        for i in range(k):
+            px = cx - w_ * 0.42 + (i % cols) * (w_ * 0.84 / (cols - 1))
+            py = cy - h_ * 0.42 + (i // cols) * (h_ * 0.84 / (rows - 1))
+            if lots:
+                disc(d, px, py, 3.5, pal["bark"], pal, w=0)
+            else:
+                disc(d, px, py, 26, pal["accent"], pal, w=5)
+    return (f"左格 {few} 个（{rows_f} 行 ×{cols_f}，各半径 26px）/ "
+            f"右格 {many} 个（{rows_m} 行 ×{cols_m}，各半径 3.5px），正好 {many // few} 倍")
+
+
+@page("squirrel", 4)
+def _(d, pal, img):
+    """埋下去以前，先把果子在自己脸上蹭一蹭，蹭上一点味道。"""
+    sw, sh = place(img, asset("squirrel", 1), S / 2, 280, h=380)
+    cy = 760
+    x1, x2 = S / 2 - 210, S / 2 + 210
+    nut = asset("squirrel", 2)
+    aw, ah = place(img, nut, x1, cy, h=210)
+    place(img, nut, x2, cy, h=210)
+    arrow(d, x1 + 120, cy, x2 - 120, cy, pal, w=11, head=28)
+    for i in range(3):
+        r = 96 + i * 34
+        d.arc([x2 - r, cy - r, x2 + r, cy + r], -60, 60, fill=pal["accent"], width=8)
+    return (f"1 只松鼠（素材1，高 {sh}px）+ 下面 2 个一样大的果子（蹭之前 / 蹭之后，都高 {ah}px）"
+            f"+ 中间 1 支箭头；蹭过的那个右边 3 道味道弧线")
+
+
+@page("squirrel", 6)
+def _(d, pal):
+    """埋下十个，大概能挖回七八个，剩下的忘了。"""
+    buried, found = 10, 8
+    note = bars(d, pal, [(1.0, "soft", f"埋下 {buried} 个"),
+                         (found / buried, "accent", f"挖回 {found} 个")])
+    x0, full = MARGIN + 50, S - 2 * MARGIN - 100
+    cell, cy0 = full / buried, S / 2 - 95
+    for i, k in enumerate((buried, found)):
+        cy = cy0 + i * 190
+        for j in range(1, k):
+            d.line([x0 + cell * j, cy - 40, x0 + cell * j, cy + 40], fill=pal["ink"], width=5)
+    for j in range(found, buried):
+        cross(d, x0 + cell * (j + 0.5), cy0 + 190, 34, pal, w=10)
+    return (note + f"；上条切成 {buried} 格、下条切成 {found} 格（每格 {cell:.0f}px），"
+                   f"缺的 {buried - found} 格各 1 个叉：{buried} = {found} + {buried - found}")
+
+
+@page("squirrel", 9)
+def _(d, pal, img):
+    """忘掉的那两个就一直留在土里：外面下着雪，里面一动不动。"""
+    n = 3
+    top, h = MARGIN + 40, (S - 2 * MARGIN - 80) / n
+    note = bands(d, pal, n, top=top, h=h)
+    snow = 12
+    for i in range(snow):
+        disc(d, MARGIN + 70 + i * 74, top + h * (0.30 + 0.40 * (i % 2)), 12, pal["paper"], pal, w=0)
+    nut = asset("squirrel", 2)
+    aw, ah = 0, 0
+    for s in (-1, 1):
+        aw, ah = place(img, nut, S / 2 + s * 200, top + h * 1.5, h=210)
+    return note + f"；第 1 层（雪）里 {snow} 片雪点，第 2 层（土）里埋着 2 个果子，各高 {ah}px"
+
+
+@page("squirrel", 11)
+def _(d, pal, img):
+    """一片林子里，总有好些棵树是松鼠当初忘掉的那几个果子长成的。"""
+    n = 6
+    base = S - MARGIN - 90
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    xs, slot = lay(n)
+    tree = asset("squirrel", 3)
+    tw = slot * 0.78
+    for x in xs:
+        place(img, tree, x, base, w=tw, anchor="bottom")
+    nut = asset("squirrel", 2)
+    for i in (1, 4):
+        place(img, nut, xs[i] - 45, base, h=90, anchor="bottom")
+        d.ellipse([xs[i] - 125, base - 125, xs[i] + 35, base + 35], outline=pal["accent"], width=10)
+    return (f"同一条地线上 {n} 棵小树，各宽 {tw:.0f}px、槽宽 {slot:.0f}px（互不挨着）；"
+            f"其中 2 棵根边各 1 个果子、各 1 个圈（正好是前面忘掉的那 2 个）")
+
+
+# ---------------------------------------------------------------- bat（蝙蝠在黑里怎么飞）
+
+@page("bat", 2)
+def _(d, pal, img):
+    """那对翅膀是手指撑开的一层皮 —— 圈出翅膀上那几根指骨。"""
+    return magnify(img, d, pal, "bat", 1, (0.22, 0.46), w=S - 2 * MARGIN - 80, r=0.13)
+
+
+@page("bat", 4)
+def _(d, pal):
+    """我们的叫声稀，蝙蝠的叫声密 —— 密到我们的耳朵听不见。"""
+    slow, fast = 3, 15
+    x0, x1 = MARGIN + 60, S - MARGIN - 260
+    wave(d, x0, x1, 330, pal, cycles=slow, amp=110, w=12)
+    wave(d, x0, x1, 730, pal, cycles=fast, amp=52, w=8)
+    for cy, deaf in ((330, False), (730, True)):
+        ex = S - MARGIN - 130
+        d.arc([ex - 90, cy - 120, ex + 90, cy + 120], 270, 90, fill=pal["ink"], width=12)
+        d.arc([ex - 40, cy - 60, ex + 40, cy + 60], 270, 90, fill=pal["ink"], width=10)
+        if deaf:
+            cross(d, ex, cy, 96, pal, w=14)
+    return (f"上排 {slow} 个波（听得见的，一个波 {(x1 - x0) / slow:.0f}px）/ "
+            f"下排 {fast} 个波（蝙蝠的，一个波 {(x1 - x0) / fast:.0f}px，密 {fast // slow} 倍）；"
+            f"两排各 1 只耳朵，下排那只打了 1 个叉")
+
+
+@page("bat", 5)
+def _(d, pal, img):
+    """声音喊出去一直往前跑，撞到东西弹回来 —— 去一道、回一道，方向分得清。"""
+    place(img, asset("bat", 1), MARGIN + 180, 512, w=300)
+    dw, dh = place(img, asset("bat", 2), S - MARGIN - 170, 512, h=560)
+    x0, x1 = 400, 634
+    wave(d, x0, x1, 300, pal, cycles=4, amp=56, w=10)
+    arrow(d, x0, 180, x1, 180, pal, w=11, head=30)
+    wave(d, x0, x1, 720, pal, cycles=4, amp=56, w=10)
+    arrow(d, x1, 840, x0, 840, pal, w=11, head=30)
+    return ("1 只蝙蝠 + 1 扇门（都是素材）：上面 1 道声波 + 1 支向右的箭头（喊出去），"
+            "下面 1 道声波 + 1 支向左的箭头（弹回来），两道分开画")
+
+
+@page("bat", 6)
+def _(d, pal, img):
+    """弹回来得快，东西就在近处；弹回来得慢，东西就还远着。"""
+    bat, door = asset("bat", 1), asset("bat", 2)
+    trips = []
+    for cy, dxx in ((300, 520), (740, 900)):
+        place(img, bat, MARGIN + 130, cy, w=220)
+        place(img, door, dxx, cy, h=280)
+        x0, x1 = MARGIN + 260, dxx - 95
+        arrow(d, x0, cy - 130, x1, cy - 130, pal, w=10, head=26)
+        arrow(d, x1, cy + 130, x0, cy + 130, pal, w=10, head=26)
+        trips.append(x1 - x0)
+    return (f"两排同一只蝙蝠、同一扇门：上排来回的路 {trips[0]:.0f}px（近），"
+            f"下排 {trips[1]:.0f}px（远，{trips[1] / trips[0]:.1f} 倍）；"
+            f"每排都有 1 支向右的箭头（喊出去）和 1 支向左的箭头（弹回来）")
+
+
+@page("bat", 8)
+def _(d, pal, img):
+    """远的时候慢慢叫，快抓住了就叫成一串。"""
+    place(img, asset("bat", 1), MARGIN + 150, 512, w=260)
+    place(img, asset("bat", 3), S - MARGIN - 140, 512, h=200)
+    x0, x1 = MARGIN + 300, S - MARGIN - 260
+    d.line([x0, 512, x1, 512], fill=pal["ink"], width=8)
+    n, r = 12, 0.87
+    wts = [r ** i for i in range(n - 1)]
+    tot = sum(wts)
+    pxs = [x0]
+    for k in wts:
+        pxs.append(pxs[-1] + (x1 - x0) * k / tot)
+    for px in pxs:
+        d.line([px, 512 - 70, px, 512 + 70], fill=pal["accent"], width=7)
+    arrow(d, x0, 512 - 200, x1, 512 - 200, pal, w=11, head=30)
+    return (f"1 只蝙蝠 → 1 只小虫，中间 {n} 下叫声：第 1 个间隔 {pxs[1] - pxs[0]:.0f}px，"
+            f"最后 1 个 {pxs[-1] - pxs[-2]:.0f}px（越靠近虫子越密），上面 1 支指向虫子的箭头")
+
+
+@page("bat", 11)
+def _(d, pal, img):
+    """这个本事叫回声定位；海里的船也这么干，往水底喊一声，听回声有多深。"""
+    for (cx, cy, w_, h_), boat in zip(panel2(d, pal), (False, True)):
+        top = cy - h_ * 0.40
+        if boat:
+            d.line([cx - w_ * 0.46, top + 90, cx + w_ * 0.46, top + 90], fill=pal["ink"], width=8)
+            d.rectangle([cx - 40, top - 80, cx + 40, top], fill=pal["soft"],
+                        outline=pal["ink"], width=8)
+            poly(d, [(cx - 150, top), (cx + 150, top), (cx + 105, top + 90), (cx - 105, top + 90)],
+                 pal, pal["paper"], 8)
+        else:
+            place(img, asset("bat", 1), cx, top + 40, w=w_ * 0.62)
+        floor_y = cy + h_ * 0.30
+        d.rectangle([cx - w_ * 0.46, floor_y, cx + w_ * 0.46, floor_y + 120],
+                    fill=pal["bark"], outline=pal["ink"], width=8)
+        arrow(d, cx - 90, top + 190, cx - 90, floor_y - 40, pal, w=10, head=26)
+        arrow(d, cx + 90, floor_y - 40, cx + 90, top + 190, pal, w=10, head=26)
+    return ("左格 1 只蝙蝠 + 下面 1 片墙 / 右格 1 条船 + 下面 1 片海底："
+            "两格各 1 支向下的箭头（喊出去）和 1 支向上的箭头（回声弹回来），两支分开左右画")
+
+
+# ---------------------------------------------------------------- octopus（章鱼有三个心脏）
+
+@page("octopus", 2)
+def _(d, pal, img):
+    """两个小心脏挨着鳃，把血压进鳃里；中间那个大的，再把血送到全身。"""
+    xs, slot = lay(3)
+    heart, gill = asset("octopus", 2), asset("octopus", 3)
+    small, big, cy = 180, 300, 620
+    for i, x in enumerate(xs):
+        place(img, heart, x, cy, h=big if i == 1 else small)
+    for i in (0, 2):
+        place(img, gill, xs[i], 250, h=180)
+        arrow(d, xs[i], cy - small / 2 - 10, xs[i], 360, pal, w=10, head=26)
+    for s in (-1, 1):
+        arrow(d, xs[1] + s * 60, cy + 170, xs[1] + s * 250, cy + 330, pal, w=10, head=26)
+    return (f"3 个心脏排成一排：两边 2 个小的（各高 {small}px）+ 中间 1 个大的（高 {big}px，"
+            f"是小的 {big / small:.1f} 倍）；2 个小的各 1 支向上的箭头指向它头上的鳃，"
+            f"大的 2 支向下的箭头指向全身")
+
+
+@page("octopus", 4)
+def _(d, pal, img):
+    """游起来的时候，中间那个大心脏会停下来不跳；爬的时候才跳。"""
+    oct_, heart = asset("octopus", 1), asset("octopus", 2)
+    for (cx, cy, w_, h_), swim in zip(panel2(d, pal), (True, False)):
+        place(img, oct_, cx, cy - h_ * 0.22, w=w_ * 0.86)
+        hy = cy + h_ * 0.25
+        place(img, heart, cx, hy, h=190)
+        if swim:
+            cross(d, cx, hy, 120, pal, w=16)
+        else:
+            for i in range(3):
+                r = 120 + i * 34
+                d.ellipse([cx - r, hy - r, cx + r, hy + r], outline=pal["accent"], width=8)
+    return ("两格的章鱼和心脏一样大：左格 游（大心脏上 1 个叉 = 停住不跳）/ "
+            "右格 爬（大心脏外面 3 圈跳动的圈）")
+
+
+@page("octopus", 6)
+def _(d, pal, img):
+    """神经细胞一大半长在那八条胳膊上，脑袋里反而少。"""
+    place(img, asset("octopus", 1), S / 2, MARGIN + 170, h=280)
+    arms, head = 0.65, 0.35
+    note = bars(d, pal, [(arms, "accent", "八条胳膊"), (head, "soft", "脑袋")])
+    x0, full = MARGIN + 50, S - 2 * MARGIN - 100
+    cy = S / 2 - 95
+    for j in range(1, 8):
+        x = x0 + full * arms * j / 8
+        d.line([x, cy - 40, x, cy + 40], fill=pal["ink"], width=5)
+    return (note + f"；上面那条切成 8 格（八条胳膊各 1 格，每格 {full * arms / 8:.0f}px），"
+                   f"下面那条是脑袋，只有上面那条的 {head / arms * 100:.0f}%")
+
+
+@page("octopus", 9)
+def _(d, pal, img):
+    """全身上下只有嘴是硬的：嘴那么大的洞，整只章鱼都挤得过去。"""
+    beak = 96
+    xs, slot = lay(3)
+    cy = S / 2
+    note = steps(img, d, pal, "octopus", [1, None, 1], cy=cy, arrows=False)
+    d.ellipse([xs[0] + 40 - beak / 2, cy + 60 - beak / 2,
+               xs[0] + 40 + beak / 2, cy + 60 + beak / 2], outline=pal["accent"], width=10)
+    d.rectangle([xs[1] - 46, MARGIN + 110, xs[1] + 46, S - MARGIN - 110],
+                fill=pal["bark"], outline=pal["ink"], width=8)
+    disc(d, xs[1], cy, beak / 2, pal["ground"], pal, w=8)
+    arrow(d, xs[0] + slot * 0.42, cy, xs[1] - 70, cy, pal, w=10, head=26)
+    arrow(d, xs[1] + 70, cy, xs[2] - slot * 0.42, cy, pal, w=10, head=26)
+    return (note + f"（中间那格是墙，不放素材）；墙上的洞直径 {beak}px，"
+                   f"和左边圈出来的嘴一模一样大（{beak}px）；1 支箭头进洞、1 支箭头出洞")
+
+
+@page("octopus", 11)
+def _(d, pal, img):
+    """胳膊一贴上石头，吸盘就尝出底下藏没藏着螃蟹。"""
+    place(img, asset("octopus", 1), 250, 320, w=380)
+    base = S - MARGIN - 60
+    d.line([MARGIN, base, S - MARGIN, base], fill=pal["ink"], width=10)
+    poly(d, [(620, base), (660, base - 210), (790, base - 260), (910, base - 190), (950, base)],
+         pal, pal["bark"], 9)
+    d.ellipse([700, base - 150, 900, base], fill=pal["ground"], outline=pal["ink"], width=7)
+    cw, ch = place(img, asset("octopus", 4), 800, base - 14, h=110, anchor="bottom")
+    pts = []
+    for k in range(25):
+        t = k / 24
+        pts.append((330 + 360 * t, 430 + (base - 250 - 430) * t + 120 * math.sin(math.pi * t)))
+    d.line(pts, fill=pal["soft"], width=26, joint="curve")
+    n_suck = 7
+    for i in range(n_suck):
+        px, py = pts[3 + i * 3]
+        disc(d, px, py, 13, pal["paper"], pal, w=5)
+    arrow(d, 650, 620, 450, 450, pal, w=9, head=24)
+    return (f"1 只章鱼 + 1 条搭到石头上的胳膊（{n_suck} 个吸盘）+ 石头底下 1 个洞、洞里 1 只螃蟹"
+            f"（高 {ch}px，被石头挡住一半）；1 支从接触的那头指回脑袋的箭头")
+
+
+# ---------------------------------------------------------------- penguin（企鹅站在冰上为什么不冷）
+
+@page("penguin", 2)
+def _(d, pal, img):
+    """企鹅身上三层：外面羽毛，羽毛底下压着空气，皮底下还有厚厚的脂肪。"""
+    pw, ph = place(img, asset("penguin", 1), S / 2, MARGIN + 270, h=250, anchor="bottom")
+    n, top, h = 3, 330, 200
+    note = bands(d, pal, n, mark=2, top=top, h=h)
+    feathers, airs = 9, 12
+    for i in range(feathers):
+        x = MARGIN + 90 + i * 100
+        d.line([x, top + 30, x + 40, top + h - 30], fill=pal["ink"], width=9)
+    for i in range(airs):
+        disc(d, MARGIN + 80 + i * 78, top + h + h * (0.35 if i % 2 else 0.65),
+             15, pal["paper"], pal, w=5)
+    return (note + f"；上面 1 只企鹅（高 {ph}px）；第 1 层 {feathers} 根羽毛 / "
+                   f"第 2 层 {airs} 个空气小点 / 第 3 层（脂肪）填了强调色")
+
+
+@page("penguin", 4)
+def _(d, pal, img):
+    """羽毛根上的绒把空气兜住了，空气不爱传热，就成了一层被子。"""
+    xs, slot = lay(2)
+    cy = S / 2
+    fw, fh = place(img, asset("penguin", 2), xs[0], cy, h=560)
+    bw, bh = place(img, asset("penguin", 3), xs[1], cy, w=slot * 0.74)
+    n = 10
+    for i in range(n):
+        s = -1 if i < 5 else 1
+        disc(d, xs[0] + s * (130 + (i % 2) * 40), cy + 120 + (i % 5) * 56,
+             15, pal["paper"], pal, w=5)
+    arrow(d, xs[0] + slot * 0.40, cy, xs[1] - slot * 0.40, cy, pal, w=11, head=28)
+    return (f"2 格 + 中间 1 支箭头：1 根带绒的羽毛（高 {fh}px，绒的两边共兜着 {n} 个空气小点）"
+            f"→ 1 条被子（宽 {bw}px）")
+
+
+@page("penguin", 6)
+def _(d, pal):
+    """往下的血管和往上的紧紧贴在一块儿：热还没到脚，就被带回去了。"""
+    cx = S / 2
+    top, foot_y = MARGIN + 60, S - MARGIN - 190
+    poly(d, [(cx - 160, top), (cx + 160, top), (cx + 120, foot_y), (cx - 120, foot_y)],
+         pal, pal["paper"], 10)
+    poly(d, [(cx - 120, foot_y), (cx + 120, foot_y), (cx + 230, foot_y + 130),
+             (cx - 230, foot_y + 130)], pal, pal["bark"], 10)
+    down_x, up_x = cx - 70, cx + 70
+    per = 3
+    for x, dn in ((down_x, True), (up_x, False)):
+        d.rounded_rectangle([x - 24, top + 40, x + 24, foot_y - 40], radius=24,
+                            fill=pal["soft"] if dn else pal["paper"],
+                            outline=pal["ink"], width=7)
+        for k in range(per):
+            ay = top + 140 + k * (foot_y - top - 320) / 2
+            if dn:
+                arrow(d, x, ay, x, ay + 110, pal, w=9, head=24)
+            else:
+                arrow(d, x, ay + 110, x, ay, pal, w=9, head=24)
+    heat = 4
+    for k in range(heat):
+        hy = top + 180 + k * 150
+        arrow(d, down_x + 30, hy, up_x - 30, hy, pal, w=8, head=20)
+    return (f"1 条腿的剖面，里面 2 条并排、互不相接的血管（中心相距 {up_x - down_x}px）："
+            f"左边那条往下（{per} 支向下的箭头）、右边那条往上（{per} 支向上的箭头）；"
+            f"中间 {heat} 支从往下那条指向往上那条的热箭头，脚在最下面")
+
+
+@page("penguin", 8)
+def _(d, pal):
+    """天最冷的时候挤成一团：外面的顶着风，里面的暖烘烘。"""
+    rings, step, rr = 4, 88, 40
+    cx, cy = 560, S / 2
+    total, warm = 0, 0
+    for k in range(rings + 1):
+        m = 1 if k == 0 else 6 * k
+        for i in range(m):
+            a = 2 * math.pi * i / m + (0.5 if k % 2 else 0.0)
+            inner = k <= 2
+            disc(d, cx + k * step * math.cos(a), cy + k * step * math.sin(a), rr,
+                 pal["accent"] if inner else pal["paper"], pal, w=7)
+            total += 1
+            warm += 1 if inner else 0
+    winds = 3
+    for i in range(winds):
+        arrow(d, MARGIN + 20, 300 + i * 212, cx - rings * step - rr - 20, 300 + i * 212,
+              pal, w=11, head=28)
+    return (f"1 团 {total} 只（中心 1 + 4 圈 6/12/18/24，圈距 {step}px、每只半径 {rr}px，挨着但不压着）："
+            f"里面 {warm} 只填暖色、外面 {total - warm} 只；左边 {winds} 支吹到团外沿的风箭头")
+
+
+@page("penguin", 10)
+def _(d, pal):
+    """团里比团外暖得多，中间那只有时候还嫌热，自己挪到边上去。"""
+    cx, cy, R, rr = 440, 540, 280, 46
+    n, gap_i = 14, 12
+    disc(d, cx, cy, R, pal["accent"], pal, w=10)
+    on = 0
+    for i in range(n):
+        if i == gap_i:
+            continue
+        a = 2 * math.pi * i / n - math.pi / 2
+        disc(d, cx + R * math.cos(a), cy + R * math.sin(a), rr, pal["paper"], pal, w=7)
+        on += 1
+    ga = 2 * math.pi * gap_i / n - math.pi / 2
+    disc(d, cx, cy, rr, pal["soft"], pal, w=7)
+    gx, gy = cx + (R + 130) * math.cos(ga), cy + (R + 130) * math.sin(ga)
+    disc(d, gx, gy, rr, pal["soft"], pal, w=7)
+    arrow(d, cx + 62 * math.cos(ga), cy + 62 * math.sin(ga),
+          gx - 70 * math.cos(ga), gy - 70 * math.sin(ga), pal, w=10, head=26)
+    inside, outside = 420, 120
+    for x, v, key in ((850, inside, "accent"), (950, outside, "soft")):
+        d.rounded_rectangle([x - 40, 900 - v, x + 40, 900], radius=20,
+                            fill=pal[key], outline=pal["ink"], width=8)
+    return (f"1 个填了暖色的圆（团里）+ 圆周上 {on} 只 + 1 处空出来的缺口；"
+            f"中间那只（圆心 1 只）顺着 1 支箭头穿过缺口挪到圆外（圆外那只是同 1 只，挪之后）；"
+            f"右边 2 根温度条：团里 {inside}px、团外 {outside}px（{inside / outside:.1f} 倍）")
