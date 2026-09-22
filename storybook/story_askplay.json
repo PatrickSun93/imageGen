@@ -1,0 +1,108 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "我可以一起玩吗",
+  "subtitle": "想加入的时候，这样开口",
+  "slug": "askplay",
+  "seed_base": 121000,
+  "character": "wearing a light blue t-shirt, grey shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey",
+  "style_label": "水彩",
+  "keyword": "",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2419",
+    "soft": "#7a6e5a",
+    "ground": "#f3efe6",
+    "paper": "#fdfbf6",
+    "accent": "#b8552e",
+    "bark": "#8a7f66",
+    "line": "#ddd4c2",
+    "ink_d": "#ece5d8",
+    "soft_d": "#a99b83",
+    "ground_d": "#16130e",
+    "paper_d": "#211d16",
+    "accent_d": "#e0805a",
+    "bark_d": "#8a7f66",
+    "line_d": "#37301f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "公园的沙坑里，\n两个小朋友在挖一条河。",
+      "scene": "A medium shot of the little boy seen from his knees up, standing at the edge of a sandpit in a park watching two children dig a channel in the sand, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "我很想一起挖，\n可是我站着不动。",
+      "scene": "A medium shot of the little boy seen from his knees up, standing still at the edge of the sandpit, holding his own hands, watching the two children, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey.",
+      "has_boy": true
+    },
+    {
+      "n": 3,
+      "zh": "我小声说了一句，\n他们没听见。\n我更不敢说了。",
+      "scene": "A medium shot of the little boy seen from his knees up, standing behind the two children in the sandpit, his mouth barely open, looking down, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey.",
+      "has_boy": true
+    },
+    {
+      "n": 4,
+      "zh": "妈妈蹲下来说：\n「他们不是不要你，\n是没听见。」",
+      "scene": "A medium shot of the little boy seen from his knees up, crouching beside his mother at the edge of the sandpit, his mother speaking to him, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey.",
+      "has_boy": true
+    },
+    {
+      "n": 5,
+      "zh": "妈妈教我三句话。\n第一句：走近一点，\n看着他们。",
+      "scene": "A medium shot of the little boy seen from his knees up, taking a step closer to the two children in the sandpit, looking straight at them, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey.",
+      "has_boy": true
+    },
+    {
+      "n": 6,
+      "zh": "第二句：大声一点。\n「我可以一起玩吗？」",
+      "scene": "A medium shot of the little boy seen from his knees up, standing in the sandpit with the two children, his mouth open, one hand lifted a little, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey.",
+      "has_boy": true
+    },
+    {
+      "n": 7,
+      "zh": "第三句：说我能做什么。\n「我来搬沙子。」",
+      "scene": "A medium shot of the little boy seen from his knees up, holding a small plastic bucket of sand and offering it to the two children in the sandpit, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey.",
+      "has_boy": true
+    },
+    {
+      "n": 8,
+      "zh": "一个小朋友说：\n「好啊，你挖这边。」",
+      "scene": "A medium shot of the little boy seen from his knees up, kneeling in the sandpit beside one of the children, both digging the same channel, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey.",
+      "has_boy": true
+    },
+    {
+      "n": 9,
+      "zh": "有时候他们会说不。\n那不是我不好，\n是他们正玩到一半。",
+      "scene": "A medium shot of the little boy seen from his knees up, sitting on the edge of the sandpit alone, calm, while the two children keep digging, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey.",
+      "has_boy": true
+    },
+    {
+      "n": 10,
+      "zh": "我可以等一等，\n或者先玩别的。\n等会儿再问一次。",
+      "scene": "A medium shot of the little boy seen from his knees up, playing on his own with a small toy dinosaur on a low wall beside the sandpit, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey.",
+      "has_boy": true
+    },
+    {
+      "n": 11,
+      "zh": "后来河挖通了，\n水一下子流过去，\n我们三个都笑了。",
+      "scene": "A medium shot of the little boy seen from his knees up, standing in the sandpit with the two children as water runs along the sand channel, all smiling, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey.",
+      "has_boy": true
+    },
+    {
+      "n": 12,
+      "zh": "想加入的时候：\n走近，\n问出来，\n说我能做什么。",
+      "scene": "A medium shot of the little boy seen from his knees up, standing in the park holding a small bucket, looking at the viewer, cheerful and relaxed, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, soft watercolour with visible paper grain and gentle washes, sky blue, sand and warm grey.",
+      "has_boy": true
+    }
+  ]
+}

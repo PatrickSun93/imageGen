@@ -27,7 +27,7 @@ for f in sorted(glob.glob(os.path.join(SB, "dino7_[b-z].py"))):
 from dino7_a import BOOKS                                 # noqa: E402
 
 BAD_SCENE = ("paper", "collage", "print", " page", "book", "babies")
-FACE = ("A head-and-shoulders portrait of the little boy", "turned towards the viewer", "iris")
+FACE = ("A medium shot of the little boy", "turned towards the viewer", "natural body proportions")
 from dino7_extra import EXTRA
 
 ASSET_NEG = ("shadow, cast shadow, drop shadow, ground, floor, base, pedestal, platform, "
@@ -49,10 +49,29 @@ def FACE_FIX(sc):
     放在落地这一步做，不在源码里替换：那句话在 f-string 里被折行拆成了两段，
     字面匹配不到。
     """
-    return sc.replace(
+    sc = sc.replace(
         "his face large in the frame and turned towards the viewer",
         "only his head and shoulders inside the picture and everything below his chest "
         "outside the frame, his face turned straight towards the viewer")
+    # 2026-09-22：上面那句也不行。模型没有把镜头拉近，而是把头画大了——大头、鼓眼、
+    # 红肿的脸颊，好几张吓人（用户原话「惊悚系列」）。改回正常比例：脸小一点，
+    # 可是像个孩子。眼睛那句也拿掉，它把眼睛画成了鼓出来的卡通眼。
+    for a, b in PROPORTION:
+        sc = sc.replace(a, b)
+    return sc
+
+
+PROPORTION = [
+    ("A head-and-shoulders portrait of the little boy",
+     "A medium shot of the little boy seen from his knees up"),
+    ("only his head and shoulders inside the picture and everything below his chest outside "
+     "the frame, his face turned straight towards the viewer",
+     "his face turned towards the viewer, drawn with the natural body proportions of a real "
+     "five-year-old child, his head in proportion to his body and about one fifth of his "
+     "height, not a big-headed cartoon"),
+    ("both eyes clearly drawn with white, a dark round iris and a small bright highlight",
+     "his eyes calm and natural"),
+]
 
 
 warn = 0

@@ -1,0 +1,228 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "霸王龙不想停",
+  "subtitle": "小鼓手敲门了吗",
+  "slug": "trexwontstop",
+  "seed_base": 133000,
+  "character": "wearing a yellow t-shirt, navy shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, loose sketchy pencil lines with soft transparent watercolour washes, lots of plain white paper around the figures, muted faded colours, simple rounded characters with small dot eyes and calm deadpan expressions, no words, no letters and no writing anywhere in the picture, moss green, warm yellow and soft sky blue",
+  "style_label": "铅笔淡彩",
+  "keyword": "",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2419",
+    "soft": "#7a6e5a",
+    "ground": "#f5f2ea",
+    "paper": "#fffdf8",
+    "accent": "#c0603a",
+    "bark": "#8a7f66",
+    "line": "#e2dccd",
+    "ink_d": "#ece5d8",
+    "soft_d": "#a99b83",
+    "ground_d": "#16130e",
+    "paper_d": "#211d16",
+    "accent_d": "#e0805a",
+    "bark_d": "#8a7f66",
+    "line_d": "#37301f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "嘿，小朋友。\n你知道霸王龙最讨厌什么吗？",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, standing in a park, looking curious, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 2,
+      "zh": "不是下雨。",
+      "has_boy": false,
+      "scene": "A big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes standing in the rain, completely unbothered"
+    },
+    {
+      "n": 3,
+      "zh": "不是蚊子。",
+      "has_boy": false,
+      "scene": "A big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes with a tiny mosquito sitting on its nose, completely unbothered"
+    },
+    {
+      "n": 4,
+      "zh": "是——\n停下来。",
+      "has_boy": false,
+      "scene": "A big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes frozen in the middle of running, looking very annoyed"
+    },
+    {
+      "n": 5,
+      "zh": "它一玩起来，\n就停不下来。",
+      "has_boy": false,
+      "scene": "A big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes bouncing around happily in a meadow"
+    },
+    {
+      "n": 6,
+      "zh": "跑步。",
+      "has_boy": false,
+      "scene": "A big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes running fast across the grass"
+    },
+    {
+      "n": 7,
+      "zh": "捉迷藏。",
+      "has_boy": false,
+      "scene": "A big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes hiding badly behind a very thin tree, most of its body showing"
+    },
+    {
+      "n": 8,
+      "zh": "搭石头城堡，\n一玩就是一整天。",
+      "has_boy": false,
+      "scene": "A big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes stacking stones into a little castle as the sun goes down"
+    },
+    {
+      "n": 9,
+      "zh": "可是，有一件事，\n它不停也得停。",
+      "has_boy": false,
+      "scene": "A big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes stopping suddenly, looking down at its own round belly"
+    },
+    {
+      "n": 10,
+      "zh": "每只恐龙的肚子里，\n都住着一个小鼓手。",
+      "has_boy": false,
+      "scene": "A round dinosaur looking down in surprise at its own belly, a small drum drawn faintly on the belly"
+    },
+    {
+      "n": 11,
+      "zh": "咚咚咚。",
+      "has_boy": false,
+      "scene": "One small drum with two drumsticks on white paper, little motion marks around it"
+    },
+    {
+      "n": 12,
+      "zh": "这是在说：\n该去厕所了。",
+      "has_boy": false,
+      "scene": "A small wooden outhouse standing behind a big tree in a green jungle"
+    },
+    {
+      "n": 13,
+      "zh": "三角龙一听见，马上就去。\n从来不磨蹭。",
+      "has_boy": false,
+      "scene": "A triceratops walking briskly towards a wooden outhouse behind a tree"
+    },
+    {
+      "n": 14,
+      "zh": "长脖子恐龙的鼓手在很下面，\n声音要走好久，\n才传到脑袋。",
+      "has_boy": false,
+      "scene": "A long-necked dinosaur with small wavy motion marks travelling up its long neck"
+    },
+    {
+      "n": 15,
+      "zh": "所以，它总是很早很早\n就出发。",
+      "has_boy": false,
+      "scene": "A long-necked dinosaur setting off at dawn towards a wooden outhouse"
+    },
+    {
+      "n": 16,
+      "zh": "不过，你一定要记住一件事。",
+      "has_boy": false,
+      "scene": "One small drum alone in the middle of white paper"
+    },
+    {
+      "n": 17,
+      "zh": "千万别让小鼓手等。",
+      "has_boy": false,
+      "scene": "A small drum shaking with motion marks while a dinosaur turns its back on it"
+    },
+    {
+      "n": 18,
+      "zh": "你不理它，\n它就越敲越响——",
+      "has_boy": false,
+      "scene": "A small drum shaking hard, leaves trembling on nearby bushes"
+    },
+    {
+      "n": 19,
+      "zh": "最后，它干脆不敲了。",
+      "has_boy": false,
+      "scene": "A silent small drum, a dinosaur beside it with very wide eyes"
+    },
+    {
+      "n": 20,
+      "zh": "那天，他和霸王龙\n在比赛搭石头塔。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, stacking stones into a tower on the grass next to a big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 21,
+      "zh": "谁搭得高，谁就赢。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, concentrating on his stone tower while a big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes builds its own beside him, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 22,
+      "zh": "咚咚咚。\n霸王龙说：「等一下，\n我再玩一会儿。」",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, watching a big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes wave a tiny arm dismissively and keep stacking stones, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 23,
+      "zh": "咚咚咚咚！\n「再等一下，我快赢了！」",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, looking worried at a big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes, who is stacking stones with its knees pressed together, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 24,
+      "zh": "轰！轰！轰！",
+      "has_boy": false,
+      "scene": "A big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes leaping straight up in the air with huge eyes"
+    },
+    {
+      "n": 25,
+      "zh": "霸王龙夹着腿，\n就跑。",
+      "has_boy": false,
+      "scene": "A big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes running with its knees pressed together, looking desperate"
+    },
+    {
+      "n": 26,
+      "zh": "厕所在山那边！",
+      "has_boy": false,
+      "scene": "A green hill, a tiny wooden outhouse far away on the other side, a big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes small in the front"
+    },
+    {
+      "n": 27,
+      "zh": "要过小河。",
+      "has_boy": false,
+      "scene": "A big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes leaping over a small stream"
+    },
+    {
+      "n": 28,
+      "zh": "跳过三块石头。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, running ahead and pointing the way while a big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes hops across three stepping stones, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 29,
+      "zh": "钻过一个山洞。\n他在前面帮它开路。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, holding branches aside at the mouth of a cave while a big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes hurries through, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 30,
+      "zh": "差一点点……差一点点……\n扑通！坐上去了。\n霸王龙长长地松了一口气。",
+      "has_boy": false,
+      "scene": "A big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes hidden behind tall bushes next to a wooden outhouse, only its relieved face showing above them"
+    },
+    {
+      "n": 31,
+      "zh": "回来一看，石头塔还在，\n一块都没倒。\n「原来一听见就去，\n一点都不耽误玩。」",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, standing beside two stone towers with a big friendly green T. rex with tiny arms, a soft rounded body and small dot eyes, both smiling, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 32,
+      "zh": "现在你知道了：\n小鼓手一敲，马上就去，\n游戏会等你。\n你的小鼓手，现在敲门了吗？",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, walking towards a bathroom door holding a toy dinosaur, looking back over his shoulder, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    }
+  ]
+}

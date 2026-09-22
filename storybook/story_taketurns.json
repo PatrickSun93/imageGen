@@ -1,0 +1,108 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "轮到谁了",
+  "subtitle": "一个沙漏，两个人都不吵",
+  "slug": "taketurns",
+  "seed_base": 122000,
+  "character": "wearing an orange t-shirt, blue shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream",
+  "style_label": "蜡笔",
+  "keyword": "",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2419",
+    "soft": "#7a6e5a",
+    "ground": "#f3efe6",
+    "paper": "#fdfbf6",
+    "accent": "#b8552e",
+    "bark": "#8a7f66",
+    "line": "#ddd4c2",
+    "ink_d": "#ece5d8",
+    "soft_d": "#a99b83",
+    "ground_d": "#16130e",
+    "paper_d": "#211d16",
+    "accent_d": "#e0805a",
+    "bark_d": "#8a7f66",
+    "line_d": "#37301f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "家里只有一只大恐龙，\n今天来了两个小朋友。",
+      "scene": "A medium shot of the little boy seen from his knees up, holding a large toy dinosaur while another child stands close by, both looking at the toy, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "我们两个都拉着它。\n谁也不放手。",
+      "scene": "A medium shot of the little boy seen from his knees up, holding one end of a large toy dinosaur while another child holds the other end, both pulling, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream.",
+      "has_boy": true
+    },
+    {
+      "n": 3,
+      "zh": "「是我先拿的！」\n「是我先看见的！」",
+      "scene": "A medium shot of the little boy seen from his knees up, facing another child, both mouths open in a shout, the toy dinosaur between them, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream.",
+      "has_boy": true
+    },
+    {
+      "n": 4,
+      "zh": "妈妈没有把恐龙收走。\n她拿来一个小沙漏。",
+      "scene": "A medium shot of the little boy seen from his knees up, watching his mother set a small sand timer on the low table in front of them, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream.",
+      "has_boy": true
+    },
+    {
+      "n": 5,
+      "zh": "「沙子漏完，就换人。」\n沙漏翻过来，\n沙子开始跑。",
+      "scene": "A medium shot of the little boy seen from his knees up, watching the sand run down inside a small sand timer on the table, the other child beside him, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream.",
+      "has_boy": true
+    },
+    {
+      "n": 6,
+      "zh": "我先玩。\n我看着沙子，\n玩得很认真。",
+      "scene": "A medium shot of the little boy seen from his knees up, playing with the toy dinosaur on the floor while the sand timer stands on the table nearby, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream.",
+      "has_boy": true
+    },
+    {
+      "n": 7,
+      "zh": "沙子漏完了。\n我把恐龙递过去，\n手有点舍不得。",
+      "scene": "A medium shot of the little boy seen from his knees up, handing the toy dinosaur to the other child, his hand still half holding it, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream.",
+      "has_boy": true
+    },
+    {
+      "n": 8,
+      "zh": "轮到他了。\n我在旁边看，\n数他走了几步。",
+      "scene": "A medium shot of the little boy seen from his knees up, sitting on the floor watching the other child walk the toy dinosaur along the carpet, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream.",
+      "has_boy": true
+    },
+    {
+      "n": 9,
+      "zh": "沙漏又翻过来。\n这回轮到我，\n我不用抢。",
+      "scene": "A medium shot of the little boy seen from his knees up, taking the toy dinosaur back as the other child turns the sand timer over, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream.",
+      "has_boy": true
+    },
+    {
+      "n": 10,
+      "zh": "后来我们不用沙漏了。\n他说「给你」，\n我说「谢谢」。",
+      "scene": "A medium shot of the little boy seen from his knees up, receiving the toy dinosaur from the other child, both children calm, the timer left on the table, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream.",
+      "has_boy": true
+    },
+    {
+      "n": 11,
+      "zh": "两个人一起玩，\n比一个人抢着玩\n好玩多了。",
+      "scene": "A medium shot of the little boy seen from his knees up, kneeling on the floor with the other child, moving two toy dinosaurs together, both smiling, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream.",
+      "has_boy": true
+    },
+    {
+      "n": 12,
+      "zh": "轮到谁了？\n看沙漏。\n漏完就换人。",
+      "scene": "A medium shot of the little boy seen from his knees up, holding the small sand timer up in front of him, looking at the viewer, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, wax crayon drawing on textured paper with visible grainy strokes, warm orange, teal and cream.",
+      "has_boy": true
+    }
+  ]
+}

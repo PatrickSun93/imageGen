@@ -1,0 +1,228 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "恐龙想加入",
+  "subtitle": "想加入的时候，要说暗号",
+  "slug": "dinojoin",
+  "seed_base": 134000,
+  "character": "wearing a coral t-shirt, grey shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, loose sketchy pencil lines with soft transparent watercolour washes, lots of plain white paper around the figures, muted faded colours, simple rounded characters with small dot eyes and calm deadpan expressions, no words, no letters and no writing anywhere in the picture, grass green, warm grey and soft coral",
+  "style_label": "铅笔淡彩",
+  "keyword": "",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2419",
+    "soft": "#7a6e5a",
+    "ground": "#f5f2ea",
+    "paper": "#fffdf8",
+    "accent": "#c0603a",
+    "bark": "#8a7f66",
+    "line": "#e2dccd",
+    "ink_d": "#ece5d8",
+    "soft_d": "#a99b83",
+    "ground_d": "#16130e",
+    "paper_d": "#211d16",
+    "accent_d": "#e0805a",
+    "bark_d": "#8a7f66",
+    "line_d": "#37301f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "嘿，小朋友。\n你知道吗？",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, standing on a grassy hill, looking curious, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 2,
+      "zh": "恐龙玩游戏的时候，\n有一句暗号。",
+      "has_boy": false,
+      "scene": "The soft rounded friendly cartoon dinosaurs with small dot eyes huddled close in a circle, whispering"
+    },
+    {
+      "n": 3,
+      "zh": "不知道暗号的，\n谁也进不去。",
+      "has_boy": false,
+      "scene": "The soft rounded friendly cartoon dinosaurs with small dot eyes in a closed circle with their backs out, one small dinosaur outside peeking in"
+    },
+    {
+      "n": 4,
+      "zh": "今天，我偷偷告诉你。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, leaning in with one hand cupped behind his ear, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 5,
+      "zh": "不过，你得先听我讲完。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, sitting cross-legged on the grass, listening, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 6,
+      "zh": "恐龙最爱玩的游戏，\n叫「滚大蛋」。",
+      "has_boy": false,
+      "scene": "A huge round stone egg sitting on top of a grassy hill"
+    },
+    {
+      "n": 7,
+      "zh": "一颗比房子还大的石头蛋。",
+      "has_boy": false,
+      "scene": "A giant round stone egg next to a small cottage, taller than the cottage"
+    },
+    {
+      "n": 8,
+      "zh": "从山坡上滚下来，\n大家一起追。",
+      "has_boy": false,
+      "scene": "The soft rounded friendly cartoon dinosaurs with small dot eyes chasing a giant rolling stone egg down a hill"
+    },
+    {
+      "n": 9,
+      "zh": "三角龙管推。",
+      "has_boy": false,
+      "scene": "A triceratops pushing a giant stone egg with its horns"
+    },
+    {
+      "n": 10,
+      "zh": "长脖子恐龙管在前面看路。",
+      "has_boy": false,
+      "scene": "A long-necked dinosaur at the front looking far ahead"
+    },
+    {
+      "n": 11,
+      "zh": "最小的恐龙管喊\n「一、二、三」。",
+      "has_boy": false,
+      "scene": "A tiny dinosaur standing on a rock with its mouth wide open"
+    },
+    {
+      "n": 12,
+      "zh": "每只恐龙都有一件事做。\n所以想加入，\n光说「我要玩」不够。",
+      "has_boy": false,
+      "scene": "The soft rounded friendly cartoon dinosaurs with small dot eyes around a giant stone egg, each busy with a different job"
+    },
+    {
+      "n": 13,
+      "zh": "暗号是两句话。",
+      "has_boy": false,
+      "scene": "One small dinosaur whispering into the ear of another"
+    },
+    {
+      "n": 14,
+      "zh": "第一句：\n「我可以一起玩吗？」",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, asking a triceratops a question politely, hands together, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 15,
+      "zh": "第二句：\n「我可以帮你们……」\n后面，说你会做的事。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, pointing at himself while a triceratops listens, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 16,
+      "zh": "不过，你一定要记住一件事：\n千万别不说暗号，\n就冲进去抢那颗蛋。",
+      "has_boy": false,
+      "scene": "A giant stone egg on a hilltop, the soft rounded friendly cartoon dinosaurs with small dot eyes standing guard around it"
+    },
+    {
+      "n": 17,
+      "zh": "恐龙会以为你是来抢东西的。\n呼——全跑光，\n只剩一地脚印。",
+      "has_boy": false,
+      "scene": "An empty hillside covered with dinosaur footprints leading away into bushes"
+    },
+    {
+      "n": 18,
+      "zh": "那天，他在山坡下面，\n看见恐龙们在滚大蛋。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, at the bottom of a hill looking up at the soft rounded friendly cartoon dinosaurs with small dot eyes gathered around a giant stone egg, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 19,
+      "zh": "他太想玩了。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, with both fists clenched in excitement, eyes wide, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 20,
+      "zh": "暗号？\n忘了。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, running up the hill as fast as he can, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 21,
+      "zh": "他一下冲过去，\n一把抱住那颗蛋。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, hugging a giant stone egg with both arms, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 22,
+      "zh": "呼——\n恐龙全跑光了。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, still hugging a giant stone egg while the soft rounded friendly cartoon dinosaurs with small dot eyes flee into the bushes, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 23,
+      "zh": "地上只剩一圈脚印，\n和他。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, standing alone next to a giant stone egg on a hilltop, footprints all around him, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 24,
+      "zh": "没人扶，\n大石头蛋开始往下滚。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, reaching out as a giant stone egg starts to roll away down the hill, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 25,
+      "zh": "越滚越快！",
+      "has_boy": false,
+      "scene": "A giant stone egg rolling fast down a grassy slope"
+    },
+    {
+      "n": 26,
+      "zh": "他一个人在后面追。\n追不上！",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, running down the hill after a giant rolling stone egg, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 27,
+      "zh": "蛋滚过小河，滚过草地，\n眼看就要滚进泥坑。",
+      "has_boy": false,
+      "scene": "A giant stone egg rolling towards a big brown mud puddle"
+    },
+    {
+      "n": 28,
+      "zh": "他停下来。\n他想起来了。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, stopping on the hillside, thinking hard, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 29,
+      "zh": "他转身对着树丛，大声说：\n「我可以一起玩吗？\n我可以帮你们挡住蛋！」",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, facing a row of bushes with his hands cupped around his mouth, calling out, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 30,
+      "zh": "树丛里探出一个个脑袋。\n恐龙们冲出来了！",
+      "has_boy": false,
+      "scene": "Dinosaur heads popping out of the bushes, then the soft rounded friendly cartoon dinosaurs with small dot eyes running out"
+    },
+    {
+      "n": 31,
+      "zh": "三角龙推，长脖子看路，\n他站在泥坑前面，\n一伸手——挡住了！",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, stopping a giant stone egg at the edge of a mud puddle with both hands while the soft rounded friendly cartoon dinosaurs with small dot eyes help, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    },
+    {
+      "n": 32,
+      "zh": "现在你知道暗号了：\n走过去，问一句，\n再说你能帮什么。\n要是他们说「等一下」，\n那是游戏正玩到一半。\n等一等，他们会叫你的。",
+      "has_boy": true,
+      "scene": "A medium shot of the little boy seen from his knees up, sitting on top of a giant stone egg with the soft rounded friendly cartoon dinosaurs with small dot eyes, all laughing, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+    }
+  ]
+}

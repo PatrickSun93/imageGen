@@ -1,0 +1,108 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "我在搭东西，等一下",
+  "subtitle": "不说「不行」，说「等一下」",
+  "slug": "waitplay",
+  "seed_base": 120000,
+  "character": "wearing a mustard yellow t-shirt, green shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown",
+  "style_label": "彩色铅笔",
+  "keyword": "",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2419",
+    "soft": "#7a6e5a",
+    "ground": "#f3efe6",
+    "paper": "#fdfbf6",
+    "accent": "#b8552e",
+    "bark": "#8a7f66",
+    "line": "#ddd4c2",
+    "ink_d": "#ece5d8",
+    "soft_d": "#a99b83",
+    "ground_d": "#16130e",
+    "paper_d": "#211d16",
+    "accent_d": "#e0805a",
+    "bark_d": "#8a7f66",
+    "line_d": "#37301f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "我在地毯上搭恐龙乐园。\n一块，两块，三块。\n围栏快搭好了。",
+      "scene": "A medium shot of the little boy seen from his knees up, kneeling on a living room carpet building a fence of wooden blocks around three toy dinosaurs, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "表弟跑过来，\n蹲在我旁边。\n「我也要玩。」",
+      "scene": "A medium shot of the little boy seen from his knees up, with a younger boy crouching down next to him on the carpet, both looking at the blocks, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown.",
+      "has_boy": true
+    },
+    {
+      "n": 3,
+      "zh": "我一下子把手挡住。\n「不行！」\n我怕他把围栏碰倒。",
+      "scene": "A medium shot of the little boy seen from his knees up, putting one arm in front of his block fence, his mouth a small firm line, a younger boy beside him, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown.",
+      "has_boy": true
+    },
+    {
+      "n": 4,
+      "zh": "表弟走开了。\n我搭完了围栏，\n可是心里有点闷。",
+      "scene": "A medium shot of the little boy seen from his knees up, sitting alone on the carpet beside the finished block fence, looking down, the room quiet, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown.",
+      "has_boy": true
+    },
+    {
+      "n": 5,
+      "zh": "爸爸坐下来问我：\n「你是不想他碰，\n还是不想他玩？」",
+      "scene": "A medium shot of the little boy seen from his knees up, sitting on the carpet with his father, who sits beside him and looks at him while talking, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown.",
+      "has_boy": true
+    },
+    {
+      "n": 6,
+      "zh": "我说：我不想倒。\n爸爸说：那就告诉他\n「等一下」，不是「不行」。",
+      "scene": "A medium shot of the little boy seen from his knees up, listening to his father, who holds up one finger, the blocks and toy dinosaurs in front of them, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown.",
+      "has_boy": true
+    },
+    {
+      "n": 7,
+      "zh": "我们先练一遍。\n爸爸当表弟，\n我说：「我在搭，等一下。」",
+      "scene": "A medium shot of the little boy seen from his knees up, practising with his father on the carpet, his own hand raised with one finger up, saying a word, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown.",
+      "has_boy": true
+    },
+    {
+      "n": 8,
+      "zh": "第二天，表弟又来了。\n我停了一下，\n说：「我在搭，等一下好吗？」",
+      "scene": "A medium shot of the little boy seen from his knees up, looking at the younger boy and holding up one finger, his other hand still on a block, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown.",
+      "has_boy": true
+    },
+    {
+      "n": 9,
+      "zh": "他等了一会儿。\n我搭好最后一块，\n说：「好了，你来。」",
+      "scene": "A medium shot of the little boy seen from his knees up, placing the last block on the fence while the younger boy waits beside him, watching, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown.",
+      "has_boy": true
+    },
+    {
+      "n": 10,
+      "zh": "我给他两只恐龙，\n说：「你摆这边，\n我摆那边。」",
+      "scene": "A medium shot of the little boy seen from his knees up, handing two toy dinosaurs to the younger boy, the block fence between them on the carpet, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown.",
+      "has_boy": true
+    },
+    {
+      "n": 11,
+      "zh": "我们一起摆了好久。\n围栏没有倒，\n乐园比刚才还大。",
+      "scene": "A medium shot of the little boy seen from his knees up, sitting with the younger boy beside a big block enclosure full of toy dinosaurs, both smiling, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown.",
+      "has_boy": true
+    },
+    {
+      "n": 12,
+      "zh": "下次我也这样做：\n停一停，\n说出来，\n再给一个办法。",
+      "scene": "A medium shot of the little boy seen from his knees up, sitting on the carpet holding one toy dinosaur, looking at the viewer, calm and pleased, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, coloured pencil drawing with visible layered strokes and soft grain, warm mustard, leaf green and soft brown.",
+      "has_boy": true
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "我不是故意的",
+  "subtitle": "弄坏了，可以补回来",
+  "slug": "sorryfix",
+  "seed_base": 124000,
+  "character": "wearing a blue striped t-shirt, grey shorts and white sneakers, short black hair",
+  "style": "children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow",
+  "style_label": "钢笔淡彩",
+  "keyword": "",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2419",
+    "soft": "#7a6e5a",
+    "ground": "#f3efe6",
+    "paper": "#fdfbf6",
+    "accent": "#b8552e",
+    "bark": "#8a7f66",
+    "line": "#ddd4c2",
+    "ink_d": "#ece5d8",
+    "soft_d": "#a99b83",
+    "ground_d": "#16130e",
+    "paper_d": "#211d16",
+    "accent_d": "#e0805a",
+    "bark_d": "#8a7f66",
+    "line_d": "#37301f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "小朋友搭了一座高塔，\n上面站着一只恐龙。",
+      "scene": "A medium shot of the little boy seen from his knees up, looking at a tall tower of wooden blocks with a toy dinosaur on top, another child beside it, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow.",
+      "has_boy": true
+    },
+    {
+      "n": 2,
+      "zh": "我跑过去看，\n胳膊碰到了塔。\n哗啦——",
+      "scene": "A medium shot of the little boy seen from his knees up, beside a toppling tower of wooden blocks, blocks scattering on the floor, his arm still out, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow.",
+      "has_boy": true
+    },
+    {
+      "n": 3,
+      "zh": "塔倒了。\n小朋友的眼睛红了。",
+      "scene": "A medium shot of the little boy seen from his knees up, standing among scattered blocks while the other child sits on the floor looking upset, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow.",
+      "has_boy": true
+    },
+    {
+      "n": 4,
+      "zh": "我想说「不是我」，\n可是话卡在喉咙里。",
+      "scene": "A medium shot of the little boy seen from his knees up, standing still with his mouth closed and his hands pressed together, looking at the floor, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow.",
+      "has_boy": true
+    },
+    {
+      "n": 5,
+      "zh": "我蹲下来，\n小声说：\n「对不起，我碰倒了。」",
+      "scene": "A medium shot of the little boy seen from his knees up, crouching down beside the other child among the blocks, speaking quietly, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow.",
+      "has_boy": true
+    },
+    {
+      "n": 6,
+      "zh": "说完还不够。\n我问他：\n「我帮你搭回去，好吗？」",
+      "scene": "A medium shot of the little boy seen from his knees up, holding one wooden block out towards the other child, both sitting among the fallen blocks, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow.",
+      "has_boy": true
+    },
+    {
+      "n": 7,
+      "zh": "他点了点头。\n我们一起捡积木。",
+      "scene": "A medium shot of the little boy seen from his knees up, picking up wooden blocks from the floor together with the other child, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow.",
+      "has_boy": true
+    },
+    {
+      "n": 8,
+      "zh": "这回我们搭得宽一点，\n下面大，上面小。",
+      "scene": "A medium shot of the little boy seen from his knees up, building a wide-based block tower on the floor with the other child, both concentrating, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow.",
+      "has_boy": true
+    },
+    {
+      "n": 9,
+      "zh": "恐龙又站上去了。\n这回没有倒。",
+      "scene": "A medium shot of the little boy seen from his knees up, placing a toy dinosaur on top of a rebuilt block tower, the other child watching closely, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow.",
+      "has_boy": true
+    },
+    {
+      "n": 10,
+      "zh": "我以后走路会看着点，\n从旁边绕过去。",
+      "scene": "A medium shot of the little boy seen from his knees up, walking carefully around the finished block tower, his arms close to his body, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow.",
+      "has_boy": true
+    },
+    {
+      "n": 11,
+      "zh": "他把恐龙递给我：\n「你也放一只吧。」",
+      "scene": "A medium shot of the little boy seen from his knees up, receiving a toy dinosaur from the other child beside the rebuilt tower, both calm, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow.",
+      "has_boy": true
+    },
+    {
+      "n": 12,
+      "zh": "弄坏了不可怕：\n说对不起，\n再一起补回来。",
+      "scene": "A medium shot of the little boy seen from his knees up, standing beside the block tower holding a toy dinosaur, looking at the viewer, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural. Art style: children's picture book illustration, fine ink line drawing with light watercolour washes, soft blue, warm grey and pale yellow.",
+      "has_boy": true
+    }
+  ]
+}
