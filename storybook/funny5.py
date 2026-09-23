@@ -49,7 +49,8 @@ DINOS = {
     "K": "a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts",
 }
 
-SEEDS = {("dragonsocks", 23): 130923}   # 这几页换过种子：原种子的构图总在前景塞一排东西
+SEEDS = {("dragonsocks", 23): 130923, ("dinowantsplay", 22): 132922, ("dinojoin", 12): 134912,
+         ("trexloses", 18): 135918, ("trexloses", 28): 135928}   # 这几页换过种子：原种子的构图总在前景塞一排东西
 
 # 每页：(旁白, 画面, 他在不在)。画面里的 {c} 换成这本书的主角描述。
 BOOKS = [
@@ -148,7 +149,7 @@ BOOKS = [
   ("树叶全被吹掉了。\n树很冷。", "A completely bare tree shivering with little wobbly lines, its leaves in a heap on the ground, {T} looking sheepish beside it", 0),
   ("三角龙玩滑梯，\n角会卡住。", "{R} stuck halfway down a playground slide by its horns, only one dinosaur in the picture", 0),
   ("所以它最会排队。\n从来不挤，\n一次都没有。", "{G} waiting in a neat line at a playground slide, the triceratops patiently at the back", 0),
-  ("长脖子恐龙最会轮流：\n让大家一个一个，\n从它的脖子上滑下来。", "{L} lying on the grass with its long neck stretched down to the ground like a slide, {R} sliding happily down its long neck", 0),
+  ("长脖子恐龙最会轮流：\n让大家一个一个，\n从它的脖子上滑下来。", "{R} sitting on the back of {L} and sliding happily down its long sloping neck towards the grass, the long neck curving gently down to the ground, no playground in the picture", 0),
   ("不过，有一件事，\n你一定、一定要记住。", "{R} sitting all alone in the middle of an empty lawn, looking at the viewer", 0),
   ("千万别对恐龙说「不行！」\n然后扭头就走。", "{R} with its head drooping, watching a trail of small footprints walking away across the lawn", 0),
   ("恐龙一听见「不行」，\n就会把尾巴一盘，\n脑袋一缩——", "{R} curling up tight into a ball, tucking in its head and tail", 0),
@@ -211,7 +212,7 @@ BOOKS = [
   ("嘿，小朋友。\n你知道吗？\n恐龙玩游戏的时候，\n有一句暗号。", "{G} huddled close together in a circle on a grassy hill, whispering", 0),
   ("不知道暗号的，\n谁也进不去。", "{G} standing in a closed circle with their backs turned outwards, and {M} outside the circle peeking in", 0),
   ("今天，我偷偷告诉你。\n你凑近一点。", "{T} leaning its big head in close towards the viewer as if to whisper, only one dinosaur in the picture", 0),
-  ("再近一点。\n……好，太近了。", "A big friendly green T. rex face leaning in very close to the viewer, smiling gently, its round head filling most of the picture", 0),
+  ("再近一点。\n……好，太近了。", "{T} leaning its big head so far forward that it tips over and lands flat on its nose, its tiny arms waving, only one dinosaur in the picture", 0),
   ("不过，你得先听我讲完。", "{T} sitting down on a grassy hill like a storyteller, only one dinosaur in the picture", 0),
   ("恐龙最爱玩的游戏，\n叫「滚大蛋」。", "One huge round grey stone egg sitting on top of a grassy hill, no dinosaurs in the picture", 0),
   ("一颗比房子还大的石头蛋。", "A giant round grey stone egg standing next to a small cottage, much taller than the cottage, no dinosaurs in the picture", 0),
@@ -334,18 +335,18 @@ BOOKS = [
   ("扁长的龙，从最后面，\n一下挤到了最前面。", "A line of four dragons standing and waiting for a swing, and {A} sliding flat along the ground under their legs from the back of the line to the front", 0),
   ("圆圆的龙，\n干脆坐在秋千上，\n不下来了。", "{B} sitting on a swing with its arms folded, not moving, only one dragon in the picture", 0),
   ("细高的龙站在最后面，\n等得脖子\n都长了一截。", "{C} standing at the very back with its neck stretched extra long and a sleepy face, only one dragon in the picture", 0),
-  ("最小的龙，\n还没挤到，\n天就黑了。", "{D} sitting alone on the grass at dusk, the swing far away, only one dragon in the picture", 0),
+  ("最小的龙，\n还没挤到，\n天就黑了。", "{D} sitting alone on the grass at dusk, looking at a swing far away with {B} sitting on it", 0),
   ("不过，有一件事，\n你一定、一定要记住：\n千万别让七条龙\n同时坐一个秋千。", "One single empty swing in a park at evening, nothing else in the picture", 0),
   ("秋千会荡到月亮上去。", "A wooden swing seat flying high up towards a big round pale moon, three long dragon tails dangling down from the swing seat, a few small stars on the speckled paper, no people in the picture", 0),
   ("那天，你也来公园玩。", "{K} walking in through the gate of a park, no dragons in the picture", 0),
   ("你看见七条龙挤成一团，\n谁也不让谁。", "{K} watching {S} squashed together around one swing", 0),
   ("你说：\n「我有个办法。」", "{K} raising one hand high in front of {S}", 0),
   ("「我们排队。\n每人荡十下，\n就换人。」", "{K} pointing to a line drawn on the ground in front of a swing, {S} listening", 0),
-  ("龙都说好。\n它们开始数。", "{S} standing in one neat line behind a swing", 0),
+  ("龙都说好。\n它们开始数。", "{S} standing in one neat line behind one single swing, only one swing in the picture", 0),
   ("第一条龙数：\n「一、二、五、九、十！」", "{A} swinging on a swing while the other dragons in the line look at it suspiciously", 0),
   ("太快了！", "The dragons in the line looking at each other with raised eyebrows", 0),
   ("第二条龙数：\n「一……二……三……」\n数到一半，睡着了。", "{B} fast asleep sitting on a swing, the line of dragons waiting behind", 0),
-  ("太慢了！", "A line of dragons waiting, one of them yawning hugely", 0),
+  ("太慢了！", "A line of dragons waiting for a swing, one of them drooping sleepily with its eyes closed and its head resting on the next dragon's shoulder", 0),
   ("第三条龙数到十，\n又从一开始数。", "{C} swinging with a sly little smile while the line of dragons frowns", 0),
   ("大家都急了。", "{S} stamping their feet beside a swing, little puffs of dust", 0),
   ("你说：\n「那我们一起数。」", "{K} standing beside a swing with {S} gathered around", 0),
