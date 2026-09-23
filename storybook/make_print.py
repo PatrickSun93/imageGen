@@ -71,12 +71,14 @@ def place_text(im, text, size, title=False):
     w, h = int(max(widths)) + 110, lh * len(lines) + 70
     xs = {"左": SAFE + 20, "中": (PX - w) // 2, "右": PX - SAFE - 20 - w}
     ys = {"上": SAFE + 20, "下": PX - SAFE - 20 - h}
+    if title:
+        # 书名块大，只放上下两条常常压住主角（龙轮到了吗的封面压住了那个秋千），
+        # 所以书名多一排居中的候选位置，左中右都能放
+        ys["中"] = (PX - h) // 2
     cands = []
     for yk, y in ys.items():
         for xk, x in xs.items():
             score = busyness(im, (x, y, x + w, y + h)) * (1.0 if yk == "上" else 1.1)
-            if title and xk != "中":
-                continue
             cands.append((score, yk + xk, x, y))
     busy, where, x0, y0 = min(cands)
     if busy > BUSY or title:

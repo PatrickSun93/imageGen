@@ -325,7 +325,7 @@ BOOKS = [
                   "a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one"),
             "K": DINOS["K"]},
       pages=[
-  ("嘿，小朋友。\n公园里有一个秋千。", "One single empty swing hanging from a wooden frame in a quiet park, nothing else in the picture", 0),
+  ("嘿，小朋友。\n公园里有一个秋千。", "One single empty swing hanging on two ropes from a thick branch of one big tree in a quiet park, only one swing in the picture, nothing else in the picture", 0),
   ("只有一个。", "A close view of the same single empty swing, looking a little lonely, nothing else in the picture", 0),
   ("今天，来了七条龙。", "{S} arriving through the gate of a park", 0),
   ("七条龙，\n一个秋千。", "{S} standing in a row staring at one single swing", 0),
