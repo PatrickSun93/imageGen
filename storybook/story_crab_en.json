@@ -33,64 +33,64 @@
   "pages": [
     {
       "n": 1,
-      "zh": "还是那片海滩。\n今天我敢走近一点了。\n我蹲下来找贝壳。",
+      "zh": "还是那片海滩。\n今天我敢走近一点了。\n我蹲下来找贝壳。\n找一个会跑的。",
       "scene": "A little boy crouching on wet sand close to the water's edge, looking down at the sand for shells, a small bucket beside him, bright open beach, calm sea behind.",
       "has_boy": true,
-      "en": "It's the same beach.\nToday I'm brave enough to go a little closer.\nI squat down to look for shells."
+      "en": "It's the same beach.\nToday I'm brave enough to go a little closer.\nI squat down to look for shells.\nI'm looking for one that runs."
     },
     {
       "n": 2,
-      "zh": "我捡到一个漂亮的贝壳。\n咦——\n它在动！\n它长出脚来，跑起来了。",
+      "zh": "我捡到一个漂亮的贝壳。\n咦——它在动！\n它长出脚来，跑起来了。",
       "scene": "Close up of a little boy's open palm holding a pretty spiral shell, small crab legs poking out of the shell opening, the boy's surprised face behind slightly out of focus.",
       "has_boy": true,
-      "en": "I pick up a pretty shell.\nHuh—\nit's moving!\nIt grows legs and runs away!"
+      "en": "I pick up a pretty shell.\nHuh—it's moving!\nIt grows legs and runs away!"
     },
     {
       "n": 3,
-      "zh": "爸爸说：\n「这不是贝壳。\n这是「寄居蟹」。\n它住在别人的空壳里。」",
+      "zh": "爸爸说：\n「这不是贝壳。\n这是寄居蟹。\n它住在别人的空壳里。」",
       "scene": "A father crouching beside a little boy on the sand, both looking closely at a hermit crab sitting in a spiral shell on the boy's palm, warm and gentle.",
       "has_boy": true,
-      "en": "Dad says,\n“That's not just a shell.\nIt's a hermit crab.\nIt lives in somebody else's empty shell.”"
+      "en": "Dad says,\n“That's not a shell.\nIt's a hermit crab.\nIt lives in somebody else's empty shell.”"
     },
     {
       "n": 4,
-      "zh": "寄居蟹自己没有硬壳。\n它前面是硬的，\n后面软软的、卷卷的。\n所以它要找一个空壳，\n钻进去，背着走。",
+      "zh": "寄居蟹自己没有硬壳。\n它前面是硬的，\n后面软软的、卷卷的。\n所以它要找一个空壳，\n钻进去，背着走。\n走到哪儿，家到哪儿。",
       "scene": "A clear friendly picture book diagram of a hermit crab half out of its shell on plain sand, showing hard front claws and a soft curled belly, gentle and cute, not scary, plenty of empty space around it.",
       "has_boy": false,
-      "en": "A hermit crab doesn't have a hard shell of its own.\nThe front of it is hard,\nbut the back is soft and curly.\nSo it finds an empty shell,\ncrawls inside, and carries it around."
+      "en": "A hermit crab doesn't have a hard shell of its own.\nThe front of it is hard,\nbut the back is soft and curly.\nSo it finds an empty shell,\ncrawls inside, and carries it around.\nWherever it goes, its house goes too."
     },
     {
       "n": 5,
-      "zh": "我把它放回沙子上。\n它伸出脚，慢慢走了。\n壳在背上，一晃一晃。",
+      "zh": "我把它放回沙子上。\n它背着家，\n慢慢走远了。\n身后一串小脚印。",
       "scene": "A hermit crab walking away across wet sand carrying its spiral shell tilted on its back, small tracks left behind it, low close viewpoint.",
       "has_boy": false,
-      "en": "I put it back on the sand.\nIt sticks out its legs and walks away slowly,\nits shell wobbling on its back."
+      "en": "I put it back on the sand.\nIt carries its house on its back\nand slowly walks away,\nleaving a trail of tiny footprints."
     },
     {
       "n": 6,
-      "zh": "可是它一直在长大。\n壳不会跟着长大。\n有一天，\n壳就太小了。",
-      "scene": "A hermit crab whose body has grown too big for its shell, part of it squeezed out, sitting on the sand with a slightly worried face, gentle and sympathetic, soft light.",
+      "zh": "可是它一直在长大。\n壳不会跟着长大。\n有一天，\n屁股露出来了。",
+      "scene": "One hermit crab in a small spiral shell that is too small for it, its soft curled pink tail poking out of the back of the shell, looking surprised, no people in the picture",
       "has_boy": false,
-      "en": "But it keeps on growing.\nThe shell doesn't grow with it.\nOne day,\nthe shell is too small."
+      "en": "But it keeps on growing.\nThe shell doesn't grow with it.\nOne day,\nits bottom sticks out!"
     },
     {
       "n": 7,
-      "zh": "于是它要搬家。\n它在沙滩上找啊找。\n试一个——太小。\n再试一个——太大。",
+      "zh": "于是它要搬家。\n试一个——太小。\n再试一个——太大。\n再试一个——刚刚好。",
       "scene": "A hermit crab beside three empty spiral shells of different sizes on the sand, reaching toward one to compare, busy and small, lots of sand around.",
       "has_boy": false,
-      "en": "So it has to move.\nIt searches and searches the beach.\nIt tries one—too small.\nIt tries another—too big."
+      "en": "So it has to move.\nIt tries one—too small.\nIt tries another—too big.\nIt tries one more—just right!"
     },
     {
       "n": 8,
-      "zh": "找到合适的了！\n它飞快地钻出来，\n一下子钻进新壳。\n这一下，\n是它最紧张的时候。",
-      "scene": "A hermit crab in mid movement between an old shell and a new bigger shell on the sand, a quick hurried moment, soft motion lines, warm sand background.",
+      "zh": "它飞快地钻出来，\n一下子钻进新壳。\n这一秒，\n屁股光着。\n是它最紧张的时候。",
+      "scene": "One hermit crab with its soft curled pink tail uncovered, hurrying across the sand into a big empty spiral shell, no people in the picture",
       "has_boy": false,
-      "en": "It found one that fits!\nIt zips out of the old shell\nand into the new one, quick as a wink.\nThat moment\nis when it feels the most nervous."
+      "en": "It zips out of the old shell\nand into the new one, quick as a wink.\nFor that one second,\nits bottom is bare.\nThat's when it feels the most nervous."
     },
     {
       "n": 9,
       "zh": "有时候，\n好几只寄居蟹排成一队。\n大的换了新壳，\n旧壳就留给小的。\n一个传一个，谁都有房子。",
-      "scene": "Several hermit crabs of different sizes lined up in a neat row on the sand from biggest to smallest, each next to a shell, shells being passed along the line, sunny and orderly, charming.",
+      "scene": "Four hermit crabs of different sizes standing in a row on the sand from biggest to smallest, each in a spiral shell, one empty shell beside the biggest crab, no people in the picture",
       "has_boy": false,
       "en": "Sometimes\na bunch of hermit crabs line up.\nThe big one moves into a new shell\nand leaves its old one for a smaller crab.\nOne passes to the next, and everybody gets a house."
     },

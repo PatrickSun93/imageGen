@@ -40,19 +40,19 @@
     },
     {
       "n": 2,
-      "zh": "不是下雨。",
+      "zh": "不是下雨。\n它站在雨里，\n一动不动。",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing in the rain, completely unbothered, only one dinosaur in the picture"
     },
     {
       "n": 3,
-      "zh": "不是蚊子。",
+      "zh": "不是蚊子。\n蚊子停在它鼻子上，\n它交了个新朋友。",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face with one tiny mosquito sitting on its nose, completely unbothered, only one dinosaur in the picture"
     },
     {
       "n": 4,
-      "zh": "也不是洗头。",
+      "zh": "也不是洗头。\n它把泡泡顶在头上，\n当帽子。",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face with a big pile of shampoo foam on its head, completely unbothered, only one dinosaur in the picture"
     },
@@ -70,25 +70,25 @@
     },
     {
       "n": 7,
-      "zh": "捉迷藏，\n停不下来。",
+      "zh": "捉迷藏，\n停不下来。\n躲着躲着，就忘了自己在躲。",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face hiding badly behind a very thin tree, almost all of its body showing, only one dinosaur in the picture"
     },
     {
       "n": 8,
-      "zh": "搭石头城堡，\n从早上搭到天黑，\n还停不下来。",
+      "zh": "搭石头城堡，\n从早上搭到天黑，\n还停不下来。\n月亮说：「我都困了。」",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face still stacking stones into a tall stone castle late in the evening, a small crescent moon and a few stars drawn on the speckled paper above, only one dinosaur in the picture"
     },
     {
       "n": 9,
-      "zh": "可是，有一件事，\n它不停也得停。",
+      "zh": "可是，有一件事，\n它不停也得停。\n它的肚子，开始说话了。",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face stopping suddenly and looking down at its own round belly, only one dinosaur in the picture"
     },
     {
       "n": 10,
-      "zh": "每只恐龙的肚子里，\n都住着一个小鼓手。",
+      "zh": "每只恐龙的肚子里，\n都住着一个小鼓手。\n你的肚子里，也有一个。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face looking down in surprise at one small toy drum sitting on its round belly"
     },
@@ -100,7 +100,7 @@
     },
     {
       "n": 12,
-      "zh": "三角龙一听见，\n马上就去。\n从来不磨蹭。",
+      "zh": "三角龙一听见，\n马上就去。\n它说：「回来再玩，也一样。」",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face walking briskly towards a small wooden outhouse"
     },
@@ -136,7 +136,7 @@
     },
     {
       "n": 18,
-      "zh": "最后，它干脆不敲了。",
+      "zh": "敲到最后，\n它累了，不敲了。\n这可不是好事。",
       "has_boy": false,
       "scene": "A silent small toy drum on a tree stump, and beside it one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face looking surprised"
     },
@@ -148,21 +148,21 @@
     },
     {
       "n": 20,
-      "zh": "咚咚咚。\n霸王龙说：「等一下，\n我再玩一会儿。」",
+      "zh": "咚咚咚。\n霸王龙说：「等一下，我再玩一会儿。」\n小鼓手说：「好吧。」",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face waving one tiny arm dismissively while stacking stones, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts watching"
     },
     {
       "n": 21,
-      "zh": "咚咚咚咚！\n「再等一下，\n我快赢了！」",
+      "zh": "咚咚咚咚！\n「再等一下，我快赢了！」\n小鼓手说：「我数到三。」",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face stacking stones with its knees pressed tightly together, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts looking worried"
     },
     {
       "n": 22,
-      "zh": "咚咚咚咚咚！\n「再再等一下……」",
+      "zh": "咚咚咚咚咚！\n「再……再等一下……」\n你指着远处：「厕所在那边！」",
       "has_boy": false,
-      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing cross-legged beside a very tall stone tower, drops of sweat flying off its head, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts pointing towards the hills"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting beside a tall stack of flat round pebbles, drops of sweat flying off its head, its knees pressed together, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing next to it and pointing far away towards a distant green hill with one tiny wooden outhouse on top"
     },
     {
       "n": 23,
@@ -172,9 +172,9 @@
     },
     {
       "n": 24,
-      "zh": "霸王龙夹着腿，\n就跑。",
+      "zh": "霸王龙夹着腿，\n就跑。\n厕所比赢重要。",
       "has_boy": false,
-      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face hurrying along with tiny quick steps, its knees pressed together and its tiny arms holding its round belly, only one dinosaur in the picture"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face hurrying along with tiny quick steps, its knees pressed tightly together and both tiny arms holding its round belly, eyes wide, mouth closed in a small worried line, only one dinosaur in the picture"
     },
     {
       "n": 25,
@@ -202,13 +202,13 @@
     },
     {
       "n": 29,
-      "zh": "差一点点……差一点点……\n可是剑龙还卡在门口！",
+      "zh": "差一点点……差一点点……\n门口那位，还没挪开！",
       "has_boy": false,
       "scene": "One pink stegosaurus with wobbly plates along its back, small dot eyes and a plain deadpan face still stuck in the doorway of a small wooden outhouse, and one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face hopping from foot to foot beside it"
     },
     {
       "n": 30,
-      "zh": "剑龙挪开了。\n扑通！坐上去了。\n霸王龙长长地松了一口气。",
+      "zh": "剑龙挪开了。\n扑通！坐上去了。\n霸王龙说：「好险。」",
       "has_boy": false,
       "scene": "A small wooden outhouse with its door closed, the head of one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face poking up through a hole in its roof, eyes closed, smiling with relief, only one dinosaur in the picture"
     },

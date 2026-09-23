@@ -34,7 +34,7 @@
   "pages": [
     {
       "n": 1,
-      "zh": "嘿，小朋友。\n你知道恐龙最想干什么吗？",
+      "zh": "嘿，小朋友。\n你知道恐龙醒来，\n最想干什么吗？",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face peeking out from behind a tree trunk, only one dinosaur in the picture"
     },
@@ -46,25 +46,25 @@
     },
     {
       "n": 3,
-      "zh": "恐龙交朋友的办法\n很奇怪。",
+      "zh": "恐龙交朋友的办法，\n有点奇怪。",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face standing nose to nose, studying each other with plain faces"
     },
     {
       "n": 4,
-      "zh": "先闻一闻你。",
+      "zh": "先用大鼻子闻一闻你。\n吸——\n嗯，是朋友的味道。",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face bending down and sniffing one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face with its nose, little wavy sniff lines in the air, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face standing still on the grass with its eyes closed"
     },
     {
       "n": 5,
-      "zh": "再甩一甩尾巴。",
+      "zh": "再甩一甩尾巴。\n尾巴甩一下，就是在说「你好」。\n旁边的花盆，倒霉了。",
       "has_boy": false,
-      "scene": "One pink stegosaurus with wobbly plates along its back, small dot eyes and a plain deadpan face wagging its tail and knocking over a flowerpot behind it, only one dinosaur in the picture"
+      "scene": "One pink stegosaurus with wobbly plates along its back, small dot eyes and a plain deadpan face wagging its tail hard, the tip of its tail knocking over a flowerpot behind it, soil spilling on the grass, the stegosaurus facing away from the pot, only one dinosaur in the picture"
     },
     {
       "n": 6,
-      "zh": "最后，把它最喜欢的一块石头\n送给你。",
+      "zh": "最后，把它最喜欢的一块石头，\n送给你。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face holding out a small smooth pebble towards the viewer, only one dinosaur in the picture"
     },
@@ -84,11 +84,11 @@
       "n": 9,
       "zh": "霸王龙问「我可以一起玩吗」\n的时候，嗓门太大了。",
       "has_boy": false,
-      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face calling out with its mouth in a small round O shape, big gusts of wind coming out of its mouth and blowing all the leaves off a small tree in front of it"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing beside a small leafy tree, calling out with its lips making a small round O shape, big swirly gusts of wind coming out and blowing leaves off the tree, only one dinosaur in the picture"
     },
     {
       "n": 10,
-      "zh": "树叶全被吹掉了。\n树很冷。",
+      "zh": "树叶全被吹掉了。\n树抖了抖：「好冷。」\n霸王龙小声说：「对不起。」",
       "has_boy": false,
       "scene": "A completely bare tree shivering with little wobbly lines, its leaves in a heap on the ground, one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face looking sheepish beside it"
     },
@@ -106,7 +106,7 @@
     },
     {
       "n": 13,
-      "zh": "长脖子恐龙最会轮流：\n让大家一个一个，\n从它的脖子上滑下来。",
+      "zh": "长脖子恐龙的脖子，\n是大家的滑梯。\n一个，换一个。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sitting on the back of one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face and sliding happily down its long sloping neck towards the grass, the long neck curving gently down to the ground, no playground in the picture"
     },
@@ -130,7 +130,7 @@
     },
     {
       "n": 17,
-      "zh": "变成一块大石头。\n谁也搬不动。",
+      "zh": "变成一块大石头。\n谁也搬不动，\n谁也叫不醒。",
       "has_boy": false,
       "scene": "A big round grey boulder on the lawn shaped like a curled-up dinosaur, the tip of a tail peeking out"
     },
@@ -142,7 +142,7 @@
     },
     {
       "n": 19,
-      "zh": "你搭到最要紧的一层。\n一块，一块，\n小心又小心。",
+      "zh": "你搭到最要紧的一层。\n手轻轻的，\n连气都不敢喘。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts carefully placing one block on top of a tall block castle, concentrating hard, no dinosaurs in the picture"
     },
@@ -154,7 +154,7 @@
     },
     {
       "n": 21,
-      "zh": "你一着急，\n张嘴就说——",
+      "zh": "你一着急，\n嘴比脑子快——",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts turning sharply towards one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face, mouth opening, one hand up"
     },
@@ -169,7 +169,7 @@
       "n": 23,
       "zh": "小三角龙一缩——",
       "has_boy": false,
-      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face curled up into a tight round ball like a rock next to a block castle, its head and legs tucked in, only the tip of its tail showing"
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face next to a block castle, curling up into a tight round ball, tucking in its head, legs and tail, eyes squeezed shut, only one dinosaur in the picture"
     },
     {
       "n": 24,
@@ -185,19 +185,19 @@
     },
     {
       "n": 26,
-      "zh": "你推也推不动。\n叫也叫不醒。",
+      "zh": "你推也推不动。\n「起来呀！」\n石头不理你。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts pushing a big round grey boulder with all his strength, cheeks puffed out"
     },
     {
       "n": 27,
-      "zh": "你想起来了：\n恐龙听不得「不行」，\n可是听得懂「等一下」。",
+      "zh": "你坐在石头上想啊想。\n想起来了：\n恐龙听不得「不行」，\n可是听得懂「等一下」。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts sitting on a big grey boulder with his chin in his hand, thinking hard"
     },
     {
       "n": 28,
-      "zh": "你蹲下来，小声说：\n「对不起，我刚才正在搭。\n等我搭完这一块，\n你来搭屋顶，好吗？」",
+      "zh": "你蹲下来，小声说：\n「对不起，我刚才正在搭。\n等一下，马上就好。\n搭完这一块，你来搭屋顶，好吗？」",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts crouching beside a big round grey boulder and speaking to it softly"
     },
@@ -215,13 +215,13 @@
     },
     {
       "n": 31,
-      "zh": "小三角龙搭了屋顶。\n有点歪。\n没关系。",
+      "zh": "小三角龙搭了屋顶。\n有点歪。\n歪得刚刚好。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face proudly placing a crooked roof on top of a huge block castle, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts watching and smiling"
     },
     {
       "n": 32,
-      "zh": "现在你知道了：\n有人想跟你玩的时候，别说「不行」。\n说「等一下」，再给他一件事做。\n对了，小三角龙送你的那块石头，\n你收好。",
+      "zh": "现在你知道了：\n有人想跟你玩的时候，别说「不行」。\n说「等一下，马上就好」，\n再给他一件事做。\n对了，小三角龙送你的那块石头，\n你收好。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts holding a small round stone in both hands, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sitting beside the child, a big block castle behind them"
     }

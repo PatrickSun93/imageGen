@@ -39,37 +39,37 @@
     },
     {
       "n": 2,
-      "zh": "爸爸说：\n「我们不下水，\n就坐在这里看。」\n沙子是干的，暖暖的。",
+      "zh": "爸爸说：\n「我们不下水，就坐在这里看。」\n沙子暖暖的，\n像被太阳晒过的被子。",
       "scene": "A little boy and his father sitting together on warm dry sand near the top of a beach, seen from the side, the sea far away in the background, a folded towel beside them, calm and unhurried.",
       "has_boy": true
     },
     {
       "n": 3,
-      "zh": "浪跑过来了——\n我往后缩了一下。\n可是它没有过来。\n它停住了，然后回去了。",
+      "zh": "浪跑过来了——\n碰到了我的脚。\n我吓了一跳。\n可是它停住了，\n然后回去了。",
       "scene": "A thin sheet of seawater running up wet sand toward a little boy's bare feet and stopping short of them, the boy leaning back slightly, low viewpoint close along the sand, gentle foam edge.",
       "has_boy": true
     },
     {
       "n": 4,
-      "zh": "又来了一次。\n还是停在那里。\n再来一次。\n每一次，都停在同一个地方。",
+      "zh": "又来了一次。\n还是停在那里。\n每一次，\n都停在同一个地方。",
       "scene": "Three thin curved lines of foam left on wet sand at the same distance from the viewer, marking where each wave stopped, a gentle repeating pattern on an empty beach, soft daylight from above.",
       "has_boy": false
     },
     {
       "n": 5,
-      "zh": "我数：一、二、三……\n浪就来了。\n一、二、三……\n浪就回去了。\n原来它是有拍子的。",
+      "zh": "我数：一、二、三……\n浪就来了。\n一、二、三……\n浪就回去了。\n原来它是有拍子的，\n像在跳舞。",
       "scene": "A little boy sitting on the sand counting on his fingers, mouth open counting, a small wave rolling in gently behind him, bright and calm.",
       "has_boy": true
     },
     {
       "n": 6,
-      "zh": "浪回去以后，\n沙子上留下了东西：\n一个白色的贝壳，\n一根海草，\n还有一个小小的洞。",
+      "zh": "浪回去以后，\n沙子上多了礼物：\n一个白色的贝壳，\n一根海草，\n还有一个小小的洞。",
       "scene": "Close up of wet sand after a wave has gone, a single white spiral shell, one strand of dark seaweed, and a small round hole in the sand with tiny bubbles, seen from above.",
       "has_boy": false
     },
     {
       "n": 7,
-      "zh": "岩石中间有小水坑。\n那是浪走的时候，\n忘记带走的一点点海。\n这种小水坑叫「潮池」。",
+      "zh": "岩石中间有小水坑。\n那是浪走的时候，\n忘记带走的一点点海。\n它叫「潮池」。",
       "scene": "A shallow rock pool between grey rocks, clear still water, seaweed around the rim, sunlight on the surface, small movement in the water, quiet and inviting.",
       "has_boy": false
     },
@@ -82,7 +82,7 @@
     {
       "n": 9,
       "zh": "它们一点也不怕。\n它们在等下一次浪来，\n接它们回家。",
-      "scene": "A rock pool with small sea creatures resting quietly among the rocks, and beyond the rocks the sea further out with one gentle wave approaching in the distance, warm afternoon light.",
+      "scene": "A clear rock pool with one small orange crab, one tiny silver fish and one orange starfish resting on the pebbles, one gentle wave rolling in beyond the rocks, no people in the picture",
       "has_boy": false
     },
     {
@@ -91,5 +91,6 @@
       "scene": "A little boy standing at the very edge of the water, a thin sheet of foam just touching his bare feet, looking down at his own feet and smiling, calm sea behind, gentle low sunlight.",
       "has_boy": true
     }
-  ]
+  ],
+  "image_dir": "sea_pub"
 }

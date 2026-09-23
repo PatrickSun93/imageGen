@@ -34,7 +34,7 @@
   "pages": [
     {
       "n": 1,
-      "zh": "嘿，小朋友。\n你知道恐龙在操场上\n最爱玩什么吗？",
+      "zh": "嘿，小朋友。\n你知道恐龙在操场上，\n最喜欢玩什么吗？",
       "has_boy": false,
       "scene": "A sunny playground with one long wooden seesaw in the middle of the grass, and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face peeking at it from behind a bush",
       "en": "Hey, kid.\nDo you know what dinosaurs love most\non the playground?"
@@ -48,63 +48,63 @@
     },
     {
       "n": 3,
-      "zh": "不是秋千。",
+      "zh": "也不是秋千。\n恐龙屁股太大，坐不进去。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face walking straight past an empty swing without looking at it, only one dinosaur in the picture",
-      "en": "Not the swings."
+      "en": "Not the swings, either.\nDinosaur bottoms are too big to fit."
     },
     {
       "n": 4,
       "zh": "是跷跷板。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sitting happily on one end of a long wooden seesaw, the other end resting on the grass, only one dinosaur in the picture",
-      "en": "The seesaw."
+      "en": "It's the seesaw."
     },
     {
       "n": 5,
-      "zh": "跷跷板，\n要两边差不多重。",
+      "zh": "玩跷跷板，\n两边要差不多重。",
       "has_boy": false,
       "scene": "A long wooden seesaw balanced perfectly level on the grass, with one small round ochre triceratops sitting on each end, two triceratops in the picture",
-      "en": "A seesaw only works\nif both sides weigh about the same."
+      "en": "On a seesaw,\nboth sides should weigh about the same."
     },
     {
       "n": 6,
-      "zh": "霸王龙一坐下，\n小三角龙就飞上了天，\n在天上待了一整天。",
+      "zh": "霸王龙一坐下——\n嗖！\n小三角龙飞到天上吃白云去了。\n吃了一整天。",
       "has_boy": false,
       "scene": "A long wooden seesaw tipped steeply: one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting on its low end on the grass, its high end pointing up at the sky, and far above it one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face flying among the clouds with its legs spread out, only two dinosaurs in the picture",
-      "en": "When T. rex sits down,\nLittle Triceratops flies up into the sky\nand stays there all day."
+      "en": "When T. rex sits down—\nWHOOSH!\nLittle Triceratops flies up to snack on the clouds.\nIt snacks all day long."
     },
     {
       "n": 7,
-      "zh": "长脖子恐龙坐哪头都一样：\n脑袋永远在天上。",
+      "zh": "长脖子恐龙坐上去，\n跷跷板在地上晃，\n它们的脑袋还在云里聊天呢。",
       "has_boy": false,
       "scene": "One very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face sitting on the low end of a long wooden seesaw resting on the grass, its long neck still reaching straight up so its tiny head is far above the high end of the seesaw, only one dinosaur in the picture",
-      "en": "For a long-neck, it doesn't matter which end it sits on:\nits head is always up in the sky."
+      "en": "When the long-necks sit down,\nthe seesaw bumps on the ground,\nbut their heads are still up in the clouds, chatting."
     },
     {
       "n": 8,
-      "zh": "剑龙最麻烦：\n背上的板子卡在跷跷板上，\n下不来。",
+      "zh": "剑龙最麻烦。\n背上的板子卡住了，四脚朝天。\n它说：「我没卡住，我在看天。」",
       "has_boy": false,
       "scene": "One pink stegosaurus with wobbly plates along its back, small dot eyes and a plain deadpan face lying upside down on a wooden seesaw with its legs in the air, the plates on its back jammed into the plank so it cannot get off, looking puzzled, only one dinosaur in the picture",
-      "en": "Stegosaurus has the hardest time:\nthe plates on its back get stuck in the seesaw,\nand it can't get off."
+      "en": "Stegosaurus is the most trouble.\nIts back plates get stuck—feet up in the air.\nIt says, “I'm not stuck. I'm looking at the sky.”"
     },
     {
       "n": 9,
-      "zh": "可是，操场上\n有一只小霸王龙。\n它的手，太短了。",
+      "zh": "操场上，\n还有一只小霸王龙。\n它的手，太短了。",
       "has_boy": false,
       "scene": "One small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face standing in a playground looking down at its very tiny arms, only one dinosaur in the picture",
-      "en": "But on this playground\nthere's a little T. rex.\nAnd its arms are very, very short."
+      "en": "On the playground,\nthere's also a little T. rex.\nIts arms are too short."
     },
     {
       "n": 10,
-      "zh": "手短，没关系。\n麻烦的是，它一着急，\n就说不出话来。",
+      "zh": "手短没关系。\n麻烦的是，它一着急，\n嘴巴就像被胶水粘住了，\n一句话也说不出来。",
       "has_boy": false,
       "scene": "One small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face standing next to a seesaw looking flustered, its cheeks puffed out and its tiny arms flapping, only one dinosaur in the picture",
-      "en": "Short arms are fine.\nThe trouble is, when it gets in a hurry,\nit can't find its words."
+      "en": "Short arms are fine.\nThe trouble is, when it gets in a hurry,\nits mouth sticks shut, like it's full of glue,\nand not one word comes out."
     },
     {
       "n": 11,
-      "zh": "想玩跷跷板——\n啪！拍一下。",
+      "zh": "想玩跷跷板——\n啪，拍一下。",
       "has_boy": false,
       "seed": 138911,
       "scene": "One small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face touching one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face lightly on the arm with one tiny hand next to a seesaw, a few small curved motion lines by the hand, the triceratops looking surprised, only two dinosaurs in the picture",
@@ -112,17 +112,17 @@
     },
     {
       "n": 12,
-      "zh": "想换人——\n啪！",
+      "zh": "想换人——\n啪，又拍一下。",
       "has_boy": false,
       "scene": "One small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face touching one pink stegosaurus with wobbly plates along its back, small dot eyes and a plain deadpan face lightly on the back with one tiny hand while one pink stegosaurus with wobbly plates along its back, small dot eyes and a plain deadpan face sits on a seesaw, a few small curved motion lines by the hand",
-      "en": "It wants to switch—\nSMACK!"
+      "en": "It wants to switch—\nSMACK! Another slap."
     },
     {
       "n": 13,
-      "zh": "想说「等等我」——\n啪！啪！",
+      "zh": "想说「等等我」——\n啪，啪，拍尾巴。",
       "has_boy": false,
       "scene": "One small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face running after one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face and touching its long tail twice with one tiny hand, a few small curved motion lines",
-      "en": "It wants to say “Wait for me!”—\nSMACK! SMACK!"
+      "en": "It wants to say “Wait for me!”—\nSMACK, SMACK! Right on the tail."
     },
     {
       "n": 14,
@@ -133,52 +133,52 @@
     },
     {
       "n": 15,
-      "zh": "因为你拍它一下，\n它就拍你一下。",
+      "zh": "因为在恐龙看来，\n你拍它一下，\n它就以为你在玩「拍拍大赛」。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face and one small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face touching each other on the arm at the same time, both with puffed-out cheeks, a few small curved motion lines",
-      "en": "Because if you slap it once,\nit slaps you once."
+      "en": "Because to a dinosaur,\nif you slap it once,\nit thinks you're playing the Big Slap Contest."
     },
     {
       "n": 16,
-      "zh": "旁边的三角龙也拍，\n剑龙也拍，\n长脖子恐龙用尾巴拍。",
+      "zh": "三角龙也来拍，\n剑龙也来拍，\n长脖子恐龙甩着尾巴拍。",
       "has_boy": false,
       "scene": "A silly tangle of dinosaurs in a playground all touching each other: one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face, one pink stegosaurus with wobbly plates along its back, small dot eyes and a plain deadpan face and one small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face using their feet and tiny hands, and one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face swishing its long tail, small curved motion lines everywhere",
-      "en": "Then Triceratops slaps,\nStegosaurus slaps,\nand the long-neck slaps with its tail."
+      "en": "Then Triceratops slaps,\nStegosaurus slaps,\nand the long-neck slaps with a swish of its tail."
     },
     {
       "n": 17,
-      "zh": "全操场「啪啪啪啪啪」。\n跷跷板翻了，\n大家全摔进了沙坑。",
+      "zh": "啪啪啪啪啪！\n跷跷板翻了。\n大家全掉进了沙坑。",
       "has_boy": false,
       "scene": "A wooden seesaw flipped upside down, and four dinosaurs: a small young green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus tumbled together in a heap inside a big sandpit, sand flying, silly dazed faces",
-      "en": "The whole playground goes SMACK-SMACK-SMACK!\nThe seesaw flips over,\nand everybody tumbles into the sandbox."
+      "en": "SMACK-SMACK-SMACK-SMACK-SMACK!\nThe seesaw flips over.\nEverybody lands in the sandbox."
     },
     {
       "n": 18,
       "zh": "谁先拍的？\n谁也不记得了。\n只记得，哪儿都疼。",
       "has_boy": false,
       "scene": "Four dinosaurs: a small young green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus sitting in a sandpit covered in sand, rubbing their heads and arms, with plain faces",
-      "en": "Who started it?\nNobody remembers.\nAll anyone remembers is that everything hurts."
+      "en": "Who slapped first?\nNobody remembers.\nThey only remember that everything hurts."
     },
     {
       "n": 19,
-      "zh": "那天，你和小三角龙\n在玩跷跷板。\n上，下，上，下。",
+      "zh": "那天，你和小三角龙在玩跷跷板。\n吱呀——上，\n吱呀——下。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face playing on a long wooden seesaw in a playground, the boy up high and the triceratops down low, both smiling",
-      "en": "One day, you and Little Triceratops\nare on the seesaw.\nUp, down, up, down."
+      "en": "One day, you and Little Triceratops are on the seesaw.\nSqueak—up,\nsqueak—down."
     },
     {
       "n": 20,
-      "zh": "小霸王龙跑过来。\n它也想玩。\n它一着急——",
+      "zh": "小霸王龙跑过来了。\n它很想玩。\n嘴巴又被胶水粘住了。",
       "has_boy": false,
       "seed": 138920,
       "scene": "One small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face running towards a long wooden seesaw, looking flustered; a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts sits on the near end of the seesaw and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sits on the far end, its whole round body, four legs and tail clearly visible, the boy and the triceratops apart from each other",
-      "en": "The little T. rex runs over.\nIt wants to play too.\nIt gets in a hurry—"
+      "en": "The little T. rex runs over.\nIt really wants to play.\nIts mouth is glued shut again."
     },
     {
       "n": 21,
       "zh": "啪！\n拍在你的胳膊上。\n挺疼的。",
       "has_boy": false,
-      "scene": "One small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face touching a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts on the upper arm with one tiny hand beside a seesaw, a few small curved motion lines, the boy holding his arm with a surprised face",
+      "scene": "One small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face standing beside a seesaw and tapping the upper arm of a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts with one tiny hand, a few small curved motion lines at that spot, the boy holding his arm with a surprised face, only one dinosaur in the picture",
       "en": "SMACK!\nRight on your arm.\nThat hurt."
     },
     {
@@ -190,73 +190,73 @@
     },
     {
       "n": 23,
-      "zh": "可是你想起来了。\n你站稳，\n把手往前一伸——",
+      "zh": "可是你想起了沙坑。\n你两只脚站稳，\n举着的手换了个方向：\n伸出去，手掌朝前——",
       "has_boy": false,
-      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing firmly with his feet apart, stretching one arm straight out in front of him with his open palm facing forward, looking at one small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face",
-      "en": "But then you remember.\nYou plant your feet\nand put your hand out—"
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing firmly with his feet apart, a few steps away from one small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face, one arm stretched straight out with the hand bent up at the wrist, open palm facing the little T. rex and fingers pointing up, only one dinosaur in the picture",
+      "en": "But then you remember the sandbox.\nYou plant both feet.\nYour hand that was up goes a new way:\nstraight out, palm forward—"
     },
     {
       "n": 24,
-      "zh": "「停！\n我不喜欢这样。」",
+      "zh": "大声念出魔法咒语：\n「停！\n我不喜欢这样。」",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing tall with one arm stretched straight out and his open palm facing forward, his mouth wide open calling out loudly, no dinosaurs in the picture",
-      "en": "“STOP!\nI don't like that.”"
+      "en": "And you say the magic words, loud:\n“STOP!\nI don't like that.”"
     },
     {
       "n": 25,
-      "zh": "声音大得，\n树上的鸟都停下来了。\n小霸王龙也停下来了。",
+      "zh": "声音真大。\n树上的小鸟停住了。\n风也停下来听。\n小霸王龙的一只脚，定在半空。",
       "has_boy": false,
       "scene": "One small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face frozen still in mid-step with one foot in the air, and a row of small birds on a tree branch above it frozen still too",
-      "en": "You say it so loud\nthe birds in the tree stop singing.\nThe little T. rex stops, too."
+      "en": "So loud!\nThe birds in the tree freeze.\nEven the wind stops to listen.\nThe little T. rex freezes, one foot in the air."
     },
     {
       "n": 26,
-      "zh": "然后，你走开一步，\n去找老师。",
+      "zh": "你转身走开两步，\n去找帮手。\n帮手就是长脖子老师。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts walking away from a seesaw across a playground, heading towards one very tall long-necked grey-blue dinosaur wearing small round glasses, with a tiny head, small dot eyes and a gentle smile standing at the far side",
-      "en": "Then you step away\nand go find your teacher."
+      "en": "You turn and walk two steps away\nto find a helper.\nThe helper is the long-neck teacher."
     },
     {
       "n": 27,
-      "zh": "老师是长脖子恐龙。\n脖子长，一抬头，\n整个操场都看得见。\n你说：「老师，它拍我了，\n我不喜欢。」",
+      "zh": "老师像个大吊车一样低下来。\n你说：\n「老师，小霸王龙拍我了，我不喜欢。」",
       "has_boy": false,
-      "scene": "One very tall long-necked grey-blue dinosaur wearing small round glasses, with a tiny head, small dot eyes and a gentle smile standing at the edge of a playground with its long neck high above everything, and a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts looking up at it and talking",
-      "en": "Your teacher is a long-neck.\nWith a neck that long,\nthe teacher can see the whole playground at once.\nYou say, “Teacher, it slapped me.\nI didn't like it.”"
+      "scene": "One very tall long-necked grey-blue dinosaur wearing small round glasses, with a tiny head, small dot eyes and a gentle smile bending its long neck down in a big slow curve so its head is level with a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts, the boy looking at its face and talking, only one dinosaur in the picture",
+      "en": "Teacher bends way down, like a big crane.\nYou say,\n“Teacher, the little T. rex slapped me.\nI don't like it.”"
     },
     {
       "n": 28,
-      "zh": "告诉老师，\n是找帮手。",
+      "zh": "老师个子最高，\n操场上的事，全看得见。\n它说：「你说得很清楚，我听见了。」",
       "has_boy": false,
       "scene": "One very tall long-necked grey-blue dinosaur wearing small round glasses, with a tiny head, small dot eyes and a gentle smile bending its long neck down low so its head is right next to a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts, listening carefully, the boy pointing back towards a seesaw",
-      "en": "Telling a teacher\nis finding a helper."
+      "en": "Teacher is the tallest one here,\nso Teacher sees everything on the playground.\nTeacher says, “You said that very clearly.\nI heard you.”"
     },
     {
       "n": 29,
-      "zh": "老师低下头，\n问小霸王龙：「你为什么拍人？」\n小霸王龙小声说：\n「我也想玩。\n可是我不知道怎么说。」",
+      "zh": "老师低头问小霸王龙：\n「你想玩，为什么动手呢？」\n小霸王龙小声说：\n「我也想玩，可是我嘴巴粘住了。」",
       "has_boy": false,
       "scene": "One very tall long-necked grey-blue dinosaur wearing small round glasses, with a tiny head, small dot eyes and a gentle smile bending its long neck down to talk to one small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face, who looks down at its feet shyly",
-      "en": "The teacher bends way down\nand asks the little T. rex, “Why did you do that?”\nThe little T. rex says quietly,\n“I wanted to play too.\nBut I didn't know how to say it.”"
+      "en": "Teacher looks down and asks the little T. rex,\n“You wanted to play. So why did you use your hands?”\nThe little T. rex says quietly,\n“I wanted to play too.\nBut my mouth got glued shut.”"
     },
     {
       "n": 30,
-      "zh": "老师说：「想玩，就说：\n我可以一起玩吗？」\n小霸王龙说：「对不起。\n我可以一起玩吗？」\n你说：「谢谢你说对不起。\n下次用嘴说。」",
+      "zh": "老师说：「想玩，就把胶水撕开，用说的。」\n小霸王龙说：「对不起。我可以一起玩吗？」\n你说：「可以。」",
       "has_boy": false,
       "scene": "One small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face and a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts facing each other beside a seesaw, the little T. rex bowing its head a little, and one very tall long-necked grey-blue dinosaur wearing small round glasses, with a tiny head, small dot eyes and a gentle smile watching and smiling behind them",
-      "en": "The teacher says, “When you want to play, say:\nCan I play too?”\nThe little T. rex says, “I'm sorry.\nCan I play too?”\nYou say, “Thank you for saying sorry.\nNext time, use your words.”"
+      "en": "Teacher says, “When you want to play,\npeel off the glue and use your words.”\nThe little T. rex says, “I'm sorry.\nCan I play too?”\nYou say, “Yes.”"
     },
     {
       "n": 31,
-      "zh": "你们一起玩跷跷板。\n小霸王龙太重了，\n你一下飞得好高好高。\n大家都笑了。",
+      "zh": "你们一起玩跷跷板。\n小霸王龙一坐——\n你飞得好高，\n比小三角龙还高。\n大家都笑了。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts flying high up on one end of a seesaw, laughing, while one small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face sits on the low end, and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face and one very tall long-necked grey-blue dinosaur wearing small round glasses, with a tiny head, small dot eyes and a gentle smile laughing nearby",
-      "en": "So you all play on the seesaw together.\nThe little T. rex is so heavy\nthat you fly way, way up.\nEverybody laughs."
+      "en": "You all play on the seesaw together.\nThe little T. rex sits down—\nand up you fly, so high,\neven higher than Little Triceratops.\nEverybody laughs."
     },
     {
       "n": 32,
-      "zh": "现在你知道了：\n想玩，用嘴说，不用手。\n要是有人拍你，别拍回去。\n伸出手，大声说：\n「停！我不喜欢这样。」\n然后走开，告诉老师。\n说完了，你们还可以做朋友。",
+      "zh": "现在你知道了：\n想玩，就说出来，不用手。\n要是有人拍你，别拍回去。\n伸出手，念出魔法咒语：\n「停！我不喜欢这样。」\n然后走开，去找老师。\n说完了，你们还可以做朋友。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face sitting together on a seesaw, both smiling at the viewer, a playground behind them",
-      "en": "Now you know:\nwhen you want to play, use your words, not your hands.\nIf someone slaps you, don't slap back.\nPut out your hand and say it loud:\n“STOP! I don't like that.”\nThen walk away and tell a teacher.\nAnd after that, you can still be friends."
+      "en": "Now you know:\nwhen you want to play, say it—don't use your hands.\nIf someone slaps you, don't slap back.\nPut out your hand and say the magic words:\n“STOP! I don't like that.”\nThen walk away and go find a teacher.\nAfter that, you can still be friends."
     }
   ],
   "lang": "en",

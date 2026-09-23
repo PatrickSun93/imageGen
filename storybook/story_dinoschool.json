@@ -46,7 +46,7 @@
     },
     {
       "n": 3,
-      "zh": "不是教室。\n教室里有好多积木。",
+      "zh": "不是教室。\n教室里的积木，\n比小朋友还多。",
       "has_boy": false,
       "scene": "A bright classroom with little chairs and piles of colourful wooden blocks, no dinosaurs and no people in the picture"
     },
@@ -58,7 +58,7 @@
     },
     {
       "n": 5,
-      "zh": "小三角龙抱着妈妈的尾巴，\n抱得紧紧的，\n不肯松。",
+      "zh": "小三角龙抱着妈妈的尾巴，\n抱得紧紧的。\n它想：「再抱一分钟。\n就一分钟。」",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face clinging tightly to the tail of one big friendly pink mother triceratops with a soft smile, small dot eyes and three blunt horns with its eyes squeezed shut"
     },
@@ -70,13 +70,13 @@
     },
     {
       "n": 7,
-      "zh": "它想：\n要是把家搬到学校去\n就好了。",
+      "zh": "它想了个好主意：\n把家搬到学校去。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sitting and thinking, with a thought bubble above its head showing a small cosy house"
     },
     {
       "n": 8,
-      "zh": "第二天，\n它把自己的枕头带去了。",
+      "zh": "第二天，\n它把枕头带去了。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face walking along a road to school carrying a big pillow, only one dinosaur in the picture"
     },
@@ -94,7 +94,7 @@
     },
     {
       "n": 11,
-      "zh": "教室塞满了。\n老师的头\n从窗户里挤不进来了。",
+      "zh": "教室塞满了。\n老师的头\n从窗户里挤不进来了。\n只挤进来一个鼻子。",
       "has_boy": false,
       "scene": "A small classroom crammed full of home furniture: a pink sofa, a bed, a lamp and a round fish tank piled up to the ceiling, and the tiny head of one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face squeezed against the outside of the window"
     },
@@ -106,19 +106,19 @@
     },
     {
       "n": 13,
-      "zh": "家太大了，学校装不下。\n而且，家是会等你的。",
+      "zh": "家太大了，学校装不下。\n而且，家是会等你的。\n你看，家里的灯还亮着呢。",
       "has_boy": false,
       "scene": "A small cosy house at the end of a winding road with its front door open and a warm light inside, no dinosaurs and no people in the picture"
     },
     {
       "n": 14,
-      "zh": "那天，你也在这个班上。",
+      "zh": "那天，你也在这个班上。\n你的椅子，在鱼缸后面。",
       "has_boy": false,
-      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts sitting at a little table with wooden blocks in a classroom full of furniture"
+      "scene": "A classroom crowded with a pink sofa, a bed and a lamp, and a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts sitting on a little chair behind a round fish tank on a table, peeking around it, no dinosaurs in the picture"
     },
     {
       "n": 15,
-      "zh": "你看见小三角龙\n坐在沙发和台灯中间，\n一个人，眼睛红红的。",
+      "zh": "你看见小三角龙\n坐在沙发和台灯中间，\n一个人，眼睛红红的。\n它在想妈妈。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sitting all alone among a sofa, a lamp and a bed in a classroom, looking a little sad"
     },
@@ -126,7 +126,8 @@
       "n": 16,
       "zh": "你想起来，\n你第一天上学的时候，\n也是这样。",
       "has_boy": false,
-      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts sitting on a small chair looking thoughtful, a soft memory cloud above showing the same boy, smaller, holding a grown-up's hand at a school gate"
+      "seed": 136936,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts sitting on a small chair looking thoughtful, and a big soft round thought bubble floating above his head, inside the bubble a smaller drawing of the same boy crying a little and holding a grown-up's hand at a school gate"
     },
     {
       "n": 17,
@@ -142,27 +143,27 @@
     },
     {
       "n": 19,
-      "zh": "小三角龙想了想，\n松开了抱着的枕头。",
+      "zh": "小三角龙想了想：\n「好吧，城堡听起来不错。」\n它松开了抱着的枕头。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face letting go of a big pillow and looking at a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts"
     },
     {
       "n": 20,
-      "zh": "你们用积木搭城堡。",
+      "zh": "你们用积木搭城堡。\n比枕头还高。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face building a castle of wooden blocks on the classroom floor"
     },
     {
       "n": 21,
-      "zh": "用沙发当城墙。",
+      "zh": "用沙发当城墙。\n沙发太重了，\n推得满头大汗。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face pushing a sofa into place as the wall of a block castle"
     },
     {
       "n": 22,
-      "zh": "用台灯当灯塔。",
+      "zh": "用台灯当灯塔。\n天黑都不怕了。",
       "has_boy": false,
-      "scene": "A lamp standing on top of a block castle like a lighthouse, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face looking up at it proudly"
+      "scene": "A small bedside lamp with a shade, switched on and glowing, standing on top of the tallest tower of a wooden block castle, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face looking up at it proudly"
     },
     {
       "n": 23,
@@ -172,25 +173,25 @@
     },
     {
       "n": 24,
-      "zh": "别的小恐龙也来了。",
+      "zh": "别的小恐龙也来了。\n它们排队参观。",
       "has_boy": false,
       "scene": "One tiny yellow baby dinosaur with a round body, a short tail and stubby legs, small dot eyes and a plain deadpan face and a few other small dinosaurs coming over to the block castle"
     },
     {
       "n": 25,
-      "zh": "教室里一下子\n热闹了。",
+      "zh": "教室里一下子\n热闹了。\n连鱼缸里的鱼，\n都游得更快了。",
       "has_boy": false,
       "scene": "A classroom full of small dinosaurs playing around a big block castle, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face in the middle"
     },
     {
       "n": 26,
-      "zh": "放学的铃响了。",
+      "zh": "放学的铃响了。\n城堡还没搭完呢。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face and small dinosaurs all looking up at a round bell on the classroom wall"
     },
     {
       "n": 27,
-      "zh": "小三角龙跑到门口——",
+      "zh": "小三角龙跑到门口——\n跑得最快。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face running towards the classroom door, only one dinosaur in the picture"
     },
@@ -202,13 +203,13 @@
     },
     {
       "n": 29,
-      "zh": "第二天，\n小三角龙没有带沙发。",
+      "zh": "第二天，\n小三角龙没有带沙发。\n它跑得比昨天还快。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face walking to school with only a small backpack, looking cheerful, only one dinosaur in the picture"
     },
     {
       "n": 30,
-      "zh": "它只带了一块\n妈妈给的小石头，\n放在口袋里。",
+      "zh": "它只带了一块\n妈妈给的小石头，\n放在口袋里。\n别人都不知道。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face putting one small smooth pebble into the pocket of its backpack, only one dinosaur in the picture"
     },

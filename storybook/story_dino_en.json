@@ -27,17 +27,17 @@
   "pages": [
     {
       "n": 1,
-      "zh": "博物馆里，站着一只好大好大的恐龙。\n它只剩下骨头了。\n我要仰起头，才能看见它的脑袋。",
+      "zh": "博物馆里，站着一只好大好大的恐龙。\n它只剩下骨头了。\n我想问问它：\n「你们都去哪儿了？」",
       "scene": "A little boy stands in a quiet dinosaur museum hall with a polished stone floor, tilting his head all the way back to look up at an enormous mounted dinosaur fossil skeleton made only of pale bones, with empty eye sockets and bare ribs, standing on a low display platform and towering over him. Warm light comes through tall windows. The boy is small at the bottom of the frame, the skeleton fills the upper space.",
       "has_boy": true,
-      "en": "At the museum, there's a great big dinosaur.\nOnly its bones are left.\nI have to tip my head way back to see its head."
+      "en": "At the museum, there's a great big dinosaur.\nOnly its bones are left.\nI want to ask it,\n“Where did you all go?”"
     },
     {
       "n": 2,
-      "zh": "很久很久以前，\n地球上到处都是恐龙。\n那时候还没有人，也没有房子。",
+      "zh": "很久很久以前，\n地球上到处都是恐龙。\n那时候还没有人，\n也没有我。",
       "scene": "A wide prehistoric landscape with several large dinosaurs walking among giant ferns and tall conifer trees, a volcano smoking far away on the horizon. Misty morning light. No people, no buildings.",
       "has_boy": false,
-      "en": "A long, long time ago,\nthere were dinosaurs all over the Earth.\nThere were no people yet, and no houses."
+      "en": "A long, long time ago,\nthere were dinosaurs all over the Earth.\nThere were no people yet,\nand no me, either."
     },
     {
       "n": 3,
@@ -48,24 +48,24 @@
     },
     {
       "n": 4,
-      "zh": "咦？这只小恐龙身上，\n好像长着羽毛。\n毛茸茸的，像小鸡一样。",
+      "zh": "咦？这只小恐龙，\n穿着毛茸茸的衣服。\n像小鸡一样。",
       "scene": "Close up of a small fluffy feathered dinosaur the size of a chicken, standing among ferns. Its body is covered in soft downy feathers, but it has a long tail and clawed feet like a dinosaur. Curious and gentle expression.",
       "has_boy": false,
-      "en": "Huh? This little dinosaur\nseems to have feathers.\nFluffy ones, like a baby chick."
+      "en": "Huh? This little dinosaur\nis wearing a fluffy coat.\nJust like a baby chick."
     },
     {
       "n": 5,
-      "zh": "有一天，天上掉下来一颗大石头。\n它比一座山还大。",
+      "zh": "有一天，天上掉下来一颗大石头。\n比一座山还大。",
       "scene": "A huge glowing meteor falling through a darkening sky above the prehistoric landscape, leaving a bright trail of fire. Dinosaurs below look up. Dramatic orange and dark blue sky.",
       "has_boy": false,
       "en": "One day, a huge rock fell out of the sky.\nIt was bigger than a mountain."
     },
     {
       "n": 6,
-      "zh": "轰——\n天空变黑了，太阳被灰尘挡住了。\n好冷，好黑。",
+      "zh": "轰——\n天黑了。\n太阳躲起来了。\n好冷。",
       "scene": "A still, grey prehistoric landscape under a dim sky thick with dust, bare broken trees and scattered rocks, soft grey ash drifting down like snow and covering the ground. Cold muted colors, faint dim light. Nobody is there, only trees, rocks and falling ash.",
       "has_boy": false,
-      "en": "BOOM—\nThe sky went dark, and dust covered the sun.\nIt was so cold, and so dark."
+      "en": "BOOM—\nThe sky went dark.\nThe sun hid away.\nIt was so cold."
     },
     {
       "n": 7,
@@ -83,10 +83,10 @@
     },
     {
       "n": 9,
-      "zh": "那就是——鸟！\n原来鸟是恐龙的孩子。\n它们一直都在。",
+      "zh": "那就是——鸟！\n鸟是恐龙的孩子。\n恐龙没有走远。\n它们一直都在。",
       "scene": "A small brown sparrow perched on a branch in bright daylight, seen close up, with a faint soft silhouette of a feathered dinosaur behind it in the background like a memory. Warm sunny sky.",
       "has_boy": false,
-      "en": "They became—birds!\nBirds are the dinosaurs' children.\nThey've been here all along."
+      "en": "They became—birds!\nBirds are the dinosaurs' children.\nThe dinosaurs didn't go far.\nThey've been here all along."
     },
     {
       "n": 10,

@@ -76,9 +76,10 @@
     },
     {
       "n": 8,
-      "zh": "龙都很有礼貌。\n拿走袜子之前，\n一定会先问一声。",
+      "zh": "龙都很有礼貌。\n拿走袜子之前，\n一定会先问一声。\n趁你睡着的时候。",
       "has_boy": false,
-      "scene": "A small simple cartoon child fast asleep in bed at night with eyes closed, and beside the bed one long flat brick-red dragon shaped like a stretched pillow, with branching antler-like horns, droopy whiskers and tiny stubby legs, small dot eyes and a plain deadpan face with its mouth stuffed full of many socks, more socks dangling from its lips, only one dragon in the picture"
+      "seed": 130808,
+      "scene": "A small simple cartoon child fast asleep in bed at night with both eyes closed, and on the floor at the foot of the bed one long flat brick-red dragon shaped like a stretched pillow, with branching antler-like horns, droopy whiskers and tiny stubby legs, small dot eyes and a plain deadpan face tiptoeing away with its mouth stuffed full of socks, a friendly smile, only one dragon in the picture"
     },
     {
       "n": 9,
@@ -88,7 +89,7 @@
     },
     {
       "n": 10,
-      "zh": "龙从来不承认\n是它拿的。",
+      "zh": "龙从来不承认\n是它拿的。\n它会说：「不是我。」",
       "has_boy": false,
       "scene": "One round dusty-pink dragon shaped like a potato, with two small round bumps on its head and tiny stubby legs with a sock hanging out of its mouth, looking away to the side, only one dragon in the picture"
     },
@@ -102,7 +103,7 @@
       "n": 12,
       "zh": "晚上，就钻进去睡觉。\n又软，又暖，\n还有一点点脚丫的味道。",
       "has_boy": false,
-      "scene": "Four dragons of different shapes and colours: a long flat brick-red one with antler-like horns, a round dusty-pink one, a tall thin sage-green one and a small grey-blue one asleep inside a big heap of socks, only their heads and tails poking out"
+      "scene": "Four dragons of different shapes and colours: a long flat brick-red one with antler-like horns, a round dusty-pink one, a tall thin sage-green one and a small grey-blue one curled up asleep inside a big soft heap of colourful socks at night, only their sleeping heads with closed eyes and their tails poking out of the socks, a small crescent moon above"
     },
     {
       "n": 13,
@@ -118,7 +119,7 @@
     },
     {
       "n": 15,
-      "zh": "最小的龙只要一只，\n戴在尾巴尖上。\n它觉得这样最帅。",
+      "zh": "最小的龙只要一只，\n戴在尾巴尖上。\n它说：「这样最帅。」",
       "has_boy": false,
       "scene": "One small grey-blue dragon with a curly tail, one short horn and droopy whiskers, small dot eyes and a plain deadpan face proudly looking back at a single small sock on the tip of its curly tail, only one dragon in the picture"
     },
@@ -154,7 +155,7 @@
     },
     {
       "n": 21,
-      "zh": "龙一闻到臭袜子，\n就会马上睡着。\n站着的，就站着睡。\n趴着的，就趴着睡。",
+      "zh": "龙一闻到臭袜子，\n就会马上睡着。\n站着的，就站着睡。\n倒着的，也睡。",
       "has_boy": false,
       "scene": "Three dragons fast asleep in silly positions: one tall thin sage-green dragon with a long neck, no horns and tiny wings, small dot eyes and a plain deadpan face asleep standing up, one round dusty-pink dragon shaped like a potato, with two small round bumps on its head and tiny stubby legs asleep upside down, and one long flat brick-red dragon shaped like a stretched pillow, with branching antler-like horns, droopy whiskers and tiny stubby legs, small dot eyes and a plain deadpan face asleep flat on its belly"
     },
@@ -187,7 +188,7 @@
       "n": 26,
       "zh": "大家穿着袜子跳舞，\n跳得正高兴——",
       "has_boy": false,
-      "scene": "A small simple cartoon child dancing in a backyard with four dragons of different shapes and colours: a long flat brick-red one with antler-like horns, a round dusty-pink one, a tall thin sage-green one and a small grey-blue one who wear socks on their feet and tails"
+      "scene": "A small simple cartoon child dancing in a backyard with four dragons of different shapes and colours: a long flat brick-red one with antler-like horns, a round dusty-pink one, a tall thin sage-green one and a small grey-blue one, every dragon hopping on its hind legs with a colourful sock on each foot, all smiling"
     },
     {
       "n": 27,
@@ -221,7 +222,7 @@
     },
     {
       "n": 32,
-      "zh": "现在你知道了。\n下次再少一只袜子，\n别怪洗衣机。\n去看看龙的尾巴。\n它会说：不是我。",
+      "zh": "现在你知道了。\n下次再少一只袜子，\n别怪洗衣机。\n去看看龙的尾巴。\n它会说：「不是我。」",
       "has_boy": false,
       "scene": "One long flat brick-red dragon shaped like a stretched pillow, with branching antler-like horns, droopy whiskers and tiny stubby legs, small dot eyes and a plain deadpan face walking away across the speckled paper with a striped sock on the tip of its tail, looking back over its shoulder at the viewer, only one dragon in the picture"
     }

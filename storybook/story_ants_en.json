@@ -19,40 +19,40 @@
     },
     {
       "n": 2,
-      "zh": "我趴在地上，把脸凑得很近很近。\n原来不是线呀——\n是好多好多蚂蚁，\n一只跟着一只，排着队走。\n它们走得好快，一点也不撞。",
+      "zh": "原来不是线——\n是好多好多蚂蚁，\n一只跟着一只，排着队走。\n比我排队走得还好。",
       "scene": "A long line of many small black ants, one behind another, walking across the ground in a single file that stretches from one side of the picture to the other.",
       "pose": "kneel",
       "px": 40,
       "py": 58,
       "ph": 50,
       "has_boy": true,
-      "en": "I lie on my tummy and put my face really, really close.\nIt isn't a line at all—\nit's lots and lots of ants,\none behind the other, marching in a row.\nThey go so fast, and they never bump."
+      "en": "It isn't a line at all—\nit's lots and lots of ants,\none behind the other, marching in a row.\nThey line up even better than I do."
     },
     {
       "n": 3,
-      "zh": "每一只都扛着东西呢。\n一粒米、一点饼干渣、一小片树叶。\n「嘿咻，嘿咻。」\n最小的那只蚂蚁，\n扛的东西比它自己还要大。\n爸爸说，蚂蚁能扛起比自己重几十倍的东西。",
+      "zh": "每一只都扛着东西。\n一粒米，一点饼干渣，一小片树叶。\n最小的那只，\n扛的东西比它自己还大。\n爸爸说，蚂蚁是大力士。",
       "scene": "Close view of brown garden soil with a line of black ants, each carrying something on its back: a grain of rice, a biscuit crumb, a small green leaf. The smallest ant carries a crumb bigger than itself. Sunlit ground, small plants at the edges, only the ants and the ground in the picture.",
       "pose": "squat",
       "px": 30,
       "py": 60,
       "ph": 42,
       "has_boy": false,
-      "en": "Every single one is carrying something.\nA grain of rice, a cookie crumb, a tiny piece of leaf.\n“Heave-ho, heave-ho.”\nThe littlest ant\nis carrying something bigger than itself.\nDad says ants can lift things dozens of times heavier than they are."
+      "en": "Every single one is carrying something.\nA grain of rice, a cookie crumb, a tiny piece of leaf.\nThe littlest ant\nis carrying something bigger than itself.\nDad says ants are super strong."
     },
     {
       "n": 4,
-      "zh": "它们把土一粒一粒搬出来，\n在洞口堆成一座小小的山。\n搬完一趟，又回去搬下一趟。\n一趟，又一趟，\n谁也不偷懒。",
+      "zh": "它们把土一粒一粒搬出来，\n在洞口堆成一座小山。\n搬完一趟，又回去搬下一趟。\n我数到十，就数乱了。",
       "scene": "A small cone shaped mound of loose soil at an ant nest entrance on brown ground, black ants walking in and out, each carrying one grain of dirt, garden plants around, only the ants, the soil and the plants in the picture.",
       "pose": "kneel",
       "px": 32,
       "py": 58,
       "ph": 48,
       "has_boy": false,
-      "en": "They carry the dirt out one grain at a time\nand pile it into a tiny hill by the door.\nWhen one trip is done, they go back for another.\nTrip after trip,\nand nobody slacks off."
+      "en": "They carry the dirt out one grain at a time\nand pile it into a tiny hill by the door.\nWhen one trip is done, they go back for another.\nI count to ten… and then I lose count."
     },
     {
       "n": 5,
-      "zh": "两只蚂蚁走到一起，\n碰了碰头上的小触角。\n「你好呀。」\n「那边有好吃的！」\n它们就是这样说话的——\n不用嘴巴，用触角。",
+      "zh": "两只蚂蚁走到一起，\n碰了碰头上的小触角。\n「你好呀。」\n「那边有好吃的！」\n它们不用嘴巴说话，\n用触角。",
       "scene": "Simple crayon drawing at ground level on light paper: two cute black ants with round bodies and thick black crayon outlines face each other in the middle of the picture, gently touching their antennae together, a few chunky crayon blades of green grass around them.",
       "pose": "squat",
       "px": 22,
@@ -60,33 +60,33 @@
       "ph": 38,
       "has_boy": false,
       "seed": 2105,
-      "en": "Two ants meet\nand touch the little feelers on their heads.\n“Hello!”\n“There's yummy food over there!”\nThat's how they talk—\nnot with their mouths, but with their feelers."
+      "en": "Two ants meet\nand touch the little feelers on their heads.\n“Hello!”\n“There's yummy food over there!”\nThey don't talk with their mouths.\nThey talk with their feelers."
     },
     {
       "n": 6,
-      "zh": "我跟着队伍一直走，一直走。\n走到一个小小的洞口。\n蚂蚁一只接一只钻进去，\n就像回家一样。\n它们怎么认得路呢？\n原来前面的蚂蚁会留下气味，\n后面的跟着味道走，就不会迷路啦。",
+      "zh": "我跟着队伍走到一个小洞口。\n蚂蚁一只接一只钻进去，\n就像回家一样。\n它们怎么认得路？\n前面的留下气味，后面的闻着走。\n我也闻了闻，什么都没闻到。",
       "scene": "The little boy walks slowly along the garden path, bent over, following a long line of black ants that leads to a small round hole in the dirt with a little mound of soil around it. The ants disappear into the hole one after another.",
       "pose": "kneel",
       "px": 28,
       "py": 60,
       "ph": 46,
       "has_boy": true,
-      "en": "I follow the line on and on and on,\nall the way to a tiny hole.\nThe ants go in one after another,\nlike they're going home.\nHow do they know the way?\nThe ants in front leave a smell behind,\nand the ones in back follow the smell, so they never get lost."
+      "en": "I follow the line to a tiny hole.\nThe ants go in one after another,\nlike they're going home.\nHow do they know the way?\nThe ants in front leave a smell behind, and the ones in back follow it.\nI sniff too. I can't smell a thing."
     },
     {
       "n": 7,
-      "zh": "咦，天忽然暗下来了。\n风吹得草哗啦啦地响。\n我抬起头——\n乌云跑得好快好快。",
+      "zh": "咦，天忽然暗下来了。\n风来了，草哗啦啦地响。\n我的头发，被吹得跳起舞来。",
       "scene": "The little boy stands in a grassy yard looking up at the sky, dark storm clouds rushing overhead, wind bending the tall grass and blowing his hair, a big darkening sky filling the upper two thirds of the picture.",
       "pose": "stand",
       "px": 42,
       "py": 52,
       "ph": 58,
       "has_boy": true,
-      "en": "Huh—the sky suddenly gets dark.\nThe wind makes the grass go swish, swish.\nI look up—\nthe clouds are racing across the sky."
+      "en": "Huh—the sky suddenly gets dark.\nThe wind comes, and the grass goes swish, swish.\nMy hair starts dancing in the wind."
     },
     {
       "n": 8,
-      "zh": "妈妈在门口喊：「要下雨啦，快回来！」\n我低头一看，\n蚂蚁们也在急急忙忙地搬家。\n妈妈说，空气变潮的时候，\n蚂蚁就知道要下雨了。\n它们比我先知道呢。",
+      "zh": "妈妈在门口喊：「要下雨啦，快回来！」\n蚂蚁们也在急急忙忙往家跑。\n跑得比我还快。\n妈妈说，空气变潮的时候，\n蚂蚁就知道要下雨了。\n它们比我先知道。",
       "scene": "A garden path under a dark stormy crayon sky with the first big raindrops falling. In the foreground a busy line of black ants hurries along the ground toward a small hole in the dirt, each ant carrying a tiny white crumb in its jaws. Grass and flowers bend in the wind along the path.",
       "pose": "walk",
       "px": 40,
@@ -94,29 +94,29 @@
       "ph": 54,
       "has_boy": false,
       "seed": 2108,
-      "en": "Mom calls from the door, “It's going to rain! Come inside!”\nI look down,\nand the ants are hurrying to move house too.\nMom says when the air gets damp,\nants know that rain is coming.\nThey know even before I do."
+      "en": "Mom calls from the door, “It's going to rain! Come inside!”\nThe ants are hurrying home too.\nThey're even faster than me.\nMom says when the air gets damp,\nants know that rain is coming.\nThey know before I do."
     },
     {
       "n": 9,
-      "zh": "它们的家有好多个门，\n藏在草丛里，藏在石头下面。\n我数呀数，数了好久。\n妈妈说，一个蚂蚁的家里，\n住着好几千只、好几万只蚂蚁，\n就像一座地下的大城市。",
+      "zh": "它们的家有好多个门，\n藏在草丛里，藏在石头下面。\n妈妈说，一个蚂蚁的家里，\n住着好几万只蚂蚁。\n地底下，一座大城市。",
       "scene": "Brown ground with several small ant nest holes, some half hidden under grass and one under a flat stone, a few black ants at each hole, late afternoon warm light.",
       "pose": "squat",
       "px": 32,
       "py": 60,
       "ph": 42,
       "has_boy": false,
-      "en": "Their home has lots of doors,\nhidden in the grass and under the rocks.\nI count and count for a long, long time.\nMom says one ant home\nhas thousands and thousands of ants living in it,\nlike a big city under the ground."
+      "en": "Their home has lots of doors,\nhidden in the grass and under the rocks.\nMom says one ant home\nhas tens of thousands of ants living in it.\nUnder the ground, there's a whole big city."
     },
     {
       "n": 10,
-      "zh": "滴答，滴答。\n下雨啦。\n我躲在伞下面，\n蚂蚁躲在家里面。\n雨点打在伞上，砰砰响。\n我想，它们现在一定也听得见吧。",
+      "zh": "滴答，滴答。\n下雨啦。\n我躲在伞下面，\n蚂蚁躲在家里面。\n我们都听得见雨声。",
       "scene": "Rain falling on the garden. The little boy stands under a big yellow umbrella, smiling and listening, raindrops bouncing off the umbrella. Near his feet a small ant hole is sheltered under a big green leaf. Wet grass, small puddles, cozy warm mood.",
       "pose": "stand",
       "px": 38,
       "py": 54,
       "ph": 56,
       "has_boy": true,
-      "en": "Drip, drop.\nIt's raining.\nI hide under my umbrella,\nand the ants hide in their home.\nThe raindrops go pop, pop on my umbrella.\nI bet they can hear it too."
+      "en": "Drip, drop.\nIt's raining.\nI hide under my umbrella,\nand the ants hide in their home.\nWe can all hear the rain."
     }
   ],
   "keyword": "搬家",

@@ -34,7 +34,7 @@
   "pages": [
     {
       "n": 1,
-      "zh": "嘿，小朋友。\n你知道吗？\n恐龙玩游戏的时候，\n有一句暗号。",
+      "zh": "嘿，小朋友。\n恐龙玩游戏的时候，\n有一句暗号。",
       "has_boy": false,
       "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus huddled close together in a circle on a grassy hill, whispering"
     },
@@ -48,17 +48,17 @@
       "n": 3,
       "zh": "今天，我偷偷告诉你。\n你凑近一点。",
       "has_boy": false,
-      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face leaning its big head in close towards the viewer as if to whisper, only one dinosaur in the picture"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting on a grassy hill seen from a distance, leaning its head a little towards the viewer with a closed-mouth smile, one tiny arm raised as if to whisper, only one dinosaur in the picture"
     },
     {
       "n": 4,
       "zh": "再近一点。\n……好，太近了。",
       "has_boy": false,
-      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face leaning its big head so far forward that it tips over and lands flat on its nose, its tiny arms waving, only one dinosaur in the picture"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face seen from a distance, leaning so far forward that it tips over and lands softly on its round belly on the grass, tiny arms waving, a surprised closed-mouth face, only one dinosaur in the picture"
     },
     {
       "n": 5,
-      "zh": "不过，你得先听我讲完。",
+      "zh": "不过，你得先听我讲完。\n讲完，暗号就是你的了。",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting down on a grassy hill like a storyteller, only one dinosaur in the picture"
     },
@@ -76,19 +76,19 @@
     },
     {
       "n": 8,
-      "zh": "从山坡上滚下来，\n大家一起追。",
+      "zh": "蛋一滚，\n大家撒腿就追。",
       "has_boy": false,
       "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus chasing a giant round grey stone egg rolling down a grassy hill"
     },
     {
       "n": 9,
-      "zh": "三角龙管推。",
+      "zh": "三角龙管推。\n推得满头大汗。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face pushing a giant round grey stone egg with its horns"
     },
     {
       "n": 10,
-      "zh": "长脖子恐龙管在前面看路。",
+      "zh": "长脖子恐龙管在前面看路。\n站得最高，看得最远。",
       "has_boy": false,
       "scene": "One very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face standing at the front of a grassy hill looking far ahead, a giant grey stone egg behind it"
     },
@@ -100,7 +100,7 @@
     },
     {
       "n": 12,
-      "zh": "所以每一次都是：\n「一、二……二！」",
+      "zh": "所以每一次都是：\n「一、二……二！」\n大家站在原地等。",
       "has_boy": false,
       "seed": 134912,
       "scene": "One tiny yellow baby dinosaur with a round body, a short tail and stubby legs, small dot eyes and a plain deadpan face shouting on a rock while one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face wait beside a giant grey stone egg looking confused"
@@ -115,7 +115,7 @@
       "n": 14,
       "zh": "暗号是两句话。\n第一句：\n「我可以一起玩吗？」",
       "has_boy": false,
-      "scene": "One tiny yellow baby dinosaur with a round body, a short tail and stubby legs, small dot eyes and a plain deadpan face whispering into the ear of one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face"
+      "scene": "One tiny yellow baby dinosaur with a round body, a short tail and stubby legs, small dot eyes and a plain deadpan face standing on its tiptoes on a small rock, whispering into the ear of one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face, who bends down low and listens with a closed-mouth smile, only two dinosaurs in the picture"
     },
     {
       "n": 15,
@@ -125,25 +125,25 @@
     },
     {
       "n": 16,
-      "zh": "不过，有一件事，\n你一定、一定要记住：\n千万别不说暗号，\n就冲进去抢那颗蛋。",
+      "zh": "不过，有一件事，\n你一定、一定要记住：\n千万别不说暗号，\n就冲进去抱那颗蛋。",
       "has_boy": false,
       "scene": "A giant round grey stone egg on a hilltop with four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus standing guard around it"
     },
     {
       "n": 17,
-      "zh": "恐龙会以为你是来抢东西的。\n呼——全跑光，\n只剩一地脚印。",
+      "zh": "恐龙会以为你是来抢蛋的。\n呼——全跑光，\n只剩一地脚印。",
       "has_boy": false,
       "scene": "An empty grassy hillside covered with dinosaur footprints leading away into the bushes, no dinosaurs in the picture"
     },
     {
       "n": 18,
-      "zh": "那天，你在山坡下面，\n看见恐龙们在滚大蛋。",
+      "zh": "那天，你在山坡下面，\n看见恐龙们在滚大蛋。\n你心里痒痒的。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts at the bottom of a hill looking up at four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus gathered around a giant grey stone egg"
     },
     {
       "n": 19,
-      "zh": "你太想玩了。\n暗号？\n忘了。",
+      "zh": "你太想玩了，拔腿就跑。\n暗号？\n忘了。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts running up a grassy hill as fast as he can, no dinosaurs in the picture"
     },
@@ -167,31 +167,31 @@
     },
     {
       "n": 23,
-      "zh": "没人扶，\n大石头蛋开始往下滚。",
+      "zh": "没人扶，\n大石头蛋晃了晃，\n开始往下滚。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts reaching out as a giant round grey stone egg starts to roll away down a green grassy hill, only one egg and no dinosaurs in the picture"
     },
     {
       "n": 24,
-      "zh": "越滚越快！",
+      "zh": "越滚越快。\n停不下来了。",
       "has_boy": false,
       "scene": "A giant round grey stone egg rolling fast down a green grassy slope, no dinosaurs and no people in the picture"
     },
     {
       "n": 25,
-      "zh": "你一个人在后面追。\n追不上！",
+      "zh": "你在后面追。\n腿都跑酸了。\n追不上。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts running down a green grassy hill after a giant rolling grey stone egg, no dinosaurs in the picture"
     },
     {
       "n": 26,
-      "zh": "蛋滚过小河，滚过草地，\n眼看就要滚进泥坑。",
+      "zh": "蛋滚过小河，滚过草地，\n前面是个大泥坑。\n再滚，就要洗泥巴澡了。",
       "has_boy": false,
       "scene": "A giant round grey stone egg rolling towards a big brown mud puddle at the bottom of a meadow, no dinosaurs and no people in the picture"
     },
     {
       "n": 27,
-      "zh": "你停下来。\n你想起来了。",
+      "zh": "你停下来，喘口气。\n想起来了：\n暗号。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing still on a green grassy hillside, thinking hard, no dinosaurs in the picture"
     },
@@ -203,19 +203,19 @@
     },
     {
       "n": 29,
-      "zh": "树丛里，\n探出一个个脑袋。",
+      "zh": "树丛里沙沙响。\n探出一个脑袋，\n又一个。",
       "has_boy": false,
       "scene": "Four dinosaur heads popping up out of a row of bushes: a green T. rex head, an ochre triceratops head, a tiny yellow head and a long grey-blue neck with a tiny head"
     },
     {
       "n": 30,
-      "zh": "恐龙们冲出来了！\n三角龙推，长脖子看路，\n你站在泥坑前面，\n一伸手——挡住了！",
+      "zh": "恐龙们冲出来了。\n三角龙推，长脖子看路，\n你站在泥坑前面，一伸手——\n挡住了。\n好险。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts stopping a giant grey stone egg at the edge of a mud puddle with both hands while one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face and one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face help"
     },
     {
       "n": 31,
-      "zh": "最小的恐龙站在石头上，\n大声喊：\n「一、二……三！」\n它会数到三了。",
+      "zh": "最小的恐龙站在石头上，大声喊：\n「一、二……三！」\n它会数到三了。",
       "has_boy": false,
       "scene": "One tiny yellow baby dinosaur with a round body, a short tail and stubby legs, small dot eyes and a plain deadpan face standing proudly on a rock shouting, and one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face and a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts cheering around it"
     },

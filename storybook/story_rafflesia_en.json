@@ -4,21 +4,21 @@
   "pages": [
     {
       "n": 1,
-      "zh": "今天，我要去森林里找一朵花。\n听说那是世界上最大的花。",
+      "zh": "今天，我要去森林里找一朵花。\n听说那是世界上最大的花。\n比我的脸还大。",
       "scene": "walking into a misty green rainforest at morning, small backpack on his back, looking ahead with curiosity, tall trees and ferns, sunbeams through leaves",
-      "en": "Today I'm going into the forest to find a flower.\nThey say it's the biggest flower in the world."
+      "en": "Today I'm going into the forest to find a flower.\nThey say it's the biggest flower in the world.\nBigger than my face."
     },
     {
       "n": 2,
-      "zh": "森林里好安静。\n树很高，叶子很大，比我的脸还大。",
+      "zh": "森林里好安静。\n有一头绿色的大象，站着不动。\n它假装自己是一片叶子。",
       "scene": "standing among giant elephant ear leaves taller than himself, looking up in wonder, deep green rainforest, dappled light",
-      "en": "The forest is very quiet.\nThe trees are tall, and the leaves are big—\nbigger than my face."
+      "en": "The forest is very quiet.\nThere's a big green elephant, standing very still.\nIt's pretending to be a leaf."
     },
     {
       "n": 3,
-      "zh": "咦？树上爬着一根粗粗的藤。\n它一圈一圈，缠着大树往上爬。",
+      "zh": "树上爬着一根粗粗的藤，\n一圈一圈，缠着大树往上爬。\n像一条大蛇。\n不过是藤，不是蛇。",
       "scene": "touching a thick brown woody vine coiling up a huge tree trunk, looking closely, curious expression, rainforest understory",
-      "en": "Huh? A thick vine is climbing up a tree.\nRound and round, it wraps around the trunk and climbs."
+      "en": "A thick vine is climbing up a tree,\nround and round, wrapping the trunk as it climbs.\nIt looks like a big snake.\nBut it's a vine, not a snake."
     },
     {
       "n": 4,
@@ -28,39 +28,39 @@
     },
     {
       "n": 5,
-      "zh": "我等呀等。\n包菜慢慢裂开了……",
+      "zh": "我坐下来等。\n等呀，等呀。\n突然，咔嚓。",
       "scene": "sitting patiently on a mossy log watching the big bud slowly cracking open, hands on knees, waiting, soft forest light",
-      "en": "I wait and wait.\nSlowly, the cabbage starts to open…"
+      "en": "I sit down and wait.\nI wait, and wait.\nThen suddenly—crack!"
     },
     {
       "n": 6,
-      "zh": "哇——好大的一朵花！\n五片厚厚的花瓣，红红的，长满白点点。",
+      "zh": "开花了。\n五片厚厚的花瓣，红红的，长满白点点。\n它比我的头还大，\n我只好把它顶在头上。",
       "scene": "standing with arms spread wide in front of an enormous red flower with five thick petals covered in white speckles, as wide as he is tall, mouth open in amazement",
-      "en": "Wow—what a huge flower!\nFive thick petals, bright red,\ncovered in white spots."
+      "en": "It's blooming!\nFive thick petals, bright red, covered in white spots.\nIt's bigger than my head,\nso I wear it on my head like a hat."
     },
     {
       "n": 7,
-      "zh": "可是……好臭呀！\n苍蝇嗡嗡嗡地飞过来了。",
+      "zh": "可是……好臭呀！\n臭得苍蝇都来开会了。",
       "scene": "pinching his nose with one hand, leaning away from the giant red flower, small flies buzzing around it, funny disgusted face",
-      "en": "But… it's so stinky!\nThe flies come buzzing over."
+      "en": "But… it's so stinky!\nSo stinky, the flies all come for a meeting."
     },
     {
       "n": 8,
-      "zh": "奇怪，这朵花的叶子呢？\n它的根呢？我怎么找不到？",
+      "zh": "奇怪，这朵花的叶子呢？\n它的根呢？\n是不是忘带了？",
       "scene": "kneeling and searching around the base of the giant flower with a puzzled face, hands on the ground, looking for roots, only the vine is there",
-      "en": "That's strange. Where are this flower's leaves?\nWhere are its roots? I can't find them."
+      "en": "That's strange. Where are this flower's leaves?\nWhere are its roots?\nDid it forget to bring them?"
     },
     {
       "n": 9,
-      "zh": "原来它没有叶子，也没有根。\n它住在藤的身体里，喝藤的水，吃藤的饭。\n这叫「寄生」。",
+      "zh": "原来它没有叶子，也没有根。\n它住在藤的肚子里，\n喝藤的水，吃藤的饭。\n这叫「寄生」。",
       "scene": "sitting cross legged next to the giant flower and the thick vine, listening and thinking, gentle cutaway view of the vine behind him, warm afternoon light",
-      "en": "It turns out it has no leaves and no roots.\nIt lives inside the vine,\ndrinking the vine's water and eating the vine's food.\nThat's called being a “parasite.”"
+      "en": "It turns out it has no leaves and no roots.\nIt lives inside the vine's tummy,\ndrinking the vine's water and eating the vine's dinner.\nThat's called being a “parasite.”"
     },
     {
       "n": 10,
-      "zh": "别的花自己晒太阳做饭，\n它却借住在别人家里。\n森林里，每个人都有自己活下去的办法。",
+      "zh": "别的花自己晒太阳做饭。\n它住在别人家吃饭。\n不做饭，也能开出世界上最大的花。",
       "scene": "walking home along a forest path at golden sunset, looking back over his shoulder at the distant giant red flower, warm orange light, peaceful",
-      "en": "Other flowers soak up the sun and make their own food,\nbut this one lives in someone else's home.\nIn the forest, everyone has their own way to stay alive."
+      "en": "Other flowers sit in the sun and make their own food.\nThis one eats at somebody else's house.\nIt never cooks—and it still grows the biggest flower in the world."
     }
   ],
   "slug": "rafflesia_en",

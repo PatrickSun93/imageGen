@@ -58,7 +58,7 @@
     },
     {
       "n": 5,
-      "zh": "恐龙泡澡之前，\n一定会先用脚趾头\n试一试水温。",
+      "zh": "恐龙泡澡之前，\n一定会先用脚趾头\n试一试水温。\n脚趾头说：「可以。」",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face happily jumping into a bathtub with its knees tucked up and its eyes squeezed shut, a big splash of water flying everywhere, only one dinosaur in the picture"
     },
@@ -70,19 +70,20 @@
     },
     {
       "n": 7,
-      "zh": "三角龙喜欢把泡泡\n堆在三只角上。",
+      "zh": "三角龙喜欢把泡泡\n堆在三只角上。\n洗澡也要戴帽子。",
       "has_boy": false,
       "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face in a bathtub with tall piles of foam stacked on its three horns, only one dinosaur in the picture"
     },
     {
       "n": 8,
-      "zh": "长脖子恐龙要用三个浴缸。\n一个泡脑袋，\n一个泡肚子，\n一个泡尾巴。",
+      "zh": "长脖子恐龙要用三个浴缸。\n一个泡脑袋，\n一个泡肚子，\n一个泡尾巴。\n它说：「分开洗，洗得干净。」",
       "has_boy": false,
-      "scene": "One very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face lying stretched across three bathtubs in a row, its head in one, its belly in the middle one and its tail in the last one"
+      "seed": 131988,
+      "scene": "Exactly one long-necked grey-blue dinosaur with one single neck and one tiny head, lying stretched out on its belly across three small bathtubs placed in a row: its tiny head resting in the left bathtub, its round body in the middle bathtub, its long tail draped into the right bathtub, eyes closed and smiling, only one dinosaur in the picture"
     },
     {
       "n": 9,
-      "zh": "剑龙背上的板子，\n正好用来晾毛巾。",
+      "zh": "剑龙背上的板子，\n正好用来晾毛巾。\n它说：「我的背，就是毛巾架。」",
       "has_boy": false,
       "scene": "One pink stegosaurus with wobbly plates along its back, small dot eyes and a plain deadpan face standing beside a bathtub with towels hanging over the plates on its back, only one dinosaur in the picture"
     },
@@ -90,17 +91,17 @@
       "n": 10,
       "zh": "霸王龙的手太短了，\n搓不到背。",
       "has_boy": false,
-      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face in a bathtub stretching its tiny arms behind itself and failing to reach its back, only one dinosaur in the picture"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting alone in a bathtub of foam, stretching one tiny arm over its shoulder towards its back and not reaching, a puzzled plain face, only one dinosaur in the picture"
     },
     {
       "n": 11,
-      "zh": "它试过用树枝。\n树枝断了。",
+      "zh": "它试过用树枝。\n树枝说：「我不干了。」\n咔嚓。",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing in a bathtub holding the two halves of a snapped branch, one half in each tiny hand, looking at them with a plain face, only one dinosaur in the picture"
     },
     {
       "n": 12,
-      "zh": "它试过在墙上蹭。\n墙倒了。",
+      "zh": "它试过在墙上蹭。\n墙说：「你太重了。」\n轰。",
       "has_boy": false,
       "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face leaning its back against a garden wall, the wall tipping over behind it and its bricks tumbling down, the T. rex looking back over its shoulder with a plain face, only one dinosaur in the picture"
     },
@@ -112,7 +113,7 @@
     },
     {
       "n": 14,
-      "zh": "泡泡越多越好。",
+      "zh": "泡泡越多，\n它们来得越快。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts half buried in foam that overflows a bathtub and fills the whole bathroom, no dinosaurs in the picture"
     },
@@ -130,9 +131,10 @@
     },
     {
       "n": 17,
-      "zh": "恐龙什么都不怕。\n不怕打雷，不怕黑，\n也不怕打针。",
+      "zh": "恐龙什么都不怕。\n不怕打雷，不怕黑。\n打针？它说：「来吧。」",
       "has_boy": false,
-      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting calmly on a hill under a dark stormy sky with lightning, completely unbothered, only one dinosaur in the picture"
+      "seed": 131917,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting calmly on a grassy hill, a small dark rain cloud with one little lightning bolt far away on the right, the upper part of the picture plain speckled paper, the picture filling the whole page edge to edge, only one dinosaur in the picture"
     },
     {
       "n": 18,
@@ -144,11 +146,11 @@
       "n": 19,
       "zh": "恐龙一听见，\n就会吓得跳起来。\n一跳，就有三层楼那么高。",
       "has_boy": false,
-      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus leaping in fright high into the air above the roof of a small house"
+      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus all leaping high up into the air in fright, far above the roof of a house far below them, eyes wide, little motion lines under their feet"
     },
     {
       "n": 20,
-      "zh": "所以，小黄鸭，\n放到别的地方去。\n放高一点。",
+      "zh": "所以，小黄鸭，\n放到别的地方去。\n放高一点。\n再高一点。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing on tiptoe on a stool, putting a small yellow rubber duck on top of a very tall wardrobe, no dinosaurs in the picture"
     },
@@ -160,7 +162,7 @@
     },
     {
       "n": 22,
-      "zh": "恐龙都来了。\n挤了一点。",
+      "zh": "恐龙都来了。\n浴缸说：「有点挤。」",
       "has_boy": false,
       "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus all squeezed together into one bathtub full of foam, looking squashed with plain faces"
     },
@@ -202,13 +204,13 @@
     },
     {
       "n": 29,
-      "zh": "你在泡泡里摸呀摸，\n摸到了那只小黄鸭。\n把它放进抽屉，\n关好。",
+      "zh": "你在泡泡里摸呀摸，\n摸到了那只小黄鸭。\n放进抽屉，关好。\n咔哒。",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing in foam putting a small yellow rubber duck into a drawer and closing it firmly, no dinosaurs in the picture"
     },
     {
       "n": 30,
-      "zh": "最后，你拿来一把长长的刷子，\n帮霸王龙搓了背。\n它舒服得一动也不动。",
+      "zh": "最后，你拿来一把长长的刷子，\n帮霸王龙搓了背。\n它说：「左边一点。」",
       "has_boy": false,
       "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing on a stool scrubbing the back of one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face with a long-handled brush, the T. rex with eyes closed in bliss"
     },
@@ -216,7 +218,8 @@
       "n": 31,
       "zh": "泡泡慢慢落了下来。\n大家都睡着了。",
       "has_boy": false,
-      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus fast asleep in and around a bathtub with a little foam left, the bathroom calm and quiet"
+      "seed": 131931,
+      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus all fast asleep with their eyes shut, curled up together in and around a bathtub with a little foam left, every dinosaur sleeping peacefully, the bathroom calm and quiet"
     },
     {
       "n": 32,
