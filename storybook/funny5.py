@@ -50,7 +50,7 @@ DINOS = {
 }
 
 SEEDS = {("dragonsocks", 23): 130923, ("dinowantsplay", 22): 132922, ("dinojoin", 12): 134912,
-         ("trexloses", 18): 135918, ("trexloses", 28): 135928, ("seesaw", 11): 138911}   # 这几页换过种子：原种子的构图总在前景塞一排东西
+         ("trexloses", 18): 135918, ("trexloses", 28): 135928, ("seesaw", 11): 138911, ("seesaw", 20): 138920}   # 这几页换过种子：原种子的构图总在前景塞一排东西
 
 # 每页：(旁白, 画面, 他在不在)。画面里的 {c} 换成这本书的主角描述。
 BOOKS = [
@@ -387,7 +387,7 @@ BOOKS = [
   ("全操场「啪啪啪啪啪」。\n跷跷板翻了，\n大家全摔进了沙坑。", "A wooden seesaw flipped upside down, and {H} tumbled together in a heap inside a big sandpit, sand flying, silly dazed faces", 0),
   ("谁先拍的？\n谁也不记得了。\n只记得，哪儿都疼。", "{H} sitting in a sandpit covered in sand, rubbing their heads and arms, with plain faces", 0),
   ("那天，你和小三角龙\n在玩跷跷板。\n上，下，上，下。", "{K} and {R} playing on a long wooden seesaw in a playground, the boy up high and the triceratops down low, both smiling", 0),
-  ("小霸王龙跑过来。\n它也想玩。\n它一着急——", "{Y} running towards a seesaw where {K} and {R} are playing, looking flustered", 0),
+  ("小霸王龙跑过来。\n它也想玩。\n它一着急——", "{Y} running towards a long wooden seesaw, looking flustered; {K} sits on the near end of the seesaw and {R} sits on the far end, its whole round body, four legs and tail clearly visible, the boy and the triceratops apart from each other", 0),
   ("啪！\n拍在你的胳膊上。\n挺疼的。", "{Y} touching {K} on the upper arm with one tiny hand beside a seesaw, a few small curved motion lines, the boy holding his arm with a surprised face", 0),
   ("你也想拍回去，\n手都举起来了。", "{K} with one hand raised in the air, frowning a little, looking at {Y}, beside a seesaw", 0),
   ("可是你想起来了。\n你站稳，\n把手往前一伸——", "{K} standing firmly with his feet apart, stretching one arm straight out in front of him with his open palm facing forward, looking at {Y}", 0),
