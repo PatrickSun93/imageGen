@@ -1,0 +1,228 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "霸王龙输不起",
+  "subtitle": "输了没关系，再来一局",
+  "slug": "trexloses",
+  "seed_base": 135000,
+  "character": "",
+  "style": "flat hand-drawn illustration on speckled cream paper with tiny grey flecks, the speckled paper fills the whole square picture edge to edge with no border, simple flat colour shapes with thin wobbly outlines, muted faded colours: rusty red, soft pink, pale yellow, soft green and grey-blue, ordinary objects drawn plain, without eyes or faces, the upper third of the picture left as empty speckled paper, no words, no letters and no writing anywhere in the picture",
+  "style_label": "斑点纸平涂",
+  "keyword": "",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2419",
+    "soft": "#7a6e5a",
+    "ground": "#f5f2ea",
+    "paper": "#fffdf8",
+    "accent": "#c0603a",
+    "bark": "#8a7f66",
+    "line": "#e2dccd",
+    "ink_d": "#ece5d8",
+    "soft_d": "#a99b83",
+    "ground_d": "#16130e",
+    "paper_d": "#211d16",
+    "accent_d": "#e0805a",
+    "bark_d": "#8a7f66",
+    "line_d": "#37301f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "嘿，小朋友。\n你跟霸王龙玩过游戏吗？",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting at a small low table with a simple game board in front of it, only one dinosaur in the picture"
+    },
+    {
+      "n": 2,
+      "zh": "霸王龙玩什么，\n都想赢。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing behind a ribbon stretched between two posts in a meadow, looking very determined, only one dinosaur in the picture"
+    },
+    {
+      "n": 3,
+      "zh": "赛跑，它要赢。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face running fast across a meadow, only one dinosaur in the picture"
+    },
+    {
+      "n": 4,
+      "zh": "捉迷藏，它要赢。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face hiding badly behind a very thin tree, almost all of its body showing, only one dinosaur in the picture"
+    },
+    {
+      "n": 5,
+      "zh": "连比谁先眨眼，\n它也要赢。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face face to face in a staring contest, both with eyes wide open and very serious"
+    },
+    {
+      "n": 6,
+      "zh": "可是，霸王龙的手太短了。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face looking down at its own tiny arms with a plain face, only one dinosaur in the picture"
+    },
+    {
+      "n": 7,
+      "zh": "玩接球，接不住。",
+      "has_boy": false,
+      "scene": "A red ball bouncing off the head of one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face, its tiny arms reaching up too late"
+    },
+    {
+      "n": 8,
+      "zh": "玩跳绳，够不着绳子。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face holding a skipping rope with its tiny arms, the rope far too short and tangled around its feet, only one dinosaur in the picture"
+    },
+    {
+      "n": 9,
+      "zh": "所以，它常常输。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting on the grass in a sulk, its tiny arms folded, its bottom lip pushed out in a little pout, looking away, only one dinosaur in the picture"
+    },
+    {
+      "n": 10,
+      "zh": "霸王龙一输，\n就会一屁股坐在地上。\n咚！桌上的杯子跳了一跳。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting down hard on the grass beside a picnic table, the cups on the table jumping into the air"
+    },
+    {
+      "n": 11,
+      "zh": "输两次，\n树上的苹果全掉下来了。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting down hard under an apple tree, all the apples raining down around it"
+    },
+    {
+      "n": 12,
+      "zh": "输三次……\n你还是别知道了。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face crouching low with its eyes squeezed shut, and one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face hiding its tiny head behind a tree trunk, both bracing themselves"
+    },
+    {
+      "n": 13,
+      "zh": "所以，大家都让着它。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face proudly breaking a finish ribbon while one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face and one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face run slowly on purpose far behind"
+    },
+    {
+      "n": 14,
+      "zh": "三角龙假装摔了一跤。\n长脖子恐龙假装睡着了。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face lying flat on the grass pretending to have tripped, and one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face standing with its eyes closed pretending to sleep"
+    },
+    {
+      "n": 15,
+      "zh": "霸王龙赢了。\n可是，它一点也不高兴。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing alone on the grass holding a plain shiny golden trophy, looking down at it with a small frown, only one dinosaur in the picture"
+    },
+    {
+      "n": 16,
+      "zh": "因为，大家都不想\n跟它玩了。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing alone in a meadow, and far away the other dinosaurs playing ball together without it"
+    },
+    {
+      "n": 17,
+      "zh": "不过，有一件事，\n你一定、一定要记住：\n千万别跟霸王龙比赛跑。",
+      "has_boy": false,
+      "scene": "A ribbon stretched between two posts in an empty meadow, nothing else in the picture"
+    },
+    {
+      "n": 18,
+      "zh": "你会赢。\n然后，就麻烦了。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing side by side at a starting line in a meadow"
+    },
+    {
+      "n": 19,
+      "zh": "那天，你跟霸王龙\n比赛跑。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face running across a meadow, the child a little ahead"
+    },
+    {
+      "n": 20,
+      "zh": "你跑得比它快。\n你先到了。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts breaking a finish ribbon with arms up while one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face runs up behind"
+    },
+    {
+      "n": 21,
+      "zh": "霸王龙停下来，\n脸越来越红……",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing still with its cheeks puffed out and its face turning red, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts watching nervously"
+    },
+    {
+      "n": 22,
+      "zh": "它往地上一坐——",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face starting to sit down, and a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face and one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face all bracing themselves"
+    },
+    {
+      "n": 23,
+      "zh": "咚！！！",
+      "has_boy": false,
+      "scene": "The whole meadow bouncing, trees bending, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face and one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face bounced up into the air, and a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts hugging a tree trunk"
+    },
+    {
+      "n": 24,
+      "zh": "大家被震得跳了起来。\n等停下来，\n头发都竖着。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face and one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face sitting on the grass with their hair and tails sticking straight up, looking dazed"
+    },
+    {
+      "n": 25,
+      "zh": "你走过去，\n坐在它旁边。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts sitting down on the grass next to one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face"
+    },
+    {
+      "n": 26,
+      "zh": "你说：\n「输了没关系。\n我们再来一局。」",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts talking kindly to one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face, both sitting on the grass"
+    },
+    {
+      "n": 27,
+      "zh": "「这一次，你来数一、二、三。」",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face holding up one tiny arm to start a race, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts crouched ready at the starting line"
+    },
+    {
+      "n": 28,
+      "zh": "再来一局。\n这一次，它赢了。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face crossing a finish ribbon, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts close behind and laughing"
+    },
+    {
+      "n": 29,
+      "zh": "再来一局。\n这一次，你赢了。\n霸王龙……慢慢地坐下。\n轻轻地。\n一点都没晃。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting down very gently on the grass, a butterfly still resting on a flower right beside it, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts smiling"
+    },
+    {
+      "n": 30,
+      "zh": "后来，大家都回来了。\n输了的，\n负责数下一局的一、二、三。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus lined up together at a starting line, the triceratops holding up a foot to start"
+    },
+    {
+      "n": 31,
+      "zh": "大家跑了一下午。\n谁赢了？\n谁也不记得了。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus lying on the grass in a row at sunset, tired and happy"
+    },
+    {
+      "n": 32,
+      "zh": "现在你知道了：\n输了没关系，再来一局。\n对了，要是有一天\n你家的杯子跳了一跳——\n去看看，\n是不是有谁输了。",
+      "has_boy": false,
+      "scene": "Cups on a kitchen table jumping slightly, and one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face peeking in through the window with a sheepish smile"
+    }
+  ]
+}

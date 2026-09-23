@@ -1,0 +1,228 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "龙轮到了吗",
+  "subtitle": "一个秋千，七条龙",
+  "slug": "dragonturns",
+  "seed_base": 137000,
+  "character": "",
+  "style": "flat hand-drawn illustration on speckled cream paper with tiny grey flecks, the speckled paper fills the whole square picture edge to edge with no border, simple flat colour shapes with thin wobbly outlines, muted faded colours: rusty red, soft pink, pale yellow, soft green and grey-blue, ordinary objects drawn plain, without eyes or faces, the upper third of the picture left as empty speckled paper, no words, no letters and no writing anywhere in the picture",
+  "style_label": "斑点纸平涂",
+  "keyword": "",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2419",
+    "soft": "#7a6e5a",
+    "ground": "#f5f2ea",
+    "paper": "#fffdf8",
+    "accent": "#c0603a",
+    "bark": "#8a7f66",
+    "line": "#e2dccd",
+    "ink_d": "#ece5d8",
+    "soft_d": "#a99b83",
+    "ground_d": "#16130e",
+    "paper_d": "#211d16",
+    "accent_d": "#e0805a",
+    "bark_d": "#8a7f66",
+    "line_d": "#37301f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "嘿，小朋友。\n公园里有一个秋千。",
+      "has_boy": false,
+      "scene": "One single empty swing hanging from a wooden frame in a quiet park, nothing else in the picture"
+    },
+    {
+      "n": 2,
+      "zh": "只有一个。",
+      "has_boy": false,
+      "scene": "A close view of the same single empty swing, looking a little lonely, nothing else in the picture"
+    },
+    {
+      "n": 3,
+      "zh": "今天，来了七条龙。",
+      "has_boy": false,
+      "scene": "Seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one arriving through the gate of a park"
+    },
+    {
+      "n": 4,
+      "zh": "七条龙，\n一个秋千。",
+      "has_boy": false,
+      "scene": "Seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one standing in a row staring at one single swing"
+    },
+    {
+      "n": 5,
+      "zh": "你猜会怎么样？",
+      "has_boy": false,
+      "scene": "Seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one all turning to look straight at the viewer with plain faces"
+    },
+    {
+      "n": 6,
+      "zh": "龙最爱荡秋千。\n荡得高高的，\n风吹着胡子，舒服极了。",
+      "has_boy": false,
+      "scene": "One long flat rusty-red dragon shaped like a stretched pillow, with branching antler-like horns, droopy whiskers, tiny stubby legs, small dot eyes and a plain deadpan face swinging high on a swing, its whiskers blowing in the wind, eyes closed happily, only one dragon in the picture"
+    },
+    {
+      "n": 7,
+      "zh": "可是，龙不太会排队。",
+      "has_boy": false,
+      "scene": "Seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one all crowding around one swing in a tangled heap"
+    },
+    {
+      "n": 8,
+      "zh": "扁长的龙，从最后面，\n一下挤到了最前面。",
+      "has_boy": false,
+      "scene": "A line of four dragons standing and waiting for a swing, and one long flat rusty-red dragon shaped like a stretched pillow, with branching antler-like horns, droopy whiskers, tiny stubby legs, small dot eyes and a plain deadpan face sliding flat along the ground under their legs from the back of the line to the front"
+    },
+    {
+      "n": 9,
+      "zh": "圆圆的龙，\n干脆坐在秋千上，\n不下来了。",
+      "has_boy": false,
+      "scene": "One round dusty-pink dragon shaped like a potato, with two small round bumps on its head, tiny stubby legs, small dot eyes and a plain deadpan face sitting on a swing with its arms folded, not moving, only one dragon in the picture"
+    },
+    {
+      "n": 10,
+      "zh": "细高的龙站在最后面，\n等得脖子\n都长了一截。",
+      "has_boy": false,
+      "scene": "One tall thin sage-green dragon with a long neck, no horns, tiny wings, small dot eyes and a plain deadpan face standing at the very back with its neck stretched extra long and a sleepy face, only one dragon in the picture"
+    },
+    {
+      "n": 11,
+      "zh": "最小的龙，\n还没挤到，\n天就黑了。",
+      "has_boy": false,
+      "scene": "One tiny grey-blue baby dragon with a round body and a curly tail, small dot eyes and a plain deadpan face sitting alone on the grass at dusk, the swing far away, only one dragon in the picture"
+    },
+    {
+      "n": 12,
+      "zh": "不过，有一件事，\n你一定、一定要记住：\n千万别让七条龙\n同时坐一个秋千。",
+      "has_boy": false,
+      "scene": "One single empty swing in a park at evening, nothing else in the picture"
+    },
+    {
+      "n": 13,
+      "zh": "秋千会荡到月亮上去。",
+      "has_boy": false,
+      "scene": "A wooden swing seat flying high up towards a big round pale moon, three long dragon tails dangling down from the swing seat, a few small stars on the speckled paper, no people in the picture"
+    },
+    {
+      "n": 14,
+      "zh": "那天，你也来公园玩。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts walking in through the gate of a park, no dragons in the picture"
+    },
+    {
+      "n": 15,
+      "zh": "你看见七条龙挤成一团，\n谁也不让谁。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts watching seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one squashed together around one swing"
+    },
+    {
+      "n": 16,
+      "zh": "你说：\n「我有个办法。」",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts raising one hand high in front of seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one"
+    },
+    {
+      "n": 17,
+      "zh": "「我们排队。\n每人荡十下，\n就换人。」",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts pointing to a line drawn on the ground in front of a swing, seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one listening"
+    },
+    {
+      "n": 18,
+      "zh": "龙都说好。\n它们开始数。",
+      "has_boy": false,
+      "scene": "Seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one standing in one neat line behind a swing"
+    },
+    {
+      "n": 19,
+      "zh": "第一条龙数：\n「一、二、五、九、十！」",
+      "has_boy": false,
+      "scene": "One long flat rusty-red dragon shaped like a stretched pillow, with branching antler-like horns, droopy whiskers, tiny stubby legs, small dot eyes and a plain deadpan face swinging on a swing while the other dragons in the line look at it suspiciously"
+    },
+    {
+      "n": 20,
+      "zh": "太快了！",
+      "has_boy": false,
+      "scene": "The dragons in the line looking at each other with raised eyebrows"
+    },
+    {
+      "n": 21,
+      "zh": "第二条龙数：\n「一……二……三……」\n数到一半，睡着了。",
+      "has_boy": false,
+      "scene": "One round dusty-pink dragon shaped like a potato, with two small round bumps on its head, tiny stubby legs, small dot eyes and a plain deadpan face fast asleep sitting on a swing, the line of dragons waiting behind"
+    },
+    {
+      "n": 22,
+      "zh": "太慢了！",
+      "has_boy": false,
+      "scene": "A line of dragons waiting, one of them yawning hugely"
+    },
+    {
+      "n": 23,
+      "zh": "第三条龙数到十，\n又从一开始数。",
+      "has_boy": false,
+      "scene": "One tall thin sage-green dragon with a long neck, no horns, tiny wings, small dot eyes and a plain deadpan face swinging with a sly little smile while the line of dragons frowns"
+    },
+    {
+      "n": 24,
+      "zh": "大家都急了。",
+      "has_boy": false,
+      "scene": "Seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one stamping their feet beside a swing, little puffs of dust"
+    },
+    {
+      "n": 25,
+      "zh": "你说：\n「那我们一起数。」",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing beside a swing with seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one gathered around"
+    },
+    {
+      "n": 26,
+      "zh": "大家围在秋千旁边，\n一起数：\n「一、二、三、四……」",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one standing around a swing counting together with their mouths open"
+    },
+    {
+      "n": 27,
+      "zh": "「……八、九、十！\n换人！」",
+      "has_boy": false,
+      "scene": "One dragon hopping off a swing as the next one hops on, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts clapping"
+    },
+    {
+      "n": 28,
+      "zh": "这样，谁也快不了，\n谁也慢不了。",
+      "has_boy": false,
+      "scene": "A neat line of dragons waiting happily while one dragon swings"
+    },
+    {
+      "n": 29,
+      "zh": "轮到最小的龙了。\n大家一起给它推，\n推得高高的。",
+      "has_boy": false,
+      "scene": "One tiny grey-blue baby dragon with a round body and a curly tail, small dot eyes and a plain deadpan face swinging very high while the other dragons push the swing together"
+    },
+    {
+      "n": 30,
+      "zh": "天还没黑，\n每条龙都荡了三轮。",
+      "has_boy": false,
+      "scene": "Seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one sitting happily on the grass at sunset beside an empty swing"
+    },
+    {
+      "n": 31,
+      "zh": "最后一轮，轮到你了。\n七条龙一起给你推。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts on a swing flying high while seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one push together"
+    },
+    {
+      "n": 32,
+      "zh": "现在你知道了：\n一个秋千，七条龙，\n也能玩得很开心。\n排队，荡十下，\n大家一起数。\n你也试试。",
+      "has_boy": false,
+      "scene": "A swing in a park at sunset with a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and seven friendly dragons of different shapes and colours: a long flat red one with antler-like horns, a round pink one, a tall thin green one, a tiny grey-blue one, a yellow one, a lilac one and a spotty one waving at the viewer"
+    }
+  ]
+}

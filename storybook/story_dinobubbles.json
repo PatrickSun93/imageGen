@@ -9,9 +9,9 @@
   "subtitle": "千万别放会叫的小黄鸭",
   "slug": "dinobubbles",
   "seed_base": 131000,
-  "character": "wearing light blue pyjamas with short sleeves, short black hair",
-  "style": "children's picture book illustration, loose sketchy pencil lines with soft transparent watercolour washes, lots of plain white paper around the figures, muted faded colours, simple rounded characters with small dot eyes and calm deadpan expressions, no words, no letters and no writing anywhere in the picture, soft aqua, lilac and warm orange",
-  "style_label": "铅笔淡彩",
+  "character": "",
+  "style": "flat hand-drawn illustration on speckled cream paper with tiny grey flecks, the speckled paper fills the whole square picture edge to edge with no border, simple flat colour shapes with thin wobbly outlines, muted faded colours: rusty red, soft pink, pale yellow, soft green and grey-blue, ordinary objects drawn plain, without eyes or faces, the upper third of the picture left as empty speckled paper, no words, no letters and no writing anywhere in the picture",
+  "style_label": "斑点纸平涂",
   "keyword": "",
   "diagram_pages": [],
   "palette": {
@@ -35,194 +35,194 @@
     {
       "n": 1,
       "zh": "嘿，小朋友。\n你知道恐龙最爱干什么吗？",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, holding a toy dinosaur, looking curious, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "has_boy": false,
+      "scene": "A small old bathtub full of foam standing alone, the tip of a dinosaur tail sticking up out of the bubbles"
     },
     {
       "n": 2,
-      "zh": "不是吼。\n也不是跑。",
+      "zh": "不是吼。",
       "has_boy": false,
-      "scene": "One of the soft rounded friendly cartoon dinosaurs with small dot eyes standing with a bored face, arms hanging, on white paper"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing with its mouth closed in a flat line and its eyes half closed, looking sleepy and bored, arms hanging, only one dinosaur in the picture"
     },
     {
       "n": 3,
-      "zh": "是泡泡浴。",
+      "zh": "不是跑。",
       "has_boy": false,
-      "scene": "One of the soft rounded friendly cartoon dinosaurs with small dot eyes sitting in an old bathtub full of bubbles, eyes half closed, blissful"
+      "scene": "One very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face standing completely still and yawning, only one dinosaur in the picture"
     },
     {
       "n": 4,
-      "zh": "大泡泡。",
+      "zh": "是泡泡浴。",
       "has_boy": false,
-      "scene": "One of the soft rounded friendly cartoon dinosaurs with small dot eyes blowing one enormous bubble"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting in an old bathtub with foam up to its chin, eyes closed, blissful, only one dinosaur in the picture"
     },
     {
       "n": 5,
-      "zh": "小泡泡。",
+      "zh": "恐龙泡澡之前，\n一定会先用脚趾头\n试一试水温。",
       "has_boy": false,
-      "scene": "A small one of the soft rounded friendly cartoon dinosaurs with small dot eyes surrounded by hundreds of tiny bubbles"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face happily jumping into a bathtub with its knees tucked up and its eyes squeezed shut, a big splash of water flying everywhere, only one dinosaur in the picture"
     },
     {
       "n": 6,
-      "zh": "能把一整只恐龙装进去的\n超级大泡泡。",
+      "zh": "大概试了吧。",
       "has_boy": false,
-      "scene": "One of the soft rounded friendly cartoon dinosaurs with small dot eyes floating calmly inside a giant clear bubble"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting in a nearly empty bathtub in a flooded bathroom, water all over the floor, looking at the viewer with a plain face"
     },
     {
       "n": 7,
-      "zh": "它们用泡泡做胡子。",
+      "zh": "三角龙喜欢把泡泡\n堆在三只角上。",
       "has_boy": false,
-      "scene": "One of the soft rounded friendly cartoon dinosaurs with small dot eyes with a big white beard made of foam"
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face in a bathtub with tall piles of foam stacked on its three horns, only one dinosaur in the picture"
     },
     {
       "n": 8,
-      "zh": "做帽子，做皇冠。",
+      "zh": "长脖子恐龙要用三个浴缸。\n一个泡脑袋，\n一个泡肚子，\n一个泡尾巴。",
       "has_boy": false,
-      "scene": "Three of the soft rounded friendly cartoon dinosaurs with small dot eyes wearing tall hats and crowns made of foam"
+      "scene": "One very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face lying stretched across three bathtubs in a row, its head in one, its belly in the middle one and its tail in the last one"
     },
     {
       "n": 9,
-      "zh": "三角龙喜欢把泡泡\n堆在三只角上。",
+      "zh": "剑龙背上的板子，\n正好用来晾毛巾。",
       "has_boy": false,
-      "scene": "A triceratops in a bathtub with foam piled up on its three horns"
+      "scene": "One pink stegosaurus with wobbly plates along its back, small dot eyes and a plain deadpan face standing beside a bathtub with towels hanging over the plates on its back, only one dinosaur in the picture"
     },
     {
       "n": 10,
-      "zh": "长脖子恐龙喜欢泡到\n只剩一个脑袋。",
+      "zh": "霸王龙的手太短了，\n搓不到背。",
       "has_boy": false,
-      "scene": "A long-necked dinosaur in a very deep tub, only its head above the foam"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face in a bathtub stretching its tiny arms behind itself and failing to reach its back, only one dinosaur in the picture"
     },
     {
       "n": 11,
-      "zh": "霸王龙的手太短了，\n搓不到背。",
+      "zh": "它试过用树枝。\n树枝断了。",
       "has_boy": false,
-      "scene": "A T. rex in a bathtub stretching its tiny arms and failing to reach its back"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing in a bathtub holding the two halves of a snapped branch, one half in each tiny hand, looking at them with a plain face, only one dinosaur in the picture"
     },
     {
       "n": 12,
-      "zh": "所以它每次泡澡，\n都要请朋友帮忙。",
+      "zh": "它试过在墙上蹭。\n墙倒了。",
       "has_boy": false,
-      "scene": "A triceratops scrubbing a T. rex's back with a long brush in the bath"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face leaning its back against a garden wall, the wall tipping over behind it and its bricks tumbling down, the T. rex looking back over its shoulder with a plain face, only one dinosaur in the picture"
     },
     {
       "n": 13,
-      "zh": "要是你想请恐龙来家里，\n就放一大缸泡泡水。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, pouring bubble liquid into a big bathtub, sleeves pushed up, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "所以，你要是想请恐龙来家里，\n就放一大缸泡泡水。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts pouring a big bottle of bubble bath into a large bathtub, no dinosaurs in the picture"
     },
     {
       "n": 14,
-      "zh": "越满越好。",
+      "zh": "泡泡越多越好。",
       "has_boy": false,
-      "scene": "A bathtub overflowing with foam spilling onto the floor, nobody in the picture"
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts half buried in foam that overflows a bathtub and fills the whole bathroom, no dinosaurs in the picture"
     },
     {
       "n": 15,
-      "zh": "不过，你一定要记住一件事。",
+      "zh": "不过，有一件事，\n你一定、一定要记住。",
       "has_boy": false,
-      "scene": "One small yellow rubber duck alone on white paper"
+      "scene": "Close-up of one small yellow rubber duck sitting alone on a bathroom floor of white tiles, nothing else in the picture"
     },
     {
       "n": 16,
       "zh": "千万不能放\n会叫的小黄鸭。",
       "has_boy": false,
-      "scene": "One of the soft rounded friendly cartoon dinosaurs with small dot eyes peeking nervously from far away at a small yellow rubber duck"
+      "scene": "One small yellow rubber duck on a bathroom floor in front, and far behind it one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face hiding behind a towel and peeking out nervously"
     },
     {
       "n": 17,
-      "zh": "恐龙什么都不怕。\n不怕打雷，也不怕黑。",
+      "zh": "恐龙什么都不怕。\n不怕打雷，不怕黑，\n也不怕打针。",
       "has_boy": false,
-      "scene": "One of the soft rounded friendly cartoon dinosaurs with small dot eyes sitting calmly under a dark stormy sky, unbothered"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting calmly on a hill under a dark stormy sky with lightning, completely unbothered, only one dinosaur in the picture"
     },
     {
       "n": 18,
-      "zh": "就怕那一声吱。",
+      "zh": "就怕那一声……\n吱。",
       "has_boy": false,
-      "scene": "A small yellow rubber duck in the middle, the soft rounded friendly cartoon dinosaurs with small dot eyes around it frozen with wide eyes"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face frozen stiff in surprise, staring at one small yellow rubber duck on the ground in front of it"
     },
     {
       "n": 19,
-      "zh": "它们一听见，\n就会吓得跳起来，\n到处乱跑。",
+      "zh": "恐龙一听见，\n就会吓得跳起来。\n一跳，就有三层楼那么高。",
       "has_boy": false,
-      "scene": "The soft rounded friendly cartoon dinosaurs with small dot eyes leaping and running off in every direction"
+      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus leaping in fright high into the air above the roof of a small house"
     },
     {
       "n": 20,
-      "zh": "所以，小黄鸭，\n放到别的地方去。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, reaching up to put a yellow rubber duck on a high shelf, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "所以，小黄鸭，\n放到别的地方去。\n放高一点。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing on tiptoe on a stool, putting a small yellow rubber duck on top of a very tall wardrobe, no dinosaurs in the picture"
     },
     {
       "n": 21,
-      "zh": "星期六晚上，他决定\n办一个泡泡浴派对。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, standing in a bathroom beside a big old bathtub, towels over his arm, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "星期六晚上，\n你办了一个泡泡浴派对。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing at a bathroom door welcoming four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus, a bathtub full of foam behind"
     },
     {
       "n": 22,
-      "zh": "他放了满满一缸水，\n倒了一整瓶泡泡液。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, pouring a big bottle into the bath while foam rises high, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "恐龙都来了。\n挤了一点。",
+      "has_boy": false,
+      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus all squeezed together into one bathtub full of foam, looking squashed with plain faces"
     },
     {
       "n": 23,
-      "zh": "恐龙一只一只挤进来。",
+      "zh": "挤了很多点。",
       "has_boy": false,
-      "scene": "The soft rounded friendly cartoon dinosaurs with small dot eyes squeezing through a bathroom doorway one after another"
+      "scene": "A small bathroom so crammed with four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus and foam that dinosaur tails and heads stick out of the door and the window"
     },
     {
       "n": 24,
-      "zh": "它们泡得眯起了眼睛。\n舒服极了。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, sitting on the edge of the bathtub while the soft rounded friendly cartoon dinosaurs with small dot eyes soak packed together in the foam, eyes closed, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "大家泡得眯起了眼睛。\n舒服极了。",
+      "has_boy": false,
+      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus soaking in a big bathtub of foam with their eyes closed, blissful, and a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts fully dressed, sitting on a little stool beside the tub"
     },
     {
       "n": 25,
       "zh": "可是，谁也没有发现，\n泡泡底下，\n漂着一只小黄鸭。",
       "has_boy": false,
-      "scene": "A close view of foam with a small yellow rubber duck half hidden underneath"
+      "scene": "Close-up of a bathtub filled to the brim with white foam, one small yellow rubber duck half hidden among the white bubbles, white bathroom tiles behind, nothing else in the picture"
     },
     {
       "n": 26,
-      "zh": "一只恐龙坐了下去——",
+      "zh": "霸王龙往后一靠——",
       "has_boy": false,
-      "scene": "A large one of the soft rounded friendly cartoon dinosaurs with small dot eyes lowering itself slowly into the foam"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face leaning back contentedly in a bathtub full of foam, only one dinosaur in the picture"
     },
     {
       "n": 27,
       "zh": "吱！",
       "has_boy": false,
-      "scene": "A flattened yellow rubber duck under a dinosaur's bottom, the dinosaur's eyes huge"
+      "scene": "A small yellow rubber duck squashed flat under a T. rex, and one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face looking surprised"
     },
     {
       "n": 28,
-      "zh": "恐龙全跳起来了！",
+      "zh": "恐龙全跳起来了！\n泡泡飞出窗户，飞满客厅，\n一直涨到天花板。",
       "has_boy": false,
-      "scene": "The soft rounded friendly cartoon dinosaurs with small dot eyes leaping out of the bathtub, foam flying everywhere"
+      "scene": "A cosy living room with a sofa and a lamp buried in fluffy white foam right up to the ceiling, dinosaur tails and horns poking out of the white foam here and there"
     },
     {
       "n": 29,
-      "zh": "泡泡飞出窗户，飞满客厅，\n一直涨到天花板。",
+      "zh": "你在泡泡里摸呀摸，\n摸到了那只小黄鸭。\n把它放进抽屉，\n关好。",
       "has_boy": false,
-      "scene": "A living room filled with foam up to the ceiling, dinosaur tails poking out of it"
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing in foam putting a small yellow rubber duck into a drawer and closing it firmly, no dinosaurs in the picture"
     },
     {
       "n": 30,
-      "zh": "他在泡泡里摸呀摸，\n摸到了那只小黄鸭。\n他把它捏住，不让它叫了。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, standing waist-deep in foam holding a yellow rubber duck tightly in both hands, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "最后，你拿来一把长长的刷子，\n帮霸王龙搓了背。\n它舒服得一动也不动。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing on a stool scrubbing the back of one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face with a long-handled brush, the T. rex with eyes closed in bliss"
     },
     {
       "n": 31,
-      "zh": "大家把泡泡搬到后院，\n吹出一个比房子还大的泡泡。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, in the backyard with the soft rounded friendly cartoon dinosaurs with small dot eyes beside a giant bubble bigger than the house, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "泡泡慢慢落了下来。\n大家都睡着了。",
+      "has_boy": false,
+      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus fast asleep in and around a bathtub with a little foam left, the bathroom calm and quiet"
     },
     {
       "n": 32,
-      "zh": "现在你知道了：\n恐龙爱泡泡浴，不爱会叫的鸭子。\n今天晚上洗澡的时候，你也看看，\n泡泡里有没有一只小恐龙。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, kneeling beside a bathtub with one hand in the foam, a tiny dinosaur peeking out of the bubbles, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "现在你知道了：\n恐龙爱泡泡浴，怕会叫的鸭子，\n还有，它们都搓不到背。\n今天晚上洗澡的时候，你也看看，\n泡泡里有没有一只小恐龙。",
+      "has_boy": false,
+      "scene": "A small bathtub full of foam with one tiny dinosaur head peeking out of the bubbles, looking at the viewer"
     }
   ]
 }

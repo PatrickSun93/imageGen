@@ -9,9 +9,9 @@
   "subtitle": "千万别对恐龙说「不行」",
   "slug": "dinowantsplay",
   "seed_base": 132000,
-  "character": "wearing a green t-shirt, khaki shorts and white sneakers, short black hair",
-  "style": "children's picture book illustration, loose sketchy pencil lines with soft transparent watercolour washes, lots of plain white paper around the figures, muted faded colours, simple rounded characters with small dot eyes and calm deadpan expressions, no words, no letters and no writing anywhere in the picture, leaf green, sand and soft brick red",
-  "style_label": "铅笔淡彩",
+  "character": "",
+  "style": "flat hand-drawn illustration on speckled cream paper with tiny grey flecks, the speckled paper fills the whole square picture edge to edge with no border, simple flat colour shapes with thin wobbly outlines, muted faded colours: rusty red, soft pink, pale yellow, soft green and grey-blue, ordinary objects drawn plain, without eyes or faces, the upper third of the picture left as empty speckled paper, no words, no letters and no writing anywhere in the picture",
+  "style_label": "斑点纸平涂",
   "keyword": "",
   "diagram_pages": [],
   "palette": {
@@ -35,194 +35,194 @@
     {
       "n": 1,
       "zh": "嘿，小朋友。\n你知道恐龙最想干什么吗？",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, standing in a backyard, looking curious, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face peeking out from behind a tree trunk, only one dinosaur in the picture"
     },
     {
       "n": 2,
       "zh": "找人玩。",
       "has_boy": false,
-      "scene": "A small triceratops peeking around a tree trunk, looking for someone"
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face looking left and right on an empty lawn, holding a small pebble, only one dinosaur in the picture"
     },
     {
       "n": 3,
       "zh": "恐龙交朋友的办法\n很奇怪。",
       "has_boy": false,
-      "scene": "Two of the soft rounded friendly cartoon dinosaurs with small dot eyes standing nose to nose, studying each other"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face standing nose to nose, studying each other with plain faces"
     },
     {
       "n": 4,
       "zh": "先闻一闻你。",
       "has_boy": false,
-      "scene": "One of the soft rounded friendly cartoon dinosaurs with small dot eyes sniffing the top of another one's head"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face bending down and sniffing one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face with its nose, little wavy sniff lines in the air, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face standing still on the grass with its eyes closed"
     },
     {
       "n": 5,
       "zh": "再甩一甩尾巴。",
       "has_boy": false,
-      "scene": "One of the soft rounded friendly cartoon dinosaurs with small dot eyes wagging its tail happily"
+      "scene": "One pink stegosaurus with wobbly plates along its back, small dot eyes and a plain deadpan face wagging its tail and knocking over a flowerpot behind it, only one dinosaur in the picture"
     },
     {
       "n": 6,
-      "zh": "最后，把它最喜欢的\n那块石头送给你。",
+      "zh": "最后，把它最喜欢的一块石头\n送给你。",
       "has_boy": false,
-      "scene": "One of the soft rounded friendly cartoon dinosaurs with small dot eyes holding out a smooth round stone"
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face holding out a small smooth pebble towards the viewer, only one dinosaur in the picture"
     },
     {
       "n": 7,
-      "zh": "收到石头，就是说：\n我们是朋友了。",
+      "zh": "越喜欢你，\n送的石头越大。",
       "has_boy": false,
-      "scene": "Two of the soft rounded friendly cartoon dinosaurs with small dot eyes sitting side by side, a round stone between them"
+      "scene": "One very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face carrying an enormous round boulder balanced on its tiny head, plain face, only one dinosaur in the picture"
     },
     {
       "n": 8,
-      "zh": "霸王龙问「我可以一起玩吗」\n的时候，嗓门太大了。",
+      "zh": "所以，要是有一天\n你家门口堆满了大石头，\n别生气。\n那是恐龙喜欢你。",
       "has_boy": false,
-      "scene": "A T. rex with its mouth wide open, leaves blowing off a tree in front of it"
+      "scene": "The front door of a small house completely blocked by a pile of big round boulders, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts peeking out of the window above, no dinosaurs in the picture"
     },
     {
       "n": 9,
-      "zh": "树叶全被吹掉了。",
+      "zh": "霸王龙问「我可以一起玩吗」\n的时候，嗓门太大了。",
       "has_boy": false,
-      "scene": "A completely bare tree, leaves piled on the ground, a T. rex looking sheepish"
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face calling out with its mouth in a small round O shape, big gusts of wind coming out of its mouth and blowing all the leaves off a small tree in front of it"
     },
     {
       "n": 10,
-      "zh": "三角龙玩滑梯，\n角会卡住。",
+      "zh": "树叶全被吹掉了。\n树很冷。",
       "has_boy": false,
-      "scene": "A triceratops stuck halfway down a playground slide by its horns"
+      "scene": "A completely bare tree shivering with little wobbly lines, its leaves in a heap on the ground, one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face looking sheepish beside it"
     },
     {
       "n": 11,
-      "zh": "所以它最会排队，\n从来不挤。",
+      "zh": "三角龙玩滑梯，\n角会卡住。",
       "has_boy": false,
-      "scene": "The soft rounded friendly cartoon dinosaurs with small dot eyes waiting in a neat line at a slide, a triceratops at the back"
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face stuck halfway down a playground slide by its horns, only one dinosaur in the picture"
     },
     {
       "n": 12,
-      "zh": "长脖子恐龙最会轮流：\n让大家一个一个，\n从它的脖子上滑下来。",
+      "zh": "所以它最会排队。\n从来不挤，\n一次都没有。",
       "has_boy": false,
-      "scene": "A long-necked dinosaur bending its neck like a slide while small dinosaurs slide down one at a time"
+      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus waiting in a neat line at a playground slide, the triceratops patiently at the back"
     },
     {
       "n": 13,
-      "zh": "不过，你一定要记住一件事。",
+      "zh": "长脖子恐龙最会轮流：\n让大家一个一个，\n从它的脖子上滑下来。",
       "has_boy": false,
-      "scene": "One small triceratops sitting alone in the middle of white paper, looking at the viewer"
+      "scene": "One very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face lying on the grass with its long neck stretched down to the ground like a slide, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sliding happily down its long neck"
     },
     {
       "n": 14,
-      "zh": "千万别对恐龙说「不行！」\n然后扭头就走。",
+      "zh": "不过，有一件事，\n你一定、一定要记住。",
       "has_boy": false,
-      "scene": "One of the soft rounded friendly cartoon dinosaurs with small dot eyes with drooping head looking at a trail of footprints walking away"
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sitting all alone in the middle of an empty lawn, looking at the viewer"
     },
     {
       "n": 15,
-      "zh": "恐龙一听见「不行」，\n就会把尾巴一盘，\n脑袋一缩——",
+      "zh": "千万别对恐龙说「不行！」\n然后扭头就走。",
       "has_boy": false,
-      "scene": "One of the soft rounded friendly cartoon dinosaurs with small dot eyes curling up tight, tucking in its head and tail"
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face with its head drooping, watching a trail of small footprints walking away across the lawn"
     },
     {
       "n": 16,
-      "zh": "变成一块大石头。\n谁也搬不动。",
+      "zh": "恐龙一听见「不行」，\n就会把尾巴一盘，\n脑袋一缩——",
       "has_boy": false,
-      "scene": "A large round grey boulder shaped like a curled-up dinosaur, the tip of a tail peeking out"
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face curling up tight into a ball, tucking in its head and tail"
     },
     {
       "n": 17,
-      "zh": "星期天，他在院子里\n用积木搭恐龙城堡。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, building a castle of wooden blocks on the grass in the backyard, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "变成一块大石头。\n谁也搬不动。",
+      "has_boy": false,
+      "scene": "A big round grey boulder on the lawn shaped like a curled-up dinosaur, the tip of a tail peeking out"
     },
     {
       "n": 18,
-      "zh": "他搭到最要紧的一层，\n一块一块，小心又小心。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, carefully placing one block on top of a tall block castle, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "星期天，你在院子里\n用积木搭恐龙城堡。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts building a castle of wooden blocks on the grass in a backyard, no dinosaurs in the picture"
     },
     {
       "n": 19,
-      "zh": "一只小三角龙走过来，\n捧着一块圆石头。\n「我也想玩。」",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, busy with his block castle while a small triceratops walks up holding a round stone, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "你搭到最要紧的一层。\n一块，一块，\n小心又小心。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts carefully placing one block on top of a tall block castle, concentrating hard, no dinosaurs in the picture"
     },
     {
       "n": 20,
-      "zh": "他一着急，\n张嘴就说——",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, turning towards a small triceratops, his mouth opening, one hand up, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "小三角龙走过来，\n捧着它最喜欢的一块石头。\n「我也想玩。」",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts busy with a block castle while one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face walks up holding a small round stone"
     },
     {
       "n": 21,
-      "zh": "「不行！」",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, holding one arm out in front of his block castle, a small triceratops startled in front of him, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "你一着急，\n张嘴就说——",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts turning sharply towards one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face, mouth opening, one hand up"
     },
     {
       "n": 22,
-      "zh": "小三角龙一缩——",
+      "zh": "「不行！」",
       "has_boy": false,
-      "scene": "A small triceratops curling up tight, tucking in its head"
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts holding one arm out in front of a block castle, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face startled in front of the child"
     },
     {
       "n": 23,
-      "zh": "变成了一块大石头，\n正好堵住城堡的门。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, staring at a big round boulder sitting in front of the door of his block castle, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "小三角龙一缩——",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face curled up into a tight round ball like a rock next to a block castle, its head and legs tucked in, only the tip of its tail showing"
     },
     {
       "n": 24,
-      "zh": "别的恐龙来了，一看——\n也都缩成了石头。",
+      "zh": "变成了一块大石头，\n正好堵住了城堡的门。",
       "has_boy": false,
-      "scene": "More of the soft rounded friendly cartoon dinosaurs with small dot eyes arriving in the backyard and curling up into boulders"
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts staring at a big round grey boulder sitting right in front of the door of a block castle, no dinosaurs in the picture"
     },
     {
       "n": 25,
-      "zh": "一块、两块、十块……\n院子里全是石头。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, standing in the middle of a backyard full of big round boulders, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "别的恐龙来了，一看——\n也都缩成了石头。\n一块，两块，十块……",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing in the middle of a backyard full of big round grey boulders"
     },
     {
       "n": 26,
-      "zh": "他推也推不动。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, pushing a big round boulder with all his strength, cheeks puffed, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "你推也推不动。\n叫也叫不醒。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts pushing a big round grey boulder with all his strength, cheeks puffed out"
     },
     {
       "n": 27,
-      "zh": "叫也叫不醒。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, calling out to a big round boulder with his hands around his mouth, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "你想起来了：\n恐龙听不得「不行」，\n可是听得懂「等一下」。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts sitting on a big grey boulder with his chin in his hand, thinking hard"
     },
     {
       "n": 28,
-      "zh": "他想起来了：\n恐龙听不得「不行」，\n可是听得懂「等一下」。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, sitting on the grass beside a boulder with his chin in his hand, thinking, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "你蹲下来，小声说：\n「对不起，我刚才正在搭。\n等我搭完这一块，\n你来搭屋顶，好吗？」",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts crouching beside a big round grey boulder and speaking to it softly"
     },
     {
       "n": 29,
-      "zh": "他蹲下来，小声说：\n「对不起，我刚才正在搭。\n等我搭完这一块，\n你来搭屋顶，好吗？」",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, crouching beside a big round boulder, speaking to it softly, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "咔嚓！\n石头裂开了，\n小三角龙跳了出来。",
+      "has_boy": false,
+      "scene": "A boulder cracking open and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face popping out of it happily"
     },
     {
       "n": 30,
-      "zh": "咔嚓！\n石头裂开了，\n小三角龙跳了出来。",
+      "zh": "别的石头也一块一块裂开了。\n大家一起搭，\n城堡比原来大了三倍。",
       "has_boy": false,
-      "scene": "A boulder cracking open and a small triceratops popping out of it happily"
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts building an enormous block castle together with four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus"
     },
     {
       "n": 31,
-      "zh": "大家一起搭。\n城堡比原来大了三倍。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, building an enormous block castle together with the soft rounded friendly cartoon dinosaurs with small dot eyes, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "小三角龙搭了屋顶。\n有点歪。\n没关系。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face proudly placing a crooked roof on top of a huge block castle, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts watching and smiling"
     },
     {
       "n": 32,
-      "zh": "现在你知道了：\n有人想跟你玩的时候，别说「不行」。\n说「等一下」，再给他一件事做。\n下次有小朋友来找你，你也试试。",
-      "has_boy": true,
-      "scene": "A medium shot of the little boy seen from his knees up, sitting on top of a big block castle next to a small triceratops at sunset, his face turned towards the viewer, drawn with the natural body proportions of a real five-year-old child, his head in proportion to his body and about one fifth of his height, not a big-headed cartoon, his eyes calm and natural"
+      "zh": "现在你知道了：\n有人想跟你玩的时候，别说「不行」。\n说「等一下」，再给他一件事做。\n对了，小三角龙送你的那块石头，\n你收好。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts holding a small round stone in both hands, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sitting beside the child, a big block castle behind them"
     }
   ]
 }
