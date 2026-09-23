@@ -28,11 +28,14 @@ SB = os.path.dirname(os.path.abspath(__file__))
 PX = 3071                     # 260mm @ 300dpi
 SAFE = 110                    # 出血 + 安全边
 FONT = r"C:\Windows\Fonts\Dengb.ttf"
+FONT_EN = r"C:\Windows\Fonts\georgiab.ttf"   # 英文版用 Georgia 粗体，书的感觉
 BODY_PT = 28                  # 成品上 28pt，一个字约 1 厘米，孩子跟着看也清楚
 BODY = int(BODY_PT / 72 * 300)
+BODY_EN = int(24 / 72 * 300)  # 英文句子比中文长，28pt 的字块会压到角色，24pt 仍比一般绘本大
 INK = (46, 40, 30)
 PAPER = (246, 241, 228)
-BUSY = 7.0                    # 梯度均值超过这个，就垫底
+MIN_BODY = int(20 / 72 * 300)
+BUSY = 7.0                   # 梯度均值超过这个，就垫底
 
 
 def upscale(im):
@@ -46,26 +49,32 @@ def busyness(im, box):
 
 
 def fit(lines, font, width):
-    """按字宽折行：旁白本来就短，超宽的行再拆。"""
+    """按字宽折行：旁白本来就短，超宽的行再拆。英文按单词拆，不把一个词劈成两半。"""
     out = []
     d = ImageDraw.Draw(Image.new("RGB", (1, 1)))
     for ln in lines:
+        units = [w + " " for w in ln.split(" ")] if " " in ln else list(ln)
         cur = ""
-        for ch in ln:
-            if d.textlength(cur + ch, font=font) > width and cur:
-                out.append(cur); cur = ch
+        for u in units:
+            if d.textlength((cur + u).rstrip(), font=font) > width and cur:
+                out.append(cur.rstrip()); cur = u
             else:
-                cur += ch
-        out.append(cur)
+                cur += u
+        out.append(cur.rstrip())
     return out
 
 
-def place_text(im, text, size, title=False):
+def place_text(im, text, size, title=False, font_path=FONT):
     """在六个位置（上/下 × 左/中/右）里挑最空的一块放字：按字块实际大小算，
     不再整条居中——居中会压在龙头上（第一版第 21、32 页就是）。"""
-    font = ImageFont.truetype(FONT, size)
-    lines = fit(text.split("\n"), font, PX - 2 * SAFE - 80)
-    lh = int(size * 1.55)
+    # 字多的页（蚂蚁那本英文有七行长句）字块会盖住半个画面：超过画面三分之一高就缩小字号，最小 20pt
+    while True:
+        font = ImageFont.truetype(font_path, size)
+        lines = fit(text.split("\n"), font, PX - 2 * SAFE - 80)
+        lh = int(size * 1.55)
+        if title or lh * len(lines) + 70 <= PX // 3 or size <= MIN_BODY:
+            break
+        size -= 6
     d = ImageDraw.Draw(im, "RGBA")
     widths = [d.textlength(l, font=font) for l in lines]
     w, h = int(max(widths)) + 110, lh * len(lines) + 70
@@ -88,19 +97,35 @@ def place_text(im, text, size, title=False):
     return where, busy
 
 
+def title_size(text, font_path):
+    """书名从正文的 1.7 倍往下缩，缩到每行都不用折行为止（英文书名长，折行会把一个词甩到下一行）。"""
+    size = int(BODY * 1.7)
+    while size > BODY:
+        f = ImageFont.truetype(font_path, size)
+        if all(f.getlength(l) <= PX - 2 * SAFE - 80 - 110 for l in text.split("\n")):
+            break
+        size -= 8
+    return size
+
+
 def build(slug):
     st = json.load(open(os.path.join(SB, f"story_{slug}.json"), encoding="utf-8"))
-    src = os.path.join(SB, "out", f"{slug}_qwen")
+    # 英文版 story_<slug>_en.json 用中文版的图（image_slug），旁白在每页的 "en" 里
+    # 早期那几本的成书图不在 <slug>_qwen 里，英文版用 image_dir 指到从已发布网页导出的图
+    src = os.path.join(SB, "out", st.get("image_dir") or f"{st.get('image_slug', slug)}_qwen")
+    en = st.get("lang") == "en"
+    text, font, body = st.get("text_key", "zh"), (FONT_EN if en else FONT), (BODY_EN if en else BODY)
     dst = os.path.join(SB, "out", f"print_{slug}")
     os.makedirs(dst, exist_ok=True)
     pages, report = [], []
     cover = upscale(Image.open(os.path.join(src, "page_01.png")))
-    place_text(cover, st["title"] + "\n" + st.get("subtitle", ""), int(BODY * 1.7), title=True)
+    title = st["title"] + "\n" + st.get("subtitle", "")
+    place_text(cover, title, title_size(title, font), title=True, font_path=font)
     cover.save(os.path.join(dst, "00_cover.jpg"), quality=95, dpi=(300, 300))
     pages.append(cover)
     for p in st["pages"]:
         im = upscale(Image.open(os.path.join(src, f"page_{p['n']:02d}.png")))
-        where, busy = place_text(im, p["zh"], BODY)
+        where, busy = place_text(im, p[text], body, font_path=font)
         im.save(os.path.join(dst, f"{p['n']:02d}.jpg"), quality=95, dpi=(300, 300))
         pages.append(im)
         report.append(f"p{p['n']:02d} {where} {busy:.1f}{' 垫底' if busy > BUSY else ''}")

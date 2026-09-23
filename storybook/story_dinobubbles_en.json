@@ -1,0 +1,263 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "Bubble Bath for Dinosaurs",
+  "subtitle": "Never bring a squeaky duck",
+  "slug": "dinobubbles_en",
+  "seed_base": 131000,
+  "character": "",
+  "style": "flat hand-drawn illustration on speckled cream paper with tiny grey flecks, the speckled paper fills the whole square picture edge to edge with no border, simple flat colour shapes with thin wobbly outlines, muted faded colours: rusty red, soft pink, pale yellow, soft green and grey-blue, ordinary objects drawn plain, without eyes or faces, the upper third of the picture left as empty speckled paper, no words, no letters and no writing anywhere in the picture",
+  "style_label": "斑点纸平涂",
+  "keyword": "",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2419",
+    "soft": "#7a6e5a",
+    "ground": "#f5f2ea",
+    "paper": "#fffdf8",
+    "accent": "#c0603a",
+    "bark": "#8a7f66",
+    "line": "#e2dccd",
+    "ink_d": "#ece5d8",
+    "soft_d": "#a99b83",
+    "ground_d": "#16130e",
+    "paper_d": "#211d16",
+    "accent_d": "#e0805a",
+    "bark_d": "#8a7f66",
+    "line_d": "#37301f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "嘿，小朋友。\n你知道恐龙最爱干什么吗？",
+      "has_boy": false,
+      "scene": "A small old bathtub full of foam standing alone, the tip of a dinosaur tail sticking up out of the bubbles",
+      "en": "Hey, kid.\nDo you know what dinosaurs love most?"
+    },
+    {
+      "n": 2,
+      "zh": "不是吼。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing with its mouth closed in a flat line and its eyes half closed, looking sleepy and bored, arms hanging, only one dinosaur in the picture",
+      "en": "Not roaring."
+    },
+    {
+      "n": 3,
+      "zh": "不是跑。",
+      "has_boy": false,
+      "scene": "One very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face standing completely still and yawning, only one dinosaur in the picture",
+      "en": "Not running."
+    },
+    {
+      "n": 4,
+      "zh": "是泡泡浴。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting in an old bathtub with foam up to its chin, eyes closed, blissful, only one dinosaur in the picture",
+      "en": "Bubble baths."
+    },
+    {
+      "n": 5,
+      "zh": "恐龙泡澡之前，\n一定会先用脚趾头\n试一试水温。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face happily jumping into a bathtub with its knees tucked up and its eyes squeezed shut, a big splash of water flying everywhere, only one dinosaur in the picture",
+      "en": "Before a dinosaur gets in the bath,\nit always tests the water\nwith one toe."
+    },
+    {
+      "n": 6,
+      "zh": "大概试了吧。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting in a nearly empty bathtub in a flooded bathroom, water all over the floor, looking at the viewer with a plain face",
+      "en": "Probably."
+    },
+    {
+      "n": 7,
+      "zh": "三角龙喜欢把泡泡\n堆在三只角上。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face in a bathtub with tall piles of foam stacked on its three horns, only one dinosaur in the picture",
+      "en": "Triceratops likes to pile bubbles\non all three horns."
+    },
+    {
+      "n": 8,
+      "zh": "长脖子恐龙要用三个浴缸。\n一个泡脑袋，\n一个泡肚子，\n一个泡尾巴。",
+      "has_boy": false,
+      "scene": "One very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face lying stretched across three bathtubs in a row, its head in one, its belly in the middle one and its tail in the last one",
+      "en": "A long-neck needs three bathtubs.\nOne for its head,\none for its belly,\nand one for its tail."
+    },
+    {
+      "n": 9,
+      "zh": "剑龙背上的板子，\n正好用来晾毛巾。",
+      "has_boy": false,
+      "scene": "One pink stegosaurus with wobbly plates along its back, small dot eyes and a plain deadpan face standing beside a bathtub with towels hanging over the plates on its back, only one dinosaur in the picture",
+      "en": "The plates on a stegosaurus's back\nare perfect for drying towels."
+    },
+    {
+      "n": 10,
+      "zh": "霸王龙的手太短了，\n搓不到背。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face in a bathtub stretching its tiny arms behind itself and failing to reach its back, only one dinosaur in the picture",
+      "en": "A T. rex's arms are too short\nto scrub its back."
+    },
+    {
+      "n": 11,
+      "zh": "它试过用树枝。\n树枝断了。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face standing in a bathtub holding the two halves of a snapped branch, one half in each tiny hand, looking at them with a plain face, only one dinosaur in the picture",
+      "en": "It tried a stick.\nThe stick snapped."
+    },
+    {
+      "n": 12,
+      "zh": "它试过在墙上蹭。\n墙倒了。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face leaning its back against a garden wall, the wall tipping over behind it and its bricks tumbling down, the T. rex looking back over its shoulder with a plain face, only one dinosaur in the picture",
+      "en": "It tried rubbing against a wall.\nThe wall fell down."
+    },
+    {
+      "n": 13,
+      "zh": "所以，你要是想请恐龙来家里，\n就放一大缸泡泡水。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts pouring a big bottle of bubble bath into a large bathtub, no dinosaurs in the picture",
+      "en": "So if you ever want a dinosaur to come over,\nrun a great big bubble bath."
+    },
+    {
+      "n": 14,
+      "zh": "泡泡越多越好。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts half buried in foam that overflows a bathtub and fills the whole bathroom, no dinosaurs in the picture",
+      "en": "The more bubbles, the better."
+    },
+    {
+      "n": 15,
+      "zh": "不过，有一件事，\n你一定、一定要记住。",
+      "has_boy": false,
+      "scene": "Close-up of one small yellow rubber duck sitting alone on a bathroom floor of white tiles, nothing else in the picture",
+      "en": "But there is one thing\nyou must never, ever forget."
+    },
+    {
+      "n": 16,
+      "zh": "千万不能放\n会叫的小黄鸭。",
+      "has_boy": false,
+      "scene": "One small yellow rubber duck on a bathroom floor in front, and far behind it one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face hiding behind a towel and peeking out nervously",
+      "en": "Never, ever put\na squeaky rubber duck in the bath."
+    },
+    {
+      "n": 17,
+      "zh": "恐龙什么都不怕。\n不怕打雷，不怕黑，\n也不怕打针。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face sitting calmly on a hill under a dark stormy sky with lightning, completely unbothered, only one dinosaur in the picture",
+      "en": "Dinosaurs aren't afraid of anything.\nNot thunder, not the dark,\nnot even shots at the doctor's."
+    },
+    {
+      "n": 18,
+      "zh": "就怕那一声……\n吱。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face frozen stiff in surprise, staring at one small yellow rubber duck on the ground in front of it",
+      "en": "Except that one little sound…\nSQUEAK."
+    },
+    {
+      "n": 19,
+      "zh": "恐龙一听见，\n就会吓得跳起来。\n一跳，就有三层楼那么高。",
+      "has_boy": false,
+      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus leaping in fright high into the air above the roof of a small house",
+      "en": "When a dinosaur hears it,\nit jumps.\nThree stories high."
+    },
+    {
+      "n": 20,
+      "zh": "所以，小黄鸭，\n放到别的地方去。\n放高一点。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing on tiptoe on a stool, putting a small yellow rubber duck on top of a very tall wardrobe, no dinosaurs in the picture",
+      "en": "So put the rubber duck\nsomewhere else.\nSomewhere high."
+    },
+    {
+      "n": 21,
+      "zh": "星期六晚上，\n你办了一个泡泡浴派对。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing at a bathroom door welcoming four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus, a bathtub full of foam behind",
+      "en": "On Saturday night,\nyou throw a bubble bath party."
+    },
+    {
+      "n": 22,
+      "zh": "恐龙都来了。\n挤了一点。",
+      "has_boy": false,
+      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus all squeezed together into one bathtub full of foam, looking squashed with plain faces",
+      "en": "All the dinosaurs come.\nIt's a little crowded."
+    },
+    {
+      "n": 23,
+      "zh": "挤了很多点。",
+      "has_boy": false,
+      "scene": "A small bathroom so crammed with four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus and foam that dinosaur tails and heads stick out of the door and the window",
+      "en": "It's a lot crowded."
+    },
+    {
+      "n": 24,
+      "zh": "大家泡得眯起了眼睛。\n舒服极了。",
+      "has_boy": false,
+      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus soaking in a big bathtub of foam with their eyes closed, blissful, and a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts fully dressed, sitting on a little stool beside the tub",
+      "en": "Everyone soaks with their eyes half closed.\nAhhh."
+    },
+    {
+      "n": 25,
+      "zh": "可是，谁也没有发现，\n泡泡底下，\n漂着一只小黄鸭。",
+      "has_boy": false,
+      "scene": "Close-up of a bathtub filled to the brim with white foam, one small yellow rubber duck half hidden among the white bubbles, white bathroom tiles behind, nothing else in the picture",
+      "en": "But nobody notices\nthat under the bubbles,\na little rubber duck is floating."
+    },
+    {
+      "n": 26,
+      "zh": "霸王龙往后一靠——",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face leaning back contentedly in a bathtub full of foam, only one dinosaur in the picture",
+      "en": "T. rex leans back—"
+    },
+    {
+      "n": 27,
+      "zh": "吱！",
+      "has_boy": false,
+      "scene": "A small yellow rubber duck squashed flat under a T. rex, and one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face looking surprised",
+      "en": "SQUEAK!"
+    },
+    {
+      "n": 28,
+      "zh": "恐龙全跳起来了！\n泡泡飞出窗户，飞满客厅，\n一直涨到天花板。",
+      "has_boy": false,
+      "scene": "A cosy living room with a sofa and a lamp buried in fluffy white foam right up to the ceiling, dinosaur tails and horns poking out of the white foam here and there",
+      "en": "Every dinosaur jumps!\nBubbles fly out the window, fill the living room,\nand rise all the way to the ceiling."
+    },
+    {
+      "n": 29,
+      "zh": "你在泡泡里摸呀摸，\n摸到了那只小黄鸭。\n把它放进抽屉，\n关好。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing in foam putting a small yellow rubber duck into a drawer and closing it firmly, no dinosaurs in the picture",
+      "en": "You feel around in the bubbles\nand find the rubber duck.\nYou put it in a drawer\nand shut it tight."
+    },
+    {
+      "n": 30,
+      "zh": "最后，你拿来一把长长的刷子，\n帮霸王龙搓了背。\n它舒服得一动也不动。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing on a stool scrubbing the back of one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face with a long-handled brush, the T. rex with eyes closed in bliss",
+      "en": "Then you get a long-handled brush\nand scrub T. rex's back.\nIt feels so good, T. rex doesn't move a muscle."
+    },
+    {
+      "n": 31,
+      "zh": "泡泡慢慢落了下来。\n大家都睡着了。",
+      "has_boy": false,
+      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus fast asleep in and around a bathtub with a little foam left, the bathroom calm and quiet",
+      "en": "The bubbles slowly settle.\nEveryone falls asleep."
+    },
+    {
+      "n": 32,
+      "zh": "现在你知道了：\n恐龙爱泡泡浴，怕会叫的鸭子，\n还有，它们都搓不到背。\n今天晚上洗澡的时候，你也看看，\n泡泡里有没有一只小恐龙。",
+      "has_boy": false,
+      "scene": "A small bathtub full of foam with one tiny dinosaur head peeking out of the bubbles, looking at the viewer",
+      "en": "Now you know:\ndinosaurs love bubble baths, are scared of squeaky ducks,\nand can't reach their own backs.\nTonight at bath time, take a look—\nmaybe there's a little dinosaur in your bubbles too."
+    }
+  ],
+  "lang": "en",
+  "text_key": "en",
+  "image_slug": "dinobubbles"
+}

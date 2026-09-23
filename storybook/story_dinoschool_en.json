@@ -1,0 +1,263 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "Dinosaur's First Day of School",
+  "subtitle": "You don't have to bring your house",
+  "slug": "dinoschool_en",
+  "seed_base": 136000,
+  "character": "",
+  "style": "flat hand-drawn illustration on speckled cream paper with tiny grey flecks, the speckled paper fills the whole square picture edge to edge with no border, simple flat colour shapes with thin wobbly outlines, muted faded colours: rusty red, soft pink, pale yellow, soft green and grey-blue, ordinary objects drawn plain, without eyes or faces, the upper third of the picture left as empty speckled paper, no words, no letters and no writing anywhere in the picture",
+  "style_label": "斑点纸平涂",
+  "keyword": "",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2419",
+    "soft": "#7a6e5a",
+    "ground": "#f5f2ea",
+    "paper": "#fffdf8",
+    "accent": "#c0603a",
+    "bark": "#8a7f66",
+    "line": "#e2dccd",
+    "ink_d": "#ece5d8",
+    "soft_d": "#a99b83",
+    "ground_d": "#16130e",
+    "paper_d": "#211d16",
+    "accent_d": "#e0805a",
+    "bark_d": "#8a7f66",
+    "line_d": "#37301f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "嘿，小朋友。\n你知道恐龙第一天上学，\n最怕什么吗？",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face wearing a small backpack, standing in front of a little school building, only one dinosaur in the picture",
+      "en": "Hey, kid.\nDo you know what a dinosaur is most scared of\non the first day of school?"
+    },
+    {
+      "n": 2,
+      "zh": "不是老师。\n老师是一只很温柔的\n长脖子恐龙。",
+      "has_boy": false,
+      "scene": "One very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face wearing round glasses and smiling gently at the door of a little school building",
+      "en": "Not the teacher.\nThe teacher is a very gentle\nlong-neck."
+    },
+    {
+      "n": 3,
+      "zh": "不是教室。\n教室里有好多积木。",
+      "has_boy": false,
+      "scene": "A bright classroom with little chairs and piles of colourful wooden blocks, no dinosaurs and no people in the picture",
+      "en": "Not the classroom.\nThe classroom has lots of blocks."
+    },
+    {
+      "n": 4,
+      "zh": "是——\n跟妈妈说再见。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face hugging the tail of one big friendly pink mother triceratops with a soft smile, small dot eyes and three blunt horns at the school gate",
+      "en": "It's—\nsaying goodbye to Mom."
+    },
+    {
+      "n": 5,
+      "zh": "小三角龙抱着妈妈的尾巴，\n抱得紧紧的，\n不肯松。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face clinging tightly to the tail of one big friendly pink mother triceratops with a soft smile, small dot eyes and three blunt horns with its eyes squeezed shut",
+      "en": "Little Triceratops hugs Mom's tail\ntight, tight, tight,\nand won't let go."
+    },
+    {
+      "n": 6,
+      "zh": "妈妈往前走一步，\n它就跟着滑一步。",
+      "has_boy": false,
+      "scene": "One big friendly pink mother triceratops with a soft smile, small dot eyes and three blunt horns walking forward while one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face slides along the ground still hugging her tail, little dust lines behind",
+      "en": "When Mom takes a step,\nit slides right along with her."
+    },
+    {
+      "n": 7,
+      "zh": "它想：\n要是把家搬到学校去\n就好了。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sitting and thinking, with a thought bubble above its head showing a small cosy house",
+      "en": "It thinks:\nIf only I could bring my house\nto school."
+    },
+    {
+      "n": 8,
+      "zh": "第二天，\n它把自己的枕头带去了。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face walking along a road to school carrying a big pillow, only one dinosaur in the picture",
+      "en": "The next day,\nit brings its pillow."
+    },
+    {
+      "n": 9,
+      "zh": "第三天，\n它把床带去了。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face dragging a whole bed along a road to school, only one dinosaur in the picture",
+      "en": "The day after that,\nit brings its bed."
+    },
+    {
+      "n": 10,
+      "zh": "第四天，它把沙发、台灯，\n还有家里的鱼缸，\n全都带去了。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face pulling a cart piled high with a sofa, a lamp and a fish tank along a road, only one dinosaur in the picture",
+      "en": "On the fourth day, it brings the couch, the lamp,\nand the fish tank,\ntoo."
+    },
+    {
+      "n": 11,
+      "zh": "教室塞满了。\n老师的头\n从窗户里挤不进来了。",
+      "has_boy": false,
+      "scene": "A small classroom crammed full of home furniture: a pink sofa, a bed, a lamp and a round fish tank piled up to the ceiling, and the tiny head of one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face squeezed against the outside of the window",
+      "en": "The classroom is stuffed full.\nThe teacher's head\ncan't even squeeze in through the window."
+    },
+    {
+      "n": 12,
+      "zh": "不过，有一件事，\n你一定、一定要记住：\n千万别让恐龙\n把整个家带去上学。",
+      "has_boy": false,
+      "scene": "One small backpack sitting alone on a classroom floor, nothing else in the picture",
+      "en": "But there is one thing\nyou must never, ever forget:\nnever let a dinosaur\nbring its whole house to school."
+    },
+    {
+      "n": 13,
+      "zh": "家太大了，学校装不下。\n而且，家是会等你的。",
+      "has_boy": false,
+      "scene": "A small cosy house at the end of a winding road with its front door open and a warm light inside, no dinosaurs and no people in the picture",
+      "en": "A house is too big to fit in a school.\nAnd anyway, home will wait for you."
+    },
+    {
+      "n": 14,
+      "zh": "那天，你也在这个班上。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts sitting at a little table with wooden blocks in a classroom full of furniture",
+      "en": "That day, you're in the same class."
+    },
+    {
+      "n": 15,
+      "zh": "你看见小三角龙\n坐在沙发和台灯中间，\n一个人，眼睛红红的。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sitting all alone among a sofa, a lamp and a bed in a classroom, looking a little sad",
+      "en": "You see Little Triceratops\nsitting between the couch and the lamp,\nall alone, eyes a little red."
+    },
+    {
+      "n": 16,
+      "zh": "你想起来，\n你第一天上学的时候，\n也是这样。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts sitting on a small chair looking thoughtful, a soft memory cloud above showing the same boy, smaller, holding a grown-up's hand at a school gate",
+      "en": "You remember\nthat on your first day of school,\nyou felt like that too."
+    },
+    {
+      "n": 17,
+      "zh": "你走过去，说：\n「我可以跟你一起玩吗？」",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts walking up to one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face in the classroom",
+      "en": "You walk over and say,\n“Can I play with you?”"
+    },
+    {
+      "n": 18,
+      "zh": "「我可以帮你搭一个城堡。」",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts holding out a few wooden blocks towards one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face",
+      "en": "“I can help you build a castle.”"
+    },
+    {
+      "n": 19,
+      "zh": "小三角龙想了想，\n松开了抱着的枕头。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face letting go of a big pillow and looking at a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts",
+      "en": "Little Triceratops thinks about it,\nand lets go of its pillow."
+    },
+    {
+      "n": 20,
+      "zh": "你们用积木搭城堡。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face building a castle of wooden blocks on the classroom floor",
+      "en": "You build a castle out of blocks."
+    },
+    {
+      "n": 21,
+      "zh": "用沙发当城墙。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face pushing a sofa into place as the wall of a block castle",
+      "en": "The couch is the castle wall."
+    },
+    {
+      "n": 22,
+      "zh": "用台灯当灯塔。",
+      "has_boy": false,
+      "scene": "A lamp standing on top of a block castle like a lighthouse, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face looking up at it proudly",
+      "en": "The lamp is the lighthouse."
+    },
+    {
+      "n": 23,
+      "zh": "用鱼缸当护城河。\n鱼很高兴。",
+      "has_boy": false,
+      "scene": "A fish tank placed beside a block castle, a small fish inside looking very pleased, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face watching",
+      "en": "The fish tank is the moat.\nThe fish is very pleased."
+    },
+    {
+      "n": 24,
+      "zh": "别的小恐龙也来了。",
+      "has_boy": false,
+      "scene": "One tiny yellow baby dinosaur with a round body, a short tail and stubby legs, small dot eyes and a plain deadpan face and a few other small dinosaurs coming over to the block castle",
+      "en": "The other little dinosaurs come too."
+    },
+    {
+      "n": 25,
+      "zh": "教室里一下子\n热闹了。",
+      "has_boy": false,
+      "scene": "A classroom full of small dinosaurs playing around a big block castle, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face in the middle",
+      "en": "All of a sudden,\nthe classroom is full of fun."
+    },
+    {
+      "n": 26,
+      "zh": "放学的铃响了。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face and small dinosaurs all looking up at a round bell on the classroom wall",
+      "en": "The home-time bell rings."
+    },
+    {
+      "n": 27,
+      "zh": "小三角龙跑到门口——",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face running towards the classroom door, only one dinosaur in the picture",
+      "en": "Little Triceratops runs to the door—"
+    },
+    {
+      "n": 28,
+      "zh": "妈妈就在门口。\n一步都没有走远。",
+      "has_boy": false,
+      "scene": "One big friendly pink mother triceratops with a soft smile, small dot eyes and three blunt horns waiting at the school gate with a soft smile, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face running into her arms",
+      "en": "and Mom is right there.\nShe never went far at all."
+    },
+    {
+      "n": 29,
+      "zh": "第二天，\n小三角龙没有带沙发。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face walking to school with only a small backpack, looking cheerful, only one dinosaur in the picture",
+      "en": "The next day,\nLittle Triceratops doesn't bring the couch."
+    },
+    {
+      "n": 30,
+      "zh": "它只带了一块\n妈妈给的小石头，\n放在口袋里。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face putting one small smooth pebble into the pocket of its backpack, only one dinosaur in the picture",
+      "en": "It brings just one\nlittle stone from Mom,\ntucked in its pocket."
+    },
+    {
+      "n": 31,
+      "zh": "想妈妈的时候，\n就摸一摸。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face in the classroom touching a pebble in its pocket and smiling, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts sitting beside it",
+      "en": "Whenever it misses Mom,\nit gives the stone a little touch."
+    },
+    {
+      "n": 32,
+      "zh": "现在你知道了：\n第一天上学，不用把家带去。\n带一样小东西，\n交一个新朋友。\n放学的时候，妈妈就在门口。",
+      "has_boy": false,
+      "scene": "One big friendly pink mother triceratops with a soft smile, small dot eyes and three blunt horns waiting at a school gate in the afternoon sun, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face and a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts waving goodbye to each other",
+      "en": "Now you know:\nyou don't need to bring your house to school.\nBring one little thing,\nmake one new friend.\nAnd at home time, Mom will be right at the door."
+    }
+  ],
+  "lang": "en",
+  "text_key": "en",
+  "image_slug": "dinoschool"
+}

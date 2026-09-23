@@ -50,7 +50,7 @@ DINOS = {
 }
 
 SEEDS = {("dragonsocks", 23): 130923, ("dinowantsplay", 22): 132922, ("dinojoin", 12): 134912,
-         ("trexloses", 18): 135918, ("trexloses", 28): 135928}   # 这几页换过种子：原种子的构图总在前景塞一排东西
+         ("trexloses", 18): 135918, ("trexloses", 28): 135928, ("seesaw", 11): 138911}   # 这几页换过种子：原种子的构图总在前景塞一排东西
 
 # 每页：(旁白, 画面, 他在不在)。画面里的 {c} 换成这本书的主角描述。
 BOOKS = [
@@ -363,7 +363,7 @@ BOOKS = [
       # 写这本的起因：他在学校玩跷跷板时被朋友打了一下。拍人的写成恐龙，「你」是做对的那个；
       # 「拍」只画成手轻轻碰一下胳膊，配几道弧线，不画脸、不画哭。
       cast=dict(DINOS,
-                Y="one small young green T. rex, half the size of a grown-up T. rex, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face",
+                Y="one small young green T. rex, short and chubby, soft and rounded, a big round head, very tiny arms, small dot eyes and a plain deadpan face",
                 Q="one very tall long-necked grey-blue dinosaur wearing small round glasses, with a tiny head, small dot eyes and a gentle smile",
                 H=("four dinosaurs: a small young green T. rex with tiny arms, a small round ochre triceratops, "
                    "a very tall long-necked grey-blue dinosaur and a pink stegosaurus")),
@@ -373,12 +373,12 @@ BOOKS = [
   ("不是秋千。", "{R} walking straight past an empty swing without looking at it, only one dinosaur in the picture", 0),
   ("是跷跷板。", "{R} sitting happily on one end of a long wooden seesaw, the other end resting on the grass, only one dinosaur in the picture", 0),
   ("跷跷板，\n要两边差不多重。", "A long wooden seesaw balanced perfectly level on the grass, with one small round ochre triceratops sitting on each end, two triceratops in the picture", 0),
-  ("霸王龙一坐下，\n小三角龙就飞上了天，\n在天上待了一整天。", "{T} sitting on the low end of a seesaw resting on the grass, and {R} flying high up into the sky from the other end among the clouds", 0),
-  ("长脖子恐龙最省事：\n脖子一低，\n就是一个跷跷板。", "{L} lowering its long neck down to the grass, and {R} sitting on its head, going up and down like on a seesaw", 0),
-  ("剑龙最麻烦：\n背上的板子卡在跷跷板上，\n下不来。", "{S} stuck on a wooden seesaw, the plates on its back wedged under the plank, looking puzzled, only one dinosaur in the picture", 0),
+  ("霸王龙一坐下，\n小三角龙就飞上了天，\n在天上待了一整天。", "A long wooden seesaw tipped steeply: {T} sitting on its low end on the grass, its high end pointing up at the sky, and far above it {R} flying among the clouds with its legs spread out, only two dinosaurs in the picture", 0),
+  ("长脖子恐龙坐哪头都一样：\n脑袋永远在天上。", "{L} sitting on the low end of a long wooden seesaw resting on the grass, its long neck still reaching straight up so its tiny head is far above the high end of the seesaw, only one dinosaur in the picture", 0),
+  ("剑龙最麻烦：\n背上的板子卡在跷跷板上，\n下不来。", "{S} lying upside down on a wooden seesaw with its legs in the air, the plates on its back jammed into the plank so it cannot get off, looking puzzled, only one dinosaur in the picture", 0),
   ("可是，操场上\n有一只小霸王龙。\n它的手，太短了。", "{Y} standing in a playground looking down at its very tiny arms, only one dinosaur in the picture", 0),
   ("手短，没关系。\n麻烦的是，它一着急，\n就说不出话来。", "{Y} standing next to a seesaw looking flustered, its cheeks puffed out and its tiny arms flapping, only one dinosaur in the picture", 0),
-  ("想玩跷跷板——\n啪！拍一下。", "{Y} touching {R} lightly on the shoulder with one tiny hand next to a seesaw, a few small curved motion lines by the hand, {R} looking surprised", 0),
+  ("想玩跷跷板——\n啪！拍一下。", "{Y} touching {R} lightly on the arm with one tiny hand next to a seesaw, a few small curved motion lines by the hand, the triceratops looking surprised, only two dinosaurs in the picture", 0),
   ("想换人——\n啪！", "{Y} touching {S} lightly on the back with one tiny hand while {S} sits on a seesaw, a few small curved motion lines by the hand", 0),
   ("想说「等等我」——\n啪！啪！", "{Y} running after {L} and touching its long tail twice with one tiny hand, a few small curved motion lines", 0),
   ("不过，有一件事，\n你一定、一定要记住：\n千万别拍回去。", "{Y} standing alone next to an empty seesaw, looking at the viewer with a plain face, only one dinosaur in the picture", 0),

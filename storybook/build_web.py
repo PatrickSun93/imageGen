@@ -19,13 +19,18 @@ acc   = PAL.get("accent","#c1503a");acc_d  = PAL.get("accent_d","#e07a63")
 bark  = PAL.get("bark","#8a7860");  bark_d = PAL.get("bark_d","#9d8c74")
 line  = PAL.get("line","#d5dbcd");  line_d = PAL.get("line_d","#2f3b33")
 KEY   = story.get("keyword")
+# 英文版（story_<slug>_en.json）：旁白在每页的 "en" 里，界面上的几个字也换成英文
+TEXT  = story.get("text_key", "zh")
+EN    = story.get("lang") == "en"
+UI    = (dict(alt="Page {n}", prev="← Back", next="Next →", foot="You can also turn pages with the arrow keys")
+         if EN else dict(alt="第 {n} 页插图", prev="← 上一页", next="下一页 →", foot="用左右方向键也可以翻页"))
 
 pages=[]
 for p in story["pages"]:
-    body = "".join(f"<p>{l}</p>" for l in p["zh"].split("\n"))
+    body = "".join(f"<p>{l}</p>" for l in p[TEXT].split("\n"))
     if KEY: body = body.replace(f"「{KEY}」", f'<em class="key">{KEY}</em>')
     pages.append(f'''<article class="spread" data-page="{p["n"]}"{" hidden" if p["n"]!=1 else ""}>
-  <figure class="plate"><img src="data:image/jpeg;base64,{imgs[str(p["n"])]}" alt="第 {p["n"]} 页插图"></figure>
+  <figure class="plate"><img src="data:image/jpeg;base64,{imgs[str(p["n"])]}" alt="{UI["alt"].format(n=p["n"])}"></figure>
   <div class="prose"><span class="folio">{p["n"]}</span>{body}</div>
 </article>''')
 
@@ -87,11 +92,11 @@ footer {{ color:var(--ink-soft); font-size:12px; letter-spacing:.1em; text-align
 </style>
 <header><h1>{story["title"]}</h1><p class="sub">{story.get("subtitle","")}</p></header>
 <main class="book">{"".join(pages)}</main>
-<nav><button id="prev" disabled>← 上一页</button>
+<nav><button id="prev" disabled>{UI["prev"]}</button>
 <span class="count"><span id="cur">1</span> / {len(story["pages"])}</span>
-<button id="next">下一页 →</button></nav>
+<button id="next">{UI["next"]}</button></nav>
 {facts_block}
-<footer>用左右方向键也可以翻页</footer>
+<footer>{UI["foot"]}</footer>
 <script>
 const pages=[...document.querySelectorAll(".spread")];
 const prev=document.getElementById("prev"),next=document.getElementById("next"),cur=document.getElementById("cur");

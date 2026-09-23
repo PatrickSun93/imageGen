@@ -1,0 +1,264 @@
+{
+  "workflow": "workflows/qwen_image_2512.json",
+  "colophon": {
+    "model": "Qwen-Image-2512 + Qwen-Image-Edit-2511 (Q3)",
+    "lora": "照片参考，不用 LoRA",
+    "strength": 1.3
+  },
+  "title": "The Dinosaur Wants to Play",
+  "subtitle": "Never tell a dinosaur “No!”",
+  "slug": "dinowantsplay_en",
+  "seed_base": 132000,
+  "character": "",
+  "style": "flat hand-drawn illustration on speckled cream paper with tiny grey flecks, the speckled paper fills the whole square picture edge to edge with no border, simple flat colour shapes with thin wobbly outlines, muted faded colours: rusty red, soft pink, pale yellow, soft green and grey-blue, ordinary objects drawn plain, without eyes or faces, the upper third of the picture left as empty speckled paper, no words, no letters and no writing anywhere in the picture",
+  "style_label": "斑点纸平涂",
+  "keyword": "",
+  "diagram_pages": [],
+  "palette": {
+    "ink": "#2a2419",
+    "soft": "#7a6e5a",
+    "ground": "#f5f2ea",
+    "paper": "#fffdf8",
+    "accent": "#c0603a",
+    "bark": "#8a7f66",
+    "line": "#e2dccd",
+    "ink_d": "#ece5d8",
+    "soft_d": "#a99b83",
+    "ground_d": "#16130e",
+    "paper_d": "#211d16",
+    "accent_d": "#e0805a",
+    "bark_d": "#8a7f66",
+    "line_d": "#37301f"
+  },
+  "neg_extra": "",
+  "pages": [
+    {
+      "n": 1,
+      "zh": "嘿，小朋友。\n你知道恐龙最想干什么吗？",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face peeking out from behind a tree trunk, only one dinosaur in the picture",
+      "en": "Hey, kid.\nDo you know what dinosaurs want most?"
+    },
+    {
+      "n": 2,
+      "zh": "找人玩。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face looking left and right on an empty lawn, holding a small pebble, only one dinosaur in the picture",
+      "en": "Someone to play with."
+    },
+    {
+      "n": 3,
+      "zh": "恐龙交朋友的办法\n很奇怪。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face standing nose to nose, studying each other with plain faces",
+      "en": "Dinosaurs have a funny way\nof making friends."
+    },
+    {
+      "n": 4,
+      "zh": "先闻一闻你。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face bending down and sniffing one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face with its nose, little wavy sniff lines in the air, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face standing still on the grass with its eyes closed",
+      "en": "First, they sniff you."
+    },
+    {
+      "n": 5,
+      "zh": "再甩一甩尾巴。",
+      "has_boy": false,
+      "scene": "One pink stegosaurus with wobbly plates along its back, small dot eyes and a plain deadpan face wagging its tail and knocking over a flowerpot behind it, only one dinosaur in the picture",
+      "en": "Then they wag their tails."
+    },
+    {
+      "n": 6,
+      "zh": "最后，把它最喜欢的一块石头\n送给你。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face holding out a small smooth pebble towards the viewer, only one dinosaur in the picture",
+      "en": "Last, they give you\ntheir very favorite rock."
+    },
+    {
+      "n": 7,
+      "zh": "越喜欢你，\n送的石头越大。",
+      "has_boy": false,
+      "scene": "One very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face carrying an enormous round boulder balanced on its tiny head, plain face, only one dinosaur in the picture",
+      "en": "The more they like you,\nthe bigger the rock."
+    },
+    {
+      "n": 8,
+      "zh": "所以，要是有一天\n你家门口堆满了大石头，\n别生气。\n那是恐龙喜欢你。",
+      "has_boy": false,
+      "scene": "The front door of a small house completely blocked by a pile of big round boulders, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts peeking out of the window above, no dinosaurs in the picture",
+      "en": "So if one day\nyour front door is blocked by giant rocks,\ndon't be mad.\nIt means a dinosaur likes you."
+    },
+    {
+      "n": 9,
+      "zh": "霸王龙问「我可以一起玩吗」\n的时候，嗓门太大了。",
+      "has_boy": false,
+      "scene": "One big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face calling out with its mouth in a small round O shape, big gusts of wind coming out of its mouth and blowing all the leaves off a small tree in front of it",
+      "en": "When T. rex asks, “Can I play too?”\nit's much too loud."
+    },
+    {
+      "n": 10,
+      "zh": "树叶全被吹掉了。\n树很冷。",
+      "has_boy": false,
+      "scene": "A completely bare tree shivering with little wobbly lines, its leaves in a heap on the ground, one big friendly green T. rex, soft and rounded with no sharp teeth, a big round head, tiny arms, small dot eyes and a plain deadpan face looking sheepish beside it",
+      "en": "All the leaves blow off the tree.\nThe tree is cold."
+    },
+    {
+      "n": 11,
+      "zh": "三角龙玩滑梯，\n角会卡住。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face stuck halfway down a playground slide by its horns, only one dinosaur in the picture",
+      "en": "When Triceratops goes down the slide,\nits horns get stuck."
+    },
+    {
+      "n": 12,
+      "zh": "所以它最会排队。\n从来不挤，\n一次都没有。",
+      "has_boy": false,
+      "scene": "Four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus waiting in a neat line at a playground slide, the triceratops patiently at the back",
+      "en": "So it's the best at waiting in line.\nIt never pushes.\nNot once."
+    },
+    {
+      "n": 13,
+      "zh": "长脖子恐龙最会轮流：\n让大家一个一个，\n从它的脖子上滑下来。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sitting on the back of one very tall long-necked grey-blue dinosaur with a tiny head, small dot eyes and a plain deadpan face and sliding happily down its long sloping neck towards the grass, the long neck curving gently down to the ground, no playground in the picture",
+      "en": "The long-neck is the best at taking turns:\neveryone gets to slide down its neck,\none at a time."
+    },
+    {
+      "n": 14,
+      "zh": "不过，有一件事，\n你一定、一定要记住。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sitting all alone in the middle of an empty lawn, looking at the viewer",
+      "en": "But there is one thing\nyou must never, ever forget."
+    },
+    {
+      "n": 15,
+      "zh": "千万别对恐龙说「不行！」\n然后扭头就走。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face with its head drooping, watching a trail of small footprints walking away across the lawn",
+      "en": "Never say “No!” to a dinosaur\nand walk away."
+    },
+    {
+      "n": 16,
+      "zh": "恐龙一听见「不行」，\n就会把尾巴一盘，\n脑袋一缩——",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face curling up tight into a ball, tucking in its head and tail",
+      "en": "When a dinosaur hears “No,”\nit curls up its tail,\ntucks in its head—"
+    },
+    {
+      "n": 17,
+      "zh": "变成一块大石头。\n谁也搬不动。",
+      "has_boy": false,
+      "scene": "A big round grey boulder on the lawn shaped like a curled-up dinosaur, the tip of a tail peeking out",
+      "en": "and turns into a big rock.\nNobody can move it."
+    },
+    {
+      "n": 18,
+      "zh": "星期天，你在院子里\n用积木搭恐龙城堡。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts building a castle of wooden blocks on the grass in a backyard, no dinosaurs in the picture",
+      "en": "On Sunday, you're in the backyard\nbuilding a dinosaur castle out of blocks."
+    },
+    {
+      "n": 19,
+      "zh": "你搭到最要紧的一层。\n一块，一块，\n小心又小心。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts carefully placing one block on top of a tall block castle, concentrating hard, no dinosaurs in the picture",
+      "en": "You're on the most important part.\nOne block, one block,\ncareful, careful."
+    },
+    {
+      "n": 20,
+      "zh": "小三角龙走过来，\n捧着它最喜欢的一块石头。\n「我也想玩。」",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts busy with a block castle while one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face walks up holding a small round stone",
+      "en": "Little Triceratops walks over,\nholding its very favorite rock.\n“I want to play too.”"
+    },
+    {
+      "n": 21,
+      "zh": "你一着急，\n张嘴就说——",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts turning sharply towards one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face, mouth opening, one hand up",
+      "en": "You're in a hurry,\nand out it comes—"
+    },
+    {
+      "n": 22,
+      "zh": "「不行！」",
+      "has_boy": false,
+      "seed": 132922,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts holding one arm out in front of a block castle, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face startled in front of the child",
+      "en": "“NO!”"
+    },
+    {
+      "n": 23,
+      "zh": "小三角龙一缩——",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face curled up into a tight round ball like a rock next to a block castle, its head and legs tucked in, only the tip of its tail showing",
+      "en": "Little Triceratops curls up—"
+    },
+    {
+      "n": 24,
+      "zh": "变成了一块大石头，\n正好堵住了城堡的门。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts staring at a big round grey boulder sitting right in front of the door of a block castle, no dinosaurs in the picture",
+      "en": "and turns into a big rock,\nright in front of the castle door."
+    },
+    {
+      "n": 25,
+      "zh": "别的恐龙来了，一看——\n也都缩成了石头。\n一块，两块，十块……",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts standing in the middle of a backyard full of big round grey boulders",
+      "en": "The other dinosaurs come over, take one look—\nand curl up into rocks too.\nOne, two, ten…"
+    },
+    {
+      "n": 26,
+      "zh": "你推也推不动。\n叫也叫不醒。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts pushing a big round grey boulder with all his strength, cheeks puffed out",
+      "en": "You push. They don't budge.\nYou call. They don't wake up."
+    },
+    {
+      "n": 27,
+      "zh": "你想起来了：\n恐龙听不得「不行」，\n可是听得懂「等一下」。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts sitting on a big grey boulder with his chin in his hand, thinking hard",
+      "en": "Then you remember:\ndinosaurs can't stand “No,”\nbut they understand “Wait a minute.”"
+    },
+    {
+      "n": 28,
+      "zh": "你蹲下来，小声说：\n「对不起，我刚才正在搭。\n等我搭完这一块，\n你来搭屋顶，好吗？」",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts crouching beside a big round grey boulder and speaking to it softly",
+      "en": "You crouch down and whisper,\n“Sorry. I was in the middle of building.\nLet me finish this block,\nand then you can build the roof. Okay?”"
+    },
+    {
+      "n": 29,
+      "zh": "咔嚓！\n石头裂开了，\n小三角龙跳了出来。",
+      "has_boy": false,
+      "scene": "A boulder cracking open and one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face popping out of it happily",
+      "en": "CRACK!\nThe rock splits open,\nand out pops Little Triceratops."
+    },
+    {
+      "n": 30,
+      "zh": "别的石头也一块一块裂开了。\n大家一起搭，\n城堡比原来大了三倍。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts building an enormous block castle together with four dinosaurs: a big green T. rex with tiny arms, a small round ochre triceratops, a very tall long-necked grey-blue dinosaur and a pink stegosaurus",
+      "en": "One by one, the other rocks crack open too.\nEveryone builds together,\nand the castle gets three times bigger."
+    },
+    {
+      "n": 31,
+      "zh": "小三角龙搭了屋顶。\n有点歪。\n没关系。",
+      "has_boy": false,
+      "scene": "One small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face proudly placing a crooked roof on top of a huge block castle, a small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts watching and smiling",
+      "en": "Little Triceratops builds the roof.\nIt's a little crooked.\nThat's okay."
+    },
+    {
+      "n": 32,
+      "zh": "现在你知道了：\n有人想跟你玩的时候，别说「不行」。\n说「等一下」，再给他一件事做。\n对了，小三角龙送你的那块石头，\n你收好。",
+      "has_boy": false,
+      "scene": "A small simple cartoon little boy with a short black buzz cut, wearing a red t-shirt and blue shorts holding a small round stone in both hands, one small round friendly ochre triceratops shaped like a potato, with three short blunt horns, small dot eyes and a plain deadpan face sitting beside the child, a big block castle behind them",
+      "en": "Now you know:\nwhen someone wants to play with you, don't say “No.”\nSay “Wait a minute,” and give them something to do.\nOh—and that rock Little Triceratops gave you?\nKeep it somewhere safe."
+    }
+  ],
+  "lang": "en",
+  "text_key": "en",
+  "image_slug": "dinowantsplay"
+}

@@ -1,0 +1,109 @@
+{
+  "title": "The Dinosaurs Didn't Go Far",
+  "subtitle": "The sparrows in the yard are their children",
+  "slug": "dino_en",
+  "seed_base": 3000,
+  "workflow": "workflows/flux_dev_lora.json",
+  "character": "wearing a green short sleeve t-shirt and dark blue shorts, white socks and grey sneakers, short black hair",
+  "style": "children's picture book illustration, warm vintage storybook art, soft gouache painting, earthy ochre and deep green palette, gentle textured brushwork, soft natural light",
+  "neg_extra": "",
+  "keyword": "鸟",
+  "palette": {
+    "ink": "#2f2a1e",
+    "soft": "#6d6350",
+    "ground": "#efe9dc",
+    "paper": "#fcfaf4",
+    "accent": "#9c6b3f",
+    "bark": "#8a7a5e",
+    "line": "#ddd4c0",
+    "ink_d": "#ece4d4",
+    "soft_d": "#a89a80",
+    "ground_d": "#17140f",
+    "paper_d": "#221e17",
+    "accent_d": "#d29a63",
+    "bark_d": "#a3947a",
+    "line_d": "#393225"
+  },
+  "pages": [
+    {
+      "n": 1,
+      "zh": "博物馆里，站着一只好大好大的恐龙。\n它只剩下骨头了。\n我要仰起头，才能看见它的脑袋。",
+      "scene": "A little boy stands in a quiet dinosaur museum hall with a polished stone floor, tilting his head all the way back to look up at an enormous mounted dinosaur fossil skeleton made only of pale bones, with empty eye sockets and bare ribs, standing on a low display platform and towering over him. Warm light comes through tall windows. The boy is small at the bottom of the frame, the skeleton fills the upper space.",
+      "has_boy": true,
+      "en": "At the museum, there's a great big dinosaur.\nOnly its bones are left.\nI have to tip my head way back to see its head."
+    },
+    {
+      "n": 2,
+      "zh": "很久很久以前，\n地球上到处都是恐龙。\n那时候还没有人，也没有房子。",
+      "scene": "A wide prehistoric landscape with several large dinosaurs walking among giant ferns and tall conifer trees, a volcano smoking far away on the horizon. Misty morning light. No people, no buildings.",
+      "has_boy": false,
+      "en": "A long, long time ago,\nthere were dinosaurs all over the Earth.\nThere were no people yet, and no houses."
+    },
+    {
+      "n": 3,
+      "zh": "有的恐龙比房子还高，\n脖子长得能够到树顶。\n有的恐龙却和一只鸡差不多大。",
+      "scene": "A very tall long necked dinosaur reaching the top of a tree on the left, and on the right a small chicken sized dinosaur standing on the ground looking up at it. The size difference between them is dramatic. Green prehistoric forest.",
+      "has_boy": false,
+      "en": "Some dinosaurs were taller than a house,\nwith necks long enough to reach the treetops.\nBut some were only about as big as a chicken."
+    },
+    {
+      "n": 4,
+      "zh": "咦？这只小恐龙身上，\n好像长着羽毛。\n毛茸茸的，像小鸡一样。",
+      "scene": "Close up of a small fluffy feathered dinosaur the size of a chicken, standing among ferns. Its body is covered in soft downy feathers, but it has a long tail and clawed feet like a dinosaur. Curious and gentle expression.",
+      "has_boy": false,
+      "en": "Huh? This little dinosaur\nseems to have feathers.\nFluffy ones, like a baby chick."
+    },
+    {
+      "n": 5,
+      "zh": "有一天，天上掉下来一颗大石头。\n它比一座山还大。",
+      "scene": "A huge glowing meteor falling through a darkening sky above the prehistoric landscape, leaving a bright trail of fire. Dinosaurs below look up. Dramatic orange and dark blue sky.",
+      "has_boy": false,
+      "en": "One day, a huge rock fell out of the sky.\nIt was bigger than a mountain."
+    },
+    {
+      "n": 6,
+      "zh": "轰——\n天空变黑了，太阳被灰尘挡住了。\n好冷，好黑。",
+      "scene": "A still, grey prehistoric landscape under a dim sky thick with dust, bare broken trees and scattered rocks, soft grey ash drifting down like snow and covering the ground. Cold muted colors, faint dim light. Nobody is there, only trees, rocks and falling ash.",
+      "has_boy": false,
+      "en": "BOOM—\nThe sky went dark, and dust covered the sun.\nIt was so cold, and so dark."
+    },
+    {
+      "n": 7,
+      "zh": "大恐龙们，一个一个都不见了。\n可是有一些小小的、有羽毛的恐龙，\n躲在洞里，活了下来。",
+      "scene": "Inside a small cozy burrow under a big tree root, two little fluffy feathered dinosaurs covered in soft orange and cream downy feathers, with long tails, huddle close together to keep warm. Through the burrow opening behind them the outside world is grey and covered in ash. Warm soft light inside the hole.",
+      "has_boy": false,
+      "en": "One by one, the big dinosaurs disappeared.\nBut some small, feathered dinosaurs\nhid in holes and survived."
+    },
+    {
+      "n": 8,
+      "zh": "太阳又出来了。\n小恐龙的孩子，孩子的孩子，\n羽毛越长越长，\n有一天，它们飞了起来。",
+      "scene": "A sequence in one picture: a small feathered dinosaur on the ground on the left, a similar creature spreading longer feathered arms in the middle, and on the right it lifts off the ground into the air. Green landscape returning to life, sunlight breaking through.",
+      "has_boy": false,
+      "en": "The sun came back out.\nThe little dinosaurs' children, and their children's children,\ngrew longer and longer feathers,\nand one day, they flew."
+    },
+    {
+      "n": 9,
+      "zh": "那就是——鸟！\n原来鸟是恐龙的孩子。\n它们一直都在。",
+      "scene": "A small brown sparrow perched on a branch in bright daylight, seen close up, with a faint soft silhouette of a feathered dinosaur behind it in the background like a memory. Warm sunny sky.",
+      "has_boy": false,
+      "en": "They became—birds!\nBirds are the dinosaurs' children.\nThey've been here all along."
+    },
+    {
+      "n": 10,
+      "zh": "我在院子里放了一些面包屑。\n麻雀飞下来吃。\n我小声说：\n「你好呀，小恐龙。」",
+      "scene": "A little boy crouching in his backyard holding out a hand with breadcrumbs, several sparrows landing on the ground in front of him to eat. Warm afternoon light, green grass, the boy is smiling gently.",
+      "has_boy": true,
+      "en": "I put some bread crumbs out in the yard.\nThe sparrows fly down to eat.\nI whisper,\n“Hello, little dinosaurs.”"
+    }
+  ],
+  "style_label": "复古水粉",
+  "colophon": {
+    "model": "FLUX.1-dev Q4_K_S GGUF",
+    "lora": "son_ohwx_flux_v1 (1000 steps, 18 photos)",
+    "strength": 1.3
+  },
+  "lang": "en",
+  "text_key": "en",
+  "image_slug": "dino",
+  "image_dir": "dino_pub"
+}
